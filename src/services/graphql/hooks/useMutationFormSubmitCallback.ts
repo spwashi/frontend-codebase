@@ -15,5 +15,5 @@ export function useMutationFormSubmitCallback<T = any>(
         const variables  = selector(data);
         const parameters = {variables};
         await send(parameters)
-    }, [send]);
+    }, [send, selector]);
 }

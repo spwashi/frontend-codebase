@@ -1,0 +1,103 @@
+html, body, #root {
+  height: 100%;
+}
+
+* {
+  font-family: "JetBrains Mono", sans-serif !important;
+
+}
+
+.app {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  > section {
+    border: thin solid forestgreen;
+  }
+}
+
+.column {display: flex; flex-flow: column;}
+
+/** --------------------------------------------- */
+form:before { content: 'form'; }
+select:before { content: 'select'; }
+input:before { content: 'input'; }
+button:before { content: 'button'; }
+form {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border: thin solid #ccc;
+  margin: 1rem 1rem 3rem;
+  padding: 1rem;
+  &:empty {
+    display: none;
+  }
+  input, button, select, textarea {
+    display: block;
+    width: 100%;
+    margin: .3rem;
+    padding: .3rem;
+    border: thin solid purple;
+  }
+  input {
+    border-radius: 0;
+  }
+}
+
+/** --------------------------------------------- */
+q:before { content: 'quote'; }
+q {
+  color: gray;
+  font-style: italic;
+  border: thin solid black;
+  position: relative;
+  padding: 1rem;
+  background: rgba(#333, .1);
+}
+
+header:before { content: 'header'; }
+section:before { content: 'section'; }
+section {
+  border: thin solid firebrick;
+  margin: 1rem;
+  background: rgba(firebrick, .1);
+  &:empty {display: none;}
+}
+sub:before { content: 'sub'; }
+
+/** --------------------------------------------- */
+details:before { content: 'details'; }
+summary:before { content: 'summary'; }
+details {
+  border: thin solid black;
+  background: rgba(green, .1);
+  summary {
+    background: rgba(darkblue, .5);
+    color: white;
+    font-weight: 700;
+    padding: 1rem;
+    border-bottom: thin solid green;
+    margin-bottom: .5rem;
+  }
+  q {
+    font-size: 1.5rem;
+  }
+  section > sub {
+    text-align: right;
+    font-size: .6rem;
+  }
+}
+
+/** --------------------------------------------- */
+* {position: relative;}
+*:before {
+  content: none !important;
+  background: wheat;
+  position: absolute;
+  border: thin solid red;
+  top: -5%;
+  left: -5%;
+  font-size: 15px;
+  color: red;
+}
