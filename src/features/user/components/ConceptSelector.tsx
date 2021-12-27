@@ -43,7 +43,7 @@ export function ConceptSelector({formKey}: { formKey?: string }) {
     );
 }
 
-export function ConceptDisplay() {
+function ActiveDisplay() {
     const [state, setState] = useState<any | null>();
     return (
         <section>
@@ -55,4 +55,7 @@ export function ConceptDisplay() {
             <ConceptQuery title={state?.concept ?? ''}/>
         </section>
     )
+}
+export function ConceptDisplay() {
+    return <ActiveDisplay/>;
 }

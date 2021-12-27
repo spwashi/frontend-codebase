@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 
 import {SignupForm} from '../features/user/features/signup/forms/SignupForm'
 import {LoginForm} from '../features/user/features/login/forms/LoginForm';
@@ -8,54 +8,85 @@ import {ConceptDisplay} from '../features/user/components/ConceptSelector';
 import {CreateProjectForm} from '../features/project/project/forms/CreateProjectForm';
 import {ProjectDisplay} from '../features/project/project/components/ProjectSelector';
 import {FileDisplay} from '../features/file/display/FileDisplay';
-import {BACKEND_URL} from '../constants';
-import {clearJwt, useJwt} from '../features/jwt';
-import {useDispatch, useSelector} from 'react-redux';
-import {ACTION_LOGOUT, selectLoggedInUserName} from '../features/user/features/login/redux/reducer';
+import {VerifyLogin} from '../features/user/features/login/VerifyLogin';
+import {LogoutButton} from '../features/user/features/login/Logout';
+import {Feature, FeatureRequirement, FeaturesContext} from '../features/context';
+import {LoggedIn, NotLoggedIn} from '../features/user/features/login/State';
+import {useSelector} from 'react-redux';
+import {selectPossibleUsersLastFetched, selectPossibleUsersList} from '../features/user/redux/selectors';
+import {AllUsersQuery} from '../features/user/components/AllUsersQuery';
 
-function VerifyLogin() {
-    const dispatch = useDispatch();
-    const jwt      = useJwt();
-    useEffect(() => {
-        fetch(BACKEND_URL + '/protected', {
-            method:  'POST',
-            body:    JSON.stringify({token: jwt}),
-            headers: {'Content-Type': 'application/json'},
-        })
-            .then(res => {
-                if (res.status === 200) {
-                    return;
-                }
-                dispatch({type: ACTION_LOGOUT})
-                clearJwt();
-            })
-    }, [jwt]);
 
+const AppFeatures = (() => {
+    const lastFetched = useSelector(selectPossibleUsersLastFetched)
+    const list        = useSelector(selectPossibleUsersList)
     return (
-        <div>
-
-        </div>
+        <>
+            <AllUsersQuery/>
+            <Feature name="projects" enabled={true}>
+                <Feature name="users">
+                    <Feature name="users.login" enabled={lastFetched ? !!list.length : false}/>
+                    <Feature name="users.signup"/>
+                </Feature>
+                <Feature name="files"/>
+            </Feature>
+            <Feature name="concepts"/>
+        </>
     );
-}
+});
+
 function App() {
-    const loggedInUser = useSelector(selectLoggedInUserName);
+    const lastFetched = useSelector(selectPossibleUsersLastFetched)
+    console.log('render')
+    const state = useSelector(state => state);
     return (
-        <div className="app">
-            {loggedInUser ? <VerifyLogin/> : null}
-            <section>
-                <CreateProjectForm/>
-                <ProjectDisplay/>
-            </section>
-            {loggedInUser ? null : <section><SignupForm/><LoginForm/></section>}
-            <section>
-                <CreateConceptForm/>
-                <ConceptDisplay/>
-            </section>
-            <section>
-                <UploadFileForm/>
-                <FileDisplay/>
-            </section>
-        </div>
+        <>
+            <pre>{JSON.stringify(state, null, 3)}</pre>
+            <FeaturesContext.Consumer>{
+                () => <AppFeatures/>
+            }</FeaturesContext.Consumer>
+            <div className="app">
+                <FeatureRequirement name="users">
+                    <section>
+                        <FeatureRequirement name="users.login">
+                            <LoggedIn>
+                                <VerifyLogin/>
+                                <LogoutButton/>
+                            </LoggedIn>
+                            <NotLoggedIn>
+                                <LoginForm/>
+                            </NotLoggedIn>
+                        </FeatureRequirement>
+
+                        <FeatureRequirement name="users.signup">
+                            <NotLoggedIn>
+                                <SignupForm/>
+                            </NotLoggedIn>
+                        </FeatureRequirement>
+                    </section>
+                </FeatureRequirement>
+                <FeatureRequirement name="projects">
+                    <section>
+                        <CreateProjectForm/>
+                        <ProjectDisplay/>
+                    </section>
+                </FeatureRequirement>
+                <FeatureRequirement name="concepts">
+                    <section>
+                        <CreateConceptForm/>
+                        <ConceptDisplay/>
+                    </section>
+                </FeatureRequirement>
+                <FeatureRequirement name="users.login">
+                    <FeatureRequirement name="files">
+                        <section>
+                            <UploadFileForm/>
+                            <FileDisplay/>
+                        </section>
+                    </FeatureRequirement>
+                </FeatureRequirement>
+            </div>
+        </>
     );
 }
 

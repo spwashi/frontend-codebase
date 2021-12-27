@@ -6,6 +6,7 @@ import {UserSelector} from '../../../../components/UserSelector';
 import {useMutationFormSubmitCallback} from '../../../../../../services/graphql/hooks/useMutationFormSubmitCallback';
 import {Input, Textarea} from '../../../../../../components/form/input/text/Input';
 import {SelectInput} from '../../../../../../components/form/input/select/SelectInput';
+import {FeatureRequirement} from '../../../../../context';
 
 // Define mutation
 const CREATE_CONCEPT = gql`
@@ -35,7 +36,8 @@ function UsernameInput({doSelect = false}: { doSelect?: boolean }) {
         }
     </>;
 }
-export function CreateConceptForm() {
+
+function ActiveForm() {
     const [send, response] = useMutation(CREATE_CONCEPT);
     const onsubmit         = useMutationFormSubmitCallback(send, selectMutationInput);
     return (
@@ -51,4 +53,10 @@ export function CreateConceptForm() {
             </FormContextProvider>
         </section>
     )
+}
+
+export function CreateConceptForm() {
+    return <FeatureRequirement name="users.login">
+        <ActiveForm/>
+    </FeatureRequirement>;
 }

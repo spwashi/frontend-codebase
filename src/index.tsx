@@ -7,6 +7,7 @@ import {ApolloClient, ApolloProvider, createHttpLink, InMemoryCache} from '@apol
 import {Provider} from 'react-redux';
 import {persistor, store} from './redux/store';
 import {PersistGate} from 'redux-persist/integration/react';
+import {FeaturesBoundary} from './features/context';
 
 const httpLink = createHttpLink({uri: 'http://localhost:4000'});
 const client   = new ApolloClient({
@@ -18,9 +19,11 @@ const client   = new ApolloClient({
 ReactDOM.render(
     <Provider store={store}>
         <ApolloProvider client={client}>
-            <PersistGate loading={null} persistor={persistor}>
-                <App/>
-            </PersistGate>
+            {/*<PersistGate loading={null} persistor={persistor}>*/}
+                <FeaturesBoundary>
+                    <App/>
+                </FeaturesBoundary>
+            {/*</PersistGate>*/}
         </ApolloProvider>
     </Provider>,
     document.getElementById('root'),
