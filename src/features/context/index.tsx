@@ -7,6 +7,7 @@ type IFeature =
     | null;
 const FeatureContext =
           createContext<{ state: IFeature, dispatch: (action: { type: string }) => void } | null>(null);
+
 export const Feature =
                  ({
                       name,
@@ -30,7 +31,7 @@ export const Feature =
                                                    payload: {featureName: name},
                                                })
                          }
-                     }, []);
+                     }, [enabled]);
 
 
                      const [state, dispatch] = useReducer((state: IFeature, action: { type: string }) => state, null);
@@ -42,21 +43,24 @@ export const Feature =
                          </FeatureContext.Provider>
                      )
                  };
+
 type IFeatures = { features: any };
 export const FeaturesContext =
-          createContext(
-              {
-                  state:    {
-                      features: {},
-                  },
-                  dispatch: (action: { type: string }) => {},
-              } as {
-                  state: IFeatures | null,
-                  dispatch: React.Dispatch<FeatureAction>
-              });
+                 createContext(
+                     {
+                         state:    {
+                             features: {},
+                         },
+                         dispatch: (action: { type: string }) => {},
+                     } as {
+                         state: IFeatures | null,
+                         dispatch: React.Dispatch<FeatureAction>
+                     });
+
 type FeatureAction =
     { type: 'REGISTER' | 'UNREGISTER', payload: { featureName: string } };
-export const FeaturesBoundary   =
+
+export const FeaturesBoundary =
                  ({children}: { children: any }) => {
                      const [state, dispatch] = useReducer((state: IFeatures, action: FeatureAction) => {
                          switch (action.type) {
@@ -81,6 +85,7 @@ export const FeaturesBoundary   =
                          </FeaturesContext.Provider>
                      )
                  };
+
 export const FeatureRequirement = ({
                                        name,
                                        children,

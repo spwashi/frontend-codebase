@@ -9,22 +9,15 @@ type Feature<D, F> = {
 }
 
 type UserOption = { title: string, value: string };
-export type UserFeatureStateDataUsers = {
-    list: UserOption[],
-    lastFetched: number | null
-};
-export type UserFeatureStateData =
-    {
-        users: UserFeatureStateDataUsers;
-    };
-type UserFeatureStateFeatures =
-    {
-        login: UserFeatureLoginFeatureState
-        signup: UserFeatureSignupFeatureState
-    };
+export type UserFeatureStateDataUsers = { list: UserOption[]; lastFetched: number | null };
+export type UserFeatureStateData = { users: UserFeatureStateDataUsers; };
+type UserFeatureStateFeatures = { login: UserFeatureLoginFeatureState; signup: UserFeatureSignupFeatureState };
 export type UserFeatureState = Feature<UserFeatureStateData, UserFeatureStateFeatures>
+export type ProjectFeatureStateDataProjects = { list: UserOption[]; lastFetched: number | null }
+export type ProjectFeatureState = Feature<{ projects: ProjectFeatureStateDataProjects }, {}>
 export type RootState = {
     features: {
-        user: UserFeatureState
+        user: UserFeatureState;
+        project: ProjectFeatureState
     }
 };

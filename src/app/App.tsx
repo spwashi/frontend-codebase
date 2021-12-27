@@ -5,46 +5,65 @@ import {LoginForm} from '../features/user/features/login/forms/LoginForm';
 import {UploadFileForm} from '../features/file/upload/UploadFileForm';
 import {CreateConceptForm} from '../features/user/features/concept/forms/CreateConceptForm';
 import {ConceptDisplay} from '../features/user/components/ConceptSelector';
-import {CreateProjectForm} from '../features/project/project/forms/CreateProjectForm';
-import {ProjectDisplay} from '../features/project/project/components/ProjectSelector';
+import {CreateProjectForm} from '../features/project/features/create/forms/CreateProjectForm';
+import {ProjectDisplay} from '../features/project/components/ProjectSelector';
 import {FileDisplay} from '../features/file/display/FileDisplay';
 import {VerifyLogin} from '../features/user/features/login/VerifyLogin';
 import {LogoutButton} from '../features/user/features/login/Logout';
-import {Feature, FeatureRequirement, FeaturesContext} from '../features/context';
+import {Feature, FeatureRequirement} from '../features/context';
 import {LoggedIn, NotLoggedIn} from '../features/user/features/login/State';
 import {useSelector} from 'react-redux';
 import {selectPossibleUsersLastFetched, selectPossibleUsersList} from '../features/user/redux/selectors';
 import {AllUsersQuery} from '../features/user/components/AllUsersQuery';
+import {AllProjectsQuery} from '../features/project/components/AllProjectsQuery';
+import {selectPossibleProjectsLastFetched, selectPossibleProjectsList} from '../features/project/redux/selectors';
 
 
-const AppFeatures = (() => {
+function UserLoginFeature() {
     const lastFetched = useSelector(selectPossibleUsersLastFetched)
     const list        = useSelector(selectPossibleUsersList)
+    return <Feature name="users.login" enabled={lastFetched ? !!list.length : false}/>;
+}
+
+function ProjectDisplayFeature() {
+    const lastFetched = useSelector(selectPossibleProjectsLastFetched)
+    const list        = useSelector(selectPossibleProjectsList)
+    return <Feature name="projects.display" enabled={lastFetched ? !!list.length : false}/>;
+}
+
+
+function UsersFeature() {
+    return (
+        <Feature name="users">
+            <UserLoginFeature/>
+            <Feature name="users.signup"/>
+        </Feature>
+    );
+}
+function ProjectsFeature() {
+    return (
+        <Feature name="projects">
+            <UsersFeature/>
+            <ProjectDisplayFeature/>
+            <Feature name="files"/>
+        </Feature>
+    );
+}
+const AppFeatures = (() => {
     return (
         <>
             <AllUsersQuery/>
-            <Feature name="projects" enabled={true}>
-                <Feature name="users">
-                    <Feature name="users.login" enabled={lastFetched ? !!list.length : false}/>
-                    <Feature name="users.signup"/>
-                </Feature>
-                <Feature name="files"/>
-            </Feature>
+            <AllProjectsQuery/>
+            {ProjectsFeature()}
             <Feature name="concepts"/>
         </>
     );
 });
 
 function App() {
-    const lastFetched = useSelector(selectPossibleUsersLastFetched)
-    console.log('render')
-    const state = useSelector(state => state);
     return (
         <>
-            <pre>{JSON.stringify(state, null, 3)}</pre>
-            <FeaturesContext.Consumer>{
-                () => <AppFeatures/>
-            }</FeaturesContext.Consumer>
+            <AppFeatures/>
             <div className="app">
                 <FeatureRequirement name="users">
                     <section>
@@ -68,7 +87,9 @@ function App() {
                 <FeatureRequirement name="projects">
                     <section>
                         <CreateProjectForm/>
-                        <ProjectDisplay/>
+                        <FeatureRequirement name="projects.display">
+                            <ProjectDisplay/>
+                        </FeatureRequirement>
                     </section>
                 </FeatureRequirement>
                 <FeatureRequirement name="concepts">

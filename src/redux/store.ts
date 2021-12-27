@@ -3,11 +3,13 @@ import {userReducer} from '../features/user/redux/reducer';
 import {configureStore} from '@reduxjs/toolkit';
 import {FLUSH, PAUSE, PERSIST, persistReducer, persistStore, PURGE, REGISTER, REHYDRATE} from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
+import {projectReducer} from '../features/project/redux/reducer';
 
 
 const rootReducer = combineReducers({
                                         features: combineReducers({
-                                                                      user: userReducer,
+                                                                      user:    userReducer,
+                                                                      project: projectReducer,
                                                                   }),
                                     })
 

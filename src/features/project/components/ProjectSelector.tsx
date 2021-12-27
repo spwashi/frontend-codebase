@@ -1,8 +1,8 @@
 import {gql, useQuery} from '@apollo/client';
 import React, {useMemo, useState} from 'react';
-import {SelectInput} from '../../../../components/form/input/select/SelectInput';
-import {Project} from '../../../../../../server/src/graphql/typeDefs';
-import {FormContextProvider} from '../../../../components/form/FormContext';
+import {SelectInput} from '../../../components/form/input/select/SelectInput';
+import {Project} from '../../../../../server/src/graphql/typeDefs';
+import {FormContextProvider} from '../../../components/form/FormContext';
 
 function projectToOption(project: Project) {
     const {name, title} = project;
