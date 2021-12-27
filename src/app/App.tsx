@@ -1,22 +1,24 @@
 import React from 'react';
 
-import {SignupForm} from '../features/user/features/signup/forms/SignupForm'
-import {LoginForm} from '../features/user/features/login/forms/LoginForm';
+import {SignupForm} from '../features/users/features/signup/forms/SignupForm'
+import {LoginForm} from '../features/users/features/login/forms/LoginForm';
 import {UploadFileForm} from '../features/file/upload/UploadFileForm';
-import {CreateConceptForm} from '../features/user/features/concept/forms/CreateConceptForm';
-import {ConceptDisplay} from '../features/user/components/ConceptSelector';
-import {CreateProjectForm} from '../features/project/features/create/forms/CreateProjectForm';
-import {ProjectDisplay} from '../features/project/components/ProjectSelector';
+import {CreateConceptForm} from '../features/concepts/features/create/forms/CreateConceptForm';
+import {ConceptDisplay} from '../features/users/components/ConceptSelector';
+import {CreateProjectForm} from '../features/projects/features/create/forms/CreateProjectForm';
+import {ProjectDisplay} from '../features/projects/components/ProjectSelector';
 import {FileDisplay} from '../features/file/display/FileDisplay';
-import {VerifyLogin} from '../features/user/features/login/VerifyLogin';
-import {LogoutButton} from '../features/user/features/login/Logout';
+import {VerifyLogin} from '../features/users/features/login/VerifyLogin';
+import {LogoutButton} from '../features/users/features/login/Logout';
 import {Feature, FeatureRequirement} from '../features/context';
-import {LoggedIn, NotLoggedIn} from '../features/user/features/login/State';
+import {LoggedIn, NotLoggedIn} from '../features/users/features/login/State';
 import {useSelector} from 'react-redux';
-import {selectPossibleUsersLastFetched, selectPossibleUsersList} from '../features/user/redux/selectors';
-import {AllUsersQuery} from '../features/user/components/AllUsersQuery';
-import {AllProjectsQuery} from '../features/project/components/AllProjectsQuery';
-import {selectPossibleProjectsLastFetched, selectPossibleProjectsList} from '../features/project/redux/selectors';
+import {selectPossibleUsersLastFetched, selectPossibleUsersList} from '../features/users/redux/selectors';
+import {AllUsersQuery} from '../features/users/components/AllUsersQuery';
+import {AllProjectsQuery} from '../features/projects/components/AllProjectsQuery';
+import {selectPossibleProjectsLastFetched, selectPossibleProjectsList} from '../features/projects/redux/selectors';
+import {AllConceptsQuery} from '../features/concepts/components/AllConceptsQuery';
+import {selectPossibleConceptsLastFetched, selectPossibleConceptsList} from '../features/concepts/redux/selectors';
 
 
 function UserLoginFeature() {
@@ -31,8 +33,14 @@ function ProjectDisplayFeature() {
     return <Feature name="projects.display" enabled={lastFetched ? !!list.length : false}/>;
 }
 
+function ConceptDisplayFeature() {
+    const lastFetched = useSelector(selectPossibleConceptsLastFetched)
+    const list        = useSelector(selectPossibleConceptsList)
+    return <Feature name="concepts.display" enabled={lastFetched ? !!list.length : false}/>;
+}
 
-function UsersFeature() {
+
+function UserFeatures() {
     return (
         <Feature name="users">
             <UserLoginFeature/>
@@ -40,22 +48,32 @@ function UsersFeature() {
         </Feature>
     );
 }
-function ProjectsFeature() {
+function ProjectFeatures() {
     return (
         <Feature name="projects">
-            <UsersFeature/>
+            <UserFeatures/>
             <ProjectDisplayFeature/>
             <Feature name="files"/>
         </Feature>
     );
 }
+
+function ConceptFeatures() {
+    return (
+        <Feature name="concepts">
+            <ConceptDisplayFeature/>
+        </Feature>
+    )
+}
+
 const AppFeatures = (() => {
     return (
         <>
             <AllUsersQuery/>
             <AllProjectsQuery/>
-            {ProjectsFeature()}
-            <Feature name="concepts"/>
+            <AllConceptsQuery/>
+            <ProjectFeatures/>
+            <ConceptFeatures/>
         </>
     );
 });
@@ -95,7 +113,9 @@ function App() {
                 <FeatureRequirement name="concepts">
                     <section>
                         <CreateConceptForm/>
-                        <ConceptDisplay/>
+                        <FeatureRequirement name="concepts.display">
+                            <ConceptDisplay/>
+                        </FeatureRequirement>
                     </section>
                 </FeatureRequirement>
                 <FeatureRequirement name="users.login">

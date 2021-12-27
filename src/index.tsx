@@ -19,11 +19,11 @@ const client   = new ApolloClient({
 ReactDOM.render(
     <Provider store={store}>
         <ApolloProvider client={client}>
-            {/*<PersistGate loading={null} persistor={persistor}>*/}
+            <PersistGate loading={null} persistor={persistor}>
                 <FeaturesBoundary>
                     <App/>
                 </FeaturesBoundary>
-            {/*</PersistGate>*/}
+            </PersistGate>
         </ApolloProvider>
     </Provider>,
     document.getElementById('root'),

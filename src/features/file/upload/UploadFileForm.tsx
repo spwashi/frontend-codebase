@@ -1,6 +1,6 @@
 import React, {useCallback, useState} from 'react';
 import {FileInput} from '../../../components/form/input/files/FileInput';
-import {UserSelector} from '../../user/components/UserSelector';
+import {UserSelector} from '../../users/components/UserSelector';
 import {FormContextProvider} from '../../../components/form/FormContext';
 import {BACKEND_URL} from '../../../constants';
 

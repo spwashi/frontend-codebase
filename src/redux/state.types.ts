@@ -13,11 +13,19 @@ export type UserFeatureStateDataUsers = { list: UserOption[]; lastFetched: numbe
 export type UserFeatureStateData = { users: UserFeatureStateDataUsers; };
 type UserFeatureStateFeatures = { login: UserFeatureLoginFeatureState; signup: UserFeatureSignupFeatureState };
 export type UserFeatureState = Feature<UserFeatureStateData, UserFeatureStateFeatures>
+
+
 export type ProjectFeatureStateDataProjects = { list: UserOption[]; lastFetched: number | null }
 export type ProjectFeatureState = Feature<{ projects: ProjectFeatureStateDataProjects }, {}>
+
+export type ConceptFeatureStateDataConcepts = { list: UserOption[]; lastFetched: number | null }
+export type ConceptFeatureState = Feature<{ concepts: ConceptFeatureStateDataConcepts }, {}>
+
+
 export type RootState = {
     features: {
         user: UserFeatureState;
-        project: ProjectFeatureState
+        project: ProjectFeatureState;
+        concept: ConceptFeatureState
     }
 };

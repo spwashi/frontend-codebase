@@ -4,7 +4,7 @@ import {FormContextProvider} from '../../../../../../components/form/FormContext
 import {GraphqlMutationResponse} from '../../../../../../services/graphql/GraphqlMutationResponse';
 import {useMutationFormSubmitCallback} from '../../../../../../services/graphql/hooks/useMutationFormSubmitCallback';
 import {Input} from '../../../../../../components/form/input/text/Input';
-import {ProjectSelector} from '../../../../../project/components/ProjectSelector';
+import {ProjectSelector} from '../../../../../projects/components/ProjectSelector';
 import {useSelector} from 'react-redux';
 import {selectLoggedInUserName} from '../../../login/redux/reducer';
 

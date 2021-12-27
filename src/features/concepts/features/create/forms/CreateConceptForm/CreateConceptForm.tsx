@@ -2,7 +2,7 @@ import React from 'react';
 import {gql, useMutation} from '@apollo/client';
 import {FormContextProvider} from '../../../../../../components/form/FormContext';
 import {GraphqlMutationResponse} from '../../../../../../services/graphql/GraphqlMutationResponse';
-import {UserSelector} from '../../../../components/UserSelector';
+import {UserSelector} from '../../../../../users/components/UserSelector';
 import {useMutationFormSubmitCallback} from '../../../../../../services/graphql/hooks/useMutationFormSubmitCallback';
 import {Input, Textarea} from '../../../../../../components/form/input/text/Input';
 import {SelectInput} from '../../../../../../components/form/input/select/SelectInput';
@@ -19,10 +19,11 @@ const CREATE_CONCEPT = gql`
 `;
 
 function selectMutationInput(data: any) {
-    const {username, title, src} = data ?? {};
+    const {username, title, src, mimeType} = data ?? {};
     return {
         title,
         src,
+        mimeType,
         user: {username},
     };
 }
@@ -47,7 +48,7 @@ function ActiveForm() {
                 <UsernameInput doSelect/>
                 <Input formKey="title" placeholder="Concept title"/>
                 <Textarea formKey="src" placeholder="Concept contents"/>
-                <SelectInput formKey="mimeType" placeholder="Mime Type" options={['text/plain']}/>
+                <SelectInput formKey="mimeType" placeholder="Mime Type" options={['text/plain', 'text/spw']}/>
                 <button type="submit">submit</button>
                 <GraphqlMutationResponse response={response}/>
             </FormContextProvider>
@@ -56,7 +57,9 @@ function ActiveForm() {
 }
 
 export function CreateConceptForm() {
-    return <FeatureRequirement name="users.login">
-        <ActiveForm/>
-    </FeatureRequirement>;
+    return (
+        <FeatureRequirement name="users.login">
+            <ActiveForm/>
+        </FeatureRequirement>
+    );
 }
