@@ -1,9 +1,9 @@
-import {ConceptInput} from '../../../../../server/src/graphql/typeDefs';
 import {gql, useQuery} from '@apollo/client';
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {selectPossibleConceptsLastFetched} from '../redux/selectors';
 import {ACTION_RECEIVE_ALL_CONCEPTS} from '../redux/reducer';
+import {ConceptInput} from '../../../../types/graphql/typeDefs';
 
 function conceptToOption(concept: ConceptInput) {
     return {title: concept.title, value: concept.title};

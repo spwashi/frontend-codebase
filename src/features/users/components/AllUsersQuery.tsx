@@ -3,7 +3,7 @@ import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {selectPossibleUsersLastFetched} from '../redux/selectors';
 import {ACTION_RECEIVE_ALL_USERS} from '../redux/reducer';
-import {UserInput} from '../../../../../server/src/graphql/typeDefs';
+import {UserInput} from '../../../../types/graphql/typeDefs';
 
 function userToOption(user: UserInput) {
     return {title: user.name, value: user.username};

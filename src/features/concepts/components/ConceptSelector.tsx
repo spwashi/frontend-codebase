@@ -1,9 +1,9 @@
 import {gql, useQuery} from '@apollo/client';
 import React, {useMemo, useState} from 'react';
-import {Concept} from '../../../../../server/src/graphql/typeDefs';
 import {SelectInput} from '../../../components/form/input/select/SelectInput';
 import {FormContextProvider} from '../../../components/form/FormContext';
 import {ConceptQuery} from './ConceptQuery';
+import {Concept} from '../../../../types/graphql/typeDefs';
 
 function conceptToOption(concept: Concept) {
     const {username} = concept.author;

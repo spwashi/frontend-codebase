@@ -1,9 +1,9 @@
 import {gql, useQuery} from '@apollo/client';
 import React, {useMemo, useState} from 'react';
-import {Tag} from '../../../../../server/src/graphql/typeDefs';
 import {SelectInput} from '../../../components/form/input/select/SelectInput';
 import {FormContextProvider} from '../../../components/form/FormContext';
 import {TagQuery} from './TagQuery';
+import {Tag} from '../../../../types/graphql/typeDefs';
 
 function tagToOption(tag: Tag) {
     const {username} = tag.author;

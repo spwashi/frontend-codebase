@@ -1,9 +1,9 @@
-import {ProjectInput} from '../../../../../server/src/graphql/typeDefs';
 import {gql, useQuery} from '@apollo/client';
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {selectPossibleProjectsLastFetched} from '../redux/selectors';
 import {ACTION_RECEIVE_ALL_PROJECTS} from '../redux/reducer';
+import {ProjectInput} from '../../../../types/graphql/typeDefs';
 
 function projectToOption(project: ProjectInput) {
     return {title: project.name, value: project.title};

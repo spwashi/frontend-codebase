@@ -1,9 +1,9 @@
-import {TagInput} from '../../../../../server/src/graphql/typeDefs';
 import {gql, useQuery} from '@apollo/client';
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {selectPossibleTagsLastFetched} from '../redux/selectors';
 import {ACTION_RECEIVE_ALL_TAGS} from '../redux/reducer';
+import {TagInput} from '../../../../types/graphql/typeDefs';
 
 function tagToOption(tag: TagInput) {
     return {title: tag.title, value: tag.title};
