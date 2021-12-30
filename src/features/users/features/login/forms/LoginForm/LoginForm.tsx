@@ -5,7 +5,7 @@ import {useMutationFormSubmitCallback} from '../../../../../../services/graphql/
 import {Input} from '../../../../../../components/form/input/text/Input';
 import {FormContextProvider} from '../../../../../../components/form/FormContext';
 import {GraphqlMutationResponse} from '../../../../../../services/graphql/GraphqlMutationResponse';
-import {setJwt} from '../../../../../jwt';
+import {setJwt} from '../../../../../../util/jwt';
 import {useDispatch, useSelector} from 'react-redux';
 import {ACTION_RECEIVE_LOGIN, selectLoggedInUserName} from '../../redux/reducer';
 

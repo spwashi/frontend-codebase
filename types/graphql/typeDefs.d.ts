@@ -7,6 +7,10 @@ export declare type ProjectInput = {
     name: string;
     title?: string;
 };
+export declare type TagInput = {
+    title: string;
+    domain?: string;
+};
 export declare type ConceptInput = {
     title: string;
     mimeType?: string;
@@ -25,6 +29,11 @@ export declare type Concept = {
 export declare type Project = {
     title: string;
     name: string;
+};
+export declare type Tag = {
+    title: string;
+    domain: string;
+    author: UserInput;
 };
 export declare type PasswordInput = {
     password: string;

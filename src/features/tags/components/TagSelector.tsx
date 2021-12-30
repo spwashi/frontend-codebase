@@ -1,22 +1,22 @@
 import {gql, useQuery} from '@apollo/client';
 import React, {useMemo, useState} from 'react';
-import {Concept} from '../../../../../server/src/graphql/typeDefs';
+import {Tag} from '../../../../../server/src/graphql/typeDefs';
 import {SelectInput} from '../../../components/form/input/select/SelectInput';
 import {FormContextProvider} from '../../../components/form/FormContext';
-import {ConceptQuery} from './ConceptQuery';
+import {TagQuery} from './TagQuery';
 
-function conceptToOption(concept: Concept) {
-    const {username} = concept.author;
+function tagToOption(tag: Tag) {
+    const {username} = tag.author;
     return {
-        title: [username, concept.title].join(' - '),
-        value: concept.title,
+        title: [username, tag.title].join(' - '),
+        value: tag.title,
     };
 }
-export function ConceptSelector({formKey}: { formKey?: string }) {
-  const ALL_CONCEPTS_QUERY =
+export function TagSelector({formKey}: { formKey?: string }) {
+  const ALL_TAGS_QUERY =
         gql`
-            query AllConcepts {
-                allConcepts {
+            query AllTags {
+                allTags {
                     title
                     author {
                         name
@@ -26,17 +26,17 @@ export function ConceptSelector({formKey}: { formKey?: string }) {
             }
         `;
 
-    const {data: query = {}} = useQuery(ALL_CONCEPTS_QUERY);
+    const {data: query = {}} = useQuery(ALL_TAGS_QUERY);
 
     const options =
-              useMemo(() => query.allConcepts
-                            ? query.allConcepts.map(conceptToOption)
+              useMemo(() => query.allTags
+                            ? query.allTags.map(tagToOption)
                             : [],
                       [query]);
 
     return (
         <SelectInput
-            placeholder={'Concept'}
+            placeholder={'Tag'}
             formKey={formKey ?? ''}
             options={options}
         />
@@ -47,15 +47,15 @@ function ActiveDisplay() {
     const [state, setState] = useState<any | null>();
     return (
         <section>
-            <header>Concept Display</header>
+            <header>Tag Display</header>
             <FormContextProvider onSubmit={setState}>
-                <ConceptSelector formKey="concept"/>
+                <TagSelector formKey="tag"/>
                 <button type="submit">Submit</button>
             </FormContextProvider>
-            <ConceptQuery title={state?.concept ?? ''}/>
+            <TagQuery title={state?.tag ?? ''}/>
         </section>
     )
 }
-export function ConceptDisplay() {
+export function TagDisplay() {
     return <ActiveDisplay/>;
 }

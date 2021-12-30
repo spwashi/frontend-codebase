@@ -1,7 +1,7 @@
 import {gql, useQuery} from '@apollo/client';
 import React, {useMemo} from 'react';
-import {SelectInput} from '../../../components/form/input/select/SelectInput';
-import {File} from '../../../../types/graphql/typeDefs';
+import {SelectInput} from '../../../../components/form/input/select/SelectInput';
+import {File} from '../../../../../types/graphql/typeDefs';
 
 function fileToOption(file: File) {
     return {

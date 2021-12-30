@@ -1,5 +1,5 @@
 import {useDispatch} from 'react-redux';
-import {useJwt} from '../../../jwt';
+import {useJwt} from '../../../../util/jwt';
 import {useEffect} from 'react';
 import {BACKEND_URL} from '../../../../constants';
 import {logout} from './Logout';

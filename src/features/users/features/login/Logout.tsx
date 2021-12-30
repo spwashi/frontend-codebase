@@ -1,6 +1,6 @@
 import {Dispatch} from 'redux';
 import {ACTION_LOGOUT} from './redux/reducer';
-import {clearJwt} from '../../../jwt';
+import {clearJwt} from '../../../../util/jwt';
 import {useDispatch} from 'react-redux';
 import React, {useCallback} from 'react';
 import {PURGE} from 'redux-persist';

@@ -80,7 +80,6 @@ export const FeaturesBoundary =
                      const value             = useMemo(() => ({state, dispatch}), [state, dispatch]);
                      return (
                          <FeaturesContext.Provider value={value}>
-                             <pre>{JSON.stringify(state, null, 3)}</pre>
                              {children}
                          </FeaturesContext.Provider>
                      )

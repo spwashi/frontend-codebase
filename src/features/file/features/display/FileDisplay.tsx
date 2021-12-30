@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import {FormContextProvider} from '../../../components/form/FormContext';
+import {FormContextProvider} from '../../../../components/form/FormContext';
 import {FileQuery} from '../query/FileQuery';
-import {UserSelector} from '../../users/components/UserSelector';
+import {UserSelector} from '../../../users/components/UserSelector';
 import {FileSelector} from '../list/FileSelector';
 
 /**

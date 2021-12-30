@@ -9,11 +9,10 @@ import {SelectInput} from '../../../../../../components/form/input/select/Select
 import {FeatureRequirement} from '../../../../../../util/features';
 
 // Define mutation
-const CREATE_CONCEPT = gql`
-    mutation CreateConcept($title: String!, $src:String!, $user: UserInput!, $mimeType: String) {
-        createConcept(concept: {author: $user, title: $title, src: $src, mimeType: $mimeType}) {
+const CREATE_TAG = gql`
+    mutation CreateTag($title: String!, $src:String, $user: UserInput!) {
+        createTag(tag: {author: $user, title: $title, description: $src}) {
             title
-            src
         }
     }
 `;
@@ -39,16 +38,15 @@ function UsernameInput({doSelect = false}: { doSelect?: boolean }) {
 }
 
 function ActiveForm() {
-    const [send, response] = useMutation(CREATE_CONCEPT);
+    const [send, response] = useMutation(CREATE_TAG);
     const onsubmit         = useMutationFormSubmitCallback(send, selectMutationInput);
     return (
-        <section id="form__concept-create">
-            <header>Create Concept Form</header>
+        <section id="form__tag-create">
+            <header>Create Tag Form</header>
             <FormContextProvider onSubmit={onsubmit}>
                 <UsernameInput doSelect/>
-                <Input formKey="title" placeholder="Concept title"/>
-                <Textarea formKey="src" placeholder="Concept contents"/>
-                <SelectInput formKey="mimeType" placeholder="Mime Type" options={['text/plain', 'text/spw']}/>
+                <Input formKey="title" placeholder="Tag title"/>
+                <Textarea formKey="description" placeholder="Tag contents"/>
                 <button type="submit">submit</button>
                 <GraphqlMutationResponse response={response}/>
             </FormContextProvider>
@@ -56,7 +54,7 @@ function ActiveForm() {
     )
 }
 
-export function CreateConceptForm() {
+export function CreateTagForm() {
     return (
         <FeatureRequirement name="users.login">
             <ActiveForm/>

@@ -1,74 +1,61 @@
 import {gql, useQuery} from '@apollo/client';
 import React, {useMemo, useState} from 'react';
+import {Concept} from '../../../../../server/src/graphql/typeDefs';
 import {SelectInput} from '../../../components/form/input/select/SelectInput';
-import {Project} from '../../../../../server/src/graphql/typeDefs';
 import {FormContextProvider} from '../../../components/form/FormContext';
+import {ConceptQuery} from './ConceptQuery';
 
-function projectToOption(project: Project) {
-    const {name, title} = project;
+function conceptToOption(concept: Concept) {
+    const {username} = concept.author;
     return {
-        title,
-        value: name,
+        title: [username, concept.title].join(' - '),
+        value: concept.title,
     };
 }
 export function ConceptSelector({formKey}: { formKey?: string }) {
-  const ALL_PROJECTS_QUERY =
+  const ALL_CONCEPTS_QUERY =
         gql`
-            query AllProjects {
-                allProjects {
+            query AllConcepts {
+                allConcepts {
                     title
-                    name
+                    author {
+                        name
+                        username
+                    }
                 }
             }
         `;
 
-    const {data: query = {}} = useQuery(ALL_PROJECTS_QUERY);
+    const {data: query = {}} = useQuery(ALL_CONCEPTS_QUERY);
 
     const options =
-              useMemo(() => query.allProjects
-                            ? query.allProjects.map(projectToOption)
+              useMemo(() => query.allConcepts
+                            ? query.allConcepts.map(conceptToOption)
                             : [],
                       [query]);
 
     return (
         <SelectInput
-            placeholder="Project"
+            placeholder={'Concept'}
             formKey={formKey ?? ''}
             options={options}
         />
     );
 }
 
-function ProjectQuery({name}: { name: string }) {
-  const {data: query = {}} = useQuery(gql`
-      query Project($name: String) {
-          project(name: $name) {
-              name
-              title
-          }
-      }
-  `, {variables: {name}});
-
-
-    if (!query.project) return null;
-
-    const {title} = query?.project ?? {};
-
-    return (
-        <pre>{name} - {title}</pre>
-    )
-}
-
-export function ProjectDisplay() {
+function ActiveDisplay() {
     const [state, setState] = useState<any | null>();
     return (
         <section>
-            <header>Project Display</header>
+            <header>Concept Display</header>
             <FormContextProvider onSubmit={setState}>
-                <ConceptSelector formKey="name"/>
+                <ConceptSelector formKey="concept"/>
                 <button type="submit">Submit</button>
-                <ProjectQuery name={state?.name ?? ''}/>
             </FormContextProvider>
+            <ConceptQuery title={state?.concept ?? ''}/>
         </section>
     )
+}
+export function ConceptDisplay() {
+    return <ActiveDisplay/>;
 }

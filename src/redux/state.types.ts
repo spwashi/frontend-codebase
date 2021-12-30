@@ -21,11 +21,14 @@ export type ProjectFeatureState = Feature<{ projects: ProjectFeatureStateDataPro
 export type ConceptFeatureStateDataConcepts = { list: UserOption[]; lastFetched: number | null }
 export type ConceptFeatureState = Feature<{ concepts: ConceptFeatureStateDataConcepts }, {}>
 
+export type TagFeatureStateDataTags = { list: UserOption[]; lastFetched: number | null }
+export type TagFeatureState = Feature<{ tags: TagFeatureStateDataTags }, {}>
 
 export type RootState = {
     features: {
         user: UserFeatureState;
         project: ProjectFeatureState;
         concept: ConceptFeatureState
+        tag: TagFeatureState
     }
 };
