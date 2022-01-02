@@ -20,6 +20,12 @@ html, body, #root {
 .column {display: flex; flex-flow: column;}
 
 /** --------------------------------------------- */
+
+.noGraphql {
+  background: red;
+}
+
+/** --------------------------------------------- */
 form:before { content: 'form'; }
 select:before { content: 'select'; }
 input:before { content: 'input'; }

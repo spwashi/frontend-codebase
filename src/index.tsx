@@ -14,8 +14,6 @@ const client   = new ApolloClient({
                                       link:  httpLink,
                                       cache: new InMemoryCache(),
                                   });
-
-
 ReactDOM.render(
     <Provider store={store}>
         <ApolloProvider client={client}>

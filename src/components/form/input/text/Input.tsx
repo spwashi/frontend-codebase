@@ -10,7 +10,7 @@ export function Input({formKey, name, ...rest}: InputParams) {
     const form                 = useContext(FormContext);
     const [localValue, update] = useFormItemController(form, formKey);
     const {type = 'text'}      = rest;
-    const id                   = useMemo(() => 'input--' + Date.now(), []);
+    const id                   = useMemo(() => `input--${Math.random()}`.replace('.', ''), []);
     return (
         <div className="input-wrapper">
             <label htmlFor={id}>{rest.title ?? rest.placeholder}</label>
@@ -34,7 +34,7 @@ type TextareaParams =
 export function Textarea({formKey, name, ...rest}: TextareaParams) {
     const form                 = useContext(FormContext);
     const [localValue, update] = useFormItemController(form, formKey);
-    const id                   = useMemo(() => 'input--' + Date.now(), []);
+    const id                   = useMemo(() => `textarea--${Math.random()}`.replace('.', ''), []);
     return (
         <div className="input-wrapper">
             <label htmlFor={id}>{rest.title ?? rest.placeholder}</label>
