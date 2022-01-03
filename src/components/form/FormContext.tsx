@@ -1,4 +1,5 @@
 import React, {useCallback, useMemo, useReducer} from 'react';
+import {Log} from '../Log';
 
 export type FormContextState = {
     data: { [p: string]: any };
@@ -36,7 +37,7 @@ const formReducer                =
               switch (action.type) {
                   case ACTION_UPDATE_INDEX:
                       const {index, value} = action.payload;
-                      return {...state, [index]: value};
+                      return {...state, data: {...state.data, [index]: value}};
               }
               return state;
           }
@@ -52,8 +53,10 @@ export const FormContextProvider = ({children, onSubmit}: ProviderProps) => {
     const value             = useMemo(() => ({data: state, dispatch, key: 0}), [state, dispatch]);
     return (
         <FormContext.Provider value={value}>
+            <Log>{state}</Log>
             <form onSubmit={handleSubmit}>
                 {children}
+                <button type="submit">submit</button>
             </form>
         </FormContext.Provider>
     )

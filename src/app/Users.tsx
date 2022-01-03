@@ -1,9 +1,9 @@
 import {FeatureRequirement} from '../util/features';
-import {LoggedIn, NotLoggedIn} from '../features/old/users/features/login/State';
-import {VerifyLogin} from '../features/old/users/features/login/VerifyLogin';
-import {LogoutButton} from '../features/old/users/features/login/Logout';
-import {LoginForm} from '../features/old/users/features/login/forms/LoginForm';
-import {SignupForm} from '../features/old/users/features/signup/forms/SignupForm';
+import {LoggedIn, NotLoggedIn} from '../features/users/behaviors/login/State';
+import {VerifyLogin} from '../features/users/behaviors/login/VerifyLogin';
+import {LogoutButton} from '../features/users/behaviors/login/Logout';
+import {LoginForm} from '../features/users/behaviors/login/forms/LoginForm';
+import {SignupForm} from '../features/users/behaviors/signup/forms/SignupForm';
 import React from 'react';
 
 export function UsersControlPanel() {

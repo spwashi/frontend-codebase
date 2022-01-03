@@ -9,7 +9,6 @@ import {TagsControlPanel} from './Tags';
 import {ConceptsControlPanel} from './Concepts';
 import {UsersControlPanel} from './Users';
 import {ProjectsControlPanel} from './Projects';
-import {TagFeatures} from './TagFeatures';
 import {Bootstrap} from './Bootstrap';
 
 

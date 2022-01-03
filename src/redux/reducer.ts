@@ -1,9 +1,9 @@
 import {combineReducers} from 'redux';
-import {userReducer} from '../features/old/users/redux/reducer';
-import {projectReducer} from '../features/old/projects/redux/reducer';
-import {conceptReducer} from '../features/new/concepts/redux/reducer';
-import {fileReducer} from '../features/old/file/redux/reducer';
-import {tagReducer} from '../features/new/tags/redux/reducer';
+import {userReducer} from '../features/users/redux/reducer';
+import {projectReducer} from '../features/projects/redux/reducer';
+import {conceptReducer} from '../features/concepts/redux/reducer';
+import {fileReducer} from '../features/files/redux/reducer';
+import {tagReducer} from '../features/tags/redux/reducer';
 
 export const ACTION_NOGRAPHQL = 'NO_GRAPHQL';
 export const ACTION_GRAPHQL   = 'GRAPHQL';

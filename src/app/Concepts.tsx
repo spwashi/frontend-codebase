@@ -1,9 +1,9 @@
 import {FeatureRequirement} from '../util/features';
-import {CreateConceptForm} from '../features/new/concepts/behaviors/create';
-import {TagConceptForm} from '../features/new/concepts/behaviors/tag';
+import {CreateConceptForm} from '../features/concepts/behaviors/create';
+import {TagConceptForm} from '../features/concepts/behaviors/tag';
 import React from 'react';
 import {ConceptFeatures} from './ConceptFeatures';
-import {ConceptDisplay} from '../features/new/concepts/components/display';
+import {ConceptDisplay} from '../features/concepts/components/display';
 
 export function ConceptsControlPanel() {
     return <>

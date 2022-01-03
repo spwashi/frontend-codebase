@@ -1,8 +1,8 @@
 import {FeatureRequirement} from '../util/features';
 import React from 'react';
 import {TagFeatures} from './TagFeatures';
-import {CreateTagForm} from '../features/new/tags/behaviors/create';
-import {TagDisplay} from '../features/new/tags/components/display';
+import {CreateTagForm} from '../features/tags/behaviors/create';
+import {TagDisplay} from '../features/tags/components/display';
 
 export function TagsControlPanel() {
     return <>

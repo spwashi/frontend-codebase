@@ -1,8 +1,8 @@
 import {FeatureRequirement} from '../util/features';
-import {CreateProjectForm} from '../features/old/projects/features/create/forms/CreateProjectForm';
-import {ProjectDisplay} from '../features/old/projects/components/ProjectSelector';
 import React from 'react';
 import {ProjectFeatures} from './ProjectFeatures';
+import { ProjectDisplay } from '../features/projects/components/display';
+import { CreateProjectForm } from '../features/projects/behaviors/create';
 
 export function ProjectsControlPanel() {
     return <>

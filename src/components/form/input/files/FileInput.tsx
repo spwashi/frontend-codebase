@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useMemo} from 'react';
 import {useFormItemController} from '../../hooks/useFormItemController';
 import {FormContext} from '../../FormContext';
 
@@ -9,10 +9,14 @@ type Params =
 export function FileInput({formKey, name, ...rest}: Params) {
     const form       = useContext(FormContext);
     const [, update] = useFormItemController(form, formKey);
+    const id         = useMemo(() => `input--${Math.random()}`.replace('.', ''), []);
+
     return (
-        <>
+        <div className="input-wrapper">
+            <label htmlFor={id}>{rest.title ?? rest.placeholder}</label>
             <input
                 {...rest}
+                id={id}
                 type="file"
                 name={name}
                 onChange={e => {
@@ -21,6 +25,6 @@ export function FileInput({formKey, name, ...rest}: Params) {
                     update(files);
                 }}
             />
-        </>
+        </div>
     );
 }

@@ -1,6 +1,6 @@
 import {FeatureRequirement} from '../util/features';
-import {UploadFileForm} from '../features/old/file/features/upload/UploadFileForm';
-import {FileDisplay} from '../features/old/file/features/display/FileDisplay';
+import {UploadFileForm} from '../features/files/behaviors/upload/components/form/Form';
+import {FileDisplay} from '../features/files/components/display/FileDisplay';
 import React from 'react';
 
 export function FilesControlPanel() {

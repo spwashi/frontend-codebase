@@ -1,7 +1,7 @@
 import {useSelector} from 'react-redux';
 import {Feature} from '../util/features';
 import React from 'react';
-import {selectPossibleTagsLastFetched, selectPossibleTagsList} from '../features/new/tags/redux/selectors';
+import {selectPossibleTagsLastFetched, selectPossibleTagsList} from '../features/tags/redux/selectors';
 
 function TagDisplayFeature() {
     const lastFetched = useSelector(selectPossibleTagsLastFetched)

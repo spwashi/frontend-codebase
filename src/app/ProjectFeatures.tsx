@@ -1,8 +1,8 @@
 import {useSelector} from 'react-redux';
-import {selectPossibleUsersLastFetched, selectPossibleUsersList} from '../features/old/users/redux/selectors';
+import {selectPossibleUsersLastFetched, selectPossibleUsersList} from '../features/users/redux/selectors';
 import {Feature} from '../util/features';
 import React from 'react';
-import {selectPossibleProjectsLastFetched, selectPossibleProjectsList} from '../features/old/projects/redux/selectors';
+import {selectPossibleProjectsLastFetched, selectPossibleProjectsList} from '../features/projects/redux/selectors';
 
 function UserLoginFeature() {
     const lastFetched = useSelector(selectPossibleUsersLastFetched)

@@ -1,7 +1,7 @@
 import {Feature} from '../util/features';
 import React from 'react';
 import {useSelector} from 'react-redux';
-import {selectPossibleConceptsLastFetched, selectPossibleConceptsList} from '../features/new/concepts/redux/selectors';
+import {selectPossibleConceptsLastFetched, selectPossibleConceptsList} from '../features/concepts/redux/selectors';
 
 function ConceptDisplayFeature() {
     const lastFetched = useSelector(selectPossibleConceptsLastFetched)

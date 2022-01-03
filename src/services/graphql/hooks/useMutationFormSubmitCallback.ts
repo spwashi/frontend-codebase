@@ -11,7 +11,7 @@ export function useMutationFormSubmitCallback<T = any>(
     send: (options?: MutationFunctionOptions) => Promise<FetchResult<any>>,
     selector: (data: any) => T,
 ) {
-    return useCallback(async (data: any) => {
+    return useCallback(async ({data}: any) => {
         const variables  = selector(data);
         const parameters = {variables};
         await send(parameters)

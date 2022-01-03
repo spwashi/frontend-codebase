@@ -1,5 +1,6 @@
 import {IConcept} from '../models/concept/models/IConcept';
 import {ITag} from '../models/tag/models/ITag';
+import {IProject} from '../models/project/models/IProject';
 
 export type UserFeatureLoginFeatureState = Feature<{ username: string | null }, { something: boolean }>;
 export type UserFeatureSignupFeatureState = Feature<{ something: boolean }, { something: boolean }>
@@ -17,8 +18,8 @@ export type UserFeatureStateData = { users: UserFeatureStateDataUsers; };
 type UserFeatureStateFeatures = { login: UserFeatureLoginFeatureState; signup: UserFeatureSignupFeatureState };
 export type UserFeatureState = Feature<UserFeatureStateData, UserFeatureStateFeatures>
 
-
-export type ProjectFeatureStateDataProjects = { list: UserOption[]; lastFetched: number | null }
+export type ProjectOption = { title: string, value: string, project: IProject }
+export type ProjectFeatureStateDataProjects = { list: ProjectOption[]; lastFetched: number | null }
 export type ProjectFeatureState = Feature<{ projects: ProjectFeatureStateDataProjects }, {}>
 
 

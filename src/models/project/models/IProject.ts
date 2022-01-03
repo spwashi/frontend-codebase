@@ -10,3 +10,7 @@ export interface IProject extends Partial<HasProjectDescription & HasProjectEnvi
     title: string;
     domain: string;
 }
+
+export interface IProjectIdentifyingPartial {
+    name: string;
+}
