@@ -29,11 +29,14 @@ export type FormElementConfig =
     | { type: 'content'; name: string; title: string; }
     | { type: 'select'; name: string; title: string; options: { title: string, value: string }[] }
 
+export function getDomain() {
+    return window?.location?.host ?? '';
+}
 export function FormElementFactory({item: config}: { item: FormElementConfig }) {
     const {title, type, name} = config;
     switch (name) {
         case 'domain':
-            return <Input formKey={name} value={window?.location?.host} disabled placeholder={title}/>
+            return <Input formKey={name} value={getDomain()} disabled placeholder={title}/>
     }
     switch (type) {
         case 'password':

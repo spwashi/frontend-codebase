@@ -11,20 +11,26 @@ function fetchIsCurrent(lastFetched: number | null) {
 }
 
 export function AllConceptsQuery() {
-  const {data: query} = useFeatureQuery<{ allConcepts: IConcept_Complete[] }>(gql`
-      query AllConcepts {
-          allConcepts {
-              title
-              mimeType
-              src
-              published
-              author {
-                  name
-                  username
-              }
-          }
-      }
-  `, 0);
+  const {data: query} =
+        useFeatureQuery<{ allConcepts: IConcept_Complete[] }>(
+            gql`
+                query AllConcepts {
+                    allConcepts {
+                        title
+                        mimeType
+                        src
+                        published
+                        author {
+                            name
+                            username
+                        }
+                    }
+                }
+            `,
+            {},
+            0,
+        );
+
     const lastFetched = useSelector(selectPossibleConceptsLastFetched);
     const dispatch    = useDispatch();
     useEffect(() => {

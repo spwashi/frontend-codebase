@@ -6,6 +6,7 @@ import {useCreateProjectMutation} from '../mutations';
 import {useDispatch} from 'react-redux';
 import {ACTION_PROJECT_CREATED} from '../../../redux/reducer';
 import {StandardForm} from '../../../../../components/form/Form';
+import {FeatureRequirement} from '../../../../_util';
 
 
 function ActiveForm() {
@@ -25,6 +26,6 @@ function ActiveForm() {
 
 export function CreateProjectForm({}) {
     return (
-        <ActiveForm/>
+        <FeatureRequirement name="projects.create"><ActiveForm/></FeatureRequirement>
     );
 }

@@ -12,17 +12,18 @@ import {Log} from '../../../../../components/Log';
 function DeleteTag() {
     const tag            = useActiveTag();
     const user           = useSelector(selectLoggedInUser)
-  const [send, response] = useMutation(gql`mutation DeleteTag($user:UserInput!, $title:String!) {
-      deleteTag(tag: {title: $title, author: $user}) {
+  const [send, response] = useMutation(gql`mutation DeleteTag($user:UserInput!, $domain:String, $title:String!) {
+      deleteTag(tag: {title: $title, domain: $domain, author: $user}) {
           title
           domain
       }
   }`)
-    if (!tag||!user) return null;
+    if (!tag || !user) return null;
     return (
         <React.Fragment>
             <Log>{response.data}</Log>
-            <button onClick={e => send({variables: {title: tag?.title, user:{username: user.username}}})}>DELETE</button>
+            <button onClick={e => send({variables: {title: tag?.title, domain:tag?.domain ,user: {username: user.username}}})}>DELETE
+            </button>
         </React.Fragment>
     )
 }

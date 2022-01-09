@@ -26,6 +26,6 @@ export function selectTagAdditionInput(data: SelectMutationInputData) {
     return {
         title,
         user: {username: user?.username ?? username},
-        tags,
+        tags: tags.map(({title, domain}) => ({title, domain})),
     };
 }

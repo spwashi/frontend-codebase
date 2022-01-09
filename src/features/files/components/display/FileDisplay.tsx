@@ -46,8 +46,8 @@ export function FileDisplay({}) {
         <section>
             <header>File Display {user?.username}</header>
             <div className="column">
-                <FormContextProvider onSubmit={setUsername}>
-                    <UserSelector formKey="user" ignoreLogin/>
+                <FormContextProvider onChange={setUsername} onSubmit={setUsername}>
+                    <UserSelector formKey="user" />
                 </FormContextProvider>
                 <DisplayForm username={user?.username}/>
             </div>

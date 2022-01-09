@@ -13,6 +13,7 @@ export function ProjectDisplay() {
                 <summary>{title}</summary>
                 <section>
                     <div>{title}</div>
+                    <div>{domain}</div>
                     <div>{description}</div>
                 </section>
             </details>

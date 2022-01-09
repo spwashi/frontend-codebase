@@ -4,6 +4,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {selectPossibleProjectsLastFetched, selectProjectStateKey} from '../../../redux/selectors';
 import {ACTION_RECEIVE_ALL_PROJECTS} from '../../../redux/reducer';
 import {useFeatureQuery} from '../../../../_util/hooks/useFeatureQuery';
+import {getDomain} from '../../../../../components/form/Factory';
 
 
 function fetchIsCurrent(lastFetched: number | null) {
@@ -13,8 +14,8 @@ function fetchIsCurrent(lastFetched: number | null) {
 export function AllProjectsQuery() {
   const ALL_PROJECTS_QUERY =
         gql`
-            query AllProjects {
-                allProjects {
+            query AllProjects($domain: String) {
+                allProjects(domain: $domain) {
                     title
                     name
                     description
@@ -24,7 +25,7 @@ export function AllProjectsQuery() {
             }
         `;
     const projectStateKey  = useSelector(selectProjectStateKey);
-    const {data}           = useFeatureQuery(ALL_PROJECTS_QUERY, projectStateKey);
+    const {data}           = useFeatureQuery(ALL_PROJECTS_QUERY, {domain: getDomain()}, projectStateKey);
     const lastFetched      = useSelector(selectPossibleProjectsLastFetched)
     const dispatch         = useDispatch();
     useEffect(() => {
