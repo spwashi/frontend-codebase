@@ -3,11 +3,7 @@ import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {selectPossibleUsersLastFetched} from '../../../redux/selectors';
 import {ACTION_RECEIVE_ALL_USERS} from '../../../redux/reducer';
-import {UserInput} from '../../../../../../types/graphql/typeDefs';
 
-function userToOption(user: UserInput) {
-    return {title: user.name, value: user.username, user};
-}
 
 function fetchIsCurrent(lastFetched: number | null) {
     return (Date.now() - (lastFetched ?? 0)) < 1000;
@@ -27,7 +23,7 @@ export function AllUsersQuery() {
     const lastFetched        = useSelector(selectPossibleUsersLastFetched)
 
     useEffect(() => {
-        const options = query.allUsers ? query.allUsers.map(userToOption) : [];
+        const options = query.allUsers ? query.allUsers : [];
         if (fetchIsCurrent(lastFetched) && !options.length) {
             return;
         }

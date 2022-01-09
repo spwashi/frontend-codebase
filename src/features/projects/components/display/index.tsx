@@ -3,9 +3,9 @@ import {FormContextProvider} from '../../../../components/form/FormContext';
 import {Project} from '../query/one';
 import {ProjectSelect} from '../Select';
 
-export function ProjectDisplay() {
+export function ProjectDisplay({}) {
     const [state, setState] = useState<any | null>();
-    const title             = state?.project?.name;
+    const title             = state?.data?.project?.name;
     return (
         <section>
             <header>Project Display</header>

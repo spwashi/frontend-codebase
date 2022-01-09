@@ -1,6 +1,6 @@
 import {gql, useMutation} from '@apollo/client';
-import {ITag} from '../../../../../models/tag/models/ITag';
-import {IConcept} from '../../../../../models/concept/models/IConcept';
+import {ITag} from '../../../../../models/tag/models';
+import {IConcept} from '../../../../../models/concept/models';
 import React from 'react';
 
 function useDeleteConceptTagMutation() {

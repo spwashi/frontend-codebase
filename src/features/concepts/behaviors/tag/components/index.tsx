@@ -1,11 +1,13 @@
 import React from 'react';
-import {FeatureRequirement} from '../../../../../util/features';
+import {FeatureRequirement} from '../../../../_util';
 import {Form} from './Form';
 
-export function TagConceptForm() {
+export function TagConceptForm({}) {
     return (
         <FeatureRequirement name="users.login">
-            <Form/>
+            <FeatureRequirement name="concepts.display">
+                <Form/>
+            </FeatureRequirement>
         </FeatureRequirement>
     );
 }

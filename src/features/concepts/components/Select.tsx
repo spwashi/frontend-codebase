@@ -1,6 +1,5 @@
 import React from 'react';
 import {SelectInput} from '../../../components/form/input/select/SelectInput';
-import {Concept} from '../../../../types/graphql/typeDefs';
 import {useConceptOptions} from '../hooks/useOptions';
 
 export function ConceptSelect({formKey}: { formKey?: string }) {

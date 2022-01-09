@@ -4,13 +4,14 @@ import {useSelector} from 'react-redux';
 import {FormContext} from '../../../components/form/FormContext';
 import {updateFormItem} from '../../../components/form/hooks/useFormItemController';
 import {selectPossibleUsersList} from '../redux/selectors';
-import {selectLoggedInUserName} from '../behaviors/login/redux/reducer';
+import {selectLoggedInUser, selectLoggedInUserName} from '../behaviors/login/redux/reducer';
 import {AllUsersQuery} from './query/all';
+import {Input} from '../../../components/form/input/text/Input';
 
 export const UserSelector = React.memo(
     ({formKey, ignoreLogin}: { formKey: string; ignoreLogin?: boolean }) => {
         const options      = useSelector(selectPossibleUsersList);
-        const loggedInUser = useSelector(selectLoggedInUserName);
+        const loggedInUser = useSelector(selectLoggedInUser);
         const context      = useContext(FormContext);
 
         useEffect(() => updateFormItem(context, formKey, loggedInUser), [loggedInUser]);
@@ -24,16 +25,10 @@ export const UserSelector = React.memo(
                       ),
                   );
 
-        const optionValueMap =
-                  new Map(
-                      options.map(
-                          ({title, value, user}) => {
-                              return [value, user]
-                          },
-                      ),
-                  );
+        if (loggedInUser && !ignoreLogin) {
+            return <Input value={loggedInUser.username} disabled title="User"/>;
+        }
 
-        if (loggedInUser && !ignoreLogin) return null;
         return (
             <>
                 {

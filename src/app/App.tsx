@@ -4,11 +4,11 @@ import {select_noGraphql} from '../redux/reducer';
 
 
 import classnames from 'classnames';
-import {FilesControlPanel} from './Files';
-import {TagsControlPanel} from './Tags';
-import {ConceptsControlPanel} from './Concepts';
+import {FilesControlPanel} from '../features/files/Files';
+import {TagsControlPanel} from '../features/tags/Tags';
+import {ConceptsControlPanel} from '../features/concepts/Concepts';
 import {UsersControlPanel} from './Users';
-import {ProjectsControlPanel} from './Projects';
+import {ProjectsControlPanel} from '../features/projects/Projects';
 import {Bootstrap} from './Bootstrap';
 
 

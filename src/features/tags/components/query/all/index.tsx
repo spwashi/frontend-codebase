@@ -1,10 +1,10 @@
 import {gql, useQuery} from '@apollo/client';
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {selectPossibleTagsLastFetched} from '../../../redux/selectors';
+import {selectPossibleTagsLastFetched, selectTagStateKey} from '../../../redux/selectors';
 import {ACTION_RECEIVE_ALL_TAGS} from '../../../redux/reducer';
 import {ACTION_GRAPHQL, ACTION_NOGRAPHQL} from '../../../../../redux/reducer';
-import {ITag} from '../../../../../models/tag/models/ITag';
+import {ITag} from '../../../../../models/tag/models';
 import {TagOption} from '../../../../../redux/state.types';
 
 function tagToOption(tag: ITag): TagOption {
@@ -42,9 +42,12 @@ export function AllTagsQuery() {
             }
         `;
     const {data: query = {}, error} = useQuery(ALL_TAGS_QUERY);
+    const stateKey                  = useSelector(selectTagStateKey);
+    const lastFetched               = useSelector(selectPossibleTagsLastFetched)
     const dispatch                  = useDispatch();
+
     useDispatchGraphqlError(error);
-    const lastFetched = useSelector(selectPossibleTagsLastFetched)
+
     useEffect(() => {
         const options = query.allTags ? query.allTags.map(tagToOption) : [];
         if (fetchIsCurrent(lastFetched) && !options.length) {

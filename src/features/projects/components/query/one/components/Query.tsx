@@ -1,4 +1,4 @@
-import {IProject, IProjectIdentifyingPartial} from '../../../../../../models/project/models/IProject';
+import {IProject, IProjectIdentifyingPartial} from '../../../../../../models/project/models';
 import {gql, useQuery} from '@apollo/client';
 import React, {useContext, useEffect} from 'react';
 import {ProjectContext} from '../context/context';

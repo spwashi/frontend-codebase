@@ -1,6 +1,6 @@
 import {useActiveProject} from '../context/hooks/useActiveOne';
 import React from 'react';
-import {IProject} from '../../../../../../models/project/models/IProject';
+import {IProject} from '../../../../../../models/project/models';
 
 export function ProjectDisplay() {
     const project = useActiveProject();

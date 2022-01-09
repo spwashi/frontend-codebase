@@ -1,5 +1,5 @@
 import {createContext} from 'react';
-import {ITag_Complete} from '../../../../../../models';
+import {ITag_Complete} from '../../../../../../models/tag/hybrids';
 
 type ITagContext = {
     tag: ITag_Complete | null;

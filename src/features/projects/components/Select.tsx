@@ -1,6 +1,5 @@
 import React from 'react';
 import {SelectInput} from '../../../components/form/input/select/SelectInput';
-import {Project} from '../../../../types/graphql/typeDefs';
 import {useProjectOptions} from '../hooks/useOptions';
 
 export function ProjectSelect({formKey}: { formKey?: string }) {

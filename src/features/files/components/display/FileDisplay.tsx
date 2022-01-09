@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
 import {FormContextProvider} from '../../../../components/form/FormContext';
-import {FileQuery} from '../query/FileQuery';
+import {FileQuery} from '../graphql/queries/FileQuery';
 import {UserSelector} from '../../../users/components/UserSelector';
-import {FileSelector} from '../input/FileSelector';
-import {IUser} from '../../../../models/user/IUser';
+import {IUser} from '../../../../models/user/models';
+import {StandardForm} from '../../../../components/form/Form';
+import {Log} from '../../../../components/Log';
 
 /**
  * Selects a file to display, then displays it
@@ -12,18 +13,25 @@ import {IUser} from '../../../../models/user/IUser';
  */
 function DisplayForm(user: { username: string | undefined } | { username: string }) {
     const [state, setState] = useState<any | null>();
+    let realname            = state?.data?.file?.realname ?? '';
+    if (!user.username) return null;
     return (
-        <FormContextProvider onSubmit={setState}>
-            {
-                user?.username
-                ? (
-                    <>
-                        <FileSelector formKey="realname" username={user?.username}/>
-                        <FileQuery realname={state?.realname ?? ''} username="spwashi"/>
-                    </>
-                ) : null
-            }
-        </FormContextProvider>
+        <>
+            <StandardForm
+                onSubmit={setState}
+                onChange={setState}
+                form={{
+                    items:
+                        !user.username
+                        ? []
+                        :
+                        [
+                            {type: 'fileSelect', name: 'file', title: 'File', username: user.username},
+                        ],
+                }}
+            />
+            <FileQuery realname={realname} username={user?.username}/>
+        </>
     );
 }
 
@@ -31,9 +39,9 @@ function DisplayForm(user: { username: string | undefined } | { username: string
  * Displays a file
  * @constructor
  */
-export function FileDisplay() {
-    const [state, setUsername] = useState<{ user: IUser } | null>(null);
-    const user                 = state?.user;
+export function FileDisplay({}) {
+    const [state, setUsername] = useState<{ data: { user: IUser } } | null>(null);
+    const user                 = state?.data?.user;
     return (
         <section>
             <header>File Display {user?.username}</header>

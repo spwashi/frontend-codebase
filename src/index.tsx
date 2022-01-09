@@ -7,13 +7,10 @@ import {ApolloClient, ApolloProvider, createHttpLink, InMemoryCache} from '@apol
 import {Provider} from 'react-redux';
 import {persistor, store} from './redux/store';
 import {PersistGate} from 'redux-persist/integration/react';
-import {FeaturesBoundary} from './util/features';
+import {FeaturesBoundary} from './features/_util';
 
 const httpLink = createHttpLink({uri: process.env.REACT_APP_GRAPHQL_URL});
-const client   = new ApolloClient({
-                                      link:  httpLink,
-                                      cache: new InMemoryCache(),
-                                  });
+const client   = new ApolloClient({link: httpLink, cache: new InMemoryCache()});
 ReactDOM.render(
     <Provider store={store}>
         <ApolloProvider client={client}>

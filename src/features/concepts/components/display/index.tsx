@@ -1,20 +1,23 @@
 import React, {useState} from 'react';
 import {FormContextProvider} from '../../../../components/form/FormContext';
-import {Concept} from '../query/one';
+import {Concept} from '../graphql/components/one';
 import {ConceptSelect} from '../Select';
+import {FeatureRequirement} from '../../../_util';
 
-export function ConceptDisplay() {
+export function ConceptDisplay({}) {
     const [state, setState] = useState<any | null>();
-    const title             = state?.concept?.title;
+    const title             = state?.data?.concept?.title;
     return (
-        <section>
-            <header>Concept Display</header>
+        <FeatureRequirement name="concepts.display">
+            <section>
+                <header>Concept Display</header>
 
-            <FormContextProvider onSubmit={setState}>
-                <ConceptSelect formKey="concept"/>
-            </FormContextProvider>
+                <FormContextProvider onSubmit={setState}>
+                    <ConceptSelect formKey="concept"/>
+                </FormContextProvider>
 
-            {title && <Concept title={title}/>}
-        </section>
+                {title && <Concept title={title}/>}
+            </section>
+        </FeatureRequirement>
     )
 }

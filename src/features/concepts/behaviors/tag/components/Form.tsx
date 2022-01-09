@@ -1,25 +1,17 @@
-import {useTagMutation} from '../mutations/useTagMutation';
+import {useTagMutation} from '../mutations/addTag';
 import {useMutationFormSubmitCallback} from '../../../../../services/graphql/hooks/useMutationFormSubmitCallback';
-import {selectTagAdditionInput} from '../selectors/selectTagAdditionInput';
-import {FormContextProvider} from '../../../../../components/form/FormContext';
-import {UsernameInput} from './input/UsernameInput';
-import {ConceptSelect} from '../../../components/Select';
+import {form__tagConcept, selectTagAdditionInput} from '../forms/addTag';
 import {GraphqlMutationResponse} from '../../../../../services/graphql/GraphqlMutationResponse';
 import React from 'react';
-import {TagSelect} from '../../../../tags/components/Select';
+import {StandardForm} from '../../../../../components/form/Form';
 
 export function Form() {
     const {send, response} = useTagMutation();
     const onsubmit         = useMutationFormSubmitCallback(send, selectTagAdditionInput);
     return (
         <section id="form__concept-tag">
-            <header>Tag Concept Form</header>
-            <FormContextProvider onSubmit={onsubmit}>
-                <UsernameInput doSelect/>
-                <ConceptSelect formKey="concept"/>
-                <TagSelect formKey="tags"/>
-                <GraphqlMutationResponse response={response}/>
-            </FormContextProvider>
+            <StandardForm form={form__tagConcept} onSubmit={onsubmit}/>
+            <GraphqlMutationResponse response={response}/>
         </section>
     )
 }

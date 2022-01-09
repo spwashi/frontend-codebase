@@ -1,5 +1,5 @@
 import {createContext} from 'react';
-import {IProject} from '../../../../../../models/project/models/IProject';
+import {IProject} from '../../../../../../models/project/models';
 
 type IProjectContext = {
     project: IProject | null;

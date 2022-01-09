@@ -1,4 +1,4 @@
-import React, {useCallback, useMemo, useReducer} from 'react';
+import React, {useCallback, useEffect, useMemo, useReducer} from 'react';
 import {Log} from '../Log';
 
 export type FormContextState = {
@@ -27,8 +27,9 @@ export function useFormContextProviderState() {
 
 
 type ProviderProps = {
-    children: any,
-    onSubmit: (data: any) => void
+    children: any;
+    onSubmit: (data: any) => void;
+    onChange?: (data: any) => void;
 };
 
 export const ACTION_UPDATE_INDEX = 'update';
@@ -37,23 +38,27 @@ const formReducer                =
               switch (action.type) {
                   case ACTION_UPDATE_INDEX:
                       const {index, value} = action.payload;
+                      console.log({action})
                       return {...state, data: {...state.data, [index]: value}};
               }
               return state;
           }
 
 
-export const FormContextProvider = ({children, onSubmit}: ProviderProps) => {
+export const FormContextProvider = ({children, onSubmit, onChange}: ProviderProps) => {
     const [state, dispatch] = useReducer(formReducer, getInitialState())
+    useEffect(() => {
+        onChange?.(state);
+    }, [state]);
+
     const handleSubmit      = useCallback((event) => {
         event.preventDefault && event.preventDefault();
         event.stopPropagation && event.stopPropagation();
         onSubmit(state)
     }, [onSubmit, state]);
-    const value             = useMemo(() => ({data: state, dispatch, key: 0}), [state, dispatch]);
+    const value             = useMemo(() => ({data: state.data, dispatch, key: 0}), [state, dispatch]);
     return (
         <FormContext.Provider value={value}>
-            <Log>{state}</Log>
             <form onSubmit={handleSubmit}>
                 {children}
                 <button type="submit">submit</button>

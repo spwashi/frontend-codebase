@@ -1,13 +1,19 @@
 import React, {useCallback, useState} from 'react';
-import {FileInput} from '../../../../../../components/form/input/files/FileInput';
-import {UserSelector} from '../../../../../users/components/UserSelector';
-import {FormContextProvider} from '../../../../../../components/form/FormContext';
 import {BACKEND_URL} from '../../../../../../constants';
-import {TagSelect} from '../../../../../tags/components/Select';
-import {FormBody} from '../../../../../../components/form/Factory';
+import {FormConfig} from '../../../../../../components/form/Factory';
+import {StandardForm} from '../../../../../../components/form/Form';
+import {useJwt} from '../../../../../../util/jwt';
 
 
-function submissionCallback(data: any, files: FileList | null, uploadLocation: string | null, tags: any) {
+interface SubmissionCallbackParams {
+    data: any;
+    jwt: string;
+    files: FileList | null;
+    uploadLocation: string | null;
+    tags: any;
+}
+
+function submissionCallback({jwt, files, uploadLocation, tags}: SubmissionCallbackParams) {
     if (!uploadLocation) {
         alert('Please select an upload location');
         return;
@@ -15,8 +21,9 @@ function submissionCallback(data: any, files: FileList | null, uploadLocation: s
     const body = new FormData();
     if (!files) return;
 
+    body.append('jwt', jwt);
     body.append('location', uploadLocation);
-    body.append('tags', tags);
+    tags?.length && body.append('tags', JSON.stringify(tags));
 
     [...files]
         .forEach(function (file, key) {
@@ -27,29 +34,42 @@ function submissionCallback(data: any, files: FileList | null, uploadLocation: s
     return fetch(url, {method: 'POST', body, mode: 'cors'}).then(j => j.json())
 }
 
-export function UploadFileForm() {
-    const submit        = useCallback(submissionCallback, []);
+const form__uploadFile: FormConfig =
+          {
+              title: 'Upload File',
+              items: [
+                  {type: 'user', name: 'name', title: 'User'},
+                  {type: 'file', name: 'files', title: 'File'},
+                  {type: 'tags', name: 'tags', title: 'Tags'},
+              ],
+          };
+
+export function UploadFileForm({}) {
     const [out, setOut] = useState<any | null>(null);
-    const onSubmit      = useCallback(async (data) => {
-        setOut(await submit(data, data.files, data.user.username, data.tags))
-    }, [submit])
+    const jwt           = useJwt();
+    const onSubmit      = useCallback(async ({data}) => {
+        if (!jwt) {
+            alert('No JWT');
+            return;
+        }
+        setOut(await submissionCallback({
+                                            data,
+                                            jwt,
+                                            files:          data.files,
+                                            uploadLocation: data.user.username,
+                                            tags:           data.tags,
+                                        }))
+    }, [jwt])
 
     if (!BACKEND_URL) return null;
     return (
-        <section id="form__file-upload">
-            <header>Upload File Form</header>
-            <FormContextProvider onSubmit={onSubmit}>
-                <FormBody items={[
-                    {type: 'user', name: 'name', title: 'User'},
-                    {type: 'file', name: 'files', title: 'File'},
-                    {type: 'tags', name: 'tags', title: 'Tags'},
-                ]}/>
-                {
-                    out
-                    ? <pre>{JSON.stringify(out, null, 3)}</pre>
-                    : null
-                }
-            </FormContextProvider>
-        </section>
+        <React.Fragment>
+            <StandardForm form={form__uploadFile} onSubmit={onSubmit}/>
+            {
+                out
+                ? <pre>{JSON.stringify(out, null, 3)}</pre>
+                : null
+            }
+        </React.Fragment>
     );
 }

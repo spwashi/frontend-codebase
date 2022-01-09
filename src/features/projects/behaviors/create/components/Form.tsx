@@ -1,31 +1,30 @@
 import React from 'react';
-import {FormContextProvider} from '../../../../../components/form/FormContext';
 import {GraphqlMutationResponse} from '../../../../../services/graphql/GraphqlMutationResponse';
 import {useMutationFormSubmitCallback} from '../../../../../services/graphql/hooks/useMutationFormSubmitCallback';
-import {FeatureRequirement} from '../../../../../util/features';
-import {form__createProject, selectCreateProjectInput} from '../selectors/selectCreationInput';
-import {useCreateProjectMutation} from '../mutations/useCreateMutation';
-import {FormBody} from '../../../../../components/form/Factory';
+import {form__createProject, selectCreateProjectInput} from '../selectors';
+import {useCreateProjectMutation} from '../mutations';
+import {useDispatch} from 'react-redux';
+import {ACTION_PROJECT_CREATED} from '../../../redux/reducer';
+import {StandardForm} from '../../../../../components/form/Form';
 
 
 function ActiveForm() {
     const {send, response} = useCreateProjectMutation();
-    const onsubmit         = useMutationFormSubmitCallback(send, selectCreateProjectInput);
+    const dispatch         = useDispatch();
+    const onsubmit         = useMutationFormSubmitCallback(o => send(o).then((o) => {
+        dispatch({type: ACTION_PROJECT_CREATED});
+        return o;
+    }), selectCreateProjectInput);
     return (
         <section id="form__project-create">
-            <header>Create Project Form</header>
-            <FormContextProvider onSubmit={onsubmit}>
-                <FormBody items={form__createProject}/>
-                <GraphqlMutationResponse response={response}/>
-            </FormContextProvider>
+            <StandardForm form={form__createProject} onSubmit={onsubmit}/>
+            <GraphqlMutationResponse response={response}/>
         </section>
     )
 }
 
-export function CreateProjectForm() {
+export function CreateProjectForm({}) {
     return (
-        <FeatureRequirement name="users.login">
-            <ActiveForm/>
-        </FeatureRequirement>
+        <ActiveForm/>
     );
 }

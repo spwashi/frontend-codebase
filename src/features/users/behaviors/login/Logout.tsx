@@ -7,7 +7,7 @@ import {PURGE} from 'redux-persist';
 
 export function logout(dispatch: Dispatch<any>) {
     dispatch({type: ACTION_LOGOUT})
-    dispatch({type: PURGE})
+    dispatch({type: PURGE, result: () => {}})
     clearJwt();
 }
 
