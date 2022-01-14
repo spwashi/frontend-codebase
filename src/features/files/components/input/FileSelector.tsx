@@ -1,15 +1,15 @@
 import {gql, useQuery} from '@apollo/client';
 import React, {useMemo} from 'react';
-import {SelectInput} from '../../../../components/form/input/select/SelectInput';
-import {Log} from '../../../../components/Log';
+import {SelectInput, SelectOption} from '../../../../components/form/input/select/SelectInput';
 import {IAsset} from '../../../../models/asset/models';
 
-function fileToOption(file: IAsset) {
+function fileToOption(file: IAsset): SelectOption {
     return {
         title: file.name,
-        value: file.realname,
+        value: file.name,
     };
 }
+
 export function FileSelector({formKey, username}: { formKey?: string, username: string }) {
   const ALL_FILES_QUERY =
         gql`
@@ -22,21 +22,16 @@ export function FileSelector({formKey, username}: { formKey?: string, username: 
         `;
 
     const {data: query = {}} = useQuery(ALL_FILES_QUERY, {variables: {user: {username}}});
-    const files              = <><Log>{query}</Log></>
-
-    const options = useMemo(() => query.userFiles ? query.userFiles : [], [query]);
-    const map     = useMemo(() => new Map(options.map((file: any) => [file.name, file])), [options]);
-    ;
+    const result             = useMemo(() => query.userFiles ? query.userFiles : [], [query]);
+    const map                = useMemo(() => new Map(result.map((file: any) => [file.name, file])), [result]);
 
     return (
         <>
             <SelectInput
-                valueMapper={val => {
-                    return map.get(val)
-                }}
-                placeholder={'File'}
+                valueMapper={val => map.get(val)}
+                placeholder="File"
                 formKey={formKey ?? ''}
-                options={options.map(fileToOption)}
+                options={result.map(fileToOption)}
             />
         </>
     );

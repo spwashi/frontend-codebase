@@ -10,6 +10,7 @@ import {ConceptsControlPanel} from '../features/concepts/Concepts';
 import {UsersControlPanel} from './Users';
 import {ProjectsControlPanel} from '../features/projects/Projects';
 import {Bootstrap} from './Bootstrap';
+import { LoggedIn } from '../features/users/behaviors/login/State';
 
 
 const FeatureControlPanel = (() => {
@@ -29,9 +30,11 @@ function App() {
             <div className="app">
                 <ProjectsControlPanel/>
                 <UsersControlPanel/>
-                <ConceptsControlPanel/>
-                <TagsControlPanel/>
-                <FilesControlPanel/>
+                <LoggedIn>
+                    <ConceptsControlPanel/>
+                    <TagsControlPanel/>
+                    <FilesControlPanel/>
+                </LoggedIn>
             </div>
         </div>
     );

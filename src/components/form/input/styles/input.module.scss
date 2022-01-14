@@ -1,0 +1,16 @@
+.inputWrapper {
+  display: flex;
+  font-weight: bold;
+  font-family: "JetBrains Mono", monospace;
+  border: thin solid green;;
+  padding: .5rem;
+  label {
+    flex-basis: 25%;
+  }
+  label + * {
+    font-family: "JetBrains Mono", monospace;
+    width: 100%;
+    padding: .2rem;
+    margin: 0;
+  }
+}

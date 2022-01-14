@@ -23,7 +23,8 @@ export type ProjectOption = { title: string, value: string, project: IProject }
 export type ProjectFeatureStateDataProjects = { list: IProject[]; lastFetched: number | null }
 type KeyedState = {
     state: {
-        key: number
+        key: number;
+        project?: IProject
     }
 };
 export type ProjectFeatureState =
@@ -39,8 +40,10 @@ export type ConceptFeatureStateDataConcepts = { list: IConcept[]; lastFetched: n
 export type ConceptFeatureState = Feature<{ concepts: ConceptFeatureStateDataConcepts }, {}>
 
 export type TagOption = { title: string, value: string, tag: ITag }
-export type TagFeatureStateDataTags = { list: TagOption[]; lastFetched: number | null }
-export type TagFeatureState = Feature<{ tags: TagFeatureStateDataTags }, {}> & KeyedState
+export type TagFeatureStateDataTags = { list: ITag[]; lastFetched: number | null }
+export type TagFeatureState =
+    Feature<{ tags: TagFeatureStateDataTags }, {}>
+    & KeyedState
 
 export type RootState = {
     features: {

@@ -1,19 +1,12 @@
-import {gql, useQuery} from '@apollo/client';
+import {gql} from '@apollo/client';
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {selectPossibleTagsLastFetched, selectTagStateKey} from '../../../redux/selectors';
 import {ACTION_RECEIVE_ALL_TAGS} from '../../../redux/reducer';
 import {ACTION_GRAPHQL, ACTION_NOGRAPHQL} from '../../../../../redux/reducer';
-import {ITag} from '../../../../../models/tag/models';
-import {TagOption} from '../../../../../redux/state.types';
+import {useFeatureQuery} from '../../../../_util/hooks/useFeatureQuery';
 
-function tagToOption(tag: ITag): TagOption {
-    return {title: tag.title, value: tag.title, tag};
-}
 
-function fetchIsCurrent(lastFetched: number | null) {
-    return (Date.now() - (lastFetched ?? 0)) < 1000;
-}
 function useDispatchGraphqlError(error: any) {
     const dispatch = useDispatch();
 
@@ -27,8 +20,9 @@ function useDispatchGraphqlError(error: any) {
         }
     }, [error]);
 }
+
 export function AllTagsQuery() {
-  const ALL_TAGS_QUERY              =
+  const ALL_TAGS_QUERY  =
         gql`
             query AllTags {
                 allTags {
@@ -41,20 +35,18 @@ export function AllTagsQuery() {
                 }
             }
         `;
-    const {data: query = {}, error} = useQuery(ALL_TAGS_QUERY);
-    const stateKey                  = useSelector(selectTagStateKey);
-    const lastFetched               = useSelector(selectPossibleTagsLastFetched)
-    const dispatch                  = useDispatch();
+    const stateKey      = useSelector(selectTagStateKey);
+    const {data, error} = useFeatureQuery(ALL_TAGS_QUERY, {}, stateKey);
+    const lastFetched   = useSelector(selectPossibleTagsLastFetched)
+    const dispatch      = useDispatch();
 
     useDispatchGraphqlError(error);
 
     useEffect(() => {
-        const options = query.allTags ? query.allTags.map(tagToOption) : [];
-        if (fetchIsCurrent(lastFetched) && !options.length) {
-            return;
-        }
+        if (!data) return;
+        const options = data.allTags ? data.allTags : [];
         dispatch({type: ACTION_RECEIVE_ALL_TAGS, payload: options})
-    }, [query.allTags]);
+    }, [data?.allTags]);
 
-    return !fetchIsCurrent(lastFetched) ? <>Loading...</> : null;
+    return !lastFetched ? <>Loading...</> : null;
 }

@@ -6,10 +6,6 @@ import {useFeatureQuery} from '../../../../../_util/hooks/useFeatureQuery';
 import {gql} from '@apollo/client';
 import {IConcept_Complete} from '../../../../../../models/concept/hybrids';
 
-function fetchIsCurrent(lastFetched: number | null) {
-    return (Date.now() - (lastFetched ?? 0)) < 1000;
-}
-
 export function AllConceptsQuery() {
   const {data: query} =
         useFeatureQuery<{ allConcepts: IConcept_Complete[] }>(
@@ -34,9 +30,11 @@ export function AllConceptsQuery() {
     const lastFetched = useSelector(selectPossibleConceptsLastFetched);
     const dispatch    = useDispatch();
     useEffect(() => {
-        const options = query.allConcepts ? query.allConcepts : [];
-        dispatch({type: ACTION_RECEIVE_ALL_CONCEPTS, payload: options})
+        dispatch({
+                     type:    ACTION_RECEIVE_ALL_CONCEPTS,
+                     payload: query.allConcepts ? query.allConcepts : [],
+                 })
     }, [query.allConcepts]);
 
-    return !fetchIsCurrent(lastFetched) ? <>Loading...</> : null;
+    return !lastFetched ? <>Loading...</> : null;
 }

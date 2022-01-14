@@ -1,12 +1,12 @@
 import React from 'react';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
 import {mainDecorator} from '../../decorators';
-import {CreateConceptForm} from '../../../features/concepts/behaviors/create';
+import {EditConceptForm} from '../../../features/concepts/behaviors/edit';
 import {Features} from '../../../features';
 
 export default {
-    title:      'Forms/Concept/CreateConcept',
-    component:  CreateConceptForm,
+    title:      'Forms/Concept/EditConcept',
+    component:  EditConceptForm,
     decorators: [
         (Story) =>
             <React.Fragment>
@@ -15,9 +15,9 @@ export default {
             </React.Fragment>,
         mainDecorator,
     ],
-} as ComponentMeta<typeof CreateConceptForm>;
+} as ComponentMeta<typeof EditConceptForm>;
 
-const Template: ComponentStory<typeof CreateConceptForm> = (args) => <CreateConceptForm {...args}/>;
+const Template: ComponentStory<typeof EditConceptForm> = (args) => <EditConceptForm {...args}/>;
 
-export const CreateConcept = Template.bind({});
-CreateConcept.args         = {};
+export const EditConcept = Template.bind({});
+EditConcept.args         = {};

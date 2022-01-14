@@ -38,7 +38,6 @@ const formReducer                =
               switch (action.type) {
                   case ACTION_UPDATE_INDEX:
                       const {index, value} = action.payload;
-                      console.log({action})
                       return {...state, data: {...state.data, [index]: value}};
               }
               return state;

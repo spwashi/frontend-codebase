@@ -13,7 +13,6 @@ export const UserSelector = React.memo(
         const options      = useSelector(selectPossibleUsersList);
         const loggedInUser = useSelector(selectLoggedInUser);
         const context      = useContext(FormContext);
-
         useEffect(() => updateFormItem(context, formKey, loggedInUser), [loggedInUser]);
 
         const optionTitleMap =

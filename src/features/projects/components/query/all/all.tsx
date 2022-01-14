@@ -7,10 +7,6 @@ import {useFeatureQuery} from '../../../../_util/hooks/useFeatureQuery';
 import {getDomain} from '../../../../../components/form/Factory';
 
 
-function fetchIsCurrent(lastFetched: number | null) {
-    return (Date.now() - (lastFetched ?? 0)) < 1000;
-}
-
 export function AllProjectsQuery() {
   const ALL_PROJECTS_QUERY =
         gql`
@@ -29,12 +25,11 @@ export function AllProjectsQuery() {
     const lastFetched      = useSelector(selectPossibleProjectsLastFetched)
     const dispatch         = useDispatch();
     useEffect(() => {
-        const options = data.allProjects ? data.allProjects : [];
-        if (fetchIsCurrent(lastFetched) && !options.length) {
-            return;
-        }
-        dispatch({type: ACTION_RECEIVE_ALL_PROJECTS, payload: options})
+        dispatch({
+                     type:    ACTION_RECEIVE_ALL_PROJECTS,
+                     payload: data.allProjects ? data.allProjects : [],
+                 })
     }, [data.allProjects]);
 
-    return !fetchIsCurrent(lastFetched) ? <>Loading...</> : null;
+    return !lastFetched ? <>Loading...</> : null;
 }

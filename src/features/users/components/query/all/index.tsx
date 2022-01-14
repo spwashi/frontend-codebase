@@ -4,12 +4,8 @@ import {useDispatch, useSelector} from 'react-redux';
 import {selectPossibleUsersLastFetched} from '../../../redux/selectors';
 import {ACTION_RECEIVE_ALL_USERS} from '../../../redux/reducer';
 
-
-function fetchIsCurrent(lastFetched: number | null) {
-    return (Date.now() - (lastFetched ?? 0)) < 1000;
-}
 export function AllUsersQuery() {
-  const ALL_USERS_QUERY      =
+  const ALL_USERS_QUERY =
         gql`
             query AllUsers {
                 allUsers {
@@ -18,17 +14,15 @@ export function AllUsersQuery() {
                 }
             }
         `;
+
     const {data: query = {}} = useQuery(ALL_USERS_QUERY);
     const dispatch           = useDispatch();
     const lastFetched        = useSelector(selectPossibleUsersLastFetched)
-
     useEffect(() => {
-        const options = query.allUsers ? query.allUsers : [];
-        if (fetchIsCurrent(lastFetched) && !options.length) {
-            return;
-        }
-        dispatch({type: ACTION_RECEIVE_ALL_USERS, payload: options})
+        dispatch({
+                     type:    ACTION_RECEIVE_ALL_USERS,
+                     payload: query.allUsers ? query.allUsers : [],
+                 })
     }, [query.allUsers])
-
-    return !fetchIsCurrent(lastFetched) ? <>Loading...</> : null;
+    return !lastFetched ? <>Loading...</> : null;
 }

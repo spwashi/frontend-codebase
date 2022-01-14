@@ -18,6 +18,11 @@ export type SelectMutationInputData = {
 
 export function selectCreateProjectInput({title, name, description, domain}: SelectMutationInputData) {
     return {
-        project: {title, name, description, domain},
+        project: {
+            title,
+            name,
+            description,
+            domain,
+        },
     };
 }

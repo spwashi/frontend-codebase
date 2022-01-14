@@ -2,7 +2,7 @@ import React from 'react';
 import {SelectInput} from '../../../components/form/input/select/SelectInput';
 import {useConceptOptions} from '../hooks/useOptions';
 
-export function ConceptSelect({formKey}: { formKey?: string }) {
+export function ConceptSelect({formKey, value}: { formKey?: string; value?: string }) {
     const {options, optionValueMap} = useConceptOptions();
     function valueMapper(value: string[]) {
         if (Array.isArray(value)) {

@@ -1,6 +1,6 @@
-import {Input, Textarea} from './input/text/Input';
+import {Input} from './input/text/Input';
 import {UsernameInput} from '../../features/users/components/input/UsernameInput';
-import React from 'react';
+import React, {useContext} from 'react';
 import {SelectInput} from './input/select/SelectInput';
 import {FileInput} from './input/files/FileInput';
 import {TagSelect} from '../../features/tags/components/Select';
@@ -8,6 +8,9 @@ import {ProjectSelect} from '../../features/projects/components/Select';
 import {ConceptSelect} from '../../features/concepts/components/Select';
 import {FormContext} from './FormContext';
 import {FileSelector} from '../../features/files/components/input/FileSelector';
+import {Textarea} from './input/text/Textarea';
+import css from './styles/form.module.scss'
+import './styles/form.scss';
 
 export type FormConfig =
     {
@@ -17,41 +20,86 @@ export type FormConfig =
     }
 
 export type FormElementConfig =
-    | { type: 'text'; name: string; title: string; }
-    | { type: 'longtext'; name: string; title: string; }
-    | { type: 'password'; name: string; title: string; }
-    | { type: 'user'; name: string; title: string; }
-    | { type: 'project'; name: string; title: string; }
-    | { type: 'concept'; name: string; title: string; }
-    | { type: 'file'; name: string; title: string; }
-    | { type: 'fileSelect'; name: string; title: string; username: string }
-    | { type: 'tags'; name: string; title: string; }
-    | { type: 'content'; name: string; title: string; }
-    | { type: 'select'; name: string; title: string; options: { title: string, value: string }[] }
+    { name: string; title: string; value?: any; }
+    &
+    (
+        | { type: 'text'; }
+        | { type: 'longtext'; }
+        | { type: 'password'; }
+        | { type: 'user'; }
+        | { type: 'project'; }
+        | { type: 'concept'; }
+        | { type: 'file'; }
+        | { type: 'fileSelect'; username: string }
+        | { type: 'tags'; }
+        | { type: 'content'; }
+        | { type: 'select'; options: { title: string, value: string }[] }
+        )
 
 export function getDomain() {
     return window?.location?.host ?? '';
 }
 export function FormElementFactory({item: config}: { item: FormElementConfig }) {
-    const {title, type, name} = config;
+    const form                       = useContext(FormContext);
+    const {title, type, name, value} = config;
     switch (name) {
         case 'domain':
-            return <Input formKey={name} value={getDomain()} disabled placeholder={title}/>
+            return (
+                <Input
+                    formKey={name}
+                    value={getDomain()}
+                    disabled
+                    placeholder={title}
+                />
+            )
     }
     switch (type) {
         case 'password':
         case 'text':
-            return <Input formKey={name} type={type} placeholder={title}/>
+            return (
+                <Input
+                    value={value}
+                    formKey={name}
+                    type={type}
+                    placeholder={title}
+                />
+            )
         case 'concept':
-            return <ConceptSelect formKey={name}/>
+            return (
+                <ConceptSelect
+                    formKey={name}
+                />
+            )
         case 'longtext':
-            return <Textarea formKey={name} type={type} placeholder={title}/>
+            return (
+                <Textarea
+                    value={value}
+                    formKey={name}
+                    type={type}
+                    placeholder={title}
+                />
+            )
         case 'select':
-            return <SelectInput formKey={name} placeholder={title} options={config.options}/>;
+            return (
+                <SelectInput
+                    formKey={name}
+                    placeholder={title}
+                    options={config.options}
+                    value={value}
+                />
+            );
         case 'tags':
-            return <TagSelect formKey={name}/>
+            return (
+                <TagSelect
+                    formKey={name}
+                />
+            )
         case 'project':
-            return <ProjectSelect formKey={name}/>
+            return (
+                <ProjectSelect
+                    formKey={name}
+                />
+            )
         case 'content':
             return (
                 <FormContext.Consumer>{
@@ -59,11 +107,39 @@ export function FormElementFactory({item: config}: { item: FormElementConfig }) 
                         const {mimeType} = data
                         switch (mimeType) {
                             case 'text/plain':
-                                return <Input formKey={name} placeholder={title}/>
+                                return (
+                                    <Input
+                                        formKey={name}
+                                        placeholder={title}
+                                    />
+                                )
                             case 'text/spw':
-                                return <Textarea formKey={name} placeholder={title}/>
+                                return (
+                                    <Input
+                                        formKey={name}
+                                        placeholder={title}
+                                        type="spw"
+                                    />
+                                )
+                            case 'text/rich':
+                                return (
+                                    <Input
+                                        formKey={name}
+                                        placeholder={title}
+                                        type="rich"
+                                    />
+                                )
+                            case 'text/long':
+                                return (
+                                    <Textarea
+                                        formKey={name}
+                                        placeholder={title}
+                                    />
+                                )
+                            default:
+                                break;
                         }
-                        return 'Cannot render component'
+                        return <div className={css.error}>[please set the content type]</div>
                     }
                 }</FormContext.Consumer>
 

@@ -1,12 +1,14 @@
 import React, {useContext, useMemo} from 'react';
 import {useFormItemController} from '../../hooks/useFormItemController';
 import {FormContext} from '../../FormContext';
-import {Log} from '../../../Log';
-
-type Option<T extends any = any> =
-    { title: string, value: T };
+import css from '../styles/input.module.scss'
+export type SelectOption<T extends any = any> =
+    {
+        title: string,
+        value: T
+    };
 type Params<T extends any = any> =
-    { formKey?: string, options: Option<T>[], valueMapper?: (v: any) => T }
+    { formKey?: string, options: SelectOption<T>[], valueMapper?: (v: any) => T }
     & React.DetailedHTMLProps<React.SelectHTMLAttributes<HTMLSelectElement>, HTMLSelectElement>;
 
 export function SelectInput({formKey, name, options, multiple, valueMapper, ...rest}: Params) {
@@ -14,7 +16,7 @@ export function SelectInput({formKey, name, options, multiple, valueMapper, ...r
     const [localValue, update] = useFormItemController(form, formKey ?? '', valueMapper);
     const id                   = useMemo(() => 'input--' + Math.random(), []);
     return (
-        <div className="input-wrapper">
+        <div className={css.inputWrapper}>
             <label htmlFor={id}>{rest.title ?? rest.placeholder}</label>
             <select {...rest} id={id} name={name} value={multiple ? localValue ?? [] : localValue ?? ''}
                     multiple={multiple} onChange={e => {
