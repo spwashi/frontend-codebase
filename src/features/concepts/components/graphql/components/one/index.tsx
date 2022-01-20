@@ -1,8 +1,8 @@
 import React from 'react';
 import {IConceptIdentifyingPartial} from '../../../../../../models/concept/models';
 import {ConceptContextProvider} from './context/Provider';
-import {OneConceptDisplay} from './components/DisplayOne';
-import {OneConceptQuery} from './components/QueryOne';
+import {ConceptContextDisplay} from './components/DisplayOne';
+import {OneConceptQuery} from './components/FindOne';
 
 /**
  *
@@ -14,7 +14,7 @@ export function Concept({title}: IConceptIdentifyingPartial) {
     return (
         <ConceptContextProvider>
             <OneConceptQuery title={title}/>
-            <OneConceptDisplay/>
+            <ConceptContextDisplay/>
         </ConceptContextProvider>
     )
 }

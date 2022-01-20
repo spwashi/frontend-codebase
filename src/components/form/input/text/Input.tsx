@@ -9,6 +9,37 @@ type InputParams =
     { formKey?: string }
     & React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
 
+export function Value({
+                          formKey,
+                          value,
+                          title,
+                          children,
+                          placeholder,
+                      }: {
+    formKey: string;
+    value: any;
+    children?: any;
+    title?: string;
+    placeholder?: string
+}) {
+    const form                 = useContext(FormContext);
+    const [localValue, update] = useFormItemController(form, formKey ?? null);
+    useEffect(() => {
+        if (localValue !== value)
+            update(value);
+    }, [update, value, localValue]);
+    const id = useMemo(() => `input--${Math.random()}`.replace('.', ''), []);
+
+    return <>
+        <div className={styles.inputWrapper}>
+            <label htmlFor={id}>{title ?? placeholder}</label>
+            <div className="value">
+                {children}
+            </div>
+        </div>
+    </>
+}
+
 export function Input({formKey, name, value, ...rest}: InputParams) {
     const form                          = useContext(FormContext);
     const [localValue, update]          = useFormItemController(form, formKey ?? null);
@@ -23,15 +54,16 @@ export function Input({formKey, name, value, ...rest}: InputParams) {
                   }
                   return EditorState.createEmpty();
               });
+
     useEffect(() => {
-        update(value);
+        rest.disabled && update(value);
         try {
             const prev = JSON.parse('' + (value ?? ''));
             console.log({prev})
         } catch (e) {
             console.log('val', value)
         }
-    }, [value]);
+    }, [update, value]);
 
 
     useEffect(() => {

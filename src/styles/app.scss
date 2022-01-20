@@ -16,6 +16,9 @@ html, body, #root {
     border: thin solid forestgreen;
   }
 }
+  pre {
+    max-width: 100px;
+  }
 
 .column {display: flex; flex-flow: column;}
 
@@ -107,4 +110,10 @@ details {
   left: -5%;
   font-size: 15px;
   color: red;
+}
+
+/** ---------------------------------------------- */
+
+nav {
+  border: thick solid green;
 }

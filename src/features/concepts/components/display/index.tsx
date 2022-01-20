@@ -4,7 +4,7 @@ import {Concept} from '../graphql/components/one';
 import {ConceptSelect} from '../Select';
 import {FeatureRequirement} from '../../../_util';
 
-export function ConceptDisplay({}) {
+export function ConceptDisplayForm({}) {
     const [state, setState] = useState<any | null>();
     const title             = state?.data?.concept?.title;
     return (

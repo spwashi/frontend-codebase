@@ -1,5 +1,5 @@
 import {combineReducers} from 'redux';
-import {TagFeatureState, TagFeatureStateDataTags} from '../../../redux/state.types';
+import {TagFeatureState, TagFeatureStateDataTags} from './types';
 
 export const ACTION_RECEIVE_ALL_TAGS = 'RECEIVE_ALL_TAGS';
 export const ACTION_TAG_CREATED      = 'TAG_CREATED';

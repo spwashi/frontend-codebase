@@ -1,6 +1,7 @@
 import {combineReducers} from 'redux';
-import {RootState, UserFeatureSignupFeatureState} from '../../../../../redux/state.types';
 import {selectUserFeature} from '../../../redux/selectors';
+import {RootState} from '../../../../../redux/rootState';
+import {UserFeatureSignupFeatureState} from '../../../redux/types';
 
 
 export const selectUserSignupFeature = (state: RootState) => selectUserFeature(state).features.signup;

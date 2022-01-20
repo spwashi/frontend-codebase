@@ -1,17 +1,19 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {selectPossibleConceptsLastFetched} from '../../../../redux/selectors';
-import {ACTION_RECEIVE_ALL_CONCEPTS} from '../../../../redux/reducer';
-import {useFeatureQuery} from '../../../../../_util/hooks/useFeatureQuery';
+import {selectConceptStateKey, selectPossibleConceptsLastFetched} from '../../../../../redux/selectors';
+import {ACTION_RECEIVE_ALL_CONCEPTS} from '../../../../../redux/reducer';
+import {useFeatureQuery} from '../../../../../../_util/hooks/useFeatureQuery';
 import {gql} from '@apollo/client';
-import {IConcept_Complete} from '../../../../../../models/concept/hybrids';
+import {IConcept_Complete} from '../../../../../../../models/concept/hybrids';
 
 export function AllConceptsQuery() {
+    const stateKey    = useSelector(selectConceptStateKey);
   const {data: query} =
         useFeatureQuery<{ allConcepts: IConcept_Complete[] }>(
             gql`
                 query AllConcepts {
                     allConcepts {
+                        id
                         title
                         mimeType
                         src
@@ -24,9 +26,8 @@ export function AllConceptsQuery() {
                 }
             `,
             {},
-            0,
+            stateKey,
         );
-
     const lastFetched = useSelector(selectPossibleConceptsLastFetched);
     const dispatch    = useDispatch();
     useEffect(() => {

@@ -1,10 +1,14 @@
-import {RootState, TagOption} from '../../../redux/state.types';
 import {ITag} from '../../../models/tag/models';
-import {SelectOption} from '../../../components/form/input/select/SelectInput';
+import {RootState} from '../../../redux/rootState';
+import {TagOption} from './types';
 
 
-function tagToOption(tag: ITag): SelectOption & TagOption {
-    return {title: tag.title, value: tag.title, tag};
+function tagToOption(tag: ITag): TagOption {
+    return {
+        title:   tag.title,
+        value:   tag.title,
+        payload: tag,
+    };
 }
 
 export const selectTagFeature              = (state: RootState) => state.features.tag;

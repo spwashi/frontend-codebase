@@ -1,7 +1,7 @@
-import {Input} from './input/text/Input';
+import {Input, Value} from './input/text/Input';
 import {UsernameInput} from '../../features/users/components/input/UsernameInput';
-import React, {useContext} from 'react';
-import {SelectInput} from './input/select/SelectInput';
+import React from 'react';
+import {SelectInput, SelectOption} from './input/select/SelectInput';
 import {FileInput} from './input/files/FileInput';
 import {TagSelect} from '../../features/tags/components/Select';
 import {ProjectSelect} from '../../features/projects/components/Select';
@@ -19,43 +19,61 @@ export type FormConfig =
         items: FormElementConfig[]
     }
 
+type ProjectSelectInputConfig = { type: 'project'; ignoreActive?: boolean };
+type UserSelectInputConfig = { type: 'user'; ignoreLogin?: boolean };
+type PasswordInputConfig = { type: 'password'; };
+type LongtextInputConfig = { type: 'longtext'; };
+type TextInputConfig = { type: 'text'; };
+type ValueInputConfig = { type: 'value'; };
+type ConceptInputConfig = { type: 'concept'; };
+type FileInputConfig = { type: 'file'; };
+type FileSelectInputConfig = { type: 'fileSelect'; username: string };
+type TagInputConfig = { type: 'tags'; };
+type ContentInputConfig = { type: 'content'; };
+type SelectInputConfig = { type: 'select'; options: SelectOption[] };
+
 export type FormElementConfig =
     { name: string; title: string; value?: any; }
     &
-    (
-        | { type: 'text'; }
-        | { type: 'longtext'; }
-        | { type: 'password'; }
-        | { type: 'user'; }
-        | { type: 'project'; }
-        | { type: 'concept'; }
-        | { type: 'file'; }
-        | { type: 'fileSelect'; username: string }
-        | { type: 'tags'; }
-        | { type: 'content'; }
-        | { type: 'select'; options: { title: string, value: string }[] }
-        )
+    (| ValueInputConfig
+     | TextInputConfig
+     | LongtextInputConfig
+     | PasswordInputConfig
+     | UserSelectInputConfig
+     | ProjectSelectInputConfig
+     | ConceptInputConfig
+     | FileInputConfig
+     | FileSelectInputConfig
+     | TagInputConfig
+     | ContentInputConfig
+     | SelectInputConfig)
 
+/**
+ *
+ */
 export function getDomain() {
     return window?.location?.host ?? '';
 }
+
+/**
+ *
+ * @param config
+ * @constructor
+ */
 export function FormElementFactory({item: config}: { item: FormElementConfig }) {
-    const form                       = useContext(FormContext);
-    const {title, type, name, value} = config;
+    const {title, type, name, value, ...rest} = config;
+
     switch (name) {
         case 'domain':
+            const domain = getDomain();
             return (
-                <Input
-                    formKey={name}
-                    value={getDomain()}
-                    disabled
-                    placeholder={title}
-                />
+                <Value formKey={name} value={domain} placeholder={title}>{domain}</Value>
             )
     }
+
     switch (type) {
         case 'password':
-        case 'text':
+        case 'text': {
             return (
                 <Input
                     value={value}
@@ -63,14 +81,21 @@ export function FormElementFactory({item: config}: { item: FormElementConfig }) 
                     type={type}
                     placeholder={title}
                 />
-            )
-        case 'concept':
+            );
+        }
+        case 'value': {
+            return (
+                <Value formKey={name} value={value} placeholder={title}>{value}</Value>
+            );
+        }
+        case 'concept': {
             return (
                 <ConceptSelect
                     formKey={name}
                 />
             )
-        case 'longtext':
+        }
+        case 'longtext': {
             return (
                 <Textarea
                     value={value}
@@ -79,7 +104,8 @@ export function FormElementFactory({item: config}: { item: FormElementConfig }) 
                     placeholder={title}
                 />
             )
-        case 'select':
+        }
+        case 'select': {
             return (
                 <SelectInput
                     formKey={name}
@@ -88,18 +114,24 @@ export function FormElementFactory({item: config}: { item: FormElementConfig }) 
                     value={value}
                 />
             );
-        case 'tags':
+
+        }
+        case 'tags': {
             return (
                 <TagSelect
                     formKey={name}
                 />
             )
-        case 'project':
+        }
+        case 'project': {
+            const config = rest as ProjectSelectInputConfig;
             return (
                 <ProjectSelect
                     formKey={name}
+                    ignore={config.ignoreActive}
                 />
             )
+        }
         case 'content':
             return (
                 <FormContext.Consumer>{
@@ -144,16 +176,24 @@ export function FormElementFactory({item: config}: { item: FormElementConfig }) 
                 }</FormContext.Consumer>
 
             )
-        case 'fileSelect':
+        case 'fileSelect': {
             const {username} = config;
             return <FileSelector formKey="file" username={username}/>;
-        case 'file':
+        }
+        case 'file': {
             return <FileInput formKey={name} multiple placeholder={title}/>;
-        case 'user':
-            return <UsernameInput doSelect/>
+        }
+        case 'user': {
+            return <UsernameInput doSelect ignoreLogin={config.ignoreLogin}/>
+        }
     }
 }
 
+/**
+ *
+ * @param items
+ * @constructor
+ */
 export function FormBody({items}: { items: FormElementConfig[] }) {
     return <>{items.map(item => <FormElementFactory item={item} key={item.name}/>)}</>
 }

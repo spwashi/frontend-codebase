@@ -1,11 +1,12 @@
-import {ProjectOption, RootState} from '../../../redux/state.types';
 import {IProject} from '../../../models/project/models';
 import {SelectOption} from '../../../components/form/input/select/SelectInput';
+import {RootState} from '../../../redux/rootState';
+import {ProjectOption} from './types';
 
 const projectToOption                          = (project: IProject): SelectOption & ProjectOption => ({
-    title: project.title,
-    value: project.title,
-    project,
+    title:   project.title,
+    value:   project.title,
+    payload: project,
 });
 export const selectProjectFeature              = (state: RootState) => state.features.project;
 export const selectPossibleProjectsList        = (state: RootState) => selectProjectFeature(state).data.projects.list.map(projectToOption);

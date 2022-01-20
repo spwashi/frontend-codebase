@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {createRef} from 'react';
+import React, {createRef} from 'react';
 import {camelCase, startCase} from 'lodash';
 
 const WidgetWrapper = styled.div`

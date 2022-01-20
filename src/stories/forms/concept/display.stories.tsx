@@ -2,12 +2,12 @@ import React from 'react';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
 import {mainDecorator} from '../../decorators';
 import {Features} from '../../../features';
-import {ConceptDisplay} from '../../../features/concepts/components/display';
+import {ConceptDisplayForm} from '../../../features/concepts/components/display';
 
 
 export default {
     title:      'Forms/Concept/DisplayConcept',
-    component:  ConceptDisplay,
+    component:  ConceptDisplayForm,
     decorators: [
         (Story) => {
             return (
@@ -19,9 +19,9 @@ export default {
         },
         mainDecorator,
     ],
-} as ComponentMeta<typeof ConceptDisplay>;
+} as ComponentMeta<typeof ConceptDisplayForm>;
 
-const Template: ComponentStory<typeof ConceptDisplay> = (args) => <ConceptDisplay {...args}/>;
+const Template: ComponentStory<typeof ConceptDisplayForm> = (args) => <ConceptDisplayForm {...args}/>;
 
 export const DisplayConcept = Template.bind({});
 DisplayConcept.args         = {};

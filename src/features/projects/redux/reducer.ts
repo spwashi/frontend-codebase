@@ -1,5 +1,5 @@
 import {combineReducers} from 'redux';
-import {ProjectFeatureState, ProjectFeatureStateDataProjects} from '../../../redux/state.types';
+import {ProjectFeatureState, ProjectFeatureStateDataProjects} from './types';
 
 export const ACTION_RECEIVE_ALL_PROJECTS = 'RECEIVE_ALL_PROJECTS';
 export const ACTION_PROJECT_CREATED      = 'PROJECT_CREATED';

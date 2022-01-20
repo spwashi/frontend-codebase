@@ -28,16 +28,17 @@ export function useFormContextProviderState() {
 
 type ProviderProps = {
     children: any;
-    onSubmit: (data: any) => void;
+    onSubmit?: (data: any) => void;
     onChange?: (data: any) => void;
 };
 
 export const ACTION_UPDATE_INDEX = 'update';
 const formReducer                =
-          (state = {data: {}}, action: { type: string, payload: any }) => {
+          (state = {data: {} as any}, action: { type: string, payload: any }) => {
               switch (action.type) {
                   case ACTION_UPDATE_INDEX:
                       const {index, value} = action.payload;
+                      if (value === state.data?.[index]) return state;
                       return {...state, data: {...state.data, [index]: value}};
               }
               return state;
@@ -53,14 +54,14 @@ export const FormContextProvider = ({children, onSubmit, onChange}: ProviderProp
     const handleSubmit      = useCallback((event) => {
         event.preventDefault && event.preventDefault();
         event.stopPropagation && event.stopPropagation();
-        onSubmit(state)
+        onSubmit?.(state)
     }, [onSubmit, state]);
-    const value             = useMemo(() => ({data: state.data, dispatch, key: 0}), [state, dispatch]);
+    const value             = useMemo(() => ({data: state.data, dispatch, key: 0}), [state.data, dispatch]);
     return (
         <FormContext.Provider value={value}>
             <form onSubmit={handleSubmit}>
                 {children}
-                <button type="submit">submit</button>
+                {onSubmit && <button type="submit">submit</button>}
             </form>
         </FormContext.Provider>
     )

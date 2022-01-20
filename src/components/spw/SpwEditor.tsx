@@ -23,30 +23,28 @@ function SpwEditor(props: EditorProps) {
 
 
     return (
-        <React.Fragment>
-            <div>
+        <div style={{maxWidth: 500 + 'px'}}>
             <span>
                 <button type="button" onClick={parse}>Parse</button>
             </span>
-                {
-                    language && (
-                        <MonacoEditor
-                            height={300}
-                            {...props}
-                            options={
-                                {
-                                    minimap: {enabled: false},
-                                    ...props.options ?? {},
-                                }
+            {
+                language && (
+                    <MonacoEditor
+                        height={300}
+                        {...props}
+                        options={
+                            {
+                                minimap: {enabled: false},
+                                ...props.options ?? {},
                             }
-                            language={language}
-                            theme={theme}
-                        />
-                    )
-                }
-                <Log error={!!parseError}>{parseError ?? parsed}</Log>
-            </div>
-        </React.Fragment>
+                        }
+                        language={language}
+                        theme={theme}
+                    />
+                )
+            }
+            <Log error={!!parseError}>{parseError ?? parsed}</Log>
+        </div>
     );
 }
 

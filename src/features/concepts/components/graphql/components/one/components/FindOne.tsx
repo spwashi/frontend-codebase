@@ -2,6 +2,8 @@ import {IConcept, IConceptIdentifyingPartial} from '../../../../../../../models/
 import {gql, useQuery} from '@apollo/client';
 import React, {useContext, useEffect} from 'react';
 import {ConceptContext} from '../context/context';
+import {useDispatch} from 'react-redux';
+import {ACTION_RECEIVE_ONE_CONCEPT} from '../../../../../redux/reducer';
 
 const CONCEPT_QUERY = gql`
     query Concept($title: String) {
@@ -30,12 +32,16 @@ export function OneConceptQuery({title}: IConceptIdentifyingPartial) {
     const {setConcept} = context;
 
     const {data: query} = useQuery(CONCEPT_QUERY, {variables: {title}});
-    const {concept}     = query ?? {};
+
+    const dispatch = useDispatch();
+
+    const {concept} = query ?? {};
 
     useEffect(() => {
-        if (concept && setConcept) {
-            setConcept(concept as IConcept);
-        }
+        if (!(concept && setConcept)) return;
+
+        dispatch({type: ACTION_RECEIVE_ONE_CONCEPT, payload: concept})
+        setConcept(concept as IConcept);
     }, [concept, setConcept]);
 
     return <></>

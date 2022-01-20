@@ -8,6 +8,7 @@ import React from 'react';
 import {useSelector} from 'react-redux';
 import {selectPossibleUsersLastFetched, selectPossibleUsersList} from '../features/users/redux/selectors';
 import {AllUsersQuery} from '../features/users/components/query/all';
+import {ProjectFeatures} from '../features/projects/ProjectFeatures';
 
 function UserLoginFeature() {
     const lastFetched = useSelector(selectPossibleUsersLastFetched)
@@ -30,7 +31,8 @@ UserFeatures.dependencies = [
 export function UsersControlPanel() {
     return <>
         {/*Users*/}
-        <UserFeatures />
+        <UserFeatures/>
+        <ProjectFeatures/>
         <FeatureRequirement name="users">
             <section>
                 <FeatureRequirement name="users.login">
@@ -44,6 +46,9 @@ export function UsersControlPanel() {
                 </FeatureRequirement>
                 <FeatureRequirement name="users.signup">
                     <NotLoggedIn>
+                        <LoggedIn>
+                            sdadsd
+                        </LoggedIn>
                         <SignupForm/>
                     </NotLoggedIn>
                 </FeatureRequirement>

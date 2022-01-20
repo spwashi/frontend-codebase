@@ -1,31 +1,35 @@
-import React, {useContext, useEffect} from 'react';
-import {SelectInput} from '../../../components/form/input/select/SelectInput';
+import React, {useContext, useEffect, useMemo} from 'react';
+import {SelectInput, SelectOption} from '../../../components/form/input/select/SelectInput';
 import {useSelector} from 'react-redux';
 import {FormContext} from '../../../components/form/FormContext';
 import {updateFormItem} from '../../../components/form/hooks/useFormItemController';
 import {selectPossibleUsersList} from '../redux/selectors';
-import {selectLoggedInUser, selectLoggedInUserName} from '../behaviors/login/redux/reducer';
+import {selectLoggedInUser} from '../behaviors/login/redux/reducer';
 import {AllUsersQuery} from './query/all';
-import {Input} from '../../../components/form/input/text/Input';
+import {IUser} from '../../../models/user/models';
+import {Value} from '../../../components/form/input/text/Input';
+
+
+export const getUserSelectorUsername = (data?: string | IUser) => {
+    return typeof data === 'string' ? data : data?.username;
+}
 
 export const UserSelector = React.memo(
-    ({formKey, ignoreLogin}: { formKey: string; ignoreLogin?: boolean }) => {
-        const options      = useSelector(selectPossibleUsersList);
+    ({formKey, ignoreLogin, username}: { username?: string; formKey: string; ignoreLogin?: boolean }) => {
+        let options: SelectOption[];
+
         const loggedInUser = useSelector(selectLoggedInUser);
         const context      = useContext(FormContext);
-        useEffect(() => updateFormItem(context, formKey, loggedInUser), [loggedInUser]);
+        options            = useSelector(selectPossibleUsersList);
+        const actual       = getUserSelectorUsername(username ?? loggedInUser ?? undefined);
 
-        const optionTitleMap =
-                  new Map(
-                      options.map(
-                          ({title, value, user}) => {
-                              return [title, user]
-                          },
-                      ),
-                  );
+        useEffect(() => updateFormItem(context, formKey, username ?? loggedInUser), [loggedInUser, username]);
+        const user = useMemo(() => ({username: actual}), [actual]);
 
-        if (loggedInUser && !ignoreLogin) {
-            return <Input value={loggedInUser.username} disabled title="User"/>;
+        if (!ignoreLogin) {
+            options = options.filter(({payload}) => payload.username === actual)
+            if (!(loggedInUser || username)) return <>No User Logged In</>
+            return <Value value={user} formKey={formKey} placeholder="User">{actual}</Value>
         }
 
         return (
@@ -34,7 +38,7 @@ export const UserSelector = React.memo(
                     !options.length
                     ? <AllUsersQuery/>
                     : <SelectInput
-                        valueMapper={value => optionTitleMap.get(value)}
+                        value={actual}
                         placeholder="User"
                         formKey={formKey}
                         options={options}

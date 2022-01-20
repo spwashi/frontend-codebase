@@ -1,5 +1,5 @@
 import {combineReducers} from 'redux';
-import {FileFeatureState, FileFeatureStateDataFiles} from '../../../redux/state.types';
+import {FileFeatureState, FileFeatureStateDataFiles} from './types';
 
 export const fileReducer =
                  combineReducers<FileFeatureState>(

@@ -1,6 +1,7 @@
-import {RootState, UserFeatureLoginFeatureState} from '../../../../../redux/state.types';
 import {selectUserFeature} from '../../../redux/selectors';
 import {combineReducers} from 'redux';
+import {RootState} from '../../../../../redux/rootState';
+import {UserFeatureLoginFeatureState} from '../../../redux/types';
 
 export const ACTION_RECEIVE_LOGIN = 'RECEIVE_LOGIN';
 export const ACTION_LOGOUT        = 'LOGOUT';

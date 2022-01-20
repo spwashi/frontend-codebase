@@ -1,9 +1,13 @@
-import {RootState, UserOption} from '../../../redux/state.types';
 import {IUser} from '../../../models/user/models';
-import {SelectOption} from '../../../components/form/input/select/SelectInput';
+import {RootState} from '../../../redux/rootState';
+import {UserOption} from './types';
 
-function userToOption(user: IUser): SelectOption & UserOption {
-    return {title: user.name, value: user.username, user};
+function userToOption(user: IUser): UserOption {
+    return {
+        title:   user.username,
+        value:   user.username,
+        payload: user,
+    };
 }
 
 

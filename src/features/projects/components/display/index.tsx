@@ -20,7 +20,6 @@ export function ProjectDisplay({}) {
             <FormContextProvider onSubmit={setState}>
                 <ProjectSelect formKey="project"/>
             </FormContextProvider>
-            {title && <Project name={title}/>}
         </section>
     )
 }

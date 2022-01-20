@@ -12,7 +12,9 @@ export function useFormItemController<T = any>(
     const [localValue, setLocalValue] = useState<T | null>(null);
     const update                      =
               useCallback((input: T) => {
-                  formKey && updateFormItem(form, formKey, valueMapper(input));
+                  let trueVal = valueMapper(input);
+                  console.log(trueVal, input)
+                  formKey && updateFormItem(form, formKey, trueVal);
                   setLocalValue(input);
               }, [form, formKey, valueMapper]);
     return [localValue, update] as [T | null, (t: T) => void];

@@ -3,10 +3,11 @@ import React, {useMemo} from 'react';
 import {SelectInput, SelectOption} from '../../../../components/form/input/select/SelectInput';
 import {IAsset} from '../../../../models/asset/models';
 
-function fileToOption(file: IAsset): SelectOption {
+function fileToOption(file: IAsset): SelectOption<IAsset> {
     return {
-        title: file.name,
-        value: file.name,
+        title:   file.name,
+        value:   file.name,
+        payload: file,
     };
 }
 
@@ -22,16 +23,14 @@ export function FileSelector({formKey, username}: { formKey?: string, username: 
         `;
 
     const {data: query = {}} = useQuery(ALL_FILES_QUERY, {variables: {user: {username}}});
-    const result             = useMemo(() => query.userFiles ? query.userFiles : [], [query]);
-    const map                = useMemo(() => new Map(result.map((file: any) => [file.name, file])), [result]);
+    const result             = useMemo(() => query.userFiles ? query.userFiles.map(fileToOption) : [], [query]);
 
     return (
         <>
             <SelectInput
-                valueMapper={val => map.get(val)}
                 placeholder="File"
                 formKey={formKey ?? ''}
-                options={result.map(fileToOption)}
+                options={result}
             />
         </>
     );

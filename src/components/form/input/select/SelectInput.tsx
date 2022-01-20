@@ -1,48 +1,118 @@
-import React, {useContext, useMemo} from 'react';
+import React, {ChangeEvent, useCallback, useContext, useEffect, useMemo} from 'react';
 import {useFormItemController} from '../../hooks/useFormItemController';
 import {FormContext} from '../../FormContext';
 import css from '../styles/input.module.scss'
+import {Log} from '../../../Log';
+
 export type SelectOption<T extends any = any> =
     {
-        title: string,
-        value: T
+        title: string;
+        value: string;
+        payload: T;
     };
+
 type Params<T extends any = any> =
-    { formKey?: string, options: SelectOption<T>[], valueMapper?: (v: any) => T }
+    {
+        formKey?: string;
+        type?: string;
+        options: SelectOption<T>[];
+    }
     & React.DetailedHTMLProps<React.SelectHTMLAttributes<HTMLSelectElement>, HTMLSelectElement>;
 
-export function SelectInput({formKey, name, options, multiple, valueMapper, ...rest}: Params) {
-    const form                 = useContext(FormContext);
-    const [localValue, update] = useFormItemController(form, formKey ?? '', valueMapper);
+/**
+ *
+ * @param options
+ * @param multiple
+ * @constructor
+ */
+function Options({options, multiple}: { multiple: boolean, options: SelectOption[] }) {
+    return <>
+        <option value="">Select {multiple ? 'multiple' : 'one'}...</option>
+        {
+
+            options.map((option, index) => {
+                if (typeof option === 'string') {
+                    return <option key={option}>{option}</option>;
+                }
+
+                return (
+                    <option key={option.title + index} value={option.value}>
+                        {option.title}
+                    </option>
+                )
+            })
+        }
+    </>;
+}
+
+function useOnChangeCallback(multiple: undefined | boolean, setValues: (t: any) => void) {
+    return useCallback(
+        (e: ChangeEvent<HTMLSelectElement>) => {
+            if (!multiple) {
+                return setValues((e.target.value));
+            }
+            const options = e.target.options;
+            const value   = [];
+            let i         = 0;
+            for (; i < options.length; i++) {
+                if (options[i].selected) {
+                    value.push((options[i].value));
+                }
+            }
+            setValues(value);
+        },
+        [multiple, setValues],
+    );
+    ;
+}
+/**
+ *
+ * @param name
+ * @param formKey
+ * @param options
+ * @param multiple
+ * @param rest
+ * @constructor
+ */
+export function SelectInput(
+    {
+        name,
+        formKey,
+        options,
+        multiple,
+        type,
+        ...rest
+    }: Params,
+) {
+    const form     = useContext(FormContext);
+    const valueMap = useMemo(() => new Map(options.map(option => [
+        option.value, option.payload,
+    ])), [options]);
+console.log(valueMap)
+    const [localValue, update] = useFormItemController(form, formKey ?? '', v => Array.isArray(v) ? v.map(v => valueMap.get(v)): valueMap.get(v));
     const id                   = useMemo(() => 'input--' + Math.random(), []);
+    const value                = multiple ? localValue ?? [] : localValue ?? '';
+    const onChange             = useOnChangeCallback(multiple, update);
+
+    useEffect(() => { rest.value && update(rest.value); }, [rest.value])
+
+
     return (
         <div className={css.inputWrapper}>
             <label htmlFor={id}>{rest.title ?? rest.placeholder}</label>
-            <select {...rest} id={id} name={name} value={multiple ? localValue ?? [] : localValue ?? ''}
-                    multiple={multiple} onChange={e => {
-                if (!multiple) {
-                    return update(e.target.value);
-                }
-                const options = e.target.options;
-                const value   = [];
-                let i         = 0;
-                for (; i < options.length; i++) {
-                    if (options[i].selected) {
-                        value.push(options[i].value);
-                    }
-                }
-                update(value);
-
-            }}>
-                <option value="">Select One...</option>
-                {
-                    options.map((option, index) => {
-                        if (typeof option === 'string') return <option key={option}>{option}</option>;
-                        return (
-                            <option key={option.title + index}>{option.title}</option>
-                        )
-                    })
-                }</select>
+            <select
+                {...rest}
+                id={id}
+                name={name}
+                value={value}
+                multiple={multiple}
+                onChange={onChange}
+            >
+                <Options
+                    options={options}
+                    multiple={!!multiple}
+                />
+            </select>
         </div>
     );
 }

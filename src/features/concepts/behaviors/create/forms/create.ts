@@ -1,5 +1,6 @@
 import {IUser} from '../../../../../models/user/models';
 import {FormConfig} from '../../../../../components/form/Factory';
+import {mimeOptions} from '../../edit/forms/edit';
 
 export type SelectMutationInputData = {
     username: string;
@@ -8,8 +9,6 @@ export type SelectMutationInputData = {
     src: string;
     mimeType: string;
 }
-
-export const mimeOptions = ['text/plain', 'text/spw', 'text/rich'].map(title => ({title, value: title}));
 
 
 export const form__createConcept: FormConfig =

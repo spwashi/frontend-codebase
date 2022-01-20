@@ -1,6 +1,7 @@
 import {IUser} from '../../../../../models/user/models';
 import {FormConfig} from '../../../../../components/form/Factory';
 import {IConcept} from '../../../../../models/concept/models';
+import {SelectOption} from '../../../../../components/form/input/select/SelectInput';
 
 export type SelectMutationInputData = {
     user: IUser;
@@ -10,7 +11,11 @@ export type SelectMutationInputData = {
     mimeType: string;
 }
 
-export const mimeOptions = ['text/plain', 'text/spw', 'text/rich'].map(title => ({title, value: title}));
+export const mimeOptions = ['text/plain', 'text/spw', 'text/rich'].map(title => ({
+    title,
+    value:   title,
+    payload: title,
+})) as SelectOption[];
 
 
 export const form__editConcept: FormConfig =
@@ -27,9 +32,9 @@ export const form__editConcept: FormConfig =
                                  type:  'user',
                              },
                              {
-                                 title: 'Concept',
-                                 name:  'concept',
-                                 type:  'concept',
+                                 title: 'ID',
+                                 name:  'id',
+                                 type:  'value',
                              },
                              {
                                  title:   'Category',

@@ -3,6 +3,7 @@ import {BACKEND_URL} from '../../../../../../constants';
 import {FormConfig} from '../../../../../../components/form/Factory';
 import {StandardForm} from '../../../../../../components/form/Form';
 import {useJwt} from '../../../../../../util/jwt';
+import {LoggedIn} from '../../../../../users/behaviors/login/State';
 
 
 interface SubmissionCallbackParams {
@@ -63,13 +64,13 @@ export function UploadFileForm({}) {
 
     if (!BACKEND_URL) return null;
     return (
-        <React.Fragment>
+        <LoggedIn>
             <StandardForm form={form__uploadFile} onSubmit={onSubmit}/>
             {
                 out
                 ? <pre>{JSON.stringify(out, null, 3)}</pre>
                 : null
             }
-        </React.Fragment>
+        </LoggedIn>
     );
 }

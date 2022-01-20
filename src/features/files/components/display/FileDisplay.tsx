@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {FormContextProvider} from '../../../../components/form/FormContext';
 import {FileQuery} from '../graphql/queries/FileQuery';
-import {UserSelector} from '../../../users/components/UserSelector';
+import {getUserSelectorUsername, UserSelector} from '../../../users/components/UserSelector';
 import {IUser} from '../../../../models/user/models';
 import {StandardForm} from '../../../../components/form/Form';
 import {Log} from '../../../../components/Log';
@@ -40,16 +40,17 @@ function DisplayForm(user: { username: string | undefined } | { username: string
  * @constructor
  */
 export function FileDisplay({}) {
-    const [state, setUsername] = useState<{ data: { user: IUser } } | null>(null);
-    const user                 = state?.data?.user;
+    const [state, setUsername] = useState<{ data: { [k: string]: string | IUser } } | null>(null);
+    const userDataKey          = '.user';
+    let username               = getUserSelectorUsername(state?.data?.[userDataKey]);
     return (
         <section>
-            <header>File Display {user?.username}</header>
+            <header>File Display {username}</header>
             <div className="column">
                 <FormContextProvider onChange={setUsername} onSubmit={setUsername}>
-                    <UserSelector formKey="user" />
+                    <UserSelector formKey={userDataKey} ignoreLogin/>
                 </FormContextProvider>
-                <DisplayForm username={user?.username}/>
+                <DisplayForm username={username}/>
             </div>
         </section>
     )

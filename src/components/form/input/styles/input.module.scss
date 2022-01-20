@@ -1,5 +1,7 @@
 .inputWrapper {
   display: flex;
+  flex-direction: column;
+  width: 100%;
   font-weight: bold;
   font-family: "JetBrains Mono", monospace;
   border: thin solid green;;
@@ -12,5 +14,6 @@
     width: 100%;
     padding: .2rem;
     margin: 0;
+    display: block;
   }
 }

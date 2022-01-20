@@ -10,8 +10,6 @@ export interface IConceptTag_Complete extends IConceptTag {
 }
 
 export interface IConcept_Complete extends IConcept {
-    profile?: IProfile[]
-    password: IPassword;
     user: IUser;
     ConceptTag?: IConceptTag_Complete[]
 }

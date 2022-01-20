@@ -22,7 +22,7 @@ export const form__tagConcept: FormConfig = {
 
 export function selectTagAdditionInput(data: SelectMutationInputData) {
     const {username, user, concept: {title}, tags} = data ?? {};
-
+console.log(data);
     return {
         title,
         user: {username: user?.username ?? username},
