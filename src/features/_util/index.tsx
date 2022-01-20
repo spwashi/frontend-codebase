@@ -81,6 +81,8 @@ export const FeaturesBoundary =
                      const value             = useMemo(() => ({state, dispatch}), [state, dispatch]);
                      return (
                          <FeaturesContext.Provider value={value}>
+                             <Log>{value}</Log>
+
                              {children}
                          </FeaturesContext.Provider>
                      )

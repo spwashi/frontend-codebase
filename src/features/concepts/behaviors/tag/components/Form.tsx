@@ -1,6 +1,6 @@
-import {useTagMutation} from '../mutations/addTag';
+import {useTagMutation} from '../mutation';
 import {useMutationFormSubmitCallback} from '../../../../../services/graphql/hooks/useMutationFormSubmitCallback';
-import {form__tagConcept, selectTagAdditionInput} from '../forms/addTag';
+import {form__tagConcept, selectTagAdditionInput} from '../config';
 import {GraphqlMutationResponse} from '../../../../../services/graphql/GraphqlMutationResponse';
 import React from 'react';
 import {StandardForm} from '../../../../../components/form/Form';

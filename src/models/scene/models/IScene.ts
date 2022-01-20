@@ -11,3 +11,7 @@ export interface IScene {
     description?: ISceneDescription;
     SceneConcept?: ISceneConcept[]
 }
+
+export interface ISceneIdentifyingPartial {
+    id: number
+}

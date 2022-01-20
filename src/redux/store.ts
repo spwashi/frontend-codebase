@@ -4,7 +4,12 @@ import storage from 'redux-persist/lib/storage'
 import {rootReducer} from './reducer';
 
 
-const persistConfig    = {key: 'root', version: 3, storage}
+const persistConfig    =
+          {
+              key:     'root',
+              version: 4,
+              storage,
+          }
 const persistedReducer = persistReducer(persistConfig, rootReducer)
 export const store     = configureStore({
                                             reducer:    persistedReducer,

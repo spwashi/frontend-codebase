@@ -2,8 +2,8 @@ import React from 'react';
 import {GraphqlMutationResponse} from '../../../../../services/graphql/GraphqlMutationResponse';
 import {useMutationFormSubmitCallback} from '../../../../../services/graphql/hooks/useMutationFormSubmitCallback';
 import {FeatureRequirement} from '../../../../_util';
-import {form__createConcept, selectCreateConceptInput} from '../forms/create';
-import {useCreateConceptMutation} from '../mutations/create';
+import {form__createConcept, selectCreateConceptInput} from '../config';
+import {useCreateConceptMutation} from '../mutation';
 import {StandardForm} from '../../../../../components/form/Form';
 
 function ActiveForm() {

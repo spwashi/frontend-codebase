@@ -1,12 +1,14 @@
 import React, {Component, FunctionComponent} from 'react';
-import {ProjectFeatures} from './projects/ProjectFeatures';
-import {TagFeatures} from './tags/TagFeatures';
-import {ConceptFeatures} from './concepts/ConceptFeatures';
-import {UserFeatures} from '../app/Users';
+import {ProjectFeatures} from './projects/Features';
+import {TagFeatures} from './tags/Features';
+import {ConceptFeatures} from './concepts/Features';
+import {UserFeatures} from './users/Features';
+import {SceneFeatures} from './scenes/Features';
 
 const featureDict: { [key: string]: FunctionComponent & { dependencies?: FunctionComponent[] } } =
           {
               users:    UserFeatures,
+              scenes:   SceneFeatures,
               files:    () => {return null},
               tags:     TagFeatures,
               concepts: ConceptFeatures,

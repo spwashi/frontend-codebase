@@ -1,8 +1,8 @@
 import React, {useEffect, useMemo, useRef, useState} from 'react';
 import {GraphqlMutationResponse} from '../../../../../services/graphql/GraphqlMutationResponse';
 import {useMutationFormSubmitCallback} from '../../../../../services/graphql/hooks/useMutationFormSubmitCallback';
-import {form__editConcept, selectEditConceptInput} from '../forms/edit';
-import {useEditConceptMutation} from '../mutations/edit';
+import {form__editConcept, selectEditConceptInput} from '../config';
+import {useEditConceptMutation} from '../mutation';
 import {StandardForm} from '../../../../../components/form/Form';
 import {LoggedIn} from '../../../../users/behaviors/login/State';
 import {IConcept} from '../../../../../models/concept/models';

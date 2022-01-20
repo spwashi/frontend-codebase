@@ -2,8 +2,8 @@ import {FeatureRequirement} from '../_util';
 import {UploadFileForm} from './behaviors/upload/components/form/Form';
 import {FileDisplay} from './components/display/FileDisplay';
 import React from 'react';
-import {UserFeatures} from '../../app/Users';
-import {ProjectFeatures} from '../projects/ProjectFeatures';
+import {UserFeatures} from '../users/Features';
+import {ProjectFeatures} from '../projects/Features';
 import {LoggedIn} from '../users/behaviors/login/State';
 
 export function FilesControlPanel() {

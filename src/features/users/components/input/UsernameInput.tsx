@@ -1,4 +1,4 @@
-import {UserSelector} from '../UserSelector';
+import {UserSelect} from '../UserSelect';
 import {Input} from '../../../../components/form/input/text/Input';
 import React from 'react';
 
@@ -6,7 +6,7 @@ export function UsernameInput({doSelect = false, ignoreLogin}: { doSelect?: bool
     return <>
         {
             doSelect
-            ? <UserSelector formKey="user" ignoreLogin={ignoreLogin}/>
+            ? <UserSelect formKey="user" ignoreLogin={ignoreLogin}/>
             : <Input formKey="username" placeholder="Username"/>
         }
     </>;

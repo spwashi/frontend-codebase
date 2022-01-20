@@ -4,6 +4,7 @@ import {projectReducer} from '../features/projects/redux/reducer';
 import {conceptReducer} from '../features/concepts/redux/reducer';
 import {fileReducer} from '../features/files/redux/reducer';
 import {tagReducer} from '../features/tags/redux/reducer';
+import {sceneReducer} from '../features/scenes/redux/reducer';
 
 export const ACTION_NOGRAPHQL = 'NO_GRAPHQL';
 export const ACTION_GRAPHQL   = 'GRAPHQL';
@@ -27,6 +28,7 @@ export const rootReducer      = combineReducers(
                     project: projectReducer,
                     concept: conceptReducer,
                     tag:     tagReducer,
+                    scene:   sceneReducer,
                     file:    fileReducer,
                 },
             ),

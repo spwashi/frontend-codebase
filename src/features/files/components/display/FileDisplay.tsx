@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {FormContextProvider} from '../../../../components/form/FormContext';
 import {FileQuery} from '../graphql/queries/FileQuery';
-import {getUserSelectorUsername, UserSelector} from '../../../users/components/UserSelector';
+import {getUserSelectorUsername, UserSelect} from '../../../users/components/UserSelect';
 import {IUser} from '../../../../models/user/models';
 import {StandardForm} from '../../../../components/form/Form';
 import {Log} from '../../../../components/Log';
@@ -48,7 +48,7 @@ export function FileDisplay({}) {
             <header>File Display {username}</header>
             <div className="column">
                 <FormContextProvider onChange={setUsername} onSubmit={setUsername}>
-                    <UserSelector formKey={userDataKey} ignoreLogin/>
+                    <UserSelect formKey={userDataKey} ignoreLogin/>
                 </FormContextProvider>
                 <DisplayForm username={username}/>
             </div>

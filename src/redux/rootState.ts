@@ -3,6 +3,7 @@ import {ProjectFeatureState} from '../features/projects/redux/types';
 import {TagFeatureState} from '../features/tags/redux/types';
 import {UserFeatureState} from '../features/users/redux/types';
 import {FileFeatureState} from '../features/files/redux/types';
+import {SceneFeatureState} from '../features/scenes/redux/types';
 
 export type RootState = {
     features: {
@@ -10,6 +11,7 @@ export type RootState = {
         project: ProjectFeatureState;
         concept: ConceptFeatureState;
         tag: TagFeatureState;
-        files: FileFeatureState
+        files: FileFeatureState;
+        scene: SceneFeatureState
     }
 };
