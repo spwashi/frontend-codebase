@@ -1,5 +1,4 @@
 import React, {useCallback, useEffect, useMemo, useReducer} from 'react';
-import {Log} from '../../Log';
 import {getInitialState} from './initialState';
 import {ACTION_SET_DEFAULT, formReducer} from './reducer';
 import {FormState} from './types';

@@ -1,12 +1,12 @@
 import React from 'react';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
-import {mainDecorator} from '../../decorators';
+import {mainDecorator} from '../../_util/decorators';
 import {Features} from '../../../features';
 import {FileDisplay} from '../../../features/files/components/display/FileDisplay';
 
 
 export default {
-    title:      'Forms/DataTypes/File/DisplayFile',
+    title:      'Admin/Forms/File/DisplayFile',
     component:  FileDisplay,
     decorators: [
         (Story) => {

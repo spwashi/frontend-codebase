@@ -1,12 +1,12 @@
 import React from 'react';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
-import {mainDecorator} from '../../decorators';
+import {mainDecorator} from '../../_util/decorators';
 import {Features} from '../../../features';
 import {ProjectDisplay} from '../../../features/projects/components/display';
 
 
 export default {
-    title:      'Forms/DataTypes/Project/DisplayProject',
+    title:      'Admin/Forms/Project/DisplayProject',
     component:  ProjectDisplay,
     decorators: [
         (Story) => {

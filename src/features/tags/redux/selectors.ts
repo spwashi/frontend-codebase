@@ -1,4 +1,4 @@
-import {ITag} from '../../../models/tag/models';
+import {ITag} from '../../../app/models/tag/models';
 import {RootState} from '../../../redux/rootState';
 import {TagOption} from './types';
 

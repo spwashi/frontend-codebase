@@ -5,7 +5,7 @@ import {form__editScene, selectEditSceneInput} from '../config';
 import {useEditSceneMutation} from '../mutation';
 import {StandardForm} from '../../../../../components/form/Form';
 import {LoggedIn} from '../../../../users/behaviors/login/State';
-import {IScene} from '../../../../../models/scene/models';
+import {IScene} from '../../../../../app/models/scene/models';
 import {Log} from '../../../../../components/Log';
 import {FormContextProvider} from '../../../../../components/form/context/FormContext';
 import {SceneSelect} from '../../../components/Select';

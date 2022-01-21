@@ -1,12 +1,12 @@
 import React from 'react';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
-import {mainDecorator} from '../../decorators';
+import {mainDecorator} from '../../_util/decorators';
 import {Features} from '../../../features';
 import {SceneDisplayForm} from '../../../features/scenes/components/display/DisplayForm';
 
 
 export default {
-    title:      'Forms/DataTypes/Scene/DisplayScene',
+    title:      'Admin/Forms/Scene/DisplayScene',
     component:  SceneDisplayForm,
     decorators: [
         (Story) => {

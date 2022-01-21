@@ -1,13 +1,13 @@
 import React from 'react';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
-import {mainDecorator} from '../../decorators';
+import {mainDecorator} from '../../_util/decorators';
 import {RestrictedTagConceptForm} from '../../../features/concepts/behaviors/tag';
 import {Features} from '../../../features';
 import { TagDisplay } from '../../../features/tags/components/display';
 
 
 export default {
-    title:      'Forms/DataTypes/Tag/DisplayTag',
+    title:      'Admin/Forms/Tag/DisplayTag',
     component:  TagDisplay,
     decorators: [
         (Story) => {

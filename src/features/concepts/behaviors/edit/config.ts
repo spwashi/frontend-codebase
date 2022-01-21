@@ -1,6 +1,5 @@
-import {IUser} from '../../../../models/user/models';
+import {IUser} from '../../../../app/models/user/models';
 import {FormConfig} from '../../../../components/form/Factory';
-import {IConcept} from '../../../../models/concept/models';
 import {idInput, mimeTypeInput, srcInput, titleInput, userInput} from '../../data/config';
 
 export type SelectMutationInputData = {
@@ -21,7 +20,13 @@ interface EditConceptMutationInput {
 export const form__editConcept: FormConfig = {
     id:    'edit-concept_form',
     title: 'Edit Concept',
-    items: [userInput, idInput, titleInput, mimeTypeInput, srcInput],
+    items: [
+        userInput,
+        idInput,
+        titleInput,
+        mimeTypeInput,
+        srcInput,
+    ],
 };
 
 export const selectEditConceptInput =

@@ -1,5 +1,5 @@
 import React from 'react';
-import {ITagIdentifyingPartial} from '../../../../../models/tag/models';
+import {ITagIdentifyingPartial} from '../../../../../app/models/tag/models';
 import {TagContextProvider} from './context/Provider';
 import {TagDisplay} from './components/Display';
 import {OneTagQuery} from './components/Query';

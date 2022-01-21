@@ -33,8 +33,8 @@ type TagInputConfig = { type: 'tags'; };
 type ContentInputConfig = { type: 'content'; };
 type SelectInputConfig = { type: 'select'; options: SelectOption[] };
 
-export type FormElementConfig =
-    { name: string; title: string; value?: any; }
+export type FormElementConfig<T = any> =
+    { name: string; title: string; value?: T; }
     &
     (| ValueInputConfig
      | TextInputConfig
@@ -111,8 +111,8 @@ function Content({data, name, title, value}: ContentParams) {
  * @constructor
  */
 export function FormElementFactory({item: config}: { item: FormElementConfig }) {
-    const {title, type, name, value:v, ...rest} = config;
-    const value = undefined;
+    const {title, type, name, value: v, ...rest} = config;
+    const value                                  = undefined;
 
     switch (name) {
         case 'domain':

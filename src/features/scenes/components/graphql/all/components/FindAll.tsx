@@ -4,7 +4,7 @@ import {selectPossibleScenesLastFetched, selectSceneStateKey} from '../../../../
 import {ACTION_RECEIVE_ALL_SCENES} from '../../../../redux/reducer';
 import {useFeatureQuery} from '../../../../../_util/hooks/useFeatureQuery';
 import {gql} from '@apollo/client';
-import {IScene} from '../../../../../../models/scene/models';
+import {IScene} from '../../../../../../app/models/scene/models';
 import {Log} from '../../../../../../components/Log';
 
 export function AllScenesQuery() {
@@ -32,5 +32,5 @@ export function AllScenesQuery() {
                  })
     }, [query?.allScenes]);
 
-    return !lastFetched ? <>Loading...</> : <Log>{query?.allScenes}</Log>;
+    return !lastFetched ? <>Loading...</> : null;
 }

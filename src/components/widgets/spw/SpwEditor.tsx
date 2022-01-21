@@ -2,7 +2,7 @@ import React, {useCallback, useState} from 'react';
 import MonacoEditor, {EditorProps} from '@monaco-editor/react'
 import {useSpwTheme} from './theme';
 import {spwParser} from '@spwashi/spw';
-import {Log} from '../Log';
+import {Log} from '../../Log';
 
 function SpwEditor(props: EditorProps) {
     const {theme, language}           = useSpwTheme();

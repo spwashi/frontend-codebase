@@ -1,6 +1,6 @@
 import React, {useMemo, useState} from 'react';
 import {ProjectContext as ProjectContext} from './context';
-import {IProject} from '../../../../../../models/project/models';
+import {IProject} from '../../../../../../app/models/project/models';
 
 export function ProjectContextProvider({children}: { children: any }) {
     const [project, setProject] = useState<IProject | null>(null);

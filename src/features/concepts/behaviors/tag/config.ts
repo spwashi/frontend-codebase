@@ -1,6 +1,6 @@
-import {IUser} from '../../../../models/user/models';
-import {IConcept} from '../../../../models/concept/models';
-import {ITag} from '../../../../models/tag/models';
+import {IUser} from '../../../../app/models/user/models';
+import {IConcept} from '../../../../app/models/concept/models';
+import {ITag} from '../../../../app/models/tag/models';
 import {FormConfig} from '../../../../components/form/Factory';
 import {conceptInput, tagsInput, userInput} from '../../data/config';
 
@@ -17,10 +17,13 @@ interface TagConceptMutationInput {
     tags: { title: string, domain?: string }[];
 }
 
-
 export const form__tagConcept: FormConfig = {
     title: 'Tag Concept',
-    items: [userInput, conceptInput, tagsInput],
+    items: [
+        userInput,
+        conceptInput,
+        tagsInput,
+    ],
 };
 
 export const selectTagAdditionInput =

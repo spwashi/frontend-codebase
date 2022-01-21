@@ -1,11 +1,11 @@
 import React from 'react';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
-import {mainDecorator} from '../../decorators';
+import {mainDecorator} from '../../_util/decorators';
 import {CreateConceptForm} from '../../../features/concepts/behaviors/create';
 import {Features} from '../../../features';
 
 export default {
-    title:      'Forms/DataTypes/Concept/CreateConcept',
+    title:      'Admin/Forms/Concept/CreateConcept',
     component:  CreateConceptForm,
     decorators: [
         (Story) =>

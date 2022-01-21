@@ -21,7 +21,6 @@ function App() {
     const className = classnames({noGraphql})
     return (
         <BrowserRouter>
-            {/*Always include*/}
             <Bootstrap/>
             <nav>
                 <ul>
@@ -56,7 +55,6 @@ function App() {
                             <LoggedIn><TagsControlPanel/></LoggedIn>
                             <LoggedIn><FilesControlPanel/></LoggedIn>
                         </>}/>
-
                     </Routes>
                 </div>
             </div>

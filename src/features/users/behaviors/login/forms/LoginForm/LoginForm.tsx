@@ -7,7 +7,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {ACTION_RECEIVE_LOGIN, selectLoggedInUserName} from '../../redux/reducer';
 import {form__login, selectLoginInput} from '../../selectors';
 import {StandardForm} from '../../../../../../components/form/Form';
-import {IUser} from '../../../../../../models/user/models';
+import {IUser} from '../../../../../../app/models/user/models';
 import {FeatureRequirement} from '../../../../../_util';
 
 const LOGIN_MUTATION = gql`

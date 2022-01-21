@@ -1,11 +1,11 @@
 import React from 'react';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
-import {mainDecorator} from '../../decorators';
+import {mainDecorator} from '../../_util/decorators';
 import {Features} from '../../../features';
 import {RestrictedCreateTagForm} from '../../../features/tags/behaviors/create';
 
 export default {
-    title:      'Forms/DataTypes/Tag/CreateTag',
+    title:      'Admin/Forms/Tag/CreateTag',
     component:  RestrictedCreateTagForm,
     decorators: [
         (Story) =>

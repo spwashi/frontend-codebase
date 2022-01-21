@@ -2,7 +2,7 @@ import React, {useContext, useEffect, useMemo, useRef} from 'react';
 import {useFormItemController} from '../../hooks/useFormItemController';
 import {FormContext} from '../../context/FormContext';
 import styles from '../styles/input.module.scss'
-import SpwEditor from '../../../spw/SpwEditor';
+import SpwEditor from '../../../widgets/spw/SpwEditor';
 import {convertFromRaw, convertToRaw, Editor, EditorState} from 'draft-js';
 import {Log} from '../../../Log';
 

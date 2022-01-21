@@ -1,11 +1,11 @@
 import React from 'react';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
-import {mainDecorator} from '../../decorators';
+import {mainDecorator} from '../../_util/decorators';
 import {RestrictedEditConceptForm} from '../../../features/concepts/behaviors/edit';
 import {Features} from '../../../features';
 
 export default {
-    title:      'Forms/DataTypes/Concept/EditConcept',
+    title:      'Admin/Forms/Concept/EditConcept',
     component:  RestrictedEditConceptForm,
     decorators: [
         (Story) =>

@@ -1,6 +1,6 @@
 import {createContext, useContext} from 'react';
-import {IConcept_Complete} from '../../../../../../models/concept/hybrids';
-import {IConcept} from '../../../../../../models/concept/models';
+import {IConcept_Complete} from '../../../../../../app/models/concept/hybrids';
+import {IConcept} from '../../../../../../app/models/concept/models';
 
 type Concept =
     IConcept

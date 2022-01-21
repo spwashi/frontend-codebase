@@ -1,6 +1,6 @@
 import React, {useMemo, useState} from 'react';
 import {SceneContext as SceneContext} from './context';
-import {IScene} from '../../../../../../models/scene/models';
+import {IScene} from '../../../../../../app/models/scene/models';
 
 export function SceneContextProvider({children, scene: _scene}: { children?: any, scene?: IScene }) {
     const [scene, setScene] = useState<IScene | null>(_scene ?? null);

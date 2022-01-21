@@ -6,7 +6,7 @@ import {updateFormItem} from '../../../components/form/hooks/useFormItemControll
 import {selectPossibleUsersList} from '../redux/selectors';
 import {selectLoggedInUser} from '../behaviors/login/redux/reducer';
 import {AllUsersQuery} from './query/all';
-import {IUser} from '../../../models/user/models';
+import {IUser} from '../../../app/models/user/models';
 import {Value} from '../../../components/form/input/text/Input';
 
 

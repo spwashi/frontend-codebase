@@ -1,12 +1,12 @@
 import {ConceptTag} from './join/tag';
 import React, {useState} from 'react';
-import {IConcept_Complete, IConceptTag_Complete} from '../../../../../../models/concept/hybrids';
+import {IConcept_Complete, IConceptTag_Complete} from '../../../../../../app/models/concept/hybrids';
 import {useActiveConcept} from '../context/context';
 import {convertFromRaw, Editor, EditorState} from 'draft-js';
 import {Log} from '../../../../../../components/Log';
 import '../styles/concept.scss';
-import {SpwComponent} from '../../../../../../components/spw';
-import {IConcept} from '../../../../../../models/concept/models';
+import {SpwComponent} from '../../../../../../components/widgets/spw';
+import {IConcept} from '../../../../../../app/models/concept/models';
 import {ErrorBoundary} from '../../../../../../components/error';
 import {DeleteConceptButton} from './DeleteConceptButton';
 

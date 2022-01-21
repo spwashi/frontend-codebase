@@ -1,5 +1,5 @@
 import React from 'react';
-import {ISceneIdentifyingPartial} from '../../../../../models/scene/models';
+import {ISceneIdentifyingPartial} from '../../../../../app/models/scene/models';
 import {SceneContextProvider} from './context/Provider';
 import {SceneContextDisplay} from './components/DisplayOne';
 import {OneSceneQuery} from './components/FindOne';

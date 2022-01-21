@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {FormContextProvider} from '../../../../components/form/context/FormContext';
 import {Tag} from '../query/one';
 import {TagSelect} from '../Select';
-import {ITag} from '../../../../models/tag/models';
+import {ITag} from '../../../../app/models/tag/models';
 
 export function TagDisplay() {
     const [state, setState] = useState<any | null>();

@@ -1,6 +1,6 @@
 import {useActiveTag} from '../context/hooks/useActiveOne';
 import React from 'react';
-import {ITag_Complete} from '../../../../../../models/tag/hybrids';
+import {ITag_Complete} from '../../../../../../app/models/tag/hybrids';
 
 export function TagDisplay() {
     const tag = useActiveTag();

@@ -1,5 +1,5 @@
 import React from 'react';
-import {IProjectIdentifyingPartial} from '../../../../../models/project/models';
+import {IProjectIdentifyingPartial} from '../../../../../app/models/project/models';
 import {ProjectContextProvider} from './context/Provider';
 import {ProjectDisplay} from './components/Display';
 import {OneProjectQuery} from './components/Query';

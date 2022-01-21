@@ -1,4 +1,4 @@
-import {IProject} from '../../../models/project/models';
+import {IProject} from '../../../app/models/project/models';
 import {SelectOption} from '../../../components/form/input/select/SelectInput';
 import {RootState} from '../../../redux/rootState';
 import {ProjectOption} from './types';

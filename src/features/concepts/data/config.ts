@@ -14,24 +14,21 @@ export const tagsInput: FormElementConfig = {
     type:  'tags',
 }
 
-export const conceptInput: FormElementConfig = {
+export const conceptInput: FormElementConfig  = {
     title: 'Concept',
     name:  'concept',
     type:  'concept',
 };
-export const userInput: FormElementConfig    = {
+export const userInput: FormElementConfig     = {
     title: 'User',
     name:  'user',
     type:  'user',
 };
-
-
-export const idInput: FormElementConfig = {
+export const idInput: FormElementConfig       = {
     title: 'ID',
     name:  'id',
     type:  'value',
 }
-
 export const titleInput: FormElementConfig    = {
     title: 'Concept Title',
     name:  'title',

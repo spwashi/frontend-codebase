@@ -1,5 +1,5 @@
 import {SelectOption} from '../../../components/form/input/select/SelectInput';
-import {IConcept} from '../../../models/concept/models';
+import {IConcept} from '../../../app/models/concept/models';
 import {Feature, KeyedState} from '../../../redux/state.types';
 
 export type ConceptOption = SelectOption<IConcept>;

@@ -1,11 +1,11 @@
 import React from 'react';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
-import {mainDecorator} from '../../decorators';
+import {mainDecorator} from '../../_util/decorators';
 import {CreateSceneForm} from '../../../features/scenes/behaviors/create';
 import {Features} from '../../../features';
 
 export default {
-    title:      'Forms/DataTypes/Scene/CreateScene',
+    title:      'Admin/Forms/Scene/CreateScene',
     component:  CreateSceneForm,
     decorators: [
         (Story) =>

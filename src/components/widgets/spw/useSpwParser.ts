@@ -4,8 +4,6 @@ import {getAllNodes, getSalientNode} from '@spwashi/spw/constructs/runtime/_util
 import {destrand, flatten, spreadChain} from './util/callbacks';
 
 function updateError(e: Error | any, setHasError: (value: (((prevState: any) => any) | any)) => void) {
-    // console.log(`%c ${e.message}`, 'style: red');
-    // console.log(e);
     if (e.name === 'SyntaxError') {
         const {location, found, message} = e;
         setHasError({location, found, message});
@@ -14,8 +12,7 @@ function updateError(e: Error | any, setHasError: (value: (((prevState: any) => 
     }
 }
 
-type Parsed =
-    {
+type Parsed = {
         tree: Construct | Construct[];
         ast: Construct | Construct[];
         error: Error

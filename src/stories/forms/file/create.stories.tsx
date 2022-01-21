@@ -1,12 +1,12 @@
 import React from 'react';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
-import {mainDecorator} from '../../decorators';
+import {mainDecorator} from '../../_util/decorators';
 import {CreateConceptForm} from '../../../features/concepts/behaviors/create';
 import {Features} from '../../../features';
 import {UploadFileForm} from '../../../features/files/behaviors/upload/components/form/Form';
 
 export default {
-    title:      'Forms/DataTypes/File/UploadFile',
+    title:      'Admin/Forms/File/UploadFile',
     component:  CreateConceptForm,
     decorators: [
         (Story) =>

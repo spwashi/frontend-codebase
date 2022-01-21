@@ -1,7 +1,7 @@
 import {gql, useQuery} from '@apollo/client';
 import React, {useMemo} from 'react';
 import {SelectInput, SelectOption} from '../../../../components/form/input/select/SelectInput';
-import {IAsset} from '../../../../models/asset/models';
+import {IAsset} from '../../../../app/models/asset/models';
 
 function fileToOption(file: IAsset): SelectOption<IAsset> {
     return {

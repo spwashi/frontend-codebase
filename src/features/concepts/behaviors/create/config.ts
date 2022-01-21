@@ -1,4 +1,4 @@
-import {IUser} from '../../../../models/user/models';
+import {IUser} from '../../../../app/models/user/models';
 import {FormConfig} from '../../../../components/form/Factory';
 import {mimeTypeInput, srcInput, titleInput, userInput} from '../../data/config';
 
@@ -30,8 +30,6 @@ export const selectCreateConceptInput =
                          title,
                          src,
                          mimeType,
-                         user: {
-                             username: user?.username ?? username,
-                         },
+                         user: {username: user?.username ?? username},
                      };
                  };

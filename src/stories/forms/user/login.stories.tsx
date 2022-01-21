@@ -1,12 +1,12 @@
 import React from 'react';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
 import {LoginForm} from '../../../features/users/behaviors/login/forms/LoginForm';
-import {mainDecorator} from '../../decorators';
+import {mainDecorator} from '../../_util/decorators';
 import {LogoutButton} from '../../../features/users/behaviors/login/Logout';
 import {Features} from '../../../features';
 
 export default {
-    title:      'Forms/DataTypes/User/Login',
+    title:      'Admin/Forms/User/Login',
     component:  LoginForm,
     decorators: [
         (Story) =>

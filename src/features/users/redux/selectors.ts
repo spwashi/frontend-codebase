@@ -1,4 +1,4 @@
-import {IUser} from '../../../models/user/models';
+import {IUser} from '../../../app/models/user/models';
 import {RootState} from '../../../redux/rootState';
 import {UserOption} from './types';
 
