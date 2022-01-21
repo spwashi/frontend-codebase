@@ -7,7 +7,7 @@ import {StandardForm} from '../../../../../components/form/Form';
 import {LoggedIn} from '../../../../users/behaviors/login/State';
 import {IScene} from '../../../../../models/scene/models';
 import {Log} from '../../../../../components/Log';
-import {FormContextProvider} from '../../../../../components/form/FormContext';
+import {FormContextProvider} from '../../../../../components/form/context/FormContext';
 import {SceneSelect} from '../../../components/Select';
 
 function ActiveForm() {
@@ -50,8 +50,6 @@ function ActiveForm() {
     }, [_scene]);
     return (
         <>
-            <Log>{eff}</Log>
-            <Log>{data}</Log>
             <FormContextProvider onChange={setScene}>
                 <SceneSelect formKey="scene"/>
             </FormContextProvider>

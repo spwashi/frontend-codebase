@@ -5,7 +5,7 @@ import {EditSceneForm} from '../../../features/scenes/behaviors/edit';
 import {Features} from '../../../features';
 
 export default {
-    title:      'Forms/Scene/EditScene',
+    title:      'Forms/DataTypes/Scene/EditScene',
     component:  EditSceneForm,
     decorators: [
         (Story) =>

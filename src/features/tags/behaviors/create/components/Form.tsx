@@ -1,14 +1,14 @@
 import React from 'react';
 import {GraphqlMutationResponse} from '../../../../../services/graphql/GraphqlMutationResponse';
 import {useMutationFormSubmitCallback} from '../../../../../services/graphql/hooks/useMutationFormSubmitCallback';
-import {FeatureRequirement} from '../../../../_util';
 import {form__createTag, selectCreateTagInput} from '../selectors';
 import {useCreateTagMutation} from '../mutations';
 import {StandardForm} from '../../../../../components/form/Form';
 import {ACTION_TAG_CREATED} from '../../../redux/reducer';
 import {useDispatch} from 'react-redux';
+import {LoggedIn} from '../../../../users/behaviors/login/State';
 
-function ActiveForm() {
+function CreateTagForm() {
     const {send, response} = useCreateTagMutation();
     const dispatch         = useDispatch();
     const onsubmit         = useMutationFormSubmitCallback(o => send(o).then((o) => {
@@ -23,10 +23,10 @@ function ActiveForm() {
     )
 }
 
-export function CreateTagForm({}) {
+export function RestrictedCreateTagForm({}) {
     return (
-        <FeatureRequirement name="users.login">
-            <ActiveForm/>
-        </FeatureRequirement>
+        <LoggedIn>
+            <CreateTagForm/>
+        </LoggedIn>
     );
 }

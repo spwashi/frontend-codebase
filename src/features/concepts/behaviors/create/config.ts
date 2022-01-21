@@ -1,8 +1,8 @@
 import {IUser} from '../../../../models/user/models';
 import {FormConfig} from '../../../../components/form/Factory';
-import {mimeOptions} from '../edit/config';
+import {mimeTypeInput, srcInput, titleInput, userInput} from '../../data/config';
 
-export type SelectMutationInputData = {
+export type CreateConceptFormData = {
     username: string;
     user: IUser;
     title: string;
@@ -10,48 +10,28 @@ export type SelectMutationInputData = {
     mimeType: string;
 }
 
-
-export const form__createConcept: FormConfig =
-                 {
-                     id:
-                         'create-concept_form',
-                     title:
-                         'Create Concept',
-                     items:
-                         [
-                             {
-                                 title: 'User',
-                                 name:  'user',
-                                 type:  'user',
-                             },
-                             {
-                                 title: 'Concept Title',
-                                 name:  'title',
-                                 type:  'text',
-                             },
-                             {
-                                 title:   'Category',
-                                 name:    'mimeType',
-                                 type:    'select',
-                                 options: mimeOptions,
-                             },
-                             {
-                                 title: 'Concept Contents',
-                                 name:  'src',
-                                 type:  'content',
-                             },
-                         ],
-
-                 }
-export function selectCreateConceptInput(data: SelectMutationInputData) {
-    const {username, user, title, src, mimeType} = data ?? {};
-
-    return {
-        title,
-        src,
-        mimeType,
-        user: {
-            username: user?.username ?? username,
-        },
-    };
+interface CreateConceptMutationInput {
+    title: string;
+    src: string;
+    mimeType: string;
+    user: { username: string; }
 }
+
+export const form__createConcept: FormConfig = {
+    id:    'create-concept_form',
+    title: 'Create Concept',
+    items: [userInput, titleInput, mimeTypeInput, srcInput],
+};
+
+export const selectCreateConceptInput =
+                 (data: CreateConceptFormData): CreateConceptMutationInput => {
+                     const {username, user, title, src, mimeType} = data ?? {};
+                     return {
+                         title,
+                         src,
+                         mimeType,
+                         user: {
+                             username: user?.username ?? username,
+                         },
+                     };
+                 };

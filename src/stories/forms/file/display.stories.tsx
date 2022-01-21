@@ -6,7 +6,7 @@ import {FileDisplay} from '../../../features/files/components/display/FileDispla
 
 
 export default {
-    title:      'Forms/File/DisplayFile',
+    title:      'Forms/DataTypes/File/DisplayFile',
     component:  FileDisplay,
     decorators: [
         (Story) => {

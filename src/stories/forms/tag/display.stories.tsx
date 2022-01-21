@@ -1,13 +1,13 @@
 import React from 'react';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
 import {mainDecorator} from '../../decorators';
-import {TagConceptForm} from '../../../features/concepts/behaviors/tag';
+import {RestrictedTagConceptForm} from '../../../features/concepts/behaviors/tag';
 import {Features} from '../../../features';
 import { TagDisplay } from '../../../features/tags/components/display';
 
 
 export default {
-    title:      'Forms/Tag/DisplayTag',
+    title:      'Forms/DataTypes/Tag/DisplayTag',
     component:  TagDisplay,
     decorators: [
         (Story) => {
@@ -20,9 +20,9 @@ export default {
         },
         mainDecorator,
     ],
-} as ComponentMeta<typeof TagConceptForm>;
+} as ComponentMeta<typeof RestrictedTagConceptForm>;
 
-const Template: ComponentStory<typeof TagConceptForm> = (args) => <TagDisplay {...args}/>;
+const Template: ComponentStory<typeof RestrictedTagConceptForm> = (args) => <TagDisplay {...args}/>;
 
 export const DisplayTag = Template.bind({});
 DisplayTag.args         = {};

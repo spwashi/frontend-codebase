@@ -5,7 +5,7 @@ import {CreateSceneForm} from '../../../features/scenes/behaviors/create';
 import {Features} from '../../../features';
 
 export default {
-    title:      'Forms/Scene/CreateScene',
+    title:      'Forms/DataTypes/Scene/CreateScene',
     component:  CreateSceneForm,
     decorators: [
         (Story) =>

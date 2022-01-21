@@ -6,7 +6,7 @@ import {ProjectDisplay} from '../../../features/projects/components/display';
 
 
 export default {
-    title:      'Forms/Project/DisplayProject',
+    title:      'Forms/DataTypes/Project/DisplayProject',
     component:  ProjectDisplay,
     decorators: [
         (Story) => {

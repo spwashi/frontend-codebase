@@ -1,9 +1,10 @@
-import React, {useContext, useEffect, useMemo} from 'react';
+import React, {useContext, useEffect, useMemo, useRef} from 'react';
 import {useFormItemController} from '../../hooks/useFormItemController';
-import {FormContext} from '../../FormContext';
+import {FormContext} from '../../context/FormContext';
 import styles from '../styles/input.module.scss'
 import SpwEditor from '../../../spw/SpwEditor';
 import {convertFromRaw, convertToRaw, Editor, EditorState} from 'draft-js';
+import {Log} from '../../../Log';
 
 type InputParams =
     { formKey?: string }
@@ -11,7 +12,6 @@ type InputParams =
 
 export function Value({
                           formKey,
-                          value,
                           title,
                           children,
                           placeholder,
@@ -25,9 +25,9 @@ export function Value({
     const form                 = useContext(FormContext);
     const [localValue, update] = useFormItemController(form, formKey ?? null);
     useEffect(() => {
-        if (localValue !== value)
-            update(value);
-    }, [update, value, localValue]);
+        // if (localValue !== value)
+        //     update(value);
+    }, [update, localValue]);
     const id = useMemo(() => `input--${Math.random()}`.replace('.', ''), []);
 
     return <>
@@ -55,19 +55,12 @@ export function Input({formKey, name, value, ...rest}: InputParams) {
                   return EditorState.createEmpty();
               });
 
-    useEffect(() => {
-        rest.disabled && update(value);
-        try {
-            const prev = JSON.parse('' + (value ?? ''));
-            console.log({prev})
-        } catch (e) {
-            console.log('val', value)
-        }
-    }, [update, value]);
-
+    const vref   = useRef(null);
+    vref.current = localValue
 
     useEffect(() => {
         const curr = editorState.getCurrentContent();
+        if (type !== 'rich') return;
         update(type === 'rich' ? JSON.stringify(convertToRaw(curr)) : localValue)
     }, [editorState]);
     const key = useMemo(() => Date.now(), []);
@@ -76,7 +69,6 @@ export function Input({formKey, name, value, ...rest}: InputParams) {
     return (
         <div className={styles.inputWrapper}>
             <label htmlFor={id}>{rest.title ?? rest.placeholder}</label>
-            {/*<Log>{editorState}</Log>*/}
             {
                 type === 'rich'
                 ? <Editor
@@ -91,7 +83,7 @@ export function Input({formKey, name, value, ...rest}: InputParams) {
                            id={id}
                            type={type}
                            name={name}
-                           value={value ?? localValue ?? ''}
+                           value={localValue ?? ''}
                            onChange={e => update(e.target.value)}/>
             }
         </div>

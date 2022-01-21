@@ -2,30 +2,33 @@ import {IUser} from '../../../../models/user/models';
 import {IConcept} from '../../../../models/concept/models';
 import {ITag} from '../../../../models/tag/models';
 import {FormConfig} from '../../../../components/form/Factory';
+import {conceptInput, tagsInput, userInput} from '../../data/config';
 
-type SelectMutationInputData = {
+type TagConceptFormData = {
     username: string;
     user: IUser;
     concept: IConcept;
     tags: ITag[]
 }
 
+interface TagConceptMutationInput {
+    title: string;
+    user: { username: string };
+    tags: { title: string, domain?: string }[];
+}
+
+
 export const form__tagConcept: FormConfig = {
     title: 'Tag Concept',
-    items: [
-        {title: 'User', name: 'user', type: 'user'},
-        {title: 'Concept', name: 'concept', type: 'concept'},
-        {title: 'Tags', name: 'tags', type: 'tags'},
-    ],
+    items: [userInput, conceptInput, tagsInput],
 };
 
-
-export function selectTagAdditionInput(data: SelectMutationInputData) {
-    const {username, user, concept: {title}, tags} = data ?? {};
-console.log(data);
-    return {
-        title,
-        user: {username: user?.username ?? username},
-        tags: tags.map(({title, domain}) => ({title, domain})),
-    };
-}
+export const selectTagAdditionInput =
+                 (data: TagConceptFormData): TagConceptMutationInput => {
+                     const {username, user, concept: {title}, tags} = data ?? {};
+                     return {
+                         title,
+                         user: {username: user?.username ?? username},
+                         tags: tags.map(({title, domain}) => ({title, domain})),
+                     };
+                 };

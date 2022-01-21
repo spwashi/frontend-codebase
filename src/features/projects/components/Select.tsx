@@ -5,7 +5,7 @@ import {useSelector} from 'react-redux';
 import {selectProjectStateProject} from '../redux/selectors';
 import {Input} from '../../../components/form/input/text/Input';
 import {updateFormItem} from '../../../components/form/hooks/useFormItemController';
-import {FormContext} from '../../../components/form/FormContext';
+import {FormContext} from '../../../components/form/context/FormContext';
 
 export function ProjectSelect({formKey, ignore}: { formKey?: string, ignore?: boolean }) {
     const options                   = useProjectOptions();

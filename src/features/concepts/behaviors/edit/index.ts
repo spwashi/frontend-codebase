@@ -1,1 +1,1 @@
-export {EditConceptForm} from './components/Form'
+export {RestrictedEditConceptForm} from './components/Form'

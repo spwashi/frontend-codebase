@@ -6,7 +6,7 @@ import {SceneDisplayForm} from '../../../features/scenes/components/display/Disp
 
 
 export default {
-    title:      'Forms/Scene/DisplayScene',
+    title:      'Forms/DataTypes/Scene/DisplayScene',
     component:  SceneDisplayForm,
     decorators: [
         (Story) => {

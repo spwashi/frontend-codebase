@@ -6,7 +6,7 @@ import {FileInput} from './input/files/FileInput';
 import {TagSelect} from '../../features/tags/components/Select';
 import {ProjectSelect} from '../../features/projects/components/Select';
 import {ConceptSelect} from '../../features/concepts/components/Select';
-import {FormContext} from './FormContext';
+import {FormContext} from './context/FormContext';
 import {FileSelector} from '../../features/files/components/input/FileSelector';
 import {Textarea} from './input/text/Textarea';
 import css from './styles/form.module.scss'
@@ -16,7 +16,8 @@ export type FormConfig =
     {
         id?: string,
         title?: string,
-        items: FormElementConfig[]
+        items: FormElementConfig[];
+        defaultValue?: { [k: string]: any }
     }
 
 type ProjectSelectInputConfig = { type: 'project'; ignoreActive?: boolean };
@@ -55,13 +56,63 @@ export function getDomain() {
     return window?.location?.host ?? '';
 }
 
+interface ContentParams {
+    data: any;
+    name: string;
+    title: string;
+    value: any;
+}
+
+function Content({data, name, title, value}: ContentParams) {
+    const {mimeType} = data
+    switch (mimeType) {
+        case 'text/plain':
+            return (
+                <Input
+                    formKey={name}
+                    placeholder={title}
+                    value={value}
+                />
+            )
+        case 'text/spw':
+            return (
+                <Input
+                    value={value}
+                    formKey={name}
+                    placeholder={title}
+                    type="spw"
+                />
+            )
+        case 'text/rich':
+            return (
+                <Input
+                    value={value}
+                    formKey={name}
+                    placeholder={title}
+                    type="rich"
+                />
+            )
+        case 'text/long':
+            return (
+                <Textarea
+                    value={value}
+                    formKey={name}
+                    placeholder={title}
+                />
+            )
+        default:
+            break;
+    }
+    return <div className={css.error}>[please set the content type]</div>
+}
 /**
  *
  * @param config
  * @constructor
  */
 export function FormElementFactory({item: config}: { item: FormElementConfig }) {
-    const {title, type, name, value, ...rest} = config;
+    const {title, type, name, value:v, ...rest} = config;
+    const value = undefined;
 
     switch (name) {
         case 'domain':
@@ -136,42 +187,12 @@ export function FormElementFactory({item: config}: { item: FormElementConfig }) 
             return (
                 <FormContext.Consumer>{
                     ({data}) => {
-                        const {mimeType} = data
-                        switch (mimeType) {
-                            case 'text/plain':
-                                return (
-                                    <Input
-                                        formKey={name}
-                                        placeholder={title}
-                                    />
-                                )
-                            case 'text/spw':
-                                return (
-                                    <Input
-                                        formKey={name}
-                                        placeholder={title}
-                                        type="spw"
-                                    />
-                                )
-                            case 'text/rich':
-                                return (
-                                    <Input
-                                        formKey={name}
-                                        placeholder={title}
-                                        type="rich"
-                                    />
-                                )
-                            case 'text/long':
-                                return (
-                                    <Textarea
-                                        formKey={name}
-                                        placeholder={title}
-                                    />
-                                )
-                            default:
-                                break;
-                        }
-                        return <div className={css.error}>[please set the content type]</div>
+                        return <Content
+                            data={data}
+                            name={name}
+                            title={title}
+                            value={value}
+                        />
                     }
                 }</FormContext.Consumer>
 

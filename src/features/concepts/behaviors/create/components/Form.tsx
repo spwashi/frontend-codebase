@@ -1,10 +1,10 @@
 import React from 'react';
 import {GraphqlMutationResponse} from '../../../../../services/graphql/GraphqlMutationResponse';
 import {useMutationFormSubmitCallback} from '../../../../../services/graphql/hooks/useMutationFormSubmitCallback';
-import {FeatureRequirement} from '../../../../_util';
 import {form__createConcept, selectCreateConceptInput} from '../config';
 import {useCreateConceptMutation} from '../mutation';
 import {StandardForm} from '../../../../../components/form/Form';
+import {LoggedIn} from '../../../../users/behaviors/login/State';
 
 function ActiveForm() {
     const {send, response} = useCreateConceptMutation();
@@ -19,8 +19,8 @@ function ActiveForm() {
 
 export function CreateConceptForm({}) {
     return (
-        <FeatureRequirement name="users.login">
+        <LoggedIn>
             <ActiveForm/>
-        </FeatureRequirement>
+        </LoggedIn>
     );
 }

@@ -5,7 +5,7 @@ import {Features} from '../../../features';
 import {CreateProjectForm} from '../../../features/projects/behaviors/create';
 
 export default {
-    title:      'Forms/Project/CreateProject',
+    title:      'Forms/DataTypes/Project/CreateProject',
     component:  CreateProjectForm,
     decorators: [
         (Story) =>

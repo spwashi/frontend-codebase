@@ -1,6 +1,6 @@
 import {FeatureRequirement} from '../_util';
 import {CreateConceptForm} from './behaviors/create';
-import {TagConceptForm} from './behaviors/tag';
+import {RestrictedTagConceptForm} from './behaviors/tag';
 import React from 'react';
 import {ConceptFeatures} from './Features';
 import {ConceptDisplayForm} from './components/display/DisplayForm';
@@ -9,7 +9,7 @@ import {Route, Routes} from 'react-router';
 import {NavLink} from 'react-router-dom';
 import {TagFeatures} from '../tags/Features';
 import {UserFeatures} from '../users/Features';
-import {EditConceptForm} from './behaviors/edit';
+import {RestrictedEditConceptForm} from './behaviors/edit';
 
 export function ConceptsControlPanel() {
     return (
@@ -26,11 +26,11 @@ export function ConceptsControlPanel() {
                     <Route path="" element={
                         <section>
                             <CreateConceptForm/>
-                            <EditConceptForm/>
+                            <RestrictedEditConceptForm/>
                             <FeatureRequirement name="concepts.display">
                                 <ConceptDisplayForm/>
                                 <FeatureRequirement name="tags.display">
-                                    <TagConceptForm/>
+                                    <RestrictedTagConceptForm/>
                                 </FeatureRequirement>
                             </FeatureRequirement>
                         </section>

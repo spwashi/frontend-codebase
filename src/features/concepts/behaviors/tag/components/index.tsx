@@ -1,13 +1,14 @@
 import React from 'react';
 import {FeatureRequirement} from '../../../../_util';
-import {Form} from './Form';
+import {TagConceptForm} from './Form';
+import {LoggedIn} from '../../../../users/behaviors/login/State';
 
-export function TagConceptForm({}) {
+export function RestrictedTagConceptForm({}) {
     return (
-        <FeatureRequirement name="users.login">
+        <LoggedIn>
             <FeatureRequirement name="concepts.display">
-                <Form/>
+                <TagConceptForm/>
             </FeatureRequirement>
-        </FeatureRequirement>
+        </LoggedIn>
     );
 }

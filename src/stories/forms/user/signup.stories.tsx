@@ -5,7 +5,7 @@ import {SignupForm} from '../../../features/users/behaviors/signup/forms/SignupF
 import {Features} from '../../../features';
 
 export default {
-    title:      'Forms/User/Signup',
+    title:      'Forms/DataTypes/User/Signup',
     component:  SignupForm,
     decorators: [
         (Story) =>

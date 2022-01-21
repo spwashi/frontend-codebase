@@ -5,7 +5,7 @@ import {GraphqlMutationResponse} from '../../../../../services/graphql/GraphqlMu
 import React from 'react';
 import {StandardForm} from '../../../../../components/form/Form';
 
-export function Form() {
+export function TagConceptForm() {
     const {send, response} = useTagMutation();
     const onsubmit         = useMutationFormSubmitCallback(send, selectTagAdditionInput);
     return (

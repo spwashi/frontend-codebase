@@ -5,7 +5,7 @@ import {Log} from '../../../../components/Log';
 
 export const LoggedIn    = ({children, state = true}: { children: any, state?: boolean }) => {
     const loggedInUser = useSelector(selectLoggedInUserName);
-    if (!!loggedInUser !== state) return null;
+    if (!!loggedInUser !== state) return <>Must be logged in</>;
     if (!!loggedInUser !== state) return <Log>{loggedInUser}</Log>;
     return children;
 }
