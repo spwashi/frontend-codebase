@@ -1,7 +1,7 @@
 import React from 'react';
 import './page.scss';
 import {Navigation} from '../navigation/Navigation';
-import {navLinks} from '../../../../app/constants/navigation';
+import {mainNavigation} from '../../../../app/routes/mainNavigation';
 
 
 interface PageProps {
@@ -12,7 +12,7 @@ export function Page({children}: PageProps) {
     return (
         <article>
             <header>
-                <Navigation items={navLinks}/>
+                <Navigation items={mainNavigation}/>
             </header>
             {children}
         </article>
