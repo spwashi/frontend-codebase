@@ -1,9 +1,7 @@
 import React, {useState} from 'react';
-import {FormContextProvider} from '../../../../components/form/context/FormContext';
 import {Scene} from '../graphql/one';
-import {SceneSelect} from '../Select';
 import {FeatureRequirement} from '../../../_util';
-import {Log} from '../../../../components/Log';
+import {StandardForm} from '../../../../components/form/Form';
 
 export function SceneDisplayForm({}) {
     const [state, setState] = useState<any | null>();
@@ -12,11 +10,10 @@ export function SceneDisplayForm({}) {
         <FeatureRequirement name="scenes.display">
             <section>
                 <header>Scene Display</header>
-<Log>{state}</Log>
-                <FormContextProvider onSubmit={setState}>
-                    <SceneSelect formKey="scene"/>
-                </FormContextProvider>
-
+                <StandardForm onSubmit={setState} form={{
+                    formId: 'display-scene-form',
+                    items:  [{name: 'scene', title: 'Scene', type: 'scene'}],
+                }}/>
                 {id && <Scene id={id}/>}
             </section>
         </FeatureRequirement>

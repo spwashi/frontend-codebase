@@ -1,4 +1,7 @@
+type IProfileId = number;
+type IProfileBio = string;
+
 export interface IProfile {
-    id: number;
-    bio?: string;
+    id: IProfileId;
+    bio?: IProfileBio;
 }

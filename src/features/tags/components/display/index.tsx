@@ -1,21 +1,22 @@
 import React, {useState} from 'react';
-import {FormContextProvider} from '../../../../components/form/context/FormContext';
 import {Tag} from '../query/one';
-import {TagSelect} from '../Select';
 import {ITag} from '../../../../app/models/tag/models';
+import {FeatureRequirement} from '../../../_util';
+import {StandardForm} from '../../../../components/form/Form';
 
-export function TagDisplay() {
+export function TagsDisplayForm({}) {
     const [state, setState] = useState<any | null>();
-    const title             = state?.data?.tags;
+    const tags              = state?.data?.tags;
     return (
-        <section>
-            <header>Tag Display</header>
-
-            <FormContextProvider onSubmit={setState}>
-                <TagSelect formKey="tags"/>
-            </FormContextProvider>
-
-            {title && title.map(({title}: ITag) => <Tag title={title} key={title}/>)}
-        </section>
+        <FeatureRequirement name="tags.display">
+            <section>
+                <header>Tags Display</header>
+                <StandardForm onSubmit={setState} form={{
+                    formId: 'display-tags-form',
+                    items:  [{name: 'tags', title: 'Tags', type: 'tags'}],
+                }}/>
+                {tags && tags.map(({id}: ITag) => <Tag id={id} key={id}/>)}
+            </section>
+        </FeatureRequirement>
     )
 }

@@ -18,7 +18,7 @@ export function AllConceptsQuery() {
                         mimeType
                         src
                         published
-                        author {
+                        user {
                             name
                             username
                         }

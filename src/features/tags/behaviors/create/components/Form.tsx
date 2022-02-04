@@ -6,7 +6,7 @@ import {useCreateTagMutation} from '../mutations';
 import {StandardForm} from '../../../../../components/form/Form';
 import {ACTION_TAG_CREATED} from '../../../redux/reducer';
 import {useDispatch} from 'react-redux';
-import {LoggedIn} from '../../../../users/behaviors/login/State';
+import {LoggedIn} from '../../../../users/behaviors/login/Requirement';
 
 function CreateTagForm() {
     const {send, response} = useCreateTagMutation();

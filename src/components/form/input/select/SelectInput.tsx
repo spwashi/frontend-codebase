@@ -1,8 +1,6 @@
 import React, {ChangeEvent, useCallback, useContext, useEffect, useMemo} from 'react';
 import {useFormItemController} from '../../hooks/useFormItemController';
 import {FormContext} from '../../context/FormContext';
-import css from '../styles/input.module.scss'
-import {Log} from '../../../Log';
 
 export type SelectOption<T extends any = any> =
     {
@@ -84,12 +82,11 @@ export function SelectInput(
         ...rest
     }: Params,
 ) {
-    const form     = useContext(FormContext);
-    const valueMap = useMemo(() => new Map(options.map(option => [
+    const form                 = useContext(FormContext);
+    const valueMap             = useMemo(() => new Map(options.map(option => [
         option.value, option.payload,
     ])), [options]);
-console.log(valueMap)
-    const [localValue, update] = useFormItemController(form, formKey ?? '', v => Array.isArray(v) ? v.map(v => valueMap.get(v)): valueMap.get(v));
+    const [localValue, update] = useFormItemController(form, formKey ?? '', v => Array.isArray(v) ? v.map(v => valueMap.get(v)) : valueMap.get(v));
     const id                   = useMemo(() => 'input--' + Math.random(), []);
     const value                = multiple ? localValue ?? [] : localValue ?? '';
     const onChange             = useOnChangeCallback(multiple, update);
@@ -98,8 +95,7 @@ console.log(valueMap)
 
 
     return (
-        <div className={css.inputWrapper}>
-            <label htmlFor={id}>{rest.title ?? rest.placeholder}</label>
+        <React.Fragment>
             <select
                 {...rest}
                 id={id}
@@ -113,6 +109,6 @@ console.log(valueMap)
                     multiple={!!multiple}
                 />
             </select>
-        </div>
+        </React.Fragment>
     );
 }

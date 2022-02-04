@@ -9,11 +9,12 @@ import {Bootstrap} from './Bootstrap';
 import {BrowserRouter, NavLink, Routes} from 'react-router-dom';
 import {Route} from 'react-router';
 import {ConceptsControlPanel} from '../features/concepts/ControlPanel';
-import {LoggedIn, NotLoggedIn} from '../features/users/behaviors/login/State';
+import {LoggedIn, NotLoggedIn} from '../features/users/behaviors/login/Requirement';
 import {TagsControlPanel} from '../features/tags/ControlPanel';
-import {FilesControlPanel} from '../features/files/Files';
+import {FilesControlPanel} from '../features/assets/Files';
 import {UsersControlPanel} from '../features/users/ControlPanel';
 import {ScenesControlPanel} from '../features/scenes/ControlPanel';
+import {EventsControlPanel} from '../features/events/ControlPanel';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
     const className = classnames({noGraphql})
     return (
         <BrowserRouter>
+            {/*<State/>*/}
             <Bootstrap/>
             <nav>
                 <ul>
@@ -30,6 +32,7 @@ function App() {
                             {href: '/projects', title: 'Projects'},
                             {href: '/scenes', title: 'Scenes'},
                             {href: '/concepts', title: 'Concepts'},
+                            {href: '/events', title: 'Events'},
                             {href: '/tags', title: 'Tags'},
                             {href: '/files', title: 'Files'},
                             {href: '/all', title: 'All'},
@@ -47,6 +50,7 @@ function App() {
                         <Route path="projects" element={<ProjectsControlPanel/>}/>
                         <Route path="concepts/*" element={<ConceptsControlPanel/>}/>
                         <Route path="scenes/*" element={<ScenesControlPanel/>}/>
+                        <Route path="events/*" element={<EventsControlPanel/>}/>
                         <Route path="tags" element={<TagsControlPanel/>}/>
                         <Route path="files" element={<FilesControlPanel/>}/>
                         <Route path="all" element={<>

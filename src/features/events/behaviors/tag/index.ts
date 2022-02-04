@@ -1,0 +1,1 @@
+export {RestrictedTagEventForm} from './components'

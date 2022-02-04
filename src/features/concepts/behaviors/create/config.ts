@@ -1,6 +1,9 @@
 import {IUser} from '../../../../app/models/user/models';
-import {FormConfig} from '../../../../components/form/Factory';
+import {FormConfig} from '../../../../components/form/field/components/Factory';
 import {mimeTypeInput, srcInput, titleInput, userInput} from '../../data/config';
+import {CreateConceptMutationInput} from '../../../../app/models/concept/behaviors/create';
+import {setFieldValue} from '../../../../components/form/field/util/setFieldValue';
+import {makeFieldRequired} from '../../../../components/form/field/util/makeFieldRequired';
 
 export type CreateConceptFormData = {
     username: string;
@@ -10,26 +13,31 @@ export type CreateConceptFormData = {
     mimeType: string;
 }
 
-interface CreateConceptMutationInput {
-    title: string;
-    src: string;
-    mimeType: string;
-    user: { username: string; }
-}
 
-export const form__createConcept: FormConfig = {
-    id:    'create-concept_form',
-    title: 'Create Concept',
-    items: [userInput, titleInput, mimeTypeInput, srcInput],
-};
+export const form__createConcept: FormConfig =
+                 {
+                     formId:    'create-concept_form',
+                     title: 'Create Concept',
+                     items:
+                            [
+                                userInput,
+                                titleInput,
+                                setFieldValue(mimeTypeInput, 'text/spw'),
+                                srcInput,
+                            ].map(makeFieldRequired),
+                 };
 
 export const selectCreateConceptInput =
                  (data: CreateConceptFormData): CreateConceptMutationInput => {
-                     const {username, user, title, src, mimeType} = data ?? {};
+                     const {user, title, src, mimeType} = data ?? {};
                      return {
-                         title,
-                         src,
-                         mimeType,
-                         user: {username: user?.username ?? username},
+                         concept: {
+                             title,
+                             src,
+                             mimeType,
+                         },
+                         user:    {
+                             id: user?.id,
+                         },
                      };
                  };

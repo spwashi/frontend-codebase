@@ -9,6 +9,7 @@ export function AllUsersQuery() {
         gql`
             query AllUsers {
                 allUsers {
+                    id
                     name
                     username
                 }

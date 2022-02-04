@@ -6,8 +6,8 @@ import {useDispatch} from 'react-redux';
 import {ACTION_RECEIVE_ONE_CONCEPT} from '../../../../redux/reducer';
 
 const CONCEPT_QUERY = gql`
-    query Concept($title: String) {
-        concept(title: $title) {
+    query Concept($id: String!) {
+        concept(id: $id) {
             id
             title
             src
@@ -18,7 +18,7 @@ const CONCEPT_QUERY = gql`
                     domain
                 }
             }
-            author {
+            user {
                 username
                 name
             }
@@ -27,11 +27,11 @@ const CONCEPT_QUERY = gql`
     }
 `;
 
-export function OneConceptQuery({title}: IConceptIdentifyingPartial) {
+export function OneConceptQuery({id}: IConceptIdentifyingPartial) {
     const context      = useContext(ConceptContext) ?? ({} as any);
     const {setConcept} = context;
 
-    const {data: query} = useQuery(CONCEPT_QUERY, {variables: {title}});
+    const {data: query} = useQuery(CONCEPT_QUERY, {variables: {id} as IConceptIdentifyingPartial});
 
     const dispatch = useDispatch();
 

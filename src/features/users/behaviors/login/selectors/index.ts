@@ -1,10 +1,11 @@
-import {FormConfig} from '../../../../../components/form/Factory';
+import {FormConfig, FormFieldConfig} from '../../../../../components/form/field/components/Factory';
+import {makeFieldRequired} from '../../../../../components/form/field/util/makeFieldRequired';
 
 export function selectLoginInput(data: any) {
     const {
               user: {username} = {username: null},
               password,
-              project
+              project,
           } = data ?? {};
 
     return {
@@ -12,12 +13,33 @@ export function selectLoginInput(data: any) {
         password: {password},
     };
 }
+
+const userInput: FormFieldConfig = {
+    type:        'user',
+    name:        'user',
+    title:       'User',
+    ignoreLogin: true,
+};
+
+const passwordInput: FormFieldConfig = {
+    type:  'password',
+    name:  'password',
+    title: 'Password',
+};
+
+const projectInput: FormFieldConfig = {
+    type:  'project',
+    name:  'project',
+    title: 'Project',
+};
+
 export const form__login: FormConfig =
                  {
+                     formId:    'login-form',
                      title: 'Login',
                      items: [
-                         {type: 'user', name: 'user', title: 'User', ignoreLogin: true},
-                         {type: 'password', name: 'password', title: 'Password'},
-                         {type: 'project', name: 'project', title: 'Project'}
-                     ],
+                                userInput,
+                                passwordInput,
+                                projectInput,
+                            ].map(makeFieldRequired),
                  };

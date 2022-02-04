@@ -2,10 +2,9 @@ import {useActiveProject} from '../context/hooks/useActiveOne';
 import React from 'react';
 import {IProject} from '../../../../../../app/models/project/models';
 
-export function ProjectDisplay() {
-    const project = useActiveProject();
-    if (!project) return null;
+interface ProjectParams {project: IProject;}
 
+export function Project({project}: ProjectParams) {
     const {title, domain, name, description, id} = project as IProject;
     return (
         <>
@@ -19,4 +18,9 @@ export function ProjectDisplay() {
             </details>
         </>
     )
+}
+export function ActiveProject() {
+    const project = useActiveProject();
+    if (!project) return null;
+    return <Project project={project}/>;
 }

@@ -11,11 +11,12 @@ import {IUser} from '../../../../../../app/models/user/models';
 import {FeatureRequirement} from '../../../../../_util';
 
 const LOGIN_MUTATION = gql`
-    mutation LogIn($user: UserInput, $password: PasswordInput) {
+    mutation LogIn($user: UserLoginInput, $password: PasswordReferenceInput) {
         logIn(user: $user, password: $password) {
             jwt
             username
             user {
+                id
                 name
                 username
             }

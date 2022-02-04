@@ -4,7 +4,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {selectPossibleProjectsLastFetched, selectProjectStateKey} from '../../../redux/selectors';
 import {ACTION_RECEIVE_ALL_PROJECTS} from '../../../redux/reducer';
 import {useFeatureQuery} from '../../../../_util/hooks/useFeatureQuery';
-import {getDomain} from '../../../../../components/form/Factory';
+import {getDomain} from '../../../../../components/form/field/components/Factory';
 
 
 export function AllProjectsQuery() {
@@ -12,11 +12,11 @@ export function AllProjectsQuery() {
         gql`
             query AllProjects($domain: String) {
                 allProjects(domain: $domain) {
+                    id
                     title
                     name
                     description
                     domain
-                    id
                 }
             }
         `;

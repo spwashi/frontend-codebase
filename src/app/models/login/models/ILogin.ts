@@ -1,4 +1,7 @@
+type ILoginUserId = number;
+type ILoginPasswordId = number;
+
 export interface ILogin {
-    userId: number;
-    passwordId: number;
+    userId: ILoginUserId;
+    passwordId: ILoginPasswordId;
 }

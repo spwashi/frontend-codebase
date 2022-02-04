@@ -2,10 +2,11 @@
 import {gql, useMutation} from '@apollo/client';
 
 const CREATE_TAG = gql`
-    mutation CreateTag($domain:String, $title:String!, $description: String, $user: UserInput!) {
-        createTag(tag: {domain: $domain, title: $title, description: $description, author: $user}) {
+    mutation CreateTag($tag: CreateTagInput, $user: UserReferenceInput!) {
+        createTag(tag: $tag, user: $user) {
+            id
             title
-            domain  
+            domain
         }
     }
 `;

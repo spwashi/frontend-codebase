@@ -4,7 +4,7 @@ import {useMutationFormSubmitCallback} from '../../../../../services/graphql/hoo
 import {form__createConcept, selectCreateConceptInput} from '../config';
 import {useCreateConceptMutation} from '../mutation';
 import {StandardForm} from '../../../../../components/form/Form';
-import {LoggedIn} from '../../../../users/behaviors/login/State';
+import {LoggedIn} from '../../../../users/behaviors/login/Requirement';
 
 function ActiveForm() {
     const {send, response} = useCreateConceptMutation();

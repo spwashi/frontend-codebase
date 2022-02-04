@@ -11,6 +11,7 @@ const SCENE_QUERY = gql`
             id
             name
             title
+            description
         }
     }
 `;

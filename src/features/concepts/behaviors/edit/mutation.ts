@@ -2,8 +2,9 @@
 import {gql, useMutation} from '@apollo/client';
 
 const EDIT_CONCEPT = gql`
-    mutation EditConcept($id: Int!, $title: String!, $src:String!, $mimeType: String) {
-        editConcept(concept: {id: $id, title: $title, src: $src, mimeType: $mimeType}) {
+    mutation EditConcept($concept: EditConceptInput, $user: UserReferenceInput) {
+        editConcept(concept: $concept, user: $user) {
+            id
             title
             src
         }

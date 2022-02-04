@@ -26,9 +26,10 @@ export function AllTagsQuery() {
         gql`
             query AllTags {
                 allTags {
+                    id
                     title
                     domain
-                    author {
+                    user {
                         name
                         username
                     }

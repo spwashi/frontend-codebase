@@ -1,4 +1,4 @@
-import {FormConfig} from '../../../../components/form/Factory';
+import {FormConfig} from '../../../../components/form/field/components/Factory';
 
 export type SelectMutationInputData = {
     id: string;
@@ -8,7 +8,7 @@ export type SelectMutationInputData = {
 
 export const form__editScene: FormConfig =
                  {
-                     id:
+                     formId:
                          'edit-scene_form',
                      title:
                          'Edit Scene',
@@ -18,6 +18,7 @@ export const form__editScene: FormConfig =
                                  title: 'ID',
                                  name:  'id',
                                  type:  'value',
+                                 calc:  data => data?.concept?.id,
                              },
                              {
                                  title: 'Scene Description',

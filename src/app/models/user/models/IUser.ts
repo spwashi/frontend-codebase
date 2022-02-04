@@ -5,11 +5,13 @@ import {IProject} from '../../project/models';
 
 export type IUserUsername = string;
 type IUserName = string;
+type IUserRole = string;
 
 export interface IUser {
-    id: number;
+    id: string;
     username: IUserUsername;
     name: IUserName;
+    role?: IUserRole;
     project?: IProject;
     projectId?: number;
     concepts?: IConcept[]

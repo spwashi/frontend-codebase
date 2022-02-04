@@ -1,12 +1,12 @@
 import React, {useContext, useMemo} from 'react';
 import {useFormItemController} from '../../hooks/useFormItemController';
 import {FormContext} from '../../context/FormContext';
-import css from '../styles/input.module.scss'
 
 
 type Params =
     { formKey: string }
     & React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
+
 
 export function FileInput({formKey, name, ...rest}: Params) {
     const form       = useContext(FormContext);
@@ -14,8 +14,7 @@ export function FileInput({formKey, name, ...rest}: Params) {
     const id         = useMemo(() => `input--${Math.random()}`.replace('.', ''), []);
 
     return (
-        <div className={css.inputWrapper}>
-            <label htmlFor={id}>{rest.title ?? rest.placeholder}</label>
+        <React.Fragment>
             <input
                 {...rest}
                 id={id}
@@ -27,6 +26,6 @@ export function FileInput({formKey, name, ...rest}: Params) {
                     update(files);
                 }}
             />
-        </div>
+        </React.Fragment>
     );
 }

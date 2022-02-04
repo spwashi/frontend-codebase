@@ -1,13 +1,11 @@
 import React, {useEffect, useState} from 'react';
-import {FormContextProvider} from '../../../../components/form/context/FormContext';
-import {Project} from '../query/one';
-import {ProjectSelect} from '../Select';
 import {useDispatch} from 'react-redux';
 import {ACTION_PROJECT_SELECTED} from '../../redux/reducer';
+import {Project} from '../query/one/components/Display';
+import {StandardForm} from '../../../../components/form/Form';
 
-export function ProjectDisplay({}) {
+export function ProjectDisplayForm({}) {
     const [state, setState] = useState<any | null>();
-    const title             = state?.data?.project?.name;
     const project           = state?.data?.project;
     const dispatch          = useDispatch();
     useEffect(() => {
@@ -17,9 +15,11 @@ export function ProjectDisplay({}) {
     return (
         <section>
             <header>Project Display</header>
-            <FormContextProvider onSubmit={setState}>
-                <ProjectSelect formKey="project"/>
-            </FormContextProvider>
+            <StandardForm onSubmit={setState} form={{
+                formId: 'display-project-form',
+                items: [{name: 'project', title: 'Project', type: 'project'}],
+            }}/>
+            {project && <Project project={project}/>}
         </section>
     )
 }

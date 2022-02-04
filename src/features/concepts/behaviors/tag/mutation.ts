@@ -2,8 +2,8 @@
 import {gql, useMutation} from '@apollo/client';
 
 const TAG_CONCEPT = gql`
-    mutation CreateConcept($title: String!, $user: UserInput!, $tags: [TagReferenceInput]) {
-        tagConcept(concept: {author: $user, title: $title}, tags: $tags) {
+    mutation CreateConcept($title: String!, $user: CreateUserInput!, $tags: [TagReferenceInput]) {
+        tagConcept(concept: {user: $user, title: $title}, tags: $tags) {
             title
             src
         }

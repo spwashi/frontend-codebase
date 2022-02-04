@@ -1,6 +1,6 @@
 import {ProjectFeatures} from '../projects/Features';
 import {FeatureRequirement} from '../_util';
-import {LoggedIn, NotLoggedIn} from './behaviors/login/State';
+import {LoggedIn, NotLoggedIn} from './behaviors/login/Requirement';
 import {VerifyLogin} from './behaviors/login/VerifyLogin';
 import {LogoutButton} from './behaviors/login/Logout';
 import {LoginForm} from './behaviors/login/forms/LoginForm';
@@ -13,12 +13,12 @@ export function UsersControlPanel() {
         {/*Users*/}
         <UserFeatures/>
         <ProjectFeatures/>
+        <LogoutButton/>
         <FeatureRequirement name="users">
             <section>
                 <FeatureRequirement name="users.login">
                     <LoggedIn>
                         <VerifyLogin/>
-                        <LogoutButton/>
                     </LoggedIn>
                     <NotLoggedIn>
                         <LoginForm/>

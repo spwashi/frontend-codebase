@@ -1,5 +1,9 @@
+type IConceptTagId = number;
+type IConceptTagConceptId = number;
+type IConceptTagTagId = number;
+
 export interface IConceptTag {
-    id: number;
-    conceptId: number;
-    tagId: number;
+    id: IConceptTagId;
+    conceptId: IConceptTagConceptId;
+    tagId: IConceptTagTagId;
 }

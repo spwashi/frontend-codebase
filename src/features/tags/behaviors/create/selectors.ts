@@ -1,32 +1,35 @@
-import {FormConfig} from '../../../../components/form/Factory';
+import {FormConfig, FormFieldConfig} from '../../../../components/form/field/components/Factory';
+import {CreateTagMutationInput} from '../../../../app/models/tag/behaviors/create';
+import {IUser} from '../../../../app/models/user/models';
+import {makeFieldRequired} from '../../../../components/form/field/util/makeFieldRequired';
 
 export type SelectMutationInputData = {
     title: string;
     description: string;
-    username: string;
     domain: string;
-    user?: { username: string }
+    user: IUser
 }
 
+const userInput: FormFieldConfig         = {title: 'User', name: 'user', type: 'user'};
+const titleInput: FormFieldConfig        = {title: 'Title', name: 'title', type: 'text'};
+const domainInput: FormFieldConfig       = {title: 'Domain', name: 'domain', type: 'text'};
+const descriptionInput: FormFieldConfig  = {title: 'Description', name: 'description', type: 'longtext'};
 export const form__createTag: FormConfig = {
+    formId:    'create-tag-form',
     title: 'Create Tag',
-    items: [
-        {title: 'User', name: 'user', type: 'user'},
-        {title: 'Title', name: 'title', type: 'text'},
-        {title: 'Domain', name: 'domain', type: 'text'},
-        {title: 'Description', name: 'description', type: 'longtext'},
-    ],
+    items: [userInput, titleInput, domainInput, descriptionInput].map(makeFieldRequired),
 };
 
-export function selectCreateTagInput(data: SelectMutationInputData) {
-    const {title, domain, user, username, description} = data ?? {};
+export const selectCreateTagInput =
+                 (data: SelectMutationInputData): CreateTagMutationInput => {
+                     const {title, domain, user, description} = data ?? {};
 
-    return {
-        title,
-        domain,
-        description,
-        user: {
-            username: user?.username ?? username,
-        },
-    };
-}
+                     return {
+                         tag:  {
+                             title,
+                             domain,
+                             description,
+                         },
+                         user: {id: user.id},
+                     };
+                 };

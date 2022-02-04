@@ -3,7 +3,7 @@ import {Feature} from '../_util';
 import React from 'react';
 import {selectPossibleProjectsLastFetched, selectPossibleProjectsList} from './redux/selectors';
 import {AllProjectsQuery} from './components/query/all/all';
-import {getDomain} from '../../components/form/Factory';
+import {getDomain} from '../../components/form/field/components/Factory';
 
 
 function ProjectDisplayFeature() {

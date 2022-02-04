@@ -8,7 +8,7 @@ import '../styles/concept.scss';
 import {SpwComponent} from '../../../../../../components/widgets/spw';
 import {IConcept} from '../../../../../../app/models/concept/models';
 import {ErrorBoundary} from '../../../../../../components/error';
-import {DeleteConceptButton} from './DeleteConceptButton';
+import {DeleteConceptButton} from './DeleteButton';
 
 function RichText({src}: { src: string }) {
     const [editorState, setEditorState] = useState(() => EditorState.createWithContent(convertFromRaw(JSON.parse(src))));

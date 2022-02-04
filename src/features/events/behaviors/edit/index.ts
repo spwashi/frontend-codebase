@@ -1,0 +1,1 @@
+export {RestrictedEditEventForm} from './components/Form'

@@ -17,6 +17,7 @@ export function AllScenesQuery() {
                         id
                         name
                         title
+                        description
                     }
                 }
             `,

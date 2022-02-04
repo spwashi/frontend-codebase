@@ -4,7 +4,7 @@ import {useMutationFormSubmitCallback} from '../../../../../services/graphql/hoo
 import {form__editConcept, selectEditConceptInput} from '../config';
 import {useEditConceptMutation} from '../mutation';
 import {StandardForm} from '../../../../../components/form/Form';
-import {LoggedIn} from '../../../../users/behaviors/login/State';
+import {LoggedIn} from '../../../../users/behaviors/login/Requirement';
 import {FormContextProvider} from '../../../../../components/form/context/FormContext';
 import {ConceptSelect} from '../../../components/Select';
 import {Log} from '../../../../../components/Log';

@@ -12,8 +12,8 @@ import {Log} from '../../../../../components/Log';
 function DeleteTag() {
     const tag            = useActiveTag();
     const user           = useSelector(selectLoggedInUser)
-  const [send, response] = useMutation(gql`mutation DeleteTag($user:UserInput!, $domain:String, $title:String!) {
-      deleteTag(tag: {title: $title, domain: $domain, author: $user}) {
+  const [send, response] = useMutation(gql`mutation DeleteTag($user:CreateUserInput!, $domain:String, $title:String!) {
+      deleteTag(tag: {title: $title, domain: $domain, user: $user}) {
           title
           domain
       }
@@ -33,12 +33,12 @@ function DeleteTag() {
  * @param title
  * @constructor
  */
-export function Tag({title}: ITagIdentifyingPartial) {
-    if (!title) return null;
+export function Tag({id}: ITagIdentifyingPartial) {
+    if (!id) return null;
     return (
         <TagContextProvider>
             <DeleteTag/>
-            <OneTagQuery title={title}/>
+            <OneTagQuery id={id}/>
             <TagDisplay/>
         </TagContextProvider>
     )

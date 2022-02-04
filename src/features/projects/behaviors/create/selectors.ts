@@ -1,12 +1,24 @@
-import {FormConfig} from '../../../../components/form/Factory';
+import {FormConfig, getDomain} from '../../../../components/form/field/components/Factory';
+
+export function convertToSlug(Text: string) {
+    return Text.toLowerCase()
+               .replace(/ /g, '-')
+               .replace(/[^\w-]+/g, '');
+}
 
 export const form__createProject: FormConfig =
                  {
+                     formId:    'create-project-form',
                      title: 'Create Project',
                      items: [
                          {type: 'text', name: 'title', title: 'Project Title'},
-                         {type: 'text', name: 'name', title: 'Project Name'},
-                         {type: 'text', name: 'domain', title: 'Domain'},
+                         {
+                             type:  'value',
+                             name:  'name',
+                             title: 'Project Name',
+                             calc:  (data) => convertToSlug(data?.title ?? ''),
+                         },
+                         {type: 'value', name: 'domain', title: 'Project Domain', calc: () => getDomain()},
                          {type: 'text', name: 'description', title: 'Project Description'},
                      ],
                  }

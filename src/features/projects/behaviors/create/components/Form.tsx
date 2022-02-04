@@ -7,6 +7,7 @@ import {useDispatch} from 'react-redux';
 import {ACTION_PROJECT_CREATED} from '../../../redux/reducer';
 import {StandardForm} from '../../../../../components/form/Form';
 import {FeatureRequirement} from '../../../../_util';
+import {getDomain} from '../../../../../components/form/field/components/Factory';
 
 
 function ActiveForm() {
@@ -18,7 +19,7 @@ function ActiveForm() {
     }), selectCreateProjectInput);
     return (
         <section id="form__project-create">
-            <StandardForm form={form__createProject} onSubmit={onsubmit}/>
+            <StandardForm form={form__createProject} onSubmit={onsubmit} defaultValue={{}}/>
             <GraphqlMutationResponse response={response}/>
         </section>
     )

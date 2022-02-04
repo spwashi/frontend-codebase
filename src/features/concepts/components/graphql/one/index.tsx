@@ -9,11 +9,11 @@ import {OneConceptQuery} from './components/FindOne';
  * @param title
  * @constructor
  */
-export function Concept({title}: IConceptIdentifyingPartial) {
-    if (!title) return null;
+export function Concept({id}: IConceptIdentifyingPartial) {
+    if (!id) return null;
     return (
         <ConceptContextProvider>
-            <OneConceptQuery title={title}/>
+            <OneConceptQuery id={id}/>
             <ConceptContextDisplay/>
         </ConceptContextProvider>
     )

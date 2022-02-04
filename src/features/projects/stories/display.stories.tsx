@@ -2,12 +2,12 @@ import React from 'react';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
 import {mainDecorator} from '../../../stories/_util/decorators';
 import {Features} from '../../index';
-import {ProjectDisplay} from '../components/display';
+import {ProjectDisplayForm} from '../components/display';
 
 
 export default {
     title:      'Admin/Forms/Project/DisplayProject',
-    component:  ProjectDisplay,
+    component:  ProjectDisplayForm,
     decorators: [
         (Story) => {
             return (
@@ -19,9 +19,9 @@ export default {
         },
         mainDecorator,
     ],
-} as ComponentMeta<typeof ProjectDisplay>;
+} as ComponentMeta<typeof ProjectDisplayForm>;
 
-const Template: ComponentStory<typeof ProjectDisplay> = (args) => <ProjectDisplay {...args}/>;
+const Template: ComponentStory<typeof ProjectDisplayForm> = (args) => <ProjectDisplayForm {...args}/>;
 
 export const DisplayProject = Template.bind({});
 DisplayProject.args         = {};

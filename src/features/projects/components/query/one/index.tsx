@@ -1,7 +1,7 @@
 import React from 'react';
 import {IProjectIdentifyingPartial} from '../../../../../app/models/project/models';
 import {ProjectContextProvider} from './context/Provider';
-import {ProjectDisplay} from './components/Display';
+import {ActiveProject} from './components/Display';
 import {OneProjectQuery} from './components/Query';
 
 /**
@@ -9,12 +9,12 @@ import {OneProjectQuery} from './components/Query';
  * @param name
  * @constructor
  */
-export function Project({name}: IProjectIdentifyingPartial) {
-    if (!name) return null;
+export function ProjectFetcher({id  }: IProjectIdentifyingPartial) {
+    if (!id) return null;
     return (
         <ProjectContextProvider>
-            <OneProjectQuery name={name}/>
-            <ProjectDisplay/>
+            <OneProjectQuery id={id}/>
+            <ActiveProject/>
         </ProjectContextProvider>
     )
 }

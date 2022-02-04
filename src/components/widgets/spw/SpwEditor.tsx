@@ -24,9 +24,6 @@ function SpwEditor(props: EditorProps) {
 
     return (
         <div style={{maxWidth: 500 + 'px'}}>
-            <span>
-                <button type="button" onClick={parse}>Parse</button>
-            </span>
             {
                 language && (
                     <MonacoEditor

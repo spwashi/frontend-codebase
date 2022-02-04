@@ -1,10 +1,23 @@
-export interface IConceptIdentifyingPartial {title: string}
+export interface IConceptIdentifyingPartial {
+    id: string
+}
+
+type IConceptId = string;
+type IConceptTitle = string;
+type IConceptSrc = string;
+type IConceptCategory = string;
+type IConceptPublished = string;
+type IConceptMimeType = string;
+type IConceptUserId = number;
+type IConceptPasswordId = number;
 
 export interface IConcept {
-    id: number;
-    title: string;
-    src: string;
-    mimeType: string;
-    userid: number;
-    passwordId: number;
+    id: IConceptId;
+    title: IConceptTitle;
+    category: IConceptCategory;
+    src: IConceptSrc;
+    mimeType: IConceptMimeType;
+    published: IConceptPublished;
+    userid: IConceptUserId;
+    passwordId: IConceptPasswordId;
 }

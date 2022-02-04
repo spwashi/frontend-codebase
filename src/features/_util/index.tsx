@@ -1,5 +1,6 @@
 import React, {createContext, useContext, useEffect, useMemo, useReducer} from 'react';
 import {Log} from '../../components/Log';
+import {Dev} from '../../components/Dev';
 
 type IFeature =
     {
@@ -82,7 +83,6 @@ export const FeaturesBoundary =
                      return (
                          <FeaturesContext.Provider value={value}>
                              <Log>{value}</Log>
-
                              {children}
                          </FeaturesContext.Provider>
                      )
@@ -96,5 +96,5 @@ export const FeatureRequirement = ({
     const features = useContext(FeaturesContext);
     if (!active) return children;
     if (features.state?.features[name]) return children;
-    return null;
+    return <Dev>[disabled]</Dev>;
 }

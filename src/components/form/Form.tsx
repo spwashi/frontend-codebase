@@ -1,7 +1,31 @@
-import React, {useEffect, useMemo, useRef, useState} from 'react';
-import {FormBody, FormConfig} from './Factory';
+import React, {useCallback, useMemo, useRef, useState} from 'react';
+import {FormBody, FormConfig} from './field/components/Factory';
 import {FormContextProvider} from './context/FormContext';
+import _ from 'lodash';
 
+function useHandler(form: FormConfig, index: 'onChange' | 'onSubmit', onChange?: (e: any) => void): [boolean, (d: any) => void] {
+    const [canSubmit, setCanSubmit] = useState(false);
+
+    const handler = useCallback(
+        (d: any) => {
+            const out       = form.items.map(item => {
+                const validators = item.validators?.[index];
+                if (!validators) return [];
+                return [item.name, validators.map((validator) => validator(d, d?.[item.name]))]
+            })
+            const canSubmit = out.filter(([k, o]) => {
+                return (o as any)?.filter((o: any) => (typeof o !== 'undefined') && o !== true).length;
+            }).length === 0;
+            setCanSubmit(canSubmit);
+            if (!onChange) return;
+            console.log(index)
+            onChange(d)
+        },
+        [onChange],
+    );
+
+    return [canSubmit, handler]
+}
 export function StandardForm({
                                  form: formConfig,
                                  defaultValue,
@@ -10,43 +34,27 @@ export function StandardForm({
                              }: {
     form: FormConfig,
     defaultValue?: any,
-    onSubmit: (data: any) => void,
+    onSubmit?: (data: any) => void,
     onChange?: (data: any) => void,
 }) {
-    const defaultForm = useMemo(() => JSON.parse(JSON.stringify(formConfig)), [formConfig]);
+    const defaultForm = useMemo(() => _.cloneDeep(formConfig), [formConfig]);
     const formRef     = useRef(defaultForm)
     const form        = formRef.current;
 
-    const [eff, setEff] = useState({} as any | null);
-    useEffect(() => {
-        return;
-        if (!defaultValue) return;
 
-        const out = {} as any;
-        console.log(formRef.current)
-
-
-        formRef.current
-               .items
-               .forEach((item: any) => {
-                   const name = item.name;
-
-                   if (eff[name]) item.value = undefined;
-
-                   const val = (defaultValue as any)[name];
-                   if (!defaultValue.hasOwnProperty(name)) return;
-
-
-                   out[name]  = val;
-                   item.value = val
-               })
-        setEff(out)
-    }, [defaultValue]);
+    const [canSubmit, changeHandler]     = useHandler(form, 'onChange', onChange);
+    const [wasSuccessful, submitHandler] = useHandler(form, 'onSubmit', onSubmit);
 
     return (
         <section className="form-wrapper">
-            <header>{form.title}</header>
-            <FormContextProvider onSubmit={onSubmit} onChange={onChange} defaultValue={defaultValue}>
+            {form.title && <header>{form.title}</header>}
+            <FormContextProvider
+                id={form.formId}
+                onSubmit={submitHandler}
+                onChange={changeHandler}
+                defaultValue={defaultValue}
+                buttons={[onSubmit && canSubmit && <button key="submit" type="submit">submit</button>]}
+            >
                 <FormBody items={form.items}/>
             </FormContextProvider>
         </section>

@@ -1,4 +1,5 @@
-import {FormConfig} from '../../../../components/form/Factory';
+import {FormConfig} from '../../../../components/form/field/components/Factory';
+import {convertToSlug} from '../../../projects/behaviors/create/selectors';
 
 export type SelectMutationInputData = {
     name: string;
@@ -9,7 +10,7 @@ export type SelectMutationInputData = {
 
 export const form__createScene: FormConfig =
                  {
-                     id:
+                     formId:
                          'create-scene_form',
                      title:
                          'Create Scene',
@@ -21,9 +22,9 @@ export const form__createScene: FormConfig =
                                  type:  'text',
                              },
                              {
-                                 title: 'Scene Name',
+                                 type:  'value',
                                  name:  'name',
-                                 type:  'text',
+                                 calc:  (data) => convertToSlug(data?.title ?? ''),
                              },
                              {
                                  title: 'Scene Description',

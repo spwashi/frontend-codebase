@@ -4,13 +4,18 @@ interface HasProjectDescription {description: string;}
 
 interface HasProjectEnvironment {ProjectEnvironment: IProjectEnvironment;}
 
+type IProjectId = number;
+type IProjectName = string;
+type IProjectTitle = string;
+type IProjectDomain = string;
+
 export interface IProject extends Partial<HasProjectDescription & HasProjectEnvironment> {
-    id: number;
-    name: string;
-    title: string;
-    domain: string;
+    id: IProjectId;
+    name: IProjectName;
+    title: IProjectTitle;
+    domain: IProjectDomain;
 }
 
 export interface IProjectIdentifyingPartial {
-    name: string;
+    id: IProjectId;
 }

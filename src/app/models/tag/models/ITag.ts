@@ -2,11 +2,10 @@ export interface ITag {
     id: number;
     title: string;
     domain?: string;
-    authorId: number;
+    userId: number;
     description?: string;
 }
 
 export interface ITagIdentifyingPartial {
-    title: string;
-    domain?: string;
+    id: number
 }

@@ -1,4 +1,6 @@
 export interface FormState<T extends any = any> {
+    id?: string;
+
     key: number;
     data: T;
     initialValue?: T;

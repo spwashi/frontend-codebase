@@ -29,7 +29,7 @@ export const UserSelect = React.memo(
         if (!ignoreLogin) {
             options = options.filter(({payload}) => payload.username === actual)
             if (!(loggedInUser || username)) return <>No User Logged In</>
-            return <Value value={user} formKey={formKey} placeholder="User">{actual}</Value>
+            return <Value value={user} formKey={formKey}>{actual}</Value>
         }
 
         return (

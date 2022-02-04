@@ -4,8 +4,8 @@ import React, {useContext, useEffect} from 'react';
 import {ProjectContext} from '../context/context';
 
 const PROJECT_QUERY = gql`
-    query Project($name: String) {
-        project(name: $name) {
+    query Project($id: Int!) {
+        project(id: $id) {
             id
             title
             domain
@@ -14,11 +14,11 @@ const PROJECT_QUERY = gql`
     }
 `;
 
-export function OneProjectQuery({name}: IProjectIdentifyingPartial) {
+export function OneProjectQuery({id}: IProjectIdentifyingPartial) {
     const context      = useContext(ProjectContext) ?? ({} as any);
     const {setProject} = context;
 
-    const {data: query} = useQuery(PROJECT_QUERY, {variables: {name}});
+    const {data: query} = useQuery(PROJECT_QUERY, {variables: {id}});
     const {project}     = query ?? {};
 
     useEffect(() => {

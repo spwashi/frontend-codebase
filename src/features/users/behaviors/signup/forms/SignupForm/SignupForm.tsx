@@ -4,15 +4,18 @@ import {GraphqlMutationResponse} from '../../../../../../services/graphql/Graphq
 import {useMutationFormSubmitCallback} from '../../../../../../services/graphql/hooks/useMutationFormSubmitCallback';
 import {useSelector} from 'react-redux';
 import {selectLoggedInUserName} from '../../../login/redux/reducer';
-import {FormConfig} from '../../../../../../components/form/Factory';
+import {FormConfig} from '../../../../../../components/form/field/components/Factory';
 import {FeatureRequirement} from '../../../../../_util';
 import {StandardForm} from '../../../../../../components/form/Form';
 
 const SIGNUP_MUTATION = gql`
-    mutation SignUp($user: UserInput!, $password: PasswordInput!, $project: ProjectInput) {
+    mutation SignUp($user: CreateUserInput!, $password: CreatePasswordInput!, $project: ProjectReferenceInput) {
         signUp(user: $user, password: $password, project: $project) {
-            username
-            name
+            user {
+                id
+                name
+                username
+            }
         }
     }
 `;
@@ -22,15 +25,13 @@ function selectMutationInput(data: any) {
     return {
         user:     {name, username},
         password: {password, passwordConfirm},
-        project:  {
-            name:   project.name,
-            domain: project.domain,
-        },
+        project:  {id: project.id},
     };
 }
 
 const form__userSignup: FormConfig =
           {
+              formId:    'signup-form',
               title: 'Signup Form',
               items: [
                   {type: 'text', name: 'name', title: 'Name'},

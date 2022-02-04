@@ -4,13 +4,13 @@ import React, {useContext, useEffect} from 'react';
 import {TagContext} from '../context/context';
 
 const TAG_QUERY = gql`
-    query Tag($title: String!) {
-        tag(title: $title) {
+    query Tag($id: Number!) {
+        tag(id: $id) {
             id
-            title
+            id
             domain
             description
-            author {
+            user {
                 username
                 name
             }
@@ -19,11 +19,11 @@ const TAG_QUERY = gql`
     }
 `;
 
-export function OneTagQuery({title}: ITagIdentifyingPartial) {
+export function OneTagQuery({id}: ITagIdentifyingPartial) {
     const context  = useContext(TagContext) ?? ({} as any);
     const {setTag} = context;
 
-    const {data: query} = useQuery(TAG_QUERY, {variables: {title}});
+    const {data: query} = useQuery(TAG_QUERY, {variables: {id} as ITagIdentifyingPartial});
     const {tag}         = query ?? {};
 
     useEffect(() => {
