@@ -6,7 +6,7 @@ import {Features} from '../../index';
 
 
 export default {
-    title:      'Admin/Forms/Concept/TagConcept',
+    title:      'Admin/Forms/Datatypes/Concept/TagConcept',
     component:  RestrictedTagConceptForm,
     decorators: [
         (Story) => {

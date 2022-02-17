@@ -7,7 +7,7 @@ type IConceptTitle = string;
 type IConceptSrc = string;
 type IConceptCategory = string;
 type IConceptPublished = string;
-type IConceptMimeType = string;
+type IConceptContentType = string;
 type IConceptUserId = number;
 type IConceptPasswordId = number;
 
@@ -16,7 +16,7 @@ export interface IConcept {
     title: IConceptTitle;
     category: IConceptCategory;
     src: IConceptSrc;
-    mimeType: IConceptMimeType;
+    contentType: IConceptContentType;
     published: IConceptPublished;
     userid: IConceptUserId;
     passwordId: IConceptPasswordId;

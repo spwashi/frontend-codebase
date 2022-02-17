@@ -11,9 +11,14 @@ export function VerifyLogin() {
         fetch(BACKEND_URL + '/protected', {
             method:  'POST',
             body:    JSON.stringify({token: jwt}),
-            headers: {'Content-Type': 'application/json'},
+            headers: {
+                'Content-Type':  'application/json',
+                'Pragma':        'no-cache',
+                'Cache-Control': 'no-cache',
+            },
         })
             .then(res => {
+                console.log(res)
                 if (res.status === 200) {
                     return;
                 }

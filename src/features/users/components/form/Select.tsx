@@ -1,13 +1,13 @@
 import React, {useContext, useEffect, useMemo} from 'react';
-import {SelectInput, SelectOption} from '../../../components/form/input/select/SelectInput';
+import {SelectInput, SelectOption} from '../../../../components/form/input/select/SelectInput';
 import {useSelector} from 'react-redux';
-import {FormContext} from '../../../components/form/context/FormContext';
-import {updateFormItem} from '../../../components/form/hooks/useFormItemController';
-import {selectPossibleUsersList} from '../redux/selectors';
-import {selectLoggedInUser} from '../behaviors/login/redux/reducer';
-import {AllUsersQuery} from './query/all';
-import {IUser} from '../../../app/models/user/models';
-import {Value} from '../../../components/form/input/text/Input';
+import {formContext} from '../../../../components/form/context/FormContext';
+import {updateFormItem} from '../../../../components/form/hooks/useFormItem';
+import {selectPossibleUsersList} from '../../redux/selectors';
+import {selectLoggedInUser} from '../../behaviors/login/redux/reducer';
+import {AllUsersQuery} from '../query/all';
+import {IUser} from '../../../../app/models/user/models';
+import {Value} from '../../../../components/form/input/text/Input';
 
 
 export const getUserSelectorUsername = (data?: string | IUser) => {
@@ -19,7 +19,7 @@ export const UserSelect = React.memo(
         let options: SelectOption[];
 
         const loggedInUser = useSelector(selectLoggedInUser);
-        const context      = useContext(FormContext);
+        const context      = useContext(formContext);
         options            = useSelector(selectPossibleUsersList);
         const actual       = getUserSelectorUsername(username ?? loggedInUser ?? undefined);
 
@@ -37,12 +37,14 @@ export const UserSelect = React.memo(
                 {
                     !options.length
                     ? <AllUsersQuery/>
-                    : <SelectInput
-                        value={actual}
-                        placeholder="User"
-                        formKey={formKey}
-                        options={options}
-                    />
+                    : (
+                        <SelectInput
+                            value={actual}
+                            placeholder="User"
+                            formKey={formKey}
+                            options={options}
+                        />
+                    )
                 }
             </>
         );

@@ -1,5 +1,7 @@
+type ITagId = number;
+
 export interface ITag {
-    id: number;
+    id: ITagId;
     title: string;
     domain?: string;
     userId: number;
@@ -7,5 +9,5 @@ export interface ITag {
 }
 
 export interface ITagIdentifyingPartial {
-    id: number
+    id: ITagId
 }

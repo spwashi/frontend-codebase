@@ -5,8 +5,16 @@ import React from 'react';
 
 function useDeleteConceptTagMutation() {
   const DELETE_TAG = gql`
-      mutation DeleteConceptTag($concept: ConceptReferenceInput!, $tags: [TagReferenceInput]) {
-          untagConcept(concept: $concept, tags: $tags)
+      mutation DeleteConceptTag($concept: ConceptReferenceInput!, $user: UserReferenceInput, $tags: [TagReferenceInput]) {
+          untagConcept(concept: $concept, user: $user, tags: $tags) {
+              id
+              concept {
+                  id
+              }
+              tag {
+                  id
+              }
+          }
       }
   `;
 

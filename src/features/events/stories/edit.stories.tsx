@@ -5,7 +5,7 @@ import {CreateEventForm} from '../behaviors/create';
 import {Features} from '../../index';
 
 export default {
-    title:      'Admin/Forms/Event/CreateEvent',
+    title:      'Admin/Forms/Datatypes/Event/CreateEvent',
     component:  CreateEventForm,
     decorators: [
         (Story) =>

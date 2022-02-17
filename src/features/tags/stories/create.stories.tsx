@@ -5,7 +5,7 @@ import {Features} from '../../index';
 import {RestrictedCreateTagForm} from '../behaviors/create';
 
 export default {
-    title:      'Admin/Forms/Tag/CreateTag',
+    title:      'Admin/Forms/Datatypes/Tag/CreateTag',
     component:  RestrictedCreateTagForm,
     decorators: [
         (Story) =>

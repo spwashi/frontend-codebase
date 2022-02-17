@@ -4,6 +4,7 @@ import {ITag} from '../../../../app/models/tag/models';
 import {FormConfig} from '../../../../components/form/field/components/Factory';
 import {conceptInput, tagsInput, userInput} from '../../data/config';
 import {TagConceptMutationInput} from '../../../../app/models/concept/behaviors/tag';
+import {makeFieldRequired} from '../../../../components/form/field/util/makeFieldRequired';
 
 type TagConceptFormData = {
     username: string;
@@ -13,12 +14,12 @@ type TagConceptFormData = {
 }
 
 export const form__tagConcept: FormConfig = {
-    formId:    'tag-concept-form',
-    title: 'Tag Concept',
-    items: [
-        userInput,
-        conceptInput,
-        tagsInput,
+    formId: 'tag-concept-form',
+    title:  'Tag Concept',
+    items:  [
+        makeFieldRequired(userInput),
+        makeFieldRequired(conceptInput),
+        makeFieldRequired(tagsInput),
     ],
 };
 
@@ -26,7 +27,8 @@ export const selectTagAdditionInput =
                  (data: TagConceptFormData): TagConceptMutationInput => {
                      const {user, concept: {id}, tags} = data ?? {};
                      return {
-                         concept: {id, user: {id: user.id}},
+                         concept: {id},
+                         user:    {id: user.id},
                          tags:    tags.map(({id}) => ({id})),
                      };
                  };

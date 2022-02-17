@@ -31,9 +31,9 @@ function selectMutationInput(data: any) {
 
 const form__userSignup: FormConfig =
           {
-              formId:    'signup-form',
-              title: 'Signup Form',
-              items: [
+              formId: 'signup-form',
+              title:  'Signup Form',
+              items:  [
                   {type: 'text', name: 'name', title: 'Name'},
                   {type: 'text', name: 'username', title: 'Username'},
                   {type: 'password', name: 'password', title: 'Password'},
@@ -48,7 +48,7 @@ function ActiveForm() {
     const onsubmit         = useMutationFormSubmitCallback(send, selectMutationInput);
     return (
         <React.Fragment>
-            <StandardForm form={form__userSignup} onSubmit={onsubmit}/>
+            <StandardForm config={form__userSignup} onSubmit={onsubmit}/>
             <GraphqlMutationResponse response={response}/>
         </React.Fragment>
     )
@@ -57,7 +57,7 @@ export function SignupForm({}) {
     const loggedInUser = useSelector(selectLoggedInUserName);
     if (loggedInUser) return null;
     return (
-        <FeatureRequirement name="projects">
+        <FeatureRequirement name="projects.display" alternative={'Need Projects'}>
             <ActiveForm/>
         </FeatureRequirement>
     );

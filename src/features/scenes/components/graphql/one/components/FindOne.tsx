@@ -6,7 +6,7 @@ import {useDispatch} from 'react-redux';
 import {ACTION_RECEIVE_ONE_SCENE} from '../../../../redux/reducer';
 
 const SCENE_QUERY = gql`
-    query Scene($id: Int) {
+    query Scene($id: Int!) {
         scene(id: $id) {
             id
             name

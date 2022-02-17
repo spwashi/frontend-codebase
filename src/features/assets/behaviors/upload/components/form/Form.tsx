@@ -66,7 +66,7 @@ export function UploadFileForm({}) {
     if (!BACKEND_URL) return null;
     return (
         <LoggedIn>
-            <StandardForm form={form__uploadFile} onSubmit={onSubmit}/>
+            <StandardForm config={form__uploadFile} onSubmit={onSubmit}/>
             {
                 out
                 ? <pre>{JSON.stringify(out, null, 3)}</pre>

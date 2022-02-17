@@ -7,10 +7,10 @@ export function EventDisplayForm({}) {
     const [state, setState] = useState<any | null>();
     const id                = state?.data?.event?.id;
     return (
-        <FeatureRequirement name="events.display">
+        <FeatureRequirement name="events.display" alternative={'Need Events'}>
             <section>
                 <header>Event Display</header>
-                <StandardForm onSubmit={setState} form={{
+                <StandardForm onSubmit={setState} config={{
                     formId: 'display-event-form',
                     items:  [{name: 'event', title: 'Event', type: 'event'}],
                 }}/>

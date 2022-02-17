@@ -6,7 +6,7 @@ import {LoggedIn} from '../../../../users/behaviors/login/Requirement';
 export function RestrictedTagEventForm({}) {
     return (
         <LoggedIn>
-            <FeatureRequirement name="events.display">
+            <FeatureRequirement name="events.display" alternative={"Need Events Display"}>
                 <TagEventForm/>
             </FeatureRequirement>
         </LoggedIn>

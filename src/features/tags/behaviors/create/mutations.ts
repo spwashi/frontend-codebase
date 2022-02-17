@@ -7,6 +7,7 @@ const CREATE_TAG = gql`
             id
             title
             domain
+            description
         }
     }
 `;

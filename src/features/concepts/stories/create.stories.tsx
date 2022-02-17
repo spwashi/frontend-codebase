@@ -5,7 +5,7 @@ import {RestrictedEditConceptForm} from '../behaviors/edit';
 import {Features} from '../../index';
 
 export default {
-    title:      'Admin/Forms/Concept/EditConcept',
+    title:      'Admin/Forms/Datatypes/Concept/EditConcept',
     component:  RestrictedEditConceptForm,
     decorators: [
         (Story) =>

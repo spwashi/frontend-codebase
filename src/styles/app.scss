@@ -16,9 +16,9 @@ html, body, #root {
     border: thin solid forestgreen;
   }
 }
-  pre {
-    max-width: 100px;
-  }
+pre {
+  max-width: 100px;
+}
 
 .column {display: flex; flex-flow: column;}
 
@@ -115,4 +115,24 @@ details {
 
 nav {
   border: thick solid green;
+}
+
+/** ---------------------------------------------- */
+
+.dev-log {
+  border: thick solid red;
+  summary {
+    border: thin solid #ccc;
+    padding: .75rem;
+    font-size: 1.5rem;
+    font-family: "JetBrains Mono", monospace;
+    cursor: pointer;
+    transition: background-color .3s;
+    &:hover {
+      background: lightblue;
+    }
+  }
+  pre {
+    font-family: "JetBrains Mono", monospace;
+  }
 }

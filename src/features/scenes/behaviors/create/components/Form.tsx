@@ -11,7 +11,7 @@ function CreateSceneForm() {
     const onsubmit         = useMutationFormSubmitCallback(send, selectCreateSceneInput);
     return (
         <>
-            <StandardForm form={form__createScene} onSubmit={onsubmit}/>
+            <StandardForm config={form__createScene} onSubmit={onsubmit}/>
             <GraphqlMutationResponse response={response}/>
         </>
     )

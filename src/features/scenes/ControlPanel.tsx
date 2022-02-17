@@ -16,14 +16,14 @@ export function ScenesControlPanel() {
             <UserFeatures/> <SceneFeatures/> <TagFeatures/>
             <NavLink to="/scenes">Scene Home</NavLink>
             <NavLink to="/all">All Scenes</NavLink>
-            <FeatureRequirement name="scenes">
+            <FeatureRequirement name="scenes" alternative={'Need Scenes'}>
                 <Routes>
                     <Route path="all" element={<div style={{width: 500 + 'px'}}><AllScenesSceneDisplay/></div>}/>
                     <Route path="" element={
                         <section>
                             <RestrictedCreateSceneForm/>
                             <RestrictedEditSceneForm/>
-                            <FeatureRequirement name="scenes.display">
+                            <FeatureRequirement name="scenes.display" alternative={'Need Scene Display'}>
                                 <SceneDisplayForm/>
                             </FeatureRequirement>
                         </section>

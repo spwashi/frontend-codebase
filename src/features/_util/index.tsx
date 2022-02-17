@@ -72,17 +72,20 @@ export const FeaturesBoundary =
                                      ...state,
                                      features: {
                                          ...state.features,
-                                         [action.payload.featureName]: action.type === 'REGISTER',
+                                         available: {
+                                             ...state.features.available,
+                                             [action.payload.featureName]: action.type === 'REGISTER',
+                                         },
                                      },
                                  }
                              default:
                                  return state;
                          }
-                     }, {features: {}});
+                     }, {features: {available: {}}});
                      const value             = useMemo(() => ({state, dispatch}), [state, dispatch]);
                      return (
                          <FeaturesContext.Provider value={value}>
-                             <Log>{value}</Log>
+                             {/*<Log title={'Features'}>{value}</Log>*/}
                              {children}
                          </FeaturesContext.Provider>
                      )
@@ -92,9 +95,15 @@ export const FeatureRequirement = ({
                                        name,
                                        children,
                                        active = true,
-                                   }: { children: any, name: string, active?: boolean }) => {
+                                       alternative,
+                                   }: {
+    children: any;
+    name: string;
+    active?: boolean;
+    alternative: any
+}) => {
     const features = useContext(FeaturesContext);
     if (!active) return children;
-    if (features.state?.features[name]) return children;
-    return <Dev>[disabled]</Dev>;
+    if (features.state?.features?.available[name]) return children;
+    return alternative ?? <Dev>[disabled]</Dev>;
 }

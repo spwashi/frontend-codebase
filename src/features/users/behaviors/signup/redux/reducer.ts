@@ -9,11 +9,7 @@ export const signupReducer           =
                  combineReducers<UserFeatureSignupFeatureState>(
                      {
                          enabled:  (state, action) => false,
-                         features: combineReducers({
-                                                       something: (s, a) => true,
-                                                   }),
-                         data:     combineReducers({
-                                                       something: (s, a) => true,
-                                                   }),
+                         features: () =>({}),
+                         data:     () =>({}),
                      },
                  )

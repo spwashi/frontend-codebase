@@ -3,7 +3,7 @@ import {IConcept} from '../models';
 export type EditConceptInput = {
     id: IConcept['id'];
     title?: IConcept['title'];
-    mimeType?: IConcept['mimeType']
+    contentType?: IConcept['contentType']
     src?: IConcept['src']
 }
 

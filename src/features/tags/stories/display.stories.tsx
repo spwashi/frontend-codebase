@@ -7,7 +7,7 @@ import { TagsDisplayForm } from '../components/display';
 
 
 export default {
-    title:      'Admin/Forms/Tag/DisplayTag',
+    title:      'Admin/Forms/Datatypes/Tag/DisplayTag',
     component:  TagsDisplayForm,
     decorators: [
         (Story) => {

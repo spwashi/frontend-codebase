@@ -1,9 +1,13 @@
+import {IProject} from './IProject';
+
 type IProjectEnvironmentName = string;
 type IProjectEnvironmentTitle = string;
 
+type IProjectEnvironmentId = number;
+
 export interface IProjectEnvironment {
-    id: number;
-    projectId: number;
+    id: IProjectEnvironmentId;
+    projectId: IProject['id'];
     name: IProjectEnvironmentName;
     title: IProjectEnvironmentTitle;
 }

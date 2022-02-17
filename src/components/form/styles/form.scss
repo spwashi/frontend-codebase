@@ -1,5 +1,7 @@
 form {
   padding: 1.5rem;
+  &:empty {display: none;}
+  border: thick solid var(--form-border-color);
 }
 
 .form-wrapper {

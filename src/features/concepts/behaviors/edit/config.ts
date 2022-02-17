@@ -1,13 +1,13 @@
 import {IUser} from '../../../../app/models/user/models';
 import {FormConfig} from '../../../../components/form/field/components/Factory';
-import {idInput, mimeTypeInput, srcInput, titleInput, userInput} from '../../data/config';
+import {idInput, contentTypeInput, srcInput, titleInput, userInput} from '../../data/config';
 import {EditConceptMutationInput} from '../../../../app/models/concept/behaviors/edit';
 
 export type SelectMutationInputData = {
     user: IUser;
     title: string;
     src: string;
-    mimeType: string;
+    contentType: string;
     id: string;
 }
 
@@ -18,20 +18,20 @@ export const form__editConcept: FormConfig = {
         userInput,
         idInput,
         titleInput,
-        mimeTypeInput,
+        contentTypeInput,
         srcInput,
     ],
 };
 
 export const selectEditConceptInput =
                  (data: SelectMutationInputData): EditConceptMutationInput => {
-                     const {title, id, src, mimeType} = data ?? {};
+                     const {title, id, src, contentType} = data ?? {};
                      return {
                          concept: {
                              id,
                              title,
                              src,
-                             mimeType,
+                             contentType,
                          },
                      };
                  };

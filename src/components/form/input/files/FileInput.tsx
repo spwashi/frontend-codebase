@@ -1,6 +1,6 @@
 import React, {useContext, useMemo} from 'react';
-import {useFormItemController} from '../../hooks/useFormItemController';
-import {FormContext} from '../../context/FormContext';
+import {useFormItem} from '../../hooks/useFormItem';
+import {formContext} from '../../context/FormContext';
 
 
 type Params =
@@ -9,12 +9,20 @@ type Params =
 
 
 export function FileInput({formKey, name, ...rest}: Params) {
-    const form       = useContext(FormContext);
-    const [, update] = useFormItemController(form, formKey);
-    const id         = useMemo(() => `input--${Math.random()}`.replace('.', ''), []);
-
+    const form                   = useContext(formContext);
+    const [{localValue}, update] = useFormItem(form, formKey);
+    const id                     = useMemo(() => `input--${Math.random()}`.replace('.', ''), []);
+    console.log(localValue)
     return (
         <React.Fragment>
+            {
+                ([...(localValue ?? []) as FileList]).map(file => {
+                    switch (file.type.split('/')[0]) {
+                        case 'image':
+                            return <img style={{width: 300+'px'}} src={URL.createObjectURL(file)} alt=""/>;
+                    }
+                })
+            }
             <input
                 {...rest}
                 id={id}

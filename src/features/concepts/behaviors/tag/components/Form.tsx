@@ -10,7 +10,7 @@ export function TagConceptForm() {
     const onsubmit         = useMutationFormSubmitCallback(send, selectTagAdditionInput);
     return (
         <section id="form__concept-tag">
-            <StandardForm form={form__tagConcept} onSubmit={onsubmit}/>
+            <StandardForm config={form__tagConcept} onSubmit={onsubmit}/>
             <GraphqlMutationResponse response={response}/>
         </section>
     )

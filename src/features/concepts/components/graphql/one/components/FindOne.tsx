@@ -11,8 +11,8 @@ const CONCEPT_QUERY = gql`
             id
             title
             src
-            mimeType
-            ConceptTag {
+            contentType
+            conceptTags {
                 tag {
                     title
                     domain
@@ -22,7 +22,6 @@ const CONCEPT_QUERY = gql`
                 username
                 name
             }
-
         }
     }
 `;

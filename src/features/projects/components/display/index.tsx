@@ -15,7 +15,7 @@ export function ProjectDisplayForm({}) {
     return (
         <section>
             <header>Project Display</header>
-            <StandardForm onSubmit={setState} form={{
+            <StandardForm onSubmit={setState} config={{
                 formId: 'display-project-form',
                 items: [{name: 'project', title: 'Project', type: 'project'}],
             }}/>

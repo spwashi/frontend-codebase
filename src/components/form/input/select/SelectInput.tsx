@@ -1,6 +1,6 @@
 import React, {ChangeEvent, useCallback, useContext, useEffect, useMemo} from 'react';
-import {useFormItemController} from '../../hooks/useFormItemController';
-import {FormContext} from '../../context/FormContext';
+import {useFormItem} from '../../hooks/useFormItem';
+import {formContext} from '../../context/FormContext';
 
 export type SelectOption<T extends any = any> =
     {
@@ -82,14 +82,14 @@ export function SelectInput(
         ...rest
     }: Params,
 ) {
-    const form                 = useContext(FormContext);
-    const valueMap             = useMemo(() => new Map(options.map(option => [
+    const form                   = useContext(formContext);
+    const valueMap               = useMemo(() => new Map(options.map(option => [
         option.value, option.payload,
     ])), [options]);
-    const [localValue, update] = useFormItemController(form, formKey ?? '', v => Array.isArray(v) ? v.map(v => valueMap.get(v)) : valueMap.get(v));
-    const id                   = useMemo(() => 'input--' + Math.random(), []);
-    const value                = multiple ? localValue ?? [] : localValue ?? '';
-    const onChange             = useOnChangeCallback(multiple, update);
+    const [{localValue}, update] = useFormItem(form, formKey ?? '', v => Array.isArray(v) ? v.map(v => valueMap.get(v)) : valueMap.get(v));
+    const id                     = useMemo(() => 'input--' + Math.random(), []);
+    const value                  = multiple ? localValue ?? [] : localValue ?? '';
+    const onChange               = useOnChangeCallback(multiple, update);
 
     useEffect(() => { rest.value && update(rest.value); }, [rest.value])
 

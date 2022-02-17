@@ -3,16 +3,20 @@ import {UsernameInput} from '../../../../features/users/components/input/Usernam
 import React, {useContext, useMemo} from 'react';
 import {SelectInput, SelectOption} from '../../input/select/SelectInput';
 import {FileInput} from '../../input/files/FileInput';
-import {TagSelect} from '../../../../features/tags/components/Select';
-import {ProjectSelect} from '../../../../features/projects/components/Select';
-import {ConceptSelect} from '../../../../features/concepts/components/Select';
-import {FormContext} from '../../context/FormContext';
+import {TagSelect} from '../../../../features/tags/components/form/Select';
+import {ProjectSelect} from '../../../../features/projects/components/form/Select';
+import {ConceptSelect} from '../../../../features/concepts/components/form/Select';
+import {formContext} from '../../context/FormContext';
 import {FileSelector} from '../../../../features/assets/components/input/FileSelector';
 import {Textarea} from '../../input/text/Textarea';
-import css from '../../styles/form.module.scss'
 import '../../styles/form.scss';
-import {EventSelect} from '../../../../features/events/components/Select';
-import {SceneSelect} from '../../../../features/scenes/components/Select';
+import {EventSelect} from '../../../../features/events/components/form/Select';
+import {SceneSelect} from '../../../../features/scenes/components/form/Select';
+import {ContentInput} from './ContentInput';
+import {ContentType} from '../../../../features/concepts/data/config';
+import styles from '../../input/styles/input.module.scss';
+import {StandardForm} from '../../Form';
+import {useFormItem} from '../../hooks/useFormItem';
 
 export type FormConfig =
     {
@@ -35,7 +39,8 @@ type EventInputConfig = { type: 'event'; };
 type FileInputConfig = { type: 'file'; multiple?: boolean };
 type FileSelectInputConfig = { type: 'fileSelect'; username: string };
 type TagInputConfig = { type: 'tags'; };
-type ContentInputConfig = { type: 'content'; };
+type FormInputConfig = { type: 'form', config: FormConfig }
+type ContentInputConfig = { type: 'content'; contentType?: ContentType };
 type SelectInputConfig = { type: 'select'; options: SelectOption[] };
 
 export type FormFieldConfig<T = any> =
@@ -59,6 +64,7 @@ export type FormFieldConfig<T = any> =
      | ProjectSelectInputConfig
      | ConceptInputConfig
      | EventInputConfig
+     | FormInputConfig
      | SceneInputConfig
      | FileInputConfig
      | FileSelectInputConfig
@@ -73,55 +79,13 @@ export function getDomain() {
     return window?.location?.host ?? '';
 }
 
-interface ContentParams {
-    data: any;
-    name: string;
-    title?: string;
-    value?: any;
+function FormInput({formKey, config}: { formKey: string, config: FormConfig }) {
+    const form                         = useContext(formContext);
+    const [formState, updateFormState] = useFormItem(form, formKey)
+
+    return <StandardForm config={config} defaultValue={formState} onSubmit={updateFormState}/>
 }
 
-function Content({data, name, title, value}: ContentParams) {
-    const {mimeType} = data
-    switch (mimeType) {
-        case 'text/plain':
-            return (
-                <Input
-                    formKey={name}
-                    placeholder={title}
-                    value={value}
-                />
-            )
-        case 'text/spw':
-            return (
-                <Input
-                    value={value}
-                    formKey={name}
-                    placeholder={title}
-                    type="spw"
-                />
-            )
-        case 'text/rich':
-            return (
-                <Input
-                    value={value}
-                    formKey={name}
-                    placeholder={title}
-                    type="rich"
-                />
-            )
-        case 'text/long':
-            return (
-                <Textarea
-                    value={value}
-                    formKey={name}
-                    placeholder={title}
-                />
-            )
-        default:
-            break;
-    }
-    return <div className={css.error}>[please set the content type]</div>
-}
 /**
  *
  * @param config
@@ -160,8 +124,9 @@ export function FormElementFactory({item: config}: { item: FormFieldConfig }) {
             const config = rest as ProjectSelectInputConfig;
             return <ProjectSelect formKey={name} {...config}/>;
         }
-        case 'content':
-            return <FormContext.Consumer>{({data}) => <Content {...config} data={data}/>}</FormContext.Consumer>;
+        case 'content': {
+            return <formContext.Consumer>{({data}) => <ContentInput {...config} data={data}/>}</formContext.Consumer>;
+        }
         case 'fileSelect': {
             const {username} = config;
             return <FileSelector formKey="file" username={username}/>;
@@ -171,6 +136,9 @@ export function FormElementFactory({item: config}: { item: FormFieldConfig }) {
         }
         case 'user': {
             return <UsernameInput doSelect ignoreLogin={config.ignoreLogin}/>;
+        }
+        case 'form': {
+            return <FormInput formKey={name} config={config.config}/>
         }
         default :
             return <>NO HANDLER</>;
@@ -184,13 +152,14 @@ export function FormElementFactory({item: config}: { item: FormFieldConfig }) {
  */
 export function FormBody({items}: { items: FormFieldConfig[] }) {
     const id = useMemo(() => `input--${Math.random()}`.replace('.', ''), []);
+    if (!items) return null;
     return <>{items.map(item => {
         item.id = id + item.name;
 
         const doLabel = item.type !== 'value'
 
         return (
-            <div key={item.name}>
+            <div key={item.name} className={styles.inputWrapper}>
                 {doLabel && <label htmlFor={item.id}>{item.title}</label>}
                 <div className="form-item">
                     <FormElementFactory item={item} key={item.name}/>

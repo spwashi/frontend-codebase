@@ -15,6 +15,11 @@ export function AllEventsQuery() {
                     allEvents {
                         id
                         title
+                        start
+                        startDate
+                        end
+                        endDate
+                        description
                         published
                         user {
                             name

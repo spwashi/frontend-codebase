@@ -17,7 +17,7 @@ function CreateTagForm() {
     }), selectCreateTagInput);
     return (
         <section id="form__tag-create">
-            <StandardForm form={form__createTag} onSubmit={onsubmit}/>
+            <StandardForm config={form__createTag} onSubmit={onsubmit}/>
             <GraphqlMutationResponse response={response}/>
         </section>
     )

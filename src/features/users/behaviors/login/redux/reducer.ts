@@ -2,20 +2,19 @@ import {selectUserFeature} from '../../../redux/selectors';
 import {combineReducers} from 'redux';
 import {RootState} from '../../../../../redux/rootState';
 import {UserFeatureLoginFeatureState} from '../../../redux/types';
+import {REHYDRATE} from 'redux-persist';
 
 export const ACTION_RECEIVE_LOGIN = 'RECEIVE_LOGIN';
 export const ACTION_LOGOUT        = 'LOGOUT';
 
 
-export const selectUserLoginFeature = (state: RootState) => selectUserFeature(state).features.login;
-export const selectLoggedInUserName = (state: RootState) => selectUserLoginFeature(state).data.username;
-export const selectLoggedInUser = (state: RootState) => selectUserLoginFeature(state).data.user;
+export const selectUserLoginFeature = (state: RootState) => selectUserFeature(state)?.features?.login;
+export const selectLoggedInUserName = (state: RootState) => selectUserLoginFeature(state)?.data?.username;
+export const selectLoggedInUser     = (state: RootState) => selectUserLoginFeature(state)?.data?.user;
 export const loginReducer           =
                  combineReducers<UserFeatureLoginFeatureState>({
                                                                    enabled:  (state, action) => true,
-                                                                   features: combineReducers({
-                                                                                                 something: (s, a) => true,
-                                                                                             }),
+                                                                   features: () => ({}),
                                                                    data:     combineReducers({
                                                                                                  user:
                                                                                                      (state: string | null = null, action: any) => {
@@ -27,6 +26,8 @@ export const loginReducer           =
                                                                                                                  return user;
                                                                                                              case ACTION_LOGOUT:
                                                                                                                  return null;
+                                                                                                             case REHYDRATE:
+                                                                                                                 return selectLoggedInUser(action?.payload) ?? null;
                                                                                                          }
                                                                                                          return state;
                                                                                                      },
@@ -41,6 +42,8 @@ export const loginReducer           =
                                                                                                                  return username;
                                                                                                              case ACTION_LOGOUT:
                                                                                                                  return null;
+                                                                                                             case REHYDRATE:
+                                                                                                                 return selectLoggedInUserName(action?.payload) ?? null;
                                                                                                          }
                                                                                                          return state;
                                                                                                      },

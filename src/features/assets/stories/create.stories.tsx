@@ -6,7 +6,7 @@ import {Features} from '../../index';
 import {UploadFileForm} from '../behaviors/upload/components/form/Form';
 
 export default {
-    title:      'Admin/Forms/File/UploadFile',
+    title:      'Admin/Forms/Datatypes/File/UploadFile',
     component:  CreateConceptForm,
     decorators: [
         (Story) =>

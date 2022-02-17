@@ -11,7 +11,7 @@ function ActiveForm() {
     const onsubmit         = useMutationFormSubmitCallback(send, selectCreateEventInput);
     return (
         <>
-            <StandardForm form={form__createEvent} onSubmit={onsubmit}/>
+            <StandardForm config={form__createEvent} onSubmit={onsubmit}/>
             <GraphqlMutationResponse response={response}/>
         </>
     )

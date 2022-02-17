@@ -2,8 +2,8 @@
 import {gql, useMutation} from '@apollo/client';
 
 const TAG_EVENT = gql`
-    mutation TagEvent($event: EventReferenceInput!, $tags: [TagReferenceInput]) {
-        tagEvent(event: $event, tags: $tags) {
+    mutation TagEvent($event: EventReferenceInput!, $user: UserReferenceInput!, $tags: [TagReferenceInput]) {
+        tagEvent(event: $event, user: $user, tags: $tags) {
             __typename
         }
     }

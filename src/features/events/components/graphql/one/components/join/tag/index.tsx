@@ -5,8 +5,15 @@ import React from 'react';
 
 function useDeleteEventTagMutation() {
   const DELETE_TAG = gql`
-      mutation DeleteEventTag($event: EventIdInput!, $tags: [TagReferenceInput]) {
-          untagEvent(event: $event, tags: $tags)
+      mutation DeleteEventTag($event: EventReferenceInput!, $user: UserReferenceInput, $tags: [TagReferenceInput]) {
+          untagEvent(event: $event, user: $user, tags: $tags) {
+              tag {
+                  id
+              }
+              event {
+                  id
+              }
+          }
       }
   `;
 

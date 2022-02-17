@@ -7,6 +7,10 @@ const EDIT_EVENT = gql`
             id
             title
             description
+            start
+            startDate
+            end
+            endDate
         }
     }
 `;

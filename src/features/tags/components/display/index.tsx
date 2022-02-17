@@ -8,10 +8,10 @@ export function TagsDisplayForm({}) {
     const [state, setState] = useState<any | null>();
     const tags              = state?.data?.tags;
     return (
-        <FeatureRequirement name="tags.display">
+        <FeatureRequirement name="tags.display" alternative={'Need Tag Display'}>
             <section>
                 <header>Tags Display</header>
-                <StandardForm onSubmit={setState} form={{
+                <StandardForm onSubmit={setState} config={{
                     formId: 'display-tags-form',
                     items:  [{name: 'tags', title: 'Tags', type: 'tags'}],
                 }}/>

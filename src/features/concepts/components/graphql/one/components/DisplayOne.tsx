@@ -19,18 +19,18 @@ interface ConceptDisplayParams {concept: IConcept | IConcept_Complete;}
 
 
 function Internal({concept}: ConceptDisplayParams) {
-    const {id, title, mimeType, src, ConceptTag: conceptTags} = concept as IConcept_Complete;
+    const {id, title, contentType, src, ConceptTag: conceptTags} = concept as IConcept_Complete;
 
     return <div className="concept-wrapper">
         <article className="concept">
             <section>
                 <header><span className="title">{title}</span></header>
                 <section className="body">
-                    <div className="mimeType">{mimeType}</div>
+                    <div className="contentType">{contentType}</div>
 
                     <div className="content">{
                         (() => {
-                            switch (mimeType) {
+                            switch (contentType) {
                                 case'text/rich':
                                     return <div className="rich-text">{RichText({src})}</div>;
                                 case'text/text':

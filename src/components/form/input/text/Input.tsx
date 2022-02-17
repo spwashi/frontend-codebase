@@ -1,9 +1,10 @@
 import React, {useCallback, useContext, useEffect, useMemo} from 'react';
-import {useFormItemController} from '../../hooks/useFormItemController';
-import {FormContext} from '../../context/FormContext';
+import {useFormItem} from '../../hooks/useFormItem';
+import {formContext} from '../../context/FormContext';
 import styles from '../styles/input.module.scss'
 import SpwEditor from '../../../widgets/spw/SpwEditor';
 import {convertFromRaw, convertToRaw, Editor, EditorState} from 'draft-js';
+import '../styles/input.scss'
 
 type InputParams =
     { formKey?: string }
@@ -35,8 +36,8 @@ export function Value({
     children?: any;
     calc?: (data?: any) => any
 }) {
-    const form                 = useContext(FormContext);
-    const [localValue, update] = useFormItemController(form, formKey ?? null, undefined, true);
+    const form                   = useContext(formContext);
+    const [{localValue}, update] = useFormItem(form, formKey ?? null, undefined, true);
 
     useEffect(() => {
         const v = calc ? calc(form?.data) : localValue;
@@ -56,13 +57,13 @@ export function Value({
 
     return <>
         <div className={styles.inputWrapper}>
-            <FormContext.Consumer>
+            <formContext.Consumer>
                 {
                     ({key, data}) => {
                         return <InnerValue key={key} value={value} update={doUpdate}>{children}</InnerValue>
                     }
                 }
-            </FormContext.Consumer>
+            </formContext.Consumer>
         </div>
     </>
 }
@@ -93,11 +94,11 @@ function useRichTextEditor(params: InputParams, [localValue, update]: [EditorSta
 }
 
 export function Input(params: InputParams) {
-    const {formKey, name, value, ...rest} = params;
-    const form                            = useContext(FormContext);
-    const [localValue, update]            = useFormItemController(form, formKey ?? null);
-    const {type = 'text'}                 = rest;
-    const editor                          = useRichTextEditor(params, [localValue, update]);
+    const {formKey, name, ...rest} = params;
+    const form                     = useContext(formContext);
+    const [{value: value}, update] = useFormItem(form, formKey ?? name ?? null);
+    const {type = 'text'}          = rest;
+    const editor                   = useRichTextEditor(params, [value, update]);
 
     return (
         <React.Fragment>
@@ -107,7 +108,7 @@ export function Input(params: InputParams) {
                 : type === 'spw'
                   ? (
                       <SpwEditor
-                          value={localValue}
+                          value={value}
                           onChange={val => update(val)}
                       />
                   )
@@ -115,7 +116,7 @@ export function Input(params: InputParams) {
                       <input {...rest}
                              type={type}
                              name={name}
-                             value={localValue ?? ''}
+                             value={value ?? ''}
                              onChange={e => update(e.target.value)}/>
 
                   )}

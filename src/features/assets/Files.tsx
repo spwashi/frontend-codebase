@@ -10,18 +10,18 @@ export function FilesControlPanel() {
     return <>
         {/*Files*/}
 
-            <UserFeatures/>
-            <ProjectFeatures/>
+        <UserFeatures/>
+        <ProjectFeatures/>
 
-            <FeatureRequirement name="users.login">
-                <FeatureRequirement name="files">
-                    <section>
-                        <LoggedIn>
-                            <UploadFileForm/>
-                        </LoggedIn>
-                        <FileDisplay/>
-                    </section>
-                </FeatureRequirement>
+        <FeatureRequirement name="users.login" alternative={'Need Users Login'}>
+            <FeatureRequirement name="files" alternative={'Need Files'}>
+                <section>
+                    <LoggedIn>
+                        <UploadFileForm/>
+                    </LoggedIn>
+                    <FileDisplay/>
+                </section>
             </FeatureRequirement>
+        </FeatureRequirement>
     </>;
 }

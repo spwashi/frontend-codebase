@@ -15,7 +15,7 @@ export function AllConceptsQuery() {
                     allConcepts {
                         id
                         title
-                        mimeType
+                        contentType
                         src
                         published
                         user {

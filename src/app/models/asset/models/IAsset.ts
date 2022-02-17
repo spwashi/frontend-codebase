@@ -1,8 +1,10 @@
+type IAssetId = number;
+
 export interface IAsset {
-    id: number;
+    id: IAssetId;
     uri: string;
     name: string;
     realname: string;
-    mimeType: string;
+    contentType: string;
     conceptId?: number;
 }

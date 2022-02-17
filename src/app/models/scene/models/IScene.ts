@@ -4,17 +4,19 @@ import {IProjectEnvironment} from '../../project/models';
 type ISceneName = string;
 type ISceneTitle = string;
 type ISceneDescription = string;
+type ISceneId = number;
+
 
 export interface IScene {
-    id: number;
+    id: ISceneId;
     name: ISceneName;
     title?: ISceneTitle;
     description?: ISceneDescription;
     SceneConcept?: ISceneConcept[];
-    projectEnvironment?:IProjectEnvironment;
+    projectEnvironment?: IProjectEnvironment;
     projectEnvironmentId: IProjectEnvironment['id']
 }
 
 export interface ISceneIdentifyingPartial {
-    id: number
+    id: ISceneId
 }

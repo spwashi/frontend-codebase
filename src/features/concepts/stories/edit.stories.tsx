@@ -5,7 +5,7 @@ import {CreateConceptForm} from '../behaviors/create';
 import {Features} from '../../index';
 
 export default {
-    title:      'Admin/Forms/Concept/CreateConcept',
+    title:      'Admin/Forms/Datatypes/Concept/CreateConcept',
     component:  CreateConceptForm,
     decorators: [
         (Story) =>

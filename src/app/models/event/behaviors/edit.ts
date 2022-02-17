@@ -1,4 +1,5 @@
 import {IEvent} from '../models';
+import {IUser} from '../../user/models';
 
 export type EditEventInput = {
     id: IEvent['id'];
@@ -9,5 +10,8 @@ export type EditEventInput = {
 }
 
 export type EditEventMutationInput = {
-    event: EditEventInput
+    event: EditEventInput;
+    user: {
+        id: IUser['id']
+    }
 };

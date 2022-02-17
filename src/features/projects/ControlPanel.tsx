@@ -7,10 +7,10 @@ import { CreateProjectForm } from './behaviors/create';
 export function ProjectsControlPanel() {
     return <>
         <ProjectFeatures/>
-        <FeatureRequirement name="projects">
+        <FeatureRequirement name="projects" alternative={"Need Projects"}>
             <section>
                 <CreateProjectForm/>
-                <FeatureRequirement name="projects.display">
+                <FeatureRequirement name="projects.display" alternative={"Need Project Display"}>
                     <ProjectDisplayForm/>
                 </FeatureRequirement>
             </section>

@@ -44,7 +44,7 @@ export function formReducer(state = getInitialState(), action: { type: string, p
                 changed = {...state.changed, [index]: false};
                 data    = state.data;
             } else {
-                changed = {...state.changed, [index]: true};
+                changed = {...state.changed, [index]: Date.now()};
                 data    = {...state.data, [index]: value};
             }
 

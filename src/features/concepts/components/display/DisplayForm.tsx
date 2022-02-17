@@ -7,10 +7,10 @@ export function ConceptDisplayForm({}) {
     const [state, setState] = useState<any | null>();
     const id                = state?.data?.concept?.id;
     return (
-        <FeatureRequirement name="concepts.display">
+        <FeatureRequirement name="concepts.display" alternative={'Need Concepts Display'}>
             <section>
                 <header>Concept Display</header>
-                <StandardForm onSubmit={setState} form={{
+                <StandardForm onSubmit={setState} config={{
                     formId: 'display-concept-form',
                     items:  [{name: 'concept', title: 'Concept', type: 'concept'}],
                 }}/>

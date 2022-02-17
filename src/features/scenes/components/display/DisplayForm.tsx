@@ -7,10 +7,10 @@ export function SceneDisplayForm({}) {
     const [state, setState] = useState<any | null>();
     const id                = state?.data?.scene?.id;
     return (
-        <FeatureRequirement name="scenes.display">
+        <FeatureRequirement name="scenes.display" alternative={"Need Scene Display"}>
             <section>
                 <header>Scene Display</header>
-                <StandardForm onSubmit={setState} form={{
+                <StandardForm onSubmit={setState} config={{
                     formId: 'display-scene-form',
                     items:  [{name: 'scene', title: 'Scene', type: 'scene'}],
                 }}/>

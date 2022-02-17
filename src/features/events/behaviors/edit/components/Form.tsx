@@ -5,8 +5,8 @@ import {form__editEvent, selectEditEventInput} from '../config';
 import {useEditEventMutation} from '../mutation';
 import {StandardForm} from '../../../../../components/form/Form';
 import {LoggedIn} from '../../../../users/behaviors/login/Requirement';
-import {FormContextProvider} from '../../../../../components/form/context/FormContext';
-import {EventSelect} from '../../../components/Select';
+import {Form} from '../../../../../components/form/context/FormContext';
+import {EventSelect} from '../../../components/form/Select';
 import {Log} from '../../../../../components/Log';
 
 export function EditEventForm() {
@@ -18,13 +18,13 @@ export function EditEventForm() {
     return (
         <div style={{border: 'thin solid red'}}>
             <Log>{_event}</Log>
-            <FormContextProvider onChange={setEvent}>
+            <Form onChange={setEvent}>
                 <EventSelect formKey="event"/>
-            </FormContextProvider>
+            </Form>
             {
                 _event && (
                     <StandardForm
-                        form={form__editEvent}
+                        config={form__editEvent}
                         onSubmit={onsubmit}
                         onChange={setData}
                         defaultValue={_event}

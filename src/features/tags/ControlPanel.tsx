@@ -13,10 +13,10 @@ export function TagsControlPanel() {
             <UserFeatures/>
             <ProjectFeatures/>
 
-            <FeatureRequirement name="tags">
+            <FeatureRequirement name="tags" alternative={'Need Tags'}>
                 <section>
                     <RestrictedCreateTagForm/>
-                    <FeatureRequirement name="tags.display">
+                    <FeatureRequirement name="tags.display" alternative={'Need Tag Display'}>
                         <TagsDisplayForm/>
                     </FeatureRequirement>
                 </section>

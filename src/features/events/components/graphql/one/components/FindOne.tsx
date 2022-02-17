@@ -6,10 +6,15 @@ import {useDispatch} from 'react-redux';
 import {ACTION_RECEIVE_ONE_EVENT} from '../../../../redux/reducer';
 
 const EVENT_QUERY = gql`
-    query Event($id: Int!) {
+    query OneEvent($id: Int!) {
         event(id: $id) {
             id
             title
+            start
+            startDate
+            end
+            endDate
+            description
             user {
                 id
                 name
@@ -19,18 +24,18 @@ const EVENT_QUERY = gql`
                 event {
                     id
                 }
-               tag {
-                   id
-                   title
-                   domain
-               } 
+                tag {
+                    id
+                    title
+                    domain
+                }
             }
         }
     }
 `;
 
 export function OneEventQuery({id}: IEventIdentifyingPartial) {
-    const context      = useContext(EventContext) ?? ({} as any);
+    const context    = useContext(EventContext) ?? ({} as any);
     const {setEvent} = context;
 
     const {data: query} = useQuery(EVENT_QUERY, {variables: {id}});

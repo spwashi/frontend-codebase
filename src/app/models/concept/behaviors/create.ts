@@ -4,7 +4,7 @@ import {IUser} from '../../user/models';
 export type CreateConceptInput = {
     title: IConcept['title'];
     src: IConcept['src'];
-    mimeType: IConcept['mimeType'];
+    contentType: IConcept['contentType'];
 };
 
 export type CreateConceptMutationInput = {

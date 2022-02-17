@@ -6,7 +6,7 @@ import {Features} from '../../index';
 
 
 export default {
-    title:      'Admin/Forms/Event/TagEvent',
+    title:      'Admin/Forms/Datatypes/Event/TagEvent',
     component:  RestrictedTagEventForm,
     decorators: [
         (Story) => {

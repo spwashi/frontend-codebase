@@ -5,7 +5,7 @@ import {RestrictedEditSceneForm} from '../behaviors/edit';
 import {Features} from '../../index';
 
 export default {
-    title:      'Admin/Forms/Scene/EditScene',
+    title:      'Admin/Forms/Datatypes/Scene/EditScene',
     component:  RestrictedEditSceneForm,
     decorators: [
         (Story) =>

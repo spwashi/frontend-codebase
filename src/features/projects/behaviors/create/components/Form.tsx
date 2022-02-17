@@ -19,7 +19,7 @@ function ActiveForm() {
     }), selectCreateProjectInput);
     return (
         <section id="form__project-create">
-            <StandardForm form={form__createProject} onSubmit={onsubmit} defaultValue={{}}/>
+            <StandardForm config={form__createProject} onSubmit={onsubmit} defaultValue={{}}/>
             <GraphqlMutationResponse response={response}/>
         </section>
     )
@@ -27,6 +27,6 @@ function ActiveForm() {
 
 export function CreateProjectForm({}) {
     return (
-        <FeatureRequirement name="projects.create"><ActiveForm/></FeatureRequirement>
+        <FeatureRequirement name="projects.create" alternative={"Need Projects Create"}><ActiveForm/></FeatureRequirement>
     );
 }

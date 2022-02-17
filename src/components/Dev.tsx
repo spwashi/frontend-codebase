@@ -2,7 +2,7 @@ import React from 'react';
 
 
 function isDev() {
-    return false;
+    return process.env.NODE_ENV === 'development';
 }
 export function Dev({children}: { children: any }) {
     if (isDev())

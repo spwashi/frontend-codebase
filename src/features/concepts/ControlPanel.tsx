@@ -20,16 +20,16 @@ export function ConceptsControlPanel() {
 
             <NavLink to="/concepts">Concept Home</NavLink>
             <NavLink to="all">All Concepts</NavLink>
-            <FeatureRequirement name="concepts">
+            <FeatureRequirement name="concepts" alternative={'Need Concepts'}>
                 <Routes>
                     <Route path={'all'} element={<div style={{width: 500 + 'px'}}><AllConceptsConceptDisplay/></div>}/>
                     <Route path="" element={
                         <section>
                             <CreateConceptForm/>
                             <RestrictedEditConceptForm/>
-                            <FeatureRequirement name="concepts.display">
+                            <FeatureRequirement name="concepts.display" alternative={'Need Concepts Display'}>
                                 <ConceptDisplayForm/>
-                                <FeatureRequirement name="tags.display">
+                                <FeatureRequirement name="tags.display" alternative={'Need Tags Display'}>
                                     <RestrictedTagConceptForm/>
                                 </FeatureRequirement>
                             </FeatureRequirement>

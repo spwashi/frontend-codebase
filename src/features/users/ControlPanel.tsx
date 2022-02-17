@@ -14,9 +14,9 @@ export function UsersControlPanel() {
         <UserFeatures/>
         <ProjectFeatures/>
         <LogoutButton/>
-        <FeatureRequirement name="users">
+        <FeatureRequirement name="users" alternative={"Need Users"}>
             <section>
-                <FeatureRequirement name="users.login">
+                <FeatureRequirement name="users.login" alternative={"Need User Login"}>
                     <LoggedIn>
                         <VerifyLogin/>
                     </LoggedIn>
@@ -24,7 +24,7 @@ export function UsersControlPanel() {
                         <LoginForm/>
                     </NotLoggedIn>
                 </FeatureRequirement>
-                <FeatureRequirement name="users.signup">
+                <FeatureRequirement name="users.signup" alternative={"Need User Signup"}>
                     <NotLoggedIn>
                         <LoggedIn>
                             sdadsd

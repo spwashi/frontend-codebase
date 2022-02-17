@@ -6,7 +6,7 @@ import {ACTION_DELETE_ONE_EVENT} from '../../../../redux/reducer';
 
 function useDeleteEventMutation() {
   const DELETE_EVENT = gql`
-      mutation DeleteEvent($id: String) {
+      mutation DeleteEvent($id: Int) {
           deleteEvent (event: {id: $id}) {
               id
           }

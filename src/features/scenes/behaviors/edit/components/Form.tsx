@@ -5,8 +5,8 @@ import {form__editScene, selectEditSceneInput} from '../config';
 import {useEditSceneMutation} from '../mutation';
 import {StandardForm} from '../../../../../components/form/Form';
 import {LoggedIn} from '../../../../users/behaviors/login/Requirement';
-import {FormContextProvider} from '../../../../../components/form/context/FormContext';
-import {SceneSelect} from '../../../components/Select';
+import {Form} from '../../../../../components/form/context/FormContext';
+import {SceneSelect} from '../../../components/form/Select';
 
 function EditSceneForm() {
     const {send, response}  = useEditSceneMutation();
@@ -16,13 +16,13 @@ function EditSceneForm() {
     const [{data: {scene: _scene} = {} as any} = {} as any, setScene] = useState({} as any);
     return (
         <>
-            <FormContextProvider onChange={setScene}>
+            <Form onChange={setScene}>
                 <SceneSelect formKey="scene"/>
-            </FormContextProvider>
+            </Form>
             {
                 _scene &&
                 <StandardForm
-                  form={form__editScene}
+                  config={form__editScene}
                   onSubmit={onsubmit}
                   onChange={setData}
                   defaultValue={_scene}

@@ -11,6 +11,6 @@ function userToOption(user: IUser): UserOption {
 }
 
 
-export const selectUserFeature              = (state: RootState) => state.features.user;
+export const selectUserFeature              = (state: RootState) => state?.features?.user;
 export const selectPossibleUsersList        = (state: RootState) => selectUserFeature(state).data.users.list.map(userToOption);
 export const selectPossibleUsersLastFetched = (state: RootState) => selectUserFeature(state).data.users.lastFetched;

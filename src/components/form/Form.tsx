@@ -1,6 +1,6 @@
 import React, {useCallback, useMemo, useRef, useState} from 'react';
 import {FormBody, FormConfig} from './field/components/Factory';
-import {FormContextProvider} from './context/FormContext';
+import {ButtonConfig, Form} from './context/FormContext';
 import _ from 'lodash';
 
 function useHandler(form: FormConfig, index: 'onChange' | 'onSubmit', onChange?: (e: any) => void): [boolean, (d: any) => void] {
@@ -26,18 +26,24 @@ function useHandler(form: FormConfig, index: 'onChange' | 'onSubmit', onChange?:
 
     return [canSubmit, handler]
 }
-export function StandardForm({
-                                 form: formConfig,
-                                 defaultValue,
-                                 onSubmit,
-                                 onChange,
-                             }: {
-    form: FormConfig,
+
+
+type Params = {
+    config?: FormConfig,
+    children?: any
     defaultValue?: any,
     onSubmit?: (data: any) => void,
     onChange?: (data: any) => void,
-}) {
-    const defaultForm = useMemo(() => _.cloneDeep(formConfig), [formConfig]);
+};
+
+export function StandardForm({
+                                 config: formConfig,
+                                 defaultValue,
+                                 onSubmit,
+                                 children,
+                                 onChange,
+                             }: Params) {
+    const defaultForm = useMemo(() => _.cloneDeep(formConfig ?? {formId: '', items: []} as FormConfig), [formConfig]);
     const formRef     = useRef(defaultForm)
     const form        = formRef.current;
 
@@ -48,15 +54,16 @@ export function StandardForm({
     return (
         <section className="form-wrapper">
             {form.title && <header>{form.title}</header>}
-            <FormContextProvider
+            <Form
                 id={form.formId}
                 onSubmit={submitHandler}
                 onChange={changeHandler}
                 defaultValue={defaultValue}
-                buttons={[onSubmit && canSubmit && <button key="submit" type="submit">submit</button>]}
+                buttons={[onSubmit && canSubmit && {type: 'submit'}].filter(i => !!i) as ButtonConfig[]}
             >
                 <FormBody items={form.items}/>
-            </FormContextProvider>
+                {children}
+            </Form>
         </section>
     )
 }

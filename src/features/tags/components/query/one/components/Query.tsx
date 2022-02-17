@@ -4,11 +4,11 @@ import React, {useContext, useEffect} from 'react';
 import {TagContext} from '../context/context';
 
 const TAG_QUERY = gql`
-    query Tag($id: Number!) {
+    query OneTag($id: Int!) {
         tag(id: $id) {
             id
-            id
             domain
+            title
             description
             user {
                 username

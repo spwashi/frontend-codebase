@@ -7,6 +7,8 @@ const EDIT_CONCEPT = gql`
             id
             title
             src
+            contentType
+            published
         }
     }
 `;

@@ -6,7 +6,7 @@ import {LogoutButton} from '../behaviors/login/Logout';
 import {Features} from '../../index';
 
 export default {
-    title:      'Admin/Forms/User/Login',
+    title:      'Admin/Forms/Datatypes/User/Login',
     component:  LoginForm,
     decorators: [
         (Story) =>

@@ -20,16 +20,16 @@ export function EventsControlPanel() {
 
             <NavLink to="/events">Event Home</NavLink>
             <NavLink to="all">All Events</NavLink>
-            <FeatureRequirement name="events">
+            <FeatureRequirement name="events" alternative={"Need Events"}>
                 <Routes>
                     <Route path={'all'} element={<div style={{width: 500 + 'px'}}><AllEventsEventDisplay/></div>}/>
                     <Route path="" element={
                         <section>
                             <CreateEventForm/>
                             <RestrictedEditEventForm/>
-                            <FeatureRequirement name="events.display">
+                            <FeatureRequirement name="events.display" alternative={"Need Events Display"}>
                                 <EventDisplayForm/>
-                                <FeatureRequirement name="tags.display">
+                                <FeatureRequirement name="tags.display" alternative={"Need Tags Display"}>
                                     <RestrictedTagEventForm/>
                                 </FeatureRequirement>
                             </FeatureRequirement>

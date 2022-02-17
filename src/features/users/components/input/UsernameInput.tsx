@@ -1,4 +1,4 @@
-import {UserSelect} from '../UserSelect';
+import {UserSelect} from '../form/Select';
 import {Input} from '../../../../components/form/input/text/Input';
 import React from 'react';
 

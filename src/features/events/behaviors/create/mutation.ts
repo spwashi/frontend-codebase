@@ -4,8 +4,8 @@ import {gql, useMutation} from '@apollo/client';
 const CREATE_EVENT = gql`
     mutation CreateEvent($event: CreateEventInput, $user: UserReferenceInput) {
         createEvent(event: $event, user:$user) {
-            title
             id
+            title
             description
             published
         }

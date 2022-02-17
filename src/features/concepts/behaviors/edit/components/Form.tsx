@@ -5,8 +5,8 @@ import {form__editConcept, selectEditConceptInput} from '../config';
 import {useEditConceptMutation} from '../mutation';
 import {StandardForm} from '../../../../../components/form/Form';
 import {LoggedIn} from '../../../../users/behaviors/login/Requirement';
-import {FormContextProvider} from '../../../../../components/form/context/FormContext';
-import {ConceptSelect} from '../../../components/Select';
+import {Form} from '../../../../../components/form/context/FormContext';
+import {ConceptSelect} from '../../../components/form/Select';
 import {Log} from '../../../../../components/Log';
 
 export function EditConceptForm() {
@@ -17,14 +17,14 @@ export function EditConceptForm() {
     const [{data: {concept: _concept} = {} as any} = {} as any, setConcept] = useState({} as any);
     return (
         <div style={{border: 'thin solid red'}}>
-            <Log>{_concept}</Log>
-            <FormContextProvider onChange={setConcept}>
+            <Log title={'Concept'}>{_concept}</Log>
+            <Form onChange={setConcept}>
                 <ConceptSelect formKey="concept"/>
-            </FormContextProvider>
+            </Form>
             {
                 _concept && (
                     <StandardForm
-                        form={form__editConcept}
+                        config={form__editConcept}
                         onSubmit={onsubmit}
                         onChange={setData}
                         defaultValue={_concept}

@@ -40,7 +40,7 @@ function SpwEditor(props: EditorProps) {
                     />
                 )
             }
-            <Log error={!!parseError}>{parseError ?? parsed}</Log>
+            {/*<Log title={'Error'} error={!!parseError}>{parseError ?? parsed}</Log>*/}
         </div>
     );
 }

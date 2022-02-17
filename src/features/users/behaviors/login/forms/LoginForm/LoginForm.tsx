@@ -1,28 +1,15 @@
 import React, {useEffect} from 'react';
-import {gql, useMutation} from '@apollo/client';
+import {useMutation} from '@apollo/client';
 import {useMutationFormSubmitCallback} from '../../../../../../services/graphql/hooks/useMutationFormSubmitCallback';
 import {GraphqlMutationResponse} from '../../../../../../services/graphql/GraphqlMutationResponse';
 import {setJwt} from '../../../../../../util/jwt';
 import {useDispatch, useSelector} from 'react-redux';
 import {ACTION_RECEIVE_LOGIN, selectLoggedInUserName} from '../../redux/reducer';
-import {form__login, selectLoginInput} from '../../selectors';
+import {form__login, LOGIN_MUTATION, selectLoginInput} from '../../selectors';
 import {StandardForm} from '../../../../../../components/form/Form';
 import {IUser} from '../../../../../../app/models/user/models';
 import {FeatureRequirement} from '../../../../../_util';
 
-const LOGIN_MUTATION = gql`
-    mutation LogIn($user: UserLoginInput, $password: PasswordReferenceInput) {
-        logIn(user: $user, password: $password) {
-            jwt
-            username
-            user {
-                id
-                name
-                username
-            }
-        }
-    }
-`;
 
 function LoginReceivedEffect({username, user, jwt}: { username: string, user: IUser, jwt: string }) {
     const dispatch = useDispatch();
@@ -50,7 +37,7 @@ function ActiveForm() {
     return (
         <>
             <LoginReceivedEffect jwt={jwt} username={username} user={user}/>
-            <StandardForm form={form__login} onSubmit={onsubmit}/>
+            <StandardForm config={form__login} onSubmit={onsubmit}/>
             <GraphqlMutationResponse response={response}/>
         </>
     )
@@ -58,5 +45,11 @@ function ActiveForm() {
 export function LoginForm({alt}: { alt?: any }) {
     const loggedInUser = useSelector(selectLoggedInUserName);
     if (loggedInUser) return alt ?? null;
-    return <FeatureRequirement name="projects"><ActiveForm/></FeatureRequirement>;
+    return (
+        <FeatureRequirement name="users.login" alternative={'Need Users'}>
+            <FeatureRequirement name="projects.display" alternative={'Need Projects'}>
+                <ActiveForm/>
+            </FeatureRequirement>
+        </FeatureRequirement>
+    );
 }

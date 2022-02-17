@@ -1,5 +1,21 @@
 import {FormConfig, FormFieldConfig} from '../../../../../components/form/field/components/Factory';
 import {makeFieldRequired} from '../../../../../components/form/field/util/makeFieldRequired';
+import {gql} from '@apollo/client';
+
+export const LOGIN_MUTATION = gql`
+    mutation LogIn($user: UserLoginInput,$project: ProjectReferenceInput, $password: PasswordReferenceInput) {
+        logIn(user: $user, project: $project, password: $password) {
+            jwt
+            username
+            user {
+                id
+                name
+                username
+            }
+        }
+    }
+`;
+
 
 export function selectLoginInput(data: any) {
     const {
@@ -11,6 +27,7 @@ export function selectLoginInput(data: any) {
     return {
         user:     {username},
         password: {password},
+        project:  {id: project.id},
     };
 }
 
@@ -35,11 +52,11 @@ const projectInput: FormFieldConfig = {
 
 export const form__login: FormConfig =
                  {
-                     formId:    'login-form',
-                     title: 'Login',
-                     items: [
-                                userInput,
-                                passwordInput,
-                                projectInput,
-                            ].map(makeFieldRequired),
+                     formId: 'login-form',
+                     title:  'Login',
+                     items:  [
+                                 userInput,
+                                 passwordInput,
+                                 projectInput,
+                             ].map(makeFieldRequired),
                  };
