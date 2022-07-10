@@ -2,7 +2,7 @@ import {combineReducers} from 'redux';
 import {userReducer} from '../features/users/redux/reducer';
 import {projectReducer} from '../features/projects/redux/reducer';
 import {conceptReducer} from '../features/concepts/redux/reducer';
-import {fileReducer} from '../features/assets/redux/reducer';
+import {assetReducer} from '../features/assets/redux/reducer';
 import {tagReducer} from '../features/tags/redux/reducer';
 import {sceneReducer} from '../features/scenes/redux/reducer';
 import {eventReducer} from '../features/events/redux/reducer';
@@ -30,7 +30,7 @@ export const rootReducer      = combineReducers(
                     concept: conceptReducer,
                     tag:     tagReducer,
                     scene:   sceneReducer,
-                    file:    fileReducer,
+                    asset:    assetReducer,
                     event:   eventReducer,
                 },
             ),

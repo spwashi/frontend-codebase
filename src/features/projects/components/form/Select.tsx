@@ -4,13 +4,13 @@ import {useProjectOptions} from '../../hooks/useOptions';
 import {useSelector} from 'react-redux';
 import {selectProjectStateProject} from '../../redux/selectors';
 import {updateFormItem} from '../../../../components/form/hooks/useFormItem';
-import {formContext} from '../../../../components/form/context/FormContext';
+import {FormContext} from '../../../../components/form/context/FormContext';
 
 export function ProjectSelect({formKey, ignore}: { formKey?: string, ignore?: boolean }) {
     const options = useProjectOptions();
 
     const project = useSelector(selectProjectStateProject)
-    const context = useContext(formContext);
+    const context = useContext(FormContext);
 
     useEffect(() => { project && updateFormItem(context, formKey ?? '', project); }, [project]);
 

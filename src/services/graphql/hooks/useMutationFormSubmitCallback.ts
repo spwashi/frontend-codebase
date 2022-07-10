@@ -8,7 +8,7 @@ import {useCallback} from 'react';
  * @param selector
  */
 export function useMutationFormSubmitCallback<T = any>(
-    send: (options?: MutationFunctionOptions) => Promise<FetchResult<any>>,
+    send: (options?: MutationFunctionOptions) => any,
     selector: (data: any) => T,
 ) {
     return useCallback(async ({data}: any) => {

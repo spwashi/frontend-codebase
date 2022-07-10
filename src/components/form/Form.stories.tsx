@@ -26,9 +26,8 @@ const Template: ComponentStory<any> =
                           {name: 'text', type: 'text', title: 'Text'},
                           {name: 'text', type: 'longtext', title: 'Long Text'},
                           {name: 'plain', type: 'content', title: 'Plain Content', contentType: 'text/plain'},
-                          {name: 'spw', type: 'content', title: 'Spw', contentType: 'text/spw'},
                           {name: 'rich', type: 'content', title: 'Spw', contentType: 'text/rich'},
-                          {name: 'file', type: 'file', title: 'File'},
+                          {name: 'asset', type: 'asset', title: 'Asset'},
                           {
                               name: 'form', type: 'form', title: 'Form', config: {
                                   formId: 'exampleForm',

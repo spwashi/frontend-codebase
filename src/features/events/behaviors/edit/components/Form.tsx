@@ -10,35 +10,35 @@ import {EventSelect} from '../../../components/form/Select';
 import {Log} from '../../../../../components/Log';
 
 export function EditEventForm() {
-    const {send, response}  = useEditEventMutation();
-    const onsubmit          = useMutationFormSubmitCallback(send, selectEditEventInput);
-    const [{data}, setData] = useState<any | null>({});
+  const {send, response}  = useEditEventMutation();
+  const onsubmit          = useMutationFormSubmitCallback(send, selectEditEventInput);
+  const [{data}, setData] = useState<any | null>({});
 
-    const [{data: {event: _event} = {} as any} = {} as any, setEvent] = useState({} as any);
-    return (
-        <div style={{border: 'thin solid red'}}>
-            <Log>{_event}</Log>
-            <Form onChange={setEvent}>
-                <EventSelect formKey="event"/>
-            </Form>
-            {
-                _event && (
-                    <StandardForm
-                        config={form__editEvent}
-                        onSubmit={onsubmit}
-                        onChange={setData}
-                        defaultValue={_event}
-                    />
-                )}
-            <GraphqlMutationResponse response={response}/>
-        </div>
-    )
+  const [{data: {event: _event} = {} as any} = {} as any, setEvent] = useState({} as any);
+  return (
+    <div style={{border: 'thin solid red'}}>
+      <Log>{_event}</Log>
+      <Form onChange={setEvent}>
+        <EventSelect formKey="event"/>
+      </Form>
+      {
+        _event && (
+          <StandardForm
+            config={form__editEvent}
+            onSubmit={onsubmit}
+            onChange={setData}
+            defaultValue={_event}
+          />
+        )}
+      <GraphqlMutationResponse response={response}/>
+    </div>
+  )
 }
 
 export function RestrictedEditEventForm({}) {
-    return (
-        <LoggedIn>
-            <EditEventForm/>
-        </LoggedIn>
-    );
+  return (
+    <LoggedIn>
+      <EditEventForm/>
+    </LoggedIn>
+  );
 }

@@ -1,5 +1,5 @@
 import {UserOption} from '../../users/redux/types';
 import {Feature} from '../../../redux/state.types';
 
-export type FileFeatureStateDataFiles = { list: UserOption[]; lastFetched: number | null }
-export type FileFeatureState = Feature<{ files: FileFeatureStateDataFiles }>
+export type AssetFeatureStateDataAssets = { list: UserOption[]; lastFetched: number | null }
+export type AssetFeatureState = Feature<{ assets: AssetFeatureStateDataAssets }>

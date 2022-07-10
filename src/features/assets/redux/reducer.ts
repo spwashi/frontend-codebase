@@ -1,13 +1,13 @@
 import {combineReducers} from 'redux';
-import {FileFeatureState, FileFeatureStateDataFiles} from './types';
+import {AssetFeatureState, AssetFeatureStateDataAssets} from './types';
 
-export const fileReducer =
-                 combineReducers<FileFeatureState>(
+export const assetReducer =
+                 combineReducers<AssetFeatureState>(
                      {
                          enabled:  (state, action) => true,
                          features: (state = {}, action) => (state),
                          data:     combineReducers({
-                                                       files: (state: FileFeatureStateDataFiles = {
+                                                       assets: (state: AssetFeatureStateDataAssets = {
                                                            lastFetched: null,
                                                            list:        [],
                                                        }, action) => {

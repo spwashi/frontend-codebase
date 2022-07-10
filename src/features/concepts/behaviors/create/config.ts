@@ -22,7 +22,7 @@ export const form__createConcept: FormConfig =
                             [
                                 userInput,
                                 titleInput,
-                                setFieldValue(contentTypeInput, 'text/spw'),
+                                setFieldValue(contentTypeInput, 'text/plain'),
                                 srcInput,
                             ].map(makeFieldRequired),
                  };

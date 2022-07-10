@@ -2,26 +2,26 @@ import React from 'react';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
 import {mainDecorator} from '../../../stories/_util/decorators';
 import {Features} from '../../index';
-import {FileDisplay} from '../components/display/FileDisplay';
+import {AssetDisplay} from '../components/display/AssetDisplay';
 
 
 export default {
-    title:      'Admin/Forms/Datatypes/File/DisplayFile',
-    component:  FileDisplay,
-    decorators: [
-        (Story) => {
-            return (
-                <React.Fragment>
-                    <Features list={['users', 'concepts']}/>
-                    <Story/>
-                </React.Fragment>
-            );
-        },
-        mainDecorator,
-    ],
-} as ComponentMeta<typeof FileDisplay>;
+  title:      'Admin/Forms/Datatypes/Asset/DisplayAsset',
+  component:  AssetDisplay,
+  decorators: [
+    (Story) => {
+      return (
+        <React.Fragment>
+          <Features list={['users', 'concepts']}/>
+          <Story/>
+        </React.Fragment>
+      );
+    },
+    mainDecorator,
+  ],
+} as ComponentMeta<typeof AssetDisplay>;
 
-const Template: ComponentStory<typeof FileDisplay> = (args) => <FileDisplay {...args}/>;
+const Template: ComponentStory<typeof AssetDisplay> = (args) => <AssetDisplay {...args}/>;
 
-export const DisplayFile = Template.bind({});
-DisplayFile.args         = {};
+export const DisplayAsset = Template.bind({});
+DisplayAsset.args         = {};

@@ -18,7 +18,7 @@ export const form__editScene: FormConfig =
                                  title: 'ID',
                                  name:  'id',
                                  type:  'value',
-                                 calc:  data => data?.concept?.id,
+                                 calc:  (data: any) => data?.concept?.id,
                              },
                              {
                                  title: 'Scene Description',

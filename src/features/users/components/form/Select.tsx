@@ -1,7 +1,7 @@
 import React, {useContext, useEffect, useMemo} from 'react';
 import {SelectInput, SelectOption} from '../../../../components/form/input/select/SelectInput';
 import {useSelector} from 'react-redux';
-import {formContext} from '../../../../components/form/context/FormContext';
+import {FormContext} from '../../../../components/form/context/FormContext';
 import {updateFormItem} from '../../../../components/form/hooks/useFormItem';
 import {selectPossibleUsersList} from '../../redux/selectors';
 import {selectLoggedInUser} from '../../behaviors/login/redux/reducer';
@@ -19,7 +19,7 @@ export const UserSelect = React.memo(
         let options: SelectOption[];
 
         const loggedInUser = useSelector(selectLoggedInUser);
-        const context      = useContext(formContext);
+        const context      = useContext(FormContext);
         options            = useSelector(selectPossibleUsersList);
         const actual       = getUserSelectorUsername(username ?? loggedInUser ?? undefined);
 

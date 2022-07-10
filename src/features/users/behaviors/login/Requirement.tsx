@@ -5,22 +5,22 @@ import './styles/requirement/login-requirement.scss'
 import styles from './styles/requirement/login-requirement.module.scss'
 import classNames from 'classnames';
 import {widgetClassNames} from '../../../../styles/classNames';
-import {Log} from '../../../../components/Log';
+import {useJwt} from '../../../../util/jwt';
 
 /**
  * An error message indicating that a user must login
  * @constructor
  */
 function MustLoginErrorMessage() {
-    const errorMsg  = 'Must be logged in to continue';
-    const className = classNames(['message', 'must-login', styles.loginRequirement, widgetClassNames.widget]);
-    return (
-        <div className={className} data-error-msg={errorMsg}>
-            <header>
-                <span>{errorMsg}</span>
-            </header>
-        </div>
-    );
+  const errorMsg  = 'Must be logged in to continue';
+  const className = classNames(['message', 'must-login', styles.loginRequirement, widgetClassNames.widget]);
+  return (
+    <div className={className} data-error-msg={errorMsg}>
+      <header>
+        <span>{errorMsg}</span>
+      </header>
+    </div>
+  );
 }
 
 /**
@@ -30,11 +30,13 @@ function MustLoginErrorMessage() {
  * @constructor
  */
 export const LoggedIn = ({children, state = true}: { children: any, state?: boolean }) => {
-    const loggedInUser = useSelector(selectLoggedInUserName);
-    if (!!loggedInUser !== state) {
-        return state ? <MustLoginErrorMessage/> : null;
-    }
-    return children;
+  const jwt              = useJwt();
+  const shouldBeLoggedIn = state;
+  const userIsLoggedIn   = !!(useSelector(selectLoggedInUserName) && jwt);
+  if (userIsLoggedIn !== shouldBeLoggedIn) {
+    return state ? <MustLoginErrorMessage/> : null;
+  }
+  return children;
 }
 
 /**
@@ -43,5 +45,5 @@ export const LoggedIn = ({children, state = true}: { children: any, state?: bool
  * @constructor
  */
 export const NotLoggedIn = ({children}: { children: any }) => {
-    return <LoggedIn state={false}>{children}</LoggedIn>
+  return <LoggedIn state={false}>{children}</LoggedIn>
 }

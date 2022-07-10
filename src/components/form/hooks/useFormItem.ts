@@ -1,7 +1,7 @@
 import {useCallback, useContext, useEffect, useState} from 'react';
 import {ACTION_UPDATE_INDEX} from '../context/reducer';
 import {FormState} from '../context/types';
-import {formContext, ID_EMPTY} from '../context/FormContext';
+import {FormContext, ID_EMPTY} from '../context/FormContext';
 
 export function updateFormItem<T>(form: FormState, formKey: string, value: T, passive: boolean = false) {
     form.dispatch?.({
@@ -27,7 +27,7 @@ export function useFormItem<T = any>(
 ) {
     const [localValue, setLocalValue] = useState<T | null>(form?.data?.[formKey ?? ''] ?? null);
 
-    const {id} = useContext(formContext);
+    const {id} = useContext(FormContext);
 
     useEffect(() => {
         let changed = typeof form?.changed?.[formKey ?? ''] === 'undefined';

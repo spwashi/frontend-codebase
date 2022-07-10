@@ -23,15 +23,6 @@ export function ContentInput({data, contentType: _contentType, name, title, valu
                     value={value}
                 />
             )
-        case 'text/spw':
-            return (
-                <Input
-                    value={value}
-                    formKey={name}
-                    placeholder={title}
-                    type="spw"
-                />
-            )
         case 'text/rich':
             return (
                 <Input

@@ -35,7 +35,7 @@ export function AllConceptsQuery() {
                      type:    ACTION_RECEIVE_ALL_CONCEPTS,
                      payload: query.allConcepts ? query.allConcepts : [],
                  })
-    }, [query.allConcepts]);
+    }, [query?.allConcepts]);
 
     return !lastFetched ? <>Loading...</> : null;
 }

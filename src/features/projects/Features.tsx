@@ -25,7 +25,7 @@ export function ProjectFeatures() {
         <Feature name="projects">
             <ProjectDisplayFeature/>
             <ProjectCreateFeature/>
-            <Feature name="files"/>
+            <Feature name="assets"/>
         </Feature>
     );
 }

@@ -12,41 +12,39 @@ export const selectUserLoginFeature = (state: RootState) => selectUserFeature(st
 export const selectLoggedInUserName = (state: RootState) => selectUserLoginFeature(state)?.data?.username;
 export const selectLoggedInUser     = (state: RootState) => selectUserLoginFeature(state)?.data?.user;
 export const loginReducer           =
-                 combineReducers<UserFeatureLoginFeatureState>({
-                                                                   enabled:  (state, action) => true,
-                                                                   features: () => ({}),
-                                                                   data:     combineReducers({
-                                                                                                 user:
-                                                                                                     (state: string | null = null, action: any) => {
-                                                                                                         switch (action.type) {
-                                                                                                             case ACTION_RECEIVE_LOGIN:
-                                                                                                                 const {
-                                                                                                                           user,
-                                                                                                                       } = action.payload;
-                                                                                                                 return user;
-                                                                                                             case ACTION_LOGOUT:
-                                                                                                                 return null;
-                                                                                                             case REHYDRATE:
-                                                                                                                 return selectLoggedInUser(action?.payload) ?? null;
-                                                                                                         }
-                                                                                                         return state;
-                                                                                                     },
-                                                                                                 username:
-                                                                                                     (state: string | null = null, action: any) => {
-                                                                                                         switch (action.type) {
-                                                                                                             case ACTION_RECEIVE_LOGIN:
-                                                                                                                 const {
-                                                                                                                           username,
-                                                                                                                           jwt,
-                                                                                                                       } = action.payload;
-                                                                                                                 return username;
-                                                                                                             case ACTION_LOGOUT:
-                                                                                                                 return null;
-                                                                                                             case REHYDRATE:
-                                                                                                                 return selectLoggedInUserName(action?.payload) ?? null;
-                                                                                                         }
-                                                                                                         return state;
-                                                                                                     },
-                                                                                             }),
-                                                               });
+               combineReducers<UserFeatureLoginFeatureState>({
+                                                               enabled:  (state, action) => true,
+                                                               features: () => ({}),
+                                                               data:     combineReducers({
+                                                                                           user:
+                                                                                                (state: string | null = null, action: any) => {
+                                                                                                  switch (action.type) {
+                                                                                                    case ACTION_RECEIVE_LOGIN:
+                                                                                                      const {user} = action.payload;
+                                                                                                      return user;
+                                                                                                    case ACTION_LOGOUT:
+                                                                                                      return null;
+                                                                                                    case REHYDRATE:
+                                                                                                      return selectLoggedInUser(action?.payload) ?? null;
+                                                                                                  }
+                                                                                                  return state;
+                                                                                                },
+                                                                                           username:
+                                                                                                (state: string | null = null, action: any) => {
+                                                                                                  switch (action.type) {
+                                                                                                    case ACTION_RECEIVE_LOGIN:
+                                                                                                      const {
+                                                                                                              username,
+                                                                                                              jwt,
+                                                                                                            } = action.payload;
+                                                                                                      return username;
+                                                                                                    case ACTION_LOGOUT:
+                                                                                                      return null;
+                                                                                                    case REHYDRATE:
+                                                                                                      return selectLoggedInUserName(action?.payload) ?? null;
+                                                                                                  }
+                                                                                                  return state;
+                                                                                                },
+                                                                                         }),
+                                                             });
 

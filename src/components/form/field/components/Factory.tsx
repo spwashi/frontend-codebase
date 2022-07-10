@@ -2,12 +2,12 @@ import {Input, Value} from '../../input/text/Input';
 import {UsernameInput} from '../../../../features/users/components/input/UsernameInput';
 import React, {useContext, useMemo} from 'react';
 import {SelectInput, SelectOption} from '../../input/select/SelectInput';
-import {FileInput} from '../../input/files/FileInput';
+import {AssetInput} from '../../input/assets/AssetInput';
 import {TagSelect} from '../../../../features/tags/components/form/Select';
 import {ProjectSelect} from '../../../../features/projects/components/form/Select';
 import {ConceptSelect} from '../../../../features/concepts/components/form/Select';
-import {formContext} from '../../context/FormContext';
-import {FileSelector} from '../../../../features/assets/components/input/FileSelector';
+import {FormContext} from '../../context/FormContext';
+import {AssetSelector} from '../../../../features/assets/components/input/AssetSelector';
 import {Textarea} from '../../input/text/Textarea';
 import '../../styles/form.scss';
 import {EventSelect} from '../../../../features/events/components/form/Select';
@@ -36,8 +36,8 @@ type ValueInputConfig = { type: 'value'; calc?: (data: any) => any };
 type ConceptInputConfig = { type: 'concept'; };
 type SceneInputConfig = { type: 'scene'; };
 type EventInputConfig = { type: 'event'; };
-type FileInputConfig = { type: 'file'; multiple?: boolean };
-type FileSelectInputConfig = { type: 'fileSelect'; username: string };
+type AssetInputConfig = { type: 'asset'; multiple?: boolean };
+type AssetSelectInputConfig = { type: 'assetSelect'; username: string };
 type TagInputConfig = { type: 'tags'; };
 type FormInputConfig = { type: 'form', config: FormConfig }
 type ContentInputConfig = { type: 'content'; contentType?: ContentType };
@@ -50,6 +50,7 @@ export type FormFieldConfig<T = any> =
         value?: T;
         id?: string;
         validators?: {
+            onReset?: ((v: T, d: any) => boolean | string)[]
             onChange?: ((v: T, d: any) => boolean | string)[]
             onSubmit?: ((v: T, d: any) => boolean | string)[]
         }
@@ -66,8 +67,8 @@ export type FormFieldConfig<T = any> =
      | EventInputConfig
      | FormInputConfig
      | SceneInputConfig
-     | FileInputConfig
-     | FileSelectInputConfig
+     | AssetInputConfig
+     | AssetSelectInputConfig
      | TagInputConfig
      | ContentInputConfig
      | SelectInputConfig)
@@ -80,7 +81,7 @@ export function getDomain() {
 }
 
 function FormInput({formKey, config}: { formKey: string, config: FormConfig }) {
-    const form                         = useContext(formContext);
+    const form                         = useContext(FormContext);
     const [formState, updateFormState] = useFormItem(form, formKey)
 
     return <StandardForm config={config} defaultValue={formState} onSubmit={updateFormState}/>
@@ -125,14 +126,14 @@ export function FormElementFactory({item: config}: { item: FormFieldConfig }) {
             return <ProjectSelect formKey={name} {...config}/>;
         }
         case 'content': {
-            return <formContext.Consumer>{({data}) => <ContentInput {...config} data={data}/>}</formContext.Consumer>;
+            return <FormContext.Consumer>{({data}) => <ContentInput {...config} data={data}/>}</FormContext.Consumer>;
         }
-        case 'fileSelect': {
+        case 'assetSelect': {
             const {username} = config;
-            return <FileSelector formKey="file" username={username}/>;
+            return <AssetSelector formKey="asset" username={username}/>;
         }
-        case 'file': {
-            return <FileInput formKey={name}  {...config}/>;
+        case 'asset': {
+            return <AssetInput formKey={name}  {...config}/>;
         }
         case 'user': {
             return <UsernameInput doSelect ignoreLogin={config.ignoreLogin}/>;

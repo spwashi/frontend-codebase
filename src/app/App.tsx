@@ -11,7 +11,7 @@ import {Route} from 'react-router';
 import {ConceptsControlPanel} from '../features/concepts/ControlPanel';
 import {LoggedIn, NotLoggedIn} from '../features/users/behaviors/login/Requirement';
 import {TagsControlPanel} from '../features/tags/ControlPanel';
-import {FilesControlPanel} from '../features/assets/Files';
+import {AssetsControlPanel} from '../features/assets/Assets';
 import {UsersControlPanel} from '../features/users/ControlPanel';
 import {ScenesControlPanel} from '../features/scenes/ControlPanel';
 import {EventsControlPanel} from '../features/events/ControlPanel';
@@ -34,7 +34,7 @@ function App() {
                             {href: '/concepts', title: 'Concepts'},
                             {href: '/events', title: 'Events'},
                             {href: '/tags', title: 'Tags'},
-                            {href: '/files', title: 'Files'},
+                            {href: '/assets', title: 'Assets'},
                             {href: '/all', title: 'All'},
                         ].map(
                             link => <li key={link.href}><NavLink to={link.href}>{link.title}</NavLink></li>,
@@ -52,12 +52,12 @@ function App() {
                         <Route path="scenes/*" element={<ScenesControlPanel/>}/>
                         <Route path="events/*" element={<EventsControlPanel/>}/>
                         <Route path="tags" element={<TagsControlPanel/>}/>
-                        <Route path="files" element={<FilesControlPanel/>}/>
+                        <Route path="assets" element={<AssetsControlPanel/>}/>
                         <Route path="all" element={<>
                             <NotLoggedIn><UsersControlPanel/></NotLoggedIn>
                             <LoggedIn><ConceptsControlPanel/></LoggedIn>
                             <LoggedIn><TagsControlPanel/></LoggedIn>
-                            <LoggedIn><FilesControlPanel/></LoggedIn>
+                            <LoggedIn><AssetsControlPanel/></LoggedIn>
                         </>}/>
                     </Routes>
                 </div>

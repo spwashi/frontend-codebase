@@ -10,7 +10,7 @@ const featureDict: { [key: string]: FunctionComponent & { dependencies?: Functio
           {
               users:    UserFeatures,
               scenes:   SceneFeatures,
-              files:    () => {return null},
+              assets:    () => {return null},
               tags:     TagFeatures,
               concepts: ConceptFeatures,
               events:   EventFeatures,

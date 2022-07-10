@@ -35,10 +35,10 @@ export function OneConceptQuery({id}: IConceptIdentifyingPartial) {
     const dispatch = useDispatch();
 
     const {concept} = query ?? {};
-
+console.log(id)
     useEffect(() => {
         if (!(concept && setConcept)) return;
-
+console.log(concept)
         dispatch({type: ACTION_RECEIVE_ONE_CONCEPT, payload: concept})
         setConcept(concept as IConcept);
     }, [concept, setConcept]);

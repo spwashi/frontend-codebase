@@ -1,6 +1,6 @@
 import React, {ChangeEvent, useCallback, useContext, useEffect, useMemo} from 'react';
 import {useFormItem} from '../../hooks/useFormItem';
-import {formContext} from '../../context/FormContext';
+import {FormContext} from '../../context/FormContext';
 
 export type SelectOption<T extends any = any> =
     {
@@ -82,7 +82,7 @@ export function SelectInput(
         ...rest
     }: Params,
 ) {
-    const form                   = useContext(formContext);
+    const form                   = useContext(FormContext);
     const valueMap               = useMemo(() => new Map(options.map(option => [
         option.value, option.payload,
     ])), [options]);

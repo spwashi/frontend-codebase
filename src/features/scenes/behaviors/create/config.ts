@@ -2,44 +2,44 @@ import {FormConfig} from '../../../../components/form/field/components/Factory';
 import {convertToSlug} from '../../../projects/behaviors/create/selectors';
 
 export type SelectMutationInputData = {
-    name: string;
-    title: string;
-    description: string;
+  name: string;
+  title: string;
+  description: string;
 }
 
 
 export const form__createScene: FormConfig =
-                 {
-                     formId:
-                         'create-scene_form',
-                     title:
-                         'Create Scene',
-                     items:
-                         [
-                             {
-                                 title: 'Scene Title',
-                                 name:  'title',
-                                 type:  'text',
-                             },
-                             {
-                                 type:  'value',
-                                 name:  'name',
-                                 calc:  (data) => convertToSlug(data?.title ?? ''),
-                             },
-                             {
-                                 title: 'Scene Description',
-                                 name:  'description',
-                                 type:  'longtext',
-                             },
-                         ],
+               {
+                 formId:
+                   'create-scene_form',
+                 title:
+                   'Create Scene',
+                 items:
+                   [
+                     {
+                       title: 'Scene Title',
+                       name:  'title',
+                       type:  'text',
+                     },
+                     {
+                       type: 'value',
+                       name: 'name',
+                       calc: (data: any) => convertToSlug(data?.title ?? ''),
+                     },
+                     {
+                       title: 'Scene Description',
+                       name:  'description',
+                       type:  'longtext',
+                     },
+                   ],
 
-                 }
+               }
 export function selectCreateSceneInput(data: SelectMutationInputData) {
-    const {name, title, description} = data ?? {};
+  const {name, title, description} = data ?? {};
 
-    return {
-        description,
-        title,
-        name,
-    };
+  return {
+    description,
+    title,
+    name,
+  };
 }

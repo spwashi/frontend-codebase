@@ -10,8 +10,8 @@ export type UserOption = SelectOption<IUser>;
  *      Login Feature
  */
 export type UserFeatureLoginFeatureState = Feature<{
-    username: string | null;
-    user: IUser | null
+  username: string | null;
+  user: IUser | null;
 }>;
 
 /**
@@ -26,8 +26,8 @@ export type UserFeatureSignupFeatureState = Feature;
  *   Features
  */
 export interface UserFeatureStateFeatures {
-    login: UserFeatureLoginFeatureState;
-    signup: UserFeatureSignupFeatureState
+  login: UserFeatureLoginFeatureState;
+  signup: UserFeatureSignupFeatureState
 }
 
 /**
@@ -35,8 +35,8 @@ export interface UserFeatureStateFeatures {
  *   Data
  */
 export interface UserFeatureStateDataUsers {
-    list: IUser[];
-    lastFetched: number | null
+  list: IUser[];
+  lastFetched: number | null
 }
 
 export interface UserFeatureStateData {users: UserFeatureStateDataUsers;}
