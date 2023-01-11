@@ -95,7 +95,7 @@ function useRichTextEditor(params: InputParams, [localValue, update]: [EditorSta
 export function Input(params: InputParams) {
   const {formKey, name, ...rest} = params;
   const form                     = useContext(FormContext);
-  const [{value: value}, update] = useFormItem(form, formKey ?? name ?? null);
+  const [{value}, update] = useFormItem(form, formKey ?? name ?? null);
   const {type = 'text'}          = rest;
   const editor                   = useRichTextEditor(params, [value, update]);
 

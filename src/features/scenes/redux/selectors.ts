@@ -1,4 +1,4 @@
-import {IScene} from '../../../app/models/scene/models';
+import {IScene} from '../../../app/junction/models/scene/models';
 import {SceneOption} from './types';
 import {RootState} from '../../../redux/rootState';
 

@@ -1,10 +1,10 @@
 import {EventTag} from './join/tag';
 import React, {useState} from 'react';
-import {IEvent_Complete, IEventTag_Complete} from '../../../../../../app/models/event/hybrids';
+import {IEvent_Complete, IEventTag_Complete} from '../../../../../../app/junction/models/event/hybrids';
 import {useActiveEvent} from '../context/context';
 import {convertFromRaw, Editor, EditorState} from 'draft-js';
 import '../styles/event.scss';
-import {IEvent} from '../../../../../../app/models/event/models';
+import {IEvent} from '../../../../../../app/junction/models/event/models';
 import {ErrorBoundary} from '../../../../../../components/error';
 import {DeleteEventButton} from './DeleteButton';
 
@@ -17,7 +17,7 @@ interface EventDisplayParams {event: IEvent | IEvent_Complete;}
 
 
 function Internal({event}: EventDisplayParams) {
-    const {title, start, end, eventTags: eventTags} = event as IEvent_Complete;
+    const {title, start, end, eventTags} = event as IEvent_Complete;
 
     return <div className="event-wrapper">
         <article className="event">

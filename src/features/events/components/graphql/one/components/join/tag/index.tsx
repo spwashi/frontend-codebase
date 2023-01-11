@@ -1,6 +1,6 @@
 import {gql, useMutation} from '@apollo/client';
-import {ITag} from '../../../../../../../../app/models/tag/models';
-import {IEvent} from '../../../../../../../../app/models/event/models';
+import {ITag} from '../../../../../../../../app/junction/models/tag/models';
+import {IEvent} from '../../../../../../../../app/junction/models/event/models';
 import React from 'react';
 
 function useDeleteEventTagMutation() {

@@ -8,7 +8,6 @@ import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import {Root} from './root';
 import '../../styles/app.scss';
-import {LogAppReduxState} from '../../components/Log';
 
 const httpLink = createHttpLink({uri: process.env.REACT_APP_GRAPHQL_URL});
 const client   = new ApolloClient({link: httpLink, cache: new InMemoryCache()});

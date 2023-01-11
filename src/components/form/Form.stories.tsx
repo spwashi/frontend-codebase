@@ -24,7 +24,7 @@ const Template: ComponentStory<any> =
                       title:  'This is something',
                       items:  [
                           {name: 'text', type: 'text', title: 'Text'},
-                          {name: 'text', type: 'longtext', title: 'Long Text'},
+                          {name: 'longtext', type: 'longtext', title: 'Long Text'},
                           {name: 'plain', type: 'content', title: 'Plain Content', contentType: 'text/plain'},
                           {name: 'rich', type: 'content', title: 'Spw', contentType: 'text/rich'},
                           {name: 'asset', type: 'asset', title: 'Asset'},

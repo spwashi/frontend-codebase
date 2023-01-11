@@ -3,7 +3,7 @@ import {useDispatch} from 'react-redux';
 import React, {useCallback} from 'react';
 import {Log} from '../../../../../../components/Log';
 import {ACTION_DELETE_ONE_CONCEPT} from '../../../../redux/reducer';
-import {DeleteConceptMutationInput} from '../../../../../../app/models/concept/behaviors/delete';
+import {DeleteConceptMutationInput} from '../../../../../../app/junction/models/concept/behaviors/delete';
 
 function useDeleteConceptMutation() {
   const DELETE_CONCEPT = gql`

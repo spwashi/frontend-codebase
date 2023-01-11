@@ -1,4 +1,4 @@
-import {ITag, ITagIdentifyingPartial} from '../../../../../../app/models/tag/models';
+import {ITag, ITagIdentifyingPartial} from '../../../../../../app/junction/models/tag/models';
 import {gql, useQuery} from '@apollo/client';
 import React, {useContext, useEffect} from 'react';
 import {TagContext} from '../context/context';

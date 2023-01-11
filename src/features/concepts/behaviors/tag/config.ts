@@ -1,9 +1,9 @@
-import {IUser} from '../../../../app/models/user/models';
-import {IConcept} from '../../../../app/models/concept/models';
-import {ITag} from '../../../../app/models/tag/models';
+import {IUser} from '../../../../app/junction/models/user/models';
+import {IConcept} from '../../../../app/junction/models/concept/models';
+import {ITag} from '../../../../app/junction/models/tag/models';
 import {FormConfig} from '../../../../components/form/field/components/Factory';
 import {conceptInput, tagsInput, userInput} from '../../data/config';
-import {TagConceptMutationInput} from '../../../../app/models/concept/behaviors/tag';
+import {TagConceptMutationInput} from '../../../../app/junction/models/concept/behaviors/tag';
 import {makeFieldRequired} from '../../../../components/form/field/util/makeFieldRequired';
 
 type TagConceptFormData = {

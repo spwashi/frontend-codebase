@@ -1,4 +1,4 @@
-import {IConcept, IConceptIdentifyingPartial} from '../../../../../../app/models/concept/models';
+import {IConcept, IConceptIdentifyingPartial} from '../../../../../../app/junction/models/concept/models';
 import {gql, useQuery} from '@apollo/client';
 import React, {useContext, useEffect} from 'react';
 import {ConceptContext} from '../context/context';

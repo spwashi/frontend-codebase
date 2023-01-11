@@ -15,6 +15,7 @@ import {AssetsControlPanel} from '../features/assets/Assets';
 import {UsersControlPanel} from '../features/users/ControlPanel';
 import {ScenesControlPanel} from '../features/scenes/ControlPanel';
 import {EventsControlPanel} from '../features/events/ControlPanel';
+import {LogAppReduxState} from '../components/Log';
 
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
     const className = classnames({noGraphql})
     return (
         <BrowserRouter>
-            {/*<State/>*/}
+            <LogAppReduxState/>
             <Bootstrap/>
             <nav>
                 <ul>

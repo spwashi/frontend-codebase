@@ -19,7 +19,7 @@ function useDispatchGraphqlError(error: any) {
 }
 
 export function useFeatureQuery<T = any, V = any>(node: DocumentNode, variables: V, projectStateKey: any): { data: T, error?: any } {
-    const {data: data = {}, error} = useQuery(node, {variables});
+    const {data = {}, error} = useQuery(node, {variables});
     useDispatchGraphqlError(error);
 
     const client = useApolloClient()

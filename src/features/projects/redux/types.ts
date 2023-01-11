@@ -1,4 +1,4 @@
-import {IProject} from '../../../app/models/project/models';
+import {IProject} from '../../../app/junction/models/project/models';
 import {Feature, KeyedState} from '../../../redux/state.types';
 import {SelectOption} from '../../../components/form/input/select/SelectInput';
 

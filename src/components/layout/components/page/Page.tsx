@@ -1,7 +1,7 @@
 import React from 'react';
 import './page.scss';
 import {Navigation} from '../navigation/Navigation';
-import {mainNavigation} from '../../../../app/routes/mainNavigation';
+import {mainNavigation} from '../../../../app/junction/routes/mainNavigation';
 
 
 interface PageProps {

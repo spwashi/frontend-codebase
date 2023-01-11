@@ -4,7 +4,7 @@ import {selectEventStateKey, selectPossibleEventsLastFetched} from '../../../../
 import {ACTION_RECEIVE_ALL_EVENTS} from '../../../../redux/reducer';
 import {useFeatureQuery} from '../../../../../_util/hooks/useFeatureQuery';
 import {gql} from '@apollo/client';
-import {IEvent_Complete} from '../../../../../../app/models/event/hybrids';
+import {IEvent_Complete} from '../../../../../../app/junction/models/event/hybrids';
 
 export function AllEventsQuery() {
   const stateKey      = useSelector(selectEventStateKey);

@@ -61,7 +61,7 @@ function useOnChangeCallback(multiple: undefined | boolean, setValues: (t: any) 
         },
         [multiple, setValues],
     );
-    ;
+
 }
 /**
  *

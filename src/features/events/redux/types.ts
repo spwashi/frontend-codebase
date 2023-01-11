@@ -1,5 +1,5 @@
 import {SelectOption} from '../../../components/form/input/select/SelectInput';
-import {IEvent} from '../../../app/models/event/models';
+import {IEvent} from '../../../app/junction/models/event/models';
 import {Feature, KeyedState} from '../../../redux/state.types';
 
 export type EventOption = SelectOption<IEvent>;

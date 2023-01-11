@@ -1,7 +1,7 @@
 import {MutationResult} from '@apollo/client';
 import React from 'react';
 import {Loading} from './Loading';
-import {isDev, NotDev} from '../../components/Dev';
+import {NotDev} from '../../components/Dev';
 
 class GraphQlError extends Error {
   constructor(error: MutationResult['error']) {

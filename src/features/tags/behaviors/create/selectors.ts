@@ -1,6 +1,6 @@
 import {FormConfig, FormFieldConfig} from '../../../../components/form/field/components/Factory';
-import {CreateTagMutationInput} from '../../../../app/models/tag/behaviors/create';
-import {IUser} from '../../../../app/models/user/models';
+import {CreateTagMutationInput} from '../../../../app/junction/models/tag/behaviors/create';
+import {IUser} from '../../../../app/junction/models/user/models';
 import {makeFieldRequired} from '../../../../components/form/field/util/makeFieldRequired';
 
 export type SelectMutationInputData = {

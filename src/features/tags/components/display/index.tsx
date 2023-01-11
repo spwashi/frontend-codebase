@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Tag} from '../query/one';
-import {ITag} from '../../../../app/models/tag/models';
+import {ITag} from '../../../../app/junction/models/tag/models';
 import {FeatureRequirement} from '../../../_util';
 import {StandardForm} from '../../../../components/form/Form';
 import {LoggedIn} from '../../../users/behaviors/login/Requirement';

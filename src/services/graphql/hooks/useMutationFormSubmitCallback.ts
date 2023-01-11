@@ -1,4 +1,4 @@
-import {FetchResult, MutationFunctionOptions} from '@apollo/client';
+import {MutationFunctionOptions} from '@apollo/client';
 import {useCallback} from 'react';
 
 /**

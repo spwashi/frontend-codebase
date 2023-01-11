@@ -14,7 +14,7 @@ export function AssetQuery({realname, username}: { realname: string, username?: 
       }
   `, {variables: {username, realname}});
   if (!query.asset) return null;
-  const {name: name, contentType} = query?.asset ?? {};
+  const {name, contentType} = query?.asset ?? {};
 
   return <AssetContents realname={realname} name={name} contentType={contentType}/>
 }

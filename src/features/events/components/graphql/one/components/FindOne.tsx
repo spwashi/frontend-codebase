@@ -1,4 +1,4 @@
-import {IEvent, IEventIdentifyingPartial} from '../../../../../../app/models/event/models';
+import {IEvent, IEventIdentifyingPartial} from '../../../../../../app/junction/models/event/models';
 import {gql, useQuery} from '@apollo/client';
 import React, {useContext, useEffect} from 'react';
 import {EventContext} from '../context/context';
