@@ -5,8 +5,13 @@ import {create} from '@storybook/theming';
 export default create(
   {
     base:       'light',
-    brandTitle: 'Example Website',
+    brandTitle: '$APP_TITLE$',
+
+    fontBase: '"Jetbrains Mono", "Open Sans", sans-serif',
+    fontCode: 'monospace',
+
     brandUrl:   'https://example.com',
-    brandImage: 'https://place-hold.it/350x150',
+    brandImage: '/logo.svg',
+    brandTarget: '_self',
   }
 );

@@ -17,6 +17,7 @@ import {ContentType} from '../../../../features/concepts/data/config';
 import styles from '../../input/styles/input.module.scss';
 import {StandardForm} from '../../Form';
 import {useFormItem} from '../../hooks/useFormItem';
+import {getDevObject, isDev} from '../../../Dev';
 
 export type FormConfig =
     {
@@ -77,6 +78,10 @@ export type FormFieldConfig<T = any> =
  *
  */
 export function getDomain() {
+    if (isDev()) {
+        const dev = getDevObject();
+        return dev.host = dev.host  ?? prompt('domain')
+    }
     return window?.location?.host ?? '';
 }
 
