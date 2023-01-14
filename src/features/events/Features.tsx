@@ -17,7 +17,7 @@ export function EventFeatures() {
     )
 }
 
-EventFeatures.dependencies =
+EventFeatures.featureDeps =
     [
         AllEventsQuery,
     ]

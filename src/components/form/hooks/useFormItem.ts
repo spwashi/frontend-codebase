@@ -46,7 +46,7 @@ export function useFormItem<T = any>(
 
     const value       = form?.data?.[`${formKey}`];
     const valueObject = {
-        value:      value ?? (id === ID_EMPTY ? localValue : null),
+        value:      value ?? (id === ID_EMPTY ? localValue : undefined),
         localValue: localValue ?? value,
     };
 

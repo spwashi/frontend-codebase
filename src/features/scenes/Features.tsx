@@ -17,7 +17,7 @@ export function SceneFeatures() {
     )
 }
 
-SceneFeatures.dependencies =
+SceneFeatures.featureDeps =
     [
         AllScenesQuery,
     ]

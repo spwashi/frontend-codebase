@@ -28,7 +28,11 @@ function ResetFormButton() {
 
 function SubmitButton() {
   const context = useContext(FormContext);
-  return <button key="submit" type="submit" onClick={e => context.submit()}>submit</button>;
+  return <button key="submit" type="submit" onClick={e => {
+    e.preventDefault();
+    context.submit()
+  }
+  }>submit</button>;
 }
 
 export type ButtonConfig = { type: 'submit' | 'reset' };

@@ -26,7 +26,7 @@ const Template: ComponentStory<any> =
                           {name: 'text', type: 'text', title: 'Text'},
                           {name: 'longtext', type: 'longtext', title: 'Long Text'},
                           {name: 'plain', type: 'content', title: 'Plain Content', contentType: 'text/plain'},
-                          {name: 'rich', type: 'content', title: 'Spw', contentType: 'text/rich'},
+                          {name: 'rich', type: 'content', title: 'Rich Text', contentType: 'text/rich'},
                           {name: 'asset', type: 'asset', title: 'Asset'},
                           {
                               name: 'form', type: 'form', title: 'Form', config: {

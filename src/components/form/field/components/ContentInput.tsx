@@ -28,7 +28,7 @@ export function ContentInput({data, contentType: _contentType, name, title, valu
                 <Input
                     value={value}
                     formKey={name}
-                    placeholder={title}
+                    placeholder={'[type here]'}
                     type="rich"
                 />
             )

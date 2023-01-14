@@ -17,7 +17,7 @@ export function ConceptFeatures() {
     )
 }
 
-ConceptFeatures.dependencies =
+ConceptFeatures.featureDeps =
     [
         AllConceptsQuery,
     ]

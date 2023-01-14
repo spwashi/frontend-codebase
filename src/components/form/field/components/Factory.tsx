@@ -78,10 +78,6 @@ export type FormFieldConfig<T = any> =
  *
  */
 export function getDomain() {
-    if (isDev()) {
-        const dev = getDevObject();
-        return dev.host = dev.host  ?? prompt('domain')
-    }
     return window?.location?.host ?? '';
 }
 

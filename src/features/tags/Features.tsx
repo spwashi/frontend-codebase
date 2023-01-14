@@ -17,4 +17,4 @@ export function TagFeatures() {
     )
 }
 
-TagFeatures.dependencies = [AllTagsQuery]
+TagFeatures.featureDeps = [AllTagsQuery]

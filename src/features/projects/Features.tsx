@@ -30,6 +30,6 @@ export function ProjectFeatures() {
     );
 }
 
-ProjectFeatures.dependencies = [
+ProjectFeatures.featureDeps = [
     AllProjectsQuery,
 ]

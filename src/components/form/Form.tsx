@@ -3,7 +3,7 @@ import {FormBody, FormConfig} from './field/components/Factory';
 import {Form} from './context/FormContext';
 import _ from 'lodash';
 
-function useHandler(form: FormConfig, index: 'onReset' | 'onChange' | 'onSubmit', onChange?: (e: any) => void): [boolean, (d: any) => void] {
+function useHandler(form: FormConfig, index: 'onReset' | 'onChange' | 'onSubmit', origHandler?: (e: any) => void): [boolean, (d: any) => void] {
   const [canSubmit, setCanSubmit] = useState(false);
 
   const handler = useCallback(
@@ -17,11 +17,11 @@ function useHandler(form: FormConfig, index: 'onReset' | 'onChange' | 'onSubmit'
         return (o as any)?.filter((o: any) => (typeof o !== 'undefined') && o !== true).length;
       }).length === 0;
       setCanSubmit(canSubmit);
-      if (!onChange) return;
+      if (!origHandler) return;
       console.log(index)
-      onChange(d)
+      origHandler(d)
     },
-    [onChange],
+    [origHandler],
   );
 
   return [canSubmit, handler]

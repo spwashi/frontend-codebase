@@ -6,7 +6,7 @@ import {UserFeatures} from './users/Features';
 import {SceneFeatures} from './scenes/Features';
 import {EventFeatures} from './events/Features';
 
-const featureDict: { [key: string]: FunctionComponent & { dependencies?: FunctionComponent[] } } =
+const featureDict: { [key: string]: FunctionComponent & { featureDeps?: FunctionComponent[] } } =
           {
               users:    UserFeatures,
               scenes:   SceneFeatures,
@@ -24,7 +24,7 @@ export function Features({list}: { list: FeatureName[] }) {
         const Component = featureDict[name];
         return <React.Fragment key={name}>
             {
-                Component.dependencies && Component.dependencies.map((Dep, index) => <Dep key={name + ' - ' + index}/>)
+                Component.featureDeps && Component.featureDeps.map((Dep, index) => <Dep key={name + ' - ' + index}/>)
             }
             <Component key={name}/>
         </React.Fragment>

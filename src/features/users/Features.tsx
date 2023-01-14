@@ -19,7 +19,7 @@ export function UserFeatures() {
     );
 }
 
-UserFeatures.dependencies =
+UserFeatures.featureDeps =
     [
         AllUsersQuery,
     ];
