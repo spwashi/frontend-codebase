@@ -41,7 +41,7 @@ function ButtonContainer({buttons, hasChanged}: { buttons?: (ButtonConfig | fals
   return <div className="button-container">
     {(buttons ?? []).map(button => {
       if (!button) return null;
-      return button.type === 'submit' ? <SubmitButton/> : null
+      return button.type === 'submit' ? <SubmitButton key={button.type}/> : null
     })}
     {hasChanged ? <ResetFormButton/> : null}
   </div>;

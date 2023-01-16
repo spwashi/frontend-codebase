@@ -19,52 +19,58 @@ import {LogAppReduxState} from '../components/Log';
 
 
 function App() {
-    const noGraphql = useSelector(select_noGraphql);
-    const className = classnames({noGraphql})
-    return (
-        <BrowserRouter>
-            <LogAppReduxState/>
-            <Bootstrap/>
-            <nav>
-                <ul>
-                    {
-                        [
-                            {href: '/users', title: 'Users'},
-                            {href: '/projects', title: 'Projects'},
-                            {href: '/scenes', title: 'Scenes'},
-                            {href: '/concepts', title: 'Concepts'},
-                            {href: '/events', title: 'Events'},
-                            {href: '/tags', title: 'Tags'},
-                            {href: '/assets', title: 'Assets'},
-                            {href: '/all', title: 'All'},
-                        ].map(
-                            link => <li key={link.href}><NavLink to={link.href}>{link.title}</NavLink></li>,
-                        )
-                    }
+  const noGraphql = useSelector(select_noGraphql);
+  const className = classnames({noGraphql})
+  return (
+    <BrowserRouter>
+      <LogAppReduxState/>
+      <Bootstrap/>
+      <nav>
+        <ul>
+          {
+            [
+              {href: '/admin/users', title: 'Users'},
+              {href: '/admin/projects', title: 'Projects'},
+              {href: '/admin/scenes', title: 'Scenes'},
+              {href: '/admin/concepts', title: 'Concepts'},
+              {href: '/admin/events', title: 'Events'},
+              {href: '/admin/tags', title: 'Tags'},
+              {href: '/admin/assets', title: 'Assets'},
+              {href: '/admin/all', title: 'All'},
+            ].map(
+              link => <li key={link.href}><NavLink to={link.href}>{link.title}</NavLink></li>,
+            )
+          }
 
-                </ul>
-            </nav>
-            <div id="app" className={className}>
-                <div className="app">
-                    <Routes>
-                        <Route path="users" element={<UsersControlPanel/>}/>
-                        <Route path="projects" element={<ProjectsControlPanel/>}/>
-                        <Route path="concepts/*" element={<ConceptsControlPanel/>}/>
-                        <Route path="scenes/*" element={<ScenesControlPanel/>}/>
-                        <Route path="events/*" element={<EventsControlPanel/>}/>
-                        <Route path="tags" element={<TagsControlPanel/>}/>
-                        <Route path="assets" element={<AssetsControlPanel/>}/>
-                        <Route path="all" element={<>
-                            <NotLoggedIn><UsersControlPanel/></NotLoggedIn>
-                            <LoggedIn><ConceptsControlPanel/></LoggedIn>
-                            <LoggedIn><TagsControlPanel/></LoggedIn>
-                            <LoggedIn><AssetsControlPanel/></LoggedIn>
-                        </>}/>
-                    </Routes>
-                </div>
-            </div>
-        </BrowserRouter>
-    );
+        </ul>
+      </nav>
+      <div id="app" className={className}>
+        <div className="app">
+          <Routes>
+            <Route path="admin/*" element={
+              <Routes>
+                <Route path="users/*" element={<UsersControlPanel/>}/>
+                <Route path="projects/*" element={<ProjectsControlPanel/>}/>
+                <Route path="concepts/*" element={<ConceptsControlPanel/>}/>
+                <Route path="scenes/*" element={<ScenesControlPanel/>}/>
+                <Route path="events/*" element={<EventsControlPanel/>}/>
+                <Route path="tags/*" element={<TagsControlPanel/>}/>
+                <Route path="assets/*" element={<AssetsControlPanel/>}/>
+                <Route path="all/*" element={<>
+                  <NotLoggedIn><UsersControlPanel/></NotLoggedIn>
+                  <LoggedIn><AssetsControlPanel/></LoggedIn>
+                  <LoggedIn><ConceptsControlPanel/></LoggedIn>
+                  <LoggedIn><EventsControlPanel/></LoggedIn>
+                  <LoggedIn><ScenesControlPanel/></LoggedIn>
+                  <LoggedIn><TagsControlPanel/></LoggedIn>
+                </>}/>
+              </Routes>
+            }/>
+          </Routes>
+        </div>
+      </div>
+    </BrowserRouter>
+  );
 }
 
 export default App;
