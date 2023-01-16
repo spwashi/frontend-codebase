@@ -4,7 +4,6 @@ html, body, #root {
 
 * {
   font-family: "JetBrains Mono", sans-serif !important;
-
 }
 
 .app {
@@ -16,129 +15,19 @@ html, body, #root {
     border: thin solid forestgreen;
   }
 }
-pre {
-  max-width: 100px;
-}
 
-.column {display: flex; flex-flow: column;}
-
-/** --------------------------------------------- */
-
-.noGraphql {
-  background: red;
-}
-
-/** --------------------------------------------- */
-form:before { content: 'form'; }
-select:before { content: 'select'; }
-input:before { content: 'input'; }
-button:before { content: 'button'; }
-form {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin: 1rem 1rem 3rem;
-  padding: 1rem;
-  &:empty {
-    display: none;
-  }
-  input, button, select, textarea {
-    display: block;
-    width: 100%;
-    margin: .3rem;
-    padding: .3rem;
-    border: thin solid purple;
-  }
-  input {
-    border-radius: 0;
-  }
-}
-
-/** --------------------------------------------- */
-q:before { content: 'quote'; }
-q {
-  color: gray;
-  font-style: italic;
-  border: thin solid black;
-  position: relative;
-  padding: 1rem;
-  background: rgba(#333, .1);
-}
-
-header:before { content: 'header'; }
-section:before { content: 'section'; }
 section {
-  border: thin solid firebrick;
-  margin: 1rem;
-  background: rgba(firebrick, .1);
-  &:empty {display: none;}
-}
-sub:before { content: 'sub'; }
-
-/** --------------------------------------------- */
-details:before { content: 'details'; }
-summary:before { content: 'summary'; }
-details {
-  border: thin solid black;
-  background: rgba(green, .1);
-  summary {
-    background: rgba(darkblue, .5);
-    color: white;
-    font-weight: 700;
-    padding: 1rem;
-    border-bottom: thin solid green;
-    margin-bottom: .5rem;
-  }
-  q {
-    font-size: 1.5rem;
-  }
-  section > sub {
-    text-align: right;
-    font-size: .6rem;
-  }
+  position: relative;
 }
 
-/** --------------------------------------------- */
-* {position: relative;}
-*:before {
-  content: none !important;
-  background: wheat;
-  position: absolute;
-  border: thin solid red;
-  top: -5%;
-  left: -5%;
-  font-size: 15px;
-  color: red;
-}
 
-/** ---------------------------------------------- */
+@import "environments/dev";
 
-nav {
-  border: thick solid green;
-}
+@import "components/input";
+@import "components/form";
+@import "components/nav";
 
-/** ---------------------------------------------- */
-
-.dev-log {
-  border: thick solid red;
-  summary {
-    border: thin solid #ccc;
-    padding: .75rem;
-    font-size: 1.5rem;
-    font-family: "JetBrains Mono", monospace;
-    cursor: pointer;
-    transition: background-color .3s;
-    &:hover {
-      background: lightblue;
-    }
-  }
-  pre {
-    font-family: "JetBrains Mono", monospace;
-  }
-}
-
-/** ---------------------------------------------- */
-.must-login {
-  padding: 2rem;
-  box-shadow: 2px 2px 2px #ccc;
-}
+@import "features/user/login-requirement";
+@import "features/concept";
+@import "features/event";
+@import "features/scene";

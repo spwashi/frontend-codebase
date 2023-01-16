@@ -1,7 +1,6 @@
 import {useSelector} from 'react-redux';
 import {selectLoggedInUserName} from './redux/reducer';
 import React from 'react';
-import './styles/requirement/login-requirement.scss'
 import classNames from 'classnames';
 import {widgetClassNames} from '../../../../styles/classNames';
 import {useJwt} from '../../../../util/jwt';

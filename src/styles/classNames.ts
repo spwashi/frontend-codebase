@@ -1,4 +1,10 @@
 export const widgetClassNames = {
-    widget: 'widget',
-    loginRequirement: 'must-login'
+  widget: 'widget',
+
+  states: {
+    active:   'active',
+    inactive: 'inactive',
+  },
+
+  loginRequirement: 'must-login',
 };

@@ -2,7 +2,6 @@ import React from 'react';
 import {useSelector} from 'react-redux';
 import {select_noGraphql} from '../redux/reducer';
 
-
 import classnames from 'classnames';
 import {ProjectsControlPanel} from '../features/projects/ControlPanel';
 import {Bootstrap} from './Bootstrap';

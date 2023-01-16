@@ -4,7 +4,6 @@ import {IConcept_Complete, IConceptTag_Complete} from '../../../../../../app/jun
 import {useActiveConcept} from '../context/context';
 import {convertFromRaw, Editor, EditorState} from 'draft-js';
 import {Log} from '../../../../../../components/Log';
-import '../styles/concept.scss';
 import {IConcept} from '../../../../../../app/junction/models/concept/models';
 import {ErrorBoundary} from '../../../../../../components/error';
 import {DeleteConceptButton} from './DeleteButton';

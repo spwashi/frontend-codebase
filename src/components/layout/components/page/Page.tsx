@@ -1,5 +1,4 @@
 import React from 'react';
-import './page.scss';
 import {Navigation} from '../navigation/Navigation';
 import {mainNavigation} from '../../../../app/junction/routes/mainNavigation';
 

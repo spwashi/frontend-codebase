@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 import {IEvent_Complete, IEventTag_Complete} from '../../../../../../app/junction/models/event/hybrids';
 import {useActiveEvent} from '../context/context';
 import {convertFromRaw, Editor, EditorState} from 'draft-js';
-import '../styles/event.scss';
+import '../../../../../../styles/features/event.scss';
 import {IEvent} from '../../../../../../app/junction/models/event/models';
 import {ErrorBoundary} from '../../../../../../components/error';
 import {DeleteEventButton} from './DeleteButton';

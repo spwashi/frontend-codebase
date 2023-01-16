@@ -9,7 +9,6 @@ import {ConceptSelect} from '../../../../features/concepts/components/form/Selec
 import {FormContext} from '../../context/FormContext';
 import {AssetSelector} from '../../../../features/assets/components/input/AssetSelector';
 import {Textarea} from '../../input/text/Textarea';
-import '../../styles/form.scss';
 import {EventSelect} from '../../../../features/events/components/form/Select';
 import {SceneSelect} from '../../../../features/scenes/components/form/Select';
 import {ContentInput} from './ContentInput';

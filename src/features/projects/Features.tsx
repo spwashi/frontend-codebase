@@ -13,10 +13,7 @@ function ProjectDisplayFeature() {
 }
 
 function ProjectCreateFeature() {
-    const isLocal   = getDomain().split(':')[0] === 'localhost';
-    const urlParams = new URLSearchParams(window.location.search);
-    const myParam   = +(urlParams.get('createproject') ?? 0) === 1;
-    return <Feature name="projects.create" enabled={isLocal || myParam}/>;
+    return <Feature name="projects.create" enabled={true}/>;
 }
 
 

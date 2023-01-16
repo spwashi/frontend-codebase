@@ -1,7 +1,6 @@
 import {ContentType} from '../../../../features/concepts/data/config';
 import {Input} from '../../input/text/Input';
 import {Textarea} from '../../input/text/Textarea';
-import css from '../../styles/form.module.scss';
 import React from 'react';
 
 interface ContentParams {
@@ -43,5 +42,5 @@ export function ContentInput({data, contentType: _contentType, name, title, valu
         default:
             break;
     }
-    return <div className={css.error}>[please set the content type]</div>
+    return <div className="error">[please set the content type]</div>
 }
