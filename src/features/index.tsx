@@ -1,4 +1,4 @@
-import React, {Component, FunctionComponent} from 'react';
+import React, {FunctionComponent} from 'react';
 import {ProjectFeatures} from './projects/Features';
 import {TagFeatures} from './tags/Features';
 import {ConceptFeatures} from './concepts/Features';

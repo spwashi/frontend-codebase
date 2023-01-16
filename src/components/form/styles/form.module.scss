@@ -1,4 +1,7 @@
-.error{
-    color: red;
-    font-family: 'JetBrains Mono', monospace;
+:root {
+
+}
+.error {
+  color: var(--error-text-color);
+  font-family: var(--error-font-family);
 }

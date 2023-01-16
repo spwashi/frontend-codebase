@@ -14,18 +14,17 @@ import {EventSelect} from '../../../../features/events/components/form/Select';
 import {SceneSelect} from '../../../../features/scenes/components/form/Select';
 import {ContentInput} from './ContentInput';
 import {ContentType} from '../../../../features/concepts/data/config';
-import styles from '../../input/styles/input.module.scss';
 import {StandardForm} from '../../Form';
 import {useFormItem} from '../../hooks/useFormItem';
-import {getDevObject, isDev} from '../../../Dev';
+import {getConfiguredProject} from '../../../Dev';
 
 export type FormConfig =
-    {
-        formId: string,
-        title?: string,
-        items: FormFieldConfig[];
-        defaultValue?: { [k: string]: any }
-    }
+  {
+    formId: string,
+    title?: string,
+    items: FormFieldConfig[];
+    defaultValue?: { [k: string]: any }
+  }
 
 type ProjectSelectInputConfig = { type: 'project'; ignore?: boolean };
 type UserSelectInputConfig = { type: 'user'; ignoreLogin?: boolean };
@@ -45,47 +44,47 @@ type ContentInputConfig = { type: 'content'; contentType?: ContentType };
 type SelectInputConfig = { type: 'select'; options: SelectOption[] };
 
 export type FormFieldConfig<T = any> =
-    {
-        name: string;
-        title?: string;
-        value?: T;
-        id?: string;
-        validators?: {
-            onReset?: ((v: T, d: any) => boolean | string)[]
-            onChange?: ((v: T, d: any) => boolean | string)[]
-            onSubmit?: ((v: T, d: any) => boolean | string)[]
-        }
+  {
+    name: string;
+    title?: string;
+    value?: T;
+    id?: string;
+    validators?: {
+      onReset?: ((v: T, d: any) => boolean | string)[]
+      onChange?: ((v: T, d: any) => boolean | string)[]
+      onSubmit?: ((v: T, d: any) => boolean | string)[]
     }
-    &
-    (| ValueInputConfig
-     | TextInputConfig
-     | DateInputConfig
-     | LongtextInputConfig
-     | PasswordInputConfig
-     | UserSelectInputConfig
-     | ProjectSelectInputConfig
-     | ConceptInputConfig
-     | EventInputConfig
-     | FormInputConfig
-     | SceneInputConfig
-     | AssetInputConfig
-     | AssetSelectInputConfig
-     | TagInputConfig
-     | ContentInputConfig
-     | SelectInputConfig)
+  }
+  &
+  (| ValueInputConfig
+   | TextInputConfig
+   | DateInputConfig
+   | LongtextInputConfig
+   | PasswordInputConfig
+   | UserSelectInputConfig
+   | ProjectSelectInputConfig
+   | ConceptInputConfig
+   | EventInputConfig
+   | FormInputConfig
+   | SceneInputConfig
+   | AssetInputConfig
+   | AssetSelectInputConfig
+   | TagInputConfig
+   | ContentInputConfig
+   | SelectInputConfig)
 
 /**
  *
  */
 export function getDomain() {
-    return window?.location?.host ?? '';
+  return getConfiguredProject() || (window?.location?.host ?? '');
 }
 
 function FormInput({formKey, config}: { formKey: string, config: FormConfig }) {
-    const form                         = useContext(FormContext);
-    const [formState, updateFormState] = useFormItem(form, formKey)
+  const form                         = useContext(FormContext);
+  const [formState, updateFormState] = useFormItem(form, formKey)
 
-    return <StandardForm config={config} defaultValue={formState} onSubmit={updateFormState}/>
+  return <StandardForm config={config} defaultValue={formState} onSubmit={updateFormState}/>
 }
 
 /**
@@ -94,57 +93,57 @@ function FormInput({formKey, config}: { formKey: string, config: FormConfig }) {
  * @constructor
  */
 export function FormElementFactory({item: config}: { item: FormFieldConfig }) {
-    const {title, type, name, value: v, ...rest} = config;
-    switch (type) {
-        case 'datetime':
-        case 'password':
-        case 'text': {
-            return <Input formKey={name} {...config} />;
-        }
-        case 'value': {
-            return <Value formKey={name} {...config}/>;
-        }
-        case 'concept': {
-            return <ConceptSelect formKey={name}/>;
-        }
-        case 'scene': {
-            return <SceneSelect formKey={name}/>;
-        }
-        case 'event': {
-            return <EventSelect formKey={name}/>;
-        }
-        case 'longtext': {
-            return <Textarea formKey={name} {...config} />;
-        }
-        case 'select': {
-            return <SelectInput formKey={name} {...config} />;
-        }
-        case 'tags': {
-            return <TagSelect formKey={name}/>
-        }
-        case 'project': {
-            const config = rest as ProjectSelectInputConfig;
-            return <ProjectSelect formKey={name} {...config}/>;
-        }
-        case 'content': {
-            return <FormContext.Consumer>{({data}) => <ContentInput {...config} data={data}/>}</FormContext.Consumer>;
-        }
-        case 'assetSelect': {
-            const {username} = config;
-            return <AssetSelector formKey="asset" username={username}/>;
-        }
-        case 'asset': {
-            return <AssetInput formKey={name}  {...config}/>;
-        }
-        case 'user': {
-            return <UsernameInput doSelect ignoreLogin={config.ignoreLogin}/>;
-        }
-        case 'form': {
-            return <FormInput formKey={name} config={config.config}/>
-        }
-        default :
-            return <>NO HANDLER</>;
+  const {title, type, name, value: v, ...rest} = config;
+  switch (type) {
+    case 'datetime':
+    case 'password':
+    case 'text': {
+      return <Input formKey={name} {...config} />;
     }
+    case 'value': {
+      return <Value formKey={name} {...config}/>;
+    }
+    case 'concept': {
+      return <ConceptSelect formKey={name}/>;
+    }
+    case 'scene': {
+      return <SceneSelect formKey={name}/>;
+    }
+    case 'event': {
+      return <EventSelect formKey={name}/>;
+    }
+    case 'longtext': {
+      return <Textarea formKey={name} {...config} />;
+    }
+    case 'select': {
+      return <SelectInput formKey={name} {...config} />;
+    }
+    case 'tags': {
+      return <TagSelect formKey={name}/>
+    }
+    case 'project': {
+      const config = rest as ProjectSelectInputConfig;
+      return <ProjectSelect formKey={name} {...config}/>;
+    }
+    case 'content': {
+      return <FormContext.Consumer>{({data}) => <ContentInput {...config} data={data}/>}</FormContext.Consumer>;
+    }
+    case 'assetSelect': {
+      const {username} = config;
+      return <AssetSelector formKey="asset" username={username}/>;
+    }
+    case 'asset': {
+      return <AssetInput formKey={name}  {...config}/>;
+    }
+    case 'user': {
+      return <UsernameInput doSelect ignoreLogin={config.ignoreLogin}/>;
+    }
+    case 'form': {
+      return <FormInput formKey={name} config={config.config}/>
+    }
+    default :
+      return <>NO HANDLER</>;
+  }
 }
 
 /**
@@ -153,20 +152,20 @@ export function FormElementFactory({item: config}: { item: FormFieldConfig }) {
  * @constructor
  */
 export function FormBody({items}: { items: FormFieldConfig[] }) {
-    const id = useMemo(() => `input--${Math.random()}`.replace('.', ''), []);
-    if (!items) return null;
-    return <>{items.map(item => {
-        item.id = id + item.name;
+  const id = useMemo(() => `input--${Math.random()}`.replace('.', ''), []);
+  if (!items) return null;
+  return <>{items.map(item => {
+    item.id = id + item.name;
 
-        const doLabel = item.type !== 'value'
+    const doLabel = item.type !== 'value'
 
-        return (
-            <div key={item.name} className={styles.inputWrapper}>
-                {doLabel && <label htmlFor={item.id}>{item.title}</label>}
-                <div className="form-item">
-                    <FormElementFactory item={item} key={item.name}/>
-                </div>
-            </div>
-        );
-    })}</>
+    return (
+      <div key={item.name} className="input-wrapper">
+        {doLabel && <label htmlFor={item.id}>{item.title}</label>}
+        <div className="form-item">
+          <FormElementFactory item={item} key={item.name}/>
+        </div>
+      </div>
+    );
+  })}</>
 }

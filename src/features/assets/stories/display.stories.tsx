@@ -1,6 +1,6 @@
 import React from 'react';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
-import {mainDecorator} from '../../../stories/_util/decorators';
+import {mainDecorator} from '../../../stories/util/decorators';
 import {Features} from '../../index';
 import {AssetDisplay} from '../components/display/AssetDisplay';
 

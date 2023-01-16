@@ -6,7 +6,7 @@ import {FeaturesBoundary} from '../../features/_util';
 import React from 'react';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
-import {Root} from './root';
+import {RootCss} from '../../styles/root.css';
 import '../../styles/app.scss';
 
 const httpLink = createHttpLink({uri: process.env.REACT_APP_GRAPHQL_URL});
@@ -15,7 +15,7 @@ const client   = new ApolloClient({link: httpLink, cache: new InMemoryCache()});
 export const mainDecorator = (Story: any) =>
     <LocalizationProvider dateAdapter={AdapterDateFns}>
         <Provider store={store}>
-            <Root/>
+            <RootCss/>
             <ApolloProvider client={client}>
                 <PersistGate loading={null} persistor={persistor}>
                     <FeaturesBoundary>

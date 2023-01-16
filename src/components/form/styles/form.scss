@@ -1,15 +1,36 @@
+
 form {
-  padding: 1.5rem;
-  &:empty {display: none;}
+  padding: 0;
+  margin: 0;
   border: thick solid var(--form-border-color);
+  &:empty {display: none;}
+
+
+  .input-wrapper {
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: var(--form-input-wrapper-margin);
+    input {
+      max-width: 100%;
+      width: 100%;
+      margin: var(--form-input-margin);
+    }
+  }
 }
 
 .form-wrapper {
   border: thin solid blue;
+
+  .form-item {
+    display: inline-block;
+    max-width: 100%;
+  }
+
   > header {
-    border: thin solid blue;
+    font-size: 20px;
   }
   > form {
-    border: thin solid red;
   }
 }

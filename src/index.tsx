@@ -10,22 +10,26 @@ import {PersistGate} from 'redux-persist/integration/react';
 import {FeaturesBoundary} from './features/_util';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
+import {RootCss} from './styles/root.css';
 
 
-const httpLink = createHttpLink({uri: process.env.REACT_APP_GRAPHQL_URL});
+const httpLink = createHttpLink({
+                                  uri:          process.env.REACT_APP_GRAPHQL_URL,
+                                });
 const client   = new ApolloClient({link: httpLink, cache: new InMemoryCache()});
 ReactDOM.render(
-    <LocalizationProvider dateAdapter={AdapterDateFns}>
-        <Provider store={store}>
-            <ApolloProvider client={client}>
-                <PersistGate loading={null} persistor={persistor}>
-                    <FeaturesBoundary>
-                        <App/>
-                    </FeaturesBoundary>
-                </PersistGate>
-            </ApolloProvider>
-        </Provider>
-    </LocalizationProvider>
-    ,
-    document.getElementById('root'),
+  <LocalizationProvider dateAdapter={AdapterDateFns}>
+    <Provider store={store}>
+      <ApolloProvider client={client}>
+        <PersistGate loading={null} persistor={persistor}>
+          <FeaturesBoundary>
+            <RootCss/>
+            <App/>
+          </FeaturesBoundary>
+        </PersistGate>
+      </ApolloProvider>
+    </Provider>
+  </LocalizationProvider>
+  ,
+  document.getElementById('root'),
 );

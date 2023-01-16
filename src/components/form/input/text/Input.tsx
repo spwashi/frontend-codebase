@@ -1,7 +1,6 @@
 import React, {useCallback, useContext, useEffect, useMemo} from 'react';
 import {useFormItem} from '../../hooks/useFormItem';
 import {FormContext} from '../../context/FormContext';
-import styles from '../styles/input.module.scss'
 import {convertFromRaw, convertToRaw, Editor, EditorState} from 'draft-js';
 import '../styles/input.scss'
 
@@ -55,7 +54,7 @@ export function Value({
   const id = useMemo(() => `input--${Math.random()}`.replace('.', ''), []);
 
   return <>
-    <div className={styles.inputWrapper}>
+    <div className="input-wrapper">
       <FormContext.Consumer>
         {
           ({key, data}) => {
@@ -95,7 +94,7 @@ function useRichTextEditor(params: InputParams, [localValue, update]: [EditorSta
 export function Input(params: InputParams) {
   const {formKey, name, ...rest} = params;
   const form                     = useContext(FormContext);
-  const [{value}, update] = useFormItem(form, formKey ?? name ?? null);
+  const [{value}, update]        = useFormItem(form, formKey ?? name ?? null);
   const {type = 'text'}          = rest;
   const editor                   = useRichTextEditor(params, [value, update]);
 

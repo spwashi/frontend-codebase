@@ -1,6 +1,6 @@
 import React from 'react';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
-import {mainDecorator} from '../../../stories/_util/decorators';
+import {mainDecorator} from '../../../stories/util/decorators';
 import {Features} from '../../index';
 import {ProjectDisplayForm} from '../components/display';
 
@@ -12,7 +12,7 @@ export default {
         (Story) => {
             return (
                 <React.Fragment>
-                    <Features list={['users', 'tags', 'concepts']}/>
+                    <Features list={['projects']}/>
                     <Story/>
                 </React.Fragment>
             );

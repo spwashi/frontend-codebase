@@ -5,6 +5,7 @@ import {StandardForm} from '../../../../../../components/form/Form';
 import {useJwt} from '../../../../../../util/jwt';
 import {LoggedIn} from '../../../../../users/behaviors/login/Requirement';
 import {Dev} from '../../../../../../components/Dev';
+import Cookie from 'js-cookie';
 
 
 interface SubmissionCallbackParams {
@@ -71,7 +72,7 @@ export function UploadAssetForm({}) {
   if (!BACKEND_URL) return null;
   return (
     <LoggedIn>
-      <Dev>No JWT.</Dev>
+      <Dev>{error}</Dev>
       <StandardForm config={form__uploadAsset} onSubmit={onSubmit}/>
       {
         out

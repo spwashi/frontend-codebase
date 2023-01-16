@@ -2,7 +2,6 @@ import {useSelector} from 'react-redux';
 import {selectLoggedInUserName} from './redux/reducer';
 import React from 'react';
 import './styles/requirement/login-requirement.scss'
-import styles from './styles/requirement/login-requirement.module.scss'
 import classNames from 'classnames';
 import {widgetClassNames} from '../../../../styles/classNames';
 import {useJwt} from '../../../../util/jwt';
@@ -13,7 +12,7 @@ import {useJwt} from '../../../../util/jwt';
  */
 function MustLoginErrorMessage() {
   const errorMsg  = 'Must be logged in to continue';
-  const className = classNames(['message', 'must-login', styles.loginRequirement, widgetClassNames.widget]);
+  const className = classNames(['message', widgetClassNames.loginRequirement, widgetClassNames.widget]);
   return (
     <div className={className} data-error-msg={errorMsg}>
       <header>

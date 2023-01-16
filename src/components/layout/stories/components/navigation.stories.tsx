@@ -5,7 +5,7 @@ import {Navigation} from '../../components/navigation/Navigation';
 import {mainNavigation} from '../../../../app/junction/routes/mainNavigation';
 
 export default {
-    title:     'Demo/Layout/Components/Navigation',
+    title:     'Demo/Layout/Regions/Navigation',
     component: Page,
 } as ComponentMeta<typeof Page>;
 

@@ -5,6 +5,11 @@ export function isDev() {
   return process.env.NODE_ENV === 'development';
 }
 
+
+export function getConfiguredProject() {
+  return process.env.STORYBOOK_PROJECT_NAME || process.env.REACT_APP_PROJECT_NAME;
+}
+
 export function getDevObject() {
   // @ts-ignore
   return window.__dev = window.__dev || {};
