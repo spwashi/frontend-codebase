@@ -1,32 +1,29 @@
-html, body, #root {
-  height: 100%;
-}
+@import "root";
 
-* {
-  font-family: "JetBrains Mono", sans-serif !important;
-}
+#application-container {
+  &.no-admin {
+    .admin {
+      display: none;
+    }
+  }
 
-.app {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-  align-items: flex-start;
-  > section {
-    border: thin solid forestgreen;
+  .app-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    .app-body {
+      > section {
+        border: thin solid forestgreen;
+      }
+    }
   }
 }
 
-section {
-  position: relative;
-}
-
-
 @import "environments/dev";
-
 @import "components/input";
 @import "components/form";
 @import "components/nav";
-
 @import "features/user/login-requirement";
 @import "features/concept";
 @import "features/event";

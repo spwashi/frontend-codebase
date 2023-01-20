@@ -1,10 +1,14 @@
-export const widgetClassNames = {
-  widget: 'widget',
-
-  states: {
+export const appClassNames = {
+  widget:       'widget',
+  states:       {
     active:   'active',
     inactive: 'inactive',
   },
-
-  loginRequirement: 'must-login',
+  requirements: {
+    login: 'must-login',
+  },
+  permissions:  {
+    noAdmin:       'no-admin',
+    appCanBeAdmin: 'can-be-admin',
+  },
 };
