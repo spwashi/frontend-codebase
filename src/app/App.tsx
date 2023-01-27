@@ -7,7 +7,7 @@ import {Bootstrap} from './Bootstrap';
 import {BrowserRouter} from 'react-router-dom';
 import {LogAppReduxState} from './components/Log';
 import {appClassNames} from '../styles/classNames';
-import {AdminNav, AdminRoutes} from './admin/Admin';
+import {AdminControlPanel} from './admin/components';
 
 
 function App() {
@@ -27,12 +27,7 @@ function App() {
         <div className="app-wrapper">
           <div className="app-body">
             {
-              canBeAdmin && (
-                <>
-                  <AdminNav/>
-                  <AdminRoutes/>
-                </>
-              )
+              canBeAdmin && <AdminControlPanel/>
             }
           </div>
         </div>

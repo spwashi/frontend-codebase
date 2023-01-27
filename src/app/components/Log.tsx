@@ -34,7 +34,6 @@ function useBinaryState(defaultState?: boolean): [boolean, (force?: boolean) => 
   return [state, pushToggle]
 }
 
-
 export function Log({
                       children,
                       style = 'json',
@@ -43,7 +42,7 @@ export function Log({
                       error,
                       title,
                     }: type) {
-  const [isActive, toggleActive] = useBinaryState(false)
+  const [isActive, toggleActive] = useBinaryState(true)
   return (
     <Dev>
       <div className={classNames([
@@ -52,14 +51,13 @@ export function Log({
                                  ])}>
         <div className={classNames([
                                      devClassNames.devLogComponents.controls,
-                                     devClassNames.devLogComponents.controls,
                                    ])}>
           <button className={'deactivate'} onClick={() => toggleActive(false)}>close</button>
           <button className={'activate'} onClick={() => toggleActive(true)}>open</button>
         </div>
         <div className={devClassNames.devLogComponents.wrapper}>
           <details open={open} className={devClassNames.devLog + (error ? ' error' : '')}>
-            {title && <summary>{title} <span className="devlog--title reason">{logReason}</span> <span className="devlog--title generic">[devlog]</span></summary>}
+            {title && <summary><span>{title}</span> <span className="reason">{logReason}</span> <span className="generic">[devlog]</span></summary>}
             {
               children && (
                 style === 'json'

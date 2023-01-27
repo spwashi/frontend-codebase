@@ -1,11 +1,17 @@
 export const appClassNames = {
-  widget:       'widget',
   states:       {
-    active:   'active',
-    inactive: 'inactive',
+    active:       'active',
+    inactive:     'inactive',
+    userLoggedIn: 'user-logged-in',
+    isWidget:     'widget',
   },
   requirements: {
     login: 'must-login',
+  },
+  widgets:      {
+    user: {
+      logout: 'logout-button',
+    },
   },
   permissions:  {
     noAdmin:       'no-admin',

@@ -4,6 +4,7 @@ import {SelectOption} from '../../../components/form/input/select/SelectInput';
 
 export const contentTypes = <const>[
   'text/plain',
+  'text/spw',
   'text/rich',
 ];
 

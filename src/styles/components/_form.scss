@@ -10,15 +10,24 @@ form {
     display: none;
   }
   input, button, select, textarea {
-
-    display: block;
-    width: 100%;
-    margin: .3rem;
-    padding: .3rem;
     border: thin solid var(--input-border-color);
   }
   input {
     border-radius: 0;
+  }
+
+}
+
+button, .button {
+  outline: var(--button-outline);
+  &:focus {
+    outline: var(--button-focus-outline);
+    font-weight: bold;
+    z-index: 10;
+  }
+  &:hover, &:active {
+    outline: var(--button-hover-outline);
+    cursor: pointer;
   }
 }
 

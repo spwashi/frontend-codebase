@@ -12,31 +12,36 @@ import {UserFeatures} from '../users/Features';
 import {RestrictedEditEventForm} from './behaviors/edit';
 
 export function EventsControlPanel() {
-    return (
-        <React.Fragment>
-            <UserFeatures/>
-            <EventFeatures/>
-            <TagFeatures/>
+  return (
+    <React.Fragment>
+      <UserFeatures/>
+      <EventFeatures/>
+      <TagFeatures/>
 
-            <NavLink to="/events">Event Home</NavLink>
-            <NavLink to="all">All Events</NavLink>
-            <FeatureRequirement name="events" alternative={"Need Events"}>
-                <Routes>
-                    <Route path={'all'} element={<div style={{width: 500 + 'px'}}><AllEventsEventDisplay/></div>}/>
-                    <Route path="" element={
-                        <section>
-                            <CreateEventForm/>
-                            <RestrictedEditEventForm/>
-                            <FeatureRequirement name="events.display" alternative={"Need Events Display"}>
-                                <EventDisplayForm/>
-                                <FeatureRequirement name="tags.display" alternative={"Need Tags Display"}>
-                                    <RestrictedTagEventForm/>
-                                </FeatureRequirement>
-                            </FeatureRequirement>
-                        </section>
-                    }/>
-                </Routes>
-            </FeatureRequirement>
-        </React.Fragment>
-    );
+      <nav>
+        <ul>
+          <li><NavLink to="/events">Event Home</NavLink></li>
+          <li><NavLink to="all">All Events</NavLink></li>
+        </ul>
+      </nav>
+
+      <FeatureRequirement name="events" alternative={'Need Events for Admin.All Events Route'}>
+        <Routes>
+          <Route path={'all'} element={<div style={{width: 500 + 'px'}}><AllEventsEventDisplay/></div>}/>
+          <Route path="" element={
+            <section>
+              <CreateEventForm/>
+              <RestrictedEditEventForm/>
+              <FeatureRequirement name="events.display" alternative={'Need Events Display for Admin.Display Events Route'}>
+                <EventDisplayForm/>
+                <FeatureRequirement name="tags.display" alternative={'Need Tags Display for Admin.TagEvent Form'}>
+                  <RestrictedTagEventForm/>
+                </FeatureRequirement>
+              </FeatureRequirement>
+            </section>
+          }/>
+        </Routes>
+      </FeatureRequirement>
+    </React.Fragment>
+  );
 }

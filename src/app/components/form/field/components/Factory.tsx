@@ -26,7 +26,7 @@ export type FormConfig =
   }
 
 type ProjectSelectInputConfig = { type: 'project'; ignore?: boolean };
-type UserSelectInputConfig = { type: 'user'; ignoreLogin?: boolean };
+type UserSelectInputConfig = { type: 'user'; ignoreLogin?: boolean; doSelect?: boolean };
 type PasswordInputConfig = { type: 'password'; };
 type LongtextInputConfig = { type: 'longtext'; };
 type TextInputConfig = { type: 'text'; };
@@ -135,7 +135,7 @@ export function FormElementFactory({item: config}: { item: FormFieldConfig }) {
       return <AssetInput formKey={name}  {...config}/>;
     }
     case 'user': {
-      return <UsernameInput doSelect ignoreLogin={config.ignoreLogin}/>;
+      return <UsernameInput doSelect={!!config.doSelect} ignoreLogin={config.ignoreLogin}/>;
     }
     case 'form': {
       return <FormInput formKey={name} config={config.config}/>

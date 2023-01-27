@@ -5,9 +5,9 @@ import React from 'react';
 export function UsernameInput({doSelect = false, ignoreLogin}: { doSelect?: boolean; ignoreLogin?: boolean }) {
     return <>
         {
-            doSelect
+            doSelect || (!ignoreLogin)
             ? <UserSelect formKey="user" ignoreLogin={ignoreLogin}/>
-            : <Input formKey="username" placeholder="Username"/>
+            : <Input formKey="user" placeholder="Username"/>
         }
     </>;
 }

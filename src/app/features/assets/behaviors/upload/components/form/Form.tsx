@@ -46,7 +46,7 @@ const form__uploadAsset: FormConfig =
           formId: 'upload-asset-form',
           title:  'Upload Asset',
           items:  [
-            {type: 'user', name: 'name', title: 'User'},
+            {type: 'user', name: 'name', title: 'User', ignoreLogin: false},
             {type: 'asset', name: 'assets', title: 'Asset'},
             {type: 'tags', name: 'tags', title: 'Tags'},
           ],

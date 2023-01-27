@@ -18,45 +18,46 @@ export const LOGIN_MUTATION = gql`
 
 
 export function selectLoginInput(data: any) {
-    const {
-              user: {username} = {username: null},
-              password,
-              project,
-          } = data ?? {};
-
-    return {
-        user:     {username},
-        password: {password},
-        project:  {id: project.id},
-    };
+  const {
+          user:     userStringOrObj,
+          username: stringUsername,
+          password,
+          project,
+        }        = data ?? {};
+  const username = typeof userStringOrObj === 'string' ? userStringOrObj : userStringOrObj.username;
+  return {
+    user:     {username: username ?? stringUsername},
+    password: {password},
+    project:  {id: project.id},
+  };
 }
 
 const userInput: FormFieldConfig = {
-    type:        'user',
-    name:        'user',
-    title:       'User',
-    ignoreLogin: true,
+  type:        'user',
+  name:        'user',
+  title:       'User',
+  ignoreLogin: true,
 };
 
 const passwordInput: FormFieldConfig = {
-    type:  'password',
-    name:  'password',
-    title: 'Password',
+  type:  'password',
+  name:  'password',
+  title: 'Password',
 };
 
 const projectInput: FormFieldConfig = {
-    type:  'project',
-    name:  'project',
-    title: 'Project',
+  type:  'project',
+  name:  'project',
+  title: 'Project',
 };
 
 export const form__login: FormConfig =
-                 {
-                     formId: 'login-form',
-                     title:  'Login',
-                     items:  [
-                                 userInput,
-                                 passwordInput,
-                                 projectInput,
-                             ].map(makeFieldRequired),
-                 };
+               {
+                 formId: 'login-form',
+                 title:  'Login',
+                 items:  [
+                           userInput,
+                           passwordInput,
+                           projectInput,
+                         ].map(makeFieldRequired),
+               };

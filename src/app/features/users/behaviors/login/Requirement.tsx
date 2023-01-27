@@ -11,7 +11,7 @@ import {useJwt} from '../../../../../util/jwt';
  */
 function MustLoginErrorMessage() {
   const errorMsg  = 'Must be logged in to continue';
-  const className = classNames(['message', appClassNames.requirements.login, appClassNames.widget]);
+  const className = classNames(['message', appClassNames.requirements.login, appClassNames.states.isWidget]);
   return (
     <div className={className} data-error-msg={errorMsg}>
       <header>

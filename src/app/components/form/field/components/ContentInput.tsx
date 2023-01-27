@@ -14,6 +14,7 @@ interface ContentParams {
 export function ContentInput({data, contentType: _contentType, name, title, value}: ContentParams) {
     const {contentType: contextMime} = data
     switch (_contentType ?? contextMime) {
+        case 'text/spw':
         case 'text/plain':
             return (
                 <Input

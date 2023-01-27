@@ -1,4 +1,22 @@
 nav {
   --nav-outline-color: green;
   outline: thin solid var(--nav-outline-color);
+  margin: .5rem 0;
+  display: block;
+  ul {
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+    justify-content: center;
+    li {
+      padding: 1rem;
+      list-style: none;
+    }
+  }
+
+  &:before {
+    content: 'nav';
+    position: absolute;
+    opacity: .3;
+  }
 }
