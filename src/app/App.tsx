@@ -21,7 +21,6 @@ function App() {
   return (
     <BrowserRouter>
       <LogAppReduxState/>
-      <Bootstrap/>
       <div id="application-container" className={className}>
         <div className="stage-open" aria-hidden="true"/>
         <div className="app-wrapper">
