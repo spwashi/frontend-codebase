@@ -3,7 +3,6 @@ import {useSelector} from 'react-redux';
 import {select_noGraphql} from './redux/reducer';
 
 import classnames from 'classnames';
-import {Bootstrap} from './Bootstrap';
 import {BrowserRouter} from 'react-router-dom';
 import {LogAppReduxState} from './components/Log';
 import {appClassNames} from '../styles/classNames';
