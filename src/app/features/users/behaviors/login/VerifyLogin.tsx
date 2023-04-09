@@ -8,7 +8,7 @@ export function VerifyLogin() {
     const dispatch = useDispatch();
     const jwt      = useJwt();
     useEffect(() => {
-        fetch(BACKEND_URL + '/protected', {
+        fetch(BACKEND_URL + '/current/user/is_authenticated', {
             method:  'POST',
             body:    JSON.stringify({token: jwt}),
             headers: {
