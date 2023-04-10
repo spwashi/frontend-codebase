@@ -42,7 +42,7 @@ export function Log({
                       error,
                       title,
                     }: type) {
-  const [isActive, toggleActive] = useBinaryState(true)
+  const [isActive, toggleActive] = useBinaryState(false)
   return (
     <Dev>
       <div className={classNames([
@@ -52,8 +52,7 @@ export function Log({
         <div className={classNames([
                                      devClassNames.devLogComponents.controls,
                                    ])}>
-          <button className={'deactivate'} onClick={() => toggleActive(false)}>close</button>
-          <button className={'activate'} onClick={() => toggleActive(true)}>open</button>
+          <button className={isActive ? 'deactivate' : 'activate'} onClick={() => toggleActive(!isActive)}>{isActive ? 'close' : 'open'}</button>
         </div>
         <div className={devClassNames.devLogComponents.wrapper}>
           <details open={open} className={devClassNames.devLog + (error ? ' error' : '')}>

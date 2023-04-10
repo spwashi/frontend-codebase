@@ -4,23 +4,13 @@
   display: flex;
   flex-flow: var(--input-wrapper-flexFlow);
   outline: var(--input-wrapper-outline);
-  > :first-child {
-    width: 12ch;
-    padding: 1rem;
-  }
   .form-item {
     max-width: 100%;
-    width: 100%;
     width: 100ch;
     display: flex;
     flex-direction: column;
-    outline: thick solid red;
-    padding: 1ch;
-    > * {
-      padding: 1rem;
-    }
   }
-  }
-  .input-wrapper .form-item .input-wrapper {
-    padding: 0;
-  }
+}
+.input-wrapper .form-item .input-wrapper {
+  padding: 0;
+}

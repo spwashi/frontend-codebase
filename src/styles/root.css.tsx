@@ -7,7 +7,7 @@ export const RootCss = createGlobalStyle`
         --button-outline: thick solid grey;
         --button-focus-outline: thick solid blue;
         --button-hover-outline: thick solid yellow;
-        --input-wrapper-outline: thick solid purple;
+        --input-wrapper-outline: none;
         --input-wrapper-flexFlow: row nowrap;
     }
 `;
