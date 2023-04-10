@@ -1,4 +1,4 @@
-import {IUser} from '../../../../junction/models/user/models';
+import {IUser} from '../../../../.junction/models/user/models';
 import {RootState} from '../../../redux/rootState';
 import {UserOption} from './types';
 

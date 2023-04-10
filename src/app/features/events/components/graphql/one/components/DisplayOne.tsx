@@ -1,10 +1,10 @@
 import {EventTag} from './join/tag';
 import React, {useState} from 'react';
-import {IEvent_Complete, IEventTag_Complete} from '../../../../../../../junction/models/event/hybrids';
+import {IEvent_Complete, IEventTag_Complete} from '../../../../../../../.junction/models/event/hybrids';
 import {useActiveEvent} from '../context/context';
 import {convertFromRaw, Editor, EditorState} from 'draft-js';
 import '../../../../../../../styles/features/event.scss';
-import {IEvent} from '../../../../../../../junction/models/event/models';
+import {IEvent} from '../../../../../../../.junction/models/event/models';
 import {ErrorBoundary} from '../../../../../../components/error';
 import {DeleteEventButton} from './DeleteButton';
 

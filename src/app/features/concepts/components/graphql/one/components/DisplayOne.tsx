@@ -1,10 +1,10 @@
 import {ConceptTag} from './join/tag';
 import React, {useState} from 'react';
-import {IConcept_Complete, IConceptTag_Complete} from '../../../../../../../junction/models/concept/hybrids';
+import {IConcept_Complete, IConceptTag_Complete} from '../../../../../../../.junction/models/concept/hybrids';
 import {useActiveConcept} from '../context/context';
 import {convertFromRaw, Editor, EditorState} from 'draft-js';
 import {Log} from '../../../../../../components/Log';
-import {IConcept} from '../../../../../../../junction/models/concept/models';
+import {IConcept} from '../../../../../../../.junction/models/concept/models';
 import {ErrorBoundary} from '../../../../../../components/error';
 import {DeleteConceptButton} from './DeleteButton';
 

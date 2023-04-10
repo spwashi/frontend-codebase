@@ -1,4 +1,4 @@
-import {IEvent} from '../../../../junction/models/event/models';
+import {IEvent} from '../../../../.junction/models/event/models';
 import {EventOption} from './types';
 import {RootState} from '../../../redux/rootState';
 

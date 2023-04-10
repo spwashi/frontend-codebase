@@ -1,4 +1,4 @@
-import {IConcept} from '../../../../junction/models/concept/models';
+import {IConcept} from '../../../../.junction/models/concept/models';
 import {ConceptOption} from './types';
 import {RootState} from '../../../redux/rootState';
 

@@ -7,7 +7,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {ACTION_RECEIVE_LOGIN, selectLoggedInUserName} from '../../redux/reducer';
 import {form__login, LOGIN_MUTATION, selectLoginInput} from '../../selectors';
 import {StandardForm} from '../../../../../../components/form/Form';
-import {IUser} from '../../../../../../../junction/models/user/models';
+import {IUser} from '../../../../../../../.junction/models/user/models';
 import {FeatureRequirement} from '../../../../../_util';
 import {useChangeEffect} from '../../../../../../../util/hooks/useChangeEffect';
 

@@ -4,7 +4,7 @@ import {selectPossibleScenesLastFetched, selectSceneStateKey} from '../../../../
 import {ACTION_RECEIVE_ALL_SCENES} from '../../../../redux/reducer';
 import {useFeatureQuery} from '../../../../../_util/hooks/useFeatureQuery';
 import {gql} from '@apollo/client';
-import {IScene} from '../../../../../../../junction/models/scene/models';
+import {IScene} from '../../../../../../../.junction/models/scene/models';
 
 export function AllScenesQuery() {
     const stateKey    = useSelector(selectSceneStateKey);

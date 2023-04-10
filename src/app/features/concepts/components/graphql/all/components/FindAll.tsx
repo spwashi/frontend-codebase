@@ -4,7 +4,7 @@ import {selectConceptStateKey, selectPossibleConceptsLastFetched} from '../../..
 import {ACTION_RECEIVE_ALL_CONCEPTS} from '../../../../redux/reducer';
 import {useFeatureQuery} from '../../../../../_util/hooks/useFeatureQuery';
 import {gql} from '@apollo/client';
-import {IConcept_Complete} from '../../../../../../../junction/models/concept/hybrids';
+import {IConcept_Complete} from '../../../../../../../.junction/models/concept/hybrids';
 
 export function AllConceptsQuery() {
     const stateKey    = useSelector(selectConceptStateKey);

@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {Form} from '../../../../components/form/context/FormContext';
 import {AssetQuery} from '../graphql/queries/AssetQuery';
 import {getUserSelectorUsername, UserSelect} from '../../../users/components/form/Select';
-import {IUser} from '../../../../../junction/models/user/models';
+import {IUser} from '../../../../../.junction/models/user/models';
 import {StandardForm} from '../../../../components/form/Form';
 import {FormConfig} from '../../../../components/form/field/components/Factory';
 import {LoggedIn} from '../../../users/behaviors/login/Requirement';

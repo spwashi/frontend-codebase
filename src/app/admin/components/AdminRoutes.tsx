@@ -1,6 +1,6 @@
 import {Routes} from 'react-router-dom';
 import {Route} from 'react-router';
-import {adminPaths} from '../../../junction/routes/routes';
+import {adminPaths} from '../../../.junction/routes/routes';
 import {UsersControlPanel} from '../../features/users/ControlPanel';
 import {ProjectsControlPanel} from '../../features/projects/ControlPanel';
 import {ConceptsControlPanel} from '../../features/concepts/ControlPanel';

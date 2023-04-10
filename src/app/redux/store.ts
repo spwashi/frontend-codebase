@@ -5,24 +5,25 @@ import {rootReducer} from './reducer';
 
 
 const persistConfig    =
-          {
-              key:     'primary',
-              version: 1,
-              storage,
-          }
+        {
+          key:     'primary',
+          version: 2,
+          storage,
+        }
 const persistedReducer = persistReducer(persistConfig, rootReducer)
 export const store     = configureStore({
-                                            reducer:    persistedReducer,
-                                            middleware: (getDefaultMiddleware) =>
-                                                            getDefaultMiddleware({
-                                                                                     serializableCheck: {
-                                                                                         ignoredActions: [
-                                                                                             FLUSH, REHYDRATE, PAUSE,
-                                                                                             PERSIST,
-                                                                                             PURGE, REGISTER,
-                                                                                         ],
-                                                                                     },
-                                                                                 }),
+                                          devTools:   process.env.NODE_ENV !== 'production',
+                                          reducer:    persistedReducer,
+                                          middleware: (getDefaultMiddleware) =>
+                                                        getDefaultMiddleware({
+                                                                               serializableCheck: {
+                                                                                 ignoredActions: [
+                                                                                   FLUSH, REHYDRATE, PAUSE,
+                                                                                   PERSIST,
+                                                                                   PURGE, REGISTER,
+                                                                                 ],
+                                                                               },
+                                                                             }),
                                         })
 
 export const persistor = persistStore(store)

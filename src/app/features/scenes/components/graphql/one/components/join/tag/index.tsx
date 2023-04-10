@@ -1,6 +1,6 @@
 import {gql, useMutation} from '@apollo/client';
-import {ITag} from '../../../../../../../../../junction/models/tag/models';
-import {IScene} from '../../../../../../../../../junction/models/scene/models';
+import {ITag} from '../../../../../../../../../.junction/models/tag/models';
+import {IScene} from '../../../../../../../../../.junction/models/scene/models';
 import React from 'react';
 
 function useDeleteSceneTagMutation() {

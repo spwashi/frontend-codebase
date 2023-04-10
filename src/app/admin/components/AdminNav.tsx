@@ -1,7 +1,7 @@
 import {NavLink, Routes} from 'react-router-dom';
 import {Route} from 'react-router';
-import {adminPaths} from '../../../junction/routes/routes';
-import {adminNavigation} from '../../../junction/routes/nav';
+import {adminPaths} from '../../../.junction/routes/routes';
+import {adminNavigation} from '../../../.junction/routes/nav';
 import React from 'react';
 
 export function AdminNav() {

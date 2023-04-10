@@ -1,6 +1,6 @@
-import {useActiveProject} from '../context/hooks/useActiveOne';
+import {useActiveProject} from '../../../../context/hooks/useActiveOne';
 import React from 'react';
-import {IProject} from '../../../../../../../junction/models/project/models';
+import {IProject} from '../../../../../../../.junction/models/project/models';
 
 interface ProjectParams {project: IProject;}
 

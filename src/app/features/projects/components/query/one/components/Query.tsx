@@ -1,7 +1,7 @@
-import {IProject, IProjectIdentifyingPartial} from '../../../../../../../junction/models/project/models';
+import {IProject, IProjectIdentifyingPartial} from '../../../../../../../.junction/models/project/models';
 import {gql, useQuery} from '@apollo/client';
 import React, {useContext, useEffect} from 'react';
-import {ProjectContext} from '../context/context';
+import {ProjectContext} from '../../../../context/context';
 
 const PROJECT_QUERY = gql`
     query Project($id: Int!) {
@@ -15,17 +15,16 @@ const PROJECT_QUERY = gql`
 `;
 
 export function OneProjectQuery({id}: IProjectIdentifyingPartial) {
-    const context      = useContext(ProjectContext) ?? ({} as any);
-    const {setProject} = context;
+  const context       = useContext(ProjectContext);
+  const {data: query} = useQuery(PROJECT_QUERY, {variables: {id}});
+  const {project}     = query ?? {};
+  const {setProject}  = context;
 
-    const {data: query} = useQuery(PROJECT_QUERY, {variables: {id}});
-    const {project}     = query ?? {};
+  useEffect(() => {
+    if (project && setProject) {
+      setProject(project as IProject);
+    }
+  }, [project, setProject]);
 
-    useEffect(() => {
-        if (project && setProject) {
-            setProject(project as IProject);
-        }
-    }, [project, setProject]);
-
-    return <></>
+  return <>{project?.id} {id} {JSON.stringify(query)}</>
 }

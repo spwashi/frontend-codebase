@@ -1,4 +1,4 @@
-import {IUser} from '../../../../junction/models/user/models';
+import {IUser} from '../../../../.junction/models/user/models';
 import {Feature} from '../../../redux/state.types';
 import {SelectOption} from '../../../components/form/input/select/SelectInput';
 

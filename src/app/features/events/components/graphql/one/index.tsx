@@ -1,5 +1,5 @@
 import React from 'react';
-import {IEventIdentifyingPartial} from '../../../../../../junction/models/event/models';
+import {IEventIdentifyingPartial} from '../../../../../../.junction/models/event/models';
 import {EventContextProvider} from './context/Provider';
 import {EventContextDisplay} from './components/DisplayOne';
 import {OneEventQuery} from './components/FindOne';

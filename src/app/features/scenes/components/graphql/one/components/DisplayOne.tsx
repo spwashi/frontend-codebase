@@ -1,6 +1,6 @@
 import React from 'react';
 import {useActiveScene} from '../context/context';
-import {IScene} from '../../../../../../../junction/models/scene/models';
+import {IScene} from '../../../../../../../.junction/models/scene/models';
 import {ErrorBoundary} from '../../../../../../components/error';
 import {DeleteSceneButton} from './DeleteSceneButton';
 
