@@ -5,7 +5,7 @@ nav {
   display: block;
   ul {
     display: flex;
-    flex-direction: row;
+    flex-flow: row wrap;
     padding: 1rem;
     justify-content: center;
     li {

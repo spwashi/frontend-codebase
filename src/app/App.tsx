@@ -23,11 +23,9 @@ function App() {
       <div id="application-container" className={className}>
         <div className="stage-open" aria-hidden="true"/>
         <div className="app-wrapper">
-          <div className="app-body">
-            {
-              canBeAdmin && <AdminControlPanel/>
-            }
-          </div>
+          <main>
+            {canBeAdmin && <AdminControlPanel/>}
+          </main>
         </div>
         <div className="stage-close" aria-hidden="true"/>
       </div>

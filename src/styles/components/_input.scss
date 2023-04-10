@@ -2,15 +2,26 @@
   max-width: 100%;
   width: 100%;
   display: flex;
-  flex-flow: var(--input-wrapper-flexFlow);
   outline: var(--input-wrapper-outline);
-  .form-item {
-    max-width: 100%;
-    width: 100ch;
-    display: flex;
-    flex-direction: column;
+
+}
+.input-wrapper {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+  padding: 1ch;
+  &:hover, &:focus-within  {
+    background: rgba(#ccc, .5);
   }
 }
-.input-wrapper .form-item .input-wrapper {
-  padding: 0;
+.form-item {
+  max-width: 100%;
+  width: 70ch;
+  display: flex;
+  flex-direction: column;
+  padding: 1ch;
+  > * {
+    padding: 1ch;
+    width: 100%;
+  }
 }
