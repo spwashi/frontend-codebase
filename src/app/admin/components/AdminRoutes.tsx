@@ -7,7 +7,7 @@ import {ConceptsControlPanel} from '../../features/concepts/ControlPanel';
 import {ScenesControlPanel} from '../../features/scenes/ControlPanel';
 import {EventsControlPanel} from '../../features/events/ControlPanel';
 import {TagsControlPanel} from '../../features/tags/ControlPanel';
-import {AssetsControlPanel} from '../../features/assets/Assets';
+import {AssetsControlPanel} from '../../features/assets/ControlPanel';
 import {LoggedIn, NotLoggedIn} from '../../features/users/behaviors/login/Requirement';
 import React from 'react';
 
