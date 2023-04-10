@@ -5,7 +5,6 @@ import {StandardForm} from '../../../../../../components/form/Form';
 import {useJwt} from '../../../../../../../util/jwt';
 import {LoggedIn} from '../../../../../users/behaviors/login/Requirement';
 import {Dev} from '../../../../../../components/Dev';
-import Cookie from 'js-cookie';
 
 
 interface SubmissionCallbackParams {

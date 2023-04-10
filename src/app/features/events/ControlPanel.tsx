@@ -10,6 +10,8 @@ import {NavLink} from 'react-router-dom';
 import {TagFeatures} from '../tags/Features';
 import {UserFeatures} from '../users/Features';
 import {RestrictedEditEventForm} from './behaviors/edit';
+import {AllTagsQuery} from '../tags/components/query/all';
+import {AllEventsQuery} from './components/graphql/all/components/FindAll';
 
 export function EventsControlPanel() {
   return (
@@ -20,8 +22,8 @@ export function EventsControlPanel() {
 
       <nav>
         <ul>
-          <li><NavLink to="/events">Event Home</NavLink></li>
-          <li><NavLink to="all">All Events</NavLink></li>
+          <li><NavLink to="../events">Event Home</NavLink></li>
+          <li><NavLink to="../events/all">All Events</NavLink></li>
         </ul>
       </nav>
 
@@ -30,9 +32,11 @@ export function EventsControlPanel() {
           <Route path={'all'} element={<div style={{width: 500 + 'px'}}><AllEventsEventDisplay/></div>}/>
           <Route path="" element={
             <section>
+              <AllEventsQuery/>
               <CreateEventForm/>
               <RestrictedEditEventForm/>
               <FeatureRequirement name="events.display" alternative={'Need Events Display for Admin.Display Events Route'}>
+                <AllTagsQuery/>
                 <EventDisplayForm/>
                 <FeatureRequirement name="tags.display" alternative={'Need Tags Display for Admin.TagEvent Form'}>
                   <RestrictedTagEventForm/>

@@ -10,33 +10,36 @@ import {NavLink} from 'react-router-dom';
 import {TagFeatures} from '../tags/Features';
 import {UserFeatures} from '../users/Features';
 import {RestrictedEditConceptForm} from './behaviors/edit';
+import {AllConceptsQuery} from './components/graphql/all/components/FindAll';
+import {AllTagsQuery} from '../tags/components/query/all';
 
 export function ConceptsControlPanel() {
-    return (
-        <React.Fragment>
-            <UserFeatures/>
-            <ConceptFeatures/>
-            <TagFeatures/>
-
-            <NavLink to="/concepts">Concept Home</NavLink>
-            <NavLink to="all">All Concepts</NavLink>
-            <FeatureRequirement name="concepts" alternative={'Need Concepts'}>
-                <Routes>
-                    <Route path={'all'} element={<div style={{width: 500 + 'px'}}><AllConceptsConceptDisplay/></div>}/>
-                    <Route path="" element={
-                        <section>
-                            <CreateConceptForm/>
-                            <RestrictedEditConceptForm/>
-                            <FeatureRequirement name="concepts.display" alternative={'Need Concepts Display'}>
-                                <ConceptDisplayForm/>
-                                <FeatureRequirement name="tags.display" alternative={'Need Tags Display'}>
-                                    <RestrictedTagConceptForm/>
-                                </FeatureRequirement>
-                            </FeatureRequirement>
-                        </section>
-                    }/>
-                </Routes>
-            </FeatureRequirement>
-        </React.Fragment>
-    );
+  return (
+    <React.Fragment>
+      <UserFeatures/>
+      <ConceptFeatures/>
+      <TagFeatures/>
+      <NavLink to="../concepts">Concept Home</NavLink>
+      <NavLink to="../concepts/all">All Concepts</NavLink>
+      <FeatureRequirement name="concepts" alternative={'Need Concepts'}>
+        <Routes>
+          <Route path={'all'} element={<div style={{width: 500 + 'px'}}><AllConceptsConceptDisplay/></div>}/>
+          <Route path="" element={
+            <section>
+              <AllConceptsQuery/>
+              <CreateConceptForm/>
+              <RestrictedEditConceptForm/>
+              <FeatureRequirement name="concepts.display" alternative={'Need Concepts Display'}>
+                <ConceptDisplayForm/>
+                <AllTagsQuery/>
+                <FeatureRequirement name="tags.display" alternative={'Need Tags Display'}>
+                  <RestrictedTagConceptForm/>
+                </FeatureRequirement>
+              </FeatureRequirement>
+            </section>
+          }/>
+        </Routes>
+      </FeatureRequirement>
+    </React.Fragment>
+  );
 }
