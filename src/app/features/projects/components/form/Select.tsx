@@ -25,7 +25,7 @@ export function ProjectSelect({formKey, ignore}: { formKey?: string, ignore?: bo
 
   return (
     <React.Fragment>
-      {/*<AllProjectsQuery/>*/}
+      <AllProjectsQuery/>
       <SelectInput
         placeholder={'Project'}
         formKey={formKey ?? ''}
