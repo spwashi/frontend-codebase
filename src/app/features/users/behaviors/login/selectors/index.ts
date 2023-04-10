@@ -46,9 +46,10 @@ const passwordInput: FormFieldConfig = {
 };
 
 const projectInput: FormFieldConfig = {
-  type:  'project',
-  name:  'project',
-  title: 'Project',
+  type:   'project',
+  name:   'project',
+  title:  'Project',
+  ignore: false,
 };
 
 export const form__login: FormConfig =

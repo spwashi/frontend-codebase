@@ -23,7 +23,7 @@ export function GraphqlMutationResponse({response}: { response: MutationResult }
   const {data, loading, error} = response;
 
   if (loading) return <Loading/>;
-  if (data) return <pre>{JSON.stringify(data)}</pre>
+  // if (data) return <pre>{JSON.stringify(data)}</pre>
   if (!error) return null;
 
   const graphQlError = new GraphQlError(error);

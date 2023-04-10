@@ -11,8 +11,8 @@ import {UserFeatures} from './Features';
 export function UsersControlPanel() {
     return <>
         {/*Users*/}
-        <UserFeatures/>
         <ProjectFeatures/>
+        <UserFeatures/>
         <LogoutButton/>
         <FeatureRequirement name="users" alternative={"Need Users"}>
             <section>

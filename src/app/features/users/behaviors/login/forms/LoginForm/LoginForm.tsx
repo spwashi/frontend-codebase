@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {useMutation} from '@apollo/client';
 import {useMutationFormSubmitCallback} from '../../../../../../services/graphql/hooks/useMutationFormSubmitCallback';
 import {GraphqlMutationResponse} from '../../../../../../services/graphql/GraphqlMutationResponse';
@@ -9,26 +9,20 @@ import {form__login, LOGIN_MUTATION, selectLoginInput} from '../../selectors';
 import {StandardForm} from '../../../../../../components/form/Form';
 import {IUser} from '../../../../../../../.junction/models/user/models';
 import {FeatureRequirement} from '../../../../../_util';
-import {useChangeEffect} from '../../../../../../../util/hooks/useChangeEffect';
 
 
 function LoginReceivedEffect({username, user, jwt}: { username: string, user: IUser, jwt: string }) {
   const dispatch = useDispatch();
-  useChangeEffect(() => {
+  useEffect(() => {
     if (!jwt || !username) {
-      alert('no jwt returned');
       return;
     }
-    setJwt(jwt)
+    setJwt(jwt);
     dispatch({
                type:    ACTION_RECEIVE_LOGIN,
-               payload: {
-                 username,
-                 user,
-                 jwt,
-               },
-             })
-  }, [jwt]);
+               payload: {username, user, jwt},
+             });
+  }, [jwt, username, dispatch]);
   return <></>
 }
 
@@ -51,9 +45,7 @@ export function LoginForm({alt}: { alt?: any }) {
   if (loggedInUser) return alt ?? null;
   return (
     <FeatureRequirement name="users.login" alternative={'Need Users'}>
-      <FeatureRequirement name="projects.display" alternative={'Need Projects'}>
-        <ActiveForm/>
-      </FeatureRequirement>
+      <ActiveForm/>
     </FeatureRequirement>
   );
 }
