@@ -1,27 +1,21 @@
 .input-wrapper {
   max-width: 100%;
-  width: 100%;
   display: flex;
   outline: var(--input-wrapper-outline);
-
-}
-.input-wrapper {
-  display: flex;
   flex-flow: column;
-  width: 100%;
   padding: 1ch;
-  &:hover, &:focus-within  {
+  &:hover, &:focus-within {
     background: rgba(#ccc, .5);
   }
 }
 .form-item {
   max-width: 100%;
-  width: 70ch;
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
-  padding: 1ch;
+  margin: 0;
   > * {
+    display: inline-block;
+    max-width: 100%;
     padding: 1ch;
-    width: 100%;
   }
 }
