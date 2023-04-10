@@ -15,8 +15,12 @@ export function ScenesControlPanel() {
   return (
     <React.Fragment>
       <UserFeatures/> <SceneFeatures/> <TagFeatures/>
-      <NavLink to="../scenes">Scene Home</NavLink>
-      <NavLink to="../scenes/all">All Scenes</NavLink>
+      <nav>
+        <ul>
+          <li><NavLink to="../scenes">Scene Home</NavLink></li>
+          <li><NavLink to="../scenes/all">All Scenes</NavLink></li>
+        </ul>
+      </nav>
       <FeatureRequirement name="scenes" alternative={'Need Scenes'}>
         <Routes>
           <Route

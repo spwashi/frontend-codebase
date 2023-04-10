@@ -74,9 +74,7 @@ export function Form({
   const hasChanged = getChangeKey ? getChangeKey(state) : !!Object.entries(state.changed ?? {}).filter(([, v]) => (v)).length;
   return (
     <FormContext.Provider value={value}>
-      <Log title={state.id } logReason="[form state]">{{state, hasChanged}}</Log>
-
-      {/*todo avoid nesting*/}
+      <Log title={state.id} logReason="[form state]">{{state, hasChanged}}</Log>
       <form onSubmit={state.submit}>
         {children}
         <ButtonContainer buttons={buttons} hasChanged={hasChanged}/>

@@ -2,6 +2,7 @@ import React, {useCallback, useMemo, useRef, useState} from 'react';
 import {FormBody, FormConfig} from './field/components/Factory';
 import {Form} from './context/FormContext';
 import _ from 'lodash';
+import {formClassNames} from './styles/classNames';
 
 function useHandler(form: FormConfig, index: 'onReset' | 'onChange' | 'onSubmit', origHandler?: (e: any) => void): [boolean, (d: any) => void] {
   const [canSubmit, setCanSubmit] = useState(false);
@@ -55,7 +56,7 @@ export function StandardForm({
   const [didReset, resetHandler]               = useHandler(form, 'onReset', onReset);
   const canSubmit                              = !!onSubmit && didChangeSuccessfully;
   return (
-    <section className="form-wrapper">
+    <section className={formClassNames.formWrapper}>
       {form.title && <header>{form.title} <small className="dev-only">{form.formId}</small></header>}
       <Form
         id={form.formId}
