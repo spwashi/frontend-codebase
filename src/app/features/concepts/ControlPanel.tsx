@@ -19,8 +19,12 @@ export function ConceptsControlPanel() {
       <UserFeatures/>
       <ConceptFeatures/>
       <TagFeatures/>
-      <NavLink to="../concepts">Concept Home</NavLink>
-      <NavLink to="../concepts/all">All Concepts</NavLink>
+      <nav>
+        <ul>
+          <li><NavLink to="../concepts">Concept Home</NavLink></li>
+          <li><NavLink to="../concepts/all">All Concepts</NavLink></li>
+        </ul>
+      </nav>
       <FeatureRequirement name="concepts" alternative={'Need Concepts'}>
         <Routes>
           <Route path={'all'} element={<div style={{width: 500 + 'px'}}><AllConceptsConceptDisplay/></div>}/>

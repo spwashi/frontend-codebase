@@ -13,9 +13,9 @@ export function ConceptDisplayForm({}) {
       <FeatureRequirement name="concepts.display" alternative={'Need Concepts Display'}>
         <Log>{{id}}</Log>
         <section>
-          <header>Concept Display</header>
           <StandardForm onSubmit={setState} config={{
             formId: 'display-concept-form',
+            title:  'Display Concept',
             items:  [{name: 'concept', title: 'Concept', type: 'concept'}],
           }}/>
           {id && <Concept id={id}/>}
