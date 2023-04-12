@@ -6,9 +6,9 @@ import {TagSelect} from '../Select';
 import {AllTagsQuery} from '../../query/all';
 
 export default {
-    title:      'Demo/Layout/Components/Form/Widgets/TagSelect',
-    component:  TagSelect,
-    decorators: [(Story) => <StandardForm><AllTagsQuery/><Story/> </StandardForm>, mainDecorator],
+  title:      'Demo/Layout/Components/Form/Widgets/TagSelect',
+  component:  TagSelect,
+  decorators: [(Story) => <StandardForm><AllTagsQuery/><Story/> </StandardForm>, mainDecorator],
 } as ComponentMeta<typeof TagSelect>;
 
 export const Input = ({args: {formKey: 'tag'}})

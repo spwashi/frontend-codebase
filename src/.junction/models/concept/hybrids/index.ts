@@ -3,11 +3,11 @@ import {ITag} from '../../tag/models';
 import {IUser} from '../../user/models';
 
 export interface IConceptTag_Complete extends IConceptTag {
-    concept: IConcept;
-    tag: ITag;
+  concept: IConcept;
+  tag: ITag;
 }
 
 export interface IConcept_Complete extends IConcept {
-    user: IUser;
-    ConceptTag?: IConceptTag_Complete[]
+  user: IUser;
+  ConceptTag?: IConceptTag_Complete[]
 }

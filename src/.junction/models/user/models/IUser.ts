@@ -8,13 +8,13 @@ type IUserName = string;
 type IUserRole = string;
 
 export interface IUser {
-    id: string;
-    username: IUserUsername;
-    name: IUserName;
-    role?: IUserRole;
-    project?: IProject;
-    projectId?: number;
-    concepts?: IConcept[]
-    Login: ILogin[]
-    UserAsset: IUserAsset[];
+  id: string;
+  username: IUserUsername;
+  name: IUserName;
+  role?: IUserRole;
+  project?: IProject;
+  projectId?: number;
+  concepts?: IConcept[]
+  Login: ILogin[]
+  UserAsset: IUserAsset[];
 }

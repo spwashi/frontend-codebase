@@ -3,18 +3,18 @@ import {IConcept_Complete} from '../../../../../../../.junction/models/concept/h
 import {IConcept} from '../../../../../../../.junction/models/concept/models';
 
 type Concept =
-    IConcept
-    | IConcept_Complete
-    | null;
+  IConcept
+  | IConcept_Complete
+  | null;
 
 type IConceptContext = {
-    concept: Concept;
-    setConcept: (concept: Concept) => void;
+  concept: Concept;
+  setConcept: (concept: Concept) => void;
 };
 export function useActiveConcept(): Concept {
-    const {concept = null} = useContext(ConceptContext) ?? {};
+  const {concept = null} = useContext(ConceptContext) ?? {};
 
-    return concept ?? null;
+  return concept ?? null;
 }
 
 export const ConceptContext = createContext<IConceptContext | null>(null);

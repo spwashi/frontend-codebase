@@ -12,6 +12,6 @@ const EDIT_SCENE = gql`
     }
 `;
 export function useEditSceneMutation() {
-    const [send, response] = useMutation(EDIT_SCENE);
-    return {send, response};
+  const [send, response] = useMutation(EDIT_SCENE);
+  return {send, response};
 }

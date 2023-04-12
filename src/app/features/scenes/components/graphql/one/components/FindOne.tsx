@@ -17,21 +17,21 @@ const SCENE_QUERY = gql`
 `;
 
 export function OneSceneQuery({id}: ISceneIdentifyingPartial) {
-    const context    = useContext(SceneContext) ?? ({} as any);
-    const {setScene} = context;
+  const context    = useContext(SceneContext) ?? ({} as any);
+  const {setScene} = context;
 
-    const {data: query} = useQuery(SCENE_QUERY, {variables: {id}});
+  const {data: query} = useQuery(SCENE_QUERY, {variables: {id}});
 
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-    const {scene} = query ?? {};
+  const {scene} = query ?? {};
 
-    useEffect(() => {
-        if (!(scene && setScene)) return;
+  useEffect(() => {
+    if (!(scene && setScene)) return;
 
-        dispatch({type: ACTION_RECEIVE_ONE_SCENE, payload: scene})
-        setScene(scene as IScene);
-    }, [scene, setScene]);
+    dispatch({type: ACTION_RECEIVE_ONE_SCENE, payload: scene})
+    setScene(scene as IScene);
+  }, [scene, setScene]);
 
-    return <></>
+  return <></>
 }

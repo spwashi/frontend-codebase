@@ -6,9 +6,9 @@ import {ProjectSelect} from '../Select';
 import {AllProjectsQuery} from '../../query/all/all';
 
 export default {
-    title:      'Demo/Layout/Components/Form/Widgets/ProjectSelect',
-    component:  ProjectSelect,
-    decorators: [(Story) => <StandardForm><AllProjectsQuery/> <Story/> </StandardForm>, mainDecorator],
+  title:      'Demo/Layout/Components/Form/Widgets/ProjectSelect',
+  component:  ProjectSelect,
+  decorators: [(Story) => <StandardForm><AllProjectsQuery/> <Story/> </StandardForm>, mainDecorator],
 } as ComponentMeta<typeof ProjectSelect>;
 
 export const Input = ({args: {formKey: 'project'}})

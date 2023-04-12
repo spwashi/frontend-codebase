@@ -5,16 +5,16 @@ import {RestrictedCreateSceneForm} from '../behaviors/create';
 import {Features} from '../../index';
 
 export default {
-    title:      'Admin/Forms/Datatypes/Scene/CreateScene',
-    component:  RestrictedCreateSceneForm,
-    decorators: [
-        (Story) =>
-            <React.Fragment>
-                <Features list={['users', 'scenes']}/>
-                <Story/>
-            </React.Fragment>,
-        mainDecorator,
-    ],
+  title:      'Admin/Forms/Datatypes/Scene/CreateScene',
+  component:  RestrictedCreateSceneForm,
+  decorators: [
+    (Story) =>
+      <React.Fragment>
+        <Features list={['users', 'scenes']}/>
+        <Story/>
+      </React.Fragment>,
+    mainDecorator,
+  ],
 } as ComponentMeta<typeof RestrictedCreateSceneForm>;
 
 const Template: ComponentStory<typeof RestrictedCreateSceneForm> = (args) => <RestrictedCreateSceneForm {...args}/>;

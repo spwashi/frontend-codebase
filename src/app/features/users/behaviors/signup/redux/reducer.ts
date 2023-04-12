@@ -6,10 +6,10 @@ import {UserFeatureSignupFeatureState} from '../../../redux/types';
 
 export const selectUserSignupFeature = (state: RootState) => selectUserFeature(state).features.signup;
 export const signupReducer           =
-                 combineReducers<UserFeatureSignupFeatureState>(
-                     {
-                         enabled:  (state, action) => false,
-                         features: () =>({}),
-                         data:     () =>({}),
-                     },
-                 )
+               combineReducers<UserFeatureSignupFeatureState>(
+                 {
+                   enabled:  (state, action) => false,
+                   features: () => ({}),
+                   data:     () => ({}),
+                 },
+               )

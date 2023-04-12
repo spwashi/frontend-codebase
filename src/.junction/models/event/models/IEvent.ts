@@ -1,5 +1,5 @@
 export interface IEventIdentifyingPartial {
-    id: IEventId
+  id: IEventId
 }
 
 type IEventId = number;
@@ -10,10 +10,10 @@ type IEventEnd = string;
 type IEventUserId = number;
 
 export interface IEvent {
-    id: IEventId;
-    title: IEventTitle;
-    description: IEventDescription;
-    start: IEventStart;
-    end: IEventEnd;
-    userid: IEventUserId;
+  id: IEventId;
+  title: IEventTitle;
+  description: IEventDescription;
+  start: IEventStart;
+  end: IEventEnd;
+  userid: IEventUserId;
 }

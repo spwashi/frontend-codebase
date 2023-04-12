@@ -7,14 +7,14 @@ import {AllScenesQuery} from './features/scenes/components/graphql/all/component
 import {AllEventsQuery} from './features/events/components/graphql/all/components/FindAll';
 
 export function Bootstrap() {
-    return (
-        <>
-            <AllUsersQuery/>
-            <AllProjectsQuery/>
-            <AllConceptsQuery/>
-            <AllEventsQuery/>
-            <AllScenesQuery/>
-            <AllTagsQuery/>
-        </>
-    );
+  return (
+    <>
+      <AllUsersQuery/>
+      <AllProjectsQuery/>
+      <AllConceptsQuery/>
+      <AllEventsQuery/>
+      <AllScenesQuery/>
+      <AllTagsQuery/>
+    </>
+  );
 }

@@ -6,38 +6,38 @@ import {setFieldValue} from '../../../../components/form/field/util/setFieldValu
 import {makeFieldRequired} from '../../../../components/form/field/util/makeFieldRequired';
 
 export type CreateConceptFormData = {
-    username: string;
-    user: IUser;
-    title: string;
-    src: string;
-    contentType: string;
+  username: string;
+  user: IUser;
+  title: string;
+  src: string;
+  contentType: string;
 }
 
 
 export const form__createConcept: FormConfig =
-                 {
-                     formId:    'create-concept_form',
-                     title: 'Create Concept',
-                     items:
-                            [
-                                userInput,
-                                titleInput,
-                                setFieldValue(contentTypeInput, 'text/plain'),
-                                srcInput,
-                            ].map(makeFieldRequired),
-                 };
+               {
+                 formId: 'create-concept_form',
+                 title:  'Create Concept',
+                 items:
+                         [
+                           userInput,
+                           titleInput,
+                           setFieldValue(contentTypeInput, 'text/plain'),
+                           srcInput,
+                         ].map(makeFieldRequired),
+               };
 
 export const selectCreateConceptInput =
-                 (data: CreateConceptFormData): CreateConceptMutationInput => {
-                     const {user, title, src, contentType} = data ?? {};
-                     return {
-                         concept: {
-                             title,
-                             src,
-                             contentType,
-                         },
-                         user:    {
-                             id: user?.id,
-                         },
-                     };
+               (data: CreateConceptFormData): CreateConceptMutationInput => {
+                 const {user, title, src, contentType} = data ?? {};
+                 return {
+                   concept: {
+                     title,
+                     src,
+                     contentType,
+                   },
+                   user:    {
+                     id: user?.id,
+                   },
                  };
+               };

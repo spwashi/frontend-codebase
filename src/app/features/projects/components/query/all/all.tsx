@@ -9,7 +9,7 @@ import {getDomain} from '../../../../../components/form/field/components/Factory
 
 export function AllProjectsQuery() {
   const ALL_PROJECTS_QUERY =
-        gql`
+          gql`
             query AllProjects($domain: String) {
                 allProjects(domain: $domain) {
                     id
@@ -20,16 +20,16 @@ export function AllProjectsQuery() {
                 }
             }
         `;
-    const projectStateKey  = useSelector(selectProjectStateKey);
-    const {data}           = useFeatureQuery(ALL_PROJECTS_QUERY, {domain: getDomain()}, projectStateKey);
-    const lastFetched      = useSelector(selectPossibleProjectsLastFetched)
-    const dispatch         = useDispatch();
-    useEffect(() => {
-        dispatch({
-                     type:    ACTION_RECEIVE_ALL_PROJECTS,
-                     payload: data.allProjects ? data.allProjects : [],
-                 })
-    }, [data.allProjects]);
+  const projectStateKey    = useSelector(selectProjectStateKey);
+  const {data}             = useFeatureQuery(ALL_PROJECTS_QUERY, {domain: getDomain()}, projectStateKey);
+  const lastFetched        = useSelector(selectPossibleProjectsLastFetched)
+  const dispatch           = useDispatch();
+  useEffect(() => {
+    dispatch({
+               type:    ACTION_RECEIVE_ALL_PROJECTS,
+               payload: data.allProjects ? data.allProjects : [],
+             })
+  }, [data.allProjects]);
 
-    return !lastFetched ? <>Loading...</> : null;
+  return !lastFetched ? <>Loading...</> : null;
 }

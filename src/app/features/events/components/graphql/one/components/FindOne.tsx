@@ -35,21 +35,21 @@ const EVENT_QUERY = gql`
 `;
 
 export function OneEventQuery({id}: IEventIdentifyingPartial) {
-    const context    = useContext(EventContext) ?? ({} as any);
-    const {setEvent} = context;
+  const context    = useContext(EventContext) ?? ({} as any);
+  const {setEvent} = context;
 
-    const {data: query} = useQuery(EVENT_QUERY, {variables: {id}});
+  const {data: query} = useQuery(EVENT_QUERY, {variables: {id}});
 
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-    const {event} = query ?? {};
+  const {event} = query ?? {};
 
-    useEffect(() => {
-        if (!(event && setEvent)) return;
+  useEffect(() => {
+    if (!(event && setEvent)) return;
 
-        dispatch({type: ACTION_RECEIVE_ONE_EVENT, payload: event})
-        setEvent(event as IEvent);
-    }, [event, setEvent]);
+    dispatch({type: ACTION_RECEIVE_ONE_EVENT, payload: event})
+    setEvent(event as IEvent);
+  }, [event, setEvent]);
 
-    return <></>
+  return <></>
 }

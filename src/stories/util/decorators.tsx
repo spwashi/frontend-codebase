@@ -13,15 +13,15 @@ const httpLink = createHttpLink({uri: process.env.REACT_APP_GRAPHQL_URL});
 const client   = new ApolloClient({link: httpLink, cache: new InMemoryCache()});
 
 export const mainDecorator = (Story: any) =>
-    <LocalizationProvider dateAdapter={AdapterDateFns}>
-        <Provider store={store}>
-            <RootCss/>
-            <ApolloProvider client={client}>
-                <PersistGate loading={null} persistor={persistor}>
-                    <FeaturesBoundary>
-                        <Story/>
-                    </FeaturesBoundary>
-                </PersistGate>
-            </ApolloProvider>
-        </Provider>
-    </LocalizationProvider>;
+  <LocalizationProvider dateAdapter={AdapterDateFns}>
+    <Provider store={store}>
+      <RootCss/>
+      <ApolloProvider client={client}>
+        <PersistGate loading={null} persistor={persistor}>
+          <FeaturesBoundary>
+            <Story/>
+          </FeaturesBoundary>
+        </PersistGate>
+      </ApolloProvider>
+    </Provider>
+  </LocalizationProvider>;

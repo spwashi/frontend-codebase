@@ -7,13 +7,13 @@ import {SceneFeatureState} from '../features/scenes/redux/types';
 import {EventFeatureState} from '../features/events/redux/types';
 
 export type RootState = {
-    features: {
-        user: UserFeatureState;
-        project: ProjectFeatureState;
-        concept: ConceptFeatureState;
-        event: EventFeatureState;
-        tag: TagFeatureState;
-        assets: AssetFeatureState;
-        scene: SceneFeatureState
-    }
+  features: {
+    user: UserFeatureState;
+    project: ProjectFeatureState;
+    concept: ConceptFeatureState;
+    event: EventFeatureState;
+    tag: TagFeatureState;
+    assets: AssetFeatureState;
+    scene: SceneFeatureState
+  }
 };

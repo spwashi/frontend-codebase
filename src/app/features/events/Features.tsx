@@ -5,19 +5,19 @@ import {selectPossibleEventsLastFetched, selectPossibleEventsList} from './redux
 import {AllEventsQuery} from './components/graphql/all/components/FindAll';
 
 function EventDisplayFeature() {
-    const lastFetched = useSelector(selectPossibleEventsLastFetched)
-    const list        = useSelector(selectPossibleEventsList)
-    return <Feature name="events.display" enabled={lastFetched ? !!list.length : false}/>;
+  const lastFetched = useSelector(selectPossibleEventsLastFetched)
+  const list        = useSelector(selectPossibleEventsList)
+  return <Feature name="events.display" enabled={lastFetched ? !!list.length : false}/>;
 }
 export function EventFeatures() {
-    return (
-        <Feature name="events">
-            <EventDisplayFeature/>
-        </Feature>
-    )
+  return (
+    <Feature name="events">
+      <EventDisplayFeature/>
+    </Feature>
+  )
 }
 
 EventFeatures.featureDeps =
-    [
-        AllEventsQuery,
-    ]
+  [
+    AllEventsQuery,
+  ]

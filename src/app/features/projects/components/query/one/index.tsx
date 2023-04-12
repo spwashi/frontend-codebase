@@ -9,7 +9,7 @@ import {ACTION_PROJECT_SELECTED} from '../../../redux/reducer';
 import {useChangeEffect} from '../../../../../../util/hooks/useChangeEffect';
 
 function SiteProjectDeactivateButton() {
-  const context  = useContext(ProjectContext);
+  const context = useContext(ProjectContext);
   if (!context.project) return null;
   return <button onClick={() => {context.setProject(null)}}>[deactivate project]</button>
 }

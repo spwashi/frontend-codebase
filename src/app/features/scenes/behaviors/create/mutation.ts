@@ -12,6 +12,6 @@ const CREATE_SCENE = gql`
     }
 `;
 export function useCreateSceneMutation() {
-    const [send, response] = useMutation(CREATE_SCENE);
-    return {send, response};
+  const [send, response] = useMutation(CREATE_SCENE);
+  return {send, response};
 }

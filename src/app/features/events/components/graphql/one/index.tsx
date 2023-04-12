@@ -10,11 +10,11 @@ import {OneEventQuery} from './components/FindOne';
  * @constructor
  */
 export function Event({id}: IEventIdentifyingPartial) {
-    if (!id) return null;
-    return (
-        <EventContextProvider>
-            <OneEventQuery id={id}/>
-            <EventContextDisplay/>
-        </EventContextProvider>
-    )
+  if (!id) return null;
+  return (
+    <EventContextProvider>
+      <OneEventQuery id={id}/>
+      <EventContextDisplay/>
+    </EventContextProvider>
+  )
 }

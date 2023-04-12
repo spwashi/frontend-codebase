@@ -5,8 +5,8 @@ import {Navigation} from '../../components/navigation/Navigation';
 import {mainNavigation} from '../../../../../.junction/routes/nav';
 
 export default {
-    title:     'Demo/Layout/Regions/Navigation',
-    component: Page,
+  title:     'Demo/Layout/Regions/Navigation',
+  component: Page,
 } as ComponentMeta<typeof Page>;
 
 const Template: ComponentStory<typeof Page> = (args) => <Navigation items={mainNavigation}/>;

@@ -9,20 +9,20 @@ import {ErrorBoundary} from '../../../../../components/error';
 
 
 function ActiveForm() {
-    const {send, response} = useCreateConceptMutation();
-    const onsubmit         = useMutationFormSubmitCallback(send, selectCreateConceptInput);
-    return (
-        <ErrorBoundary>
-            <StandardForm config={form__createConcept} onSubmit={onsubmit}/>
-            <GraphqlMutationResponse response={response}/>
-        </ErrorBoundary>
-    )
+  const {send, response} = useCreateConceptMutation();
+  const onsubmit         = useMutationFormSubmitCallback(send, selectCreateConceptInput);
+  return (
+    <ErrorBoundary>
+      <StandardForm config={form__createConcept} onSubmit={onsubmit}/>
+      <GraphqlMutationResponse response={response}/>
+    </ErrorBoundary>
+  )
 }
 
 export function CreateConceptForm({}) {
-    return (
-        <LoggedIn>
-            <ActiveForm/>
-        </LoggedIn>
-    );
+  return (
+    <LoggedIn>
+      <ActiveForm/>
+    </LoggedIn>
+  );
 }

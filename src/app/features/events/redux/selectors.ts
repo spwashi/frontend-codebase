@@ -3,11 +3,11 @@ import {EventOption} from './types';
 import {RootState} from '../../../redux/rootState';
 
 function eventToOption(event: IEvent): EventOption {
-    return {
-        title:   event.title,
-        value:   event.title,
-        payload: event,
-    };
+  return {
+    title:   event.title,
+    value:   event.title,
+    payload: event,
+  };
 }
 
 export const selectEventFeature              = (state: RootState) => state.features.event;

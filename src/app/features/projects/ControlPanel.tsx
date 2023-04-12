@@ -6,16 +6,16 @@ import {CreateProjectForm} from './behaviors/create';
 import {AllProjectsQuery} from './components/query/all/all';
 
 export function ProjectsControlPanel() {
-    return <>
-        <AllProjectsQuery/>
-        <ProjectFeatures/>
-        <FeatureRequirement name="projects" alternative={"Need Projects"}>
-            <section>
-                <CreateProjectForm/>
-                <FeatureRequirement name="projects.display" alternative={"Need Project Display"}>
-                    <ProjectDisplayForm/>
-                </FeatureRequirement>
-            </section>
+  return <>
+    <AllProjectsQuery/>
+    <ProjectFeatures/>
+    <FeatureRequirement name="projects" alternative={'Need Projects'}>
+      <section>
+        <CreateProjectForm/>
+        <FeatureRequirement name="projects.display" alternative={'Need Project Display'}>
+          <ProjectDisplayForm/>
         </FeatureRequirement>
-    </>;
+      </section>
+    </FeatureRequirement>
+  </>;
 }

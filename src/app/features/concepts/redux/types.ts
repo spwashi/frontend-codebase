@@ -5,4 +5,6 @@ import {Feature, KeyedState} from '../../../redux/state.types';
 export type ConceptOption = SelectOption<IConcept>;
 export type ConceptFeatureStateDataConcepts = { list: IConcept[]; lastFetched: number | null };
 export type ConceptFeatureData = { concepts: ConceptFeatureStateDataConcepts };
-export type ConceptFeatureState = Feature<ConceptFeatureData> & KeyedState<{renderKey: number}>;
+export type ConceptFeatureState =
+  Feature<ConceptFeatureData>
+  & KeyedState<{ renderKey: number }>;

@@ -12,6 +12,6 @@ const CREATE_TAG = gql`
     }
 `;
 export function useCreateTagMutation() {
-    const [send, response] = useMutation(CREATE_TAG);
-    return {send, response};
+  const [send, response] = useMutation(CREATE_TAG);
+  return {send, response};
 }

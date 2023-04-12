@@ -4,11 +4,11 @@ import {TagConceptForm} from './Form';
 import {LoggedIn} from '../../../../users/behaviors/login/Requirement';
 
 export function RestrictedTagConceptForm({}) {
-    return (
-        <LoggedIn>
-            <FeatureRequirement name="concepts.display" alternative={'Need Concepts Display'}>
-                <TagConceptForm/>
-            </FeatureRequirement>
-        </LoggedIn>
-    );
+  return (
+    <LoggedIn>
+      <FeatureRequirement name="concepts.display" alternative={'Need Concepts Display'}>
+        <TagConceptForm/>
+      </FeatureRequirement>
+    </LoggedIn>
+  );
 }

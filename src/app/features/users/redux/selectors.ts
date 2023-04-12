@@ -3,11 +3,11 @@ import {RootState} from '../../../redux/rootState';
 import {UserOption} from './types';
 
 function userToOption(user: IUser): UserOption {
-    return {
-        title:   user.username,
-        value:   user.username,
-        payload: user,
-    };
+  return {
+    title:   user.username,
+    value:   user.username,
+    payload: user,
+  };
 }
 
 

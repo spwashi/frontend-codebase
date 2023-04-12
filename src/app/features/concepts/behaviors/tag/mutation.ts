@@ -11,6 +11,6 @@ const TAG_CONCEPT = gql`
     }
 `;
 export function useTagMutation() {
-    const [send, response] = useMutation(TAG_CONCEPT);
-    return {send, response};
+  const [send, response] = useMutation(TAG_CONCEPT);
+  return {send, response};
 }

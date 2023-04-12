@@ -6,5 +6,5 @@ export type ProjectOption = SelectOption<IProject>;
 export type ProjectFeatureStateDataProjects = { list: IProject[]; lastFetched: number | null }
 export type ProjectFeatureData = { projects: ProjectFeatureStateDataProjects };
 export type ProjectFeatureState =
-    Feature<ProjectFeatureData>
-    & KeyedState<{ project?: IProject }>;
+  Feature<ProjectFeatureData>
+  & KeyedState<{ project?: IProject }>;

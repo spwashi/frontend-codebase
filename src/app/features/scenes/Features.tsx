@@ -5,19 +5,19 @@ import {selectPossibleScenesLastFetched, selectPossibleScenesList} from './redux
 import {AllScenesQuery} from './components/graphql/all/components/FindAll';
 
 function SceneDisplayFeature() {
-    const lastFetched = useSelector(selectPossibleScenesLastFetched)
-    const list        = useSelector(selectPossibleScenesList)
-    return <Feature name="scenes.display" enabled={lastFetched ? !!list.length : false}/>;
+  const lastFetched = useSelector(selectPossibleScenesLastFetched)
+  const list        = useSelector(selectPossibleScenesList)
+  return <Feature name="scenes.display" enabled={lastFetched ? !!list.length : false}/>;
 }
 export function SceneFeatures() {
-    return (
-        <Feature name="scenes">
-            <SceneDisplayFeature/>
-        </Feature>
-    )
+  return (
+    <Feature name="scenes">
+      <SceneDisplayFeature/>
+    </Feature>
+  )
 }
 
 SceneFeatures.featureDeps =
-    [
-        AllScenesQuery,
-    ]
+  [
+    AllScenesQuery,
+  ]

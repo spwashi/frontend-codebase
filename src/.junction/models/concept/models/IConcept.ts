@@ -1,5 +1,5 @@
 export interface IConceptIdentifyingPartial {
-    id: string
+  id: string
 }
 
 type IConceptId = string;
@@ -12,12 +12,12 @@ type IConceptUserId = number;
 type IConceptPasswordId = number;
 
 export interface IConcept {
-    id: IConceptId;
-    title: IConceptTitle;
-    category: IConceptCategory;
-    src: IConceptSrc;
-    contentType: IConceptContentType;
-    published: IConceptPublished;
-    userid: IConceptUserId;
-    passwordId: IConceptPasswordId;
+  id: IConceptId;
+  title: IConceptTitle;
+  category: IConceptCategory;
+  src: IConceptSrc;
+  contentType: IConceptContentType;
+  published: IConceptPublished;
+  userid: IConceptUserId;
+  passwordId: IConceptPasswordId;
 }

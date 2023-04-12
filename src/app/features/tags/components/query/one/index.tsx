@@ -10,11 +10,11 @@ import {useSelector} from 'react-redux';
 import {Log} from '../../../../../components/Log';
 
 function DeleteTag() {
-    const tag  = useActiveTag();
-    const user = useSelector(selectLoggedInUser)
+  const tag  = useActiveTag();
+  const user = useSelector(selectLoggedInUser)
 
   const [send, response] =
-        useMutation(
+          useMutation(
             gql`
                 mutation DeleteTag($user:UserReferenceInput!, $tag: TagReferenceInput!) {
                     deleteTag(tag: $tag, user: $user) {
@@ -23,22 +23,22 @@ function DeleteTag() {
                     }
                 }
             `,
-        );
+          );
 
-    if (!tag || !user) return null;
-    return (
-        <React.Fragment>
-            <Log>{response.data}</Log>
-            <button onClick={e => send({
-                                           variables: {
-                                               title:  tag?.title,
-                                               domain: tag?.domain,
-                                               user:   {username: user.username},
-                                           },
-                                       })}>DELETE
-            </button>
-        </React.Fragment>
-    )
+  if (!tag || !user) return null;
+  return (
+    <React.Fragment>
+      <Log>{response.data}</Log>
+      <button onClick={e => send({
+                                   variables: {
+                                     title:  tag?.title,
+                                     domain: tag?.domain,
+                                     user:   {username: user.username},
+                                   },
+                                 })}>DELETE
+      </button>
+    </React.Fragment>
+  )
 }
 
 /**
@@ -47,12 +47,12 @@ function DeleteTag() {
  * @constructor
  */
 export function Tag({id}: ITagIdentifyingPartial) {
-    if (!id) return null;
-    return (
-        <TagContextProvider>
-            <DeleteTag/>
-            <OneTagQuery id={id}/>
-            <TagDisplay/>
-        </TagContextProvider>
-    )
+  if (!id) return null;
+  return (
+    <TagContextProvider>
+      <DeleteTag/>
+      <OneTagQuery id={id}/>
+      <TagDisplay/>
+    </TagContextProvider>
+  )
 }

@@ -3,11 +3,11 @@ import {ConceptOption} from './types';
 import {RootState} from '../../../redux/rootState';
 
 function conceptToOption(concept: IConcept): ConceptOption {
-    return {
-        title:   concept.title,
-        value:   concept.title,
-        payload: concept,
-    };
+  return {
+    title:   concept.title,
+    value:   concept.title,
+    payload: concept,
+  };
 }
 
 export const selectConceptFeature              = (state: RootState) => state.features.concept;

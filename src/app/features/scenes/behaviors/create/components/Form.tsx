@@ -7,20 +7,20 @@ import {StandardForm} from '../../../../../components/form/Form';
 import {LoggedIn} from '../../../../users/behaviors/login/Requirement';
 
 function CreateSceneForm() {
-    const {send, response} = useCreateSceneMutation();
-    const onsubmit         = useMutationFormSubmitCallback(send, selectCreateSceneInput);
-    return (
-        <>
-            <StandardForm config={form__createScene} onSubmit={onsubmit}/>
-            <GraphqlMutationResponse response={response}/>
-        </>
-    )
+  const {send, response} = useCreateSceneMutation();
+  const onsubmit         = useMutationFormSubmitCallback(send, selectCreateSceneInput);
+  return (
+    <>
+      <StandardForm config={form__createScene} onSubmit={onsubmit}/>
+      <GraphqlMutationResponse response={response}/>
+    </>
+  )
 }
 
 export function RestrictedCreateSceneForm({}) {
-    return (
-        <LoggedIn>
-            <CreateSceneForm/>
-        </LoggedIn>
-    );
+  return (
+    <LoggedIn>
+      <CreateSceneForm/>
+    </LoggedIn>
+  );
 }

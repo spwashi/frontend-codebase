@@ -6,7 +6,7 @@ import {ACTION_RECEIVE_ALL_USERS} from '../../../redux/reducer';
 
 export function AllUsersQuery() {
   const ALL_USERS_QUERY =
-        gql`
+          gql`
             query AllUsers {
                 allUsers {
                     id
@@ -16,14 +16,14 @@ export function AllUsersQuery() {
             }
         `;
 
-    const {data: query = {}} = useQuery(ALL_USERS_QUERY);
-    const dispatch           = useDispatch();
-    const lastFetched        = useSelector(selectPossibleUsersLastFetched)
-    useEffect(() => {
-        dispatch({
-                     type:    ACTION_RECEIVE_ALL_USERS,
-                     payload: query.allUsers ? query.allUsers : [],
-                 })
-    }, [query.allUsers])
-    return !lastFetched ? <>Loading...</> : null;
+  const {data: query = {}} = useQuery(ALL_USERS_QUERY);
+  const dispatch           = useDispatch();
+  const lastFetched        = useSelector(selectPossibleUsersLastFetched)
+  useEffect(() => {
+    dispatch({
+               type:    ACTION_RECEIVE_ALL_USERS,
+               payload: query.allUsers ? query.allUsers : [],
+             })
+  }, [query.allUsers])
+  return !lastFetched ? <>Loading...</> : null;
 }

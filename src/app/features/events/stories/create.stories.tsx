@@ -5,16 +5,16 @@ import {RestrictedEditEventForm} from '../behaviors/edit';
 import {Features} from '../../index';
 
 export default {
-    title:      'Admin/Forms/Datatypes/Event/EditEvent',
-    component:  RestrictedEditEventForm,
-    decorators: [
-        (Story) =>
-            <React.Fragment>
-                <Features list={['users', 'events']}/>
-                <Story/>
-            </React.Fragment>,
-        mainDecorator,
-    ],
+  title:      'Admin/Forms/Datatypes/Event/EditEvent',
+  component:  RestrictedEditEventForm,
+  decorators: [
+    (Story) =>
+      <React.Fragment>
+        <Features list={['users', 'events']}/>
+        <Story/>
+      </React.Fragment>,
+    mainDecorator,
+  ],
 } as ComponentMeta<typeof RestrictedEditEventForm>;
 
 const Template: ComponentStory<typeof RestrictedEditEventForm> = (args) => <RestrictedEditEventForm {...args}/>;

@@ -10,12 +10,12 @@ type IProjectTitle = string;
 type IProjectDomain = string;
 
 export interface IProject extends Partial<HasProjectDescription & HasProjectEnvironment> {
-    id: IProjectId;
-    name: IProjectName;
-    title: IProjectTitle;
-    domain: IProjectDomain;
+  id: IProjectId;
+  name: IProjectName;
+  title: IProjectTitle;
+  domain: IProjectDomain;
 }
 
 export interface IProjectIdentifyingPartial {
-    id: IProjectId;
+  id: IProjectId;
 }

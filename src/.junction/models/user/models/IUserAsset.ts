@@ -4,7 +4,7 @@ import {IUser} from './IUser';
 type IUserAssetId = number;
 
 export interface IUserAsset {
-    id: IUserAssetId;
-    assetId: IAsset['id'];
-    userId: IUser['id'];
+  id: IUserAssetId;
+  assetId: IAsset['id'];
+  userId: IUser['id'];
 }

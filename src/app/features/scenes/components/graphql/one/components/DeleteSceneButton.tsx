@@ -13,26 +13,26 @@ function useDeleteSceneMutation() {
       }
   `
 
-    return useMutation(DELETE_SCENE);
+  return useMutation(DELETE_SCENE);
 }
 export function DeleteSceneButton({id}: { id: number }) {
-    const [deleteScene, {error, data}] = useDeleteSceneMutation();
-    const dispatch                       = useDispatch();
-    const doDelete                       = useCallback(() => {
-        if (error) {
-            return;
-        }
-        deleteScene({variables: {id}})
-            .then(e => {
-                dispatch({type: ACTION_DELETE_ONE_SCENE, payload: {id}})
-            });
-    }, [id, deleteScene]);
+  const [deleteScene, {error, data}] = useDeleteSceneMutation();
+  const dispatch                     = useDispatch();
+  const doDelete                     = useCallback(() => {
+    if (error) {
+      return;
+    }
+    deleteScene({variables: {id}})
+      .then(e => {
+        dispatch({type: ACTION_DELETE_ONE_SCENE, payload: {id}})
+      });
+  }, [id, deleteScene]);
 
-    return <>
-        {
-            error
-            ? <Log>{{error}}</Log>
-            : <button onClick={() => doDelete()}>Delete Scene</button>
-        }
-    </>
+  return <>
+    {
+      error
+      ? <Log>{{error}}</Log>
+      : <button onClick={() => doDelete()}>Delete Scene</button>
+    }
+  </>
 }

@@ -3,11 +3,11 @@ import {SceneOption} from './types';
 import {RootState} from '../../../redux/rootState';
 
 function sceneToOption(scene: IScene): SceneOption {
-    return {
-        title:   scene.title ?? scene.name,
-        value:   scene.name,
-        payload: scene,
-    };
+  return {
+    title:   scene.title ?? scene.name,
+    value:   scene.name,
+    payload: scene,
+  };
 }
 
 export const selectSceneFeature              = (state: RootState) => state.features.scene;

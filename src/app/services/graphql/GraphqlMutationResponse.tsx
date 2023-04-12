@@ -29,7 +29,7 @@ export function GraphqlMutationResponse({response}: { response: MutationResult }
   const graphQlError = new GraphQlError(error);
   return (
     <>
-      <NotDev>{()=> {throw graphQlError}}</NotDev>
+      <NotDev>{() => {throw graphQlError}}</NotDev>
       <pre>{JSON.stringify(graphQlError ?? data, null, 3)}</pre>
     </>
   );

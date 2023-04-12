@@ -17,23 +17,23 @@ function useDeleteEventTagMutation() {
       }
   `;
 
-    const [deleteTag, response] = useMutation(DELETE_TAG)
-    return deleteTag;
+  const [deleteTag, response] = useMutation(DELETE_TAG)
+  return deleteTag;
 }
 export function EventTag({event, tag}: { tag: ITag, event: IEvent }) {
-    const {title, domain} = tag;
-    const deleteTag       = useDeleteEventTagMutation();
+  const {title, domain} = tag;
+  const deleteTag       = useDeleteEventTagMutation();
 
-    return (
-        <div style={{border: 'thin solid red'}}>
-            <button onClick={e => deleteTag({
-                                                variables: {
-                                                    event: {id: +event.id},
-                                                    tags:    [{title, domain}],
-                                                },
-                                            })}>Remove Tag
-            </button>
-            <span>{title} {domain}</span>
-        </div>
-    )
+  return (
+    <div style={{border: 'thin solid red'}}>
+      <button onClick={e => deleteTag({
+                                        variables: {
+                                          event: {id: +event.id},
+                                          tags:  [{title, domain}],
+                                        },
+                                      })}>Remove Tag
+      </button>
+      <span>{title} {domain}</span>
+    </div>
+  )
 }

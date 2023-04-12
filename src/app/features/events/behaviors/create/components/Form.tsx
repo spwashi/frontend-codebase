@@ -7,20 +7,20 @@ import {StandardForm} from '../../../../../components/form/Form';
 import {LoggedIn} from '../../../../users/behaviors/login/Requirement';
 
 function ActiveForm() {
-    const {send, response} = useCreateEventMutation();
-    const onsubmit         = useMutationFormSubmitCallback(send, selectCreateEventInput);
-    return (
-        <>
-            <StandardForm config={form__createEvent} onSubmit={onsubmit}/>
-            <GraphqlMutationResponse response={response}/>
-        </>
-    )
+  const {send, response} = useCreateEventMutation();
+  const onsubmit         = useMutationFormSubmitCallback(send, selectCreateEventInput);
+  return (
+    <>
+      <StandardForm config={form__createEvent} onSubmit={onsubmit}/>
+      <GraphqlMutationResponse response={response}/>
+    </>
+  )
 }
 
 export function CreateEventForm({}) {
-    return (
-        <LoggedIn>
-            <ActiveForm/>
-        </LoggedIn>
-    );
+  return (
+    <LoggedIn>
+      <ActiveForm/>
+    </LoggedIn>
+  );
 }

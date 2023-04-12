@@ -6,19 +6,19 @@ import {Features} from '../../index';
 
 
 export default {
-    title:      'Admin/Forms/Datatypes/Event/TagEvent',
-    component:  RestrictedTagEventForm,
-    decorators: [
-        (Story) => {
-            return (
-                <React.Fragment>
-                    <Features list={['users', 'tags', 'events']}/>
-                    <Story/>
-                </React.Fragment>
-            );
-        },
-        mainDecorator,
-    ],
+  title:      'Admin/Forms/Datatypes/Event/TagEvent',
+  component:  RestrictedTagEventForm,
+  decorators: [
+    (Story) => {
+      return (
+        <React.Fragment>
+          <Features list={['users', 'tags', 'events']}/>
+          <Story/>
+        </React.Fragment>
+      );
+    },
+    mainDecorator,
+  ],
 } as ComponentMeta<typeof RestrictedTagEventForm>;
 
 const Template: ComponentStory<typeof RestrictedTagEventForm> = (args) => <RestrictedTagEventForm {...args}/>;

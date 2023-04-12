@@ -4,10 +4,11 @@ This is the client-side of an application written in TypeScript React to serve a
 
 Using [Apollo](https://www.apollographql.com/) and [Redux UI Toolkit](https://redux.js.org/redux-toolkit/overview)
 
-
 ## Architecture
 
-I originally wrote this to explore and test my approach to development from a DX perspective. As such, the architecture is biased to make copying and pasting easy, while reducing the likelihood that boilerplate will carry significant overhead. 
+I originally wrote this to explore and test my approach to development from a DX perspective. As such, the architecture
+is biased to make copying and pasting easy, while reducing the likelihood that boilerplate will carry significant
+overhead.
 
 This folder structure is my current favorite way to structure React applications.
 

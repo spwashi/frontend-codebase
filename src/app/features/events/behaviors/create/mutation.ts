@@ -12,6 +12,6 @@ const CREATE_EVENT = gql`
     }
 `;
 export function useCreateEventMutation() {
-    const [send, response] = useMutation(CREATE_EVENT);
-    return {send, response};
+  const [send, response] = useMutation(CREATE_EVENT);
+  return {send, response};
 }

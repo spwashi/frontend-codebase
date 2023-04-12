@@ -3,7 +3,7 @@ type IEventTagEventId = number;
 type IEventTagTagId = number;
 
 export interface IEventTag {
-    id: IEventTagId;
-    eventId: IEventTagEventId;
-    tagId: IEventTagTagId;
+  id: IEventTagId;
+  eventId: IEventTagEventId;
+  tagId: IEventTagTagId;
 }

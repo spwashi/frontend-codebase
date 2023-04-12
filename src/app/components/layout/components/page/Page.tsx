@@ -4,16 +4,16 @@ import {mainNavigation} from '../../../../../.junction/routes/nav';
 
 
 interface PageProps {
-    children?: any
+  children?: any
 }
 
 export function Page({children}: PageProps) {
-    return (
-        <article>
-            <header>
-                <Navigation items={mainNavigation}/>
-            </header>
-            {children}
-        </article>
-    )
+  return (
+    <article>
+      <header>
+        <Navigation items={mainNavigation}/>
+      </header>
+      {children}
+    </article>
+  )
 }

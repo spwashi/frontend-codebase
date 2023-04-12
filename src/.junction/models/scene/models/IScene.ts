@@ -8,15 +8,15 @@ type ISceneId = number;
 
 
 export interface IScene {
-    id: ISceneId;
-    name: ISceneName;
-    title?: ISceneTitle;
-    description?: ISceneDescription;
-    SceneConcept?: ISceneConcept[];
-    projectEnvironment?: IProjectEnvironment;
-    projectEnvironmentId: IProjectEnvironment['id']
+  id: ISceneId;
+  name: ISceneName;
+  title?: ISceneTitle;
+  description?: ISceneDescription;
+  SceneConcept?: ISceneConcept[];
+  projectEnvironment?: IProjectEnvironment;
+  projectEnvironmentId: IProjectEnvironment['id']
 }
 
 export interface ISceneIdentifyingPartial {
-    id: ISceneId
+  id: ISceneId
 }

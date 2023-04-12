@@ -8,29 +8,29 @@ interface SceneDisplayParams {scene: IScene;}
 
 
 function Internal({scene}: SceneDisplayParams) {
-    const {id, title, name} = scene as IScene;
+  const {id, title, name} = scene as IScene;
 
-    return <div className="scene-wrapper">
-        <article className="scene">
-            <section>
-                <header><span className="title">{title}</span></header>
-                <section className="body">
-                    <div className="name">{name}</div>
-                </section>
-            </section>
-        </article>
-    </div>;
+  return <div className="scene-wrapper">
+    <article className="scene">
+      <section>
+        <header><span className="title">{title}</span></header>
+        <section className="body">
+          <div className="name">{name}</div>
+        </section>
+      </section>
+    </article>
+  </div>;
 }
 export function SceneDisplay({scene}: SceneDisplayParams) {
-    const {id} = scene as IScene;
-    return (
-        <>
-            <DeleteSceneButton id={id}/>
-            <ErrorBoundary>
-                <Internal scene={scene}/>
-            </ErrorBoundary>
-        </>
-    )
+  const {id} = scene as IScene;
+  return (
+    <>
+      <DeleteSceneButton id={id}/>
+      <ErrorBoundary>
+        <Internal scene={scene}/>
+      </ErrorBoundary>
+    </>
+  )
 }
 
 /**
@@ -38,7 +38,7 @@ export function SceneDisplay({scene}: SceneDisplayParams) {
  * @constructor
  */
 export function SceneContextDisplay() {
-    const scene = useActiveScene();
-    if (!scene) return null;
-    return <SceneDisplay scene={scene}/>
+  const scene = useActiveScene();
+  if (!scene) return null;
+  return <SceneDisplay scene={scene}/>
 }

@@ -5,16 +5,16 @@ import {selectPossibleTagsLastFetched, selectPossibleTagsList} from './redux/sel
 import {AllTagsQuery} from './components/query/all';
 
 function TagDisplayFeature() {
-    const lastFetched = useSelector(selectPossibleTagsLastFetched)
-    const list        = useSelector(selectPossibleTagsList)
-    return <Feature name="tags.display" enabled={lastFetched ? !!list.length : false}/>;
+  const lastFetched = useSelector(selectPossibleTagsLastFetched)
+  const list        = useSelector(selectPossibleTagsList)
+  return <Feature name="tags.display" enabled={lastFetched ? !!list.length : false}/>;
 }
 export function TagFeatures() {
-    return (
-        <Feature name="tags">
-            <TagDisplayFeature/>
-        </Feature>
-    )
+  return (
+    <Feature name="tags">
+      <TagDisplayFeature/>
+    </Feature>
+  )
 }
 
 TagFeatures.featureDeps = [AllTagsQuery]

@@ -3,6 +3,6 @@ import {IConcept} from '../../concept/models';
 import {IUserAsset} from '../../user/models';
 
 export interface IAsset_Complete extends IAsset {
-    origin?: IConcept;
-    UserAsset?: IUserAsset[]
+  origin?: IConcept;
+  UserAsset?: IUserAsset[]
 }

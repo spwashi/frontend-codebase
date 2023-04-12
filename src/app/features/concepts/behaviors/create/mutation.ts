@@ -14,6 +14,6 @@ const CREATE_CONCEPT = gql`
 `;
 
 export function useCreateConceptMutation() {
-    const [send, response] = useMutation(CREATE_CONCEPT);
-    return {send, response};
+  const [send, response] = useMutation(CREATE_CONCEPT);
+  return {send, response};
 }

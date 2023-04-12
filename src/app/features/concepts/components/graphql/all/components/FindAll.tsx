@@ -7,9 +7,9 @@ import {gql} from '@apollo/client';
 import {IConcept_Complete} from '../../../../../../../.junction/models/concept/hybrids';
 
 export function AllConceptsQuery() {
-    const stateKey    = useSelector(selectConceptStateKey);
+  const stateKey      = useSelector(selectConceptStateKey);
   const {data: query} =
-        useFeatureQuery<{ allConcepts: IConcept_Complete[] }>(
+          useFeatureQuery<{ allConcepts: IConcept_Complete[] }>(
             gql`
                 query AllConcepts {
                     allConcepts {
@@ -27,15 +27,15 @@ export function AllConceptsQuery() {
             `,
             {},
             stateKey,
-        );
-    const lastFetched = useSelector(selectPossibleConceptsLastFetched);
-    const dispatch    = useDispatch();
-    useEffect(() => {
-        dispatch({
-                     type:    ACTION_RECEIVE_ALL_CONCEPTS,
-                     payload: query.allConcepts ? query.allConcepts : [],
-                 })
-    }, [query?.allConcepts]);
+          );
+  const lastFetched   = useSelector(selectPossibleConceptsLastFetched);
+  const dispatch      = useDispatch();
+  useEffect(() => {
+    dispatch({
+               type:    ACTION_RECEIVE_ALL_CONCEPTS,
+               payload: query.allConcepts ? query.allConcepts : [],
+             })
+  }, [query?.allConcepts]);
 
-    return !lastFetched ? <>Loading...</> : null;
+  return !lastFetched ? <>Loading...</> : null;
 }

@@ -6,9 +6,9 @@ import {EventSelect} from '../Select';
 import {AllEventsQuery} from '../../graphql/all/components/FindAll';
 
 export default {
-    title:      'Demo/Layout/Components/Form/Widgets/EventSelect',
-    component:  EventSelect,
-    decorators: [(Story) => <StandardForm> <AllEventsQuery/><Story/> </StandardForm>, mainDecorator],
+  title:      'Demo/Layout/Components/Form/Widgets/EventSelect',
+  component:  EventSelect,
+  decorators: [(Story) => <StandardForm> <AllEventsQuery/><Story/> </StandardForm>, mainDecorator],
 } as ComponentMeta<typeof EventSelect>;
 
 export const Input = ({args: {formKey: 'event'}})

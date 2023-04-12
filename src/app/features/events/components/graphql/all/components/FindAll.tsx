@@ -9,8 +9,8 @@ import {IEvent_Complete} from '../../../../../../../.junction/models/event/hybri
 export function AllEventsQuery() {
   const stateKey      = useSelector(selectEventStateKey);
   const {data: query} =
-        useFeatureQuery<{ allEvents: IEvent_Complete[] }>(
-          gql`
+          useFeatureQuery<{ allEvents: IEvent_Complete[] }>(
+            gql`
               query AllEvents {
                   allEvents {
                       id
@@ -28,9 +28,9 @@ export function AllEventsQuery() {
                   }
               }
           `,
-          {},
-          stateKey,
-        );
+            {},
+            stateKey,
+          );
   const lastFetched   = useSelector(selectPossibleEventsLastFetched);
   const dispatch      = useDispatch();
   useEffect(() => {

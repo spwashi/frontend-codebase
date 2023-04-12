@@ -8,12 +8,12 @@ import {useCallback} from 'react';
  * @param selector
  */
 export function useMutationFormSubmitCallback<T = any>(
-    send: (options?: MutationFunctionOptions) => any,
-    selector: (data: any) => T,
+  send: (options?: MutationFunctionOptions) => any,
+  selector: (data: any) => T,
 ) {
-    return useCallback(async ({data}: any) => {
-        const variables  = selector(data);
-        const parameters = {variables};
-        await send(parameters)
-    }, [send, selector]);
+  return useCallback(async ({data}: any) => {
+    const variables  = selector(data);
+    const parameters = {variables};
+    await send(parameters)
+  }, [send, selector]);
 }

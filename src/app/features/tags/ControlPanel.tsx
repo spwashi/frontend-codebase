@@ -21,7 +21,7 @@ export function TagsControlPanel() {
         </ul>
       </nav>
       <Routes>
-        <Route path="all" element={"[unimplemented]"}/>
+        <Route path="all" element={'[unimplemented]'}/>
         <Route path="" element={
           <FeatureRequirement name="tags" alternative={'Need Tags'}>
             <section>

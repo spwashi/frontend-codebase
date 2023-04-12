@@ -9,6 +9,6 @@ const TAG_EVENT = gql`
     }
 `;
 export function useTagMutation() {
-    const [send, response] = useMutation(TAG_EVENT);
-    return {send, response};
+  const [send, response] = useMutation(TAG_EVENT);
+  return {send, response};
 }

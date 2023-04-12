@@ -15,6 +15,6 @@ const EDIT_EVENT = gql`
     }
 `;
 export function useEditEventMutation() {
-    const [send, response] = useMutation(EDIT_EVENT);
-    return {send, response};
+  const [send, response] = useMutation(EDIT_EVENT);
+  return {send, response};
 }

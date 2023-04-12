@@ -8,22 +8,22 @@ import {useFeatureQuery} from '../../../../_util/hooks/useFeatureQuery';
 
 
 function useDispatchGraphqlError(error: any) {
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-    useEffect(() => {
-        if (/Failed to fetch/i.test(error?.message ?? '')) {
-            dispatch({type: ACTION_NOGRAPHQL})
-            return;
-        }
-        if (!error) {
-            dispatch({type: ACTION_GRAPHQL})
-        }
-    }, [error]);
+  useEffect(() => {
+    if (/Failed to fetch/i.test(error?.message ?? '')) {
+      dispatch({type: ACTION_NOGRAPHQL})
+      return;
+    }
+    if (!error) {
+      dispatch({type: ACTION_GRAPHQL})
+    }
+  }, [error]);
 }
 
 export function AllTagsQuery() {
-  const ALL_TAGS_QUERY  =
-        gql`
+  const ALL_TAGS_QUERY =
+          gql`
             query AllTags {
                 allTags {
                     id
@@ -36,18 +36,18 @@ export function AllTagsQuery() {
                 }
             }
         `;
-    const stateKey      = useSelector(selectTagStateKey);
-    const {data, error} = useFeatureQuery(ALL_TAGS_QUERY, {}, stateKey);
-    const lastFetched   = useSelector(selectPossibleTagsLastFetched)
-    const dispatch      = useDispatch();
+  const stateKey       = useSelector(selectTagStateKey);
+  const {data, error}  = useFeatureQuery(ALL_TAGS_QUERY, {}, stateKey);
+  const lastFetched    = useSelector(selectPossibleTagsLastFetched)
+  const dispatch       = useDispatch();
 
-    useDispatchGraphqlError(error);
+  useDispatchGraphqlError(error);
 
-    useEffect(() => {
-        if (!data) return;
-        const options = data.allTags ? data.allTags : [];
-        dispatch({type: ACTION_RECEIVE_ALL_TAGS, payload: options})
-    }, [data?.allTags]);
+  useEffect(() => {
+    if (!data) return;
+    const options = data.allTags ? data.allTags : [];
+    dispatch({type: ACTION_RECEIVE_ALL_TAGS, payload: options})
+  }, [data?.allTags]);
 
-    return !lastFetched ? <>Loading...</> : null;
+  return !lastFetched ? <>Loading...</> : null;
 }

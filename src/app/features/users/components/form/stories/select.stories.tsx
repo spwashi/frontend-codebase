@@ -5,9 +5,9 @@ import {StandardForm} from '../../../../../components/form/Form';
 import {UserSelect} from '../Select';
 
 export default {
-    title:      'Demo/Layout/Components/Form/Widgets/UserSelect',
-    component:  UserSelect,
-    decorators: [(Story) => <StandardForm> <Story/> </StandardForm>, mainDecorator],
+  title:      'Demo/Layout/Components/Form/Widgets/UserSelect',
+  component:  UserSelect,
+  decorators: [(Story) => <StandardForm> <Story/> </StandardForm>, mainDecorator],
 } as ComponentMeta<typeof UserSelect>;
 
 export const Input = ({args: {formKey: 'user'}})

@@ -27,21 +27,21 @@ const CONCEPT_QUERY = gql`
 `;
 
 export function OneConceptQuery({id}: IConceptIdentifyingPartial) {
-    const context      = useContext(ConceptContext) ?? ({} as any);
-    const {setConcept} = context;
+  const context      = useContext(ConceptContext) ?? ({} as any);
+  const {setConcept} = context;
 
-    const {data: query} = useQuery(CONCEPT_QUERY, {variables: {id} as IConceptIdentifyingPartial});
+  const {data: query} = useQuery(CONCEPT_QUERY, {variables: {id} as IConceptIdentifyingPartial});
 
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-    const {concept} = query ?? {};
-console.log(id)
-    useEffect(() => {
-        if (!(concept && setConcept)) return;
-console.log(concept)
-        dispatch({type: ACTION_RECEIVE_ONE_CONCEPT, payload: concept})
-        setConcept(concept as IConcept);
-    }, [concept, setConcept]);
+  const {concept} = query ?? {};
+  console.log(id)
+  useEffect(() => {
+    if (!(concept && setConcept)) return;
+    console.log(concept)
+    dispatch({type: ACTION_RECEIVE_ONE_CONCEPT, payload: concept})
+    setConcept(concept as IConcept);
+  }, [concept, setConcept]);
 
-    return <></>
+  return <></>
 }

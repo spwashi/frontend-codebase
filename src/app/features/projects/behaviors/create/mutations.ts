@@ -12,7 +12,7 @@ const CREATE_PROJECT = gql`
     }
 `;
 export function useCreateProjectMutation() {
-    const [send, response] = useMutation(CREATE_PROJECT);
+  const [send, response] = useMutation(CREATE_PROJECT);
 
-    return {send, response};
+  return {send, response};
 }

@@ -6,5 +6,5 @@ export type TagOption = SelectOption<ITag>
 export type TagFeatureStateDataTags = { list: ITag[]; lastFetched: number | null }
 export type TagFeatureData = { tags: TagFeatureStateDataTags };
 export type TagFeatureState =
-    Feature<TagFeatureData>
-    & KeyedState
+  Feature<TagFeatureData>
+  & KeyedState

@@ -14,26 +14,26 @@ function useDeleteConceptMutation() {
       }
   `
 
-    return useMutation(DELETE_CONCEPT);
+  return useMutation(DELETE_CONCEPT);
 }
 export function DeleteConceptButton({id}: DeleteConceptMutationInput['concept']) {
-    const [deleteConcept, {error, data}] = useDeleteConceptMutation();
-    const dispatch                       = useDispatch();
-    const doDelete                       = useCallback(() => {
-        if (error) {
-            return;
-        }
-        deleteConcept({variables: {id}})
-            .then(e => {
-                dispatch({type: ACTION_DELETE_ONE_CONCEPT, payload: {id} as DeleteConceptMutationInput['concept']})
-            });
-    }, [id, deleteConcept]);
+  const [deleteConcept, {error, data}] = useDeleteConceptMutation();
+  const dispatch                       = useDispatch();
+  const doDelete                       = useCallback(() => {
+    if (error) {
+      return;
+    }
+    deleteConcept({variables: {id}})
+      .then(e => {
+        dispatch({type: ACTION_DELETE_ONE_CONCEPT, payload: {id} as DeleteConceptMutationInput['concept']})
+      });
+  }, [id, deleteConcept]);
 
-    return <>
-        {
-            error
-            ? <Log>{{error}}</Log>
-            : <button onClick={() => doDelete()}>Delete Concept</button>
-        }
-    </>
+  return <>
+    {
+      error
+      ? <Log>{{error}}</Log>
+      : <button onClick={() => doDelete()}>Delete Concept</button>
+    }
+  </>
 }

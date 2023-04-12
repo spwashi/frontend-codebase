@@ -10,23 +10,23 @@ function useDeleteSceneTagMutation() {
       }
   `;
 
-    const [deleteTag, response] = useMutation(DELETE_TAG)
-    return deleteTag;
+  const [deleteTag, response] = useMutation(DELETE_TAG)
+  return deleteTag;
 }
 export function SceneTag({scene, tag}: { tag: ITag, scene: IScene }) {
-    const {title, domain} = tag;
-    const deleteTag       = useDeleteSceneTagMutation();
+  const {title, domain} = tag;
+  const deleteTag       = useDeleteSceneTagMutation();
 
-    return (
-        <div style={{border: 'thin solid red'}}>
-            <button onClick={e => deleteTag({
-                                                variables: {
-                                                    scene: {id: +scene.id},
-                                                    tags:    [{title, domain}],
-                                                },
-                                            })}>Remove Tag
-            </button>
-            <span>{title} {domain}</span>
-        </div>
-    )
+  return (
+    <div style={{border: 'thin solid red'}}>
+      <button onClick={e => deleteTag({
+                                        variables: {
+                                          scene: {id: +scene.id},
+                                          tags:  [{title, domain}],
+                                        },
+                                      })}>Remove Tag
+      </button>
+      <span>{title} {domain}</span>
+    </div>
+  )
 }

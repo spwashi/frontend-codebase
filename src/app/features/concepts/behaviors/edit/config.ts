@@ -4,34 +4,34 @@ import {contentTypeInput, idInput, srcInput, titleInput, userInput} from '../../
 import {EditConceptMutationInput} from '../../../../../.junction/models/concept/behaviors/edit';
 
 export type SelectMutationInputData = {
-    user: IUser;
-    title: string;
-    src: string;
-    contentType: string;
-    id: string;
+  user: IUser;
+  title: string;
+  src: string;
+  contentType: string;
+  id: string;
 }
 
 export const form__editConcept: FormConfig = {
-    formId:    'edit-concept_form',
-    title: 'Edit Concept',
-    items: [
-        userInput,
-        idInput,
-        titleInput,
-        contentTypeInput,
-        srcInput,
-    ],
+  formId: 'edit-concept_form',
+  title:  'Edit Concept',
+  items:  [
+    userInput,
+    idInput,
+    titleInput,
+    contentTypeInput,
+    srcInput,
+  ],
 };
 
 export const selectEditConceptInput =
-                 (data: SelectMutationInputData): EditConceptMutationInput => {
-                     const {title, id, src, contentType} = data ?? {};
-                     return {
-                         concept: {
-                             id,
-                             title,
-                             src,
-                             contentType,
-                         },
-                     };
+               (data: SelectMutationInputData): EditConceptMutationInput => {
+                 const {title, id, src, contentType} = data ?? {};
+                 return {
+                   concept: {
+                     id,
+                     title,
+                     src,
+                     contentType,
+                   },
                  };
+               };

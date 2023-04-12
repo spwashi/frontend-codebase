@@ -13,6 +13,6 @@ const EDIT_CONCEPT = gql`
     }
 `;
 export function useEditConceptMutation() {
-    const [send, response] = useMutation(EDIT_CONCEPT);
-    return {send, response};
+  const [send, response] = useMutation(EDIT_CONCEPT);
+  return {send, response};
 }

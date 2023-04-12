@@ -10,8 +10,8 @@ export default create(
     fontBase: '"Jetbrains Mono", "Open Sans", sans-serif',
     fontCode: 'monospace',
 
-    brandUrl:   'https://example.com',
-    brandImage: '/logo.svg',
+    brandUrl:    'https://example.com',
+    brandImage:  '/logo.svg',
     brandTarget: '_self',
   }
 );

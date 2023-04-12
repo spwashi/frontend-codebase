@@ -13,26 +13,26 @@ function useDeleteEventMutation() {
       }
   `
 
-    return useMutation(DELETE_EVENT);
+  return useMutation(DELETE_EVENT);
 }
 export function DeleteEventButton({id}: { id: number }) {
-    const [deleteEvent, {error, data}] = useDeleteEventMutation();
-    const dispatch                       = useDispatch();
-    const doDelete                       = useCallback(() => {
-        if (error) {
-            return;
-        }
-        deleteEvent({variables: {id}})
-            .then(e => {
-                dispatch({type: ACTION_DELETE_ONE_EVENT, payload: {id}})
-            });
-    }, [id, deleteEvent]);
+  const [deleteEvent, {error, data}] = useDeleteEventMutation();
+  const dispatch                     = useDispatch();
+  const doDelete                     = useCallback(() => {
+    if (error) {
+      return;
+    }
+    deleteEvent({variables: {id}})
+      .then(e => {
+        dispatch({type: ACTION_DELETE_ONE_EVENT, payload: {id}})
+      });
+  }, [id, deleteEvent]);
 
-    return <>
-        {
-            error
-            ? <Log>{{error}}</Log>
-            : <button onClick={() => doDelete()}>Delete Event</button>
-        }
-    </>
+  return <>
+    {
+      error
+      ? <Log>{{error}}</Log>
+      : <button onClick={() => doDelete()}>Delete Event</button>
+    }
+  </>
 }

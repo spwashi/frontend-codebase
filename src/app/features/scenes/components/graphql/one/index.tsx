@@ -10,11 +10,11 @@ import {OneSceneQuery} from './components/FindOne';
  * @constructor
  */
 export function Scene({id}: ISceneIdentifyingPartial) {
-    if (!id) return null;
-    return (
-        <SceneContextProvider>
-            <OneSceneQuery id={id}/>
-            <SceneContextDisplay/>
-        </SceneContextProvider>
-    )
+  if (!id) return null;
+  return (
+    <SceneContextProvider>
+      <OneSceneQuery id={id}/>
+      <SceneContextDisplay/>
+    </SceneContextProvider>
+  )
 }
