@@ -5,37 +5,37 @@ import {CreateEventMutationInput} from '../../../../../.junction/models/event/be
 import {makeFieldRequired} from '../../../../components/form/field/util/makeFieldRequired';
 
 export type CreateEventFormData = {
-    username: string;
-    user: IUser;
-    title: string;
-    start: string;
-    end: string;
-    description: string;
+  username: string;
+  user: IUser;
+  title: string;
+  start: string;
+  end: string;
+  description: string;
 }
 
 
 export const form__createEvent: FormConfig = {
-    formId:    'create-event_form',
-    title: 'Create Event',
-    items: [
-               userInput,
-               titleInput,
-               startInput,
-               endInput,
-               descriptionInput,
-           ].map(makeFieldRequired),
+  formId: 'create-event_form',
+  title:  'Create Event',
+  items:  [
+            userInput,
+            titleInput,
+            startInput,
+            endInput,
+            descriptionInput,
+          ].map(makeFieldRequired),
 };
 
 export const selectCreateEventInput =
-                 (data: CreateEventFormData): CreateEventMutationInput => {
-                     const {user, title, start, end, description} = data ?? {};
-                     return {
-                         event: {
-                             title,
-                             end,
-                             description,
-                             start,
-                         },
-                         user:  {id: user.id},
-                     };
+               (data: CreateEventFormData): CreateEventMutationInput => {
+                 const {user, title, start, end, description} = data ?? {};
+                 return {
+                   event: {
+                     title,
+                     end,
+                     description,
+                     start,
+                   },
+                   user:  {id: user.id},
                  };
+               };

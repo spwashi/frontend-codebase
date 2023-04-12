@@ -27,7 +27,7 @@ function MustLoginErrorMessage() {
  * @param state
  * @constructor
  */
-export const LoggedIn = ({children, state = true}: { children: any, state?: boolean }) => {
+export function LoggedIn({children, state = true}: { children: any, state?: boolean }) {
   const jwt              = useJwt();
   const shouldBeLoggedIn = state;
   const userIsLoggedIn   = !!(useSelector(selectLoggedInUserName) && jwt);
