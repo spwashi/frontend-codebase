@@ -1,5 +1,5 @@
 import {ProjectFeatures} from '../../.projects/components/Features';
-import {FeatureRequirement} from '../../components/Feature';
+import {FeatureRequirement} from '../../../.services/.features/components/Feature';
 import {LoggedIn, NotLoggedIn} from '../behaviors/login/Requirement';
 import {VerifyLogin} from '../behaviors/login/VerifyLogin';
 import {LogoutButton} from '../behaviors/login/Logout';

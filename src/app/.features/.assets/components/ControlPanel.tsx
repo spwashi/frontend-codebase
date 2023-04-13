@@ -1,4 +1,4 @@
-import {FeatureRequirement} from '../../components/Feature';
+import {FeatureRequirement} from '../../../.services/.features/components/Feature';
 import {UploadAssetForm} from '../behaviors/upload/components/form/Form';
 import {AssetDisplay} from './display/AssetDisplay';
 import React from 'react';

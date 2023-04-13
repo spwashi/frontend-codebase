@@ -1,4 +1,4 @@
-import {Feature} from '../../components/Feature';
+import {Feature} from '../../../.services/.features/components/Feature';
 import React from 'react';
 import {useSelector} from 'react-redux';
 import {selectPossibleEventsLastFetched, selectPossibleEventsList} from '../redux/selectors';

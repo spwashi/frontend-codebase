@@ -3,7 +3,7 @@ import {ComponentMeta, ComponentStory} from '@storybook/react';
 import {LoginForm} from '../behaviors/login/forms/LoginForm';
 import {mainDecorator} from '../../../util/storybook/decorators';
 import {LogoutButton} from '../behaviors/login/Logout';
-import {FeatureList} from '../../components/FeatureList';
+import {FeatureList} from '../../../.services/.features/components/FeatureList';
 
 export default {
   title:      'Admin/Forms/Datatypes/User/Login',

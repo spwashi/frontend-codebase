@@ -5,7 +5,7 @@ import {useMutationFormSubmitCallback} from '../../../../../../.services/.graphq
 import {useSelector} from 'react-redux';
 import {selectLoggedInUserName} from '../../../login/redux/reducer';
 import {FormConfig} from '../../../../../../.widgets/.form/.fields/components/FieldFactory';
-import {FeatureRequirement} from '../../../../../components/Feature';
+import {FeatureRequirement} from '../../../../../../.services/.features/components/Feature';
 import {FormWidget} from '../../../../../../.widgets/.form/FormWidget';
 
 const SIGNUP_MUTATION = gql`

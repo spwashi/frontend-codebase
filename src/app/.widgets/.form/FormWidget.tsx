@@ -19,7 +19,6 @@ function useHandler(form: FormConfig, index: 'onReset' | 'onChange' | 'onSubmit'
       }).length === 0;
       setCanSubmit(canSubmit);
       if (!origHandler) return;
-      console.log(index)
       origHandler(d)
     },
     [origHandler],

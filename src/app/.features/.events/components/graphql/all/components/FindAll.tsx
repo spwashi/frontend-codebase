@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {selectEventStateKey, selectPossibleEventsLastFetched} from '../../../../redux/selectors';
 import {ACTION_RECEIVE_ALL_EVENTS} from '../../../../redux/reducer';
-import {useFeatureQuery} from '../../../../../hooks/useFeatureQuery';
+import {useFeatureQuery} from '../../../../../../.services/.features/hooks/useFeatureQuery';
 import {gql} from '@apollo/client';
 import {IEvent_Complete} from '../../../../../../../.junction/models/event/hybrids';
 

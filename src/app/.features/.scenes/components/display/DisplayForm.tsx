@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Scene} from '../graphql/one';
-import {FeatureRequirement} from '../../../components/Feature';
+import {FeatureRequirement} from '../../../../.services/.features/components/Feature';
 import {FormWidget} from '../../../../.widgets/.form/FormWidget';
 
 export function SceneDisplayForm({}) {

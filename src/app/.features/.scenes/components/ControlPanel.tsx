@@ -1,4 +1,4 @@
-import {FeatureRequirement} from '../../components/Feature';
+import {FeatureRequirement} from '../../../.services/.features/components/Feature';
 import {RestrictedCreateSceneForm} from '../behaviors/create';
 import React from 'react';
 import {SceneFeatures} from './Features';

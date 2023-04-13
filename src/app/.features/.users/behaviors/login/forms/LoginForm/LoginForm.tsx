@@ -8,7 +8,7 @@ import {ACTION_RECEIVE_LOGIN, selectLoggedInUserName} from '../../redux/reducer'
 import {form__login, LOGIN_MUTATION, selectLoginInput} from '../../selectors';
 import {FormWidget} from '../../../../../../.widgets/.form/FormWidget';
 import {IUser} from '../../../../../../../.junction/models/user/models';
-import {FeatureRequirement} from '../../../../../components/Feature';
+import {FeatureRequirement} from '../../../../../../.services/.features/components/Feature';
 
 
 function LoginReceivedEffect({username, user, jwt}: { username: string, user: IUser, jwt: string }) {

@@ -1,4 +1,4 @@
-import {FeatureRequirement} from '../../components/Feature';
+import {FeatureRequirement} from '../../../.services/.features/components/Feature';
 import {CreateConceptForm} from '../behaviors/create';
 import {RestrictedTagConceptForm} from '../behaviors/tag';
 import React from 'react';

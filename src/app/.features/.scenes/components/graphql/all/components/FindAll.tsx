@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {selectPossibleScenesLastFetched, selectSceneStateKey} from '../../../../redux/selectors';
 import {ACTION_RECEIVE_ALL_SCENES} from '../../../../redux/reducer';
-import {useFeatureQuery} from '../../../../../hooks/useFeatureQuery';
+import {useFeatureQuery} from '../../../../../../.services/.features/hooks/useFeatureQuery';
 import {gql} from '@apollo/client';
 import {IScene} from '../../../../../../../.junction/models/scene/models';
 
