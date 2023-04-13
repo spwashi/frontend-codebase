@@ -1,5 +1,5 @@
 import {DocumentNode, useApolloClient, useQuery} from '@apollo/client';
-import {useChangeEffect} from '../../storage/localStorage/hooks/useChangeEffect';
+import {useChangeEffect} from '../../../hooks/util/useChangeEffect';
 import {useDispatch} from 'react-redux';
 import {useEffect} from 'react';
 import {ACTION_GRAPHQL, ACTION_NOGRAPHQL} from '../../redux/reducer';
