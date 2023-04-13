@@ -1,0 +1,23 @@
+import React from 'react';
+import {ComponentMeta, ComponentStory} from '@storybook/react';
+import {mainDecorator} from '../../../../util/storybook/decorators';
+import {RestrictedEditEventForm} from '../behaviors/edit';
+import {FeatureList} from '../../components/FeatureList';
+
+export default {
+  title:      'Admin/Forms/Datatypes/Event/EditEvent',
+  component:  RestrictedEditEventForm,
+  decorators: [
+    (Story) =>
+      <React.Fragment>
+        <FeatureList list={['users', 'events']}/>
+        <Story/>
+      </React.Fragment>,
+    mainDecorator,
+  ],
+} as ComponentMeta<typeof RestrictedEditEventForm>;
+
+const Template: ComponentStory<typeof RestrictedEditEventForm> = (args) => <RestrictedEditEventForm {...args}/>;
+
+export const EditEvent = Template.bind({});
+EditEvent.args         = {};
