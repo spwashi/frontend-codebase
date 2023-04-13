@@ -1,6 +1,6 @@
 import React from 'react';
 import {ComponentMeta} from '@storybook/react';
-import {mainDecorator} from '../../../../../../../util/storybook/decorators';
+import {mainDecorator} from '../../../../../../../.services/.storybook/decorators';
 import {FormWidget} from '../../../../../FormWidget';
 import {Textarea} from '../Textarea';
 

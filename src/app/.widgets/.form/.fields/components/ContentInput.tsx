@@ -1,4 +1,4 @@
-import {ContentType} from '../../../../.features/.concepts/data/config';
+import {ContentType} from '../../../../.features/concepts/data/config';
 import {Input} from './input/text/Input';
 import {Textarea} from './input/text/Textarea';
 import React from 'react';

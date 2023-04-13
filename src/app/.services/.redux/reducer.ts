@@ -1,11 +1,11 @@
 import {combineReducers} from 'redux';
-import {userReducer} from '../../.features/.users/.services/.redux/reducer';
-import {projectReducer} from '../../.features/.projects/.services/.redux/reducer';
-import {conceptReducer} from '../../.features/.concepts/.services/.redux/reducer';
-import {assetReducer} from '../../.features/.assets/.services/.redux/reducer';
-import {tagReducer} from '../../.features/.tags/.services/.redux/reducer';
-import {sceneReducer} from '../../.features/.scenes/.services/.redux/reducer';
-import {eventReducer} from '../../.features/.events/.services/.redux/reducer';
+import {userReducer} from '../../.features/users/.services/.redux/reducer';
+import {projectReducer} from '../../.features/projects/.services/.redux/reducer';
+import {conceptReducer} from '../../.features/concepts/.services/.redux/reducer';
+import {assetReducer} from '../../.features/assets/.services/.redux/reducer';
+import {tagReducer} from '../../.features/tags/.services/.redux/reducer';
+import {sceneReducer} from '../../.features/scenes/.services/.redux/reducer';
+import {eventReducer} from '../../.features/events/.services/.redux/reducer';
 
 export const ACTION_NOGRAPHQL = 'NO_GRAPHQL';
 export const ACTION_GRAPHQL   = 'GRAPHQL';

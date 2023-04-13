@@ -1,4 +1,4 @@
-import {AdminControlPanel} from '../.features/.admin/components/AdminControlPanel';
+import {AdminControlPanel} from '../.features/admin/components/AdminControlPanel';
 import React from 'react';
 import {useSelector} from 'react-redux';
 import {select_noGraphql} from '../.services/.redux/reducer';
@@ -22,9 +22,8 @@ export function Application({canBeAdmin}: ApplicationParams) {
     <div id="application-container" className={className}>
       <div className="stage-open" aria-hidden="true"/>
       <div className="app-wrapper">
-        <main>
-          {controlPanel}
-        </main>
+        {controlPanel}
+        <main></main>
       </div>
       <div className="stage-close" aria-hidden="true"/>
     </div>

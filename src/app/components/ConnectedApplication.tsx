@@ -8,7 +8,7 @@ import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import {persistor, store} from '../.services/.redux/store';
 import {PersistGate} from 'redux-persist/integration/react';
 import {FeaturesBoundary} from '../.services/.features/components/Feature';
-import {RootCss} from '../styles/root.css';
+import {RootCss} from '../styles/components/root.css';
 import {Application} from './Application';
 
 const httpLink = createHttpLink({uri: process.env.REACT_APP_GRAPHQL_URL});
