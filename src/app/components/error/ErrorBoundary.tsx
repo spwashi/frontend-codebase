@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {ReactNode} from 'react';
 
-export class ErrorBoundary extends React.Component<{ handler?: (e: Error | any) => any, error?: any }> {
+export class ErrorBoundary extends React.Component<{ handler?: (e: Error | any) => any, error?: any; children: ReactNode }> {
   state = {
     hasError: false,
     error:    undefined,
