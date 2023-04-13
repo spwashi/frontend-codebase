@@ -12,7 +12,6 @@ const client   = new ApolloClient({link: httpLink, cache: new InMemoryCache()});
 
 export const mainDecorator = (Story: any) =>
   <Provider store={store}>
-    <RootCss/>
     <ApolloProvider client={client}>
       <PersistGate loading={null} persistor={persistor}>
         <FeaturesBoundary>

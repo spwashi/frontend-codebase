@@ -1,4 +1,4 @@
-import React, {createContext, useContext, useEffect, useMemo, useReducer} from 'react';
+import React, {createContext, ReactNode, useContext, useEffect, useMemo, useReducer} from 'react';
 import {Dev} from '../../../components/dev/Dev';
 
 type IFeature =
@@ -57,7 +57,7 @@ export const FeaturesContext = createContext({
 type FeatureAction =
   { type: 'REGISTER' | 'UNREGISTER', payload: { featureName: string } };
 
-export function FeaturesBoundary({children}: { children: any }) {
+export function FeaturesBoundary({children}: { children: ReactNode }) {
   const [state, dispatch] = useReducer((state: IFeatures, action: FeatureAction) => {
     switch (action.type) {
       case 'UNREGISTER':

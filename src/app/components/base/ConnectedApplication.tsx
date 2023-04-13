@@ -20,7 +20,6 @@ function ConnectedApplication() {
       <ApolloProvider client={client}>
         <PersistGate loading={null} persistor={persistor}>
           <FeaturesBoundary>
-            <RootCss/>
             <BrowserRouter>
               <LogAppReduxState/>
               <Application canBeAdmin={canBeAdmin}/>
