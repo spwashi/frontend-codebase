@@ -1,6 +1,6 @@
 import {IUser} from '../../../../.junction/models/user/models';
-import {IFeatureState} from '../../../state/state.types';
-import {SelectOption} from '../../../.widgets/@form/input/select/SelectInput';
+import {IFeatureState} from '../../../.services/.redux/state.types';
+import {SelectOption} from '../../../.widgets/.form/input/select/SelectInput';
 
 export type UserOption = SelectOption<IUser>;
 

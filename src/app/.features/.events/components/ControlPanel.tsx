@@ -1,17 +1,17 @@
-import {FeatureRequirement} from '../components/Feature';
-import {CreateEventForm} from './behaviors/create';
-import {RestrictedTagEventForm} from './behaviors/tag';
+import {FeatureRequirement} from '../../components/Feature';
+import {CreateEventForm} from '../behaviors/create';
+import {RestrictedTagEventForm} from '../behaviors/tag';
 import React from 'react';
 import {EventFeatures} from './Features';
-import {EventDisplayForm} from './components/display/DisplayForm';
-import {AllEventsEventDisplay} from './components/graphql/all/components/DisplayAll';
+import {EventDisplayForm} from './display/DisplayForm';
+import {AllEventsEventDisplay} from './graphql/all/components/DisplayAll';
 import {Route, Routes} from 'react-router';
 import {NavLink} from 'react-router-dom';
-import {TagFeatures} from '../.tags/Features';
-import {UserFeatures} from '../.users/Features';
-import {RestrictedEditEventForm} from './behaviors/edit';
-import {AllTagsQuery} from '../.tags/components/query/all';
-import {AllEventsQuery} from './components/graphql/all/components/FindAll';
+import {TagFeatures} from '../../.tags/components/Features';
+import {UserFeatures} from '../../.users/components/Features';
+import {RestrictedEditEventForm} from '../behaviors/edit';
+import {AllTagsQuery} from '../../.tags/components/query/all';
+import {AllEventsQuery} from './graphql/all/components/FindAll';
 
 export function EventsControlPanel() {
   return (

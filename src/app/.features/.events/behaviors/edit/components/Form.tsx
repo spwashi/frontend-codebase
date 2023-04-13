@@ -3,11 +3,11 @@ import {GraphqlMutationResponse} from '../../../../../.services/.graphql/compone
 import {useMutationFormSubmitCallback} from '../../../../../.services/.graphql/hooks/useMutationFormSubmitCallback';
 import {form__editEvent, selectEditEventInput} from '../config';
 import {useEditEventMutation} from '../mutation';
-import {FormWidget} from '../../../../../.widgets/@form/FormWidget';
+import {FormWidget} from '../../../../../.widgets/.form/FormWidget';
 import {LoggedIn} from '../../../../.users/behaviors/login/Requirement';
 import {EventSelect} from '../../../components/form/Select';
 import {Log} from '../../../../../components/dev/Log';
-import {Form} from '../../../../../.widgets/@form/components/Form';
+import {Form} from '../../../../../.widgets/.form/components/Form';
 
 export function EditEventForm() {
   const {send, response}  = useEditEventMutation();

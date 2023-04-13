@@ -4,9 +4,9 @@ import {GraphqlMutationResponse} from '../../../../../../.services/.graphql/comp
 import {useMutationFormSubmitCallback} from '../../../../../../.services/.graphql/hooks/useMutationFormSubmitCallback';
 import {useSelector} from 'react-redux';
 import {selectLoggedInUserName} from '../../../login/redux/reducer';
-import {FormConfig} from '../../../../../../.widgets/@form/.fields/components/FieldFactory';
+import {FormConfig} from '../../../../../../.widgets/.form/.fields/components/FieldFactory';
 import {FeatureRequirement} from '../../../../../components/Feature';
-import {FormWidget} from '../../../../../../.widgets/@form/FormWidget';
+import {FormWidget} from '../../../../../../.widgets/.form/FormWidget';
 
 const SIGNUP_MUTATION = gql`
     mutation SignUp($user: CreateUserInput!, $password: CreatePasswordInput!, $project: ProjectReferenceInput) {

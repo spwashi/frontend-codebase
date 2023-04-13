@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {Tag} from '../query/one';
 import {ITag} from '../../../../../.junction/models/tag/models';
 import {FeatureRequirement} from '../../../components/Feature';
-import {FormWidget} from '../../../../.widgets/@form/FormWidget';
+import {FormWidget} from '../../../../.widgets/.form/FormWidget';
 import {LoggedIn} from '../../../.users/behaviors/login/Requirement';
 
 export function TagsDisplayForm({}) {

@@ -1,7 +1,7 @@
 import React from 'react';
 import {ComponentMeta} from '@storybook/react';
 import {mainDecorator} from '../../../../../../util/storybook/decorators';
-import {FormWidget} from '../../../../../.widgets/@form/FormWidget';
+import {FormWidget} from '../../../../../.widgets/.form/FormWidget';
 import {EventSelect} from '../Select';
 import {AllEventsQuery} from '../../graphql/all/components/FindAll';
 

@@ -1,6 +1,6 @@
 import {selectUserFeature} from '../../../redux/selectors';
 import {combineReducers} from 'redux';
-import {RootState} from '../../../../../state/rootState';
+import {RootState} from '../../../../../.services/.redux/rootState';
 import {UserFeatureLoginFeatureState} from '../../../redux/types';
 import {REHYDRATE} from 'redux-persist';
 

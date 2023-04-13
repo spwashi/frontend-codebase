@@ -1,13 +1,13 @@
 import React, {useContext, useEffect, useMemo} from 'react';
-import {SelectInput, SelectOption} from '../../../../.widgets/@form/input/select/SelectInput';
+import {SelectInput, SelectOption} from '../../../../.widgets/.form/input/select/SelectInput';
 import {useSelector} from 'react-redux';
-import {FormContext} from '../../../../.widgets/@form/context/FormContext';
-import {updateFormItem} from '../../../../.widgets/@form/hooks/useFormItem';
+import {FormContext} from '../../../../.widgets/.form/context/FormContext';
+import {updateFormItem} from '../../../../.widgets/.form/hooks/useFormItem';
 import {selectPossibleUsersList} from '../../redux/selectors';
 import {selectLoggedInUser} from '../../behaviors/login/redux/reducer';
 import {AllUsersQuery} from '../query/all';
 import {IUser} from '../../../../../.junction/models/user/models';
-import {Value} from '../../../../.widgets/@form/input/text/Input';
+import {Value} from '../../../../.widgets/.form/input/text/Input';
 
 
 export const getUserSelectorUsername = (data?: string | IUser) => {

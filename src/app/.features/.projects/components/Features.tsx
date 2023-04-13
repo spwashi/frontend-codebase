@@ -1,8 +1,8 @@
 import {useSelector} from 'react-redux';
-import {Feature} from '../components/Feature';
+import {Feature} from '../../components/Feature';
 import React from 'react';
-import {selectPossibleProjectsLastFetched, selectPossibleProjectsList} from './redux/selectors';
-import {AllProjectsQuery} from './components/query/all/all';
+import {selectPossibleProjectsLastFetched, selectPossibleProjectsList} from '../redux/selectors';
+import {AllProjectsQuery} from './query/all/all';
 
 
 function ProjectDisplayFeature() {

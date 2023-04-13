@@ -1,6 +1,6 @@
-import {SelectOption} from '../../../.widgets/@form/input/select/SelectInput';
+import {SelectOption} from '../../../.widgets/.form/input/select/SelectInput';
 import {IEvent} from '../../../../.junction/models/event/models';
-import {IFeatureState, IKeyedState} from '../../../state/state.types';
+import {IFeatureState, IKeyedState} from '../../../.services/.redux/state.types';
 
 export type EventOption = SelectOption<IEvent>;
 export type EventFeatureStateDataEvents = { list: IEvent[]; lastFetched: number | null };

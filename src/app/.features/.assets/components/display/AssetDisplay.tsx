@@ -2,10 +2,10 @@ import React, {useState} from 'react';
 import {AssetQuery} from '../graphql/queries/AssetQuery';
 import {getUserSelectorUsername, UserSelect} from '../../../.users/components/form/Select';
 import {IUser} from '../../../../../.junction/models/user/models';
-import {FormWidget} from '../../../../.widgets/@form/FormWidget';
-import {FormConfig} from '../../../../.widgets/@form/.fields/components/FieldFactory';
+import {FormWidget} from '../../../../.widgets/.form/FormWidget';
+import {FormConfig} from '../../../../.widgets/.form/.fields/components/FieldFactory';
 import {LoggedIn} from '../../../.users/behaviors/login/Requirement';
-import {Form} from '../../../../.widgets/@form/components/Form';
+import {Form} from '../../../../.widgets/.form/components/Form';
 
 function getDisplayAssetForm(user: { username?: string }) {
   return (

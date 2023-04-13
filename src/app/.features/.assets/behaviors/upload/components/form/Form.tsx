@@ -1,7 +1,7 @@
 import React, {useCallback, useState} from 'react';
 import {BACKEND_URL} from '../../../../../../../util/constants';
-import {FormConfig} from '../../../../../../.widgets/@form/.fields/components/FieldFactory';
-import {FormWidget} from '../../../../../../.widgets/@form/FormWidget';
+import {FormConfig} from '../../../../../../.widgets/.form/.fields/components/FieldFactory';
+import {FormWidget} from '../../../../../../.widgets/.form/FormWidget';
 import {useJwt} from '../../../../../../../util/jwt';
 import {LoggedIn} from '../../../../../.users/behaviors/login/Requirement';
 import {Dev} from '../../../../../../components/dev/Dev';

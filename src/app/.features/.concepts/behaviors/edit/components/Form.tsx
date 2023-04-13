@@ -3,12 +3,12 @@ import {GraphqlMutationResponse} from '../../../../../.services/.graphql/compone
 import {useMutationFormSubmitCallback} from '../../../../../.services/.graphql/hooks/useMutationFormSubmitCallback';
 import {form__editConcept, selectEditConceptInput} from '../config';
 import {useEditConceptMutation} from '../mutation';
-import {FormWidget} from '../../../../../.widgets/@form/FormWidget';
+import {FormWidget} from '../../../../../.widgets/.form/FormWidget';
 import {LoggedIn} from '../../../../.users/behaviors/login/Requirement';
 import {ConceptSelect} from '../../../components/form/Select';
 import {Log} from '../../../../../components/dev/Log';
-import {formClassNames} from '../../../../../.widgets/@form/styles/classNames';
-import {Form} from '../../../../../.widgets/@form/components/Form';
+import {formClassNames} from '../../../../../.widgets/.form/styles/classNames';
+import {Form} from '../../../../../.widgets/.form/components/Form';
 
 export function EditConceptForm() {
   const {send, response}  = useEditConceptMutation();

@@ -1,10 +1,10 @@
 import {IUser} from '../../../../../.junction/models/user/models';
 import {IConcept} from '../../../../../.junction/models/concept/models';
 import {ITag} from '../../../../../.junction/models/tag/models';
-import {FormConfig} from '../../../../.widgets/@form/.fields/components/FieldFactory';
+import {FormConfig} from '../../../../.widgets/.form/.fields/components/FieldFactory';
 import {conceptInput, tagsInput, userInput} from '../../data/config';
 import {TagConceptMutationInput} from '../../../../../.junction/models/concept/behaviors/tag';
-import {makeFieldRequired} from '../../../../.widgets/@form/.fields/util/makeFieldRequired';
+import {makeFieldRequired} from '../../../../.widgets/.form/.fields/util/makeFieldRequired';
 
 type TagConceptFormData = {
   username: string;

@@ -3,11 +3,11 @@ import {GraphqlMutationResponse} from '../../../../../.services/.graphql/compone
 import {useMutationFormSubmitCallback} from '../../../../../.services/.graphql/hooks/useMutationFormSubmitCallback';
 import {form__editScene, selectEditSceneInput} from '../config';
 import {useEditSceneMutation} from '../mutation';
-import {FormWidget} from '../../../../../.widgets/@form/FormWidget';
+import {FormWidget} from '../../../../../.widgets/.form/FormWidget';
 import {LoggedIn} from '../../../../.users/behaviors/login/Requirement';
 import {SceneSelect} from '../../../components/form/Select';
-import {formClassNames} from '../../../../../.widgets/@form/styles/classNames';
-import {Form} from '../../../../../.widgets/@form/components/Form';
+import {formClassNames} from '../../../../../.widgets/.form/styles/classNames';
+import {Form} from '../../../../../.widgets/.form/components/Form';
 
 function EditSceneForm() {
   const {send, response}  = useEditSceneMutation();

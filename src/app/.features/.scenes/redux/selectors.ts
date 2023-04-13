@@ -1,6 +1,6 @@
 import {IScene} from '../../../../.junction/models/scene/models';
 import {SceneOption} from './types';
-import {RootState} from '../../../state/rootState';
+import {RootState} from '../../../.services/.redux/rootState';
 
 function sceneToOption(scene: IScene): SceneOption {
   return {

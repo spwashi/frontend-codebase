@@ -1,5 +1,5 @@
 import {ITag} from '../../../../.junction/models/tag/models';
-import {RootState} from '../../../state/rootState';
+import {RootState} from '../../../.services/.redux/rootState';
 import {TagOption} from './types';
 
 

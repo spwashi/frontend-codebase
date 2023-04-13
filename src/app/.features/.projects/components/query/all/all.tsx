@@ -4,7 +4,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {selectPossibleProjectsLastFetched, selectProjectStateKey} from '../../../redux/selectors';
 import {ACTION_RECEIVE_ALL_PROJECTS} from '../../../redux/reducer';
 import {useFeatureQuery} from '../../../../hooks/useFeatureQuery';
-import {getDomain} from '../../../../../.widgets/@form/.fields/components/FieldFactory';
+import {getDomain} from '../../../../../.widgets/.form/.fields/components/FieldFactory';
 
 
 export function AllProjectsQuery() {

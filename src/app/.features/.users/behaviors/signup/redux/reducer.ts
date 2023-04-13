@@ -1,6 +1,6 @@
 import {combineReducers} from 'redux';
 import {selectUserFeature} from '../../../redux/selectors';
-import {RootState} from '../../../../../state/rootState';
+import {RootState} from '../../../../../.services/.redux/rootState';
 import {UserFeatureSignupFeatureState} from '../../../redux/types';
 
 

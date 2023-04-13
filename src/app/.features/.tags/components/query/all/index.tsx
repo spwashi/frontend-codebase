@@ -3,7 +3,7 @@ import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {selectPossibleTagsLastFetched, selectTagStateKey} from '../../../redux/selectors';
 import {ACTION_RECEIVE_ALL_TAGS} from '../../../redux/reducer';
-import {ACTION_GRAPHQL, ACTION_NOGRAPHQL} from '../../../../../state/reducer';
+import {ACTION_GRAPHQL, ACTION_NOGRAPHQL} from '../../../../../.services/.redux/reducer';
 import {useFeatureQuery} from '../../../../hooks/useFeatureQuery';
 
 

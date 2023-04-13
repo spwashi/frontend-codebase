@@ -1,5 +1,5 @@
 import {IUser} from '../../../../.junction/models/user/models';
-import {RootState} from '../../../state/rootState';
+import {RootState} from '../../../.services/.redux/rootState';
 import {UserOption} from './types';
 
 function userToOption(user: IUser): UserOption {

@@ -1,15 +1,15 @@
-import {FeatureRequirement} from '../components/Feature';
-import {RestrictedCreateSceneForm} from './behaviors/create';
+import {FeatureRequirement} from '../../components/Feature';
+import {RestrictedCreateSceneForm} from '../behaviors/create';
 import React from 'react';
 import {SceneFeatures} from './Features';
-import {SceneDisplayForm} from './components/display/DisplayForm';
-import {AllScenesSceneDisplay} from './components/graphql/all/components/DisplayAll';
+import {SceneDisplayForm} from './display/DisplayForm';
+import {AllScenesSceneDisplay} from './graphql/all/components/DisplayAll';
 import {Route, Routes} from 'react-router';
 import {NavLink} from 'react-router-dom';
-import {TagFeatures} from '../.tags/Features';
-import {UserFeatures} from '../.users/Features';
-import {RestrictedEditSceneForm} from './behaviors/edit';
-import {AllScenesQuery} from './components/graphql/all/components/FindAll';
+import {TagFeatures} from '../../.tags/components/Features';
+import {UserFeatures} from '../../.users/components/Features';
+import {RestrictedEditSceneForm} from '../behaviors/edit';
+import {AllScenesQuery} from './graphql/all/components/FindAll';
 
 export function ScenesControlPanel() {
   return (

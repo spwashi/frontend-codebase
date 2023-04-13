@@ -1,8 +1,8 @@
-import {Feature} from '../components/Feature';
+import {Feature} from '../../components/Feature';
 import React from 'react';
 import {useSelector} from 'react-redux';
-import {selectPossibleScenesLastFetched, selectPossibleScenesList} from './redux/selectors';
-import {AllScenesQuery} from './components/graphql/all/components/FindAll';
+import {selectPossibleScenesLastFetched, selectPossibleScenesList} from '../redux/selectors';
+import {AllScenesQuery} from './graphql/all/components/FindAll';
 
 function SceneDisplayFeature() {
   const lastFetched = useSelector(selectPossibleScenesLastFetched)

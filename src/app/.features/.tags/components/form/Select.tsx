@@ -1,5 +1,5 @@
 import React from 'react';
-import {SelectInput} from '../../../../.widgets/@form/input/select/SelectInput';
+import {SelectInput} from '../../../../.widgets/.form/input/select/SelectInput';
 import {useTagOptions} from '../../hooks/useOptions';
 import {AllTagsQuery} from '../query/all';
 

@@ -1,6 +1,6 @@
 import {IConcept} from '../../../../.junction/models/concept/models';
 import {ConceptOption} from './types';
-import {RootState} from '../../../state/rootState';
+import {RootState} from '../../../.services/.redux/rootState';
 
 function conceptToOption(concept: IConcept): ConceptOption {
   return {

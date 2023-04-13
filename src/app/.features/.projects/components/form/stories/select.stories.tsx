@@ -1,7 +1,7 @@
 import React from 'react';
 import {ComponentMeta} from '@storybook/react';
 import {mainDecorator} from '../../../../../../util/storybook/decorators';
-import {FormWidget} from '../../../../../.widgets/@form/FormWidget';
+import {FormWidget} from '../../../../../.widgets/.form/FormWidget';
 import {ProjectSelect} from '../Select';
 import {AllProjectsQuery} from '../../query/all/all';
 

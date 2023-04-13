@@ -2,7 +2,7 @@ import {DocumentNode, useApolloClient, useQuery} from '@apollo/client';
 import {useChangeEffect} from '../../../util/hooks/useChangeEffect';
 import {useDispatch} from 'react-redux';
 import {useEffect} from 'react';
-import {ACTION_GRAPHQL, ACTION_NOGRAPHQL} from '../../state/reducer';
+import {ACTION_GRAPHQL, ACTION_NOGRAPHQL} from '../../.services/.redux/reducer';
 
 function useDispatchGraphqlError(error: any) {
   const dispatch = useDispatch();

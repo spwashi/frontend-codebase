@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Scene} from '../graphql/one';
 import {FeatureRequirement} from '../../../components/Feature';
-import {FormWidget} from '../../../../.widgets/@form/FormWidget';
+import {FormWidget} from '../../../../.widgets/.form/FormWidget';
 
 export function SceneDisplayForm({}) {
   const [state, setState] = useState<any | null>();

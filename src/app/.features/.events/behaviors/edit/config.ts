@@ -1,5 +1,5 @@
 import {IUser} from '../../../../../.junction/models/user/models';
-import {FormConfig} from '../../../../.widgets/@form/.fields/components/FieldFactory';
+import {FormConfig} from '../../../../.widgets/.form/.fields/components/FieldFactory';
 import {descriptionInput, endInput, idInput, startInput, titleInput, userInput} from '../../data/config';
 import {IEvent} from '../../../../../.junction/models/event/models';
 import {EditEventMutationInput} from '../../../../../.junction/models/event/behaviors/edit';

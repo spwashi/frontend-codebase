@@ -1,6 +1,6 @@
 import {IEvent} from '../../../../.junction/models/event/models';
 import {EventOption} from './types';
-import {RootState} from '../../../state/rootState';
+import {RootState} from '../../../.services/.redux/rootState';
 
 function eventToOption(event: IEvent): EventOption {
   return {

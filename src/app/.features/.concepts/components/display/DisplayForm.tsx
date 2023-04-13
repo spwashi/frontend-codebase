@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Concept} from '../graphql/one';
 import {FeatureRequirement} from '../../../components/Feature';
-import {FormWidget} from '../../../../.widgets/@form/FormWidget';
+import {FormWidget} from '../../../../.widgets/.form/FormWidget';
 import {Log} from '../../../../components/dev/Log';
 import {LoggedIn} from '../../../.users/behaviors/login/Requirement';
 

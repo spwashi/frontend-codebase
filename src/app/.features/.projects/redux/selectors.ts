@@ -1,6 +1,6 @@
 import {IProject} from '../../../../.junction/models/project/models';
-import {SelectOption} from '../../../.widgets/@form/input/select/SelectInput';
-import {RootState} from '../../../state/rootState';
+import {SelectOption} from '../../../.widgets/.form/input/select/SelectInput';
+import {RootState} from '../../../.services/.redux/rootState';
 import {ProjectOption} from './types';
 
 

@@ -3,7 +3,7 @@ import {useMutationFormSubmitCallback} from '../../../../../.services/.graphql/h
 import {form__tagConcept, selectTagAdditionInput} from '../config';
 import {GraphqlMutationResponse} from '../../../../../.services/.graphql/components/GraphqlMutationResponse';
 import React from 'react';
-import {FormWidget} from '../../../../../.widgets/@form/FormWidget';
+import {FormWidget} from '../../../../../.widgets/.form/FormWidget';
 
 export function TagConceptForm() {
   const {send, response} = useTagMutation();

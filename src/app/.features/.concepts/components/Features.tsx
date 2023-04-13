@@ -1,8 +1,8 @@
-import {Feature} from '../components/Feature';
+import {Feature} from '../../components/Feature';
 import React from 'react';
 import {useSelector} from 'react-redux';
-import {selectPossibleConceptsLastFetched, selectPossibleConceptsList} from './redux/selectors';
-import {AllConceptsQuery} from './components/graphql/all/components/FindAll';
+import {selectPossibleConceptsLastFetched, selectPossibleConceptsList} from '../redux/selectors';
+import {AllConceptsQuery} from './graphql/all/components/FindAll';
 
 function ConceptDisplayFeature() {
   const lastFetched = useSelector(selectPossibleConceptsLastFetched)

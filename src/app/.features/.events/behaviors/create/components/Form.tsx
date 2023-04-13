@@ -3,7 +3,7 @@ import {GraphqlMutationResponse} from '../../../../../.services/.graphql/compone
 import {useMutationFormSubmitCallback} from '../../../../../.services/.graphql/hooks/useMutationFormSubmitCallback';
 import {form__createEvent, selectCreateEventInput} from '../config';
 import {useCreateEventMutation} from '../mutation';
-import {FormWidget} from '../../../../../.widgets/@form/FormWidget';
+import {FormWidget} from '../../../../../.widgets/.form/FormWidget';
 import {LoggedIn} from '../../../../.users/behaviors/login/Requirement';
 
 function ActiveForm() {

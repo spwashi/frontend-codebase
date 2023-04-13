@@ -1,6 +1,6 @@
-import {SelectOption} from '../../../.widgets/@form/input/select/SelectInput';
+import {SelectOption} from '../../../.widgets/.form/input/select/SelectInput';
 import {IConcept} from '../../../../.junction/models/concept/models';
-import {IFeatureState, IKeyedState} from '../../../state/state.types';
+import {IFeatureState, IKeyedState} from '../../../.services/.redux/state.types';
 
 export type ConceptOption = SelectOption<IConcept>;
 export type ConceptFeatureStateDataConcepts = { list: IConcept[]; lastFetched: number | null };

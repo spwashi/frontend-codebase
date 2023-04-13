@@ -3,7 +3,7 @@ import {GraphqlMutationResponse} from '../../../../../.services/.graphql/compone
 import {useMutationFormSubmitCallback} from '../../../../../.services/.graphql/hooks/useMutationFormSubmitCallback';
 import {form__createTag, selectCreateTagInput} from '../selectors';
 import {useCreateTagMutation} from '../mutations';
-import {FormWidget} from '../../../../../.widgets/@form/FormWidget';
+import {FormWidget} from '../../../../../.widgets/.form/FormWidget';
 import {ACTION_TAG_CREATED} from '../../../redux/reducer';
 import {useDispatch} from 'react-redux';
 import {LoggedIn} from '../../../../.users/behaviors/login/Requirement';

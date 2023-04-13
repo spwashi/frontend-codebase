@@ -1,13 +1,13 @@
 import {Routes} from 'react-router-dom';
 import {Route} from 'react-router';
 import {adminPaths} from '../../.junction/routes/routes';
-import {UsersControlPanel} from '../../app/.features/.users/ControlPanel';
-import {ProjectsControlPanel} from '../../app/.features/.projects/ControlPanel';
-import {ConceptsControlPanel} from '../../app/.features/.concepts/ControlPanel';
-import {ScenesControlPanel} from '../../app/.features/.scenes/ControlPanel';
-import {EventsControlPanel} from '../../app/.features/.events/ControlPanel';
-import {TagsControlPanel} from '../../app/.features/.tags/ControlPanel';
-import {AssetsControlPanel} from '../../app/.features/.assets/ControlPanel';
+import {UsersControlPanel} from '../../app/.features/.users/components/ControlPanel';
+import {ProjectsControlPanel} from '../../app/.features/.projects/components/ControlPanel';
+import {ConceptsControlPanel} from '../../app/.features/.concepts/components/ControlPanel';
+import {ScenesControlPanel} from '../../app/.features/.scenes/components/ControlPanel';
+import {EventsControlPanel} from '../../app/.features/.events/components/ControlPanel';
+import {TagsControlPanel} from '../../app/.features/.tags/components/ControlPanel';
+import {AssetsControlPanel} from '../../app/.features/.assets/components/ControlPanel';
 import {LoggedIn, NotLoggedIn} from '../../app/.features/.users/behaviors/login/Requirement';
 import React from 'react';
 

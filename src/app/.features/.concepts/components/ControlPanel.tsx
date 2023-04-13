@@ -1,17 +1,17 @@
-import {FeatureRequirement} from '../components/Feature';
-import {CreateConceptForm} from './behaviors/create';
-import {RestrictedTagConceptForm} from './behaviors/tag';
+import {FeatureRequirement} from '../../components/Feature';
+import {CreateConceptForm} from '../behaviors/create';
+import {RestrictedTagConceptForm} from '../behaviors/tag';
 import React from 'react';
 import {ConceptFeatures} from './Features';
-import {ConceptDisplayForm} from './components/display/DisplayForm';
-import {AllConceptsConceptDisplay} from './components/graphql/all/components/DisplayAll';
+import {ConceptDisplayForm} from './display/DisplayForm';
+import {AllConceptsConceptDisplay} from './graphql/all/components/DisplayAll';
 import {Route, Routes} from 'react-router';
 import {NavLink} from 'react-router-dom';
-import {TagFeatures} from '../.tags/Features';
-import {UserFeatures} from '../.users/Features';
-import {RestrictedEditConceptForm} from './behaviors/edit';
-import {AllConceptsQuery} from './components/graphql/all/components/FindAll';
-import {AllTagsQuery} from '../.tags/components/query/all';
+import {TagFeatures} from '../../.tags/components/Features';
+import {UserFeatures} from '../../.users/components/Features';
+import {RestrictedEditConceptForm} from '../behaviors/edit';
+import {AllConceptsQuery} from './graphql/all/components/FindAll';
+import {AllTagsQuery} from '../../.tags/components/query/all';
 
 export function ConceptsControlPanel() {
   return (

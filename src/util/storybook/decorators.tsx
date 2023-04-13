@@ -1,6 +1,6 @@
 import {ApolloClient, ApolloProvider, createHttpLink, InMemoryCache} from '@apollo/client';
 import {Provider} from 'react-redux';
-import {persistor, store} from '../../app/state/store';
+import {persistor, store} from '../../app/.services/.redux/store';
 import {PersistGate} from 'redux-persist/integration/react';
 import {FeaturesBoundary} from '../../app/.features/components/Feature';
 import React from 'react';

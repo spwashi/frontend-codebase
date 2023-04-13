@@ -1,4 +1,4 @@
-import {FormConfig, getDomain} from '../../../../.widgets/@form/.fields/components/FieldFactory';
+import {FormConfig, getDomain} from '../../../../.widgets/.form/.fields/components/FieldFactory';
 
 export function convertToSlug(Text: string) {
   return Text.toLowerCase()

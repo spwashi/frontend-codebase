@@ -1,10 +1,10 @@
-import {FeatureRequirement} from '../components/Feature';
-import {UploadAssetForm} from './behaviors/upload/components/form/Form';
-import {AssetDisplay} from './components/display/AssetDisplay';
+import {FeatureRequirement} from '../../components/Feature';
+import {UploadAssetForm} from '../behaviors/upload/components/form/Form';
+import {AssetDisplay} from './display/AssetDisplay';
 import React from 'react';
-import {UserFeatures} from '../.users/Features';
-import {ProjectFeatures} from '../.projects/Features';
-import {LoggedIn} from '../.users/behaviors/login/Requirement';
+import {UserFeatures} from '../../.users/components/Features';
+import {ProjectFeatures} from '../../.projects/components/Features';
+import {LoggedIn} from '../../.users/behaviors/login/Requirement';
 import {NavLink} from 'react-router-dom';
 import {Route, Routes} from 'react-router';
 

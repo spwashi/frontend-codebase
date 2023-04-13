@@ -1,8 +1,8 @@
-import {Feature} from '../components/Feature';
+import {Feature} from '../../components/Feature';
 import React from 'react';
 import {useSelector} from 'react-redux';
-import {selectPossibleUsersLastFetched, selectPossibleUsersList} from './redux/selectors';
-import {AllUsersQuery} from './components/query/all';
+import {selectPossibleUsersLastFetched, selectPossibleUsersList} from '../redux/selectors';
+import {AllUsersQuery} from './query/all';
 
 const requireFetch = false;
 function UserLoginFeature() {

@@ -5,7 +5,7 @@ import {form__createProject, selectCreateProjectInput} from '../selectors';
 import {useCreateProjectMutation} from '../mutations';
 import {useDispatch} from 'react-redux';
 import {ACTION_PROJECT_CREATED} from '../../../redux/reducer';
-import {FormWidget} from '../../../../../.widgets/@form/FormWidget';
+import {FormWidget} from '../../../../../.widgets/.form/FormWidget';
 import {FeatureRequirement} from '../../../../components/Feature';
 import {ErrorBoundary} from '../../../../../components/util/error/ErrorBoundary';
 

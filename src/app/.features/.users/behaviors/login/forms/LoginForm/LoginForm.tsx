@@ -6,7 +6,7 @@ import {setJwt} from '../../../../../../../util/jwt';
 import {useDispatch, useSelector} from 'react-redux';
 import {ACTION_RECEIVE_LOGIN, selectLoggedInUserName} from '../../redux/reducer';
 import {form__login, LOGIN_MUTATION, selectLoginInput} from '../../selectors';
-import {FormWidget} from '../../../../../../.widgets/@form/FormWidget';
+import {FormWidget} from '../../../../../../.widgets/.form/FormWidget';
 import {IUser} from '../../../../../../../.junction/models/user/models';
 import {FeatureRequirement} from '../../../../../components/Feature';
 

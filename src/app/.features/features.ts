@@ -1,10 +1,10 @@
 import {FunctionComponent} from 'react';
-import {UserFeatures} from './.users/Features';
-import {SceneFeatures} from './.scenes/Features';
-import {TagFeatures} from './.tags/Features';
-import {ConceptFeatures} from './.concepts/Features';
-import {EventFeatures} from './.events/Features';
-import {ProjectFeatures} from './.projects/Features';
+import {UserFeatures} from './.users/components/Features';
+import {SceneFeatures} from './.scenes/components/Features';
+import {TagFeatures} from './.tags/components/Features';
+import {ConceptFeatures} from './.concepts/components/Features';
+import {EventFeatures} from './.events/components/Features';
+import {ProjectFeatures} from './.projects/components/Features';
 
 export const featureComponentMap:
                {

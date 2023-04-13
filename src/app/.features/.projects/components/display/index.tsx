@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Project} from '../query/one/components/Display';
-import {FormWidget} from '../../../../.widgets/@form/FormWidget';
+import {FormWidget} from '../../../../.widgets/.form/FormWidget';
 import {SiteProjectController} from '../query/one';
 import {useSelector} from 'react-redux';
 import {selectProjectStateProject} from '../../redux/selectors';

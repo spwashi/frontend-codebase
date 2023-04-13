@@ -1,4 +1,4 @@
-import {FormConfig} from '../../../../.widgets/@form/.fields/components/FieldFactory';
+import {FormConfig} from '../../../../.widgets/.form/.fields/components/FieldFactory';
 import {convertToSlug} from '../../../.projects/behaviors/create/selectors';
 
 export type SelectMutationInputData = {

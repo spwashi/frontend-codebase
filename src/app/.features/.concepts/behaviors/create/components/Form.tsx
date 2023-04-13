@@ -3,7 +3,7 @@ import {GraphqlMutationResponse} from '../../../../../.services/.graphql/compone
 import {useMutationFormSubmitCallback} from '../../../../../.services/.graphql/hooks/useMutationFormSubmitCallback';
 import {form__createConcept, selectCreateConceptInput} from '../config';
 import {useCreateConceptMutation} from '../mutation';
-import {FormWidget} from '../../../../../.widgets/@form/FormWidget';
+import {FormWidget} from '../../../../../.widgets/.form/FormWidget';
 import {LoggedIn} from '../../../../.users/behaviors/login/Requirement';
 import {ErrorBoundary} from '../../../../../components/util/error/ErrorBoundary';
 
