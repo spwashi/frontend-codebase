@@ -10,11 +10,6 @@ export function getConfiguredDomain() {
   return process.env.STORYBOOK_PROJECT_NAME || process.env.REACT_APP_PROJECT_NAME;
 }
 
-export function getDevObject() {
-  // @ts-ignore
-  return window.__dev = window.__dev || {};
-}
-
 export function Dev({children}: { children: any }) {
   if (!isDev()) return null;
   return <>{typeof children === 'function' ? children() : children}</>;
