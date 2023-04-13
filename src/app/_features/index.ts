@@ -8,7 +8,7 @@ import {ProjectFeatures} from './projects/components/Features';
 
 export const featureComponentMap:
                {
-                 [key: string]: FunctionComponent & { featureDeps?: FunctionComponent[] }
+                 [key: string]: FunctionComponent<React.PropsWithChildren<unknown>> & { featureDeps?: FunctionComponent<React.PropsWithChildren<unknown>>[] }
                } =
                {
                  users:    UserFeatures,

@@ -23,6 +23,8 @@ export function useFeatureQuery<T = any, V = any>(node: DocumentNode, variables:
   useDispatchGraphqlError(error);
 
   const client = useApolloClient()
-  useChangeEffect(() => client.refetchQueries({include: [node]}), [projectStateKey, client]);
+  useChangeEffect(() => {
+    client.refetchQueries({include: [node]});
+  }, [projectStateKey, client]);
   return {data: data, error};
 }

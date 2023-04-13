@@ -11,7 +11,7 @@ export default create(
     fontCode: 'monospace',
 
     brandUrl:    'https://example.com',
-    brandImage:  '/logo.svg',
+    brandImage:  '/logo/logo.svg',
     brandTarget: '_self',
   }
 );

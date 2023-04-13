@@ -27,7 +27,7 @@ export function Form({
                        defaultValue,
                      }: ProviderProps) {
   const [state, dispatch] = useReducer(formReducer, getInitialState(defaultValue, id));
-  const handleSubmit      = useCallback((event) => {
+  const handleSubmit      = useCallback((event: any) => {
     event?.preventDefault && event.preventDefault();
     event?.stopPropagation && event.stopPropagation();
     onSubmit?.(state)

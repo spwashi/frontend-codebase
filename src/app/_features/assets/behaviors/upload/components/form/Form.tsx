@@ -55,7 +55,9 @@ export function UploadAssetForm({}) {
   const [out, setOut]     = useState<any | null>(null);
   const jwt               = useJwt();
   const [error, setError] = useState<any | null>(null);
-  const onSubmit          = useCallback(async ({data}) => {
+  const onSubmit          = useCallback(async ({
+    data
+  }: any) => {
     if (!jwt) {
       return setError('No JWT')
     }
