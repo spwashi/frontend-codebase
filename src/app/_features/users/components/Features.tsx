@@ -1,8 +1,8 @@
 import {Feature} from '../../../_services/features/components/Feature';
 import React from 'react';
 import {useSelector} from 'react-redux';
-import {selectPossibleUsersLastFetched, selectPossibleUsersList} from '../_services/.redux/selectors';
-import {AllUsersQuery} from '../_services/.graphql/all';
+import {selectPossibleUsersLastFetched, selectPossibleUsersList} from '../_services/redux/selectors';
+import {AllUsersQuery} from '../_services/graphql/all';
 
 const requireFetch = false;
 function UserLoginFeature() {

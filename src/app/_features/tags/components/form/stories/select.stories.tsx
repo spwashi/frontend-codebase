@@ -3,7 +3,7 @@ import {ComponentMeta} from '@storybook/react';
 import {mainDecorator} from '../../../../../_services/storybook/decorators';
 import {FormWidget} from '../../../../../_widgets/form/FormWidget';
 import {TagSelect} from '../Select';
-import {AllTagsQuery} from '../../../_services/.graphql/all';
+import {AllTagsQuery} from '../../../_services/graphql/all';
 
 export default {
   title:      'Demo/Layout/Components/Form/Widgets/TagSelect',

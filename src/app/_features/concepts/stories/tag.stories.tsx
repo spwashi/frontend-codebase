@@ -1,7 +1,7 @@
 import React from 'react';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
 import {mainDecorator} from '../../../_services/storybook/decorators';
-import {RestrictedTagConceptForm} from '../_behaviors/tag';
+import {RestrictedTagConceptForm} from '../.behaviors/tag';
 import {FeatureList} from '../../../_services/features/components/FeatureList';
 
 

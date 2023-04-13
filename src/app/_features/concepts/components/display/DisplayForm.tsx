@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
-import {Concept} from '../../_services/.graphql/one';
+import {Concept} from '../../_services/graphql/one';
 import {FeatureRequirement} from '../../../../_services/features/components/Feature';
 import {FormWidget} from '../../../../_widgets/form/FormWidget';
 import {Log} from '../../../../components/dev/Log';
-import {LoggedIn} from '../../../users/_behaviors/login/components/Requirement';
+import {LoggedIn} from '../../../users/.behaviors/login/components/Requirement';
 
 export function ConceptDisplayForm({}) {
   const [state, setState] = useState<any | null>();

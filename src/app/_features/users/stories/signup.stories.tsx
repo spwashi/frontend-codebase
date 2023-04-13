@@ -1,7 +1,7 @@
 import React from 'react';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
 import {mainDecorator} from '../../../_services/storybook/decorators';
-import {SignupForm} from '../_behaviors/signup/forms/SignupForm';
+import {SignupForm} from '../.behaviors/signup/forms/SignupForm';
 import {FeatureList} from '../../../_services/features/components/FeatureList';
 
 export default {

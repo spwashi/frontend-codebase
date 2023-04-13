@@ -2,10 +2,10 @@ import React, {useContext, useEffect} from 'react';
 import {SelectInput} from '../../../../_widgets/form/_features/fields/components/input/select/SelectInput';
 import {useProjectOptions} from '../../hooks/useOptions';
 import {useSelector} from 'react-redux';
-import {selectProjectStateProject} from '../../_services/.redux/selectors';
+import {selectProjectStateProject} from '../../_services/redux/selectors';
 import {updateFormItem} from '../../../../_widgets/form/_features/fields/hooks/useFormItem';
 import {FormContext} from '../../../../_widgets/form/context/context';
-import {AllProjectsQuery} from '../../_services/.graphql/all/all';
+import {AllProjectsQuery} from '../../_services/graphql/all/all';
 import {Value} from '../../../../_widgets/form/_features/fields/components/input/text/Input';
 
 export function ProjectSelect({formKey, ignore}: { formKey?: string, ignore?: boolean }) {

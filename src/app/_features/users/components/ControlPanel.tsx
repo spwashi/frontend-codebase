@@ -1,10 +1,10 @@
 import {ProjectFeatures} from '../../projects/components/Features';
 import {FeatureRequirement} from '../../../_services/features/components/Feature';
-import {LoggedIn, NotLoggedIn} from '../_behaviors/login/components/Requirement';
-import {VerifyLogin} from '../_behaviors/login/components/VerifyLogin';
-import {LogoutButton} from '../_behaviors/login/components/Logout';
-import {LoginForm} from '../_behaviors/login/forms/LoginForm';
-import {SignupForm} from '../_behaviors/signup/forms/SignupForm';
+import {LoggedIn, NotLoggedIn} from '../.behaviors/login/components/Requirement';
+import {VerifyLogin} from '../.behaviors/login/components/VerifyLogin';
+import {LogoutButton} from '../.behaviors/login/components/Logout';
+import {LoginForm} from '../.behaviors/login/forms/LoginForm';
+import {SignupForm} from '../.behaviors/signup/forms/SignupForm';
 import React from 'react';
 import {UserFeatures} from './Features';
 

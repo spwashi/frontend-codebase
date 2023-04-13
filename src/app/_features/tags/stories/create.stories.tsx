@@ -2,7 +2,7 @@ import React from 'react';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
 import {mainDecorator} from '../../../_services/storybook/decorators';
 import {FeatureList} from '../../../_services/features/components/FeatureList';
-import {RestrictedCreateTagForm} from '../_behaviors/create';
+import {RestrictedCreateTagForm} from '../.behaviors/create';
 
 export default {
   title:      'Admin/Forms/Datatypes/Tag/CreateTag',

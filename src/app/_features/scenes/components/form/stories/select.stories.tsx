@@ -3,7 +3,7 @@ import {ComponentMeta} from '@storybook/react';
 import {mainDecorator} from '../../../../../_services/storybook/decorators';
 import {FormWidget} from '../../../../../_widgets/form/FormWidget';
 import {SceneSelect} from '../Select';
-import {AllScenesQuery} from '../../../_services/.graphql/all/components/FindAll';
+import {AllScenesQuery} from '../../../_services/graphql/all/components/FindAll';
 
 export default {
   title:      'Demo/Layout/Components/Form/Widgets/SceneSelect',
