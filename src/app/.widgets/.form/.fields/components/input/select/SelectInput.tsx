@@ -1,6 +1,6 @@
 import React, {ChangeEvent, useCallback, useContext, useEffect, useMemo} from 'react';
-import {useFormItem} from '../../hooks/useFormItem';
-import {FormContext} from '../../context/FormContext';
+import {useFormItem} from '../../../../hooks/useFormItem';
+import {FormContext} from '../../../../context/FormContext';
 
 export type SelectOption<T extends any = any> =
   {

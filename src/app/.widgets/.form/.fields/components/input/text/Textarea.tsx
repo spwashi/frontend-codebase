@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
-import {FormContext} from '../../context/FormContext';
-import {useFormItem} from '../../hooks/useFormItem';
+import {FormContext} from '../../../../context/FormContext';
+import {useFormItem} from '../../../../hooks/useFormItem';
 
 type TextareaParams =
   { formKey?: string }

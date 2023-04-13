@@ -1,4 +1,4 @@
-import {SelectOption} from '../../../.widgets/.form/input/select/SelectInput';
+import {SelectOption} from '../../../.widgets/.form/.fields/components/input/select/SelectInput';
 import {IEvent} from '../../../../.junction/models/event/models';
 import {IFeatureState, IKeyedState} from '../../../.services/.redux/state.types';
 

@@ -1,14 +1,14 @@
-import {Input, Value} from '../../input/text/Input';
+import {Input, Value} from './input/text/Input';
 import {UsernameInput} from '../../../../.features/.users/components/input/UsernameInput';
 import React, {useContext, useMemo} from 'react';
-import {SelectInput, SelectOption} from '../../input/select/SelectInput';
-import {AssetInput} from '../../input/assets/AssetInput';
+import {SelectInput, SelectOption} from './input/select/SelectInput';
+import {AssetInput} from './input/assets/AssetInput';
 import {TagSelect} from '../../../../.features/.tags/components/form/Select';
 import {ProjectSelect} from '../../../../.features/.projects/components/form/Select';
 import {ConceptSelect} from '../../../../.features/.concepts/components/form/Select';
 import {FormContext} from '../../context/FormContext';
 import {AssetSelector} from '../../../../.features/.assets/components/input/AssetSelector';
-import {Textarea} from '../../input/text/Textarea';
+import {Textarea} from './input/text/Textarea';
 import {EventSelect} from '../../../../.features/.events/components/form/Select';
 import {SceneSelect} from '../../../../.features/.scenes/components/form/Select';
 import {ContentInput} from './ContentInput';

@@ -1,5 +1,5 @@
 import {FormFieldConfig} from '../../../.widgets/.form/.fields/components/FieldFactory';
-import {SelectOption} from '../../../.widgets/.form/input/select/SelectInput';
+import {SelectOption} from '../../../.widgets/.form/.fields/components/input/select/SelectInput';
 
 
 export const contentTypes = <const>[
