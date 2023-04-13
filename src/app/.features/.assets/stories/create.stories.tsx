@@ -2,7 +2,7 @@ import React from 'react';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
 import {mainDecorator} from '../../../util/storybook/decorators';
 import {FeatureList} from '../../../.services/.features/components/FeatureList';
-import {UploadAssetForm} from '../behaviors/upload/components/form/Form';
+import {UploadAssetForm} from '../.behaviors/upload/components/form/Form';
 
 export default {
   title:      'Admin/Forms/Datatypes/Asset/UploadAsset',

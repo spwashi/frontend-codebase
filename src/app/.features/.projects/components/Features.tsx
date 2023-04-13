@@ -1,7 +1,7 @@
 import {useSelector} from 'react-redux';
 import {Feature} from '../../../.services/.features/components/Feature';
 import React from 'react';
-import {selectPossibleProjectsLastFetched, selectPossibleProjectsList} from '../redux/selectors';
+import {selectPossibleProjectsLastFetched, selectPossibleProjectsList} from '../.services/.redux/selectors';
 import {AllProjectsQuery} from './query/all/all';
 
 

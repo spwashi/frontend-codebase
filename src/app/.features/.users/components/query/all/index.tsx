@@ -1,8 +1,8 @@
 import {gql, useQuery} from '@apollo/client';
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {selectPossibleUsersLastFetched} from '../../../redux/selectors';
-import {ACTION_RECEIVE_ALL_USERS} from '../../../redux/reducer';
+import {selectPossibleUsersLastFetched} from '../../../.services/.redux/selectors';
+import {ACTION_RECEIVE_ALL_USERS} from '../../../.services/.redux/reducer';
 
 export function AllUsersQuery() {
   const ALL_USERS_QUERY =

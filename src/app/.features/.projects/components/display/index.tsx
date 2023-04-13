@@ -3,7 +3,7 @@ import {Project} from '../query/one/components/Display';
 import {FormWidget} from '../../../../.widgets/.form/FormWidget';
 import {SiteProjectController} from '../query/one';
 import {useSelector} from 'react-redux';
-import {selectProjectStateProject} from '../../redux/selectors';
+import {selectProjectStateProject} from '../../.services/.redux/selectors';
 
 export function ProjectDisplayForm() {
   const [state, setState] = useState<any | null>();

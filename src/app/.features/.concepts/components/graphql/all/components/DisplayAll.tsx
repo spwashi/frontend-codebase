@@ -1,5 +1,5 @@
 import {useSelector} from 'react-redux';
-import {selectConceptStateKey, selectPossibleConceptsList} from '../../../../redux/selectors';
+import {selectConceptStateKey, selectPossibleConceptsList} from '../../../../.services/.redux/selectors';
 import React from 'react';
 import {ConceptDisplay} from '../../one/components/DisplayOne';
 

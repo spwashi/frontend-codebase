@@ -5,7 +5,7 @@ import {ActiveProject} from './components/Display';
 import {OneProjectQuery} from './components/Query';
 import {ProjectContext} from '../../../context/context';
 import {useDispatch} from 'react-redux';
-import {ACTION_PROJECT_SELECTED} from '../../../redux/reducer';
+import {ACTION_PROJECT_SELECTED} from '../../../.services/.redux/reducer';
 import {useChangeEffect} from '../../../../../util/hooks/useChangeEffect';
 
 function SiteProjectDeactivateButton() {

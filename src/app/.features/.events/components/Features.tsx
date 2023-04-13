@@ -1,7 +1,7 @@
 import {Feature} from '../../../.services/.features/components/Feature';
 import React from 'react';
 import {useSelector} from 'react-redux';
-import {selectPossibleEventsLastFetched, selectPossibleEventsList} from '../redux/selectors';
+import {selectPossibleEventsLastFetched, selectPossibleEventsList} from '../.services/.redux/selectors';
 import {AllEventsQuery} from './graphql/all/components/FindAll';
 
 function EventDisplayFeature() {

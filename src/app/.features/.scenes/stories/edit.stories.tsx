@@ -1,7 +1,7 @@
 import React from 'react';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
 import {mainDecorator} from '../../../util/storybook/decorators';
-import {RestrictedEditSceneForm} from '../behaviors/edit';
+import {RestrictedEditSceneForm} from '../.behaviors/edit';
 import {FeatureList} from '../../../.services/.features/components/FeatureList';
 
 export default {

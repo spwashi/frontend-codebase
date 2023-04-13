@@ -1,6 +1,6 @@
 import {FeatureRequirement} from '../../../.services/.features/components/Feature';
-import {CreateConceptForm} from '../behaviors/create';
-import {RestrictedTagConceptForm} from '../behaviors/tag';
+import {CreateConceptForm} from '../.behaviors/create';
+import {RestrictedTagConceptForm} from '../.behaviors/tag';
 import React from 'react';
 import {ConceptFeatures} from './Features';
 import {ConceptDisplayForm} from './display/DisplayForm';
@@ -9,7 +9,7 @@ import {Route, Routes} from 'react-router';
 import {NavLink} from 'react-router-dom';
 import {TagFeatures} from '../../.tags/components/Features';
 import {UserFeatures} from '../../.users/components/Features';
-import {RestrictedEditConceptForm} from '../behaviors/edit';
+import {RestrictedEditConceptForm} from '../.behaviors/edit';
 import {AllConceptsQuery} from './graphql/all/components/FindAll';
 import {AllTagsQuery} from '../../.tags/components/query/all';
 

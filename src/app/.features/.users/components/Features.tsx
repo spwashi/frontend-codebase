@@ -1,7 +1,7 @@
 import {Feature} from '../../../.services/.features/components/Feature';
 import React from 'react';
 import {useSelector} from 'react-redux';
-import {selectPossibleUsersLastFetched, selectPossibleUsersList} from '../redux/selectors';
+import {selectPossibleUsersLastFetched, selectPossibleUsersList} from '../.services/.redux/selectors';
 import {AllUsersQuery} from './query/all';
 
 const requireFetch = false;

@@ -1,8 +1,8 @@
 import React from 'react';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
-import {LoginForm} from '../behaviors/login/forms/LoginForm';
+import {LoginForm} from '../.behaviors/login/forms/LoginForm';
 import {mainDecorator} from '../../../util/storybook/decorators';
-import {LogoutButton} from '../behaviors/login/Logout';
+import {LogoutButton} from '../.behaviors/login/components/Logout';
 import {FeatureList} from '../../../.services/.features/components/FeatureList';
 
 export default {

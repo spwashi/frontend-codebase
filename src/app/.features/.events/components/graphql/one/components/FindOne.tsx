@@ -3,7 +3,7 @@ import {gql, useQuery} from '@apollo/client';
 import React, {useContext, useEffect} from 'react';
 import {EventContext} from '../context/context';
 import {useDispatch} from 'react-redux';
-import {ACTION_RECEIVE_ONE_EVENT} from '../../../../redux/reducer';
+import {ACTION_RECEIVE_ONE_EVENT} from '../../../../.services/.redux/reducer';
 
 const EVENT_QUERY = gql`
     query OneEvent($id: Int!) {

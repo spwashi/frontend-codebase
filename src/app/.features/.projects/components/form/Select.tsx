@@ -2,9 +2,9 @@ import React, {useContext, useEffect} from 'react';
 import {SelectInput} from '../../../../.widgets/.form/.fields/components/input/select/SelectInput';
 import {useProjectOptions} from '../../hooks/useOptions';
 import {useSelector} from 'react-redux';
-import {selectProjectStateProject} from '../../redux/selectors';
+import {selectProjectStateProject} from '../../.services/.redux/selectors';
 import {updateFormItem} from '../../../../.widgets/.form/hooks/useFormItem';
-import {FormContext} from '../../../../.widgets/.form/context/FormContext';
+import {FormContext} from '../../../../.widgets/.form/context/components/FormContext';
 import {AllProjectsQuery} from '../query/all/all';
 import {Value} from '../../../../.widgets/.form/.fields/components/input/text/Input';
 

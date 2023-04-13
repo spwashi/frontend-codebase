@@ -1,5 +1,5 @@
 import {useSelector} from 'react-redux';
-import {selectPossibleScenesList} from '../../../../redux/selectors';
+import {selectPossibleScenesList} from '../../../../.services/.redux/selectors';
 import React from 'react';
 import {SceneDisplay} from '../../one/components/DisplayOne';
 import {AllScenesQuery} from './FindAll';

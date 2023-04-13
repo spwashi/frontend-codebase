@@ -2,7 +2,7 @@ import React from 'react';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
 import {mainDecorator} from '../../../util/storybook/decorators';
 import {FeatureList} from '../../../.services/.features/components/FeatureList';
-import {CreateProjectForm} from '../behaviors/create';
+import {CreateProjectForm} from '../.behaviors/create';
 
 export default {
   title:      'Admin/Forms/Datatypes/Project/CreateProject',

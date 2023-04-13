@@ -1,7 +1,7 @@
 import {Feature} from '../../../.services/.features/components/Feature';
 import React from 'react';
 import {useSelector} from 'react-redux';
-import {selectPossibleConceptsLastFetched, selectPossibleConceptsList} from '../redux/selectors';
+import {selectPossibleConceptsLastFetched, selectPossibleConceptsList} from '../.services/.redux/selectors';
 import {AllConceptsQuery} from './graphql/all/components/FindAll';
 
 function ConceptDisplayFeature() {

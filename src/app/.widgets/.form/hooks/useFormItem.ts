@@ -1,7 +1,7 @@
 import {useCallback, useContext, useEffect, useState} from 'react';
 import {ACTION_UPDATE_INDEX} from '../context/reducer';
 import {FormState} from '../context/types';
-import {FormContext, ID_EMPTY} from '../context/FormContext';
+import {FormContext, ID_EMPTY} from '../context/components/FormContext';
 
 export function updateFormItem<T>(form: FormState, formKey: string, value: T, passive: boolean = false) {
   form.dispatch?.({

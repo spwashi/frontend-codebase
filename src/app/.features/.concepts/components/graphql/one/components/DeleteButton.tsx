@@ -2,7 +2,7 @@ import {gql, useMutation} from '@apollo/client';
 import {useDispatch} from 'react-redux';
 import React, {useCallback} from 'react';
 import {Log} from '../../../../../../components/dev/Log';
-import {ACTION_DELETE_ONE_CONCEPT} from '../../../../redux/reducer';
+import {ACTION_DELETE_ONE_CONCEPT} from '../../../../.services/.redux/reducer';
 import {DeleteConceptMutationInput} from '../../../../../../../.junction/models/concept/behaviors/delete';
 
 function useDeleteConceptMutation() {

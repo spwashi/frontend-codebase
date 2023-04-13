@@ -1,5 +1,5 @@
 import {FeatureRequirement} from '../../../.services/.features/components/Feature';
-import {RestrictedCreateSceneForm} from '../behaviors/create';
+import {RestrictedCreateSceneForm} from '../.behaviors/create';
 import React from 'react';
 import {SceneFeatures} from './Features';
 import {SceneDisplayForm} from './display/DisplayForm';
@@ -8,7 +8,7 @@ import {Route, Routes} from 'react-router';
 import {NavLink} from 'react-router-dom';
 import {TagFeatures} from '../../.tags/components/Features';
 import {UserFeatures} from '../../.users/components/Features';
-import {RestrictedEditSceneForm} from '../behaviors/edit';
+import {RestrictedEditSceneForm} from '../.behaviors/edit';
 import {AllScenesQuery} from './graphql/all/components/FindAll';
 
 export function ScenesControlPanel() {

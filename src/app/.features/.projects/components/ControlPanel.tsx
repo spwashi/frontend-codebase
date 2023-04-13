@@ -2,7 +2,7 @@ import {FeatureRequirement} from '../../../.services/.features/components/Featur
 import React from 'react';
 import {ProjectFeatures} from './Features';
 import {ProjectDisplayForm} from './display';
-import {CreateProjectForm} from '../behaviors/create';
+import {CreateProjectForm} from '../.behaviors/create';
 import {AllProjectsQuery} from './query/all/all';
 
 export function ProjectsControlPanel() {

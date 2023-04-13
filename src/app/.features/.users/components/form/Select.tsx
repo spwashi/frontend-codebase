@@ -1,10 +1,10 @@
 import React, {useContext, useEffect, useMemo} from 'react';
 import {SelectInput, SelectOption} from '../../../../.widgets/.form/.fields/components/input/select/SelectInput';
 import {useSelector} from 'react-redux';
-import {FormContext} from '../../../../.widgets/.form/context/FormContext';
+import {FormContext} from '../../../../.widgets/.form/context/components/FormContext';
 import {updateFormItem} from '../../../../.widgets/.form/hooks/useFormItem';
-import {selectPossibleUsersList} from '../../redux/selectors';
-import {selectLoggedInUser} from '../../behaviors/login/redux/reducer';
+import {selectPossibleUsersList} from '../../.services/.redux/selectors';
+import {selectLoggedInUser} from '../../.behaviors/login/redux/reducer';
 import {AllUsersQuery} from '../query/all';
 import {IUser} from '../../../../../.junction/models/user/models';
 import {Value} from '../../../../.widgets/.form/.fields/components/input/text/Input';

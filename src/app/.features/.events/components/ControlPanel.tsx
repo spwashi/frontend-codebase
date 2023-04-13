@@ -1,6 +1,6 @@
 import {FeatureRequirement} from '../../../.services/.features/components/Feature';
-import {CreateEventForm} from '../behaviors/create';
-import {RestrictedTagEventForm} from '../behaviors/tag';
+import {CreateEventForm} from '../.behaviors/create';
+import {RestrictedTagEventForm} from '../.behaviors/tag';
 import React from 'react';
 import {EventFeatures} from './Features';
 import {EventDisplayForm} from './display/DisplayForm';
@@ -9,7 +9,7 @@ import {Route, Routes} from 'react-router';
 import {NavLink} from 'react-router-dom';
 import {TagFeatures} from '../../.tags/components/Features';
 import {UserFeatures} from '../../.users/components/Features';
-import {RestrictedEditEventForm} from '../behaviors/edit';
+import {RestrictedEditEventForm} from '../.behaviors/edit';
 import {AllTagsQuery} from '../../.tags/components/query/all';
 import {AllEventsQuery} from './graphql/all/components/FindAll';
 

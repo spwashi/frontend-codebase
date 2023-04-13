@@ -3,7 +3,7 @@ import {gql, useQuery} from '@apollo/client';
 import React, {useContext, useEffect} from 'react';
 import {ConceptContext} from '../context/context';
 import {useDispatch} from 'react-redux';
-import {ACTION_RECEIVE_ONE_CONCEPT} from '../../../../redux/reducer';
+import {ACTION_RECEIVE_ONE_CONCEPT} from '../../../../.services/.redux/reducer';
 
 const CONCEPT_QUERY = gql`
     query Concept($id: String!) {

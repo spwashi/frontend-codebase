@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {Event} from '../graphql/one';
 import {FeatureRequirement} from '../../../../.services/.features/components/Feature';
 import {FormWidget} from '../../../../.widgets/.form/FormWidget';
-import {LoggedIn} from '../../../.users/behaviors/login/Requirement';
+import {LoggedIn} from '../../../.users/.behaviors/login/components/Requirement';
 
 export function EventDisplayForm({}) {
   const [state, setState] = useState<any | null>();

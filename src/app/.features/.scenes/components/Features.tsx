@@ -1,7 +1,7 @@
 import {Feature} from '../../../.services/.features/components/Feature';
 import React from 'react';
 import {useSelector} from 'react-redux';
-import {selectPossibleScenesLastFetched, selectPossibleScenesList} from '../redux/selectors';
+import {selectPossibleScenesLastFetched, selectPossibleScenesList} from '../.services/.redux/selectors';
 import {AllScenesQuery} from './graphql/all/components/FindAll';
 
 function SceneDisplayFeature() {

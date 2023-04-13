@@ -8,7 +8,7 @@ import {ScenesControlPanel} from '../../.scenes/components/ControlPanel';
 import {EventsControlPanel} from '../../.events/components/ControlPanel';
 import {TagsControlPanel} from '../../.tags/components/ControlPanel';
 import {AssetsControlPanel} from '../../.assets/components/ControlPanel';
-import {LoggedIn, NotLoggedIn} from '../../.users/behaviors/login/Requirement';
+import {LoggedIn, NotLoggedIn} from '../../.users/.behaviors/login/components/Requirement';
 import React from 'react';
 
 export function AdminRoutes() {

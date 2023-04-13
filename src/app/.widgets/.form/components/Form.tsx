@@ -4,7 +4,7 @@ import {getInitialState} from '../context/initialState';
 import {Log} from '../../../components/dev/Log';
 import {ButtonConfig, ButtonContainer} from './ButtonContainer';
 import {FormState} from '../context/types';
-import {FormContext} from '../context/FormContext';
+import {FormContext} from '../context/components/FormContext';
 
 type ProviderProps<T = any> = {
   children: any;

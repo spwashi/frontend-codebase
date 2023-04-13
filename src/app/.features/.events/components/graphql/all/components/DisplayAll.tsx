@@ -1,5 +1,5 @@
 import {useSelector} from 'react-redux';
-import {selectEventStateKey, selectPossibleEventsList} from '../../../../redux/selectors';
+import {selectEventStateKey, selectPossibleEventsList} from '../../../../.services/.redux/selectors';
 import React from 'react';
 import {EventDisplay} from '../../one/components/DisplayOne';
 

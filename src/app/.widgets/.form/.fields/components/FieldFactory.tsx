@@ -6,7 +6,7 @@ import {AssetInput} from './input/assets/AssetInput';
 import {TagSelect} from '../../../../.features/.tags/components/form/Select';
 import {ProjectSelect} from '../../../../.features/.projects/components/form/Select';
 import {ConceptSelect} from '../../../../.features/.concepts/components/form/Select';
-import {FormContext} from '../../context/FormContext';
+import {FormContext} from '../../context/components/FormContext';
 import {AssetSelector} from '../../../../.features/.assets/components/input/AssetSelector';
 import {Textarea} from './input/text/Textarea';
 import {EventSelect} from '../../../../.features/.events/components/form/Select';

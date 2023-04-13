@@ -1,8 +1,8 @@
 import {gql} from '@apollo/client';
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {selectPossibleProjectsLastFetched, selectProjectStateKey} from '../../../redux/selectors';
-import {ACTION_RECEIVE_ALL_PROJECTS} from '../../../redux/reducer';
+import {selectPossibleProjectsLastFetched, selectProjectStateKey} from '../../../.services/.redux/selectors';
+import {ACTION_RECEIVE_ALL_PROJECTS} from '../../../.services/.redux/reducer';
 import {useFeatureQuery} from '../../../../../.services/.features/hooks/useFeatureQuery';
 import {getDomain} from '../../../../../.widgets/.form/.fields/components/FieldFactory';
 

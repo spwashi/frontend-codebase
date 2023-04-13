@@ -3,7 +3,7 @@ import {gql, useQuery} from '@apollo/client';
 import React, {useContext, useEffect} from 'react';
 import {SceneContext} from '../context/context';
 import {useDispatch} from 'react-redux';
-import {ACTION_RECEIVE_ONE_SCENE} from '../../../../redux/reducer';
+import {ACTION_RECEIVE_ONE_SCENE} from '../../../../.services/.redux/reducer';
 
 const SCENE_QUERY = gql`
     query Scene($id: Int!) {
