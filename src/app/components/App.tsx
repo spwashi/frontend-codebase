@@ -6,7 +6,7 @@ import classnames from 'classnames';
 import {BrowserRouter} from 'react-router-dom';
 import {LogAppReduxState} from './dev/Log';
 import {appClassNames} from '../../styles/classNames';
-import {AdminControlPanel} from '../../admin/components';
+import {AdminControlPanel} from '../../admin/components/AdminControlPanel';
 
 
 function App() {
