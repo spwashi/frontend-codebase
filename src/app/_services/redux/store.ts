@@ -11,7 +11,7 @@ const persistedReducer = persistReducer(
 
 export const store = configureStore(
   {
-    devTools: process.env.NODE_ENV !== 'production',
+    devTools: import.meta.env.DEV,
     reducer:  persistedReducer,
     middleware(getDefaultMiddleware) {
       return getDefaultMiddleware({

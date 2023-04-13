@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 
 export function AssetContents({realname, name, contentType}: { name: string, realname: string; contentType: string }) {
   const [out, setOut] = useState(null as any | null)
-  const BACKEND_URL   = process.env.REACT_APP_BACKEND_URL ?? '';
+  const BACKEND_URL   = import.meta.env.VITE_BACKEND_URL ?? '';
   const fileUrl       = BACKEND_URL + '/read?file=' + realname;
   const extension     = name.split('.').slice(-1)[0];
 

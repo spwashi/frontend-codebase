@@ -20,7 +20,7 @@ export const projectReducer =
                        case ACTION_PROJECT_CREATED:
                          return {...state, key: state.key + 1};
                        case REHYDRATE:
-                         return selectProjectState(action.payload);
+                         return action.payload ? selectProjectState(action.payload) : state;
                      }
                      return state;
                    },

@@ -7,7 +7,7 @@ import React from 'react';
 import {RootCss} from '../../styles/components/root.css';
 import '../../styles/app.scss';
 
-const httpLink = createHttpLink({uri: process.env.REACT_APP_GRAPHQL_URL});
+const httpLink = createHttpLink({uri: process.env.VITE_GRAPHQL_URL});
 const client   = new ApolloClient({link: httpLink, cache: new InMemoryCache()});
 
 export const mainDecorator = (Story: any) =>

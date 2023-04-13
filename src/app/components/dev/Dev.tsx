@@ -2,12 +2,18 @@ import React from 'react';
 
 
 export function isDev() {
-  return process.env.NODE_ENV === 'development';
+  return import.meta.env.DEV;
 }
 
 
 export function getConfiguredDomain() {
-  return process.env.STORYBOOK_PROJECT_NAME || process.env.REACT_APP_PROJECT_NAME;
+  if (typeof process !== 'undefined') {
+    let storybookName = process?.env.STORYBOOK_PROJECT_NAME;
+    if (storybookName) {
+      return storybookName;
+    }
+  }
+  return import.meta.env.VITE_PROJECT_NAME;
 }
 
 export function Dev({children}: { children: any }) {

@@ -16,8 +16,6 @@ export default {
   ],
 } as ComponentMeta<any>;
 
-console.log(process.env.STORYBOOK_TEST_VAR)
-
 const Template: ComponentStory<any> =
         (args) => {
           return <>

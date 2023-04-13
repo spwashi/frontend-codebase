@@ -1,1 +1,2 @@
-export const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+export const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+export const GRAPHQL_URL = import.meta.env.VITE_GRAPHQL_URL;
