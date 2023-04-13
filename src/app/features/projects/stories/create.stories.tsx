@@ -1,6 +1,6 @@
 import React from 'react';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
-import {mainDecorator} from '../../../../stories/util/decorators';
+import {mainDecorator} from '../../../../util/storybook/decorators';
 import {Features} from '../../index';
 import {CreateProjectForm} from '../behaviors/create';
 

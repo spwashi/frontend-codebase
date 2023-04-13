@@ -1,7 +1,7 @@
 import React from 'react';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
 import {Form} from './context/FormContext';
-import {mainDecorator} from '../../../stories/util/decorators';
+import {mainDecorator} from '../../../util/storybook/decorators';
 import {StandardForm} from './Form';
 
 export default {

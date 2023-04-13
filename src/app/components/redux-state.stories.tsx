@@ -1,7 +1,7 @@
 import React from 'react';
 import {ComponentMeta} from '@storybook/react';
 import {LogAppReduxState} from './Log';
-import {mainDecorator} from '../../stories/util/decorators';
+import {mainDecorator} from '../../util/storybook/decorators';
 
 export default {
   title:      'Dev/AppState',
