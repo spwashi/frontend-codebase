@@ -29,9 +29,9 @@ export const adminPaths = {
 
 export const adminRoutes = {
   admin: {
-    _all:     {href: `${adminPaths.admin._prefix}/all`, id: 'admin-all', title: 'All'},
-    users:    {href: `${adminPaths.admin._prefix}/users`, id: 'admin-users', title: 'Users'},
+    all:      {href: `${adminPaths.admin._prefix}/all`, id: 'admin-all', title: 'All'},
     projects: {href: `${adminPaths.admin._prefix}/projects`, id: 'admin-projects', title: 'Projects'},
+    users:    {href: `${adminPaths.admin._prefix}/users`, id: 'admin-users', title: 'Users'},
     scenes:   {href: `${adminPaths.admin._prefix}/scenes`, id: 'admin-scenes', title: 'Scenes'},
     concepts: {href: `${adminPaths.admin._prefix}/concepts`, id: 'admin-concepts', title: 'Concepts'},
     events:   {href: `${adminPaths.admin._prefix}/events`, id: 'admin-events', title: 'Events'},

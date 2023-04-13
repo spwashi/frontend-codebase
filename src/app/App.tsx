@@ -1,10 +1,10 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
-import {select_noGraphql} from './redux/reducer';
+import {select_noGraphql} from './state/reducer';
 
 import classnames from 'classnames';
 import {BrowserRouter} from 'react-router-dom';
-import {LogAppReduxState} from './components/Log';
+import {LogAppReduxState} from './components/dev/Log';
 import {appClassNames} from '../styles/classNames';
 import {AdminControlPanel} from '../admin/components';
 

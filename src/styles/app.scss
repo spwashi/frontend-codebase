@@ -1,4 +1,4 @@
-@import "root";
+@import "components/root";
 
 #application-container {
   &.no-admin {
@@ -26,12 +26,14 @@ main {
   }
 }
 
-@import "environments/dev";
+@import "./.environments/development/dev";
+
 @import "components/input";
 @import "components/form";
 @import "components/nav";
-@import "features/user/login-requirement";
-@import "features/user/logout-button";
-@import "features/concept";
-@import "features/event";
-@import "features/scene";
+
+@import ".features/@user/login-requirement";
+@import ".features/@user/logout-button";
+@import ".features/@concept/concept";
+@import ".features/@event/event";
+@import ".features/@scene/scene";
