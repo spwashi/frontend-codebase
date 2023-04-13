@@ -1,8 +1,8 @@
 import {useDispatch} from 'react-redux';
-import {useJwt} from '../../../../../_services/jwt';
 import {useEffect} from 'react';
 import {BACKEND_URL} from '../../../../../constants';
 import {logout} from './Logout';
+import {useJwt} from '../../../../../_services/jwt/hooks/useJwt';
 
 export function VerifyLogin() {
   const dispatch = useDispatch();

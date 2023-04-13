@@ -2,16 +2,16 @@ import {Input, Value} from './input/text/Input';
 import {UsernameInput} from '../../../../../_features/users/components/input/UsernameInput';
 import React, {useContext, useMemo} from 'react';
 import {SelectInput, SelectOption} from './input/select/SelectInput';
-import {AssetInput} from './input/assets/AssetInput';
+import {FileInput} from './input/file/FileInput';
 import {TagSelect} from '../../../../../_features/tags/components/form/Select';
 import {ProjectSelect} from '../../../../../_features/projects/components/form/Select';
 import {ConceptSelect} from '../../../../../_features/concepts/components/form/Select';
 import {FormContext} from '../../../context/context';
-import {AssetSelector} from '../../../../../_features/assets/components/input/AssetSelector';
+import {AssetSelect} from '../../../../../_features/assets/components/form/AssetSelect';
 import {Textarea} from './input/text/Textarea';
 import {EventSelect} from '../../../../../_features/events/components/form/Select';
 import {SceneSelect} from '../../../../../_features/scenes/components/form/Select';
-import {ContentInput} from './ContentInput';
+import {ContentInput} from './input/ContentInput';
 import {ContentType} from '../../../../../_features/concepts/data/config';
 import {FormWidget} from '../../../FormWidget';
 import {useFormItem} from '../hooks/useFormItem';
@@ -30,7 +30,8 @@ type UserSelectInputConfig = { type: 'user'; ignoreLogin?: boolean; doSelect?: b
 type PasswordInputConfig = { type: 'password'; };
 type LongtextInputConfig = { type: 'longtext'; };
 type TextInputConfig = { type: 'text'; };
-type DateInputConfig = { type: 'datetime'; };
+type DateInputConfig = { type: 'date'; };
+type DatetimeInputConfig = { type: 'datetime-local'; };
 type ValueInputConfig = { type: 'value'; calc?: (data: any) => any };
 type ConceptInputConfig = { type: 'concept'; };
 type SceneInputConfig = { type: 'scene'; };
@@ -58,6 +59,7 @@ export type FormFieldConfig<T = any> =
   (| ValueInputConfig
    | TextInputConfig
    | DateInputConfig
+   | DatetimeInputConfig
    | LongtextInputConfig
    | PasswordInputConfig
    | UserSelectInputConfig
@@ -94,7 +96,8 @@ function FormInput({formKey, config}: { formKey: string, config: FormConfig }) {
 export function FormElementFactory({item: config}: { item: FormFieldConfig }) {
   const {title, type, name, value: v, ...rest} = config;
   switch (type) {
-    case 'datetime':
+    case 'date':
+    case 'datetime-local':
     case 'password':
     case 'text': {
       return <Input formKey={name} {...config} />;
@@ -129,10 +132,10 @@ export function FormElementFactory({item: config}: { item: FormFieldConfig }) {
     }
     case 'assetSelect': {
       const {username} = config;
-      return <AssetSelector formKey="asset" username={username}/>;
+      return <AssetSelect formKey="asset" username={username}/>;
     }
     case 'asset': {
-      return <AssetInput formKey={name}  {...config}/>;
+      return <FileInput formKey={name}  {...config}/>;
     }
     case 'user': {
       return <UsernameInput doSelect={!!config.doSelect} ignoreLogin={config.ignoreLogin}/>;

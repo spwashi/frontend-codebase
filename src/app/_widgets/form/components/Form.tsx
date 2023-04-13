@@ -2,7 +2,7 @@ import React, {useCallback, useEffect, useMemo, useReducer} from 'react';
 import {ACTION_SET_DEFAULT, formReducer} from '../state/reducer';
 import {getInitialState} from '../context/helpers/getInitialState';
 import {Log} from '../../../components/dev/Log';
-import {ButtonConfig, ButtonContainer} from './ButtonContainer';
+import {ButtonConfig, ButtonContainer} from './buttons/ButtonContainer';
 import {FormState} from '../context/types/state';
 import {FormContext} from '../context/context';
 

@@ -4,14 +4,14 @@ import {RestrictedTagEventForm} from '../tag';
 import React from 'react';
 import {EventFeatures} from '../../components/Features';
 import {EventDisplayForm} from '../../components/display/DisplayForm';
-import {AllEventsEventDisplay} from '../../_services/graphql/all/components/DisplayAll';
+import {AllEventsEventDisplay} from '../../services/graphql/all/components/DisplayAll';
 import {Route, Routes} from 'react-router';
 import {NavLink} from 'react-router-dom';
 import {TagFeatures} from '../../../tags/components/Features';
 import {UserFeatures} from '../../../users/components/Features';
 import {RestrictedEditEventForm} from '../edit';
-import {AllTagsQuery} from '../../../tags/_services/graphql/all';
-import {AllEventsQuery} from '../../_services/graphql/all/components/FindAll';
+import {AllTagsQuery} from '../../../tags/services/graphql/all';
+import {AllEventsQuery} from '../../services/graphql/all/components/FindAll';
 
 export function EventsControlPanel() {
   return (

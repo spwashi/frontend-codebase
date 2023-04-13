@@ -1,8 +1,8 @@
 import {useSelector} from 'react-redux';
 import {Feature} from '../../../_services/features/components/Feature';
 import React from 'react';
-import {selectPossibleProjectsLastFetched, selectPossibleProjectsList} from '../_services/redux/selectors';
-import {AllProjectsQuery} from '../_services/graphql/all/all';
+import {selectPossibleProjectsLastFetched, selectPossibleProjectsList} from '../services/redux/selectors';
+import {AllProjectsQuery} from '../services/graphql/all/all';
 
 
 function ProjectDisplayFeature() {

@@ -2,8 +2,8 @@ import {IUser} from '../../../../../.junction/models/user/models';
 import {FormConfig} from '../../../../_widgets/form/_features/fields/components/FieldFactory';
 import {contentTypeInput, srcInput, titleInput, userInput} from '../../data/config';
 import {CreateConceptMutationInput} from '../../../../../.junction/models/concept/behaviors/create';
-import {setFieldValue} from '../../../../_widgets/form/_features/fields/util/setFieldValue';
-import {makeFieldRequired} from '../../../../_widgets/form/_features/fields/util/makeFieldRequired';
+import {setFieldValue} from '../../../../_widgets/form/_features/fields/helpers/setFieldValue';
+import {makeFieldRequired} from '../../../../_widgets/form/_features/fields/helpers/makeFieldRequired';
 
 export type CreateConceptFormData = {
   username: string;

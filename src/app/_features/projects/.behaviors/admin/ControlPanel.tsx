@@ -3,7 +3,7 @@ import React from 'react';
 import {ProjectFeatures} from '../../components/Features';
 import {ProjectDisplayForm} from '../../components/display';
 import {CreateProjectForm} from '../create';
-import {AllProjectsQuery} from '../../_services/graphql/all/all';
+import {AllProjectsQuery} from '../../services/graphql/all/all';
 
 export function ProjectsControlPanel() {
   return <>

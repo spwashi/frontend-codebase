@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Tag} from '../../_services/graphql/one';
+import {Tag} from '../../services/graphql/one';
 import {ITag} from '../../../../../.junction/models/tag/models';
 import {FeatureRequirement} from '../../../../_services/features/components/Feature';
 import {FormWidget} from '../../../../_widgets/form/FormWidget';

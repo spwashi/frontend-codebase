@@ -1,6 +1,6 @@
 import React, {useCallback, useMemo, useRef, useState} from 'react';
 import {FormBody, FormConfig} from './_features/fields/components/FieldFactory';
-import _ from 'lodash';
+import cloneDeep from 'lodash/cloneDeep';
 import {formClassNames} from './styles/classNames';
 import {Form} from './components/Form';
 
@@ -45,7 +45,7 @@ export function FormWidget({
                                children,
                                onChange,
                              }: Params) {
-  const defaultForm = useMemo(() => _.cloneDeep(formConfig ?? {formId: '', items: []} as FormConfig), [formConfig]);
+  const defaultForm = useMemo(() => cloneDeep(formConfig ?? {formId: '', items: []} as FormConfig), [formConfig]);
   const formRef     = useRef(defaultForm)
   const form        = formRef.current;
 

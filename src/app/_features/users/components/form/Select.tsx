@@ -3,9 +3,9 @@ import {SelectInput, SelectOption} from '../../../../_widgets/form/_features/fie
 import {useSelector} from 'react-redux';
 import {FormContext} from '../../../../_widgets/form/context/context';
 import {updateFormItem} from '../../../../_widgets/form/_features/fields/hooks/useFormItem';
-import {selectPossibleUsersList} from '../../_services/redux/selectors';
+import {selectPossibleUsersList} from '../../services/redux/selectors';
 import {selectLoggedInUser} from '../../.behaviors/login/redux/reducer';
-import {AllUsersQuery} from '../../_services/graphql/all';
+import {AllUsersQuery} from '../../services/graphql/all';
 import {IUser} from '../../../../../.junction/models/user/models';
 import {Value} from '../../../../_widgets/form/_features/fields/components/input/text/Input';
 

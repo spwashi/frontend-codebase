@@ -3,7 +3,7 @@ import {ComponentMeta} from '@storybook/react';
 import {mainDecorator} from '../../../../../_services/storybook/decorators';
 import {FormWidget} from '../../../../../_widgets/form/FormWidget';
 import {ProjectSelect} from '../Select';
-import {AllProjectsQuery} from '../../../_services/graphql/all/all';
+import {AllProjectsQuery} from '../../../services/graphql/all/all';
 
 export default {
   title:      'Demo/Layout/Components/Form/Widgets/ProjectSelect',

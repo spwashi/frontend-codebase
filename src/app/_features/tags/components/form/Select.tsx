@@ -1,7 +1,7 @@
 import React from 'react';
 import {SelectInput} from '../../../../_widgets/form/_features/fields/components/input/select/SelectInput';
 import {useTagOptions} from '../../hooks/useOptions';
-import {AllTagsQuery} from '../../_services/graphql/all';
+import {AllTagsQuery} from '../../services/graphql/all';
 
 export function TagSelect({formKey}: { formKey?: string }) {
   const options = useTagOptions();

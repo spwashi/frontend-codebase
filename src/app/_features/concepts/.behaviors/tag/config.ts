@@ -4,7 +4,7 @@ import {ITag} from '../../../../../.junction/models/tag/models';
 import {FormConfig} from '../../../../_widgets/form/_features/fields/components/FieldFactory';
 import {conceptInput, tagsInput, userInput} from '../../data/config';
 import {TagConceptMutationInput} from '../../../../../.junction/models/concept/behaviors/tag';
-import {makeFieldRequired} from '../../../../_widgets/form/_features/fields/util/makeFieldRequired';
+import {makeFieldRequired} from '../../../../_widgets/form/_features/fields/helpers/makeFieldRequired';
 
 type TagConceptFormData = {
   username: string;

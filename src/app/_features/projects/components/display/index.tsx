@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
-import {Project} from '../../_services/graphql/one/components/Display';
+import {Project} from '../../services/graphql/one/components/Display';
 import {FormWidget} from '../../../../_widgets/form/FormWidget';
-import {SiteProjectController} from '../../_services/graphql/one';
+import {SiteProjectController} from '../../services/graphql/one';
 import {useSelector} from 'react-redux';
-import {selectProjectStateProject} from '../../_services/redux/selectors';
+import {selectProjectStateProject} from '../../services/redux/selectors';
 
 export function ProjectDisplayForm() {
   const [state, setState] = useState<any | null>();

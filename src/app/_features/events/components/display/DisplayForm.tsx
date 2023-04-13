@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Event} from '../../_services/graphql/one';
+import {Event} from '../../services/graphql/one';
 import {FeatureRequirement} from '../../../../_services/features/components/Feature';
 import {FormWidget} from '../../../../_widgets/form/FormWidget';
 import {LoggedIn} from '../../../users/.behaviors/login/components/Requirement';

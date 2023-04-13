@@ -1,5 +1,5 @@
 import {FormConfig, FormFieldConfig} from '../../../../../_widgets/form/_features/fields/components/FieldFactory';
-import {makeFieldRequired} from '../../../../../_widgets/form/_features/fields/util/makeFieldRequired';
+import {makeFieldRequired} from '../../../../../_widgets/form/_features/fields/helpers/makeFieldRequired';
 import {gql} from '@apollo/client';
 
 export const LOGIN_MUTATION = gql`

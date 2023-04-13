@@ -4,14 +4,14 @@ import {RestrictedTagConceptForm} from '../tag';
 import React from 'react';
 import {ConceptFeatures} from '../../components/Features';
 import {ConceptDisplayForm} from '../../components/display/DisplayForm';
-import {AllConceptsConceptDisplay} from '../../_services/graphql/all/components/DisplayAll';
+import {AllConceptsConceptDisplay} from '../../services/graphql/all/components/DisplayAll';
 import {Route, Routes} from 'react-router';
 import {NavLink} from 'react-router-dom';
 import {TagFeatures} from '../../../tags/components/Features';
 import {UserFeatures} from '../../../users/components/Features';
 import {RestrictedEditConceptForm} from '../edit';
-import {AllConceptsQuery} from '../../_services/graphql/all/components/FindAll';
-import {AllTagsQuery} from '../../../tags/_services/graphql/all';
+import {AllConceptsQuery} from '../../services/graphql/all/components/FindAll';
+import {AllTagsQuery} from '../../../tags/services/graphql/all';
 
 export function ConceptsControlPanel() {
   return (

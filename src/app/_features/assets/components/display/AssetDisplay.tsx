@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {AssetQuery} from '../../_services/graphql/queries/AssetQuery';
+import {AssetQuery} from '../../services/graphql/queries/AssetQuery';
 import {getUserSelectorUsername, UserSelect} from '../../../users/components/form/Select';
 import {IUser} from '../../../../../.junction/models/user/models';
 import {FormWidget} from '../../../../_widgets/form/FormWidget';

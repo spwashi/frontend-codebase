@@ -1,7 +1,7 @@
 import {combineReducers} from 'redux';
-import {selectUserFeature} from '../../../_services/redux/selectors';
+import {selectUserFeature} from '../../../services/redux/selectors';
 import {IRootAppState} from '../../../../../types/IRootAppState';
-import {UserFeatureSignupFeatureState} from '../../../_services/redux/types';
+import {UserFeatureSignupFeatureState} from '../../../services/redux/types';
 
 
 export const selectUserSignupFeature = (state: IRootAppState) => selectUserFeature(state).features.signup;

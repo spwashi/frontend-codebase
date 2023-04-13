@@ -1,7 +1,7 @@
 import {FormConfig, FormFieldConfig} from '../../../../_widgets/form/_features/fields/components/FieldFactory';
 import {CreateTagMutationInput} from '../../../../../.junction/models/tag/behaviors/create';
 import {IUser} from '../../../../../.junction/models/user/models';
-import {makeFieldRequired} from '../../../../_widgets/form/_features/fields/util/makeFieldRequired';
+import {makeFieldRequired} from '../../../../_widgets/form/_features/fields/helpers/makeFieldRequired';
 
 export type SelectMutationInputData = {
   title: string;

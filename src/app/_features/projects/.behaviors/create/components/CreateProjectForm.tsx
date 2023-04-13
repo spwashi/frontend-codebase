@@ -4,7 +4,7 @@ import {useMutationFormSubmitCallback} from '../../../../../_services/graphql/ho
 import {form__createProject, selectCreateProjectInput} from '../selectors';
 import {useCreateProjectMutation} from '../mutations';
 import {useDispatch} from 'react-redux';
-import {ACTION_PROJECT_CREATED} from '../../../_services/redux/reducer';
+import {ACTION_PROJECT_CREATED} from '../../../services/redux/reducer';
 import {FormWidget} from '../../../../../_widgets/form/FormWidget';
 import {FeatureRequirement} from '../../../../../_services/features/components/Feature';
 import {ErrorBoundary} from '../../../../../components/error/ErrorBoundary';

@@ -29,12 +29,12 @@ export const titleInput: FormFieldConfig       = {
 export const startInput: FormFieldConfig       = {
   title: 'Event Start',
   name:  'start',
-  type:  'datetime',
+  type:  'datetime-local',
 };
 export const endInput: FormFieldConfig         = {
   title: 'Event End',
   name:  'end',
-  type:  'datetime',
+  type:  'datetime-local',
 };
 export const descriptionInput: FormFieldConfig = {
   title: 'Event Contents',

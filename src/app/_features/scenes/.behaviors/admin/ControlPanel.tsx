@@ -3,13 +3,13 @@ import {RestrictedCreateSceneForm} from '../create';
 import React from 'react';
 import {SceneFeatures} from '../../components/Features';
 import {SceneDisplayForm} from '../../components/display/DisplayForm';
-import {AllScenesSceneDisplay} from '../../_services/graphql/all/components/DisplayAll';
+import {AllScenesSceneDisplay} from '../../services/graphql/all/components/DisplayAll';
 import {Route, Routes} from 'react-router';
 import {NavLink} from 'react-router-dom';
 import {TagFeatures} from '../../../tags/components/Features';
 import {UserFeatures} from '../../../users/components/Features';
 import {RestrictedEditSceneForm} from '../edit';
-import {AllScenesQuery} from '../../_services/graphql/all/components/FindAll';
+import {AllScenesQuery} from '../../services/graphql/all/components/FindAll';
 
 export function ScenesControlPanel() {
   return (

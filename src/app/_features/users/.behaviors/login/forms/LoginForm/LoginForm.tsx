@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import {useMutation} from '@apollo/client';
 import {useMutationFormSubmitCallback} from '../../../../../../_services/graphql/hooks/useMutationFormSubmitCallback';
 import {GraphqlMutationResponse} from '../../../../../../_services/graphql/components/api/GraphqlMutationResponse';
-import {setJwt} from '../../../../../../_services/jwt';
+import {setJwt} from '../../../../../../_services/jwt/helpers';
 import {useDispatch, useSelector} from 'react-redux';
 import {ACTION_RECEIVE_LOGIN, selectLoggedInUserName} from '../../redux/reducer';
 import {form__login, LOGIN_MUTATION, selectLoginInput} from '../../selectors';

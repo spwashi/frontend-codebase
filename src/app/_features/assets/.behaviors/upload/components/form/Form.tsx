@@ -2,9 +2,9 @@ import React, {useCallback, useState} from 'react';
 import {BACKEND_URL} from '../../../../../../constants';
 import {FormConfig} from '../../../../../../_widgets/form/_features/fields/components/FieldFactory';
 import {FormWidget} from '../../../../../../_widgets/form/FormWidget';
-import {useJwt} from '../../../../../../_services/jwt';
 import {LoggedIn} from '../../../../../users/.behaviors/login/components/Requirement';
 import {Dev} from '../../../../../../components/dev/Dev';
+import {useJwt} from '../../../../../../_services/jwt/hooks/useJwt';
 
 
 interface SubmissionCallbackParams {

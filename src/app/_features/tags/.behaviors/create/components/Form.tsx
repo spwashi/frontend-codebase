@@ -4,7 +4,7 @@ import {useMutationFormSubmitCallback} from '../../../../../_services/graphql/ho
 import {form__createTag, selectCreateTagInput} from '../selectors';
 import {useCreateTagMutation} from '../mutations';
 import {FormWidget} from '../../../../../_widgets/form/FormWidget';
-import {ACTION_TAG_CREATED} from '../../../_services/redux/reducer';
+import {ACTION_TAG_CREATED} from '../../../services/redux/reducer';
 import {useDispatch} from 'react-redux';
 import {LoggedIn} from '../../../../users/.behaviors/login/components/Requirement';
 

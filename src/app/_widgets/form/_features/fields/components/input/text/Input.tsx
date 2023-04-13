@@ -2,7 +2,6 @@ import React, {useCallback, useContext, useEffect, useMemo} from 'react';
 import {useFormItem} from '../../../hooks/useFormItem';
 import {FormContext} from '../../../../../context/context';
 import {convertFromRaw, convertToRaw, Editor, EditorState} from 'draft-js';
-import '../../../../../../../styles/stylesheets/_input.scss'
 
 type InputParams =
   { formKey?: string }
