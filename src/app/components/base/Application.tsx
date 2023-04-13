@@ -22,8 +22,9 @@ export function Application({canBeAdmin}: ApplicationParams) {
     <div id="application-container" className={className}>
       <div className="stage-open" aria-hidden="true"/>
       <div className="app-wrapper">
-        {controlPanel}
-        <main></main>
+        <main>
+          {controlPanel}
+        </main>
       </div>
       <div className="stage-close" aria-hidden="true"/>
     </div>
