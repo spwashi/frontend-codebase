@@ -3,7 +3,7 @@ import {Tag} from '../../services/graphql/one';
 import {ITag} from '../../../../../.junction/models/tag/models';
 import {FeatureRequirement} from '../../../../_services/features/components/Feature';
 import {FormWidget} from '../../../../_widgets/form/FormWidget';
-import {LoggedIn} from '../../../users/.behaviors/login/components/Requirement';
+import {LoggedIn} from '../../../users/behaviors/login/components/Requirement';
 
 export function TagsDisplayForm({}) {
   const [state, setState] = useState<any | null>();

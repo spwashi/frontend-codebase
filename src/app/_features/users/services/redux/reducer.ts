@@ -1,6 +1,6 @@
 import {combineReducers} from 'redux';
-import {loginReducer} from '../../.behaviors/login/redux/reducer';
-import {signupReducer} from '../../.behaviors/signup/redux/reducer';
+import {loginReducer} from '../../behaviors/login/redux/reducer';
+import {signupReducer} from '../../behaviors/signup/redux/reducer';
 import {UserFeatureState, UserFeatureStateDataUsers} from './types';
 
 export const ACTION_RECEIVE_ALL_USERS = 'RECEIVE_ALL_USERS';

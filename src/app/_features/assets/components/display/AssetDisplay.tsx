@@ -4,7 +4,7 @@ import {getUserSelectorUsername, UserSelect} from '../../../users/components/for
 import {IUser} from '../../../../../.junction/models/user/models';
 import {FormWidget} from '../../../../_widgets/form/FormWidget';
 import {FormConfig} from '../../../../_widgets/form/_features/fields/components/FieldFactory';
-import {LoggedIn} from '../../../users/.behaviors/login/components/Requirement';
+import {LoggedIn} from '../../../users/behaviors/login/components/Requirement';
 import {Form} from '../../../../_widgets/form/components/Form';
 
 function getDisplayAssetForm(user: { username?: string }) {

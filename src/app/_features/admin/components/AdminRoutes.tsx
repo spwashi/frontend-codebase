@@ -1,14 +1,14 @@
 import {Routes} from 'react-router-dom';
 import {Route} from 'react-router';
 import {adminPaths} from '../../../../.junction/routes/routes';
-import {UsersControlPanel} from '../../users/.behaviors/admin/ControlPanel';
-import {ProjectsControlPanel} from '../../projects/.behaviors/admin/ControlPanel';
-import {ConceptsControlPanel} from '../../concepts/.behaviors/admin/ControlPanel';
-import {ScenesControlPanel} from '../../scenes/.behaviors/admin/ControlPanel';
-import {EventsControlPanel} from '../../events/.behaviors/admin/ControlPanel';
-import {TagsControlPanel} from '../../tags/.behaviors/admin/ControlPanel';
-import {AssetsControlPanel} from '../../assets/.behaviors/admin/ControlPanel';
-import {LoggedIn, NotLoggedIn} from '../../users/.behaviors/login/components/Requirement';
+import {UsersControlPanel} from '../../users/behaviors/admin/ControlPanel';
+import {ProjectsControlPanel} from '../../projects/behaviors/admin/ControlPanel';
+import {ConceptsControlPanel} from '../../concepts/behaviors/admin/ControlPanel';
+import {ScenesControlPanel} from '../../scenes/behaviors/admin/ControlPanel';
+import {EventsControlPanel} from '../../events/behaviors/admin/ControlPanel';
+import {TagsControlPanel} from '../../tags/behaviors/admin/ControlPanel';
+import {AssetsControlPanel} from '../../assets/behaviors/admin/ControlPanel';
+import {LoggedIn, NotLoggedIn} from '../../users/behaviors/login/components/Requirement';
 import React from 'react';
 
 export function AdminRoutes() {
