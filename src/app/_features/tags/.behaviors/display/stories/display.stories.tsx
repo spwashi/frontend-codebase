@@ -1,9 +1,9 @@
 import React from 'react';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
-import {mainDecorator} from '../../../_services/storybook/decorators';
-import {RestrictedTagConceptForm} from '../../concepts/.behaviors/tag';
-import {FeatureList} from '../../../_services/features/components/FeatureList';
-import {TagsDisplayForm} from '../components/display';
+import {mainDecorator} from '../../../../../_services/storybook/decorators';
+import {RestrictedTagConceptForm} from '../../../../concepts/.behaviors/tag';
+import {FeatureList} from '../../../../../_services/features/components/FeatureList';
+import {TagsDisplayForm} from '../../../components/display';
 
 
 export default {

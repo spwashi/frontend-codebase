@@ -1,8 +1,8 @@
 import React from 'react';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
-import {mainDecorator} from '../../../_services/storybook/decorators';
-import {FeatureList} from '../../../_services/features/components/FeatureList';
-import {AssetDisplay} from '../components/display/AssetDisplay';
+import {mainDecorator} from '../../../../../_services/storybook/decorators';
+import {FeatureList} from '../../../../../_services/features/components/FeatureList';
+import {AssetDisplay} from '../../../components/display/AssetDisplay';
 
 
 export default {

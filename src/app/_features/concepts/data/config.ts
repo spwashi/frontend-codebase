@@ -7,22 +7,20 @@ export const contentTypes = <const>[
   'text/spw',
   'text/rich',
 ];
-
 export type ContentType = typeof contentTypes[number];
 
-export const mimeOptions = contentTypes.map(title => ({
-  title,
-  value:   title,
-  payload: title,
-})) as SelectOption<ContentType>[];
+export const mimeOptions =
+               contentTypes.map(title => ({
+                 title,
+                 value:   title,
+                 payload: title,
+               })) as SelectOption<ContentType>[];
 
-
-export const tagsInput: FormFieldConfig = {
+export const tagsInput: FormFieldConfig        = {
   title: 'Tags',
   name:  'tags',
   type:  'tags',
 }
-
 export const conceptInput: FormFieldConfig     = {
   title: 'Concept',
   name:  'concept',
