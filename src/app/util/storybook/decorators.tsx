@@ -1,8 +1,8 @@
 import {ApolloClient, ApolloProvider, createHttpLink, InMemoryCache} from '@apollo/client';
 import {Provider} from 'react-redux';
-import {persistor, store} from '../../app/.services/.redux/store';
+import {persistor, store} from '../../.services/.redux/store';
 import {PersistGate} from 'redux-persist/integration/react';
-import {FeaturesBoundary} from '../../app/.features/components/Feature';
+import {FeaturesBoundary} from '../../.features/components/Feature';
 import React from 'react';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';

@@ -1,6 +1,6 @@
 import React from 'react';
 import {ComponentMeta} from '@storybook/react';
-import {mainDecorator} from '../../../../../../util/storybook/decorators';
+import {mainDecorator} from '../../../../../util/storybook/decorators';
 import {FormWidget} from '../../../../../.widgets/.form/FormWidget';
 import {SceneSelect} from '../Select';
 import {AllScenesQuery} from '../../graphql/all/components/FindAll';

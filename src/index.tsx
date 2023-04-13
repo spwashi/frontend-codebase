@@ -1,35 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './styles/index.css';
-import './styles/app.scss';
-import App from './app/components/App';
-import {ApolloClient, ApolloProvider, createHttpLink, InMemoryCache} from '@apollo/client';
-import {Provider} from 'react-redux';
-import {persistor, store} from './app/.services/.redux/store';
-import {PersistGate} from 'redux-persist/integration/react';
-import {FeaturesBoundary} from './app/.features/components/Feature';
-import AdapterDateFns from '@mui/lab/AdapterDateFns';
-import LocalizationProvider from '@mui/lab/LocalizationProvider';
-import {RootCss} from './styles/root.css';
+import './app/styles/index.css';
+import './app/styles/app.scss';
+import ConnectedApplication from './app/components/ConnectedApplication';
 
-
-const httpLink = createHttpLink({
-                                  uri: process.env.REACT_APP_GRAPHQL_URL,
-                                });
-const client   = new ApolloClient({link: httpLink, cache: new InMemoryCache()});
 ReactDOM.render(
-  <LocalizationProvider dateAdapter={AdapterDateFns}>
-    <Provider store={store}>
-      <ApolloProvider client={client}>
-        <PersistGate loading={null} persistor={persistor}>
-          <FeaturesBoundary>
-            <RootCss/>
-            <App/>
-          </FeaturesBoundary>
-        </PersistGate>
-      </ApolloProvider>
-    </Provider>
-  </LocalizationProvider>
-  ,
+  <ConnectedApplication/>,
   document.getElementById('root'),
 );

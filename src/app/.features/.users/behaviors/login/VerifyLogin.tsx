@@ -1,7 +1,7 @@
 import {useDispatch} from 'react-redux';
-import {useJwt} from '../../../../../util/jwt';
+import {useJwt} from '../../../../util/jwt';
 import {useEffect} from 'react';
-import {BACKEND_URL} from '../../../../../util/constants';
+import {BACKEND_URL} from '../../../../util/constants';
 import {logout} from './Logout';
 
 export function VerifyLogin() {

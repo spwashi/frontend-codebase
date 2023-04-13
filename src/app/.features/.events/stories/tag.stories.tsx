@@ -1,6 +1,6 @@
 import React from 'react';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
-import {mainDecorator} from '../../../../util/storybook/decorators';
+import {mainDecorator} from '../../../util/storybook/decorators';
 import {RestrictedTagEventForm} from '../behaviors/tag';
 import {FeatureList} from '../../components/FeatureList';
 

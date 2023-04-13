@@ -1,7 +1,7 @@
 import React from 'react';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
 import {LoginForm} from '../behaviors/login/forms/LoginForm';
-import {mainDecorator} from '../../../../util/storybook/decorators';
+import {mainDecorator} from '../../../util/storybook/decorators';
 import {LogoutButton} from '../behaviors/login/Logout';
 import {FeatureList} from '../../components/FeatureList';
 

@@ -2,8 +2,8 @@ import {useSelector} from 'react-redux';
 import {selectLoggedInUserName} from './redux/reducer';
 import React from 'react';
 import classNames from 'classnames';
-import {appClassNames} from '../../../../../styles/classNames';
-import {useJwt} from '../../../../../util/jwt';
+import {appClassNames} from '../../../../styles/classNames';
+import {useJwt} from '../../../../util/jwt';
 
 /**
  * An error message indicating that a user must login

@@ -1,7 +1,7 @@
 import React, {useMemo, useState} from 'react';
 import {ProjectContext} from './context';
 import {IProject} from '../../../../.junction/models/project/models';
-import {useLocalStorage} from '../../../../util/hooks/useLocalStorage';
+import {useLocalStorage} from '../../../util/hooks/useLocalStorage';
 
 /**
  * Stores the project in Local Storage
