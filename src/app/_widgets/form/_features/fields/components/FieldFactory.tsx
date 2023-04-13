@@ -12,7 +12,7 @@ import {Textarea} from './input/text/Textarea';
 import {EventSelect} from '../../../../../_features/events/components/form/Select';
 import {SceneSelect} from '../../../../../_features/scenes/components/form/Select';
 import {ContentInput} from './input/ContentInput';
-import {ContentType} from '../../../../../_features/concepts/data/config';
+import {ContentType} from '../../../../../_features/concepts/data/config/contentTypes';
 import {FormWidget} from '../../../FormWidget';
 import {useFormItem} from '../hooks/useFormItem';
 import {getConfiguredDomain} from '../../../../../components/dev/Dev';

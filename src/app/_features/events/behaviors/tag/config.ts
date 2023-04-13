@@ -1,7 +1,7 @@
 import {IEvent} from '../../../../../.junction/models/event/models';
 import {ITag} from '../../../../../.junction/models/tag/models';
 import {FormConfig} from '../../../../_widgets/form/_features/fields/components/FieldFactory';
-import {eventInput, tagsInput} from '../../data/config';
+import {eventInput, tagsInput} from '../../data/config/inputs';
 import {TagEventMutationInput} from '../../../../../.junction/models/event/behaviors/tag';
 
 type TagEventFormData = {
