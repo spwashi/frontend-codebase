@@ -1,8 +1,10 @@
 import React, {useCallback, useMemo, useRef, useState} from 'react';
-import {FormBody, FormConfig} from './_features/fields/components/FieldFactory';
+import {FormBody} from './_features/fields/components/FieldFactory';
 import cloneDeep from 'lodash/cloneDeep';
 import {formClassNames} from './styles/classNames';
 import {Form} from './components/Form';
+
+import {FormConfig} from './_features/fields/types/formConfig';
 
 function useHandler(form: FormConfig, index: 'onReset' | 'onChange' | 'onSubmit', origHandler?: (e: any) => void): [boolean, (d: any) => void] {
   const [canSubmit, setCanSubmit] = useState(false);

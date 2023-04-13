@@ -1,6 +1,5 @@
-import {FormFieldConfig} from '../../../../_widgets/form/_features/fields/components/FieldFactory';
-
 import {mimeOptions} from './mimeOptions';
+import {FormFieldConfig} from '../../../../_widgets/form/_features/fields/types/fieldConfig';
 
 export const tagsInput: FormFieldConfig        = {
   title: 'Tags',

@@ -1,4 +1,4 @@
-import {FormFieldConfig} from '../components/FieldFactory';
+import {FormFieldConfig} from '../types/fieldConfig';
 
 export const makeFieldRequired = (f: FormFieldConfig): FormFieldConfig => {
   return {

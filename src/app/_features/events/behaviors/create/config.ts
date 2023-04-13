@@ -1,8 +1,9 @@
 import {IUser} from '../../../../../.junction/models/user/models';
-import {FormConfig} from '../../../../_widgets/form/_features/fields/components/FieldFactory';
 import {descriptionInput, endInput, startInput, titleInput, userInput} from '../../data/config/inputs';
 import {CreateEventMutationInput} from '../../../../../.junction/models/event/behaviors/create';
 import {makeFieldRequired} from '../../../../_widgets/form/_features/fields/helpers/makeFieldRequired';
+
+import {FormConfig} from '../../../../_widgets/form/_features/fields/types/formConfig';
 
 export type CreateEventFormData = {
   username: string;

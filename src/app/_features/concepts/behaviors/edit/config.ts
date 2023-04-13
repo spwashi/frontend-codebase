@@ -1,7 +1,8 @@
 import {IUser} from '../../../../../.junction/models/user/models';
-import {FormConfig} from '../../../../_widgets/form/_features/fields/components/FieldFactory';
 import {EditConceptMutationInput} from '../../../../../.junction/models/concept/behaviors/edit';
 import {contentTypeInput, idInput, srcInput, titleInput, userInput} from '../../data/config/inputs';
+
+import {FormConfig} from '../../../../_widgets/form/_features/fields/types/formConfig';
 
 export type SelectMutationInputData = {
   user: IUser;

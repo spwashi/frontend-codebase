@@ -1,4 +1,4 @@
-import {FormConfig} from '../../../../_widgets/form/_features/fields/components/FieldFactory';
+import {FormConfig} from '../../../../_widgets/form/_features/fields/types/formConfig';
 
 export type SelectMutationInputData = {
   id: string;

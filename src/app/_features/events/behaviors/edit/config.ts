@@ -1,8 +1,9 @@
 import {IUser} from '../../../../../.junction/models/user/models';
-import {FormConfig} from '../../../../_widgets/form/_features/fields/components/FieldFactory';
 import {descriptionInput, endInput, idInput, startInput, titleInput, userInput} from '../../data/config/inputs';
 import {IEvent} from '../../../../../.junction/models/event/models';
 import {EditEventMutationInput} from '../../../../../.junction/models/event/behaviors/edit';
+
+import {FormConfig} from '../../../../_widgets/form/_features/fields/types/formConfig';
 
 export type SelectMutationInputData = {
   user: IUser;

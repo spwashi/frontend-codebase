@@ -3,9 +3,10 @@ import {AssetQuery} from '../../services/graphql/queries/AssetQuery';
 import {getUserSelectorUsername, UserSelect} from '../../../users/components/form/Select';
 import {IUser} from '../../../../../.junction/models/user/models';
 import {FormWidget} from '../../../../_widgets/form/FormWidget';
-import {FormConfig} from '../../../../_widgets/form/_features/fields/components/FieldFactory';
 import {LoggedIn} from '../../../users/behaviors/login/components/Requirement';
 import {Form} from '../../../../_widgets/form/components/Form';
+
+import {FormConfig} from '../../../../_widgets/form/_features/fields/types/formConfig';
 
 function getDisplayAssetForm(user: { username?: string }) {
   return (

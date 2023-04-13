@@ -1,6 +1,7 @@
-import {FormConfig, FormFieldConfig} from '../../../../../_widgets/form/_features/fields/components/FieldFactory';
 import {makeFieldRequired} from '../../../../../_widgets/form/_features/fields/helpers/makeFieldRequired';
 import {gql} from '@apollo/client';
+import {FormFieldConfig} from '../../../../../_widgets/form/_features/fields/types/fieldConfig';
+import {FormConfig} from '../../../../../_widgets/form/_features/fields/types/formConfig';
 
 export const LOGIN_MUTATION = gql`
     mutation LogIn($user: UserLoginInput,$project: ProjectReferenceInput, $password: PasswordReferenceInput) {

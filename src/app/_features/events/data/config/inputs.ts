@@ -1,4 +1,4 @@
-import {FormFieldConfig} from '../../../../_widgets/form/_features/fields/components/FieldFactory';
+import {FormFieldConfig} from '../../../../_widgets/form/_features/fields/types/fieldConfig';
 
 export const tagsInput: FormFieldConfig = {
   title: 'Tags',
