@@ -1,5 +1,5 @@
-import {IUser} from '../../../../../.junction/models/user/models';
-import {EditConceptMutationInput} from '../../../../../.junction/models/concept/behaviors/edit';
+import {IUser} from '@junction/models/user/models';
+import {EditConceptMutationInput} from '@junction/models/concept/behaviors/edit';
 import {contentTypeInput, idInput, srcInput, titleInput, userInput} from '../../data/config/inputs';
 
 import {FormConfig} from '@widgets/form/features/fields/types/formConfig';

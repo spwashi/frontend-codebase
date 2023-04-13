@@ -13,6 +13,8 @@ export default defineConfig({
                                   '@features': path.resolve(__dirname, './src/app/@features'),
                                   '@widgets': path.resolve(__dirname, './src/app/@widgets'),
                                   '@services': path.resolve(__dirname, './src/app/@services'),
+                                  '@junction': path.resolve(__dirname, './src/app/@junction'),
+                                  '@core': path.resolve(__dirname, './src/app/@core'),
                                 },
                               },
                               plugins: [react(), viteTsconfigPaths(), svgrPlugin()],

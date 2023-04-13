@@ -17,7 +17,7 @@ function CreateSceneForm() {
   )
 }
 
-export function RestrictedCreateSceneForm({}) {
+export function RestrictedCreateSceneForm() {
   return (
     <LoggedIn>
       <CreateSceneForm/>

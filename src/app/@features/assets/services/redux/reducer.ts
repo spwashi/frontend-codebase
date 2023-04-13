@@ -4,13 +4,13 @@ import {AssetFeatureState, AssetFeatureStateDataAssets} from './types';
 export const assetReducer =
                combineReducers<AssetFeatureState>(
                  {
-                   enabled:  (state, action) => true,
-                   features: (state = {}, action) => (state),
+                   enabled:  () => true,
+                   features: (state = {}) => (state),
                    data:     combineReducers({
                                                assets: (state: AssetFeatureStateDataAssets = {
                                                  lastFetched: null,
                                                  list:        [],
-                                               }, action) => {
+                                               }) => {
                                                  return state;
                                                },
                                              }),

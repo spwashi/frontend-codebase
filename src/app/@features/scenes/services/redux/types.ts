@@ -1,5 +1,5 @@
 import {SelectOption} from '@widgets/form/features/fields/components/input/select/SelectInput';
-import {IScene} from '../../../../../.junction/models/scene/models';
+import {IScene} from '@junction/models/scene/models';
 import {IFeatureState, IKeyedState} from '@services/redux/types/state.types';
 
 export type SceneOption = SelectOption<IScene>;

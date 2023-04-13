@@ -2,7 +2,7 @@ import {useSelector} from 'react-redux';
 import {selectLoggedInUserName} from '../redux/reducer';
 import React from 'react';
 import classNames from 'classnames';
-import {appClassNames} from '../../../../../styles/classNames';
+import {appClassNames} from '@core/styles/classNames';
 
 import {useJwt} from '@services/jwt/hooks/useJwt';
 

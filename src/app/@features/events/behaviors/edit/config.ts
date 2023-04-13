@@ -1,7 +1,7 @@
-import {IUser} from '../../../../../.junction/models/user/models';
+import {IUser} from '@junction/models/user/models';
 import {descriptionInput, endInput, idInput, startInput, titleInput, userInput} from '../../data/config/inputs';
-import {IEvent} from '../../../../../.junction/models/event/models';
-import {EditEventMutationInput} from '../../../../../.junction/models/event/behaviors/edit';
+import {IEvent} from '@junction/models/event/models';
+import {EditEventMutationInput} from '@junction/models/event/behaviors/edit';
 
 import {FormConfig} from '@widgets/form/features/fields/types/formConfig';
 

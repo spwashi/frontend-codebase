@@ -1,5 +1,5 @@
-import {ITag} from '../../../../../.junction/models/tag/models';
-import {IRootAppState} from '../../../../types/IRootAppState';
+import {ITag} from '@junction/models/tag/models';
+import {IRootAppState} from '@core/types/IRootAppState';
 import {TagOption} from './types';
 
 

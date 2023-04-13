@@ -2,17 +2,19 @@ import React, {ChangeEvent, useCallback, useContext, useEffect, useMemo} from 'r
 import {useFormItem} from '../../../hooks/useFormItem';
 import {FormContext} from '@widgets/form/context/context';
 
-export type SelectOption<T extends any = any> =
+export type SelectOption<T = any> =
   {
     title: string;
     value: string;
     payload: T;
   };
 
-type Params<T extends any = any> =
+type Params<T = any> =
   {
     formKey?: string;
     type?: string;
+    name?: string;
+    multiple?: boolean;
     options: SelectOption<T>[];
   }
   & React.DetailedHTMLProps<React.SelectHTMLAttributes<HTMLSelectElement>, HTMLSelectElement>;

@@ -17,6 +17,6 @@ export default {
   ],
 } as ComponentMeta<typeof SignupForm>;
 
-const Template: ComponentStory<typeof SignupForm> = (args) => <SignupForm {...args}/>;
+const Template: ComponentStory<typeof SignupForm> = () => <SignupForm />;
 export const Signup                               = Template.bind({});
 Signup.args                                       = {};

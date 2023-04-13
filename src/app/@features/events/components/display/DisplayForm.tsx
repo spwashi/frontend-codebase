@@ -4,7 +4,7 @@ import {FeatureRequirement} from '@services/features/components/Feature';
 import {FormWidget} from '@widgets/form/FormWidget';
 import {LoggedIn} from '../../../users/behaviors/login/components/Requirement';
 
-export function EventDisplayForm({}) {
+export function EventDisplayForm() {
   const [state, setState] = useState<any | null>();
   const id                = state?.data?.event?.id;
   return (

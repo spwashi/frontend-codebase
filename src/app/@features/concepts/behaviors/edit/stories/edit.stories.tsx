@@ -17,7 +17,7 @@ export default {
   ],
 } as ComponentMeta<typeof CreateConceptForm>;
 
-const Template: ComponentStory<typeof CreateConceptForm> = (args) => <CreateConceptForm {...args}/>;
+const Template: ComponentStory<typeof CreateConceptForm> = () => <CreateConceptForm />;
 
 export const CreateConcept = Template.bind({});
 CreateConcept.args         = {};

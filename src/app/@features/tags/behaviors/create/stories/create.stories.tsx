@@ -17,7 +17,7 @@ export default {
   ],
 } as ComponentMeta<typeof RestrictedCreateTagForm>;
 
-const Template: ComponentStory<typeof RestrictedCreateTagForm> = (args) => <RestrictedCreateTagForm {...args}/>;
+const Template: ComponentStory<typeof RestrictedCreateTagForm> = (args) => <RestrictedCreateTagForm />;
 
 export const CreateTag = Template.bind({});
 CreateTag.args         = {};

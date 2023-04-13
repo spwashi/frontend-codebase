@@ -3,7 +3,7 @@ import {AdminControlPanel} from '@features/admin/components/AdminControlPanel';
 import {useSelector} from 'react-redux';
 import {select_noGraphql} from '@services/redux/reducer';
 import classnames from 'classnames';
-import {appClassNames} from '../../styles/classNames';
+import {appClassNames} from './styles/classNames';
 
 interface ApplicationParams {
   canBeAdmin: boolean;

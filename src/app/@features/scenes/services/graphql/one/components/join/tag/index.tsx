@@ -1,6 +1,6 @@
 import {gql, useMutation} from '@apollo/client';
-import {ITag} from '../../../../../../../../../.junction/models/tag/models';
-import {IScene} from '../../../../../../../../../.junction/models/scene/models';
+import {ITag} from '@junction/models/tag/models';
+import {IScene} from '@junction/models/scene/models';
 import React from 'react';
 
 function useDeleteSceneTagMutation() {
@@ -10,7 +10,7 @@ function useDeleteSceneTagMutation() {
       }
   `;
 
-  const [deleteTag, response] = useMutation(DELETE_TAG)
+  const [deleteTag] = useMutation(DELETE_TAG)
   return deleteTag;
 }
 export function SceneTag({scene, tag}: { tag: ITag, scene: IScene }) {
@@ -19,7 +19,7 @@ export function SceneTag({scene, tag}: { tag: ITag, scene: IScene }) {
 
   return (
     <div style={{border: 'thin solid red'}}>
-      <button onClick={e => deleteTag({
+      <button onClick={() => deleteTag({
                                         variables: {
                                           scene: {id: +scene.id},
                                           tags:  [{title, domain}],

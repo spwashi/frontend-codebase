@@ -1,6 +1,6 @@
 import {gql, useMutation} from '@apollo/client';
-import {ITag} from '../../../../../../../../../.junction/models/tag/models';
-import {IConcept} from '../../../../../../../../../.junction/models/concept/models';
+import {ITag} from '@junction/models/tag/models';
+import {IConcept} from '@junction/models/concept/models';
 import React from 'react';
 
 function useDeleteConceptTagMutation() {
@@ -18,7 +18,7 @@ function useDeleteConceptTagMutation() {
       }
   `;
 
-  const [deleteTag, response] = useMutation(DELETE_TAG)
+  const [deleteTag] = useMutation(DELETE_TAG)
   return deleteTag;
 }
 export function ConceptTag({concept, tag}: { tag: ITag, concept: IConcept }) {
@@ -27,7 +27,7 @@ export function ConceptTag({concept, tag}: { tag: ITag, concept: IConcept }) {
 
   return (
     <div style={{border: 'thin solid red'}}>
-      <button onClick={e => deleteTag({
+      <button onClick={() => deleteTag({
                                         variables: {
                                           concept: {id: +concept.id},
                                           tags:    [{title, domain}],

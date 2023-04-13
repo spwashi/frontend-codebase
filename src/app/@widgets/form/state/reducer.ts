@@ -6,7 +6,7 @@ export const ACTION_SET_DEFAULT  = 'setDefault';
 
 export function formReducer(state = getInitialState(), action: { type: string, payload: any }) {
   switch (action.type) {
-    case ACTION_RESET:
+    case ACTION_RESET: {
       return {
         ...state,
         key:       state.key + 1,
@@ -16,13 +16,15 @@ export function formReducer(state = getInitialState(), action: { type: string, p
           ...Object.fromEntries(
             Object
               .entries(state.data ?? {})
-              .map(([k, v]) => ([k, state.initialValue?.[k]])),
+              .map(([k]) => ([k, state.initialValue?.[k]])),
           ),
         },
         changed:   {},
       }
-    case ACTION_SET_DEFAULT:
-      let initialValue = action.payload;
+
+    }
+    case ACTION_SET_DEFAULT: {
+      const initialValue = action.payload;
       return {
         ...state,
         key:  state.key + 1,
@@ -36,10 +38,11 @@ export function formReducer(state = getInitialState(), action: { type: string, p
           ),
         },
       };
-    case ACTION_UPDATE_INDEX:
+    }
+    case ACTION_UPDATE_INDEX: {
       const {index, value} = action.payload;
       if (value === state.data?.[index]) return state;
-      let passive = action.payload?.passive;
+      const passive = action.payload?.passive;
       let data: any;
       let changed: { [p: string]: boolean };
       if (value === state.initialValue?.[index]) {
@@ -50,14 +53,14 @@ export function formReducer(state = getInitialState(), action: { type: string, p
         data    = {...state.data, [index]: value};
       }
 
-
-      let nextKey = passive ? state.key : state.key + 1;
+      const nextKey = passive ? state.key : state.key + 1;
       return {
         ...state,
         key:     nextKey,
         changed: passive ? state.changed : changed,
         data:    data,
       };
+    }
   }
   return state;
 }

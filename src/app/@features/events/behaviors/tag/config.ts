@@ -1,7 +1,7 @@
-import {IEvent} from '../../../../../.junction/models/event/models';
-import {ITag} from '../../../../../.junction/models/tag/models';
+import {IEvent} from '@junction/models/event/models';
+import {ITag} from '@junction/models/tag/models';
 import {eventInput, tagsInput} from '../../data/config/inputs';
-import {TagEventMutationInput} from '../../../../../.junction/models/event/behaviors/tag';
+import {TagEventMutationInput} from '@junction/models/event/behaviors/tag';
 
 import {FormConfig} from '@widgets/form/features/fields/types/formConfig';
 

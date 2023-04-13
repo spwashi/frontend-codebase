@@ -1,6 +1,6 @@
-import {IScene} from '../../../../../.junction/models/scene/models';
+import {IScene} from '@junction/models/scene/models';
 import {SceneOption} from './types';
-import {IRootAppState} from '../../../../types/IRootAppState';
+import {IRootAppState} from '@core/types/IRootAppState';
 
 function sceneToOption(scene: IScene): SceneOption {
   return {

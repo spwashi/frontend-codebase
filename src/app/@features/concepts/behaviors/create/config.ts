@@ -1,5 +1,5 @@
-import {IUser} from '../../../../../.junction/models/user/models';
-import {CreateConceptMutationInput} from '../../../../../.junction/models/concept/behaviors/create';
+import {IUser} from '@junction/models/user/models';
+import {CreateConceptMutationInput} from '@junction/models/concept/behaviors/create';
 import {setFieldValue} from '@widgets/form/features/fields/helpers/setFieldValue';
 import {makeFieldRequired} from '@widgets/form/features/fields/helpers/makeFieldRequired';
 import {contentTypeInput, srcInput, titleInput, userInput} from '../../data/config/inputs';

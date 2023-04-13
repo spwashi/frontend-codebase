@@ -17,7 +17,7 @@ export default {
   ],
 } as ComponentMeta<typeof UploadAssetForm>;
 
-const Template: ComponentStory<typeof UploadAssetForm> = (args) => <UploadAssetForm {...args}/>;
+const Template: ComponentStory<typeof UploadAssetForm> = () => <UploadAssetForm />;
 
 export const UploadAsset = Template.bind({});
 UploadAsset.args         = {};

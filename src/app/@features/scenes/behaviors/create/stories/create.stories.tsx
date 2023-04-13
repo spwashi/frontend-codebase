@@ -17,7 +17,7 @@ export default {
   ],
 } as ComponentMeta<typeof RestrictedCreateSceneForm>;
 
-const Template: ComponentStory<typeof RestrictedCreateSceneForm> = (args) => <RestrictedCreateSceneForm {...args}/>;
+const Template: ComponentStory<typeof RestrictedCreateSceneForm> = () => <RestrictedCreateSceneForm />;
 
 export const CreateScene = Template.bind({});
 CreateScene.args         = {};

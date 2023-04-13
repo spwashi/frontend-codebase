@@ -8,8 +8,8 @@ export const ACTION_DELETE_ONE_SCENE   = 'DELETE_ONE_SCENE';
 export const sceneReducer =
                combineReducers<SceneFeatureState>(
                  {
-                   enabled:  (state, action) => true,
-                   features: (state = {}, action) => (state),
+                   enabled:  () => true,
+                   features: (state = {}) => (state),
                    state:    (state = {key: 0, renderKey: 0}, action) => {
                      switch (action.type) {
                        case ACTION_DELETE_ONE_SCENE:

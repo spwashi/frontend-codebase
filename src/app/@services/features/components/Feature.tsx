@@ -1,5 +1,5 @@
 import React, {createContext, ReactNode, useContext, useEffect, useMemo, useReducer} from 'react';
-import {Dev} from '../../../components/dev/Dev';
+import {Dev} from '@core/dev/Dev';
 
 type IFeature =
   {
@@ -32,7 +32,7 @@ export function Feature({name, children, enabled = true}: IFeatureProps) {
   }, [enabled]);
 
 
-  const [state, dispatch] = useReducer((state: IFeature, action: { type: string }) => state, null);
+  const [state, dispatch] = useReducer((state: IFeature) => state, null);
   const value             = useMemo(() => ({state, dispatch}), [state, dispatch]);
   if (!enabled) return null;
   return (
@@ -51,7 +51,9 @@ export const FeaturesContext = createContext({
                                                state:    {
                                                  features: {},
                                                },
-                                               dispatch: (action: { type: string }) => {},
+                                               dispatch: () => {
+                                                 console.log('dispatched')
+                                               },
                                              } as IFeatureContext);
 
 type FeatureAction =

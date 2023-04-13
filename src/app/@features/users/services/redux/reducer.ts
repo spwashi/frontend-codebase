@@ -8,7 +8,7 @@ export const ACTION_RECEIVE_ALL_USERS = 'RECEIVE_ALL_USERS';
 export const userReducer =
                combineReducers<UserFeatureState>(
                  {
-                   enabled:  (state, action) => true,
+                   enabled:  () => true,
                    features: combineReducers({
                                                login:  loginReducer,
                                                signup: signupReducer,

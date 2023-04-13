@@ -1,7 +1,7 @@
-import {IUser} from '../../../../../.junction/models/user/models';
-import {IConcept} from '../../../../../.junction/models/concept/models';
-import {ITag} from '../../../../../.junction/models/tag/models';
-import {TagConceptMutationInput} from '../../../../../.junction/models/concept/behaviors/tag';
+import {IUser} from '@junction/models/user/models';
+import {IConcept} from '@junction/models/concept/models';
+import {ITag} from '@junction/models/tag/models';
+import {TagConceptMutationInput} from '@junction/models/concept/behaviors/tag';
 import {makeFieldRequired} from '@widgets/form/features/fields/helpers/makeFieldRequired';
 import {conceptInput, tagsInput, userInput} from '../../data/config/inputs';
 

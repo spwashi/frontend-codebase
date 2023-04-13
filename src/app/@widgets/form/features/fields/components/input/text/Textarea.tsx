@@ -3,7 +3,7 @@ import {FormContext} from '@widgets/form/context/context';
 import {useFormItem} from '../../../hooks/useFormItem';
 
 type TextareaParams =
-  { formKey?: string }
+  { formKey?: string; name?: string; }
   & React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLTextAreaElement>, HTMLTextAreaElement>;
 export function Textarea({formKey, name, ...rest}: TextareaParams) {
   const form              = useContext(FormContext);

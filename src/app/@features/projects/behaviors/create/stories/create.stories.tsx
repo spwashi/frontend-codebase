@@ -17,7 +17,7 @@ export default {
   ],
 } as ComponentMeta<typeof CreateProjectForm>;
 
-const Template: ComponentStory<typeof CreateProjectForm> = (args) => <CreateProjectForm {...args}/>;
+const Template: ComponentStory<typeof CreateProjectForm> = () => <CreateProjectForm />;
 
 export const CreateProject = Template.bind({});
 CreateProject.args         = {};

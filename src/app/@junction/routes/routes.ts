@@ -1,9 +1,3 @@
-type NavRoute = {
-  href: string;
-  title: string;
-  children?: NavRoute[];
-}
-
 const homeRoute  = {
   id:    'home',
   href:  '/',

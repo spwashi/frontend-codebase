@@ -7,19 +7,19 @@ import {useDispatch} from 'react-redux';
 import {ACTION_PROJECT_CREATED} from '../../../services/redux/reducer';
 import {FormWidget} from '@widgets/form/FormWidget';
 import {FeatureRequirement} from '@services/features/components/Feature';
-import {ErrorBoundary} from '../../../../../components/error/ErrorBoundary';
+import {ErrorBoundary} from '@core/error/ErrorBoundary';
 
 
 function ActiveForm() {
   const {send, response}  = useCreateProjectMutation();
   const dispatch          = useDispatch();
   const [fatal, setFatal] = useState<any>(null);
-  const onsubmit          = useMutationFormSubmitCallback(o => send(o).then((o) => { dispatch({type: ACTION_PROJECT_CREATED}); }).catch(e => {
+  const onsubmit          = useMutationFormSubmitCallback(o => send(o).then(() => { dispatch({type: ACTION_PROJECT_CREATED}); }).catch(e => {
     console.log(e);
   }), selectCreateProjectInput);
   return (
     <section id="form__project-create">
-      {fatal && <button onClick={e => (setFatal(null), response.reset())}>[clear]</button>}
+      {fatal && <button onClick={() => (setFatal(null), response.reset())}>[clear]</button>}
       <ErrorBoundary handler={e => setFatal(e)} error={fatal}>
         <FormWidget
           config={form__createProject}
@@ -33,7 +33,7 @@ function ActiveForm() {
   )
 }
 
-export function CreateProjectForm({}) {
+export function CreateProjectForm() {
   return (
     <FeatureRequirement name="projects.create" alternative={'Need Projects Create'}>
       <ActiveForm/>

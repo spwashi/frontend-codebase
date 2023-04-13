@@ -14,7 +14,7 @@ import {SceneSelect} from '@features/scenes/components/form/Select';
 import {ContentInput} from './input/ContentInput';
 import {FormWidget} from '../../../FormWidget';
 import {useFormItem} from '../hooks/useFormItem';
-import {getConfiguredDomain} from '../../../../../components/dev/Dev';
+import {getConfiguredDomain} from '@core/dev/Dev';
 import {FormFieldConfig} from '../types/fieldConfig';
 import {FormConfig} from '../types/formConfig';
 

@@ -1,9 +1,9 @@
 import {useCallback, useContext, useEffect, useState} from 'react';
-import {ACTION_UPDATE_INDEX} from '../../../state/reducer';
 import {FormState} from '../../../context/types/state';
 import {FormContext, ID_EMPTY} from '../../../context/context';
+import {ACTION_UPDATE_INDEX} from '@widgets/form/state/reducer';
 
-export function updateFormItem<T>(form: FormState, formKey: string, value: T, passive: boolean = false) {
+export function updateFormItem<T>(form: FormState, formKey: string, value: T, passive = false) {
   form.dispatch?.({
                     type:    ACTION_UPDATE_INDEX,
                     payload: {
@@ -23,14 +23,14 @@ export function useFormItem<T = any>(
   form: FormState,
   formKey: string | null,
   valueMapper: (v: any) => T = v => v,
-  passive: boolean           = false,
+  passive                    = false,
 ) {
   const [localValue, setLocalValue] = useState<T | null>(form?.data?.[formKey ?? ''] ?? null);
 
   const {id} = useContext(FormContext);
 
   useEffect(() => {
-    let changed = typeof form?.changed?.[formKey ?? ''] === 'undefined';
+    const changed = typeof form?.changed?.[formKey ?? ''] === 'undefined';
     if (changed) {
       setLocalValue(null);
     }

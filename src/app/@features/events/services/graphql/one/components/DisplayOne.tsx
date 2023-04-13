@@ -1,17 +1,10 @@
 import {EventTag} from './join/tag';
-import React, {useState} from 'react';
-import {IEvent_Complete, IEventTag_Complete} from '../../../../../../../.junction/models/event/hybrids';
+import React from 'react';
+import {IEvent_Complete, IEventTag_Complete} from '@junction/models/event/hybrids';
 import {useActiveEvent} from '../context/context';
-import {convertFromRaw, Editor, EditorState} from 'draft-js';
-import '../../../../../../styles/features/event/event.scss';
-import {IEvent} from '../../../../../../../.junction/models/event/models';
-import {ErrorBoundary} from '../../../../../../components/error/ErrorBoundary';
+import {IEvent} from '@junction/models/event/models';
+import {ErrorBoundary} from '@core/error/ErrorBoundary';
 import {DeleteEventButton} from './DeleteButton';
-
-function RichText({src}: { src: string }) {
-  const [editorState, setEditorState] = useState(() => EditorState.createWithContent(convertFromRaw(JSON.parse(src))));
-  return <Editor readOnly onChange={setEditorState} editorState={editorState}/>
-}
 
 interface EventDisplayParams {event: IEvent | IEvent_Complete;}
 
@@ -28,6 +21,7 @@ function Internal({event}: EventDisplayParams) {
           <div className="end">{end}</div>
           d <div style={{border: 'thick solid black', display: 'inline-flex'}}>
           {eventTags && eventTags.map(({tag}: IEventTag_Complete) => <EventTag
+            key={tag.id}
             tag={tag}
             event={event}
           />)}

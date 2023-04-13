@@ -1,5 +1,6 @@
 type IAssetId = number;
 
+
 export interface IAsset {
   id: IAssetId;
   uri: string;

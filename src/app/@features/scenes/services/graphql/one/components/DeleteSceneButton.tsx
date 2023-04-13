@@ -1,7 +1,7 @@
 import {gql, useMutation} from '@apollo/client';
 import {useDispatch} from 'react-redux';
 import React, {useCallback} from 'react';
-import {Log} from '../../../../../../components/dev/Log';
+import {Log} from '@core/dev/Log';
 import {ACTION_DELETE_ONE_SCENE} from '../../../redux/reducer';
 
 function useDeleteSceneMutation() {
@@ -16,14 +16,14 @@ function useDeleteSceneMutation() {
   return useMutation(DELETE_SCENE);
 }
 export function DeleteSceneButton({id}: { id: number }) {
-  const [deleteScene, {error, data}] = useDeleteSceneMutation();
+  const [deleteScene, {error}] = useDeleteSceneMutation();
   const dispatch                     = useDispatch();
   const doDelete                     = useCallback(() => {
     if (error) {
       return;
     }
     deleteScene({variables: {id}})
-      .then(e => {
+      .then(() => {
         dispatch({type: ACTION_DELETE_ONE_SCENE, payload: {id}})
       });
   }, [id, deleteScene]);

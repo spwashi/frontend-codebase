@@ -1,7 +1,7 @@
 import {gql, useMutation} from '@apollo/client';
 import {useDispatch} from 'react-redux';
 import React, {useCallback} from 'react';
-import {Log} from '../../../../../../components/dev/Log';
+import {Log} from '@core/dev/Log';
 import {ACTION_DELETE_ONE_EVENT} from '../../../redux/reducer';
 
 function useDeleteEventMutation() {
@@ -16,14 +16,14 @@ function useDeleteEventMutation() {
   return useMutation(DELETE_EVENT);
 }
 export function DeleteEventButton({id}: { id: number }) {
-  const [deleteEvent, {error, data}] = useDeleteEventMutation();
+  const [deleteEvent, {error}] = useDeleteEventMutation();
   const dispatch                     = useDispatch();
   const doDelete                     = useCallback(() => {
     if (error) {
       return;
     }
     deleteEvent({variables: {id}})
-      .then(e => {
+      .then(() => {
         dispatch({type: ACTION_DELETE_ONE_EVENT, payload: {id}})
       });
   }, [id, deleteEvent]);

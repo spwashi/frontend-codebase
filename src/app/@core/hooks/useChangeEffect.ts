@@ -8,7 +8,7 @@ function usePrevious(value: any) {
   return ref.current;
 }
 
-export function useChangeEffect(effectFunction: Function, values: any[]) {
+export function useChangeEffect(effectFunction: (...par: any) => any, values: any[]) {
   const previousValues = usePrevious(values);
   useEffect(() => {
     const changed = values.some((value, index) => previousValues && !Object.is(value, previousValues[index]));

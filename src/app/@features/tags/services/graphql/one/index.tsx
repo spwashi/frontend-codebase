@@ -1,5 +1,5 @@
 import React from 'react';
-import {ITagIdentifyingPartial} from '../../../../../../.junction/models/tag/models';
+import {ITagIdentifyingPartial} from '@junction/models/tag/models';
 import {TagContextProvider} from './context/Provider';
 import {TagDisplay} from './components/Display';
 import {OneTagQuery} from './components/Query';
@@ -7,7 +7,7 @@ import {useActiveTag} from './context/hooks/useActiveOne';
 import {gql, useMutation} from '@apollo/client';
 import {selectLoggedInUser} from '@features/users/behaviors/login/redux/reducer';
 import {useSelector} from 'react-redux';
-import {Log} from '../../../../../components/dev/Log';
+import {Log} from '@core/dev/Log';
 
 function DeleteTag() {
   const tag  = useActiveTag();
@@ -29,7 +29,7 @@ function DeleteTag() {
   return (
     <React.Fragment>
       <Log>{response.data}</Log>
-      <button onClick={e => send({
+      <button onClick={() => send({
                                    variables: {
                                      title:  tag?.title,
                                      domain: tag?.domain,

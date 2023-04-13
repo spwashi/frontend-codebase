@@ -1,6 +1,6 @@
-import {IProject} from '../../../../../.junction/models/project/models';
+import {IProject} from '@junction/models/project/models';
 import {SelectOption} from '@widgets/form/features/fields/components/input/select/SelectInput';
-import {IRootAppState} from '../../../../types/IRootAppState';
+import {IRootAppState} from '@core/types/IRootAppState';
 import {ProjectOption} from './types';
 
 

@@ -23,7 +23,7 @@ function CreateTagForm() {
   )
 }
 
-export function RestrictedCreateTagForm({}) {
+export function RestrictedCreateTagForm() {
   return (
     <LoggedIn>
       <CreateTagForm/>

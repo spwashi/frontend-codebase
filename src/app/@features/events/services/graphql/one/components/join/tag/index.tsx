@@ -1,6 +1,6 @@
 import {gql, useMutation} from '@apollo/client';
-import {ITag} from '../../../../../../../../../.junction/models/tag/models';
-import {IEvent} from '../../../../../../../../../.junction/models/event/models';
+import {ITag} from '@junction/models/tag/models';
+import {IEvent} from '@junction/models/event/models';
 import React from 'react';
 
 function useDeleteEventTagMutation() {
@@ -17,7 +17,7 @@ function useDeleteEventTagMutation() {
       }
   `;
 
-  const [deleteTag, response] = useMutation(DELETE_TAG)
+  const [deleteTag] = useMutation(DELETE_TAG)
   return deleteTag;
 }
 export function EventTag({event, tag}: { tag: ITag, event: IEvent }) {
@@ -26,7 +26,7 @@ export function EventTag({event, tag}: { tag: ITag, event: IEvent }) {
 
   return (
     <div style={{border: 'thin solid red'}}>
-      <button onClick={e => deleteTag({
+      <button onClick={() => deleteTag({
                                         variables: {
                                           event: {id: +event.id},
                                           tags:  [{title, domain}],

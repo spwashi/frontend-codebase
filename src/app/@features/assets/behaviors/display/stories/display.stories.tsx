@@ -21,7 +21,7 @@ export default {
   ],
 } as ComponentMeta<typeof AssetDisplay>;
 
-const Template: ComponentStory<typeof AssetDisplay> = (args) => <AssetDisplay {...args}/>;
+const Template: ComponentStory<typeof AssetDisplay> = () => <AssetDisplay />;
 
 export const DisplayAsset = Template.bind({});
 DisplayAsset.args         = {};

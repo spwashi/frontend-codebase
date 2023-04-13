@@ -2,9 +2,8 @@ import React from 'react';
 import {Meta, StoryObj} from '@storybook/react';
 import {mainDecorator} from '@services/storybook/decorators';
 import {FormWidget} from './FormWidget';
-import {Form} from './components/Form';
 
-let meta: Meta = {
+const meta: Meta = {
   title:      'Demo/Layout/Forms/Basic',
   args:       {},
   decorators: [

@@ -17,7 +17,7 @@ export default {
   ],
 } as ComponentMeta<typeof RestrictedEditConceptForm>;
 
-const Template: ComponentStory<typeof RestrictedEditConceptForm> = (args) => <RestrictedEditConceptForm {...args}/>;
+const Template: ComponentStory<typeof RestrictedEditConceptForm> = () => <RestrictedEditConceptForm />;
 
 export const EditConcept = Template.bind({});
 EditConcept.args         = {};

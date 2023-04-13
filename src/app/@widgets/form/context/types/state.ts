@@ -1,6 +1,6 @@
 import {FormEvent} from 'react';
 
-export interface FormState<T extends any = any> {
+export interface FormState<T= any> {
   id?: string;
 
   key: number;

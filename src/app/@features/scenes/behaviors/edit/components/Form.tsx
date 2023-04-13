@@ -12,7 +12,7 @@ import {Form} from '@widgets/form/components/Form';
 function EditSceneForm() {
   const {send, response}  = useEditSceneMutation();
   const onsubmit          = useMutationFormSubmitCallback(send, selectEditSceneInput);
-  const [{data}, setData] = useState<any | null>({});
+  const [, setData] = useState<any | null>({});
 
   const [{data: {scene: _scene} = {} as any} = {} as any, setScene] = useState({} as any);
   return (
@@ -42,7 +42,7 @@ function EditSceneForm() {
   )
 }
 
-export function RestrictedEditSceneForm({}) {
+export function RestrictedEditSceneForm() {
   return (
     <LoggedIn>
       <EditSceneForm/>

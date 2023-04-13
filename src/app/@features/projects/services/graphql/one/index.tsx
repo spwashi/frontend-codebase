@@ -1,12 +1,12 @@
 import React, {useContext} from 'react';
-import {IProjectIdentifyingPartial} from '../../../../../../.junction/models/project/models';
+import {IProjectIdentifyingPartial} from '@junction/models/project/models';
 import {ProjectTemporaryContextProvider} from '../../../context/Provider';
 import {ActiveProject} from './components/Display';
 import {OneProjectQuery} from './components/Query';
 import {ProjectContext} from '../../../context/context';
 import {useDispatch} from 'react-redux';
 import {ACTION_PROJECT_SELECTED} from '../../redux/reducer';
-import {useChangeEffect} from '../../../../../hooks/useChangeEffect';
+import {useChangeEffect} from '@core/hooks/useChangeEffect';
 
 function SiteProjectDeactivateButton() {
   const context = useContext(ProjectContext);

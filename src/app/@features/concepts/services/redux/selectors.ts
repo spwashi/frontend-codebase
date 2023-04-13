@@ -1,6 +1,6 @@
-import {IConcept} from '../../../../../.junction/models/concept/models';
+import {IConcept} from '@junction/models/concept/models';
 import {ConceptOption} from './types';
-import {IRootAppState} from '../../../../types/IRootAppState';
+import {IRootAppState} from '@core/types/IRootAppState';
 
 function conceptToOption(concept: IConcept): ConceptOption {
   return {

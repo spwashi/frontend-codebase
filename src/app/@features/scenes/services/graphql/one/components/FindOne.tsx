@@ -1,4 +1,4 @@
-import {IScene, ISceneIdentifyingPartial} from '../../../../../../../.junction/models/scene/models';
+import {IScene, ISceneIdentifyingPartial} from '@junction/models/scene/models';
 import {gql, useQuery} from '@apollo/client';
 import React, {useContext, useEffect} from 'react';
 import {SceneContext} from '../context/context';

@@ -1,6 +1,6 @@
-import {IUser} from '../../../../../.junction/models/user/models';
+import {IUser} from '@junction/models/user/models';
 import {descriptionInput, endInput, startInput, titleInput, userInput} from '../../data/config/inputs';
-import {CreateEventMutationInput} from '../../../../../.junction/models/event/behaviors/create';
+import {CreateEventMutationInput} from '@junction/models/event/behaviors/create';
 import {makeFieldRequired} from '@widgets/form/features/fields/helpers/makeFieldRequired';
 
 import {FormConfig} from '@widgets/form/features/fields/types/formConfig';

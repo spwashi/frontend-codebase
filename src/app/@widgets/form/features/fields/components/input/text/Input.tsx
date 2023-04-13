@@ -14,7 +14,7 @@ interface Div {
   update: () => void
 }
 
-function InnerValue({children, value, update}: Div) {
+function InnerValue({children, update}: Div) {
   useEffect(() => {
     // update();
   }, [update]);
@@ -50,13 +50,13 @@ export function Value({
     [localValue],
   );
 
-  const id = useMemo(() => `input--${Math.random()}`.replace('.', ''), []);
+  useMemo(() => `input--${Math.random()}`.replace('.', ''), []);
 
   return <>
     <div className="input-wrapper">
       <FormContext.Consumer>
         {
-          ({key, data}) => {
+          ({key}) => {
             return <InnerValue key={key} value={value} update={doUpdate}>{children}</InnerValue>
           }
         }
@@ -72,7 +72,9 @@ function useRichTextEditor(params: InputParams, [localValue, update]: [EditorSta
     try {
       const prev = JSON.parse('' + (value ?? ''));
       return EditorState.createWithContent(convertFromRaw(prev))
-    } catch (e) { }
+    } catch (e) {
+      console.log(e);
+    }
     return EditorState.createEmpty();
   });
   useEffect(() => {

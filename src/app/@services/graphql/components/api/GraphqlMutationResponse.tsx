@@ -1,14 +1,14 @@
 import {MutationResult} from '@apollo/client';
 import React from 'react';
 import {Loading} from '../layout/Loading';
-import {NotDev} from '../../../../components/dev/Dev';
+import {NotDev} from '@core/dev/Dev';
 
 class GraphQlError extends Error {
   constructor(error: MutationResult['error']) {
     super();
     if (!error) return;
-    let oneError = error.graphQLErrors.length === 1;
-    let firstErr = error.graphQLErrors[0];
+    const oneError = error.graphQLErrors.length === 1;
+    const firstErr = error.graphQLErrors[0];
     Object.assign(this, {
       error:   true,
       message: oneError ? firstErr.message : undefined,

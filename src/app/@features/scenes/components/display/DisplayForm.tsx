@@ -3,7 +3,7 @@ import {Scene} from '../../services/graphql/one';
 import {FeatureRequirement} from '@services/features/components/Feature';
 import {FormWidget} from '@widgets/form/FormWidget';
 
-export function SceneDisplayForm({}) {
+export function SceneDisplayForm() {
   const [state, setState] = useState<any | null>();
   const id                = state?.data?.scene?.id;
   return (

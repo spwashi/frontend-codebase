@@ -17,7 +17,7 @@ function ActiveForm() {
   )
 }
 
-export function CreateEventForm({}) {
+export function CreateEventForm() {
   return (
     <LoggedIn>
       <ActiveForm/>

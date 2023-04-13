@@ -4,7 +4,7 @@ import {FormContext} from '@widgets/form/context/context';
 
 
 type Params =
-  { formKey: string }
+  { formKey: string; name: string; }
   & React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
 
 

@@ -6,14 +6,14 @@ import {useEditConceptMutation} from '../mutation';
 import {FormWidget} from '@widgets/form/FormWidget';
 import {LoggedIn} from '@features/users/behaviors/login/components/Requirement';
 import {ConceptSelect} from '../../../components/form/Select';
-import {Log} from '../../../../../components/dev/Log';
+import {Log} from '@core/dev/Log';
 import {formClassNames} from '@widgets/form/styles/classNames';
 import {Form} from '@widgets/form/components/Form';
 
 export function EditConceptForm() {
   const {send, response}  = useEditConceptMutation();
   const onsubmit          = useMutationFormSubmitCallback(send, selectEditConceptInput);
-  const [{data}, setData] = useState<any | null>({});
+  const [, setData] = useState<any | null>({});
 
   const [{data: {concept: _concept} = {} as any} = {} as any, setConcept] = useState({} as any);
   return (
@@ -44,7 +44,7 @@ export function EditConceptForm() {
   )
 }
 
-export function RestrictedEditConceptForm({}) {
+export function RestrictedEditConceptForm() {
   return (
     <LoggedIn>
       <EditConceptForm/>

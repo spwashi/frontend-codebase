@@ -1,14 +1,14 @@
 import React from 'react';
 import {useActiveScene} from '../context/context';
-import {IScene} from '../../../../../../../.junction/models/scene/models';
-import {ErrorBoundary} from '../../../../../../components/error/ErrorBoundary';
+import {IScene} from '@junction/models/scene/models';
+import {ErrorBoundary} from '@core/error/ErrorBoundary';
 import {DeleteSceneButton} from './DeleteSceneButton';
 
 interface SceneDisplayParams {scene: IScene;}
 
 
 function Internal({scene}: SceneDisplayParams) {
-  const {id, title, name} = scene as IScene;
+  const {title, name} = scene as IScene;
 
   return <div className="scene-wrapper">
     <article className="scene">

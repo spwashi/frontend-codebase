@@ -28,6 +28,8 @@
       "@features/*": [ "./src/app/@features/*" ],
       "@widgets/*": [ "./src/app/@widgets/*" ],
       "@services/*": [ "./src/app/@services/*" ],
+      "@junction/*": [ "./src/app/@junction/*" ],
+      "@core/*": [ "./src/app/@core/*" ],
     }
   },
   "include": [

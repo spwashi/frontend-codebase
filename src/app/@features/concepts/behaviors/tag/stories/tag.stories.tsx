@@ -21,7 +21,7 @@ export default {
   ],
 } as ComponentMeta<typeof RestrictedTagConceptForm>;
 
-const Template: ComponentStory<typeof RestrictedTagConceptForm> = (args) => <RestrictedTagConceptForm {...args}/>;
+const Template: ComponentStory<typeof RestrictedTagConceptForm> = () => <RestrictedTagConceptForm />;
 
 export const TagConcept = Template.bind({});
 TagConcept.args         = {};

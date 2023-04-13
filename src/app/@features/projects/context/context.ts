@@ -1,5 +1,5 @@
 import {createContext} from 'react';
-import {IProject} from '../../../../.junction/models/project/models';
+import {IProject} from '@junction/models/project/models';
 
 type IProjectContext = {
   project: IProject | null;
@@ -7,5 +7,7 @@ type IProjectContext = {
 };
 export const ProjectContext = createContext<IProjectContext>({
                                                                project:    null,
-                                                               setProject: () => {},
+                                                               setProject: () => {
+                                                                 console.log('project set')
+                                                               },
                                                              });

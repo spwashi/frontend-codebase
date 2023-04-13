@@ -1,11 +1,11 @@
 import {ConceptTag} from './join/tag';
 import React, {useState} from 'react';
-import {IConcept_Complete, IConceptTag_Complete} from '../../../../../../../.junction/models/concept/hybrids';
+import {IConcept_Complete, IConceptTag_Complete} from '@junction/models/concept/hybrids';
 import {useActiveConcept} from '../context/context';
 import {convertFromRaw, Editor, EditorState} from 'draft-js';
-import {Log} from '../../../../../../components/dev/Log';
-import {IConcept} from '../../../../../../../.junction/models/concept/models';
-import {ErrorBoundary} from '../../../../../../components/error/ErrorBoundary';
+import {Log} from '@core/dev/Log';
+import {IConcept} from '@junction/models/concept/models';
+import {ErrorBoundary} from '@core/error/ErrorBoundary';
 import {DeleteConceptButton} from './DeleteButton';
 
 function RichText({src}: { src: string }) {
@@ -17,7 +17,7 @@ interface ConceptDisplayParams {concept: IConcept | IConcept_Complete;}
 
 
 function Internal({concept}: ConceptDisplayParams) {
-  const {id, title, contentType, src, ConceptTag: conceptTags} = concept as IConcept_Complete;
+  const {title, contentType, src, ConceptTag: conceptTags} = concept as IConcept_Complete;
 
   return <div className="concept-wrapper">
     <article className="concept">
@@ -42,6 +42,7 @@ function Internal({concept}: ConceptDisplayParams) {
           </div>
           <div style={{border: 'thick solid black', display: 'inline-flex'}}>
             {conceptTags && conceptTags.map(({tag}: IConceptTag_Complete) => <ConceptTag
+              key={tag.id}
               tag={tag}
               concept={concept}
             />)}

@@ -2,7 +2,7 @@ import React, {useCallback, useState} from 'react';
 import {BACKEND_URL} from '../../../../../../constants';
 import {FormWidget} from '@widgets/form/FormWidget';
 import {LoggedIn} from '@features/users/behaviors/login/components/Requirement';
-import {Dev} from '../../../../../../components/dev/Dev';
+import {Dev} from '@core/dev/Dev';
 import {useJwt} from '@services/jwt/hooks/useJwt';
 
 import {FormConfig} from '@widgets/form/features/fields/types/formConfig';
@@ -52,7 +52,7 @@ const form__uploadAsset: FormConfig =
           ],
         };
 
-export function UploadAssetForm({}) {
+export function UploadAssetForm() {
   const [out, setOut]     = useState<any | null>(null);
   const jwt               = useJwt();
   const [error, setError] = useState<any | null>(null);

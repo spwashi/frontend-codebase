@@ -1,4 +1,4 @@
-import {ITag} from '../../../../../.junction/models/tag/models';
+import {ITag} from '@junction/models/tag/models';
 import {SelectOption} from '@widgets/form/features/fields/components/input/select/SelectInput';
 import {IFeatureState, IKeyedState} from '@services/redux/types/state.types';
 

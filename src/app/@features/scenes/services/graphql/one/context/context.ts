@@ -1,5 +1,5 @@
 import {createContext, useContext} from 'react';
-import {IScene} from '../../../../../../../.junction/models/scene/models';
+import {IScene} from '@junction/models/scene/models';
 
 type Scene =
   IScene

@@ -21,7 +21,7 @@ export default {
   ],
 } as ComponentMeta<typeof EventDisplayForm>;
 
-const Template: ComponentStory<typeof EventDisplayForm> = (args) => <EventDisplayForm {...args}/>;
+const Template: ComponentStory<typeof EventDisplayForm> = () => <EventDisplayForm />;
 
 export const DisplayEvent = Template.bind({});
 DisplayEvent.args         = {};

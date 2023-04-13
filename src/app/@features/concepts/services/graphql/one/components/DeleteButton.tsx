@@ -1,9 +1,9 @@
 import {gql, useMutation} from '@apollo/client';
 import {useDispatch} from 'react-redux';
 import React, {useCallback} from 'react';
-import {Log} from '../../../../../../components/dev/Log';
+import {Log} from '@core/dev/Log';
 import {ACTION_DELETE_ONE_CONCEPT} from '../../../redux/reducer';
-import {DeleteConceptMutationInput} from '../../../../../../../.junction/models/concept/behaviors/delete';
+import {DeleteConceptMutationInput} from '@junction/models/concept/behaviors/delete';
 
 function useDeleteConceptMutation() {
   const DELETE_CONCEPT = gql`
@@ -17,14 +17,14 @@ function useDeleteConceptMutation() {
   return useMutation(DELETE_CONCEPT);
 }
 export function DeleteConceptButton({id}: DeleteConceptMutationInput['concept']) {
-  const [deleteConcept, {error, data}] = useDeleteConceptMutation();
+  const [deleteConcept, {error}] = useDeleteConceptMutation();
   const dispatch                       = useDispatch();
   const doDelete                       = useCallback(() => {
     if (error) {
       return;
     }
     deleteConcept({variables: {id}})
-      .then(e => {
+      .then(() => {
         dispatch({type: ACTION_DELETE_ONE_CONCEPT, payload: {id} as DeleteConceptMutationInput['concept']})
       });
   }, [id, deleteConcept]);

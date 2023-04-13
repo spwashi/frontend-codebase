@@ -8,7 +8,7 @@ export function isDev() {
 
 export function getConfiguredDomain() {
   if (typeof process !== 'undefined') {
-    let storybookName = process?.env.STORYBOOK_PROJECT_NAME;
+    const storybookName = process?.env.STORYBOOK_PROJECT_NAME;
     if (storybookName) {
       return storybookName;
     }

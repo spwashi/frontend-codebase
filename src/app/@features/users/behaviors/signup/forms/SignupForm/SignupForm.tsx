@@ -54,7 +54,7 @@ function ActiveForm() {
     </React.Fragment>
   )
 }
-export function SignupForm({}) {
+export function SignupForm() {
   const loggedInUser = useSelector(selectLoggedInUserName);
   if (loggedInUser) return null;
   return (

@@ -22,7 +22,7 @@ export default {
   ],
 } as ComponentMeta<typeof RestrictedTagConceptForm>;
 
-const Template: ComponentStory<typeof RestrictedTagConceptForm> = (args) => <TagsDisplayForm {...args}/>;
+const Template: ComponentStory<typeof RestrictedTagConceptForm> = () => <TagsDisplayForm />;
 
 export const DisplayTag = Template.bind({});
 DisplayTag.args         = {};

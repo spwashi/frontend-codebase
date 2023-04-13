@@ -45,7 +45,7 @@ export const srcInput: FormFieldConfig         = {
   type:       'content',
   validators: {
     onSubmit: [
-      (data: any) => {
+      () => {
         return true;
       },
 

@@ -5,11 +5,11 @@ import {useDispatch, useSelector} from 'react-redux';
 import React, {useCallback} from 'react';
 import {PURGE} from 'redux-persist';
 import classnames from 'classnames';
-import {appClassNames} from '../../../../../styles/classNames';
+import {appClassNames} from '@core/styles/classNames';
 
 export function logout(dispatch: Dispatch<any>) {
   dispatch({type: ACTION_LOGOUT})
-  dispatch({type: PURGE, result: () => {}})
+  dispatch({type: PURGE, result: () => {console.log('purged')}})
   clearJwt();
 }
 

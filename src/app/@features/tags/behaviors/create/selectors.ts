@@ -1,5 +1,5 @@
-import {CreateTagMutationInput} from '../../../../../.junction/models/tag/behaviors/create';
-import {IUser} from '../../../../../.junction/models/user/models';
+import {CreateTagMutationInput} from '@junction/models/tag/behaviors/create';
+import {IUser} from '@junction/models/user/models';
 import {makeFieldRequired} from '@widgets/form/features/fields/helpers/makeFieldRequired';
 import {FormFieldConfig} from '@widgets/form/features/fields/types/fieldConfig';
 import {FormConfig} from '@widgets/form/features/fields/types/formConfig';

@@ -1,6 +1,6 @@
 import {createContext, useContext} from 'react';
-import {IEvent_Complete} from '../../../../../../../.junction/models/event/hybrids';
-import {IEvent} from '../../../../../../../.junction/models/event/models';
+import {IEvent_Complete} from '@junction/models/event/hybrids';
+import {IEvent} from '@junction/models/event/models';
 
 type Event =
   IEvent

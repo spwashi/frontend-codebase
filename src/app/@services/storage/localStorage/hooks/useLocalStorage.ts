@@ -22,15 +22,15 @@ export function useLocalStorage<T>(key: string, initialValue: T, append: number 
             // eslint-disable-next-line
             [key])
 
-  const setValue = useCallback((value: Function | T) => {
+  const setValue = useCallback((value: ((...par: any) => any) | T) => {
     try {
       const valueToStore =
               typeof value === 'function'
-              ? (value as Function)(storedValue)
+              ? (value as (v: any) => any)(storedValue)
               : value;
       setStoredValue(valueToStore);
 
-      let cache: any[] = [];
+      const cache: any[] = [];
 
       const serialized
               =

@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {AssetQuery} from '../../services/graphql/queries/AssetQuery';
 import {getUserSelectorUsername, UserSelect} from '../../../users/components/form/Select';
-import {IUser} from '../../../../../.junction/models/user/models';
+import {IUser} from '@junction/models/user/models';
 import {FormWidget} from '@widgets/form/FormWidget';
 import {LoggedIn} from '../../../users/behaviors/login/components/Requirement';
 import {Form} from '@widgets/form/components/Form';
@@ -25,7 +25,7 @@ function getDisplayAssetForm(user: { username?: string }) {
  */
 function DisplayForm(user: { username: string | undefined } | { username: string }) {
   const [state, setState]  = useState<any | null>();
-  let realname             = state?.data?.asset?.realname ?? '';
+  const realname             = state?.data?.asset?.realname ?? '';
   const form__displayAsset = getDisplayAssetForm(user);
   return (
     <LoggedIn>
@@ -43,10 +43,10 @@ function DisplayForm(user: { username: string | undefined } | { username: string
  * Displays a asset
  * @constructor
  */
-export function AssetDisplay({}) {
+export function AssetDisplay() {
   const [state, setUsername] = useState<{ data: { [k: string]: string | IUser } } | null>(null);
   const userDataKey          = '.user';
-  let username               = getUserSelectorUsername(state?.data?.[userDataKey]);
+  const username               = getUserSelectorUsername(state?.data?.[userDataKey]);
   return (
     <LoggedIn>
       <section>

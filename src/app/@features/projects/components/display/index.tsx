@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import {Project} from '../../services/graphql/one/components/Display';
 import {FormWidget} from '@widgets/form/FormWidget';
 import {SiteProjectController} from '../../services/graphql/one';
 import {useSelector} from 'react-redux';

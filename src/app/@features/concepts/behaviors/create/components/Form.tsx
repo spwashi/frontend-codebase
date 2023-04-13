@@ -5,7 +5,7 @@ import {form__createConcept, selectCreateConceptInput} from '../config';
 import {useCreateConceptMutation} from '../mutation';
 import {FormWidget} from '@widgets/form/FormWidget';
 import {LoggedIn} from '@features/users/behaviors/login/components/Requirement';
-import {ErrorBoundary} from '../../../../../components/error/ErrorBoundary';
+import {ErrorBoundary} from '@core/error/ErrorBoundary';
 
 
 function ActiveForm() {
@@ -19,7 +19,7 @@ function ActiveForm() {
   )
 }
 
-export function CreateConceptForm({}) {
+export function CreateConceptForm() {
   return (
     <LoggedIn>
       <ActiveForm/>

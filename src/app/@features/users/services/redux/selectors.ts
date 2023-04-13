@@ -1,5 +1,5 @@
-import {IUser} from '../../../../../.junction/models/user/models';
-import {IRootAppState} from '../../../../types/IRootAppState';
+import {IUser} from '@junction/models/user/models';
+import {IRootAppState} from '@core/types/IRootAppState';
 import {UserOption} from './types';
 
 function userToOption(user: IUser): UserOption {

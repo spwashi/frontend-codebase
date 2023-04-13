@@ -7,7 +7,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {ACTION_RECEIVE_LOGIN, selectLoggedInUserName} from '../../redux/reducer';
 import {form__login, LOGIN_MUTATION, selectLoginInput} from '../../selectors';
 import {FormWidget} from '@widgets/form/FormWidget';
-import {IUser} from '../../../../../../../.junction/models/user/models';
+import {IUser} from '@junction/models/user/models';
 import {FeatureRequirement} from '@services/features/components/Feature';
 
 
@@ -29,8 +29,8 @@ function LoginReceivedEffect({username, user, jwt}: { username: string, user: IU
 function ActiveForm() {
   const [send, response]    = useMutation(LOGIN_MUTATION);
   const onsubmit            = useMutationFormSubmitCallback(send, selectLoginInput);
-  let resp                  = response?.data?.logIn ?? {};
-  let {username, jwt, user} = resp;
+  const resp                  = response?.data?.logIn ?? {};
+  const {username, jwt, user} = resp;
 
   return (
     <>

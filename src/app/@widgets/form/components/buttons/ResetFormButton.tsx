@@ -6,6 +6,6 @@ export function ResetFormButton() {
   const dispatch = useContext(FormContext)?.dispatch;
   if (!dispatch) return null;
   return <>
-    <button type="button" onClick={e => dispatch({type: ACTION_RESET, payload: {}})}>reset</button>
+    <button type="button" onClick={() => dispatch({type: ACTION_RESET, payload: {}})}>reset</button>
   </>;
 }

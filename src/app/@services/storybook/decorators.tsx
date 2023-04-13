@@ -4,8 +4,7 @@ import {persistor, store} from '../redux/store';
 import {PersistGate} from 'redux-persist/integration/react';
 import {FeaturesBoundary} from '../features/components/Feature';
 import React from 'react';
-import {RootCss} from '../../styles/components/root.css';
-import '../../styles/app.scss';
+import '../../@core/styles/app.scss';
 
 const httpLink = createHttpLink({uri: import.meta.env.VITE_GRAPHQL_URL});
 const client   = new ApolloClient({link: httpLink, cache: new InMemoryCache()});

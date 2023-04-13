@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
 import {Tag} from '../../services/graphql/one';
-import {ITag} from '../../../../../.junction/models/tag/models';
+import {ITag} from '@junction/models/tag/models';
 import {FeatureRequirement} from '@services/features/components/Feature';
 import {FormWidget} from '@widgets/form/FormWidget';
 import {LoggedIn} from '../../../users/behaviors/login/components/Requirement';
 
-export function TagsDisplayForm({}) {
+export function TagsDisplayForm() {
   const [state, setState] = useState<any | null>();
   const tags              = state?.data?.tags;
   return (

@@ -6,7 +6,7 @@ import {updateFormItem} from '@widgets/form/features/fields/hooks/useFormItem';
 import {selectPossibleUsersList} from '../../services/redux/selectors';
 import {selectLoggedInUser} from '../../behaviors/login/redux/reducer';
 import {AllUsersQuery} from '../../services/graphql/all';
-import {IUser} from '../../../../../.junction/models/user/models';
+import {IUser} from '@junction/models/user/models';
 import {Value} from '@widgets/form/features/fields/components/input/text/Input';
 
 
@@ -16,12 +16,10 @@ export const getUserSelectorUsername = (data?: string | IUser) => {
 
 export const UserSelect = React.memo(
   ({formKey, ignoreLogin, username}: { username?: string; formKey: string; ignoreLogin?: boolean }) => {
-    let options: SelectOption[];
-
-    const loggedInUser = useSelector(selectLoggedInUser);
-    const context      = useContext(FormContext);
-    options            = useSelector(selectPossibleUsersList);
-    const actual       = getUserSelectorUsername(username ?? loggedInUser ?? undefined);
+    const loggedInUser            = useSelector(selectLoggedInUser);
+    const context                 = useContext(FormContext);
+    const options: SelectOption[] = useSelector(selectPossibleUsersList);
+    const actual                  = getUserSelectorUsername(username ?? loggedInUser ?? undefined);
 
     useEffect(() => updateFormItem(context, formKey, username ?? loggedInUser), [loggedInUser, username]);
     const user = useMemo(() => ({username: actual}), [actual]);
@@ -51,3 +49,4 @@ export const UserSelect = React.memo(
     );
   },
 );
+UserSelect.displayName = 'UserSelect'

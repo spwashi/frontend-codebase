@@ -1,4 +1,4 @@
-@import "./stylesheets/root";
+@import "stylesheets/root";
 
 #application-container {
   &.no-admin {
@@ -34,6 +34,6 @@ main {
 
 @import "features/user/login-requirement";
 @import "features/user/logout-button";
-@import "features/concept/concept";
-@import "features/event/event";
-@import "features/scene/scene";
+@import "features/concept";
+@import "features/event";
+@import "features/scene";

@@ -1,6 +1,6 @@
-import {IEvent} from '../../../../../.junction/models/event/models';
+import {IEvent} from '@junction/models/event/models';
 import {EventOption} from './types';
-import {IRootAppState} from '../../../../types/IRootAppState';
+import {IRootAppState} from '@core/types/IRootAppState';
 
 function eventToOption(event: IEvent): EventOption {
   return {

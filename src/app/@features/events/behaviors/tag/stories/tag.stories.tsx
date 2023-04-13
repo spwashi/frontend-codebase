@@ -21,7 +21,7 @@ export default {
   ],
 } as ComponentMeta<typeof RestrictedTagEventForm>;
 
-const Template: ComponentStory<typeof RestrictedTagEventForm> = (args) => <RestrictedTagEventForm {...args}/>;
+const Template: ComponentStory<typeof RestrictedTagEventForm> = () => <RestrictedTagEventForm />;
 
 export const TagEvent = Template.bind({});
 TagEvent.args         = {};

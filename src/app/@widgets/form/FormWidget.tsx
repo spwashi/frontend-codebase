@@ -16,7 +16,7 @@ function useHandler(form: FormConfig, index: 'onReset' | 'onChange' | 'onSubmit'
         if (!validators) return [];
         return [item.name, validators.map((validator) => validator(d, d?.[item.name]))]
       })
-      const canSubmit = out.filter(([k, o]) => {
+      const canSubmit = out.filter(([, o]) => {
         return (o as any)?.filter((o: any) => (typeof o !== 'undefined') && o !== true).length;
       }).length === 0;
       setCanSubmit(canSubmit);
@@ -40,21 +40,21 @@ type Params = {
 };
 
 export function FormWidget({
-                               config: formConfig,
-                               defaultValue,
-                               onSubmit,
-                               onReset,
-                               children,
-                               onChange,
-                             }: Params) {
+                             config: formConfig,
+                             defaultValue,
+                             onSubmit,
+                             onReset,
+                             children,
+                             onChange,
+                           }: Params) {
   const defaultForm = useMemo(() => cloneDeep(formConfig ?? {formId: '', items: []} as FormConfig), [formConfig]);
   const formRef     = useRef(defaultForm)
   const form        = formRef.current;
 
 
   const [didChangeSuccessfully, changeHandler] = useHandler(form, 'onChange', onChange);
-  const [wasSuccessful, submitHandler]         = useHandler(form, 'onSubmit', onSubmit);
-  const [didReset, resetHandler]               = useHandler(form, 'onReset', onReset);
+  const [, submitHandler]                      = useHandler(form, 'onSubmit', onSubmit);
+  const [, resetHandler]                       = useHandler(form, 'onReset', onReset);
   const canSubmit                              = !!onSubmit && didChangeSuccessfully;
   return (
     <section className={formClassNames.formWrapper}>
