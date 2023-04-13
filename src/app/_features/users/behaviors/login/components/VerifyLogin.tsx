@@ -18,7 +18,6 @@ export function VerifyLogin() {
       },
     })
       .then(res => {
-        console.log(res)
         if (res.status === 200) {
           return;
         }

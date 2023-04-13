@@ -1,4 +1,4 @@
-import {MutationFunctionOptions} from '@apollo/client';
+import {MutationFunctionOptions, OperationVariables} from '@apollo/client';
 import {useCallback} from 'react';
 
 /**
@@ -7,7 +7,7 @@ import {useCallback} from 'react';
  * @param send
  * @param selector
  */
-export function useMutationFormSubmitCallback<T = any>(
+export function useMutationFormSubmitCallback<T extends OperationVariables | undefined = any>(
   send: (options?: MutationFunctionOptions) => any,
   selector: (data: any) => T,
 ) {

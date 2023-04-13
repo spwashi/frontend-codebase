@@ -1,4 +1,4 @@
-import {DocumentNode, useApolloClient, useQuery} from '@apollo/client';
+import {DocumentNode, OperationVariables, useApolloClient, useQuery} from '@apollo/client';
 import {useChangeEffect} from '../../../hooks/useChangeEffect';
 import {useDispatch} from 'react-redux';
 import {useEffect} from 'react';
@@ -18,7 +18,7 @@ function useDispatchGraphqlError(error: any) {
   }, [error]);
 }
 
-export function useFeatureQuery<T = any, V = any>(node: DocumentNode, variables: V, projectStateKey: any): { data: T, error?: any } {
+export function useFeatureQuery<T = any, V extends OperationVariables | undefined = any>(node: DocumentNode, variables: V, projectStateKey: any): { data: T, error?: any } {
   const {data = {}, error} = useQuery(node, {variables});
   useDispatchGraphqlError(error);
 
