@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './app/styles/.stylesheets/app.scss';
-import ConnectedApplication from './app/components/ConnectedApplication';
+import './app/styles/stylesheets/app.scss';
+import ConnectedApplication from './app/components/base/ConnectedApplication';
 
 ReactDOM.render(
   <ConnectedApplication/>,

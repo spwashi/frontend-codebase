@@ -1,0 +1,39 @@
+@import "root";
+
+#application-container {
+  &.no-admin {
+    .admin {
+      display: none;
+    }
+  }
+
+  nav.admin {
+    &:before {content: 'admin nav'}
+  }
+
+  .app-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+}
+
+main {
+  max-width: 95vw;
+  > section {
+    border: thin solid forestgreen;
+  }
+}
+
+@import "../_environments/development/dev";
+
+@import "input";
+@import "form";
+@import "nav";
+
+@import "../_features/user/login-requirement";
+@import "../_features/user/logout-button";
+@import "../_features/concept/concept";
+@import "../_features/event/event";
+@import "../_features/scene/scene";

@@ -3,7 +3,7 @@ import {Dev} from './Dev';
 import {useSelector} from 'react-redux';
 
 import ReactJson from 'react-json-view'
-import {devClassNames} from '../../styles/.environments/development/classNames';
+import {devClassNames} from '../../styles/_environments/development/classNames';
 import classNames from 'classnames';
 import {appClassNames} from '../../styles/classNames';
 
