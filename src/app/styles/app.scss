@@ -1,4 +1,4 @@
-@import "root";
+@import "./stylesheets/root";
 
 #application-container {
   &.no-admin {
@@ -28,9 +28,9 @@ main {
 
 @import "environments/development/dev";
 
-@import "input";
-@import "form";
-@import "nav";
+@import "stylesheets/input";
+@import "stylesheets/form";
+@import "stylesheets/nav";
 
 @import "features/user/login-requirement";
 @import "features/user/logout-button";
