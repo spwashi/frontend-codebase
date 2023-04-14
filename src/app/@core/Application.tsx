@@ -3,7 +3,7 @@ import {AdminControlPanel} from '@features/admin/components/AdminControlPanel';
 import {useSelector} from 'react-redux';
 import {select_noGraphql} from '@services/redux/reducer';
 import classnames from 'classnames';
-import {appClassNames} from './styles/classNames';
+import {appClassnames} from './styles/classNames';
 
 interface ApplicationParams {
   canBeAdmin: boolean;
@@ -13,8 +13,8 @@ export function Application({canBeAdmin}: ApplicationParams) {
   const noGraphql    = useSelector(select_noGraphql);
   const className    = classnames({
                                     noGraphql,
-                                    [appClassNames.permissions.appCanBeAdmin]: canBeAdmin,
-                                    [appClassNames.permissions.noAdmin]:       !canBeAdmin,
+                                    [appClassnames.permissions.appCanBeAdmin]: canBeAdmin,
+                                    [appClassnames.permissions.noAdmin]:       !canBeAdmin,
                                   });
   const controlPanel = canBeAdmin && <AdminControlPanel/>;
 

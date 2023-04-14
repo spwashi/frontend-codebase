@@ -1,39 +1,7 @@
-@import "stylesheets/root";
-
-#application-container {
-  &.no-admin {
-    .admin {
-      display: none;
-    }
-  }
-
-  nav.admin {
-    &:before {content: 'admin nav'}
-  }
-
-  .app-wrapper {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-    align-items: flex-start;
-  }
-}
-
-main {
-  max-width: 95vw;
-  > section {
-    border: thin solid forestgreen;
-  }
-}
-
+@import "base/root";
+@import "base/application";
+@import "base/input";
+@import "base/form";
+@import "base/nav";
+@import "features/features";
 @import "environments/development/dev";
-
-@import "stylesheets/input";
-@import "stylesheets/form";
-@import "stylesheets/nav";
-
-@import "features/user/login-requirement";
-@import "features/user/logout-button";
-@import "features/concept";
-@import "features/event";
-@import "features/scene";

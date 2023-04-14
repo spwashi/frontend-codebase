@@ -1,11 +1,12 @@
 import React, {useCallback, useState} from 'react';
 import {Dev} from './Dev';
 import {useSelector} from 'react-redux';
-
 import ReactJson from 'react-json-view'
-import {devClassNames} from '../styles/environments/development/classNames';
 import classNames from 'classnames';
-import {appClassNames} from '../styles/classNames';
+import {appClassnames as APP} from '../styles/classNames';
+
+const LOGGER = APP.environments.dev.logger;
+
 
 type StyleOptions =
   'json'
@@ -46,16 +47,16 @@ export function Log({
   return (
     <Dev>
       <div className={classNames([
-                                   devClassNames.devLogComponents.container,
-                                   isActive ? appClassNames.states.active : appClassNames.states.inactive,
+                                   LOGGER.components.container,
+                                   isActive ? APP.states.active : APP.states.inactive,
                                  ])}>
         <div className={classNames([
-                                     devClassNames.devLogComponents.controls,
+                                     LOGGER.components.controls,
                                    ])}>
           <button className={isActive ? 'deactivate' : 'activate'} onClick={() => toggleActive(!isActive)}>{isActive ? 'close' : 'open'}</button>
         </div>
-        <div className={devClassNames.devLogComponents.wrapper}>
-          <details open={open} className={devClassNames.devLog + (error ? ' error' : '')}>
+        <div className={LOGGER.components.wrapper}>
+          <details open={open} className={LOGGER.devLog + (error ? ' error' : '')}>
             {title && <summary><span>{title}</span> <span className="reason">{logReason}</span> <span className="generic">[devlog]</span></summary>}
             {
               children && (

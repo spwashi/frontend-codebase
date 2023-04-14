@@ -5,7 +5,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import React, {useCallback} from 'react';
 import {PURGE} from 'redux-persist';
 import classnames from 'classnames';
-import {appClassNames} from '@core/styles/classNames';
+import {appClassnames} from '@core/styles/classNames';
 
 export function logout(dispatch: Dispatch<any>) {
   dispatch({type: ACTION_LOGOUT})
@@ -19,6 +19,6 @@ export function LogoutButton() {
     logout(dispatch);
   }, []);
   const loggedInUser = useSelector(selectLoggedInUser);
-  const className    = classnames([appClassNames.widgets.user.logout]);
+  const className    = classnames([appClassnames.widgets.user.logout]);
   return loggedInUser ? <button className={className} onClick={logUserOut}>Log Out</button> : null;
 }

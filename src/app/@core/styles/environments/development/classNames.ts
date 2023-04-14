@@ -1,7 +1,7 @@
-export const devClassNames = {
+export const loggerClassnames = {
   devLog: 'dev-log',
 
-  devLogComponents: {
+  components: {
     container: 'dev-log--container',
     wrapper:   'dev-log--wrapper',
     controls:  'dev-log--controls',

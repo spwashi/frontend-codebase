@@ -1,4 +1,6 @@
-export const appClassNames = {
+import {loggerClassnames} from './environments/development/classNames';
+
+export const appClassnames = {
   states:       {
     active:       'active',
     inactive:     'inactive',
@@ -16,5 +18,10 @@ export const appClassNames = {
   permissions:  {
     noAdmin:       'no-admin',
     appCanBeAdmin: 'can-be-admin',
+  },
+  environments: {
+    dev: {
+      logger: loggerClassnames,
+    },
   },
 };
