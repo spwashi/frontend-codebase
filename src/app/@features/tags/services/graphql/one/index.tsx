@@ -7,7 +7,7 @@ import {useActiveTag} from './context/hooks/useActiveOne';
 import {gql, useMutation} from '@apollo/client';
 import {selectLoggedInUser} from '@features/users/behaviors/login/redux/reducer';
 import {useSelector} from 'react-redux';
-import {Log} from '@core/dev/Log';
+import {Log} from '@core/dev/components/Log';
 
 function DeleteTag() {
   const tag  = useActiveTag();

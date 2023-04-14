@@ -1,11 +1,11 @@
 import {Dispatch} from 'redux';
 import {ACTION_LOGOUT, selectLoggedInUser} from '../redux/reducer';
-import {clearJwt} from '@services/jwt/helpers';
 import {useDispatch, useSelector} from 'react-redux';
 import React, {useCallback} from 'react';
 import {PURGE} from 'redux-persist';
 import classnames from 'classnames';
 import {appClassnames} from '@core/styles/classNames';
+import {clearJwt} from '@services/jwt/helpers/clearJwt';
 
 export function logout(dispatch: Dispatch<any>) {
   dispatch({type: ACTION_LOGOUT})

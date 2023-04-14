@@ -3,9 +3,9 @@ import React, {useState} from 'react';
 import {IConcept_Complete, IConceptTag_Complete} from '@junction/models/concept/hybrids';
 import {useActiveConcept} from '../context/context';
 import {convertFromRaw, Editor, EditorState} from 'draft-js';
-import {Log} from '@core/dev/Log';
+import {Log} from '@core/dev/components/Log';
 import {IConcept} from '@junction/models/concept/models';
-import {ErrorBoundary} from '@core/error/ErrorBoundary';
+import {ErrorBoundary} from '@core/error/components/ErrorBoundary';
 import {DeleteConceptButton} from './DeleteButton';
 
 function RichText({src}: { src: string }) {

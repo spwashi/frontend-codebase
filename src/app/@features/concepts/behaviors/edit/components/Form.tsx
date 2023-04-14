@@ -6,7 +6,7 @@ import {useEditConceptMutation} from '../mutation';
 import {FormWidget} from '@widgets/form/FormWidget';
 import {LoggedIn} from '@features/users/behaviors/login/components/Requirement';
 import {ConceptSelect} from '../../../components/form/Select';
-import {Log} from '@core/dev/Log';
+import {Log} from '@core/dev/components/Log';
 import {formClassNames} from '@widgets/form/styles/classNames';
 import {Form} from '@widgets/form/components/Form';
 

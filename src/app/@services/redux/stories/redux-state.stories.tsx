@@ -1,4 +1,4 @@
-import {LogAppReduxState} from '@core/dev/Log';
+import {LogAppReduxState} from '@core/dev/components/Log';
 import {mainDecorator} from '../../storybook/decorators';
 
 export default {

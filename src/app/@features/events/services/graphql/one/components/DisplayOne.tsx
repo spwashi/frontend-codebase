@@ -3,7 +3,7 @@ import React from 'react';
 import {IEvent_Complete, IEventTag_Complete} from '@junction/models/event/hybrids';
 import {useActiveEvent} from '../context/context';
 import {IEvent} from '@junction/models/event/models';
-import {ErrorBoundary} from '@core/error/ErrorBoundary';
+import {ErrorBoundary} from '@core/error/components/ErrorBoundary';
 import {DeleteEventButton} from './DeleteButton';
 
 interface EventDisplayParams {event: IEvent | IEvent_Complete;}

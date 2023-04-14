@@ -1,4 +1,4 @@
-import React, {useCallback, useContext, useEffect, useMemo} from 'react';
+import React, {useCallback, useContext, useEffect, useMemo, useState} from 'react';
 import {useFormItem} from '../../../hooks/useFormItem';
 import {FormContext} from '@widgets/form/context/context';
 import {convertFromRaw, convertToRaw, Editor, EditorState} from 'draft-js';
@@ -68,12 +68,14 @@ export function Value({
 function useRichTextEditor(params: InputParams, [localValue, update]: [EditorState | string, (v: string) => void]) {
   const {formKey, name, value, type, ...rest} = params
   const key                                   = useMemo(() => Date.now(), []);
-  const [editorState, setEditorState]         = React.useState(() => {
+  const [editorState, setEditorState]         =   useState(() => {
     try {
       const prev = JSON.parse('' + (value ?? ''));
       return EditorState.createWithContent(convertFromRaw(prev))
-    } catch (e) {
-      console.log(e);
+    } catch (e: any) {
+      if (`${e.message}`.indexOf('Unexpected end') < 0) {
+        console.log(e);
+      }
     }
     return EditorState.createEmpty();
   });

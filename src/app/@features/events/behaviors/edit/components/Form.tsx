@@ -6,7 +6,7 @@ import {useEditEventMutation} from '../mutation';
 import {FormWidget} from '@widgets/form/FormWidget';
 import {LoggedIn} from '@features/users/behaviors/login/components/Requirement';
 import {EventSelect} from '../../../components/form/Select';
-import {Log} from '@core/dev/Log';
+import {Log} from '@core/dev/components/Log';
 import {Form} from '@widgets/form/components/Form';
 
 export function EditEventForm() {

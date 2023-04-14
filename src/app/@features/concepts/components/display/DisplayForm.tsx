@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {Concept} from '../../services/graphql/one';
 import {FeatureRequirement} from '@services/features/components/Feature';
 import {FormWidget} from '@widgets/form/FormWidget';
-import {Log} from '@core/dev/Log';
+import {Log} from '@core/dev/components/Log';
 import {LoggedIn} from '../../../users/behaviors/login/components/Requirement';
 
 export function ConceptDisplayForm() {

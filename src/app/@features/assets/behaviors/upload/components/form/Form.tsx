@@ -1,8 +1,8 @@
 import React, {useCallback, useState} from 'react';
-import {BACKEND_URL} from '../../../../../../constants';
+import {BACKEND_URL} from '@core/constants';
 import {FormWidget} from '@widgets/form/FormWidget';
 import {LoggedIn} from '@features/users/behaviors/login/components/Requirement';
-import {Dev} from '@core/dev/Dev';
+import {Dev} from '@core/dev/components/Dev';
 import {useJwt} from '@services/jwt/hooks/useJwt';
 
 import {FormConfig} from '@widgets/form/features/fields/types/formConfig';

@@ -1,4 +1,4 @@
-import {loggerClassnames} from './environments/development/classNames';
+import {loggerClassnames} from './dev';
 
 export const appClassnames = {
   states:       {
@@ -11,6 +11,9 @@ export const appClassnames = {
     login: 'must-login',
   },
   widgets:      {
+    dev:  {
+      logger: loggerClassnames,
+    },
     user: {
       logout: 'logout-button',
     },
@@ -18,10 +21,5 @@ export const appClassnames = {
   permissions:  {
     noAdmin:       'no-admin',
     appCanBeAdmin: 'can-be-admin',
-  },
-  environments: {
-    dev: {
-      logger: loggerClassnames,
-    },
   },
 };

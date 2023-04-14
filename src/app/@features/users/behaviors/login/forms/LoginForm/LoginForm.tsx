@@ -2,13 +2,13 @@ import React, {useEffect} from 'react';
 import {useMutation} from '@apollo/client';
 import {useMutationFormSubmitCallback} from '@services/graphql/hooks/useMutationFormSubmitCallback';
 import {GraphqlMutationResponse} from '@services/graphql/components/api/GraphqlMutationResponse';
-import {setJwt} from '@services/jwt/helpers';
 import {useDispatch, useSelector} from 'react-redux';
 import {ACTION_RECEIVE_LOGIN, selectLoggedInUserName} from '../../redux/reducer';
 import {form__login, LOGIN_MUTATION, selectLoginInput} from '../../selectors';
 import {FormWidget} from '@widgets/form/FormWidget';
 import {IUser} from '@junction/models/user/models';
 import {FeatureRequirement} from '@services/features/components/Feature';
+import {setJwt} from '@services/jwt/helpers/setJwt';
 
 
 function LoginReceivedEffect({username, user, jwt}: { username: string, user: IUser, jwt: string }) {

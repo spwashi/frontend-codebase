@@ -3,10 +3,9 @@ import {Dev} from './Dev';
 import {useSelector} from 'react-redux';
 import ReactJson from 'react-json-view'
 import classNames from 'classnames';
-import {appClassnames as APP} from '../styles/classNames';
+import {appClassnames as classes} from '../../styles/classNames';
 
-const LOGGER = APP.environments.dev.logger;
-
+const LOGGER = classes.widgets.dev.logger;
 
 type StyleOptions =
   'json'
@@ -48,7 +47,7 @@ export function Log({
     <Dev>
       <div className={classNames([
                                    LOGGER.components.container,
-                                   isActive ? APP.states.active : APP.states.inactive,
+                                   isActive ? classes.states.active : classes.states.inactive,
                                  ])}>
         <div className={classNames([
                                      LOGGER.components.controls,

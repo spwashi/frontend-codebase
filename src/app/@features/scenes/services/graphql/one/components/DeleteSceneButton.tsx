@@ -1,7 +1,7 @@
 import {gql, useMutation} from '@apollo/client';
 import {useDispatch} from 'react-redux';
 import React, {useCallback} from 'react';
-import {Log} from '@core/dev/Log';
+import {Log} from '@core/dev/components/Log';
 import {ACTION_DELETE_ONE_SCENE} from '../../../redux/reducer';
 
 function useDeleteSceneMutation() {

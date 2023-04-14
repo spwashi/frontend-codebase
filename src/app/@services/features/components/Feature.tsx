@@ -1,5 +1,5 @@
 import React, {createContext, ReactNode, useContext, useEffect, useMemo, useReducer} from 'react';
-import {Dev} from '@core/dev/Dev';
+import {Dev} from '@core/dev/components/Dev';
 
 type IFeature =
   {
