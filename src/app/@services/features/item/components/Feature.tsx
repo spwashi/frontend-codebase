@@ -36,9 +36,9 @@ export function Feature({name, children, enabled = true}: IFeatureProps) {
 
   const [state, dispatch] = useReducer((state: IFeature | null) => state, null);
   const value             = useMemo(() => ({state, dispatch}), [state, dispatch]);
+  const features          = useContext(FeaturesRegistrationContext);
 
   if (!enabled) return null;
-  const features = useContext(FeaturesRegistrationContext);
   if (features.state?.disabled) return null;
   return (
     <FeatureInternalContext.Provider value={value}>
