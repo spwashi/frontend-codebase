@@ -5,7 +5,7 @@ import {CreateConceptForm} from '../../create';
 import {FeatureList} from '@services/features/components/FeatureList';
 
 export default {
-  title:      'Admin/Forms/Datatypes/Concept/CreateConcept',
+  title:      'Admin/Concept/CreateConcept',
   component:  CreateConceptForm,
   decorators: [
     (Story) =>

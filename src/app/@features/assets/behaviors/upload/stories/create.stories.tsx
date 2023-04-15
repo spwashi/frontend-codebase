@@ -5,7 +5,7 @@ import {FeatureList} from '@services/features/components/FeatureList';
 import {UploadAssetForm} from '../components/form/Form';
 
 export default {
-  title:      'Admin/Forms/Datatypes/Asset/UploadAsset',
+  title:      'Admin/Asset/UploadAsset',
   component:  UploadAssetForm,
   decorators: [
     (Story) =>

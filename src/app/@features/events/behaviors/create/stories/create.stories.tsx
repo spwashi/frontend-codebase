@@ -5,7 +5,7 @@ import {RestrictedEditEventForm} from '../../edit';
 import {FeatureList} from '@services/features/components/FeatureList';
 
 export default {
-  title:      'Admin/Forms/Datatypes/Event/EditEvent',
+  title:      'Admin/Event/EditEvent',
   component:  RestrictedEditEventForm,
   decorators: [
     (Story) =>

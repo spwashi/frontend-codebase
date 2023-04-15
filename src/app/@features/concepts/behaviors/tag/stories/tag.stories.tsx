@@ -6,7 +6,7 @@ import {FeatureList} from '@services/features/components/FeatureList';
 
 
 export default {
-  title:      'Admin/Forms/Datatypes/Concept/TagConcept',
+  title:      'Admin/Concept/TagConcept',
   component:  RestrictedTagConceptForm,
   decorators: [
     (Story) => {

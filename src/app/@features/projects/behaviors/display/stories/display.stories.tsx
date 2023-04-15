@@ -6,7 +6,7 @@ import {ProjectDisplayForm} from '../../../components/display';
 
 
 export default {
-  title:      'Admin/Forms/Datatypes/Project/DisplayProject',
+  title:      'Admin/Project/DisplayProject',
   component:  ProjectDisplayForm,
   decorators: [
     (Story) => {

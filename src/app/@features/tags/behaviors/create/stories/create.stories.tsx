@@ -5,7 +5,7 @@ import {FeatureList} from '@services/features/components/FeatureList';
 import {RestrictedCreateTagForm} from '../index';
 
 export default {
-  title:      'Admin/Forms/Datatypes/Tag/CreateTag',
+  title:      'Admin/Tag/CreateTag',
   component:  RestrictedCreateTagForm,
   decorators: [
     (Story) =>

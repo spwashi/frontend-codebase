@@ -6,7 +6,7 @@ import {ConceptDisplayForm} from '../../../components/display/DisplayForm';
 
 
 export default {
-  title:      'Admin/Forms/Datatypes/Concept/DisplayConcept',
+  title:      'Admin/Concept/DisplayConcept',
   component:  ConceptDisplayForm,
   decorators: [
     (Story) => {

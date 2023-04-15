@@ -5,7 +5,7 @@ import {RestrictedEditConceptForm} from '../../edit';
 import {FeatureList} from '@services/features/components/FeatureList';
 
 export default {
-  title:      'Admin/Forms/Datatypes/Concept/EditConcept',
+  title:      'Admin/Concept/EditConcept',
   component:  RestrictedEditConceptForm,
   decorators: [
     (Story) =>

@@ -5,7 +5,7 @@ import {RestrictedCreateSceneForm} from '../index';
 import {FeatureList} from '@services/features/components/FeatureList';
 
 export default {
-  title:      'Admin/Forms/Datatypes/Scene/CreateScene',
+  title:      'Admin/Scene/CreateScene',
   component:  RestrictedCreateSceneForm,
   decorators: [
     (Story) =>

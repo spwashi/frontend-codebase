@@ -1,10 +1,10 @@
 import {FeatureRequirement} from '@services/features/components/Feature';
 import React from 'react';
-import {TagFeatures} from '../../components/Features';
-import {RestrictedCreateTagForm} from '../create';
-import {TagsDisplayForm} from '../../components/display';
-import {UserFeatures} from '../../../users/components/Features';
-import {ProjectFeatures} from '../../../projects/components/Features';
+import {TagFeatures} from '../../../components/Features';
+import {RestrictedCreateTagForm} from '../../create';
+import {TagsDisplayForm} from '../../../components/display';
+import {UserFeatures} from '../../../../users/components/Features';
+import {ProjectFeatures} from '../../../../projects/components/Features';
 import {NavLink} from 'react-router-dom';
 import {Route, Routes} from 'react-router';
 import {tagDisplayFeatureName, tagFeatureName} from '@features/tags/features';

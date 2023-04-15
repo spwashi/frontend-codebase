@@ -6,7 +6,7 @@ import {SceneDisplayForm} from '../../../components/display/DisplayForm';
 
 
 export default {
-  title:      'Admin/Forms/Datatypes/Scene/DisplayScene',
+  title:      'Admin/Scene/DisplayScene',
   component:  SceneDisplayForm,
   decorators: [
     (Story) => {

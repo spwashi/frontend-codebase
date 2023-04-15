@@ -5,7 +5,7 @@ import {FeatureList} from '@services/features/components/FeatureList';
 import {CreateProjectForm} from '../index';
 
 export default {
-  title:      'Admin/Forms/Datatypes/Project/CreateProject',
+  title:      'Admin/Project/CreateProject',
   component:  CreateProjectForm,
   decorators: [
     (Story) =>

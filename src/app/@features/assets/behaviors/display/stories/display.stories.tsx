@@ -6,7 +6,7 @@ import {AssetDisplay} from '../../../components/display/AssetDisplay';
 
 
 export default {
-  title:      'Admin/Forms/Datatypes/Asset/DisplayAsset',
+  title:      'Admin/Asset/DisplayAsset',
   component:  AssetDisplay,
   decorators: [
     (Story) => {

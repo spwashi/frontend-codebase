@@ -6,7 +6,7 @@ import {EventDisplayForm} from '../../../components/display/DisplayForm';
 
 
 export default {
-  title:      'Admin/Forms/Datatypes/Event/DisplayEvent',
+  title:      'Admin/Event/DisplayEvent',
   component:  EventDisplayForm,
   decorators: [
     (Story) => {
