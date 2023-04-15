@@ -11,9 +11,9 @@ export function ConceptDisplayForm() {
   const [state, setState] = useState<any | null>();
   const id                = state?.data?.concept?.id;
   return (
-    <LoggedIn>
-      <Feature name={conceptDisplayFormFeatureName}>
-        <FeatureRequirement name={conceptDisplayFeatureName} alternative={'Need Concepts Display'}>
+    <FeatureRequirement name={conceptDisplayFeatureName} alternative={'Need Concepts Display'}>
+      <LoggedIn>
+        <Feature name={conceptDisplayFormFeatureName}>
           <Log>{{id}}</Log>
           <section>
             <FormWidget onSubmit={setState} config={{
@@ -23,8 +23,8 @@ export function ConceptDisplayForm() {
             }}/>
             {id && <Concept id={id}/>}
           </section>
-        </FeatureRequirement>
-      </Feature>
-    </LoggedIn>
+        </Feature>
+      </LoggedIn>
+    </FeatureRequirement>
   )
 }

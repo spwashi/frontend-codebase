@@ -9,9 +9,7 @@ function ConceptDisplayFeature() {
   const lastFetched = useSelector(selectPossibleConceptsLastFetched)
   const list        = useSelector(selectPossibleConceptsList)
   const enabled     = lastFetched ? !!list.length : false;
-  return (
-    <Feature name={conceptDisplayFeatureName} enabled={enabled}/>
-  );
+  return <Feature name={conceptDisplayFeatureName} enabled={enabled}/>;
 }
 export function ConceptFeatures() {
   return (

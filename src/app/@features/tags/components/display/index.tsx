@@ -11,9 +11,9 @@ export function TagsDisplayForm() {
   const [state, setState] = useState<any | null>();
   const tags              = state?.data?.tags;
   return (
-    <LoggedIn>
-      <Feature name={tagDisplayFormFeatureName}>
-        <FeatureRequirement name={tagDisplayFeatureName} alternative={'Need Tag Display'}>
+    <FeatureRequirement name={tagDisplayFeatureName} alternative={'Need Tag Display'}>
+      <LoggedIn>
+        <Feature name={tagDisplayFormFeatureName}>
           <section>
             <header>Tags Display</header>
             <FormWidget onSubmit={setState} config={{
@@ -22,8 +22,8 @@ export function TagsDisplayForm() {
             }}/>
             {tags && tags.map(({id}: ITag) => <Tag id={id} key={id}/>)}
           </section>
-        </FeatureRequirement>
-      </Feature>
-    </LoggedIn>
+        </Feature>
+      </LoggedIn>
+    </FeatureRequirement>
   )
 }

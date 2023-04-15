@@ -1,8 +1,10 @@
+import React, {useEffect} from 'react';
 import {useDispatch} from 'react-redux';
-import {useEffect} from 'react';
 import {BACKEND_URL} from '@core/constants';
 import {logout} from './Logout';
 import {useJwt} from '@services/jwt/hooks/useJwt';
+import {userLoginVerifyFeatureName} from '@features/users/features';
+import {Feature} from '@services/features/components/Feature';
 
 export function VerifyLogin() {
   const dispatch = useDispatch();
@@ -18,12 +20,11 @@ export function VerifyLogin() {
       },
     })
       .then(res => {
-        if (res.status === 200) {
-          return;
+        if (res.status !== 200) {
+          logout(dispatch);
         }
-        logout(dispatch);
       })
   }, [jwt]);
 
-  return null;
+  return <Feature name={userLoginVerifyFeatureName}/>;
 }

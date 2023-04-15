@@ -7,10 +7,10 @@ import {ACTION_RECEIVE_LOGIN, selectLoggedInUserName} from '../../redux/reducer'
 import {form__login, LOGIN_MUTATION, selectLoginInput} from '../../selectors';
 import {FormWidget} from '@widgets/form/FormWidget';
 import {IUser} from '@junction/models/user/models';
-import {FeatureRequirement} from '@services/features/components/Feature';
+import {Feature, FeatureRequirement} from '@services/features/components/Feature';
 import {setJwt} from '@services/jwt/helpers/setJwt';
 
-import {userLoginFeatureName} from '@features/users/features';
+import {userLoginFeatureName, userLoginFormFeatureName} from '@features/users/features';
 
 
 function LoginReceivedEffect({username, user, jwt}: { username: string, user: IUser, jwt: string }) {
@@ -46,8 +46,10 @@ export function LoginForm({alt}: { alt?: any }) {
   const loggedInUser = useSelector(selectLoggedInUserName);
   if (loggedInUser) return alt ?? null;
   return (
-    <FeatureRequirement name={userLoginFeatureName} alternative={'Need Users'}>
-      <ActiveForm/>
-    </FeatureRequirement>
+    <Feature name={userLoginFormFeatureName}>
+      <FeatureRequirement name={userLoginFeatureName} alternative={'Need Users'}>
+        <ActiveForm/>
+      </FeatureRequirement>
+    </Feature>
   );
 }

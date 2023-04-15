@@ -8,10 +8,10 @@ import {ScenesControlPanel} from '../../scenes/behaviors/admin/ControlPanel';
 import {EventsControlPanel} from '../../events/behaviors/admin/ControlPanel';
 import {TagsControlPanel} from '../../tags/behaviors/admin/ControlPanel';
 import {AssetsControlPanel} from '../../assets/behaviors/admin/ControlPanel';
-import {LoggedIn, NotLoggedIn} from '../../users/behaviors/login/components/Requirement';
+import {LoggedIn} from '../../users/behaviors/login/components/Requirement';
 import React from 'react';
 import {Feature} from '@services/features/components/Feature';
-import {postLoginAdminRoutesFeatureName, preloginAdminRoutesFeatureName} from '@features/admin/features';
+import {adminControlPanelsPostLoginFeatureName, adminControlPanelsPreLoginFeatureName} from '@features/admin/features';
 
 export function AdminRoutes() {
   return (
@@ -26,13 +26,13 @@ export function AdminRoutes() {
           <Route path="tags/*" element={<TagsControlPanel/>}/>
           <Route path="assets/*" element={<AssetsControlPanel/>}/>
           <Route path="all/*" element={<>
-            <NotLoggedIn>
-              <Feature name={preloginAdminRoutesFeatureName}>
+            <LoggedIn state={false}>
+              <Feature name={adminControlPanelsPreLoginFeatureName}>
                 <UsersControlPanel/>
               </Feature>
-            </NotLoggedIn>
+            </LoggedIn>
             <LoggedIn>
-              <Feature name={postLoginAdminRoutesFeatureName}>
+              <Feature name={adminControlPanelsPostLoginFeatureName}>
                 <AssetsControlPanel/>
                 <ConceptsControlPanel/>
                 <EventsControlPanel/>

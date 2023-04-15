@@ -10,9 +10,7 @@ function UserLoginFeature() {
   const lastFetched = useSelector(selectPossibleUsersLastFetched)
   const list        = useSelector(selectPossibleUsersList)
   const enabled     = !requireFetch || (lastFetched ? !!list.length : false);
-  return (
-    <Feature name={userLoginFeatureName} enabled={enabled}/>
-  );
+  return <Feature name={userLoginFeatureName} enabled={enabled}/>;
 }
 
 export function UserFeatures() {

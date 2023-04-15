@@ -9,9 +9,7 @@ function EventDisplayFeature() {
   const lastFetched = useSelector(selectPossibleEventsLastFetched)
   const list        = useSelector(selectPossibleEventsList)
   const enabled     = lastFetched ? !!list.length : false;
-  return (
-    <Feature name={eventDisplayFeatureName} enabled={enabled}/>
-  );
+  return <Feature name={eventDisplayFeatureName} enabled={enabled}/>;
 }
 export function EventFeatures() {
   return (

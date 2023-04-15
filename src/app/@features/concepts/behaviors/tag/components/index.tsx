@@ -7,12 +7,12 @@ import {conceptDisplayFeatureName, conceptTagFormFeatureName} from '@features/co
 
 export function RestrictedTagConceptForm() {
   return (
-    <LoggedIn>
-      <Feature name={conceptTagFormFeatureName}>
-        <FeatureRequirement name={conceptDisplayFeatureName} alternative={'Need Concepts Display'}>
+    <FeatureRequirement name={conceptDisplayFeatureName} alternative={'Need Concepts Display'}>
+      <LoggedIn>
+        <Feature name={conceptTagFormFeatureName}>
           <TagConceptForm/>
-        </FeatureRequirement>
-      </Feature>
-    </LoggedIn>
+        </Feature>
+      </LoggedIn>
+    </FeatureRequirement>
   );
 }

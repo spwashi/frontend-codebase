@@ -9,9 +9,7 @@ function SceneDisplayFeature() {
   const lastFetched = useSelector(selectPossibleScenesLastFetched)
   const list        = useSelector(selectPossibleScenesList)
   const enabled     = lastFetched ? !!list.length : false;
-  return (
-    <Feature name={sceneDisplayFeatureName} enabled={enabled}/>
-  );
+  return <Feature name={sceneDisplayFeatureName} enabled={enabled}/>;
 }
 export function SceneFeatures() {
   return (

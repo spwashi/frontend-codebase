@@ -9,9 +9,7 @@ function TagDisplayFeature() {
   const lastFetched = useSelector(selectPossibleTagsLastFetched)
   const list        = useSelector(selectPossibleTagsList)
   const enabled     = lastFetched ? !!list.length : false;
-  return (
-    <Feature name={tagDisplayFeatureName} enabled={enabled}/>
-  );
+  return <Feature name={tagDisplayFeatureName} enabled={enabled}/>;
 }
 export function TagFeatures() {
   return (

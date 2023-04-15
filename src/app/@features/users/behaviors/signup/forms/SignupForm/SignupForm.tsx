@@ -4,12 +4,13 @@ import {GraphqlMutationResponse} from '@services/graphql/components/api/GraphqlM
 import {useMutationFormSubmitCallback} from '@services/graphql/hooks/useMutationFormSubmitCallback';
 import {useSelector} from 'react-redux';
 import {selectLoggedInUserName} from '../../../login/redux/reducer';
-import {FeatureRequirement} from '@services/features/components/Feature';
+import {Feature, FeatureRequirement} from '@services/features/components/Feature';
 import {FormWidget} from '@widgets/form/FormWidget';
 
 import {FormConfig} from '@widgets/form/features/fields/types/formConfig';
 
 import {projectDisplayFeatureName} from '@features/projects/features';
+import {userSignupFormFeatureName} from '@features/users/features';
 
 const SIGNUP_MUTATION = gql`
     mutation SignUp($user: CreateUserInput!, $password: CreatePasswordInput!, $project: ProjectReferenceInput) {
@@ -60,8 +61,10 @@ export function SignupForm() {
   const loggedInUser = useSelector(selectLoggedInUserName);
   if (loggedInUser) return null;
   return (
-    <FeatureRequirement name={projectDisplayFeatureName} alternative={'Need Projects'}>
-      <ActiveForm/>
-    </FeatureRequirement>
+    <Feature name={userSignupFormFeatureName}>
+      <FeatureRequirement name={projectDisplayFeatureName} alternative={'Need Projects'}>
+        <ActiveForm/>
+      </FeatureRequirement>
+    </Feature>
   );
 }

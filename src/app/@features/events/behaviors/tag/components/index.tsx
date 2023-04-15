@@ -7,12 +7,12 @@ import {eventDisplayFeatureName, eventTagFormFeatureName} from '@features/events
 
 export function RestrictedTagEventForm() {
   return (
-    <LoggedIn>
-      <Feature name={eventTagFormFeatureName}>
-        <FeatureRequirement name={eventDisplayFeatureName} alternative={'Need Events Display for TagEventForm'}>
+    <FeatureRequirement name={eventDisplayFeatureName} alternative={'Need Events Display for TagEventForm'}>
+      <LoggedIn>
+        <Feature name={eventTagFormFeatureName}>
           <TagEventForm/>
-        </FeatureRequirement>
-      </Feature>
-    </LoggedIn>
+        </Feature>
+      </LoggedIn>
+    </FeatureRequirement>
   );
 }

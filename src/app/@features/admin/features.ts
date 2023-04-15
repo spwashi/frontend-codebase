@@ -1,7 +1,6 @@
-export const preloginAdminRoutesFeatureName  = 'feature.admin.routes[pre-login]';
-export const postLoginAdminRoutesFeatureName = 'feature.admin.routes';
-
+export const adminControlPanelsPreLoginFeatureName  = 'feature.admin.routes[pre-login]';
+export const adminControlPanelsPostLoginFeatureName = 'feature.admin.routes[post-login]';
 
 export type IAdminFeatureNames =
-  | typeof preloginAdminRoutesFeatureName
-  | typeof postLoginAdminRoutesFeatureName;
+  | typeof adminControlPanelsPreLoginFeatureName
+  | typeof adminControlPanelsPostLoginFeatureName;

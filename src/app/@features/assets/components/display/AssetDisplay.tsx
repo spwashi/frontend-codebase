@@ -44,7 +44,7 @@ function DisplayForm(user: { username: string | undefined } | { username: string
 }
 
 /**
- * Displays a asset
+ * Displays an asset
  * @constructor
  */
 export function AssetDisplay() {

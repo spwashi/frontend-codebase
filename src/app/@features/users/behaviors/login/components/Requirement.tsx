@@ -1,13 +1,13 @@
+import React from 'react';
 import {useSelector} from 'react-redux';
 import {selectLoggedInUserName} from '../redux/reducer';
-import React from 'react';
 import classNames from 'classnames';
 import {appClassnames} from '@core/styles/classNames';
 
 import {useJwt} from '@services/jwt/hooks/useJwt';
 
 /**
- * An error message indicating that a user must login
+ * An error message indicating that a user must log in
  * @constructor
  */
 function MustLoginErrorMessage() {
@@ -36,13 +36,4 @@ export function LoggedIn({children, state = true}: { children: any, state?: bool
     return state ? <MustLoginErrorMessage/> : null;
   }
   return children;
-}
-
-/**
- * Only displays children when a user is not logged in
- * @param children
- * @constructor
- */
-export const NotLoggedIn = ({children}: { children: any }) => {
-  return <LoggedIn state={false}>{children}</LoggedIn>
 }
