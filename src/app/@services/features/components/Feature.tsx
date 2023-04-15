@@ -1,6 +1,14 @@
 import React, {createContext, ReactNode, useContext, useEffect, useMemo, useReducer} from 'react';
 import {Dev} from '@core/dev/components/Dev';
 import {Log} from '@core/dev/components/Log';
+import {IAdminFeatureNames} from '@features/admin/features';
+import {IUserFeatureNames} from '@features/users/features';
+import {ITagFeatureNames} from '@features/tags/features';
+import {IProjectFeatureNames} from '@features/projects/features';
+import {IEventFeatureNames} from '@features/events/features';
+import {ISceneFeatureNames} from '@features/scenes/features';
+import {IConceptFeatureNames} from '@features/concepts/features';
+import {IAssetFeatureNames} from '@features/assets/features';
 
 type IFeature =
   {
@@ -10,7 +18,19 @@ type IFeature =
 const FeatureContext =
         createContext<{ state: IFeature, dispatch: (action: { type: string }) => void } | null>(null);
 
-type IFeatureName = `feature.${string}`;
+type IFeatureName =
+  `feature.${string}`
+  & (
+    | IAdminFeatureNames
+    | IAssetFeatureNames
+    | IConceptFeatureNames
+    | IEventFeatureNames
+    | IProjectFeatureNames
+    | ISceneFeatureNames
+    | ITagFeatureNames
+    | IUserFeatureNames
+    )
+  ;
 
 type IFeatureProps = {
   name: IFeatureName,
