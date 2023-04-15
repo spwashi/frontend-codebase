@@ -5,6 +5,7 @@ import {form__createScene, selectCreateSceneInput} from '../config';
 import {useCreateSceneMutation} from '../mutation';
 import {FormWidget} from '@widgets/form/FormWidget';
 import {LoggedIn} from '@features/users/behaviors/login/components/Requirement';
+import {Feature} from '@services/features/components/Feature';
 
 function CreateSceneForm() {
   const {send, response} = useCreateSceneMutation();
@@ -20,7 +21,9 @@ function CreateSceneForm() {
 export function RestrictedCreateSceneForm() {
   return (
     <LoggedIn>
-      <CreateSceneForm/>
+      <Feature name={'scene.create.form'}>
+        <CreateSceneForm/>
+      </Feature>
     </LoggedIn>
   );
 }

@@ -8,6 +8,7 @@ import {LoggedIn} from '@features/users/behaviors/login/components/Requirement';
 import {SceneSelect} from '../../../components/form/Select';
 import {formClassNames} from '@widgets/form/styles/classNames';
 import {Form} from '@widgets/form/components/Form';
+import {Feature} from '@services/features/components/Feature';
 
 function EditSceneForm() {
   const {send, response}  = useEditSceneMutation();
@@ -45,7 +46,9 @@ function EditSceneForm() {
 export function RestrictedEditSceneForm() {
   return (
     <LoggedIn>
-      <EditSceneForm/>
+      <Feature name={'scene.edit.form'}>
+        <EditSceneForm/>
+      </Feature>
     </LoggedIn>
 
   );

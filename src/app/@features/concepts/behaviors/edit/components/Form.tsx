@@ -9,6 +9,7 @@ import {ConceptSelect} from '../../../components/form/Select';
 import {Log} from '@core/dev/components/Log';
 import {formClassNames} from '@widgets/form/styles/classNames';
 import {Form} from '@widgets/form/components/Form';
+import {Feature} from '@services/features/components/Feature';
 
 export function EditConceptForm() {
   const {send, response}  = useEditConceptMutation();
@@ -47,7 +48,9 @@ export function EditConceptForm() {
 export function RestrictedEditConceptForm() {
   return (
     <LoggedIn>
-      <EditConceptForm/>
+      <Feature name={'concept.edit.form'}>
+        <EditConceptForm/>
+      </Feature>
     </LoggedIn>
   );
 }

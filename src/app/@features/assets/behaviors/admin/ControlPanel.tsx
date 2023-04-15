@@ -1,4 +1,4 @@
-import {FeatureRequirement} from '@services/features/components/Feature';
+import {Feature, FeatureRequirement} from '@services/features/components/Feature';
 import {UploadAssetForm} from '../upload/components/form/Form';
 import {AssetDisplay} from '../../components/display/AssetDisplay';
 import React from 'react';
@@ -25,7 +25,9 @@ export function AssetsControlPanel() {
           <FeatureRequirement name="assets" alternative={'Need Assets'}>
             <section>
               <LoggedIn>
-                <UploadAssetForm/>
+                <Feature name={'asset.upload.form'}>
+                  <UploadAssetForm/>
+                </Feature>
               </LoggedIn>
               <AssetDisplay/>
             </section>

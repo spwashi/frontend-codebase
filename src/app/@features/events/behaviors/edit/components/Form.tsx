@@ -8,11 +8,12 @@ import {LoggedIn} from '@features/users/behaviors/login/components/Requirement';
 import {EventSelect} from '../../../components/form/Select';
 import {Log} from '@core/dev/components/Log';
 import {Form} from '@widgets/form/components/Form';
+import {Feature} from '@services/features/components/Feature';
 
 export function EditEventForm() {
-  const {send, response}  = useEditEventMutation();
-  const onsubmit          = useMutationFormSubmitCallback(send, selectEditEventInput);
-  const [, setData] = useState<any | null>({});
+  const {send, response} = useEditEventMutation();
+  const onsubmit         = useMutationFormSubmitCallback(send, selectEditEventInput);
+  const [, setData]      = useState<any | null>({});
 
   const [{data: {event: _event} = {} as any} = {} as any, setEvent] = useState({} as any);
   return (
@@ -38,7 +39,9 @@ export function EditEventForm() {
 export function RestrictedEditEventForm() {
   return (
     <LoggedIn>
-      <EditEventForm/>
+      <Feature name={'event.edit.form'}>
+        <EditEventForm/>
+      </Feature>
     </LoggedIn>
   );
 }

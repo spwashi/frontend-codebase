@@ -6,6 +6,7 @@ import {Dev} from '@core/dev/components/Dev';
 import {useJwt} from '@services/jwt/hooks/useJwt';
 
 import {FormConfig} from '@widgets/form/features/fields/types/formConfig';
+import {Feature} from '@services/features/components/Feature';
 
 
 interface SubmissionCallbackParams {
@@ -57,8 +58,8 @@ export function UploadAssetForm() {
   const jwt               = useJwt();
   const [error, setError] = useState<any | null>(null);
   const onSubmit          = useCallback(async ({
-    data
-  }: any) => {
+                                                 data,
+                                               }: any) => {
     if (!jwt) {
       return setError('No JWT')
     }
@@ -74,13 +75,15 @@ export function UploadAssetForm() {
   if (!BACKEND_URL) return null;
   return (
     <LoggedIn>
-      <Dev>{error}</Dev>
-      <FormWidget config={form__uploadAsset} onSubmit={onSubmit}/>
-      {
-        out
-        ? <pre>{JSON.stringify(out, null, 3)}</pre>
-        : null
-      }
+      <Feature name={'asset.upload.form'}>
+        <Dev>{error}</Dev>
+        <FormWidget config={form__uploadAsset} onSubmit={onSubmit}/>
+        {
+          out
+          ? <pre>{JSON.stringify(out, null, 3)}</pre>
+          : null
+        }
+      </Feature>
     </LoggedIn>
   );
 }

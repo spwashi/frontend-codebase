@@ -6,6 +6,7 @@ import {useCreateConceptMutation} from '../mutation';
 import {FormWidget} from '@widgets/form/FormWidget';
 import {LoggedIn} from '@features/users/behaviors/login/components/Requirement';
 import {ErrorBoundary} from '@core/error/components/ErrorBoundary';
+import {Feature} from '@services/features/components/Feature';
 
 
 function ActiveForm() {
@@ -22,7 +23,9 @@ function ActiveForm() {
 export function CreateConceptForm() {
   return (
     <LoggedIn>
-      <ActiveForm/>
+      <Feature name={'concept.create.form'}>
+        <ActiveForm/>
+      </Feature>
     </LoggedIn>
   );
 }

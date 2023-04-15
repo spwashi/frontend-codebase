@@ -1,5 +1,6 @@
 import React, {createContext, ReactNode, useContext, useEffect, useMemo, useReducer} from 'react';
 import {Dev} from '@core/dev/components/Dev';
+import {Log} from '@core/dev/components/Log';
 
 type IFeature =
   {
@@ -81,7 +82,7 @@ export function FeaturesBoundary({children}: { children: ReactNode }) {
   const value             = useMemo(() => ({state, dispatch}), [state, dispatch]);
   return (
     <FeaturesContext.Provider value={value}>
-      {/*<Log title={'Features'}>{value}</Log>*/}
+      <Log title={'Features'}>{value}</Log>
       {children}
     </FeaturesContext.Provider>
   )

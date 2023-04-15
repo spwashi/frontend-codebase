@@ -7,6 +7,7 @@ import {FormWidget} from '@widgets/form/FormWidget';
 import {ACTION_TAG_CREATED} from '../../../services/redux/reducer';
 import {useDispatch} from 'react-redux';
 import {LoggedIn} from '@features/users/behaviors/login/components/Requirement';
+import {Feature} from '@services/features/components/Feature';
 
 function CreateTagForm() {
   const {send, response} = useCreateTagMutation();
@@ -26,7 +27,9 @@ function CreateTagForm() {
 export function RestrictedCreateTagForm() {
   return (
     <LoggedIn>
-      <CreateTagForm/>
+      <Feature name={'tag.create.form'}>
+        <CreateTagForm/>
+      </Feature>
     </LoggedIn>
   );
 }

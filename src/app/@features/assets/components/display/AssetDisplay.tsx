@@ -7,6 +7,7 @@ import {LoggedIn} from '../../../users/behaviors/login/components/Requirement';
 import {Form} from '@widgets/form/components/Form';
 
 import {FormConfig} from '@widgets/form/features/fields/types/formConfig';
+import {Feature} from '@services/features/components/Feature';
 
 function getDisplayAssetForm(user: { username?: string }) {
   return (
@@ -25,16 +26,18 @@ function getDisplayAssetForm(user: { username?: string }) {
  */
 function DisplayForm(user: { username: string | undefined } | { username: string }) {
   const [state, setState]  = useState<any | null>();
-  const realname             = state?.data?.asset?.realname ?? '';
+  const realname           = state?.data?.asset?.realname ?? '';
   const form__displayAsset = getDisplayAssetForm(user);
   return (
     <LoggedIn>
-      <FormWidget
-        onSubmit={setState}
-        onChange={setState}
-        config={form__displayAsset}
-      />
-      <AssetQuery realname={realname} username={user?.username}/>
+      <Feature name={'asset.display.form'}>
+        <FormWidget
+          onSubmit={setState}
+          onChange={setState}
+          config={form__displayAsset}
+        />
+        <AssetQuery realname={realname} username={user?.username}/>
+      </Feature>
     </LoggedIn>
   );
 }
@@ -46,18 +49,20 @@ function DisplayForm(user: { username: string | undefined } | { username: string
 export function AssetDisplay() {
   const [state, setUsername] = useState<{ data: { [k: string]: string | IUser } } | null>(null);
   const userDataKey          = '.user';
-  const username               = getUserSelectorUsername(state?.data?.[userDataKey]);
+  const username             = getUserSelectorUsername(state?.data?.[userDataKey]);
   return (
     <LoggedIn>
-      <section>
-        <header>Asset Display for user: {username}</header>
-        <div className="column">
-          <Form onChange={setUsername} onSubmit={setUsername}>
-            <UserSelect formKey={userDataKey} ignoreLogin/>
-          </Form>
-          <DisplayForm username={username}/>
-        </div>
-      </section>
+      <Feature name={'asset.display'}>
+        <section>
+          <header>Asset Display for user: {username}</header>
+          <div className="column">
+            <Form onChange={setUsername} onSubmit={setUsername}>
+              <UserSelect formKey={userDataKey} ignoreLogin/>
+            </Form>
+            <DisplayForm username={username}/>
+          </div>
+        </section>
+      </Feature>
     </LoggedIn>
   )
 }

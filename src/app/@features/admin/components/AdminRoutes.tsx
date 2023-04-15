@@ -10,6 +10,7 @@ import {TagsControlPanel} from '../../tags/behaviors/admin/ControlPanel';
 import {AssetsControlPanel} from '../../assets/behaviors/admin/ControlPanel';
 import {LoggedIn, NotLoggedIn} from '../../users/behaviors/login/components/Requirement';
 import React from 'react';
+import {Feature} from '@services/features/components/Feature';
 
 export function AdminRoutes() {
   return (
@@ -25,14 +26,18 @@ export function AdminRoutes() {
           <Route path="assets/*" element={<AssetsControlPanel/>}/>
           <Route path="all/*" element={<>
             <NotLoggedIn>
-              <UsersControlPanel/>
+              <Feature name={'admin.routes[pre-login]'}>
+                <UsersControlPanel/>
+              </Feature>
             </NotLoggedIn>
             <LoggedIn>
-              <AssetsControlPanel/>
-              <ConceptsControlPanel/>
-              <EventsControlPanel/>
-              <ScenesControlPanel/>
-              <TagsControlPanel/>
+              <Feature name={'admin.routes'}>
+                <AssetsControlPanel/>
+                <ConceptsControlPanel/>
+                <EventsControlPanel/>
+                <ScenesControlPanel/>
+                <TagsControlPanel/>
+              </Feature>
             </LoggedIn>
           </>}/>
         </Routes>

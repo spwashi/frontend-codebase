@@ -1,5 +1,5 @@
 import {ProjectFeatures} from '../../../projects/components/Features';
-import {FeatureRequirement} from '@services/features/components/Feature';
+import {Feature, FeatureRequirement} from '@services/features/components/Feature';
 import {LoggedIn, NotLoggedIn} from '../login/components/Requirement';
 import {VerifyLogin} from '../login/components/VerifyLogin';
 import {LogoutButton} from '../login/components/Logout';
@@ -18,15 +18,21 @@ export function UsersControlPanel() {
       <section>
         <FeatureRequirement name="users.login" alternative={'Need User Login'}>
           <LoggedIn>
-            <VerifyLogin/>
+            <Feature name="usercontrolpanel.users.login.verify">
+              <VerifyLogin/>
+            </Feature>
           </LoggedIn>
           <NotLoggedIn>
-            <LoginForm/>
+            <Feature name={'usercontrolpanel.users.login.form'} >
+              <LoginForm/>
+            </Feature>
           </NotLoggedIn>
         </FeatureRequirement>
         <FeatureRequirement name="users.signup" alternative={'Need User Signup'}>
           <NotLoggedIn>
-            <SignupForm/>
+            <Feature name={'usercontrolpanel.users.signup.form'}>
+              <SignupForm/>
+            </Feature>
           </NotLoggedIn>
         </FeatureRequirement>
       </section>
