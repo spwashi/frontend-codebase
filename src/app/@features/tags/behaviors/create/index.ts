@@ -1,1 +1,1 @@
-export {RestrictedCreateTagForm} from './components/Form'
+export {CreateTagFormFeature} from './components/Form'

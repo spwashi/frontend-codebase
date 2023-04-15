@@ -6,11 +6,10 @@ import {useCreateTagMutation} from '../mutations';
 import {FormWidget} from '@widgets/form/FormWidget';
 import {ACTION_TAG_CREATED} from '../../../services/redux/reducer';
 import {useDispatch} from 'react-redux';
-import {LoggedIn} from '@features/users/behaviors/login/components/Requirement';
 import {Feature} from '@services/features/item/components/Feature';
 import {tagCreateFormFeatureName} from '@features/tags/features';
 
-function CreateTagForm() {
+function InnerForm() {
   const {send, response} = useCreateTagMutation();
   const dispatch         = useDispatch();
   const onsubmit         = useMutationFormSubmitCallback(o => send(o).then((o) => {
@@ -25,12 +24,10 @@ function CreateTagForm() {
   )
 }
 
-export function RestrictedCreateTagForm() {
+export function CreateTagFormFeature() {
   return (
-    <LoggedIn>
-      <Feature name={tagCreateFormFeatureName}>
-        <CreateTagForm/>
-      </Feature>
-    </LoggedIn>
+    <Feature name={tagCreateFormFeatureName}>
+      <InnerForm/>
+    </Feature>
   );
 }

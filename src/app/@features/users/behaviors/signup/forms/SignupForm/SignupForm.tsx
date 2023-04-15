@@ -10,7 +10,7 @@ import {FormWidget} from '@widgets/form/FormWidget';
 import {FormConfig} from '@widgets/form/features/fields/types/formConfig';
 
 import {projectDisplayFeatureName} from '@features/projects/features';
-import {userSignupFormFeatureName} from '@features/users/features';
+import {userSignupFeatureName, userSignupFormFeatureName} from '@features/users/features';
 import {FeatureRequirement} from '@services/features/list/components/FeatureRequirement';
 
 const SIGNUP_MUTATION = gql`
@@ -62,10 +62,12 @@ export function SignupForm() {
   const loggedInUser = useSelector(selectLoggedInUserName);
   if (loggedInUser) return null;
   return (
-    <Feature name={userSignupFormFeatureName}>
-      <FeatureRequirement name={projectDisplayFeatureName} alternative={'Need Projects'}>
-        <ActiveForm/>
-      </FeatureRequirement>
-    </Feature>
+    <FeatureRequirement name={userSignupFeatureName} alternative={'Need User Signup'}>
+      <Feature name={userSignupFormFeatureName}>
+        <FeatureRequirement name={projectDisplayFeatureName} alternative={'Need Projects'}>
+          <ActiveForm/>
+        </FeatureRequirement>
+      </Feature>
+    </FeatureRequirement>
   );
 }

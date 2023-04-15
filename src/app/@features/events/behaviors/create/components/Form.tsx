@@ -4,11 +4,10 @@ import {useMutationFormSubmitCallback} from '@services/graphql/hooks/useMutation
 import {form__createEvent, selectCreateEventInput} from '../config';
 import {useCreateEventMutation} from '../mutation';
 import {FormWidget} from '@widgets/form/FormWidget';
-import {LoggedIn} from '@features/users/behaviors/login/components/Requirement';
 import {Feature} from '@services/features/item/components/Feature';
 import {eventCreateFormFeatureName} from '@features/events/features';
 
-function ActiveForm() {
+function CreateEventForm() {
   const {send, response} = useCreateEventMutation();
   const onsubmit         = useMutationFormSubmitCallback(send, selectCreateEventInput);
   return (
@@ -19,12 +18,10 @@ function ActiveForm() {
   )
 }
 
-export function CreateEventForm() {
+export function CreateEventFormFeature() {
   return (
-    <LoggedIn>
-      <Feature name={eventCreateFormFeatureName}>
-        <ActiveForm/>
-      </Feature>
-    </LoggedIn>
+    <Feature name={eventCreateFormFeatureName}>
+      <CreateEventForm/>
+    </Feature>
   );
 }

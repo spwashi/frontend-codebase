@@ -1,1 +1,1 @@
-export {CreateEventForm} from './components/Form'
+export {CreateEventFormFeature} from './components/Form'

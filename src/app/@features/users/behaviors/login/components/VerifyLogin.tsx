@@ -1,16 +1,19 @@
 import React, {useEffect} from 'react';
 import {useDispatch} from 'react-redux';
-import {BACKEND_URL} from '@core/constants';
+import {BACKEND_URL, IS_AUTHENTICATED_URL} from '@core/constants';
 import {logout} from './Logout';
 import {useJwt} from '@services/jwt/hooks/useJwt';
 import {userLoginVerifyFeatureName} from '@features/users/features';
 import {Feature} from '@services/features/item/components/Feature';
 
+/**
+ * Checks the current jwt, logging out if the jwt is invalid
+ */
 export function VerifyLogin() {
   const dispatch = useDispatch();
   const jwt      = useJwt();
   useEffect(() => {
-    fetch(BACKEND_URL + '/current/user/is_authenticated', {
+    fetch(IS_AUTHENTICATED_URL, {
       method:  'POST',
       body:    JSON.stringify({token: jwt}),
       headers: {

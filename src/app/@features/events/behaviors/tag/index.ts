@@ -1,1 +1,1 @@
-export {RestrictedTagEventForm} from './components'
+export {TagEventFormFeature} from './components'

@@ -2,12 +2,12 @@ import React from 'react';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
 import {mainDecorator} from '@services/storybook/decorators';
 import {FeatureList} from '@services/features/list/components/FeatureList';
-import {EventDisplayForm} from '../../../components/display/DisplayForm';
+import {EventDisplayFormFeature} from '../../../components/display/DisplayForm';
 
 
 export default {
   title:      'Admin/Event/DisplayEvent',
-  component:  EventDisplayForm,
+  component:  EventDisplayFormFeature,
   decorators: [
     (Story) => {
       return (
@@ -19,9 +19,9 @@ export default {
     },
     mainDecorator,
   ],
-} as ComponentMeta<typeof EventDisplayForm>;
+} as ComponentMeta<typeof EventDisplayFormFeature>;
 
-const Template: ComponentStory<typeof EventDisplayForm> = () => <EventDisplayForm />;
+const Template: ComponentStory<typeof EventDisplayFormFeature> = () => <EventDisplayFormFeature />;
 
 export const DisplayEvent = Template.bind({});
 DisplayEvent.args         = {};

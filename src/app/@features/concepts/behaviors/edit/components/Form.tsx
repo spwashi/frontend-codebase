@@ -4,13 +4,13 @@ import {useMutationFormSubmitCallback} from '@services/graphql/hooks/useMutation
 import {form__editConcept, selectEditConceptInput} from '../config';
 import {useEditConceptMutation} from '../mutation';
 import {FormWidget} from '@widgets/form/FormWidget';
-import {LoggedIn} from '@features/users/behaviors/login/components/Requirement';
 import {ConceptSelect} from '../../../components/form/Select';
 import {Log} from '@core/dev/components/Log';
 import {formClassNames} from '@widgets/form/styles/classNames';
 import {Form} from '@widgets/form/components/Form';
 import {Feature} from '@services/features/item/components/Feature';
 import {editConceptFormFeatureName} from '@features/concepts/features';
+import {AllConceptsQuery} from '@features/concepts/services/graphql/all/components/FindAll';
 
 export function EditConceptForm() {
   const {send, response} = useEditConceptMutation();
@@ -46,12 +46,11 @@ export function EditConceptForm() {
   )
 }
 
-export function RestrictedEditConceptForm() {
+export function EditConceptFormFeature() {
   return (
-    <LoggedIn>
-      <Feature name={editConceptFormFeatureName}>
-        <EditConceptForm/>
-      </Feature>
-    </LoggedIn>
+    <Feature name={editConceptFormFeatureName}>
+      <AllConceptsQuery/>
+      <EditConceptForm/>
+    </Feature>
   );
 }

@@ -1,7 +1,6 @@
 import React, {useCallback, useState} from 'react';
 import {BACKEND_URL} from '@core/constants';
 import {FormWidget} from '@widgets/form/FormWidget';
-import {LoggedIn} from '@features/users/behaviors/login/components/Requirement';
 import {Dev} from '@core/dev/components/Dev';
 import {useJwt} from '@services/jwt/hooks/useJwt';
 
@@ -75,16 +74,14 @@ export function UploadAssetForm() {
 
   if (!BACKEND_URL) return null;
   return (
-    <LoggedIn>
-      <Feature name={uploadAssetFormFeature}>
-        <Dev>{error}</Dev>
-        <FormWidget config={form__uploadAsset} onSubmit={onSubmit}/>
-        {
-          out
-          ? <pre>{JSON.stringify(out, null, 3)}</pre>
-          : null
-        }
-      </Feature>
-    </LoggedIn>
+    <Feature name={uploadAssetFormFeature}>
+      <Dev>{error}</Dev>
+      <FormWidget config={form__uploadAsset} onSubmit={onSubmit}/>
+      {
+        out
+        ? <pre>{JSON.stringify(out, null, 3)}</pre>
+        : null
+      }
+    </Feature>
   );
 }

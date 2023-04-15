@@ -6,7 +6,6 @@ import {ProjectFeatures} from '../../../../projects/components/Features';
 import {LoggedIn} from '../../../../users/behaviors/login/components/Requirement';
 import {NavLink} from 'react-router-dom';
 import {Route, Routes} from 'react-router';
-import {userLoginFeatureName} from '@features/users/features';
 import {assetFeatureName} from '@features/assets/features';
 import {FeatureRequirement} from '@services/features/list/components/FeatureRequirement';
 
@@ -14,26 +13,24 @@ export function AssetsControlPanel() {
   return <>
     <UserFeatures/>
     <ProjectFeatures/>
-    <nav>
-      <ul>
-        <li><NavLink to="../assets">Asset Home</NavLink></li>
-        <li><NavLink to="../assets/all">All Assets</NavLink></li>
-      </ul>
-    </nav>
-    <Routes>
-      <Route path="all" element={'[unimplemented]'}/>
-      <Route path="" element={
-        <FeatureRequirement name={userLoginFeatureName} alternative={'Need Users Login'}>
-          <FeatureRequirement name={assetFeatureName} alternative={'Need Assets'}>
+    <FeatureRequirement name={assetFeatureName} alternative={'Need Assets'}>
+      <nav>
+        <ul>
+          <li><NavLink to="../assets">Asset Home</NavLink></li>
+          <li><NavLink to="../assets/all">All Assets</NavLink></li>
+        </ul>
+      </nav>
+      <Routes>
+        <Route path="all" element={'[unimplemented]'}/>
+        <Route path="" element={
+          <LoggedIn>
             <section>
-              <LoggedIn>
-                  <UploadAssetForm/>
-              </LoggedIn>
+              <UploadAssetForm/>
               <AssetDisplay/>
             </section>
-          </FeatureRequirement>
-        </FeatureRequirement>
-      }/>
-    </Routes>
+          </LoggedIn>
+        }/>
+      </Routes>
+    </FeatureRequirement>
   </>;
 }

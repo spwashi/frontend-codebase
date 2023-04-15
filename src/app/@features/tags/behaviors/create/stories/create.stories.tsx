@@ -2,11 +2,11 @@ import React from 'react';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
 import {mainDecorator} from '@services/storybook/decorators';
 import {FeatureList} from '@services/features/list/components/FeatureList';
-import {RestrictedCreateTagForm} from '../index';
+import {CreateTagFormFeature} from '../index';
 
 export default {
   title:      'Admin/Tag/CreateTag',
-  component:  RestrictedCreateTagForm,
+  component:  CreateTagFormFeature,
   decorators: [
     (Story) =>
       <React.Fragment>
@@ -15,9 +15,9 @@ export default {
       </React.Fragment>,
     mainDecorator,
   ],
-} as ComponentMeta<typeof RestrictedCreateTagForm>;
+} as ComponentMeta<typeof CreateTagFormFeature>;
 
-const Template: ComponentStory<typeof RestrictedCreateTagForm> = (args) => <RestrictedCreateTagForm />;
+const Template: ComponentStory<typeof CreateTagFormFeature> = (args) => <CreateTagFormFeature />;
 
 export const CreateTag = Template.bind({});
 CreateTag.args         = {};

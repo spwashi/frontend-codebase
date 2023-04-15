@@ -1,12 +1,12 @@
 import React from 'react';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
 import {mainDecorator} from '@services/storybook/decorators';
-import {CreateEventForm} from '../../create';
+import {CreateEventFormFeature} from '../../create';
 import {FeatureList} from '@services/features/list/components/FeatureList';
 
 export default {
   title:      'Admin/Event/CreateEvent',
-  component:  CreateEventForm,
+  component:  CreateEventFormFeature,
   decorators: [
     (Story) =>
       <React.Fragment>
@@ -15,9 +15,9 @@ export default {
       </React.Fragment>,
     mainDecorator,
   ],
-} as ComponentMeta<typeof CreateEventForm>;
+} as ComponentMeta<typeof CreateEventFormFeature>;
 
-const Template: ComponentStory<typeof CreateEventForm> = (args) => <CreateEventForm />;
+const Template: ComponentStory<typeof CreateEventFormFeature> = (args) => <CreateEventFormFeature />;
 
 export const CreateEvent = Template.bind({});
 CreateEvent.args         = {};

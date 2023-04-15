@@ -10,6 +10,7 @@ import {Log} from '@core/dev/components/Log';
 import {Form} from '@widgets/form/components/Form';
 import {Feature} from '@services/features/item/components/Feature';
 import {eventEditFormFeatureName} from '@features/events/features';
+import {AllEventsQuery} from '@features/events/services/graphql/all/components/FindAll';
 
 export function EditEventForm() {
   const {send, response} = useEditEventMutation();
@@ -37,12 +38,11 @@ export function EditEventForm() {
   )
 }
 
-export function RestrictedEditEventForm() {
+export function EditEventFormFeature() {
   return (
-    <LoggedIn>
       <Feature name={eventEditFormFeatureName}>
+        <AllEventsQuery/>
         <EditEventForm/>
       </Feature>
-    </LoggedIn>
   );
 }

@@ -1,1 +1,1 @@
-export {RestrictedEditEventForm} from './components/Form'
+export {EditEventFormFeature} from './components/Form'

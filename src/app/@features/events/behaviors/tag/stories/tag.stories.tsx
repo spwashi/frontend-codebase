@@ -1,13 +1,13 @@
 import React from 'react';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
 import {mainDecorator} from '@services/storybook/decorators';
-import {RestrictedTagEventForm} from '../index';
+import {TagEventFormFeature} from '../index';
 import {FeatureList} from '@services/features/list/components/FeatureList';
 
 
 export default {
   title:      'Admin/Event/TagEvent',
-  component:  RestrictedTagEventForm,
+  component:  TagEventFormFeature,
   decorators: [
     (Story) => {
       return (
@@ -19,9 +19,9 @@ export default {
     },
     mainDecorator,
   ],
-} as ComponentMeta<typeof RestrictedTagEventForm>;
+} as ComponentMeta<typeof TagEventFormFeature>;
 
-const Template: ComponentStory<typeof RestrictedTagEventForm> = () => <RestrictedTagEventForm />;
+const Template: ComponentStory<typeof TagEventFormFeature> = () => <TagEventFormFeature />;
 
 export const TagEvent = Template.bind({});
 TagEvent.args         = {};

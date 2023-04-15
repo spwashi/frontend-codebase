@@ -1,14 +1,14 @@
 import React from 'react';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
 import {mainDecorator} from '@services/storybook/decorators';
-import {RestrictedTagConceptForm} from '@features/concepts/behaviors/tag';
+import {TagConceptFormFeature} from '@features/concepts/behaviors/tag';
 import {FeatureList} from '@services/features/list/components/FeatureList';
-import {TagsDisplayForm} from '../../../components/display';
+import {DisplayTagFormFeature} from '../../../components/display';
 
 
 export default {
   title:      'Admin/Tag/DisplayTag',
-  component:  TagsDisplayForm,
+  component:  DisplayTagFormFeature,
   decorators: [
     (Story) => {
       return (
@@ -20,9 +20,9 @@ export default {
     },
     mainDecorator,
   ],
-} as ComponentMeta<typeof RestrictedTagConceptForm>;
+} as ComponentMeta<typeof TagConceptFormFeature>;
 
-const Template: ComponentStory<typeof RestrictedTagConceptForm> = () => <TagsDisplayForm />;
+const Template: ComponentStory<typeof TagConceptFormFeature> = () => <DisplayTagFormFeature />;
 
 export const DisplayTag = Template.bind({});
 DisplayTag.args         = {};

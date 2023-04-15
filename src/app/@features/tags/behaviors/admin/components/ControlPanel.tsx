@@ -1,13 +1,14 @@
 import React from 'react';
 import {TagFeatures} from '../../../components/Features';
-import {RestrictedCreateTagForm} from '../../create';
-import {TagsDisplayForm} from '../../../components/display';
+import {CreateTagFormFeature} from '../../create';
+import {DisplayTagFormFeature} from '../../../components/display';
 import {UserFeatures} from '../../../../users/components/Features';
 import {ProjectFeatures} from '../../../../projects/components/Features';
 import {NavLink} from 'react-router-dom';
 import {Route, Routes} from 'react-router';
-import {tagDisplayFeatureName, tagFeatureName} from '@features/tags/features';
+import {tagFeatureName} from '@features/tags/features';
 import {FeatureRequirement} from '@services/features/list/components/FeatureRequirement';
+import {LoggedIn} from '@features/users/behaviors/login/components/Requirement';
 
 export function TagsControlPanel() {
   return (
@@ -26,10 +27,10 @@ export function TagsControlPanel() {
         <Route path="" element={
           <FeatureRequirement name={tagFeatureName} alternative={'Need Tags'}>
             <section>
-              <RestrictedCreateTagForm/>
-              <FeatureRequirement name={tagDisplayFeatureName} alternative={'Need Tag Display'}>
-                <TagsDisplayForm/>
-              </FeatureRequirement>
+              <LoggedIn>
+                <CreateTagFormFeature/>
+                <DisplayTagFormFeature/>
+              </LoggedIn>
             </section>
           </FeatureRequirement>
         }/>

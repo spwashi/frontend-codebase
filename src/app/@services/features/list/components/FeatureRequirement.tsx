@@ -4,19 +4,16 @@ import {FeaturesRegistrationContext} from '../context';
 import {IFeatureName} from '../../item/types';
 
 type IFeatureRequirementProps = {
-  children: any;
   name: IFeatureName;
-  active?: boolean;
+  children: any;
   alternative: any
 };
-export function FeatureRequirement({
-                                     name,
-                                     children,
-                                     active = true,
-                                     alternative,
-                                   }: IFeatureRequirementProps) {
+
+/**
+ * Renders children only if the feature required is available
+ */
+export function FeatureRequirement({name, children, alternative}: IFeatureRequirementProps) {
   const features = useContext(FeaturesRegistrationContext);
-  if (!active) return children;
   if (features.state?.features?.available[name]) return children;
   return alternative ?? <Dev>[disabled]</Dev>;
 }

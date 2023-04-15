@@ -1,19 +1,18 @@
 import {CreateConceptForm} from '../../create';
-import {RestrictedTagConceptForm} from '../../tag';
+import {TagConceptFormFeature} from '../../tag';
 import React from 'react';
 import {ConceptFeatures} from '../../../components/Features';
 import {ConceptDisplayForm} from '../../../components/display/DisplayForm';
 import {AllConceptsConceptDisplay} from '../../../services/graphql/all/components/DisplayAll';
 import {Route, Routes} from 'react-router';
 import {NavLink} from 'react-router-dom';
-import {TagFeatures} from '../../../../tags/components/Features';
-import {UserFeatures} from '../../../../users/components/Features';
-import {RestrictedEditConceptForm} from '../../edit';
-import {AllConceptsQuery} from '../../../services/graphql/all/components/FindAll';
-import {AllTagsQuery} from '../../../../tags/services/graphql/all';
-import {conceptDisplayFeatureName, conceptFeatureName} from '@features/concepts/features';
-import {tagDisplayFeatureName} from '@features/tags/features';
+import {TagFeatures} from '@features/tags/components/Features';
+import {UserFeatures} from '@features/users/components/Features';
+import {EditConceptFormFeature} from '../../edit';
+import {AllTagsQuery} from '@features/tags/services/graphql/all';
+import {conceptFeatureName} from '@features/concepts/features';
 import {FeatureRequirement} from '@services/features/list/components/FeatureRequirement';
+import {LoggedIn} from '@features/users/behaviors/login/components/Requirement';
 
 export function ConceptsControlPanel() {
   return (
@@ -32,16 +31,12 @@ export function ConceptsControlPanel() {
           <Route path={'all'} element={<div style={{width: 500 + 'px'}}><AllConceptsConceptDisplay/></div>}/>
           <Route path="" element={
             <section>
-              <AllConceptsQuery/>
-              <CreateConceptForm/>
-              <RestrictedEditConceptForm/>
-              <FeatureRequirement name={conceptDisplayFeatureName} alternative={'Need Concepts Display'}>
+              <LoggedIn>
+                <CreateConceptForm/>
+                <EditConceptFormFeature/>
                 <ConceptDisplayForm/>
-                <AllTagsQuery/>
-                <FeatureRequirement name={tagDisplayFeatureName} alternative={'Need Tags Display'}>
-                  <RestrictedTagConceptForm/>
-                </FeatureRequirement>
-              </FeatureRequirement>
+                <TagConceptFormFeature/>
+              </LoggedIn>
             </section>
           }/>
         </Routes>

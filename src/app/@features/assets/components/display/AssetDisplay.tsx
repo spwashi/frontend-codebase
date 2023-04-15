@@ -52,18 +52,16 @@ export function AssetDisplay() {
   const userDataKey          = '.user';
   const username             = getUserSelectorUsername(state?.data?.[userDataKey]);
   return (
-    <LoggedIn>
-      <Feature name={assetDisplayFeatureName}>
-        <section>
-          <header>Asset Display for user: {username}</header>
-          <div className="column">
-            <Form onChange={setUsername} onSubmit={setUsername}>
-              <UserSelect formKey={userDataKey} ignoreLogin/>
-            </Form>
-            <DisplayForm username={username}/>
-          </div>
-        </section>
-      </Feature>
-    </LoggedIn>
+    <Feature name={assetDisplayFeatureName}>
+      <section>
+        <header>Asset Display for user: {username}</header>
+        <div className="column">
+          <Form onChange={setUsername} onSubmit={setUsername}>
+            <UserSelect formKey={userDataKey} ignoreLogin/>
+          </Form>
+          <DisplayForm username={username}/>
+        </div>
+      </section>
+    </Feature>
   )
 }
