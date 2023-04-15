@@ -1,12 +1,12 @@
 import React from 'react';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
 import {mainDecorator} from '@services/storybook/decorators';
-import {RestrictedCreateSceneForm} from '../index';
+import {CreateSceneFormFeature} from '../index';
 import {FeatureList} from '@services/features/list/components/FeatureList';
 
 export default {
   title:      'Admin/Scene/CreateScene',
-  component:  RestrictedCreateSceneForm,
+  component:  CreateSceneFormFeature,
   decorators: [
     (Story) =>
       <React.Fragment>
@@ -15,9 +15,9 @@ export default {
       </React.Fragment>,
     mainDecorator,
   ],
-} as ComponentMeta<typeof RestrictedCreateSceneForm>;
+} as ComponentMeta<typeof CreateSceneFormFeature>;
 
-const Template: ComponentStory<typeof RestrictedCreateSceneForm> = () => <RestrictedCreateSceneForm />;
+const Template: ComponentStory<typeof CreateSceneFormFeature> = () => <CreateSceneFormFeature />;
 
 export const CreateScene = Template.bind({});
 CreateScene.args         = {};

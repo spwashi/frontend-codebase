@@ -1,6 +1,6 @@
 import {createContext} from 'react';
 import {IFeatureRegistrationContext} from './types';
-import {getInitialFeaturesRegistrationContextState} from '@services/features/list/helpers/getInitialState';
+import {getFrbContextStartState} from '@services/features/list/helpers/getInitialState';
 
 
 /**
@@ -9,9 +9,7 @@ import {getInitialFeaturesRegistrationContextState} from '@services/features/lis
 export const FeaturesRegistrationContext =
   createContext(
     {
-      state:    {
-        features: getInitialFeaturesRegistrationContextState(),
-      },
+      state:    getFrbContextStartState(),
       dispatch: () => {
         console.log('dispatched')
       },

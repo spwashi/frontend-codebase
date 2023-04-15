@@ -1,12 +1,12 @@
 import React from 'react';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
 import {mainDecorator} from '@services/storybook/decorators';
-import {RestrictedEditSceneForm} from '../index';
+import {EditSceneFormFeature} from '../index';
 import {FeatureList} from '@services/features/list/components/FeatureList';
 
 export default {
   title:      'Admin/Scene/EditScene',
-  component:  RestrictedEditSceneForm,
+  component:  EditSceneFormFeature,
   decorators: [
     (Story) =>
       <React.Fragment>
@@ -15,9 +15,9 @@ export default {
       </React.Fragment>,
     mainDecorator,
   ],
-} as ComponentMeta<typeof RestrictedEditSceneForm>;
+} as ComponentMeta<typeof EditSceneFormFeature>;
 
-const Template: ComponentStory<typeof RestrictedEditSceneForm> = (args) => <RestrictedEditSceneForm />;
+const Template: ComponentStory<typeof EditSceneFormFeature> = (args) => <EditSceneFormFeature />;
 
 export const EditScene = Template.bind({});
 EditScene.args         = {};

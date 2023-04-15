@@ -1,4 +1,4 @@
-import {RestrictedCreateSceneForm} from '../../create';
+import {CreateSceneFormFeature} from '../../create';
 import React from 'react';
 import {SceneFeatures} from '../../../components/Features';
 import {SceneDisplayForm} from '../../../components/display/DisplayForm';
@@ -7,10 +7,11 @@ import {Route, Routes} from 'react-router';
 import {NavLink} from 'react-router-dom';
 import {TagFeatures} from '../../../../tags/components/Features';
 import {UserFeatures} from '../../../../users/components/Features';
-import {RestrictedEditSceneForm} from '../../edit';
+import {EditSceneFormFeature} from '../../edit';
 import {AllScenesQuery} from '../../../services/graphql/all/components/FindAll';
 import {sceneDisplayFeatureName, sceneFeatureName} from '@features/scenes/features';
 import {FeatureRequirement} from '@services/features/list/components/FeatureRequirement';
+import {LoggedIn} from '@features/users/behaviors/login/components/Requirement';
 
 export function ScenesControlPanel() {
   return (
@@ -37,8 +38,10 @@ export function ScenesControlPanel() {
             element={
               <section>
                 <AllScenesQuery/>
-                <RestrictedCreateSceneForm/>
-                <RestrictedEditSceneForm/>
+                <LoggedIn>
+                  <CreateSceneFormFeature/>
+                  <EditSceneFormFeature/>
+                </LoggedIn>
                 <FeatureRequirement name={sceneDisplayFeatureName} alternative={'Need Scene Display'}>
                   <SceneDisplayForm/>
                 </FeatureRequirement>

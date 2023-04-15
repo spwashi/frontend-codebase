@@ -1,7 +1,7 @@
 import React, {useContext, useEffect, useMemo, useReducer} from 'react';
-import {FeaturesRegistrationContext} from '../../list/context';
 import {FeatureInternalContext} from '../context';
 import {IFeature, IFeatureName} from '../types';
+import {FeaturesRegistrationContext} from '@services/features/list/context';
 
 export type IFeatureProps = {
   name: IFeatureName,
@@ -11,14 +11,9 @@ export type IFeatureProps = {
 };
 
 /**
- * Registers a Feature with a given name on the nearest FeatureBoundary
- *
- * @param name
- * @param children
- * @param enabled
- * @constructor
+ * Registers or unregisters the feature from a FeaturesRegistrationContext
  */
-export function Feature({name, children, enabled = true}: IFeatureProps) {
+function useFeatureRegistrationEffect(name: IFeatureName, enabled: undefined | boolean) {
   const features = useContext(FeaturesRegistrationContext);
   useEffect(() => {
     features.dispatch({
@@ -32,11 +27,19 @@ export function Feature({name, children, enabled = true}: IFeatureProps) {
                         })
     }
   }, [enabled]);
-
+}
+/**
+ * Registers a Feature with a given name on the nearest FeatureBoundary
+ */
+export function Feature({name, children, enabled = true}: IFeatureProps) {
+  useFeatureRegistrationEffect(name, enabled);
 
   const [state, dispatch] = useReducer((state: IFeature | null) => state, null);
   const value             = useMemo(() => ({state, dispatch}), [state, dispatch]);
+
   if (!enabled) return null;
+  const features = useContext(FeaturesRegistrationContext);
+  if (features.state?.disabled) return null;
   return (
     <FeatureInternalContext.Provider value={value}>
       {children}

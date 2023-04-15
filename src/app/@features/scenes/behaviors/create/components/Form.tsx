@@ -19,12 +19,10 @@ function CreateSceneForm() {
   )
 }
 
-export function RestrictedCreateSceneForm() {
+export function CreateSceneFormFeature() {
   return (
-    <LoggedIn>
       <Feature name={sceneCreateFormFeatureName}>
         <CreateSceneForm/>
       </Feature>
-    </LoggedIn>
   );
 }

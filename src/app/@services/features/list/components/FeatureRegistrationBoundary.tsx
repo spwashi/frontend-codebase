@@ -1,18 +1,26 @@
-import React, {ReactNode, useMemo, useReducer} from 'react';
+import React, {ReactNode, useEffect, useMemo, useReducer} from 'react';
 import {featuresReducer} from '../reducer';
-import {getInitialFeaturesRegistrationContextState} from '@services/features/list/helpers/getInitialState';
+import {getFrbContextStartState} from '@services/features/list/helpers/getInitialState';
 import {Log} from '@core/dev/components/Log';
 import {FeaturesRegistrationContext} from '../context';
+import {IFeatureRegistrationContextState} from '@services/features/list/types';
 
+type IFRB_Props = {
+  children: ReactNode;
+  disabled?: boolean;
+  onAttemptRegister?: (state: IFeatureRegistrationContextState) => void;
+};
 /**
  * Keeps track of feature registration status
- *
- * @param children
- * @constructor
  */
-export function FeatureRegistrationBoundary({children}: { children: ReactNode }) {
-  const [state, dispatch] = useReducer(featuresReducer, getInitialFeaturesRegistrationContextState());
+export function FeatureRegistrationBoundary({children, disabled, onAttemptRegister}: IFRB_Props) {
+  const [state, dispatch] = useReducer(featuresReducer, getFrbContextStartState({disabled}));
   const contextValue      = useMemo(() => ({state, dispatch}), [state, dispatch]);
+
+  useEffect(() => {
+    onAttemptRegister?.(contextValue.state);
+  }, [contextValue.state.stateKey]);
+
   return (
     <FeaturesRegistrationContext.Provider value={contextValue}>
       <Log title={'Features'}>{contextValue}</Log>

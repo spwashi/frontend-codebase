@@ -4,7 +4,6 @@ import {useMutationFormSubmitCallback} from '@services/graphql/hooks/useMutation
 import {form__editScene, selectEditSceneInput} from '../config';
 import {useEditSceneMutation} from '../mutation';
 import {FormWidget} from '@widgets/form/FormWidget';
-import {LoggedIn} from '@features/users/behaviors/login/components/Requirement';
 import {SceneSelect} from '../../../components/form/Select';
 import {formClassNames} from '@widgets/form/styles/classNames';
 import {Form} from '@widgets/form/components/Form';
@@ -44,13 +43,10 @@ function EditSceneForm() {
   )
 }
 
-export function RestrictedEditSceneForm() {
+export function EditSceneFormFeature() {
   return (
-    <LoggedIn>
-      <Feature name={sceneEditFormFeatureName}>
-        <EditSceneForm/>
-      </Feature>
-    </LoggedIn>
-
+    <Feature name={sceneEditFormFeatureName}>
+      <EditSceneForm/>
+    </Feature>
   );
 }
