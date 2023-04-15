@@ -6,7 +6,7 @@ import {LoggedIn} from '@features/users/behaviors/login/components/Requirement';
 export function RestrictedTagConceptForm() {
   return (
     <LoggedIn>
-      <Feature name="concept.tag.form">
+      <Feature name={'concept.tag.form'}>
         <FeatureRequirement name="concepts.display" alternative={'Need Concepts Display'}>
           <TagConceptForm/>
         </FeatureRequirement>

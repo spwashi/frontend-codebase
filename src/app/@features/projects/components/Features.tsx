@@ -8,20 +8,30 @@ import {AllProjectsQuery} from '../services/graphql/all/all';
 function ProjectDisplayFeature() {
   const lastFetched = useSelector(selectPossibleProjectsLastFetched)
   const list        = useSelector(selectPossibleProjectsList)
-  return <Feature name="projects.display" enabled={lastFetched ? !!list.length : false}/>;
+  return (
+    <Feature
+      name={'projects.display'}
+      enabled={lastFetched ? !!list.length : false}
+    />
+  );
 }
 
 function ProjectCreateFeature() {
-  return <Feature name="projects.create" enabled={true}/>;
+  return (
+    <Feature
+      name={'projects.create'}
+      enabled={true}
+    />
+  );
 }
 
 
 export function ProjectFeatures() {
   return (
-    <Feature name="projects">
+    <Feature name={'projects'}>
       <ProjectDisplayFeature/>
       <ProjectCreateFeature/>
-      <Feature name="assets"/>
+      <Feature name={'assets'}/>
     </Feature>
   );
 }

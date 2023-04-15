@@ -18,12 +18,12 @@ export function UsersControlPanel() {
       <section>
         <FeatureRequirement name="users.login" alternative={'Need User Login'}>
           <LoggedIn>
-            <Feature name="usercontrolpanel.users.login.verify">
+            <Feature name={'usercontrolpanel.users.login.verify'}>
               <VerifyLogin/>
             </Feature>
           </LoggedIn>
           <NotLoggedIn>
-            <Feature name={'usercontrolpanel.users.login.form'} >
+            <Feature name={'usercontrolpanel.users.login.form'}>
               <LoginForm/>
             </Feature>
           </NotLoggedIn>

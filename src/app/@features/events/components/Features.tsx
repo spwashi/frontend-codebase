@@ -7,11 +7,16 @@ import {AllEventsQuery} from '../services/graphql/all/components/FindAll';
 function EventDisplayFeature() {
   const lastFetched = useSelector(selectPossibleEventsLastFetched)
   const list        = useSelector(selectPossibleEventsList)
-  return <Feature name="events.display" enabled={lastFetched ? !!list.length : false}/>;
+  return (
+    <Feature
+      name={'events.display'}
+      enabled={lastFetched ? !!list.length : false}
+    />
+  );
 }
 export function EventFeatures() {
   return (
-    <Feature name="events">
+    <Feature name={'events'}>
       <EventDisplayFeature/>
     </Feature>
   )

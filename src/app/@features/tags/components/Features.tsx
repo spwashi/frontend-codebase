@@ -7,11 +7,16 @@ import {AllTagsQuery} from '../services/graphql/all';
 function TagDisplayFeature() {
   const lastFetched = useSelector(selectPossibleTagsLastFetched)
   const list        = useSelector(selectPossibleTagsList)
-  return <Feature name="tags.display" enabled={lastFetched ? !!list.length : false}/>;
+  return (
+    <Feature
+      name={'tags.display'}
+      enabled={lastFetched ? !!list.length : false}
+    />
+  );
 }
 export function TagFeatures() {
   return (
-    <Feature name="tags">
+    <Feature name={'tags'}>
       <TagDisplayFeature/>
     </Feature>
   )
