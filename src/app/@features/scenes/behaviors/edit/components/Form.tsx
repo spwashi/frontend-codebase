@@ -9,11 +9,12 @@ import {SceneSelect} from '../../../components/form/Select';
 import {formClassNames} from '@widgets/form/styles/classNames';
 import {Form} from '@widgets/form/components/Form';
 import {Feature} from '@services/features/components/Feature';
+import {sceneEditFormFeatureName} from '@features/scenes/features';
 
 function EditSceneForm() {
-  const {send, response}  = useEditSceneMutation();
-  const onsubmit          = useMutationFormSubmitCallback(send, selectEditSceneInput);
-  const [, setData] = useState<any | null>({});
+  const {send, response} = useEditSceneMutation();
+  const onsubmit         = useMutationFormSubmitCallback(send, selectEditSceneInput);
+  const [, setData]      = useState<any | null>({});
 
   const [{data: {scene: _scene} = {} as any} = {} as any, setScene] = useState({} as any);
   return (
@@ -46,7 +47,7 @@ function EditSceneForm() {
 export function RestrictedEditSceneForm() {
   return (
     <LoggedIn>
-      <Feature name={'scene.edit.form'}>
+      <Feature name={sceneEditFormFeatureName}>
         <EditSceneForm/>
       </Feature>
     </LoggedIn>

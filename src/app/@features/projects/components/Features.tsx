@@ -3,35 +3,30 @@ import {Feature} from '@services/features/components/Feature';
 import React from 'react';
 import {selectPossibleProjectsLastFetched, selectPossibleProjectsList} from '../services/redux/selectors';
 import {AllProjectsQuery} from '../services/graphql/all/all';
-
+import {projectCreateFeatureName, projectDisplayFeatureName, projectFeatureName} from '@features/projects/features';
+import {assetFeatureName} from '@features/assets/features';
 
 function ProjectDisplayFeature() {
   const lastFetched = useSelector(selectPossibleProjectsLastFetched)
   const list        = useSelector(selectPossibleProjectsList)
+  const enabled     = lastFetched ? !!list.length : false;
   return (
-    <Feature
-      name={'projects.display'}
-      enabled={lastFetched ? !!list.length : false}
-    />
+    <Feature name={projectDisplayFeatureName} enabled={enabled}/>
   );
 }
 
 function ProjectCreateFeature() {
   return (
-    <Feature
-      name={'projects.create'}
-      enabled={true}
-    />
+    <Feature name={projectCreateFeatureName} enabled={true}/>
   );
 }
 
-
 export function ProjectFeatures() {
   return (
-    <Feature name={'projects'}>
+    <Feature name={projectFeatureName}>
       <ProjectDisplayFeature/>
       <ProjectCreateFeature/>
-      <Feature name={'assets'}/>
+      <Feature name={assetFeatureName}/>
     </Feature>
   );
 }

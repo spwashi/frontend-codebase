@@ -8,6 +8,7 @@ import {Form} from '@widgets/form/components/Form';
 
 import {FormConfig} from '@widgets/form/features/fields/types/formConfig';
 import {Feature} from '@services/features/components/Feature';
+import {assetDisplayFeatureName, assetDisplayFormFeatureName} from '@features/assets/features';
 
 function getDisplayAssetForm(user: { username?: string }) {
   return (
@@ -30,7 +31,7 @@ function DisplayForm(user: { username: string | undefined } | { username: string
   const form__displayAsset = getDisplayAssetForm(user);
   return (
     <LoggedIn>
-      <Feature name={'asset.display.form'}>
+      <Feature name={assetDisplayFormFeatureName}>
         <FormWidget
           onSubmit={setState}
           onChange={setState}
@@ -52,7 +53,7 @@ export function AssetDisplay() {
   const username             = getUserSelectorUsername(state?.data?.[userDataKey]);
   return (
     <LoggedIn>
-      <Feature name={'asset.display'}>
+      <Feature name={assetDisplayFeatureName}>
         <section>
           <header>Asset Display for user: {username}</header>
           <div className="column">

@@ -9,6 +9,8 @@ import {FormWidget} from '@widgets/form/FormWidget';
 import {FeatureRequirement} from '@services/features/components/Feature';
 import {ErrorBoundary} from '@core/error/components/ErrorBoundary';
 
+import {projectCreateFeatureName} from '@features/projects/features';
+
 
 function ActiveForm() {
   const {send, response}  = useCreateProjectMutation();
@@ -35,7 +37,7 @@ function ActiveForm() {
 
 export function CreateProjectForm() {
   return (
-    <FeatureRequirement name="projects.create" alternative={'Need Projects Create'}>
+    <FeatureRequirement name={projectCreateFeatureName} alternative={'Need Projects Create'}>
       <ActiveForm/>
     </FeatureRequirement>
   );

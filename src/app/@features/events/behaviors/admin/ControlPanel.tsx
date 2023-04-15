@@ -12,6 +12,8 @@ import {UserFeatures} from '../../../users/components/Features';
 import {RestrictedEditEventForm} from '../edit';
 import {AllTagsQuery} from '../../../tags/services/graphql/all';
 import {AllEventsQuery} from '../../services/graphql/all/components/FindAll';
+import {tagDisplayFeatureName} from '@features/tags/features';
+import {eventDisplayFeatureName, eventFeatureName} from '@features/events/features';
 
 export function EventsControlPanel() {
   return (
@@ -27,7 +29,7 @@ export function EventsControlPanel() {
         </ul>
       </nav>
 
-      <FeatureRequirement name="events" alternative={'Need Events for Admin.All Events Route'}>
+      <FeatureRequirement name={eventFeatureName} alternative={'Need Events for Admin.All Events Route'}>
         <Routes>
           <Route path={'all'} element={<div style={{width: 500 + 'px'}}><AllEventsEventDisplay/></div>}/>
           <Route path="" element={
@@ -35,10 +37,10 @@ export function EventsControlPanel() {
               <AllEventsQuery/>
               <CreateEventForm/>
               <RestrictedEditEventForm/>
-              <FeatureRequirement name="events.display" alternative={'Need Events Display for Admin.Display Events Route'}>
+              <FeatureRequirement name={eventDisplayFeatureName} alternative={'Need Events Display for Admin.Display Events Route'}>
                 <AllTagsQuery/>
                 <EventDisplayForm/>
-                <FeatureRequirement name="tags.display" alternative={'Need Tags Display for Admin.TagEvent Form'}>
+                <FeatureRequirement name={tagDisplayFeatureName} alternative={'Need Tags Display for Admin.TagEvent Form'}>
                   <RestrictedTagEventForm/>
                 </FeatureRequirement>
               </FeatureRequirement>

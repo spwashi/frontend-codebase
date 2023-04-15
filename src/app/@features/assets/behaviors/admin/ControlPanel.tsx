@@ -7,6 +7,8 @@ import {ProjectFeatures} from '../../../projects/components/Features';
 import {LoggedIn} from '../../../users/behaviors/login/components/Requirement';
 import {NavLink} from 'react-router-dom';
 import {Route, Routes} from 'react-router';
+import {userLoginFeatureName} from '@features/users/features';
+import {assetFeatureName, uploadAssetFormFeatureName} from '@features/assets/features';
 
 export function AssetsControlPanel() {
   return <>
@@ -21,11 +23,11 @@ export function AssetsControlPanel() {
     <Routes>
       <Route path="all" element={'[unimplemented]'}/>
       <Route path="" element={
-        <FeatureRequirement name="users.login" alternative={'Need Users Login'}>
-          <FeatureRequirement name="assets" alternative={'Need Assets'}>
+        <FeatureRequirement name={userLoginFeatureName} alternative={'Need Users Login'}>
+          <FeatureRequirement name={assetFeatureName} alternative={'Need Assets'}>
             <section>
               <LoggedIn>
-                <Feature name={'asset.upload.form'}>
+                <Feature name={uploadAssetFormFeatureName}>
                   <UploadAssetForm/>
                 </Feature>
               </LoggedIn>

@@ -10,6 +10,7 @@ import {TagFeatures} from '../../../tags/components/Features';
 import {UserFeatures} from '../../../users/components/Features';
 import {RestrictedEditSceneForm} from '../edit';
 import {AllScenesQuery} from '../../services/graphql/all/components/FindAll';
+import {sceneDisplayFeatureName, sceneFeatureName} from '@features/scenes/features';
 
 export function ScenesControlPanel() {
   return (
@@ -21,7 +22,7 @@ export function ScenesControlPanel() {
           <li><NavLink to="../scenes/all">All Scenes</NavLink></li>
         </ul>
       </nav>
-      <FeatureRequirement name="scenes" alternative={'Need Scenes'}>
+      <FeatureRequirement name={sceneFeatureName} alternative={'Need Scenes'}>
         <Routes>
           <Route
             path="all"
@@ -38,7 +39,7 @@ export function ScenesControlPanel() {
                 <AllScenesQuery/>
                 <RestrictedCreateSceneForm/>
                 <RestrictedEditSceneForm/>
-                <FeatureRequirement name="scenes.display" alternative={'Need Scene Display'}>
+                <FeatureRequirement name={sceneDisplayFeatureName} alternative={'Need Scene Display'}>
                   <SceneDisplayForm/>
                 </FeatureRequirement>
               </section>

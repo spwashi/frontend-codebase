@@ -10,8 +10,10 @@ type IFeature =
 const FeatureContext =
         createContext<{ state: IFeature, dispatch: (action: { type: string }) => void } | null>(null);
 
+type IFeatureName = `feature.${string}`;
+
 type IFeatureProps = {
-  name: string,
+  name: IFeatureName,
   items?: any,
   children?: any | undefined,
   enabled?: boolean
@@ -95,7 +97,7 @@ export function FeatureRequirement({
                                      alternative,
                                    }: {
   children: any;
-  name: string;
+  name: IFeatureProps['name'];
   active?: boolean;
   alternative: any
 }) {

@@ -6,6 +6,7 @@ import {useCreateEventMutation} from '../mutation';
 import {FormWidget} from '@widgets/form/FormWidget';
 import {LoggedIn} from '@features/users/behaviors/login/components/Requirement';
 import {Feature} from '@services/features/components/Feature';
+import {eventCreateFormFeatureName} from '@features/events/features';
 
 function ActiveForm() {
   const {send, response} = useCreateEventMutation();
@@ -21,7 +22,7 @@ function ActiveForm() {
 export function CreateEventForm() {
   return (
     <LoggedIn>
-      <Feature name={'event.create.form'}>
+      <Feature name={eventCreateFormFeatureName}>
         <ActiveForm/>
       </Feature>
     </LoggedIn>

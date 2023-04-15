@@ -9,6 +9,8 @@ import {FormWidget} from '@widgets/form/FormWidget';
 
 import {FormConfig} from '@widgets/form/features/fields/types/formConfig';
 
+import {projectDisplayFeatureName} from '@features/projects/features';
+
 const SIGNUP_MUTATION = gql`
     mutation SignUp($user: CreateUserInput!, $password: CreatePasswordInput!, $project: ProjectReferenceInput) {
         signUp(user: $user, password: $password, project: $project) {
@@ -58,7 +60,7 @@ export function SignupForm() {
   const loggedInUser = useSelector(selectLoggedInUserName);
   if (loggedInUser) return null;
   return (
-    <FeatureRequirement name="projects.display" alternative={'Need Projects'}>
+    <FeatureRequirement name={projectDisplayFeatureName} alternative={'Need Projects'}>
       <ActiveForm/>
     </FeatureRequirement>
   );

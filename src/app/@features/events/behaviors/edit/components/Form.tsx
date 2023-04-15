@@ -9,6 +9,7 @@ import {EventSelect} from '../../../components/form/Select';
 import {Log} from '@core/dev/components/Log';
 import {Form} from '@widgets/form/components/Form';
 import {Feature} from '@services/features/components/Feature';
+import {eventEditFormFeatureName} from '@features/events/features';
 
 export function EditEventForm() {
   const {send, response} = useEditEventMutation();
@@ -39,7 +40,7 @@ export function EditEventForm() {
 export function RestrictedEditEventForm() {
   return (
     <LoggedIn>
-      <Feature name={'event.edit.form'}>
+      <Feature name={eventEditFormFeatureName}>
         <EditEventForm/>
       </Feature>
     </LoggedIn>

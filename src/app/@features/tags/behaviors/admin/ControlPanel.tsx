@@ -7,6 +7,7 @@ import {UserFeatures} from '../../../users/components/Features';
 import {ProjectFeatures} from '../../../projects/components/Features';
 import {NavLink} from 'react-router-dom';
 import {Route, Routes} from 'react-router';
+import {tagDisplayFeatureName, tagFeatureName} from '@features/tags/features';
 
 export function TagsControlPanel() {
   return (
@@ -23,10 +24,10 @@ export function TagsControlPanel() {
       <Routes>
         <Route path="all" element={'[unimplemented]'}/>
         <Route path="" element={
-          <FeatureRequirement name="tags" alternative={'Need Tags'}>
+          <FeatureRequirement name={tagFeatureName} alternative={'Need Tags'}>
             <section>
               <RestrictedCreateTagForm/>
-              <FeatureRequirement name="tags.display" alternative={'Need Tag Display'}>
+              <FeatureRequirement name={tagDisplayFeatureName} alternative={'Need Tag Display'}>
                 <TagsDisplayForm/>
               </FeatureRequirement>
             </section>

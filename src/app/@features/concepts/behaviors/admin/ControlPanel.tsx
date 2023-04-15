@@ -12,6 +12,8 @@ import {UserFeatures} from '../../../users/components/Features';
 import {RestrictedEditConceptForm} from '../edit';
 import {AllConceptsQuery} from '../../services/graphql/all/components/FindAll';
 import {AllTagsQuery} from '../../../tags/services/graphql/all';
+import {conceptDisplayFeatureName, conceptFeatureName} from '@features/concepts/features';
+import {tagDisplayFeatureName} from '@features/tags/features';
 
 export function ConceptsControlPanel() {
   return (
@@ -25,7 +27,7 @@ export function ConceptsControlPanel() {
           <li><NavLink to="../concepts/all">All Concepts</NavLink></li>
         </ul>
       </nav>
-      <FeatureRequirement name="concepts" alternative={'Need Concepts'}>
+      <FeatureRequirement name={conceptFeatureName} alternative={'Need Concepts'}>
         <Routes>
           <Route path={'all'} element={<div style={{width: 500 + 'px'}}><AllConceptsConceptDisplay/></div>}/>
           <Route path="" element={
@@ -33,10 +35,10 @@ export function ConceptsControlPanel() {
               <AllConceptsQuery/>
               <CreateConceptForm/>
               <RestrictedEditConceptForm/>
-              <FeatureRequirement name="concepts.display" alternative={'Need Concepts Display'}>
+              <FeatureRequirement name={conceptDisplayFeatureName} alternative={'Need Concepts Display'}>
                 <ConceptDisplayForm/>
                 <AllTagsQuery/>
-                <FeatureRequirement name="tags.display" alternative={'Need Tags Display'}>
+                <FeatureRequirement name={tagDisplayFeatureName} alternative={'Need Tags Display'}>
                   <RestrictedTagConceptForm/>
                 </FeatureRequirement>
               </FeatureRequirement>

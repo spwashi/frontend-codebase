@@ -10,6 +10,8 @@ import {IUser} from '@junction/models/user/models';
 import {FeatureRequirement} from '@services/features/components/Feature';
 import {setJwt} from '@services/jwt/helpers/setJwt';
 
+import {userLoginFeatureName} from '@features/users/features';
+
 
 function LoginReceivedEffect({username, user, jwt}: { username: string, user: IUser, jwt: string }) {
   const dispatch = useDispatch();
@@ -44,7 +46,7 @@ export function LoginForm({alt}: { alt?: any }) {
   const loggedInUser = useSelector(selectLoggedInUserName);
   if (loggedInUser) return alt ?? null;
   return (
-    <FeatureRequirement name="users.login" alternative={'Need Users'}>
+    <FeatureRequirement name={userLoginFeatureName} alternative={'Need Users'}>
       <ActiveForm/>
     </FeatureRequirement>
   );

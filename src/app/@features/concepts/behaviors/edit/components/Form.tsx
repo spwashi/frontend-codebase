@@ -10,11 +10,12 @@ import {Log} from '@core/dev/components/Log';
 import {formClassNames} from '@widgets/form/styles/classNames';
 import {Form} from '@widgets/form/components/Form';
 import {Feature} from '@services/features/components/Feature';
+import {editConceptFormFeatureName} from '@features/concepts/features';
 
 export function EditConceptForm() {
-  const {send, response}  = useEditConceptMutation();
-  const onsubmit          = useMutationFormSubmitCallback(send, selectEditConceptInput);
-  const [, setData] = useState<any | null>({});
+  const {send, response} = useEditConceptMutation();
+  const onsubmit         = useMutationFormSubmitCallback(send, selectEditConceptInput);
+  const [, setData]      = useState<any | null>({});
 
   const [{data: {concept: _concept} = {} as any} = {} as any, setConcept] = useState({} as any);
   return (
@@ -48,7 +49,7 @@ export function EditConceptForm() {
 export function RestrictedEditConceptForm() {
   return (
     <LoggedIn>
-      <Feature name={'concept.edit.form'}>
+      <Feature name={editConceptFormFeatureName}>
         <EditConceptForm/>
       </Feature>
     </LoggedIn>

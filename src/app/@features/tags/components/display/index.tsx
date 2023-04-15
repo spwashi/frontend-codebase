@@ -5,13 +5,15 @@ import {Feature, FeatureRequirement} from '@services/features/components/Feature
 import {FormWidget} from '@widgets/form/FormWidget';
 import {LoggedIn} from '../../../users/behaviors/login/components/Requirement';
 
+import {tagDisplayFeatureName, tagDisplayFormFeatureName} from '@features/tags/features';
+
 export function TagsDisplayForm() {
   const [state, setState] = useState<any | null>();
   const tags              = state?.data?.tags;
   return (
     <LoggedIn>
-      <Feature name={'tag.display.form'}>
-        <FeatureRequirement name="tags.display" alternative={'Need Tag Display'}>
+      <Feature name={tagDisplayFormFeatureName}>
+        <FeatureRequirement name={tagDisplayFeatureName} alternative={'Need Tag Display'}>
           <section>
             <header>Tags Display</header>
             <FormWidget onSubmit={setState} config={{

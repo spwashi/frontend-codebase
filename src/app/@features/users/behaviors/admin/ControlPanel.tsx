@@ -7,6 +7,7 @@ import {LoginForm} from '../login/forms/LoginForm';
 import {SignupForm} from '../signup/forms/SignupForm';
 import React from 'react';
 import {UserFeatures} from '../../components/Features';
+import {userFeatureName, userLoginFeatureName, userLoginFormFeatureName, userSignupFeatureName, userSignupFormFeatureName, verifyLoginFeatureName} from '@features/users/features';
 
 export function UsersControlPanel() {
   return <>
@@ -14,23 +15,23 @@ export function UsersControlPanel() {
     <ProjectFeatures/>
     <UserFeatures/>
     <LogoutButton/>
-    <FeatureRequirement name="users" alternative={'Need Users'}>
+    <FeatureRequirement name={userFeatureName} alternative={'Need Users'}>
       <section>
-        <FeatureRequirement name="users.login" alternative={'Need User Login'}>
+        <FeatureRequirement name={userLoginFeatureName} alternative={'Need User Login'}>
           <LoggedIn>
-            <Feature name={'usercontrolpanel.users.login.verify'}>
+            <Feature name={verifyLoginFeatureName}>
               <VerifyLogin/>
             </Feature>
           </LoggedIn>
           <NotLoggedIn>
-            <Feature name={'usercontrolpanel.users.login.form'}>
+            <Feature name={userLoginFormFeatureName}>
               <LoginForm/>
             </Feature>
           </NotLoggedIn>
         </FeatureRequirement>
-        <FeatureRequirement name="users.signup" alternative={'Need User Signup'}>
+        <FeatureRequirement name={userSignupFeatureName} alternative={'Need User Signup'}>
           <NotLoggedIn>
-            <Feature name={'usercontrolpanel.users.signup.form'}>
+            <Feature name={userSignupFormFeatureName}>
               <SignupForm/>
             </Feature>
           </NotLoggedIn>
