@@ -1,6 +1,6 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
-import {Feature} from '@services/features/components/Feature';
+import {Feature} from '@services/features/item/components/Feature';
 import {selectPossibleProjectsLastFetched, selectPossibleProjectsList} from '../services/redux/selectors';
 import {AllProjectsQuery} from '../services/graphql/all/all';
 import {assetFeatureName} from '@features/assets/features';

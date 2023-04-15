@@ -4,7 +4,7 @@ import {BACKEND_URL} from '@core/constants';
 import {logout} from './Logout';
 import {useJwt} from '@services/jwt/hooks/useJwt';
 import {userLoginVerifyFeatureName} from '@features/users/features';
-import {Feature} from '@services/features/components/Feature';
+import {Feature} from '@services/features/item/components/Feature';
 
 export function VerifyLogin() {
   const dispatch = useDispatch();

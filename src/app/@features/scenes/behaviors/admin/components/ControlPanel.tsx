@@ -1,4 +1,3 @@
-import {FeatureRequirement} from '@services/features/components/Feature';
 import {RestrictedCreateSceneForm} from '../../create';
 import React from 'react';
 import {SceneFeatures} from '../../../components/Features';
@@ -11,6 +10,7 @@ import {UserFeatures} from '../../../../users/components/Features';
 import {RestrictedEditSceneForm} from '../../edit';
 import {AllScenesQuery} from '../../../services/graphql/all/components/FindAll';
 import {sceneDisplayFeatureName, sceneFeatureName} from '@features/scenes/features';
+import {FeatureRequirement} from '@services/features/list/components/FeatureRequirement';
 
 export function ScenesControlPanel() {
   return (

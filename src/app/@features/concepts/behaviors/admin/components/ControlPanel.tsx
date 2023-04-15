@@ -1,4 +1,3 @@
-import {FeatureRequirement} from '@services/features/components/Feature';
 import {CreateConceptForm} from '../../create';
 import {RestrictedTagConceptForm} from '../../tag';
 import React from 'react';
@@ -14,6 +13,7 @@ import {AllConceptsQuery} from '../../../services/graphql/all/components/FindAll
 import {AllTagsQuery} from '../../../../tags/services/graphql/all';
 import {conceptDisplayFeatureName, conceptFeatureName} from '@features/concepts/features';
 import {tagDisplayFeatureName} from '@features/tags/features';
+import {FeatureRequirement} from '@services/features/list/components/FeatureRequirement';
 
 export function ConceptsControlPanel() {
   return (

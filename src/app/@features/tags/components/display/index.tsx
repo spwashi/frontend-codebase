@@ -1,11 +1,12 @@
 import React, {useState} from 'react';
 import {Tag} from '../../services/graphql/one';
 import {ITag} from '@junction/models/tag/models';
-import {Feature, FeatureRequirement} from '@services/features/components/Feature';
+import {Feature} from '@services/features/item/components/Feature';
 import {FormWidget} from '@widgets/form/FormWidget';
 import {LoggedIn} from '../../../users/behaviors/login/components/Requirement';
 
 import {tagDisplayFeatureName, tagDisplayFormFeatureName} from '@features/tags/features';
+import {FeatureRequirement} from '@services/features/list/components/FeatureRequirement';
 
 export function TagsDisplayForm() {
   const [state, setState] = useState<any | null>();

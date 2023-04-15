@@ -5,7 +5,7 @@ import {form__createScene, selectCreateSceneInput} from '../config';
 import {useCreateSceneMutation} from '../mutation';
 import {FormWidget} from '@widgets/form/FormWidget';
 import {LoggedIn} from '@features/users/behaviors/login/components/Requirement';
-import {Feature} from '@services/features/components/Feature';
+import {Feature} from '@services/features/item/components/Feature';
 import {sceneCreateFormFeatureName} from '@features/scenes/features';
 
 function CreateSceneForm() {

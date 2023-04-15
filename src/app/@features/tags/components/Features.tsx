@@ -1,5 +1,5 @@
 import {useSelector} from 'react-redux';
-import {Feature} from '@services/features/components/Feature';
+import {Feature} from '@services/features/item/components/Feature';
 import React from 'react';
 import {selectPossibleTagsLastFetched, selectPossibleTagsList} from '../services/redux/selectors';
 import {AllTagsQuery} from '../services/graphql/all';

@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import {Scene} from '../../services/graphql/one';
-import {FeatureRequirement} from '@services/features/components/Feature';
 import {FormWidget} from '@widgets/form/FormWidget';
 
 import {sceneDisplayFeatureName} from '@features/scenes/features';
+import {FeatureRequirement} from '@services/features/list/components/FeatureRequirement';
 
 export function SceneDisplayForm() {
   const [state, setState] = useState<any | null>();

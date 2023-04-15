@@ -1,10 +1,11 @@
 import React, {useState} from 'react';
 import {Event} from '../../services/graphql/one';
-import {Feature, FeatureRequirement} from '@services/features/components/Feature';
+import {Feature} from '@services/features/item/components/Feature';
 import {FormWidget} from '@widgets/form/FormWidget';
 import {LoggedIn} from '@features/users/behaviors/login/components/Requirement';
 
 import {eventDisplayFeatureName, eventDisplayFormFeatureName} from '@features/events/features';
+import {FeatureRequirement} from '@services/features/list/components/FeatureRequirement';
 
 export function EventDisplayForm() {
   const [state, setState] = useState<any | null>();

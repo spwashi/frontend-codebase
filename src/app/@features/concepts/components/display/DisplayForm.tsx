@@ -1,11 +1,12 @@
 import React, {useState} from 'react';
 import {Concept} from '../../services/graphql/one';
-import {Feature, FeatureRequirement} from '@services/features/components/Feature';
+import {Feature} from '@services/features/item/components/Feature';
 import {FormWidget} from '@widgets/form/FormWidget';
 import {Log} from '@core/dev/components/Log';
 import {LoggedIn} from '../../../users/behaviors/login/components/Requirement';
 
 import {conceptDisplayFeatureName, conceptDisplayFormFeatureName} from '@features/concepts/features';
+import {FeatureRequirement} from '@services/features/list/components/FeatureRequirement';
 
 export function ConceptDisplayForm() {
   const [state, setState] = useState<any | null>();

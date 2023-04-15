@@ -6,7 +6,7 @@ import {useCreateConceptMutation} from '../mutation';
 import {FormWidget} from '@widgets/form/FormWidget';
 import {LoggedIn} from '@features/users/behaviors/login/components/Requirement';
 import {ErrorBoundary} from '@core/error/components/ErrorBoundary';
-import {Feature} from '@services/features/components/Feature';
+import {Feature} from '@services/features/item/components/Feature';
 import {createConceptFormFeatureName} from '@features/concepts/features';
 
 function ActiveForm() {

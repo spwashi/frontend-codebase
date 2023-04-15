@@ -7,7 +7,7 @@ import {FormWidget} from '@widgets/form/FormWidget';
 import {ACTION_TAG_CREATED} from '../../../services/redux/reducer';
 import {useDispatch} from 'react-redux';
 import {LoggedIn} from '@features/users/behaviors/login/components/Requirement';
-import {Feature} from '@services/features/components/Feature';
+import {Feature} from '@services/features/item/components/Feature';
 import {tagCreateFormFeatureName} from '@features/tags/features';
 
 function CreateTagForm() {

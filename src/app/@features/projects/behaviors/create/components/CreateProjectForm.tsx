@@ -6,10 +6,10 @@ import {useCreateProjectMutation} from '../mutations';
 import {useDispatch} from 'react-redux';
 import {ACTION_PROJECT_CREATED} from '../../../services/redux/reducer';
 import {FormWidget} from '@widgets/form/FormWidget';
-import {FeatureRequirement} from '@services/features/components/Feature';
 import {ErrorBoundary} from '@core/error/components/ErrorBoundary';
 
 import {projectCreateFeatureName} from '@features/projects/features';
+import {FeatureRequirement} from '@services/features/list/components/FeatureRequirement';
 
 
 function ActiveForm() {

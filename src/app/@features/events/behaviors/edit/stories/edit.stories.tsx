@@ -2,7 +2,7 @@ import React from 'react';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
 import {mainDecorator} from '@services/storybook/decorators';
 import {CreateEventForm} from '../../create';
-import {FeatureList} from '@services/features/components/FeatureList';
+import {FeatureList} from '@services/features/list/components/FeatureList';
 
 export default {
   title:      'Admin/Event/CreateEvent',

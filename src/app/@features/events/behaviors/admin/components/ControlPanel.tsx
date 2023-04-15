@@ -1,4 +1,3 @@
-import {FeatureRequirement} from '@services/features/components/Feature';
 import {CreateEventForm} from '../../create';
 import {RestrictedTagEventForm} from '../../tag';
 import React from 'react';
@@ -14,6 +13,7 @@ import {AllTagsQuery} from '../../../../tags/services/graphql/all';
 import {AllEventsQuery} from '../../../services/graphql/all/components/FindAll';
 import {tagDisplayFeatureName} from '@features/tags/features';
 import {eventDisplayFeatureName, eventFeatureName} from '@features/events/features';
+import {FeatureRequirement} from '@services/features/list/components/FeatureRequirement';
 
 export function EventsControlPanel() {
   return (

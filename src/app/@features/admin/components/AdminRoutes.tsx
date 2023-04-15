@@ -10,7 +10,7 @@ import {TagsControlPanel} from '../../tags/behaviors/admin/components/ControlPan
 import {AssetsControlPanel} from '../../assets/behaviors/admin/components/ControlPanel';
 import {LoggedIn} from '../../users/behaviors/login/components/Requirement';
 import React from 'react';
-import {Feature} from '@services/features/components/Feature';
+import {Feature} from '@services/features/item/components/Feature';
 import {adminControlPanelsPostLoginFeatureName, adminControlPanelsPreLoginFeatureName} from '@features/admin/features';
 
 export function AdminRoutes() {

@@ -5,7 +5,7 @@ import {form__createEvent, selectCreateEventInput} from '../config';
 import {useCreateEventMutation} from '../mutation';
 import {FormWidget} from '@widgets/form/FormWidget';
 import {LoggedIn} from '@features/users/behaviors/login/components/Requirement';
-import {Feature} from '@services/features/components/Feature';
+import {Feature} from '@services/features/item/components/Feature';
 import {eventCreateFormFeatureName} from '@features/events/features';
 
 function ActiveForm() {

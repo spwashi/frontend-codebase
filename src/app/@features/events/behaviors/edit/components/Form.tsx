@@ -8,7 +8,7 @@ import {LoggedIn} from '@features/users/behaviors/login/components/Requirement';
 import {EventSelect} from '../../../components/form/Select';
 import {Log} from '@core/dev/components/Log';
 import {Form} from '@widgets/form/components/Form';
-import {Feature} from '@services/features/components/Feature';
+import {Feature} from '@services/features/item/components/Feature';
 import {eventEditFormFeatureName} from '@features/events/features';
 
 export function EditEventForm() {

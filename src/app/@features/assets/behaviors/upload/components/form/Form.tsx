@@ -6,7 +6,7 @@ import {Dev} from '@core/dev/components/Dev';
 import {useJwt} from '@services/jwt/hooks/useJwt';
 
 import {FormConfig} from '@widgets/form/features/fields/types/formConfig';
-import {Feature} from '@services/features/components/Feature';
+import {Feature} from '@services/features/item/components/Feature';
 
 const uploadAssetFormFeature = 'feature.asset.upload.form';
 

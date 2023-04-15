@@ -8,7 +8,7 @@ import {LoggedIn} from '@features/users/behaviors/login/components/Requirement';
 import {SceneSelect} from '../../../components/form/Select';
 import {formClassNames} from '@widgets/form/styles/classNames';
 import {Form} from '@widgets/form/components/Form';
-import {Feature} from '@services/features/components/Feature';
+import {Feature} from '@services/features/item/components/Feature';
 import {sceneEditFormFeatureName} from '@features/scenes/features';
 
 function EditSceneForm() {

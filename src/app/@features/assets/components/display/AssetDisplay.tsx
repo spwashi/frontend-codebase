@@ -7,7 +7,7 @@ import {LoggedIn} from '../../../users/behaviors/login/components/Requirement';
 import {Form} from '@widgets/form/components/Form';
 
 import {FormConfig} from '@widgets/form/features/fields/types/formConfig';
-import {Feature} from '@services/features/components/Feature';
+import {Feature} from '@services/features/item/components/Feature';
 import {assetDisplayFeatureName, assetDisplayFormFeatureName} from '@features/assets/features';
 
 function getDisplayAssetForm(user: { username?: string }) {
