@@ -4,26 +4,25 @@ import {useDispatch, useSelector} from 'react-redux';
 import {selectPossibleUsersLastFetched} from '../../redux/selectors';
 import {ACTION_RECEIVE_ALL_USERS} from '../../redux/reducer';
 
-export function AllUsersQuery() {
-  const ALL_USERS_QUERY =
-          gql`
-            query AllUsers {
-                allUsers {
-                    id
-                    name
-                    username
-                }
-            }
-        `;
+export const USER_LIST_QUERY = gql`
+    query UserList {
+        userList {
+            id
+            name
+            username
+        }
+    }
+`;
 
-  const {data: query = {}} = useQuery(ALL_USERS_QUERY);
+export function UserListQuery() {
+  const {data: query = {}} = useQuery(USER_LIST_QUERY);
   const dispatch           = useDispatch();
   const lastFetched        = useSelector(selectPossibleUsersLastFetched)
   useEffect(() => {
     dispatch({
                type:    ACTION_RECEIVE_ALL_USERS,
-               payload: query.allUsers ? query.allUsers : [],
+               payload: query.userList ? query.userList : [],
              })
-  }, [query.allUsers])
+  }, [query.userList])
   return !lastFetched ? <>Loading...</> : null;
 }

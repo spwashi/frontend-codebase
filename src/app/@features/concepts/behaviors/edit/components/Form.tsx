@@ -6,7 +6,7 @@ import {useEditConceptMutation} from '../mutation';
 import {FormWidget} from '@widgets/form/FormWidget';
 import {Log} from '@core/dev/components/Log';
 import {Feature} from '@services/features/item/components/Feature';
-import {AllConceptsQuery} from '@features/concepts/services/graphql/all/components/FindAll';
+import {ConceptListQuery} from '@features/concepts/services/graphql/all/components/FindAll';
 import {selectEditConceptInput} from '@features/concepts/behaviors/edit/selectors';
 import {featureId__conceptEditForm} from '../../../../../@/featureIds';
 
@@ -37,7 +37,7 @@ function EditConceptForm() {
 export function EditConceptFormFeature() {
   return (
     <Feature name={featureId__conceptEditForm}>
-      <AllConceptsQuery/>
+      <ConceptListQuery/>
       <EditConceptForm/>
     </Feature>
   );

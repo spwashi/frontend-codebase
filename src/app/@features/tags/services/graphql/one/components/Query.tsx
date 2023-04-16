@@ -3,18 +3,13 @@ import {gql, useQuery} from '@apollo/client';
 import React, {useContext, useEffect} from 'react';
 import {TagContext} from '../context/context';
 
-const TAG_QUERY = gql`
+export const TAG_QUERY = gql`
     query OneTag($id: Int!) {
         tag(id: $id) {
             id
             domain
             title
             description
-            user {
-                username
-                name
-            }
-
         }
     }
 `;

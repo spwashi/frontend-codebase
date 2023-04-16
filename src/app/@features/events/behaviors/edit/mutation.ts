@@ -1,7 +1,7 @@
 // Define mutation
 import {gql, useMutation} from '@apollo/client';
 
-const EDIT_EVENT = gql`
+export const EDIT_EVENT_MUTATION = gql`
     mutation EditEvent($event: EditEventInput, $user: UserReferenceInput) {
         editEvent(event: $event, user: $user) {
             id
@@ -15,6 +15,6 @@ const EDIT_EVENT = gql`
     }
 `;
 export function useEditEventMutation() {
-  const [send, response] = useMutation(EDIT_EVENT);
+  const [send, response] = useMutation(EDIT_EVENT_MUTATION);
   return {send, response};
 }

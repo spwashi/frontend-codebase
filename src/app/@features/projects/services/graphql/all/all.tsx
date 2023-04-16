@@ -6,30 +6,30 @@ import {ACTION_RECEIVE_ALL_PROJECTS} from '../../redux/reducer';
 import {useFeatureQuery} from '@services/features/hooks/useFeatureQuery';
 import {getDomain} from '@widgets/form/features/fields/components/FieldFactory';
 
+export const PROJECT_LIST_QUERY = gql`
+    query AllProjects($domain: String) {
+        projectList(domain: $domain) {
+            id
+            title
+            name
+            description
+            domain
+        }
+    }
+`;
 
-export function AllProjectsQuery() {
-  const ALL_PROJECTS_QUERY =
-          gql`
-            query AllProjects($domain: String) {
-                allProjects(domain: $domain) {
-                    id
-                    title
-                    name
-                    description
-                    domain
-                }
-            }
-        `;
-  const projectStateKey    = useSelector(selectProjectStateKey);
-  const {data}             = useFeatureQuery(ALL_PROJECTS_QUERY, {domain: getDomain()}, projectStateKey);
-  const lastFetched        = useSelector(selectPossibleProjectsLastFetched)
-  const dispatch           = useDispatch();
+
+export function ProjectListQuery() {
+  const projectStateKey = useSelector(selectProjectStateKey);
+  const {data}          = useFeatureQuery(PROJECT_LIST_QUERY, {domain: getDomain()}, projectStateKey);
+  const lastFetched     = useSelector(selectPossibleProjectsLastFetched)
+  const dispatch        = useDispatch();
   useEffect(() => {
     dispatch({
                type:    ACTION_RECEIVE_ALL_PROJECTS,
-               payload: data.allProjects ? data.allProjects : [],
+               payload: data.projectList ? data.projectList : [],
              })
-  }, [data.allProjects]);
+  }, [data.projectList]);
 
   return !lastFetched ? <>Loading...</> : null;
 }

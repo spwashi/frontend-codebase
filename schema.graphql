@@ -1,0 +1,285 @@
+type Query {
+    # Assets
+    asset(realname: String!): Asset
+    assetList(user: CreateUserInput): [Asset]
+
+    # Concepts
+    concept(id: String!): Concept
+    conceptList: [Concept]!
+
+    # Events
+    event(id: String!): Event
+    eventList: [Event]!
+
+    # Projects
+    project(id: String): Project
+    projectList(domain:String): [Project]!
+
+    # Scenes
+    scene(id: String!): Scene
+    sceneList: [Scene]!
+
+    # Tags
+    tag(id: String!): Tag
+    tagList: [Tag]!
+
+    # Users
+    userList: [User]!
+}
+type Mutation {
+    # Concepts
+    createConcept(concept: CreateConceptInput, user: UserReferenceInput): Concept
+    editConcept(concept: EditConceptInput, user: UserReferenceInput): Concept
+    deleteConcept(concept: DeleteConceptInput, user: UserReferenceInput): Concept
+    linkConcepts(primary: ConceptReferenceInput, secondary: ConceptReferenceInput, user: UserReferenceInput): ConceptConcept
+    tagConcept(concept: ConceptReferenceInput, tags: [TagReferenceInput], user: UserReferenceInput): ConceptTag
+    untagConcept(concept: ConceptReferenceInput, tags: [TagReferenceInput], user: UserReferenceInput): ConceptTag
+
+    # Events
+    createEvent(event: CreateEventInput, user: UserReferenceInput): Event
+    editEvent(event: EditEventInput, user: UserReferenceInput): Event
+    deleteEvent(event: DeleteEventInput, user: UserReferenceInput): Event
+    tagEvent(event: EventReferenceInput, tags: [TagReferenceInput], user: UserReferenceInput): EventTag
+    untagEvent(event: EventReferenceInput, tags: [TagReferenceInput], user: UserReferenceInput): EventTag
+
+    # Projects
+    createProject(project: CreateProjectInput): Project
+    editProject(project: EditProjectInput, user: UserReferenceInput): Project
+    deleteProject(project: DeleteProjectInput, user: UserReferenceInput): Project
+    tagProject(project: ProjectReferenceInput, tags: [TagReferenceInput], user: UserReferenceInput): ProjectTag
+    untagProject(project: ProjectReferenceInput, tags: [TagReferenceInput], user: UserReferenceInput): ProjectTag
+
+    # Scenes
+    createScene(scene: CreateSceneInput, user: UserReferenceInput): Scene
+    editScene(scene: EditSceneInput, user: UserReferenceInput): Scene
+    deleteScene(scene: DeleteSceneInput, user: UserReferenceInput): Scene
+    tagScene(scene: SceneReferenceInput, tags: [TagReferenceInput], user: UserReferenceInput): SceneTag
+    untagScene(scene: SceneReferenceInput, tags: [TagReferenceInput], user: UserReferenceInput): SceneTag
+
+    # Tags
+    createTag(tag: CreateTagInput, user: UserReferenceInput): Tag
+    editTag(tag: EditTagInput, user: UserReferenceInput): Tag
+    deleteTag(tag: DeleteTagInput, user: UserReferenceInput): Tag
+
+    # Users
+    editUser(user: EditUserInput): User
+    logIn(user: UserLoginInput, password: PasswordReferenceInput, project: ProjectReferenceInput): UserLoginResponse
+    signUp(user: CreateUserInput!, password: CreatePasswordInput!, project: ProjectReferenceInput): UserSignupResponse
+}
+
+# Asset
+type Asset {
+    name: String!
+    realname: String!
+    contentType: String!
+    uri: String!
+}
+
+# Concept
+type Concept {
+    id: String
+    title: String!
+    src: String
+    contentType: String
+    published: Boolean
+    conceptTags: [ConceptTag]
+}
+input ConceptReferenceInput {
+    id: String!
+}
+input CreateConceptInput {
+    title: String
+    contentType: String
+    src: String
+}
+input EditConceptInput {
+    id: String!
+    title: String
+    contentType: String
+    src: String
+}
+input DeleteConceptInput {
+    id: String!
+}
+type ConceptTag {
+    id: String
+    concept: Concept
+    tag: Tag
+}
+type ConceptConcept {
+    id: String
+    primary: Concept
+    secondary: Concept
+    relationship: String
+}
+
+# Event
+type Event {
+    id: String
+    title: String!
+    description: String
+    start: String
+    end: String
+    startDate: String
+    endDate: String
+    published: Boolean
+    eventTags: [EventTag]
+}
+input EventReferenceInput {
+    id: String
+}
+input CreateEventInput {
+    title: String!
+    start: String!
+    end: String!
+    description: String!
+}
+input EditEventInput {
+    id: String!
+    description: String
+    title: String
+    start: String
+    end: String
+    startDate: String
+    endDate: String
+}
+input DeleteEventInput {
+    id: String!
+}
+type EventTag {
+    event: Event
+    tag: Tag
+}
+
+# Project
+type Project {
+    id: String
+    name: String!
+    domain: String
+    description:String
+    title: String!
+}
+input ProjectReferenceInput {
+    id: String!
+}
+input CreateProjectInput {
+    name: String!
+    title: String
+    domain: String!
+    description: String
+}
+input EditProjectInput {
+    id: String
+    name: String!
+    title: String
+    description: String
+}
+input DeleteProjectInput {
+    id: String!
+}
+type ProjectTag {
+    project: Project
+    tag: Tag
+}
+
+# Scene
+type Scene {
+    id: String
+    name: String!
+    description: String
+    title: String
+}
+input CreateSceneInput {
+    name: String!
+    title: String!
+    description: String
+}
+input EditSceneInput {
+    id: String
+    title: String
+    description: String
+}
+input DeleteSceneInput {
+    id: String!
+}
+input SceneReferenceInput {
+    id: String
+}
+type SceneTag {
+    scene: Scene
+    tag: Tag
+}
+
+# Tag
+type Tag {
+    id: String
+    description:String
+    title: String!
+    domain: String
+}
+input TagReferenceInput {
+    id: String
+}
+input CreateTagInput {
+    id: String
+    title: String
+    domain: String
+    description: String
+}
+input EditTagInput {
+    id: String
+    title: String
+    domain: String
+    description: String
+}
+input DeleteTagInput {
+    id: String!
+}
+
+# User
+type User {
+    id: String
+    username: String!
+    name: String
+    concepts: [Concept]
+}
+input UserReferenceInput {
+    id: String
+    username: String
+    jwt: String
+}
+input UserLoginInput {
+    username: String!
+}
+input CreateUserInput {
+    name: String
+    username: String!
+}
+input EditUserInput {
+    name: String
+    username: String!
+}
+input UserLogoutInput {
+    jwt:String!
+}
+input DeleteUserInput {
+    id: String!
+}
+type UserLogoutResponse {
+    success: Boolean
+}
+type UserLoginResponse {
+    jwt: String
+    username: String
+    user: User
+}
+type UserSignupResponse {
+    user: User
+}
+input CreatePasswordInput {
+    password: String!
+    passwordConfirm: String!
+}
+input PasswordReferenceInput {
+    password: String!
+}

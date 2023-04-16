@@ -1,7 +1,7 @@
 // Define mutation
 import {gql, useMutation} from '@apollo/client';
 
-const CREATE_TAG = gql`
+export const CREATE_TAG_MUTATION = gql`
     mutation CreateTag($tag: CreateTagInput, $user: UserReferenceInput!) {
         createTag(tag: $tag, user: $user) {
             id
@@ -12,6 +12,6 @@ const CREATE_TAG = gql`
     }
 `;
 export function useCreateTagMutation() {
-  const [send, response] = useMutation(CREATE_TAG);
+  const [send, response] = useMutation(CREATE_TAG_MUTATION);
   return {send, response};
 }

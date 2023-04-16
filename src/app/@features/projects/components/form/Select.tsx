@@ -5,7 +5,7 @@ import {useSelector} from 'react-redux';
 import {selectProjectStateProject} from '../../services/redux/selectors';
 import {updateFormItem} from '@widgets/form/features/fields/hooks/useFormItem';
 import {FormContext} from '@widgets/form/context/context';
-import {AllProjectsQuery} from '../../services/graphql/all/all';
+import {ProjectListQuery} from '../../services/graphql/all/all';
 import {Value} from '@widgets/form/features/fields/components/input/text/Input';
 
 export function ProjectSelect({formKey, ignore}: { formKey?: string, ignore?: boolean }) {
@@ -25,7 +25,7 @@ export function ProjectSelect({formKey, ignore}: { formKey?: string, ignore?: bo
 
   return (
     <React.Fragment>
-      <AllProjectsQuery/>
+      <ProjectListQuery/>
       <SelectInput
         placeholder={'Project'}
         formKey={formKey ?? ''}

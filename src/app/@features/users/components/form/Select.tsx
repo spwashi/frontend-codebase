@@ -5,7 +5,7 @@ import {FormContext} from '@widgets/form/context/context';
 import {updateFormItem} from '@widgets/form/features/fields/hooks/useFormItem';
 import {selectPossibleUsersList} from '../../services/redux/selectors';
 import {selectLoggedInUser} from '../../behaviors/login/redux/reducer';
-import {AllUsersQuery} from '../../services/graphql/all';
+import {UserListQuery} from '../../services/graphql/all';
 import {IUser} from '@junction/models/user/models';
 import {Value} from '@widgets/form/features/fields/components/input/text/Input';
 
@@ -35,7 +35,7 @@ export const UserSelect = React.memo(
       <>
         {
           !options.length
-          ? <AllUsersQuery/>
+          ? <UserListQuery/>
           : (
             <SelectInput
               value={actual}

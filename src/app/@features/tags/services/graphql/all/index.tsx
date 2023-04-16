@@ -21,33 +21,29 @@ function useDispatchGraphqlError(error: any) {
   }, [error]);
 }
 
-export function AllTagsQuery() {
-  const ALL_TAGS_QUERY =
-          gql`
-            query AllTags {
-                allTags {
-                    id
-                    title
-                    domain
-                    user {
-                        name
-                        username
-                    }
-                }
-            }
-        `;
-  const stateKey       = useSelector(selectTagStateKey);
-  const {data, error}  = useFeatureQuery(ALL_TAGS_QUERY, {}, stateKey);
-  const lastFetched    = useSelector(selectPossibleTagsLastFetched)
-  const dispatch       = useDispatch();
+export const TAG_LIST_QUERY = gql`
+    query TagList {
+        tagList {
+            id
+            title
+            domain
+        }
+    }
+`;
+
+export function TagListQuery() {
+  const stateKey      = useSelector(selectTagStateKey);
+  const {data, error} = useFeatureQuery(TAG_LIST_QUERY, {}, stateKey);
+  const lastFetched   = useSelector(selectPossibleTagsLastFetched)
+  const dispatch      = useDispatch();
 
   useDispatchGraphqlError(error);
 
   useEffect(() => {
     if (!data) return;
-    const options = data.allTags ? data.allTags : [];
+    const options = data.tagList ? data.tagList : [];
     dispatch({type: ACTION_RECEIVE_ALL_TAGS, payload: options})
-  }, [data?.allTags]);
+  }, [data?.tagList]);
 
   return !lastFetched ? <>Loading...</> : null;
 }

@@ -11,7 +11,7 @@ import {FeatureRequirement} from '@services/features/list/components/FeatureRequ
 import {form__userSignup} from '@features/users/behaviors/signup/config';
 import {featureId__projectDisplay, featureId__userSignup, featureId__userSignupForm} from '../../../../../../@/featureIds';
 
-const SIGNUP_MUTATION = gql`
+export const SIGNUP_MUTATION = gql`
     mutation SignUp($user: CreateUserInput!, $password: CreatePasswordInput!, $project: ProjectReferenceInput) {
         signUp(user: $user, password: $password, project: $project) {
             user {

@@ -3,7 +3,7 @@ import {gql, useQuery} from '@apollo/client';
 import React, {useContext, useEffect} from 'react';
 import {ProjectContext} from '../../../../context/context';
 
-const PROJECT_QUERY = gql`
+export const PROJECT_QUERY = gql`
     query Project($id: Int!) {
         project(id: $id) {
             id

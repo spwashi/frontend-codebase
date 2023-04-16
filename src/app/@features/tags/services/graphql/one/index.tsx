@@ -9,33 +9,32 @@ import {selectLoggedInUser} from '@features/users/behaviors/login/redux/reducer'
 import {useSelector} from 'react-redux';
 import {Log} from '@core/dev/components/Log';
 
-function DeleteTag() {
-  const tag  = useActiveTag();
-  const user = useSelector(selectLoggedInUser)
+export const DELETE_TAG_MUTATION = gql`
+    mutation DeleteTag($user:UserReferenceInput!, $tag: DeleteTagInput!) {
+        deleteTag(tag: $tag, user: $user) {
+            title
+            domain
+        }
+    }
+`;
 
-  const [send, response] =
-          useMutation(
-            gql`
-                mutation DeleteTag($user:UserReferenceInput!, $tag: TagReferenceInput!) {
-                    deleteTag(tag: $tag, user: $user) {
-                        title
-                        domain
-                    }
-                }
-            `,
-          );
+
+function DeleteTag() {
+  const tag              = useActiveTag();
+  const user             = useSelector(selectLoggedInUser)
+  const [send, response] = useMutation(DELETE_TAG_MUTATION);
 
   if (!tag || !user) return null;
   return (
     <React.Fragment>
       <Log>{response.data}</Log>
       <button onClick={() => send({
-                                   variables: {
-                                     title:  tag?.title,
-                                     domain: tag?.domain,
-                                     user:   {username: user.username},
-                                   },
-                                 })}>DELETE
+                                    variables: {
+                                      title:  tag?.title,
+                                      domain: tag?.domain,
+                                      user:   {username: user.username},
+                                    },
+                                  })}>DELETE
       </button>
     </React.Fragment>
   )

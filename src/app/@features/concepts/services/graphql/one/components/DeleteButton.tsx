@@ -5,21 +5,23 @@ import {Log} from '@core/dev/components/Log';
 import {ACTION_DELETE_ONE_CONCEPT} from '../../../redux/reducer';
 import {DeleteConceptMutationInput} from '@junction/models/concept/behaviors/delete';
 
-function useDeleteConceptMutation() {
-  const DELETE_CONCEPT = gql`
-      mutation DeleteConcept($id: String) {
-          deleteConcept (concept: {id: $id}) {
-              id
-          }
-      }
-  `
+export const DELETE_CONCEPT_MUTATION = gql`
+    mutation DeleteConcept($id: String!) {
+        deleteConcept (concept: {id: $id}) {
+            id
+        }
+    }
+`
 
-  return useMutation(DELETE_CONCEPT);
+
+function useDeleteConceptMutation() {
+  return useMutation(DELETE_CONCEPT_MUTATION);
 }
+
 export function DeleteConceptButton({id}: DeleteConceptMutationInput['concept']) {
   const [deleteConcept, {error}] = useDeleteConceptMutation();
-  const dispatch                       = useDispatch();
-  const doDelete                       = useCallback(() => {
+  const dispatch                 = useDispatch();
+  const doDelete                 = useCallback(() => {
     if (error) {
       return;
     }

@@ -6,31 +6,28 @@ import {useFeatureQuery} from '@services/features/hooks/useFeatureQuery';
 import {gql} from '@apollo/client';
 import {IScene} from '@junction/models/scene/models';
 
-export function AllScenesQuery() {
+export const SCENE_LIST_QUERY = gql`
+    query AllScenes {
+        sceneList {
+            id
+            name
+            title
+            description
+        }
+    }
+`;
+
+export function SceneListQuery() {
   const stateKey      = useSelector(selectSceneStateKey);
-  const {data: query} =
-          useFeatureQuery<{ allScenes: IScene[] }>(
-            gql`
-                query AllScenes {
-                    allScenes {
-                        id
-                        name
-                        title
-                        description
-                    }
-                }
-            `,
-            {},
-            stateKey,
-          );
+  const {data: query} = useFeatureQuery<{ sceneList: IScene[] }>(SCENE_LIST_QUERY, {}, stateKey);
   const lastFetched   = useSelector(selectPossibleScenesLastFetched);
   const dispatch      = useDispatch();
   useEffect(() => {
     dispatch({
                type:    ACTION_RECEIVE_ALL_SCENES,
-               payload: query?.allScenes ? query.allScenes : [],
+               payload: query?.sceneList ? query.sceneList : [],
              })
-  }, [query?.allScenes]);
+  }, [query?.sceneList]);
 
   return !lastFetched ? <>Loading...</> : null;
 }

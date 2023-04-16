@@ -3,23 +3,24 @@ import {ITag} from '@junction/models/tag/models';
 import {IEvent} from '@junction/models/event/models';
 import React from 'react';
 
-function useDeleteEventTagMutation() {
-  const DELETE_TAG = gql`
-      mutation DeleteEventTag($event: EventReferenceInput!, $user: UserReferenceInput, $tags: [TagReferenceInput]) {
-          untagEvent(event: $event, user: $user, tags: $tags) {
-              tag {
-                  id
-              }
-              event {
-                  id
-              }
-          }
-      }
-  `;
+export const UNTAG_EVENT_MUTATION = gql`
+    mutation DeleteEventTag($event: EventReferenceInput!, $user: UserReferenceInput, $tags: [TagReferenceInput]) {
+        untagEvent(event: $event, user: $user, tags: $tags) {
+            tag {
+                id
+            }
+            event {
+                id
+            }
+        }
+    }
+`;
 
-  const [deleteTag] = useMutation(DELETE_TAG)
+function useDeleteEventTagMutation() {
+  const [deleteTag] = useMutation(UNTAG_EVENT_MUTATION)
   return deleteTag;
 }
+
 export function EventTag({event, tag}: { tag: ITag, event: IEvent }) {
   const {title, domain} = tag;
   const deleteTag       = useDeleteEventTagMutation();

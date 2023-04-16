@@ -2,7 +2,7 @@ import {Feature} from '@services/features/item/components/Feature';
 import React from 'react';
 import {useSelector} from 'react-redux';
 import {selectPossibleEventsLastFetched, selectPossibleEventsList} from '../services/redux/selectors';
-import {AllEventsQuery} from '../services/graphql/all/components/FindAll';
+import {EventListQuery} from '../services/graphql/all/components/FindAll';
 import {featureId__eventDisplay, featureId__events} from '../../../@/featureIds';
 
 function EventDisplayFeature() {
@@ -21,5 +21,5 @@ export function EventFeatures() {
 
 EventFeatures.featureDeps =
   [
-    AllEventsQuery,
+    EventListQuery,
   ]

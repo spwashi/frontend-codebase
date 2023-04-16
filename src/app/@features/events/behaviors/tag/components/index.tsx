@@ -2,7 +2,7 @@ import React from 'react';
 import {Feature} from '@services/features/item/components/Feature';
 import {TagEventForm} from './Form';
 import {FeatureRequirement} from '@services/features/list/components/FeatureRequirement';
-import {AllTagsQuery} from '@features/tags/services/graphql/all';
+import {TagListQuery} from '@features/tags/services/graphql/all';
 import {featureId__eventDisplay, featureId__eventTagForm, featureId__tagDisplay} from '../../../../../@/featureIds';
 
 export function TagEventFormFeature() {
@@ -10,7 +10,7 @@ export function TagEventFormFeature() {
     <FeatureRequirement name={featureId__eventDisplay} alternative={'Need Events Display for TagEventForm'}>
       <FeatureRequirement name={featureId__tagDisplay} alternative={'Need Tags Display for Admin.TagEvent Form'}>
         <Feature name={featureId__eventTagForm}>
-          <AllTagsQuery/>
+          <TagListQuery/>
           <TagEventForm/>
         </Feature>
       </FeatureRequirement>

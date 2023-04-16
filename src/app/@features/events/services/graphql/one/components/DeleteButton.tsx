@@ -4,21 +4,20 @@ import React, {useCallback} from 'react';
 import {Log} from '@core/dev/components/Log';
 import {ACTION_DELETE_ONE_EVENT} from '../../../redux/reducer';
 
+export const DELETE_EVENT_MUTATION = gql`
+    mutation DeleteEvent($id: Int) {
+        deleteEvent (event: {id: $id}) {
+            id
+        }
+    }
+`;
 function useDeleteEventMutation() {
-  const DELETE_EVENT = gql`
-      mutation DeleteEvent($id: Int) {
-          deleteEvent (event: {id: $id}) {
-              id
-          }
-      }
-  `
-
-  return useMutation(DELETE_EVENT);
+  return useMutation(DELETE_EVENT_MUTATION);
 }
 export function DeleteEventButton({id}: { id: number }) {
   const [deleteEvent, {error}] = useDeleteEventMutation();
-  const dispatch                     = useDispatch();
-  const doDelete                     = useCallback(() => {
+  const dispatch               = useDispatch();
+  const doDelete               = useCallback(() => {
     if (error) {
       return;
     }

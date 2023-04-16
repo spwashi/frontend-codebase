@@ -2,7 +2,7 @@ import {Feature} from '@services/features/item/components/Feature';
 import React from 'react';
 import {useSelector} from 'react-redux';
 import {selectPossibleScenesLastFetched, selectPossibleScenesList} from '../services/redux/selectors';
-import {AllScenesQuery} from '../services/graphql/all/components/FindAll';
+import {SceneListQuery} from '../services/graphql/all/components/FindAll';
 import {featureId__sceneDisplay, featureId__scenes} from '../../../@/featureIds';
 
 function SceneDisplayFeature() {
@@ -21,5 +21,5 @@ export function SceneFeatures() {
 
 SceneFeatures.featureDeps =
   [
-    AllScenesQuery,
+    SceneListQuery,
   ]

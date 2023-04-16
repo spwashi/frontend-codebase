@@ -13,7 +13,6 @@ export const selectProjectFeature              = (state: IRootAppState) => state
 export const selectPossibleProjectsList        = (state: IRootAppState) => {
   let projectList     = selectProjectFeature(state).data.projects.list;
   const activeProject = selectProjectStateProject(state);
-
   if (!projectList.length && activeProject) {
     projectList = [activeProject];
   }

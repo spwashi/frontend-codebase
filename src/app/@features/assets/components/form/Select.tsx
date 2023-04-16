@@ -11,19 +11,18 @@ function assetToOption(asset: IAsset): SelectOption<IAsset> {
   };
 }
 
-export function AssetSelect({formKey, username}: { formKey?: string, username: string }) {
-  const ALL_FILES_QUERY =
-          gql`
-            query AllFiles($user: CreateUserInput) {
-                userFiles(user: $user) {
-                    name
-                    realname
-                }
-            }
-        `;
+export const ASSET_LIST_QUERY = gql`
+    query AllFiles($user: UserReferenceInput) {
+        assetList(user: $user) {
+            name
+            realname
+        }
+    }
+`;
 
-  const {data: query = {}} = useQuery(ALL_FILES_QUERY, {variables: {user: {username}}});
-  const result             = useMemo(() => query.userFiles ? query.userFiles.map(assetToOption) : [], [query]);
+export function AssetSelect({formKey, username}: { formKey?: string, username: string }) {
+  const {data: query = {}} = useQuery(ASSET_LIST_QUERY, {variables: {user: {username}}});
+  const result             = useMemo(() => query.assetList ? query.assetList.map(assetToOption) : [], [query]);
 
   return (
     <>

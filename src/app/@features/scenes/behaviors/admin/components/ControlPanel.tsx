@@ -8,7 +8,7 @@ import {NavLink} from 'react-router-dom';
 import {TagFeatures} from '../../../../tags/components/Features';
 import {UserFeatures} from '../../../../users/components/Features';
 import {EditSceneFormFeature} from '../../edit';
-import {AllScenesQuery} from '../../../services/graphql/all/components/FindAll';
+import {SceneListQuery} from '../../../services/graphql/all/components/FindAll';
 import {FeatureRequirement} from '@services/features/list/components/FeatureRequirement';
 import {LoggedIn} from '@features/users/behaviors/login/components/Requirement';
 import {featureId__sceneDisplay, featureId__scenes} from '../../../../../@/featureIds';
@@ -37,7 +37,7 @@ export function ScenesControlPanel() {
             path=""
             element={
               <React.Fragment>
-                <AllScenesQuery/>
+                <SceneListQuery/>
                 <LoggedIn>
                   <CreateSceneFormFeature/>
                   <EditSceneFormFeature/>

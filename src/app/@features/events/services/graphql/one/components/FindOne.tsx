@@ -5,7 +5,7 @@ import {EventContext} from '../context/context';
 import {useDispatch} from 'react-redux';
 import {ACTION_RECEIVE_ONE_EVENT} from '../../../redux/reducer';
 
-const EVENT_QUERY = gql`
+export const EVENT_QUERY = gql`
     query OneEvent($id: Int!) {
         event(id: $id) {
             id
@@ -15,11 +15,6 @@ const EVENT_QUERY = gql`
             end
             endDate
             description
-            user {
-                id
-                name
-                username
-            }
             eventTags {
                 event {
                     id
@@ -35,18 +30,14 @@ const EVENT_QUERY = gql`
 `;
 
 export function OneEventQuery({id}: IEventIdentifyingPartial) {
-  const context    = useContext(EventContext) ?? ({} as any);
-  const {setEvent} = context;
-
+  const context       = useContext(EventContext) ?? ({} as any);
+  const {setEvent}    = context;
   const {data: query} = useQuery(EVENT_QUERY, {variables: {id}});
-
-  const dispatch = useDispatch();
-
-  const {event} = query ?? {};
+  const dispatch      = useDispatch();
+  const {event}       = query ?? {};
 
   useEffect(() => {
     if (!(event && setEvent)) return;
-
     dispatch({type: ACTION_RECEIVE_ONE_EVENT, payload: event})
     setEvent(event as IEvent);
   }, [event, setEvent]);

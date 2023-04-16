@@ -6,7 +6,7 @@ import {useEditEventMutation} from '../mutation';
 import {FormWidget} from '@widgets/form/FormWidget';
 import {Log} from '@core/dev/components/Log';
 import {Feature} from '@services/features/item/components/Feature';
-import {AllEventsQuery} from '@features/events/services/graphql/all/components/FindAll';
+import {EventListQuery} from '@features/events/services/graphql/all/components/FindAll';
 import {form__selectEvent} from '@features/events/behaviors/select/config';
 import {selectEditEventInput} from '@features/events/behaviors/edit/selectors';
 import {featureId__eventEditForm} from '../../../../../@/featureIds';
@@ -36,7 +36,7 @@ function EditEventForm() {
 export function EditEventFormFeature() {
   return (
     <Feature name={featureId__eventEditForm}>
-      <AllEventsQuery/>
+      <EventListQuery/>
       <EditEventForm/>
     </Feature>
   );
