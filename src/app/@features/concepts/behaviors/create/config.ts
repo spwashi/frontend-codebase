@@ -4,7 +4,7 @@ import {setFieldValue} from '@widgets/form/features/fields/helpers/setFieldValue
 import {makeFieldRequired} from '@widgets/form/features/fields/helpers/makeFieldRequired';
 import {contentTypeInput, srcInput, titleInput, userInput} from '../../data/config/inputs';
 
-import {FormConfig} from '@widgets/form/features/fields/types/formConfig';
+import {IFormConfig} from '@widgets/form/types/IFormConfig';
 
 export type CreateConceptFormData = {
   username: string;
@@ -15,7 +15,7 @@ export type CreateConceptFormData = {
 }
 
 
-export const form__createConcept: FormConfig =
+export const form__createConcept: IFormConfig =
                {
                  formId: 'create-concept_form',
                  title:  'Create Concept',

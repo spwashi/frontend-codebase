@@ -11,10 +11,8 @@ export function ProjectsControlPanel() {
     <AllProjectsQuery/>
     <ProjectFeatures/>
     <FeatureRequirement name={projectFeatureName} alternative={'Need Projects'}>
-      <section>
-        <CreateProjectForm/>
-        <ProjectDisplayFormFeature/>
-      </section>
+      <CreateProjectForm/>
+      <ProjectDisplayFormFeature/>
     </FeatureRequirement>
   </>;
 }

@@ -5,7 +5,7 @@ import {TagConceptMutationInput} from '@junction/models/concept/behaviors/tag';
 import {makeFieldRequired} from '@widgets/form/features/fields/helpers/makeFieldRequired';
 import {conceptInput, tagsInput, userInput} from '../../data/config/inputs';
 
-import {FormConfig} from '@widgets/form/features/fields/types/formConfig';
+import {IFormConfig} from '@widgets/form/types/IFormConfig';
 
 type TagConceptFormData = {
   username: string;
@@ -14,7 +14,7 @@ type TagConceptFormData = {
   tags: ITag[]
 }
 
-export const form__tagConcept: FormConfig = {
+export const form__tagConcept: IFormConfig = {
   formId: 'tag-concept-form',
   title:  'Tag Concept',
   items:  [

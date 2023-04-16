@@ -4,7 +4,7 @@ import {FormWidget} from '@widgets/form/FormWidget';
 import {Dev} from '@core/dev/components/Dev';
 import {useJwt} from '@services/jwt/hooks/useJwt';
 
-import {FormConfig} from '@widgets/form/features/fields/types/formConfig';
+import {IFormConfig} from '@widgets/form/types/IFormConfig';
 import {Feature} from '@services/features/item/components/Feature';
 
 const uploadAssetFormFeature = 'feature.asset.upload.form';
@@ -42,7 +42,7 @@ function submissionCallback({jwt, assets, uploadLocation, tags}: SubmissionCallb
   return fetch(url, {method: 'POST', body, mode: 'cors'}).then(j => j.json())
 }
 
-const form__uploadAsset: FormConfig =
+const form__uploadAsset: IFormConfig =
         {
           formId: 'upload-asset-form',
           title:  'Upload Asset',

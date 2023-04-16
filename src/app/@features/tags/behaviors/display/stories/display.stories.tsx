@@ -3,12 +3,12 @@ import {ComponentMeta, ComponentStory} from '@storybook/react';
 import {mainDecorator} from '@services/storybook/decorators';
 import {TagConceptFormFeature} from '@features/concepts/behaviors/tag';
 import {FeatureList} from '@services/features/list/components/FeatureList';
-import {DisplayTagFormFeature} from '../../../components/display';
+import {DisplayTagsFormFeature} from '../../../components/display';
 
 
 export default {
   title:      'Admin/Tag/DisplayTag',
-  component:  DisplayTagFormFeature,
+  component:  DisplayTagsFormFeature,
   decorators: [
     (Story) => {
       return (
@@ -22,7 +22,7 @@ export default {
   ],
 } as ComponentMeta<typeof TagConceptFormFeature>;
 
-const Template: ComponentStory<typeof TagConceptFormFeature> = () => <DisplayTagFormFeature />;
+const Template: ComponentStory<typeof TagConceptFormFeature> = () => <DisplayTagsFormFeature />;
 
 export const DisplayTag = Template.bind({});
 DisplayTag.args         = {};

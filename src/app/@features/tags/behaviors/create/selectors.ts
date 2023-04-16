@@ -2,7 +2,7 @@ import {CreateTagMutationInput} from '@junction/models/tag/behaviors/create';
 import {IUser} from '@junction/models/user/models';
 import {makeFieldRequired} from '@widgets/form/features/fields/helpers/makeFieldRequired';
 import {FormFieldConfig} from '@widgets/form/features/fields/types/fieldConfig';
-import {FormConfig} from '@widgets/form/features/fields/types/formConfig';
+import {IFormConfig} from '@widgets/form/types/IFormConfig';
 
 export type SelectMutationInputData = {
   title: string;
@@ -14,8 +14,8 @@ export type SelectMutationInputData = {
 const userInput: FormFieldConfig         = {title: 'User', name: 'user', type: 'user'};
 const titleInput: FormFieldConfig        = {title: 'Title', name: 'title', type: 'text'};
 const domainInput: FormFieldConfig       = {title: 'Domain', name: 'domain', type: 'text'};
-const descriptionInput: FormFieldConfig  = {title: 'Description', name: 'description', type: 'longtext'};
-export const form__createTag: FormConfig = {
+const descriptionInput: FormFieldConfig   = {title: 'Description', name: 'description', type: 'longtext'};
+export const form__createTag: IFormConfig = {
   formId: 'create-tag-form',
   title:  'Create Tag',
   items:  [userInput, titleInput, domainInput, descriptionInput].map(makeFieldRequired),

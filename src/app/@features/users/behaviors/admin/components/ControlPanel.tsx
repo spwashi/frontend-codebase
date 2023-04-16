@@ -15,15 +15,13 @@ export function UsersControlPanel() {
     <UserFeatures/>
     <FeatureRequirement name={userFeatureName} alternative={'Need Users'}>
       <LogoutButton/>
-      <section>
-        <FeatureRequirement name={userLoginFeatureName} alternative={'Need User Login'}>
-          <VerifyLogin/>
-          <LoggedIn state={false}>
-            <LoginForm/>
-            <SignupForm/>
-          </LoggedIn>
-        </FeatureRequirement>
-      </section>
+      <FeatureRequirement name={userLoginFeatureName} alternative={'Need User Login'}>
+        <VerifyLogin/>
+        <LoggedIn state={false}>
+          <LoginForm/>
+          <SignupForm/>
+        </LoggedIn>
+      </FeatureRequirement>
     </FeatureRequirement>
   </>;
 }

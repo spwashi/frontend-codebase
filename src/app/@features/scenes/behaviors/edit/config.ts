@@ -1,4 +1,4 @@
-import {FormConfig} from '@widgets/form/features/fields/types/formConfig';
+import {IFormConfig} from '@widgets/form/types/IFormConfig';
 
 export type SelectMutationInputData = {
   id: string;
@@ -6,7 +6,7 @@ export type SelectMutationInputData = {
   description?: string;
 }
 
-export const form__editScene: FormConfig =
+export const form__editScene: IFormConfig =
                {
                  formId:
                    'edit-scene_form',

@@ -1,6 +1,6 @@
 import {SelectOption} from '../components/input/select/SelectInput';
 import {ContentType} from '@features/concepts/data/config/contentTypes';
-import {FormConfig} from './formConfig';
+import {IFormConfig} from '../../../types/IFormConfig';
 
 type ProjectSelectInputConfig = { type: 'project'; ignore?: boolean };
 type UserSelectInputConfig = { type: 'user'; ignoreLogin?: boolean; doSelect?: boolean };
@@ -16,7 +16,7 @@ type EventInputConfig = { type: 'event'; };
 type AssetInputConfig = { type: 'asset'; multiple?: boolean };
 type AssetSelectInputConfig = { type: 'assetSelect'; username: string };
 type TagInputConfig = { type: 'tags'; };
-type FormInputConfig = { type: 'form', config: FormConfig }
+type FormInputConfig = { type: 'form', config: IFormConfig }
 type ContentInputConfig = { type: 'content'; contentType?: ContentType };
 type SelectInputConfig = { type: 'select'; options: SelectOption[] };
 

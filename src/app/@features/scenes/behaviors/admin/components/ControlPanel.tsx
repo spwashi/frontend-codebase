@@ -36,7 +36,7 @@ export function ScenesControlPanel() {
           <Route
             path=""
             element={
-              <section>
+              <React.Fragment>
                 <AllScenesQuery/>
                 <LoggedIn>
                   <CreateSceneFormFeature/>
@@ -45,7 +45,7 @@ export function ScenesControlPanel() {
                 <FeatureRequirement name={sceneDisplayFeatureName} alternative={'Need Scene Display'}>
                   <SceneDisplayForm/>
                 </FeatureRequirement>
-              </section>
+              </React.Fragment>
             }
           />
         </Routes>

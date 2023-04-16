@@ -10,20 +10,18 @@ interface ApplicationParams {
 }
 
 export function Application({canBeAdmin}: ApplicationParams) {
-  const noGraphql    = useSelector(select_noGraphql);
-  const className    = classnames({
-                                    noGraphql,
-                                    [appClassnames.permissions.appCanBeAdmin]: canBeAdmin,
-                                    [appClassnames.permissions.noAdmin]:       !canBeAdmin,
-                                  });
-  const controlPanel = canBeAdmin && <AdminControlPanel/>;
-
+  const noGraphql = useSelector(select_noGraphql);
+  const className = classnames({
+                                 noGraphql,
+                                 [appClassnames.permissions.appCanBeAdmin]: canBeAdmin,
+                                 [appClassnames.permissions.noAdmin]:       !canBeAdmin,
+                               });
   return (
     <div id="application-container" className={className}>
       <div className="stage-open" aria-hidden="true"/>
       <div className="app-wrapper">
+        {canBeAdmin && <AdminControlPanel/>}
         <main>
-          {controlPanel}
         </main>
       </div>
       <div className="stage-close" aria-hidden="true"/>

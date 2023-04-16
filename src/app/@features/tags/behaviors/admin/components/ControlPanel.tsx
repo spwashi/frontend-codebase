@@ -1,7 +1,7 @@
 import React from 'react';
 import {TagFeatures} from '../../../components/Features';
 import {CreateTagFormFeature} from '../../create';
-import {DisplayTagFormFeature} from '../../../components/display';
+import {DisplayTagsFormFeature} from '../../../components/display';
 import {UserFeatures} from '../../../../users/components/Features';
 import {ProjectFeatures} from '../../../../projects/components/Features';
 import {NavLink} from 'react-router-dom';
@@ -26,12 +26,10 @@ export function TagsControlPanel() {
         <Route path="all" element={'[unimplemented]'}/>
         <Route path="" element={
           <FeatureRequirement name={tagFeatureName} alternative={'Need Tags'}>
-            <section>
-              <LoggedIn>
-                <CreateTagFormFeature/>
-                <DisplayTagFormFeature/>
-              </LoggedIn>
-            </section>
+            <LoggedIn>
+              <CreateTagFormFeature/>
+              <DisplayTagsFormFeature/>
+            </LoggedIn>
           </FeatureRequirement>
         }/>
       </Routes>

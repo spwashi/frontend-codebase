@@ -24,10 +24,8 @@ export function AssetsControlPanel() {
         <Route path="all" element={'[unimplemented]'}/>
         <Route path="" element={
           <LoggedIn>
-            <section>
-              <UploadAssetForm/>
-              <AssetDisplay/>
-            </section>
+            <UploadAssetForm/>
+            <AssetDisplay/>
           </LoggedIn>
         }/>
       </Routes>

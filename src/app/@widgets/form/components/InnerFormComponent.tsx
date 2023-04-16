@@ -16,7 +16,7 @@ type ProviderProps<T = any> = {
   onSubmit?: (data: T) => void;
   onChange?: (data: T) => void;
 };
-export function Form({
+export default function InnerFormComponent({
                        id,
                        children,
                        buttons,
@@ -43,7 +43,7 @@ export function Form({
   return (
     <FormContext.Provider value={value}>
       <Log title={state.id} logReason="[form state]">{{state, hasChanged}}</Log>
-      <form onSubmit={state.submit}>
+      <form onSubmit={state.submit} data-form-id={id}>
         {children}
         <ButtonContainer buttons={buttons} hasChanged={hasChanged}/>
       </form>

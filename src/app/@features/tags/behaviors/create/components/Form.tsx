@@ -9,7 +9,7 @@ import {useDispatch} from 'react-redux';
 import {Feature} from '@services/features/item/components/Feature';
 import {tagCreateFormFeatureName} from '@features/tags/features';
 
-function InnerForm() {
+function CreateTagForm() {
   const {send, response} = useCreateTagMutation();
   const dispatch         = useDispatch();
   const onsubmit         = useMutationFormSubmitCallback(o => send(o).then((o) => {
@@ -27,7 +27,7 @@ function InnerForm() {
 export function CreateTagFormFeature() {
   return (
     <Feature name={tagCreateFormFeatureName}>
-      <InnerForm/>
+      <CreateTagForm/>
     </Feature>
   );
 }

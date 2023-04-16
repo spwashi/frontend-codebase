@@ -4,45 +4,32 @@ import {useMutationFormSubmitCallback} from '@services/graphql/hooks/useMutation
 import {form__editConcept, selectEditConceptInput} from '../config';
 import {useEditConceptMutation} from '../mutation';
 import {FormWidget} from '@widgets/form/FormWidget';
-import {ConceptSelect} from '../../../components/form/Select';
 import {Log} from '@core/dev/components/Log';
-import {formClassNames} from '@widgets/form/styles/classNames';
-import {Form} from '@widgets/form/components/Form';
 import {Feature} from '@services/features/item/components/Feature';
 import {editConceptFormFeatureName} from '@features/concepts/features';
 import {AllConceptsQuery} from '@features/concepts/services/graphql/all/components/FindAll';
 
-export function EditConceptForm() {
-  const {send, response} = useEditConceptMutation();
-  const onsubmit         = useMutationFormSubmitCallback(send, selectEditConceptInput);
-  const [, setData]      = useState<any | null>({});
+function useConceptEditForm() {
+  const [{data: {concept: concept} = {} as any} = {} as any, setConceptSelectionFormData] = useState({} as any);
+  return [concept, setConceptSelectionFormData];
+}
 
-  const [{data: {concept: _concept} = {} as any} = {} as any, setConcept] = useState({} as any);
+function EditConceptForm() {
+  const {send, response}              = useEditConceptMutation();
+  const onsubmit                      = useMutationFormSubmitCallback(send, selectEditConceptInput);
+  const [concept, setConceptFromForm] = useConceptEditForm();
+
   return (
-    <div style={{border: 'thin solid red'}}>
-      <Log title={'Concept'}>{_concept}</Log>
-      <section className={formClassNames.formWrapper}>
-        <header>Select Concept To Edit <small className="dev-only">concept-edit-select</small></header>
-        <Form onChange={setConcept}>
-          <div className="input-wrapper">
-            <label>Concept</label>
-            <div className="form-item">
-              <ConceptSelect formKey="concept"/>
-            </div>
-          </div>
-        </Form>
-      </section>
-      {
-        _concept && (
-          <FormWidget
-            config={form__editConcept}
-            onSubmit={onsubmit}
-            onChange={setData}
-            defaultValue={_concept}
-          />
-        )}
+    <React.Fragment>
+      <Log title={'Concept'}>{concept}</Log>
+      <FormWidget config={form__editConcept} onSubmit={setConceptFromForm}/>
+    {
+      concept && (
+        <FormWidget config={form__editConcept} onSubmit={onsubmit} defaultValue={concept}/>
+      )
+    }
       <GraphqlMutationResponse response={response}/>
-    </div>
+    </React.Fragment>
   )
 }
 

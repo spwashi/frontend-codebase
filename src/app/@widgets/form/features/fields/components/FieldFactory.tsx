@@ -16,7 +16,7 @@ import {FormWidget} from '../../../FormWidget';
 import {useFormItem} from '../hooks/useFormItem';
 import {getConfiguredDomain} from '@core/dev/components/Dev';
 import {FormFieldConfig} from '../types/fieldConfig';
-import {FormConfig} from '../types/formConfig';
+import {IFormConfig} from '../../../types/IFormConfig';
 
 /**
  *
@@ -25,19 +25,14 @@ export function getDomain() {
   return getConfiguredDomain() || (window?.location?.host ?? '');
 }
 
-function FormInput({formKey, config}: { formKey: string, config: FormConfig }) {
+function SubformInput({formKey, config}: { formKey: string, config: IFormConfig }) {
   const form                         = useContext(FormContext);
   const [formState, updateFormState] = useFormItem(form, formKey)
 
   return <FormWidget config={config} defaultValue={formState} onSubmit={updateFormState}/>
 }
 
-/**
- *
- * @param config
- * @constructor
- */
-export function FormElementFactory({item: config}: { item: FormFieldConfig }) {
+function FormItemFactory({item: config}: { item: FormFieldConfig }) {
   const {title, type, name, value: v, ...rest} = config;
   switch (type) {
     case 'date':
@@ -84,19 +79,14 @@ export function FormElementFactory({item: config}: { item: FormFieldConfig }) {
       return <UsernameInput doSelect={!!config.doSelect} ignoreLogin={config.ignoreLogin}/>;
     }
     case 'form': {
-      return <FormInput formKey={name} config={config.config}/>
+      return <SubformInput formKey={name} config={config.config}/>
     }
     default :
       return <>NO HANDLER</>;
   }
 }
 
-/**
- *
- * @param items
- * @constructor
- */
-export function FormBody({items}: { items: FormFieldConfig[] }) {
+export default function FormItems({items}: { items: FormFieldConfig[] }) {
   const id = useMemo(() => `input--${Math.random()}`.replace('.', ''), []);
   if (!items) return null;
   return <>{items.map(item => {
@@ -108,7 +98,7 @@ export function FormBody({items}: { items: FormFieldConfig[] }) {
       <div key={item.name} className="input-wrapper">
         {doLabel && <label htmlFor={item.id}>{item.title}</label>}
         <div className="form-item">
-          <FormElementFactory item={item} key={item.name}/>
+          <FormItemFactory item={item} key={item.name}/>
         </div>
       </div>
     );

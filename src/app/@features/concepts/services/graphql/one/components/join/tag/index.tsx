@@ -26,13 +26,13 @@ export function ConceptTag({concept, tag}: { tag: ITag, concept: IConcept }) {
   const deleteTag       = useDeleteConceptTagMutation();
 
   return (
-    <div style={{border: 'thin solid red'}}>
+    <div>
       <button onClick={() => deleteTag({
-                                        variables: {
-                                          concept: {id: +concept.id},
-                                          tags:    [{title, domain}],
-                                        },
-                                      })}>Remove Tag
+                                         variables: {
+                                           concept: {id: +concept.id},
+                                           tags:    [{title, domain}],
+                                         },
+                                       })}>Remove Tag
       </button>
       <span>{title} {domain}</span>
     </div>

@@ -1,23 +1,24 @@
 import React, {useState} from 'react';
 import {AssetQuery} from '../../services/graphql/queries/AssetQuery';
-import {getUserSelectorUsername, UserSelect} from '../../../users/components/form/Select';
+import {getUserSelectorUsername} from '../../../users/components/form/Select';
 import {IUser} from '@junction/models/user/models';
 import {FormWidget} from '@widgets/form/FormWidget';
 import {LoggedIn} from '../../../users/behaviors/login/components/Requirement';
-import {Form} from '@widgets/form/components/Form';
 
-import {FormConfig} from '@widgets/form/features/fields/types/formConfig';
+import {IFormConfig} from '@widgets/form/types/IFormConfig';
 import {Feature} from '@services/features/item/components/Feature';
 import {assetDisplayFeatureName, assetDisplayFormFeatureName} from '@features/assets/features';
+import {form__selectLoggedInUser} from '@features/assets/behaviors/display/config';
 
-function getDisplayAssetForm(user: { username?: string }) {
+function getDisplayAssetForm(user: { username?: string }): IFormConfig {
   return (
     {
+      title:  'Display Asset Form',
       formId: 'display-asset-form',
       items:  !user.username
               ? [] :
               [{type: 'assetSelect', name: 'asset', title: 'Asset', username: user.username}],
-    } as FormConfig
+    }
   );
 }
 /**
@@ -25,22 +26,24 @@ function getDisplayAssetForm(user: { username?: string }) {
  * @param user
  * @constructor
  */
-function DisplayForm(user: { username: string | undefined } | { username: string }) {
+function DisplayAssetForm(user: { username: string | undefined } | { username: string }) {
   const [state, setState]  = useState<any | null>();
   const realname           = state?.data?.asset?.realname ?? '';
   const form__displayAsset = getDisplayAssetForm(user);
   return (
     <LoggedIn>
       <Feature name={assetDisplayFormFeatureName}>
-        <FormWidget
-          onSubmit={setState}
-          onChange={setState}
-          config={form__displayAsset}
-        />
+        <FormWidget config={form__displayAsset} onSubmit={setState} onChange={setState}/>
         <AssetQuery realname={realname} username={user?.username}/>
       </Feature>
     </LoggedIn>
   );
+}
+
+function useUserSelectForm() {
+  const [state, setUserFromForm] = useState<{ data: { user: IUser } } | null>(null);
+  const user                     = state?.data?.user;
+  return [user, setUserFromForm] as const;
 }
 
 /**
@@ -48,20 +51,12 @@ function DisplayForm(user: { username: string | undefined } | { username: string
  * @constructor
  */
 export function AssetDisplay() {
-  const [state, setUsername] = useState<{ data: { [k: string]: string | IUser } } | null>(null);
-  const userDataKey          = '.user';
-  const username             = getUserSelectorUsername(state?.data?.[userDataKey]);
+  const [user, setUserFromForm] = useUserSelectForm();
+  const username                = getUserSelectorUsername(user);
   return (
     <Feature name={assetDisplayFeatureName}>
-      <section>
-        <header>Asset Display for user: {username}</header>
-        <div className="column">
-          <Form onChange={setUsername} onSubmit={setUsername}>
-            <UserSelect formKey={userDataKey} ignoreLogin/>
-          </Form>
-          <DisplayForm username={username}/>
-        </div>
-      </section>
+      <FormWidget config={form__selectLoggedInUser} onSubmit={setUserFromForm}/>
+      <DisplayAssetForm username={username}/>
     </Feature>
   )
 }

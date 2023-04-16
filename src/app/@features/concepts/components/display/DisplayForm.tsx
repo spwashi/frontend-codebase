@@ -3,10 +3,10 @@ import {Concept} from '../../services/graphql/one';
 import {Feature} from '@services/features/item/components/Feature';
 import {FormWidget} from '@widgets/form/FormWidget';
 import {Log} from '@core/dev/components/Log';
-import {LoggedIn} from '../../../users/behaviors/login/components/Requirement';
-
-import {conceptDisplayFeatureName, conceptDisplayFormFeatureName} from '@features/concepts/features';
+import {LoggedIn} from '@features/users/behaviors/login/components/Requirement';
 import {FeatureRequirement} from '@services/features/list/components/FeatureRequirement';
+import {conceptDisplayFeatureName, conceptDisplayFormFeatureName} from '../../features';
+import {form__selectConcept} from './config';
 
 export function ConceptDisplayForm() {
   const [state, setState] = useState<any | null>();
@@ -16,14 +16,9 @@ export function ConceptDisplayForm() {
       <LoggedIn>
         <Feature name={conceptDisplayFormFeatureName}>
           <Log>{{id}}</Log>
-          <section>
-            <FormWidget onSubmit={setState} config={{
-              formId: 'display-concept-form',
-              title:  'Display Concept',
-              items:  [{name: 'concept', title: 'Concept', type: 'concept'}],
-            }}/>
-            {id && <Concept id={id}/>}
-          </section>
+          <FormWidget config={form__selectConcept}
+                      onSubmit={setState}/>
+          {id && <Concept id={id}/>}
         </Feature>
       </LoggedIn>
     </FeatureRequirement>

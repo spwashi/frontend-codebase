@@ -23,12 +23,10 @@ function ActiveForm() {
     <section id="form__project-create">
       {fatal && <button onClick={() => (setFatal(null), response.reset())}>[clear]</button>}
       <ErrorBoundary handler={e => setFatal(e)} error={fatal}>
-        <FormWidget
-          config={form__createProject}
-          onReset={() => response.reset()}
-          onSubmit={onsubmit}
-          defaultValue={{}}
-        />
+        <FormWidget config={form__createProject}
+                    onReset={() => response.reset()}
+                    onSubmit={onsubmit}
+                    defaultValue={{}}/>
         <GraphqlMutationResponse response={response}/>
       </ErrorBoundary>
     </section>

@@ -1,37 +1,30 @@
 import React, {useState} from 'react';
 import {GraphqlMutationResponse} from '@services/graphql/components/api/GraphqlMutationResponse';
 import {useMutationFormSubmitCallback} from '@services/graphql/hooks/useMutationFormSubmitCallback';
-import {form__editEvent, selectEditEventInput} from '../config';
+import {form__editEvent, form__selectEvent, selectEditEventInput} from '../config';
 import {useEditEventMutation} from '../mutation';
 import {FormWidget} from '@widgets/form/FormWidget';
-import {LoggedIn} from '@features/users/behaviors/login/components/Requirement';
-import {EventSelect} from '../../../components/form/Select';
 import {Log} from '@core/dev/components/Log';
-import {Form} from '@widgets/form/components/Form';
 import {Feature} from '@services/features/item/components/Feature';
 import {eventEditFormFeatureName} from '@features/events/features';
 import {AllEventsQuery} from '@features/events/services/graphql/all/components/FindAll';
 
-export function EditEventForm() {
-  const {send, response} = useEditEventMutation();
-  const onsubmit         = useMutationFormSubmitCallback(send, selectEditEventInput);
-  const [, setData]      = useState<any | null>({});
+function useEventSelectForm() {
+  const [{data: {event} = {} as any} = {} as any, setEventFromForm] = useState({} as any);
+  return [event, setEventFromForm] as const;
+}
 
-  const [{data: {event: _event} = {} as any} = {} as any, setEvent] = useState({} as any);
+function EditEventForm() {
+  const {send, response}          = useEditEventMutation();
+  const onsubmit                  = useMutationFormSubmitCallback(send, selectEditEventInput);
+  const [event, setEventFromForm] = useEventSelectForm();
   return (
-    <div style={{border: 'thin solid red'}}>
-      <Log>{_event}</Log>
-      <Form onChange={setEvent}>
-        <EventSelect formKey="event"/>
-      </Form>
+    <div>
+      <Log>{event}</Log>
+      <FormWidget config={form__selectEvent} onSubmit={setEventFromForm}/>
       {
-        _event && (
-          <FormWidget
-            config={form__editEvent}
-            onSubmit={onsubmit}
-            onChange={setData}
-            defaultValue={_event}
-          />
+        event && (
+          <FormWidget config={form__editEvent} onSubmit={onsubmit} defaultValue={event}/>
         )}
       <GraphqlMutationResponse response={response}/>
     </div>
@@ -40,9 +33,9 @@ export function EditEventForm() {
 
 export function EditEventFormFeature() {
   return (
-      <Feature name={eventEditFormFeatureName}>
-        <AllEventsQuery/>
-        <EditEventForm/>
-      </Feature>
+    <Feature name={eventEditFormFeatureName}>
+      <AllEventsQuery/>
+      <EditEventForm/>
+    </Feature>
   );
 }

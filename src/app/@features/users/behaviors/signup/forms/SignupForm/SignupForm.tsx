@@ -7,7 +7,7 @@ import {selectLoggedInUserName} from '../../../login/redux/reducer';
 import {Feature} from '@services/features/item/components/Feature';
 import {FormWidget} from '@widgets/form/FormWidget';
 
-import {FormConfig} from '@widgets/form/features/fields/types/formConfig';
+import {IFormConfig} from '@widgets/form/types/IFormConfig';
 
 import {projectDisplayFeatureName} from '@features/projects/features';
 import {userSignupFeatureName, userSignupFormFeatureName} from '@features/users/features';
@@ -34,7 +34,7 @@ function selectMutationInput(data: any) {
   };
 }
 
-const form__userSignup: FormConfig =
+const form__userSignup: IFormConfig =
         {
           formId: 'signup-form',
           title:  'Signup Form',

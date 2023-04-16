@@ -9,7 +9,6 @@ import {NavLink} from 'react-router-dom';
 import {TagFeatures} from '@features/tags/components/Features';
 import {UserFeatures} from '@features/users/components/Features';
 import {EditEventFormFeature} from '../../edit';
-import {AllEventsQuery} from '../../../services/graphql/all/components/FindAll';
 import {eventFeatureName} from '@features/events/features';
 import {FeatureRequirement} from '@services/features/list/components/FeatureRequirement';
 import {LoggedIn} from '@features/users/behaviors/login/components/Requirement';
@@ -32,14 +31,12 @@ export function EventsControlPanel() {
         <Routes>
           <Route path={'all'} element={<div style={{width: 500 + 'px'}}><AllEventsEventDisplay/></div>}/>
           <Route path="" element={
-            <section>
-              <LoggedIn>
-                <CreateEventFormFeature/>
-                <EditEventFormFeature/>
-                <EventDisplayFormFeature/>
-                <TagEventFormFeature/>
-              </LoggedIn>
-            </section>
+            <LoggedIn>
+              <CreateEventFormFeature/>
+              <EditEventFormFeature/>
+              <EventDisplayFormFeature/>
+              <TagEventFormFeature/>
+            </LoggedIn>
           }/>
         </Routes>
       </FeatureRequirement>

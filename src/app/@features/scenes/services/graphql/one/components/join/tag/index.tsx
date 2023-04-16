@@ -18,13 +18,13 @@ export function SceneTag({scene, tag}: { tag: ITag, scene: IScene }) {
   const deleteTag       = useDeleteSceneTagMutation();
 
   return (
-    <div style={{border: 'thin solid red'}}>
+    <div>
       <button onClick={() => deleteTag({
-                                        variables: {
-                                          scene: {id: +scene.id},
-                                          tags:  [{title, domain}],
-                                        },
-                                      })}>Remove Tag
+                                         variables: {
+                                           scene: {id: +scene.id},
+                                           tags:  [{title, domain}],
+                                         },
+                                       })}>Remove Tag
       </button>
       <span>{title} {domain}</span>
     </div>

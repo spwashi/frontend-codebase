@@ -9,7 +9,6 @@ import {NavLink} from 'react-router-dom';
 import {TagFeatures} from '@features/tags/components/Features';
 import {UserFeatures} from '@features/users/components/Features';
 import {EditConceptFormFeature} from '../../edit';
-import {AllTagsQuery} from '@features/tags/services/graphql/all';
 import {conceptFeatureName} from '@features/concepts/features';
 import {FeatureRequirement} from '@services/features/list/components/FeatureRequirement';
 import {LoggedIn} from '@features/users/behaviors/login/components/Requirement';
@@ -30,14 +29,12 @@ export function ConceptsControlPanel() {
         <Routes>
           <Route path={'all'} element={<div style={{width: 500 + 'px'}}><AllConceptsConceptDisplay/></div>}/>
           <Route path="" element={
-            <section>
-              <LoggedIn>
-                <CreateConceptForm/>
-                <EditConceptFormFeature/>
-                <ConceptDisplayForm/>
-                <TagConceptFormFeature/>
-              </LoggedIn>
-            </section>
+            <LoggedIn>
+              <CreateConceptForm/>
+              <EditConceptFormFeature/>
+              <ConceptDisplayForm/>
+              <TagConceptFormFeature/>
+            </LoggedIn>
           }/>
         </Routes>
       </FeatureRequirement>

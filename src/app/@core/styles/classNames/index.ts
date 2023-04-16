@@ -22,4 +22,9 @@ export const appClassnames = {
     noAdmin:       'no-admin',
     appCanBeAdmin: 'can-be-admin',
   },
+  services:     {
+    features: {
+      component: 'feature',
+    },
+  },
 };

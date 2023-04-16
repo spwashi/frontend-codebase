@@ -25,13 +25,13 @@ export function EventTag({event, tag}: { tag: ITag, event: IEvent }) {
   const deleteTag       = useDeleteEventTagMutation();
 
   return (
-    <div style={{border: 'thin solid red'}}>
+    <div>
       <button onClick={() => deleteTag({
-                                        variables: {
-                                          event: {id: +event.id},
-                                          tags:  [{title, domain}],
-                                        },
-                                      })}>Remove Tag
+                                         variables: {
+                                           event: {id: +event.id},
+                                           tags:  [{title, domain}],
+                                         },
+                                       })}>Remove Tag
       </button>
       <span>{title} {domain}</span>
     </div>

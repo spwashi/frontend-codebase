@@ -23,4 +23,4 @@ export const featureComponentMap:
 export type IFeatureName = (keyof typeof featureComponentMap);
 export {conceptTagFormFeatureName} from '@features/concepts/features';
 export {eventTagFormFeatureName} from '@features/events/features';
-export {tagDisplayFormFeatureName} from '@features/tags/features';
+export {tagsDisplayFormFeatureName} from '@features/tags/features';

@@ -3,8 +3,9 @@ import {FormWidget} from '@widgets/form/FormWidget';
 import {SiteProjectController} from '../../services/graphql/one';
 import {useSelector} from 'react-redux';
 import {selectProjectStateProject} from '../../services/redux/selectors';
-import {projectDisplayFeatureName} from '@features/projects/features';
+import {projectDisplayFeatureName} from '../../features';
 import {FeatureRequirement} from '@services/features/list/components/FeatureRequirement';
+import {form__selectProject} from './config';
 
 export function ProjectDisplayFormFeature() {
   const [state, setState] = useState<any | null>();
@@ -13,14 +14,8 @@ export function ProjectDisplayFormFeature() {
 
   return (
     <FeatureRequirement name={projectDisplayFeatureName} alternative={'Need Project Display'}>
-      <section>
-        <FormWidget onSubmit={setState} config={{
-          title:  'Project Display Form',
-          formId: 'display-project-form',
-          items:  [{name: 'project', title: 'Project', type: 'project'}],
-        }}/>
-        <SiteProjectController id={project?.id}/>
-      </section>
+      <FormWidget config={form__selectProject} onSubmit={setState}/>
+      <SiteProjectController id={project?.id}/>
     </FeatureRequirement>
   )
 }

@@ -2,6 +2,7 @@ import React, {useContext, useEffect, useMemo, useReducer} from 'react';
 import {FeatureInternalContext} from '../context';
 import {IFeature, IFeatureName} from '../types';
 import {FeaturesRegistrationContext} from '@services/features/list/context';
+import {appClassnames} from '@core/styles/classNames';
 
 export type IFeatureProps = {
   name: IFeatureName,
@@ -42,7 +43,13 @@ export function Feature({name, children, enabled = true}: IFeatureProps) {
   if (features.state?.disabled) return null;
   return (
     <FeatureInternalContext.Provider value={value}>
-      {children}
+      {
+        children && (
+          <section className={appClassnames.services.features.component} data-feature-name={name}>
+            {children}
+          </section>
+        )
+      }
     </FeatureInternalContext.Provider>
   )
 }

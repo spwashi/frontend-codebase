@@ -6,22 +6,23 @@ import {FormWidget} from '@widgets/form/FormWidget';
 import {eventDisplayFeatureName, eventDisplayFormFeatureName} from '@features/events/features';
 import {FeatureRequirement} from '@services/features/list/components/FeatureRequirement';
 import {AllEventsQuery} from '@features/events/services/graphql/all/components/FindAll';
+import {form__selectEvent} from '@features/events/behaviors/edit/config';
+
+function useSelectEventForm() {
+  const [state, setState] = useState<any | null>();
+  const event             = state?.data?.event;
+  return [event, setState] as const;
+}
 
 export function EventDisplayFormFeature() {
-  const [state, setState] = useState<any | null>();
-  const id                = state?.data?.event?.id;
+  const [event, setState] = useSelectEventForm();
   return (
     <FeatureRequirement name={eventDisplayFeatureName} alternative={'Need Events'}>
       <AllEventsQuery/>
       <Feature name={eventDisplayFormFeatureName}>
-        <section>
-          <header>Event Display</header>
-          <FormWidget onSubmit={setState} config={{
-            formId: 'display-event-form',
-            items:  [{name: 'event', title: 'Event', type: 'event'}],
-          }}/>
-          {id && <Event id={id}/>}
-        </section>
+        <FormWidget config={form__selectEvent}
+                    onSubmit={setState}/>
+        {event && <Event id={event.id}/>}
       </Feature>
     </FeatureRequirement>
   )

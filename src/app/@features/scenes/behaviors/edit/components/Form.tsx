@@ -4,39 +4,26 @@ import {useMutationFormSubmitCallback} from '@services/graphql/hooks/useMutation
 import {form__editScene, selectEditSceneInput} from '../config';
 import {useEditSceneMutation} from '../mutation';
 import {FormWidget} from '@widgets/form/FormWidget';
-import {SceneSelect} from '../../../components/form/Select';
 import {formClassNames} from '@widgets/form/styles/classNames';
-import {Form} from '@widgets/form/components/Form';
 import {Feature} from '@services/features/item/components/Feature';
 import {sceneEditFormFeatureName} from '@features/scenes/features';
 
+function useSceneSelectForm() {
+  const [{data: {scene: scene} = {} as any} = {} as any, setScene] = useState({} as any);
+  return [scene, setScene];
+}
 function EditSceneForm() {
-  const {send, response} = useEditSceneMutation();
-  const onsubmit         = useMutationFormSubmitCallback(send, selectEditSceneInput);
-  const [, setData]      = useState<any | null>({});
-
-  const [{data: {scene: _scene} = {} as any} = {} as any, setScene] = useState({} as any);
+  const {send, response}  = useEditSceneMutation();
+  const onsubmit          = useMutationFormSubmitCallback(send, selectEditSceneInput);
+  const [scene, setScene] = useSceneSelectForm();
   return (
     <>
       <section className={formClassNames.formWrapper}>
         <header>Select Scene To Edit <small className="dev-only">scene-edit-select</small></header>
-        <Form onChange={setScene}>
-          <div className="input-wrapper">
-            <label>Scene</label>
-            <div className="form-item">
-              <SceneSelect formKey="scene"/>
-            </div>
-          </div>
-        </Form>
       </section>
       {
-        _scene &&
-        <FormWidget
-          config={form__editScene}
-          onSubmit={onsubmit}
-          onChange={setData}
-          defaultValue={_scene}
-        />
+        scene &&
+        <FormWidget config={form__editScene} onSubmit={onsubmit} onChange={setScene} defaultValue={scene}/>
       }
       <GraphqlMutationResponse response={response}/>
     </>
