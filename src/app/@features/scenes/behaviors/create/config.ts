@@ -1,7 +1,6 @@
-import {convertToSlug} from '../../../projects/behaviors/create/selectors';
-
 import {IFormConfig} from '@widgets/form/types/IFormConfig';
 import {formId_sceneCreate} from '../../../../forms';
+import {convertToSlug} from '@core/helpers/convertToSlug';
 
 export type SelectMutationInputData = {
   name: string;

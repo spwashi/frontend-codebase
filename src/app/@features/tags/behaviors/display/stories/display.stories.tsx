@@ -3,7 +3,7 @@ import {ComponentMeta, ComponentStory} from '@storybook/react';
 import {mainDecorator} from '@services/storybook/decorators';
 import {TagConceptFormFeature} from '@features/concepts/behaviors/tag';
 import {FeatureList} from '@services/features/list/components/FeatureList';
-import {DisplayTagsFormFeature} from '../../../components/display';
+import {DisplayTagsFormFeature} from '../components/Form';
 
 
 export default {

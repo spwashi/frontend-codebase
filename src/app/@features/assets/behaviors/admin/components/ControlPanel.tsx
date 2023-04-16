@@ -1,5 +1,5 @@
 import {UploadAssetForm} from '../../upload/components/form/Form';
-import {AssetDisplay} from '../../../components/display/AssetDisplay';
+import {AssetDisplay} from '../../display/components/AssetDisplay';
 import React from 'react';
 import {UserFeatures} from '../../../../users/components/Features';
 import {ProjectFeatures} from '../../../../projects/components/Features';

@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
 import {FormWidget} from '@widgets/form/FormWidget';
-import {SiteProjectController} from '../../services/graphql/one';
+import {SiteProjectController} from '../../../services/graphql/one';
 import {useSelector} from 'react-redux';
-import {selectProjectStateProject} from '../../services/redux/selectors';
-import {projectDisplayFeatureName} from '../../features';
+import {selectProjectStateProject} from '../../../services/redux/selectors';
+import {projectDisplayFeatureName} from '../../../features';
 import {FeatureRequirement} from '@services/features/list/components/FeatureRequirement';
-import {form__selectProject} from './config';
+import {form__selectProject} from '@features/projects/behaviors/select/config';
 
 export function ProjectDisplayFormFeature() {
   const [state, setState] = useState<any | null>();

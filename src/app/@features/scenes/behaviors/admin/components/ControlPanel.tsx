@@ -1,7 +1,7 @@
 import {CreateSceneFormFeature} from '../../create';
 import React from 'react';
 import {SceneFeatures} from '../../../components/Features';
-import {SceneDisplayForm} from '../../../components/display/DisplayForm';
+import {SceneDisplayForm} from '../../display/components/Form';
 import {AllScenesSceneDisplay} from '../../../services/graphql/all/components/DisplayAll';
 import {Route, Routes} from 'react-router';
 import {NavLink} from 'react-router-dom';

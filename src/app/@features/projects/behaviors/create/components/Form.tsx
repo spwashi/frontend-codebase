@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {GraphqlMutationResponse} from '@services/graphql/components/api/GraphqlMutationResponse';
 import {useMutationFormSubmitCallback} from '@services/graphql/hooks/useMutationFormSubmitCallback';
-import {form__createProject, selectCreateProjectInput} from '../selectors';
+import {selectCreateProjectInput} from '../selectors';
 import {useCreateProjectMutation} from '../mutations';
 import {useDispatch} from 'react-redux';
 import {ACTION_PROJECT_CREATED} from '../../../services/redux/reducer';
@@ -10,6 +10,7 @@ import {ErrorBoundary} from '@core/error/components/ErrorBoundary';
 
 import {projectCreateFeatureName} from '@features/projects/features';
 import {FeatureRequirement} from '@services/features/list/components/FeatureRequirement';
+import {form__createProject} from '@features/projects/behaviors/create/config';
 
 
 function ActiveForm() {

@@ -1,36 +1,23 @@
 import React, {useState} from 'react';
-import {AssetQuery} from '../../services/graphql/queries/AssetQuery';
-import {getUserSelectorUsername} from '../../../users/components/form/Select';
+import {AssetQuery} from '../../../services/graphql/queries/AssetQuery';
+import {getUserSelectorUsername} from '../../../../users/components/form/Select';
 import {IUser} from '@junction/models/user/models';
 import {FormWidget} from '@widgets/form/FormWidget';
-import {LoggedIn} from '../../../users/behaviors/login/components/Requirement';
-
-import {IFormConfig} from '@widgets/form/types/IFormConfig';
+import {LoggedIn} from '../../../../users/behaviors/login/components/Requirement';
 import {Feature} from '@services/features/item/components/Feature';
 import {assetDisplayFeatureName, assetDisplayFormFeatureName} from '@features/assets/features';
-import {form__selectLoggedInUser} from '@features/assets/behaviors/display/config';
-import {formId_assetSelect} from '../../../../forms';
+import {form__selectLoggedInUser} from '@features/users/behaviors/select-loggedIn/config';
+import {getform__assetSelect} from '@features/assets/behaviors/select/config';
 
-function getDisplayAssetForm(user: { username?: string }): IFormConfig {
-  return (
-    {
-      title:  'Select Asset',
-      formId: formId_assetSelect,
-      items:  !user.username
-              ? [] :
-              [{type: 'assetSelect', name: 'asset', title: 'Asset', username: user.username}],
-    }
-  );
-}
 /**
- * Selects a asset to display, then displays it
+ * Selects an asset to display, then displays it
  * @param user
  * @constructor
  */
 function DisplayAssetForm(user: { username: string | undefined } | { username: string }) {
   const [state, setState]  = useState<any | null>();
   const realname           = state?.data?.asset?.realname ?? '';
-  const form__displayAsset = getDisplayAssetForm(user);
+  const form__displayAsset = getform__assetSelect(user);
   return (
     <LoggedIn>
       <Feature name={assetDisplayFormFeatureName}>

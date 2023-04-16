@@ -7,7 +7,7 @@ import {TagSelect} from '@features/tags/components/form/Select';
 import {ProjectSelect} from '@features/projects/components/form/Select';
 import {ConceptSelect} from '@features/concepts/components/form/Select';
 import {FormContext} from '../../../context/context';
-import {AssetSelect} from '@features/assets/components/form/AssetSelect';
+import {AssetSelect} from '@features/assets/components/form/Select';
 import {Textarea} from './input/text/Textarea';
 import {EventSelect} from '@features/events/components/form/Select';
 import {SceneSelect} from '@features/scenes/components/form/Select';

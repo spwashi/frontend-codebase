@@ -2,7 +2,7 @@ import {CreateEventFormFeature} from '../../create';
 import {TagEventFormFeature} from '../../tag';
 import React from 'react';
 import {EventFeatures} from '../../../components/Features';
-import {EventDisplayFormFeature} from '../../../components/display/DisplayForm';
+import {EventDisplayFormFeature} from '../../display/components/Form';
 import {AllEventsEventDisplay} from '../../../services/graphql/all/components/DisplayAll';
 import {Route, Routes} from 'react-router';
 import {NavLink} from 'react-router-dom';

@@ -4,7 +4,7 @@ import {useMutationFormSubmitCallback} from '@services/graphql/hooks/useMutation
 import {GraphqlMutationResponse} from '@services/graphql/components/api/GraphqlMutationResponse';
 import {useDispatch, useSelector} from 'react-redux';
 import {ACTION_RECEIVE_LOGIN, selectLoggedInUserName} from '../../redux/reducer';
-import {form__login, LOGIN_MUTATION, selectLoginInput} from '../../selectors';
+import {LOGIN_MUTATION, selectLoginInput} from '../../selectors';
 import {FormWidget} from '@widgets/form/FormWidget';
 import {IUser} from '@junction/models/user/models';
 import {Feature} from '@services/features/item/components/Feature';
@@ -12,6 +12,7 @@ import {setJwt} from '@services/jwt/helpers/setJwt';
 
 import {userLoginFeatureName, userLoginFormFeatureName} from '@features/users/features';
 import {FeatureRequirement} from '@services/features/list/components/FeatureRequirement';
+import {form__login} from '@features/users/behaviors/login/config';
 
 
 function LoginReceivedEffect({username, user, jwt}: { username: string, user: IUser, jwt: string }) {

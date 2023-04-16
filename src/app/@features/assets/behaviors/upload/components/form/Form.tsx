@@ -3,10 +3,8 @@ import {BACKEND_URL} from '@core/constants';
 import {FormWidget} from '@widgets/form/FormWidget';
 import {Dev} from '@core/dev/components/Dev';
 import {useJwt} from '@services/jwt/hooks/useJwt';
-
-import {IFormConfig} from '@widgets/form/types/IFormConfig';
 import {Feature} from '@services/features/item/components/Feature';
-import {formId_assetUpload} from '../../../../../../forms';
+import {form__uploadAsset} from '@features/assets/behaviors/upload/config';
 
 const uploadAssetFormFeature = 'feature.asset.upload.form';
 
@@ -42,17 +40,6 @@ function submissionCallback({jwt, assets, uploadLocation, tags}: SubmissionCallb
   const url = `${BACKEND_URL}/upload`;
   return fetch(url, {method: 'POST', body, mode: 'cors'}).then(j => j.json())
 }
-
-const form__uploadAsset: IFormConfig =
-        {
-          title:  'Upload Asset',
-          formId: formId_assetUpload,
-          items:  [
-            {type: 'user', name: 'name', title: 'User', ignoreLogin: false},
-            {type: 'asset', name: 'assets', title: 'Asset'},
-            {type: 'tags', name: 'tags', title: 'Tags'},
-          ],
-        };
 
 export function UploadAssetForm() {
   const [out, setOut]     = useState<any | null>(null);

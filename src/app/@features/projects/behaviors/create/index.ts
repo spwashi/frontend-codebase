@@ -1,1 +1,1 @@
-export {CreateProjectForm} from './components/CreateProjectForm'
+export {CreateProjectForm} from './components/Form'

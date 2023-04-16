@@ -1,5 +1,5 @@
 import {gql, useQuery} from '@apollo/client';
-import {AssetContents} from '../../../components/display/AssetContents';
+import {AssetContents} from '../../../behaviors/display/components/AssetContents';
 import React from 'react';
 
 export function AssetQuery({realname, username}: { realname: string, username?: string }) {

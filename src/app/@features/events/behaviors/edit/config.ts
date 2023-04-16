@@ -1,10 +1,10 @@
 import {IUser} from '@junction/models/user/models';
-import {descriptionInput, endInput, eventInput, idInput, startInput, titleInput, userInput} from '../../data/config/inputs';
+import {descriptionInput, endInput, idInput, startInput, titleInput, userInput} from '../../data/config/inputs';
 import {IEvent} from '@junction/models/event/models';
 import {EditEventMutationInput} from '@junction/models/event/behaviors/edit';
 
 import {IFormConfig} from '@widgets/form/types/IFormConfig';
-import {formId_eventEdit, formId_eventSelect} from '../../../../forms';
+import {formId_eventEdit} from '../../../../forms';
 
 export type SelectMutationInputData = {
   user: IUser;
@@ -28,14 +28,6 @@ export const form__editEvent: IFormConfig = {
     descriptionInput,
   ],
 };
-
-export const form__selectEvent: IFormConfig = {
-  title:  'Select Event',
-  formId: formId_eventSelect,
-  items:  [
-    eventInput,
-  ],
-}
 
 export const selectEditEventInput =
                (data: SelectMutationInputData): EditEventMutationInput => {

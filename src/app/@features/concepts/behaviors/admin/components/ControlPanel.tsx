@@ -2,7 +2,7 @@ import {CreateConceptForm} from '../../create';
 import {TagConceptFormFeature} from '../../tag';
 import React from 'react';
 import {ConceptFeatures} from '../../../components/Features';
-import {ConceptDisplayForm} from '../../../components/display/DisplayForm';
+import {ConceptDisplayForm} from '../../display/components/Form';
 import {AllConceptsConceptDisplay} from '../../../services/graphql/all/components/DisplayAll';
 import {Route, Routes} from 'react-router';
 import {NavLink} from 'react-router-dom';

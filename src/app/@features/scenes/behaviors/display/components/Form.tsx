@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
-import {Scene} from '../../services/graphql/one';
+import {Scene} from '../../../services/graphql/one';
 import {FormWidget} from '@widgets/form/FormWidget';
 
 import {sceneDisplayFeatureName} from '@features/scenes/features';
 import {FeatureRequirement} from '@services/features/list/components/FeatureRequirement';
-import {form__selectScene} from '@features/scenes/components/display/config';
+import {form__selectScene} from '@features/scenes/behaviors/select/config';
 
 export function SceneDisplayForm() {
   const [state, setState] = useState<any | null>();

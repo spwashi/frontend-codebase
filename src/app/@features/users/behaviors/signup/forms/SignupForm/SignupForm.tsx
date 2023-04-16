@@ -7,12 +7,10 @@ import {selectLoggedInUserName} from '../../../login/redux/reducer';
 import {Feature} from '@services/features/item/components/Feature';
 import {FormWidget} from '@widgets/form/FormWidget';
 
-import {IFormConfig} from '@widgets/form/types/IFormConfig';
-
 import {projectDisplayFeatureName} from '@features/projects/features';
 import {userSignupFeatureName, userSignupFormFeatureName} from '@features/users/features';
 import {FeatureRequirement} from '@services/features/list/components/FeatureRequirement';
-import {formId_userSignup} from '../../../../../../forms';
+import {form__userSignup} from '@features/users/behaviors/signup/config';
 
 const SIGNUP_MUTATION = gql`
     mutation SignUp($user: CreateUserInput!, $password: CreatePasswordInput!, $project: ProjectReferenceInput) {
@@ -34,19 +32,6 @@ function selectMutationInput(data: any) {
     project:  {id: project.id},
   };
 }
-
-const form__userSignup: IFormConfig =
-        {
-          title:  'Signup',
-          formId: formId_userSignup,
-          items:  [
-            {type: 'text', name: 'name', title: 'Name'},
-            {type: 'text', name: 'username', title: 'Username'},
-            {type: 'password', name: 'password', title: 'Password'},
-            {type: 'password', name: 'passwordConfirm', title: 'Confirm Password'},
-            {type: 'project', name: 'project', title: 'project'},
-          ],
-        };
 
 
 function ActiveForm() {

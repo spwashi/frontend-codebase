@@ -2,7 +2,7 @@ import React from 'react';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
 import {mainDecorator} from '@services/storybook/decorators';
 import {FeatureList} from '@services/features/list/components/FeatureList';
-import {ProjectDisplayFormFeature} from '../../../components/display';
+import {ProjectDisplayFormFeature} from '../components/Form';
 
 
 export default {

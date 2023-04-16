@@ -2,7 +2,7 @@ import React from 'react';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
 import {mainDecorator} from '@services/storybook/decorators';
 import {FeatureList} from '@services/features/list/components/FeatureList';
-import {AssetDisplay} from '../../../components/display/AssetDisplay';
+import {AssetDisplay} from '../components/AssetDisplay';
 
 
 export default {
