@@ -3,17 +3,17 @@ import React from 'react';
 import {useSelector} from 'react-redux';
 import {selectPossibleEventsLastFetched, selectPossibleEventsList} from '../services/redux/selectors';
 import {AllEventsQuery} from '../services/graphql/all/components/FindAll';
-import {eventDisplayFeatureName, eventFeatureName} from '@features/events/features';
+import {feature_eventDisplay, feature_events} from '../../../@/featureIds';
 
 function EventDisplayFeature() {
   const lastFetched = useSelector(selectPossibleEventsLastFetched)
   const list        = useSelector(selectPossibleEventsList)
   const enabled     = lastFetched ? !!list.length : false;
-  return <Feature name={eventDisplayFeatureName} enabled={enabled}/>;
+  return <Feature name={feature_eventDisplay} enabled={enabled}/>;
 }
 export function EventFeatures() {
   return (
-    <Feature name={eventFeatureName}>
+    <Feature name={feature_events}>
       <EventDisplayFeature/>
     </Feature>
   )

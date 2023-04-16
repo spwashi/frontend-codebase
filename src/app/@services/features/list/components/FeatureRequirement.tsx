@@ -1,10 +1,10 @@
 import React, {useContext} from 'react';
 import {Dev} from '@core/dev/components/Dev';
 import {FeaturesRegistrationContext} from '../context';
-import {IFeatureName} from '../../item/types';
+import {IFeature} from '../../item/types';
 
 type IFeatureRequirementProps = {
-  name: IFeatureName;
+  name: IFeature['featureId'];
   children: any;
   alternative: any
 };

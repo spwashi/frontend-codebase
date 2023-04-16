@@ -1,8 +1,6 @@
-export const projectFeatureName        = 'feature.projects';
-export const projectDisplayFeatureName = 'feature.project.display';
-export const projectCreateFeatureName  = 'feature.project.create';
+import {feature_projectCreate, feature_projectDisplay, feature_projects} from '../../@/featureIds';
 
 export type IProjectFeatureNames =
-  | typeof projectFeatureName
-  | typeof projectDisplayFeatureName
-  | typeof projectCreateFeatureName
+  | typeof feature_projects
+  | typeof feature_projectDisplay
+  | typeof feature_projectCreate

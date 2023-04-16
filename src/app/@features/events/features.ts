@@ -1,14 +1,9 @@
-export const eventFeatureName            = 'feature.events';
-export const eventDisplayFeatureName     = 'feature.event.display';
-export const eventCreateFormFeatureName  = 'feature.event.create.form';
-export const eventEditFormFeatureName    = 'feature.event.edit.form';
-export const eventTagFormFeatureName     = 'feature.event.tag.form';
-export const eventDisplayFormFeatureName = 'feature.event.display.form';
+import {feature_eventCreateForm, feature_eventDisplay, feature_eventDisplayForm, feature_eventEditForm, feature_events, feature_eventTagForm} from '../../@/featureIds';
 
 export type IEventFeatureNames =
-  | typeof eventFeatureName
-  | typeof eventDisplayFeatureName
-  | typeof eventCreateFormFeatureName
-  | typeof eventEditFormFeatureName
-  | typeof eventTagFormFeatureName
-  | typeof eventDisplayFormFeatureName
+  | typeof feature_events
+  | typeof feature_eventDisplay
+  | typeof feature_eventCreateForm
+  | typeof feature_eventEditForm
+  | typeof feature_eventTagForm
+  | typeof feature_eventDisplayForm

@@ -9,9 +9,9 @@ import {NavLink} from 'react-router-dom';
 import {TagFeatures} from '@features/tags/components/Features';
 import {UserFeatures} from '@features/users/components/Features';
 import {EditEventFormFeature} from '../../edit';
-import {eventFeatureName} from '@features/events/features';
 import {FeatureRequirement} from '@services/features/list/components/FeatureRequirement';
 import {LoggedIn} from '@features/users/behaviors/login/components/Requirement';
+import {feature_events} from '../../../../../@/featureIds';
 
 export function EventsControlPanel() {
   return (
@@ -27,7 +27,7 @@ export function EventsControlPanel() {
         </ul>
       </nav>
 
-      <FeatureRequirement name={eventFeatureName} alternative={'Need Events for Admin.All Events Route'}>
+      <FeatureRequirement name={feature_events} alternative={'Need Events for Admin.All Events Route'}>
         <Routes>
           <Route path={'all'} element={<div style={{width: 500 + 'px'}}><AllEventsEventDisplay/></div>}/>
           <Route path="" element={

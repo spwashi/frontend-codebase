@@ -8,9 +8,9 @@ import {ACTION_PROJECT_CREATED} from '../../../services/redux/reducer';
 import {FormWidget} from '@widgets/form/FormWidget';
 import {ErrorBoundary} from '@core/error/components/ErrorBoundary';
 
-import {projectCreateFeatureName} from '@features/projects/features';
 import {FeatureRequirement} from '@services/features/list/components/FeatureRequirement';
 import {form__createProject} from '@features/projects/behaviors/create/config';
+import {feature_projectCreate} from '../../../../../@/featureIds';
 
 
 function ActiveForm() {
@@ -36,7 +36,7 @@ function ActiveForm() {
 
 export function CreateProjectForm() {
   return (
-    <FeatureRequirement name={projectCreateFeatureName} alternative={'Need Projects Create'}>
+    <FeatureRequirement name={feature_projectCreate} alternative={'Need Projects Create'}>
       <ActiveForm/>
     </FeatureRequirement>
   );

@@ -6,8 +6,8 @@ import {useEditSceneMutation} from '../mutation';
 import {FormWidget} from '@widgets/form/FormWidget';
 import {formClassNames} from '@widgets/form/styles/classNames';
 import {Feature} from '@services/features/item/components/Feature';
-import {sceneEditFormFeatureName} from '@features/scenes/features';
 import {selectEditSceneInput} from '@features/scenes/behaviors/edit/selectors';
+import {feature_sceneEditForm} from '../../../../../@/featureIds';
 
 function useSceneSelectForm() {
   const [{data: {scene: scene} = {} as any} = {} as any, setScene] = useState({} as any);
@@ -33,7 +33,7 @@ function EditSceneForm() {
 
 export function EditSceneFormFeature() {
   return (
-    <Feature name={sceneEditFormFeatureName}>
+    <Feature name={feature_sceneEditForm}>
       <EditSceneForm/>
     </Feature>
   );

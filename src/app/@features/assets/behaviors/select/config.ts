@@ -1,5 +1,5 @@
 import {IFormConfig} from '@widgets/form/types/IFormConfig';
-import {formId_assetSelect} from '../../../../forms';
+import {formId_assetSelect} from '../../../../@/formIds';
 import {get_assetSelectInput} from '@features/assets/data/config/inputs';
 
 /**

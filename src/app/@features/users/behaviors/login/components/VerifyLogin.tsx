@@ -3,8 +3,8 @@ import {useDispatch} from 'react-redux';
 import {BACKEND_URL, IS_AUTHENTICATED_URL} from '@core/constants';
 import {logout} from './Logout';
 import {useJwt} from '@services/jwt/hooks/useJwt';
-import {userLoginVerifyFeatureName} from '@features/users/features';
 import {Feature} from '@services/features/item/components/Feature';
+import {feature_userLoginVerify} from '../../../../../@/featureIds';
 
 /**
  * Checks the current jwt, logging out if the jwt is invalid
@@ -29,5 +29,5 @@ export function VerifyLogin() {
       })
   }, [jwt]);
 
-  return <Feature name={userLoginVerifyFeatureName}/>;
+  return <Feature name={feature_userLoginVerify}/>;
 }

@@ -5,8 +5,8 @@ import {form__createEvent} from '../config';
 import {useCreateEventMutation} from '../mutation';
 import {FormWidget} from '@widgets/form/FormWidget';
 import {Feature} from '@services/features/item/components/Feature';
-import {eventCreateFormFeatureName} from '@features/events/features';
 import {selectCreateEventInput} from '@features/events/behaviors/create/selectors';
+import {feature_eventCreateForm} from '../../../../../@/featureIds';
 
 function CreateEventForm() {
   const {send, response} = useCreateEventMutation();
@@ -21,7 +21,7 @@ function CreateEventForm() {
 
 export function CreateEventFormFeature() {
   return (
-    <Feature name={eventCreateFormFeatureName}>
+    <Feature name={feature_eventCreateForm}>
       <CreateEventForm/>
     </Feature>
   );

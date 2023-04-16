@@ -1,5 +1,5 @@
 import {IFormConfig} from '@widgets/form/types/IFormConfig';
-import {formId_conceptSelect} from '../../../../forms';
+import {formId_conceptSelect} from '../../../../@/formIds';
 import {conceptInput} from '@features/concepts/data/config/inputs';
 
 export const form__selectConcept: IFormConfig = {

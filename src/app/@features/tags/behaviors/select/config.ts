@@ -1,5 +1,5 @@
 import {IFormConfig} from '@widgets/form/types/IFormConfig';
-import {formId_tagsSelect} from '../../../../forms';
+import {formId_tagsSelect} from '../../../../@/formIds';
 import {tagsInput} from '@features/tags/data/config/inputs';
 
 

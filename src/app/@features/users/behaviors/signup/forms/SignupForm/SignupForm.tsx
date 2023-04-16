@@ -7,10 +7,9 @@ import {selectLoggedInUserName} from '../../../login/redux/reducer';
 import {Feature} from '@services/features/item/components/Feature';
 import {FormWidget} from '@widgets/form/FormWidget';
 
-import {projectDisplayFeatureName} from '@features/projects/features';
-import {userSignupFeatureName, userSignupFormFeatureName} from '@features/users/features';
 import {FeatureRequirement} from '@services/features/list/components/FeatureRequirement';
 import {form__userSignup} from '@features/users/behaviors/signup/config';
+import {feature_projectDisplay, feature_userSignup, feature_userSignupForm} from '../../../../../../@/featureIds';
 
 const SIGNUP_MUTATION = gql`
     mutation SignUp($user: CreateUserInput!, $password: CreatePasswordInput!, $project: ProjectReferenceInput) {
@@ -48,9 +47,9 @@ export function SignupForm() {
   const loggedInUser = useSelector(selectLoggedInUserName);
   if (loggedInUser) return null;
   return (
-    <FeatureRequirement name={userSignupFeatureName} alternative={'Need User Signup'}>
-      <Feature name={userSignupFormFeatureName}>
-        <FeatureRequirement name={projectDisplayFeatureName} alternative={'Need Projects'}>
+    <FeatureRequirement name={feature_userSignup} alternative={'Need User Signup'}>
+      <Feature name={feature_userSignupForm}>
+        <FeatureRequirement name={feature_projectDisplay} alternative={'Need Projects'}>
           <ActiveForm/>
         </FeatureRequirement>
       </Feature>

@@ -1,10 +1,7 @@
-export const assetFeatureName            = 'feature.assets';
-export const assetDisplayFeatureName     = 'feature.asset.display';
-export const assetDisplayFormFeatureName = 'feature.asset.display.form';
-export const uploadAssetFormFeatureName  = 'feature.asset.upload.form';
+import {feature_assetDisplay, feature_assetDisplayForm, feature_assets, feature_uploadAssetForm} from '../../@/featureIds';
 
 export type IAssetFeatureNames =
-  | typeof assetFeatureName
-  | typeof assetDisplayFeatureName
-  | typeof assetDisplayFormFeatureName
-  | typeof uploadAssetFormFeatureName
+  | typeof feature_assets
+  | typeof feature_assetDisplay
+  | typeof feature_assetDisplayForm
+  | typeof feature_uploadAssetForm

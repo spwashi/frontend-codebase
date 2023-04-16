@@ -3,7 +3,7 @@ import {Meta, StoryObj} from '@storybook/react';
 import {mainDecorator} from '@services/storybook/decorators';
 import {FormWidget} from './FormWidget';
 import {IFormConfig} from '@widgets/form/types/IFormConfig';
-import {formId_basicExampleFormForm, formId_basicExampleFormSubform} from '../../forms';
+import {formId_basicExampleFormForm, formId_basicExampleFormSubform} from '../../@/formIds';
 
 const meta: Meta = {
   title:      'Demo/Layout/Forms/Basic',

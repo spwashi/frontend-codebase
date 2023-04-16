@@ -5,9 +5,9 @@ import {IUser} from '@junction/models/user/models';
 import {FormWidget} from '@widgets/form/FormWidget';
 import {LoggedIn} from '../../../../users/behaviors/login/components/Requirement';
 import {Feature} from '@services/features/item/components/Feature';
-import {assetDisplayFeatureName, assetDisplayFormFeatureName} from '@features/assets/features';
 import {form__selectLoggedInUser} from '@features/users/behaviors/select-loggedIn/config';
 import {getform__assetSelect} from '@features/assets/behaviors/select/config';
+import {feature_assetDisplay, feature_assetDisplayForm} from '../../../../../@/featureIds';
 
 /**
  * Selects an asset to display, then displays it
@@ -21,7 +21,7 @@ function DisplayAssetForm(user: { username: string }) {
   if (!form__displayAsset) return null;
   return (
     <LoggedIn>
-      <Feature name={assetDisplayFormFeatureName}>
+      <Feature name={feature_assetDisplayForm}>
         <FormWidget config={form__displayAsset} onSubmit={setState} onChange={setState}/>
         <AssetQuery realname={realname} username={user?.username}/>
       </Feature>
@@ -43,7 +43,7 @@ export function AssetDisplay() {
   const [user, setUserFromForm] = useUserSelectForm();
   const username                = getUserSelectorUsername(user);
   return (
-    <Feature name={assetDisplayFeatureName}>
+    <Feature name={feature_assetDisplay}>
       <FormWidget config={form__selectLoggedInUser} onSubmit={setUserFromForm}/>
       {username && <DisplayAssetForm username={username}/>}
     </Feature>

@@ -5,8 +5,8 @@ import {Dev} from '@core/dev/components/Dev';
 import {useJwt} from '@services/jwt/hooks/useJwt';
 import {Feature} from '@services/features/item/components/Feature';
 import {form__uploadAsset} from '@features/assets/behaviors/upload/config';
+import {feature_uploadAssetForm} from '../../../../../../@/featureIds';
 
-const uploadAssetFormFeature = 'feature.asset.upload.form';
 
 interface SubmissionCallbackParams {
   data: any;
@@ -62,7 +62,7 @@ export function UploadAssetForm() {
 
   if (!BACKEND_URL) return null;
   return (
-    <Feature name={uploadAssetFormFeature}>
+    <Feature name={feature_uploadAssetForm}>
       <Dev>{error}</Dev>
       <FormWidget config={form__uploadAsset} onSubmit={onSubmit}/>
       {

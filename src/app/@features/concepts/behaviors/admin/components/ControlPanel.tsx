@@ -9,9 +9,9 @@ import {NavLink} from 'react-router-dom';
 import {TagFeatures} from '@features/tags/components/Features';
 import {UserFeatures} from '@features/users/components/Features';
 import {EditConceptFormFeature} from '../../edit';
-import {conceptFeatureName} from '@features/concepts/features';
 import {FeatureRequirement} from '@services/features/list/components/FeatureRequirement';
 import {LoggedIn} from '@features/users/behaviors/login/components/Requirement';
+import {feature_concepts} from '../../../../../@/featureIds';
 
 export function ConceptsControlPanel() {
   return (
@@ -25,7 +25,7 @@ export function ConceptsControlPanel() {
           <li><NavLink to="../concepts/all">All Concepts</NavLink></li>
         </ul>
       </nav>
-      <FeatureRequirement name={conceptFeatureName} alternative={'Need Concepts'}>
+      <FeatureRequirement name={feature_concepts} alternative={'Need Concepts'}>
         <Routes>
           <Route path={'all'} element={<div style={{width: 500 + 'px'}}><AllConceptsConceptDisplay/></div>}/>
           <Route path="" element={

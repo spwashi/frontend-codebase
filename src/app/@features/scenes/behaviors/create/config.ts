@@ -1,5 +1,5 @@
 import {IFormConfig} from '@widgets/form/types/IFormConfig';
-import {formId_sceneCreate} from '../../../../forms';
+import {formId_sceneCreate} from '../../../../@/formIds';
 import {descriptionInput, nameInput, titleInput} from '@features/scenes/data/config/inputs';
 
 

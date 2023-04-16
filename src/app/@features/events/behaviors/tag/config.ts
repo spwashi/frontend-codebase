@@ -1,7 +1,7 @@
 import {eventInput} from '../../data/config/inputs';
 
 import {IFormConfig} from '@widgets/form/types/IFormConfig';
-import {formId_eventTag} from '../../../../forms';
+import {formId_eventTag} from '../../../../@/formIds';
 import {tagsInput} from '@features/tags/data/config/inputs';
 
 

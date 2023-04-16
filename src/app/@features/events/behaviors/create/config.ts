@@ -2,7 +2,7 @@ import {descriptionInput, endInput, startInput, titleInput, userInput} from '../
 import {makeFieldRequired} from '@widgets/form/features/fields/helpers/makeFieldRequired';
 
 import {IFormConfig} from '@widgets/form/types/IFormConfig';
-import {formId_eventCreate} from '../../../../forms';
+import {formId_eventCreate} from '../../../../@/formIds';
 
 
 export const form__createEvent: IFormConfig = {

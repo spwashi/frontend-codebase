@@ -1,5 +1,5 @@
 import {IFormConfig} from '@widgets/form/types/IFormConfig';
-import {formId_userLogin} from '../../../../forms';
+import {formId_userLogin} from '../../../../@/formIds';
 import {anyUserInput, passwordInput, projectInput} from '@features/users/data/config/inputs';
 import {makeFieldRequired} from '@widgets/form/features/fields/helpers/makeFieldRequired';
 

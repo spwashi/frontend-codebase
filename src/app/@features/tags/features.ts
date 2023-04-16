@@ -1,12 +1,7 @@
-export const tagFeatureName            = 'feature.tags';
-
-export const tagDisplayFeatureName     = 'feature.tag.display';
-
-export const tagCreateFormFeatureName   = 'feature.tag.create.form';
-export const tagsDisplayFormFeatureName = 'feature.tags.display.form';
+import {feature_tagCreateForm, feature_tagDisplay, feature_tags, feature_tagsDisplayForm} from '../../@/featureIds';
 
 export type ITagFeatureNames =
-  | typeof tagFeatureName
-  | typeof tagDisplayFeatureName
-  | typeof tagCreateFormFeatureName
-  | typeof tagsDisplayFormFeatureName
+  | typeof feature_tags
+  | typeof feature_tagDisplay
+  | typeof feature_tagCreateForm
+  | typeof feature_tagsDisplayForm

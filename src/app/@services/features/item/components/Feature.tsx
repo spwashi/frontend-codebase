@@ -1,11 +1,11 @@
 import React, {useContext, useEffect, useMemo, useReducer} from 'react';
 import {FeatureInternalContext} from '../context';
-import {IFeature, IFeatureName} from '../types';
+import {IFeature} from '../types';
 import {FeaturesRegistrationContext} from '@services/features/list/context';
 import {appClassnames} from '@core/styles/classNames';
 
 export type IFeatureProps = {
-  name: IFeatureName,
+  name: IFeature['featureId'],
   items?: any,
   children?: any | undefined,
   enabled?: boolean
@@ -14,7 +14,7 @@ export type IFeatureProps = {
 /**
  * Registers or unregisters the feature from a FeaturesRegistrationContext
  */
-function useFeatureRegistrationEffect(name: IFeatureName, enabled: undefined | boolean) {
+function useFeatureRegistrationEffect(name: IFeature['featureId'], enabled: undefined | boolean) {
   const features = useContext(FeaturesRegistrationContext);
   useEffect(() => {
     features.dispatch({

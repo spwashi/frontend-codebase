@@ -3,17 +3,17 @@ import {Feature} from '@services/features/item/components/Feature';
 import React from 'react';
 import {selectPossibleTagsLastFetched, selectPossibleTagsList} from '../services/redux/selectors';
 import {AllTagsQuery} from '../services/graphql/all';
-import {tagDisplayFeatureName, tagFeatureName} from '@features/tags/features';
+import {feature_tagDisplay, feature_tags} from '../../../@/featureIds';
 
 function TagDisplayFeature() {
   const lastFetched = useSelector(selectPossibleTagsLastFetched)
   const list        = useSelector(selectPossibleTagsList)
   const enabled     = lastFetched ? !!list.length : false;
-  return <Feature name={tagDisplayFeatureName} enabled={enabled}/>;
+  return <Feature name={feature_tagDisplay} enabled={enabled}/>;
 }
 export function TagFeatures() {
   return (
-    <Feature name={tagFeatureName}>
+    <Feature name={feature_tags}>
       <TagDisplayFeature/>
     </Feature>
   )

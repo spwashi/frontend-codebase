@@ -1,16 +1,15 @@
 import React from 'react';
 import {Feature} from '@services/features/item/components/Feature';
 import {TagConceptForm} from './Form';
-import {conceptDisplayFeatureName, conceptTagFormFeatureName} from '@features/concepts/features';
 import {FeatureRequirement} from '@services/features/list/components/FeatureRequirement';
-import {tagDisplayFeatureName} from '@features/tags/features';
 import {AllTagsQuery} from '@features/tags/services/graphql/all';
+import {feature_conceptDisplay, feature_conceptTagForm, feature_tagDisplay} from '../../../../../@/featureIds';
 
 export function TagConceptFormFeature() {
   return (
-    <FeatureRequirement name={conceptDisplayFeatureName} alternative={'Need Concepts Display'}>
-      <FeatureRequirement name={tagDisplayFeatureName} alternative={'Need Tags Display'}>
-        <Feature name={conceptTagFormFeatureName}>
+    <FeatureRequirement name={feature_conceptDisplay} alternative={'Need Concepts Display'}>
+      <FeatureRequirement name={feature_tagDisplay} alternative={'Need Tags Display'}>
+        <Feature name={feature_conceptTagForm}>
           <AllTagsQuery/>
           <TagConceptForm/>
         </Feature>

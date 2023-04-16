@@ -1,14 +1,9 @@
-export const userFeatureName            = 'feature.users';
-export const userSignupFeatureName      = 'feature.user.signup';
-export const userSignupFormFeatureName  = 'feature.user.signup.form';
-export const userLoginFeatureName       = 'feature.user.login';
-export const userLoginFormFeatureName   = 'feature.user.login.form';
-export const userLoginVerifyFeatureName = 'feature.user.login.verify';
+import {feature_users, feature_userLogin, feature_userLoginForm, feature_userLoginVerify, feature_userSignup, feature_userSignupForm} from '../../@/featureIds';
 
 export type IUserFeatureNames =
-  | typeof userFeatureName
-  | typeof userLoginFeatureName
-  | typeof userSignupFeatureName
-  | typeof userLoginVerifyFeatureName
-  | typeof userLoginFormFeatureName
-  | typeof userSignupFormFeatureName
+  | typeof feature_users
+  | typeof feature_userLogin
+  | typeof feature_userSignup
+  | typeof feature_userLoginVerify
+  | typeof feature_userLoginForm
+  | typeof feature_userSignupForm

@@ -1,10 +1,7 @@
-export const sceneFeatureName           = 'feature.scenes';
-export const sceneDisplayFeatureName    = 'feature.scene.display';
-export const sceneCreateFormFeatureName = 'feature.scene.create.form';
-export const sceneEditFormFeatureName   = 'feature.scene.edit.form';
+import {feature_sceneCreateForm, feature_sceneDisplay, feature_sceneEditForm, feature_scenes} from '../../@/featureIds';
 
 export type ISceneFeatureNames =
-  | typeof sceneFeatureName
-  | typeof sceneDisplayFeatureName
-  | typeof sceneCreateFormFeatureName
-  | typeof sceneEditFormFeatureName
+  | typeof feature_scenes
+  | typeof feature_sceneDisplay
+  | typeof feature_sceneCreateForm
+  | typeof feature_sceneEditForm
