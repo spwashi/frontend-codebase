@@ -1,5 +1,5 @@
 import {IFormConfig} from '@widgets/form/types/IFormConfig';
-import {formId_editSceneForm} from '../../../../forms';
+import {formId_sceneEdit} from '../../../../forms';
 
 export type SelectMutationInputData = {
   id: string;
@@ -8,7 +8,7 @@ export type SelectMutationInputData = {
 }
 
 export const form__editScene: IFormConfig = {
-  formId: formId_editSceneForm,
+  formId: formId_sceneEdit,
   title:  'Edit Scene',
   items:  [
     {

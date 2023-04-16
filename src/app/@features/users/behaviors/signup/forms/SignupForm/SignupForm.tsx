@@ -12,7 +12,7 @@ import {IFormConfig} from '@widgets/form/types/IFormConfig';
 import {projectDisplayFeatureName} from '@features/projects/features';
 import {userSignupFeatureName, userSignupFormFeatureName} from '@features/users/features';
 import {FeatureRequirement} from '@services/features/list/components/FeatureRequirement';
-import {formId_signupForm} from '../../../../../../forms';
+import {formId_userSignup} from '../../../../../../forms';
 
 const SIGNUP_MUTATION = gql`
     mutation SignUp($user: CreateUserInput!, $password: CreatePasswordInput!, $project: ProjectReferenceInput) {
@@ -37,7 +37,7 @@ function selectMutationInput(data: any) {
 
 const form__userSignup: IFormConfig =
         {
-          formId: formId_signupForm,
+          formId: formId_userSignup,
           title:  'Signup Form',
           items:  [
             {type: 'text', name: 'name', title: 'Name'},

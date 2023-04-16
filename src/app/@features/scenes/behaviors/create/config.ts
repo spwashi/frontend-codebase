@@ -1,7 +1,7 @@
 import {convertToSlug} from '../../../projects/behaviors/create/selectors';
 
 import {IFormConfig} from '@widgets/form/types/IFormConfig';
-import {formId_createScene} from '../../../../forms';
+import {formId_sceneCreate} from '../../../../forms';
 
 export type SelectMutationInputData = {
   name: string;
@@ -11,7 +11,7 @@ export type SelectMutationInputData = {
 
 
 export const form__createScene: IFormConfig = {
-  formId: formId_createScene,
+  formId: formId_sceneCreate,
   title:
           'Create Scene',
   items:

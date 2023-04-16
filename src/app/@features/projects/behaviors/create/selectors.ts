@@ -1,7 +1,7 @@
 import {getDomain} from '@widgets/form/features/fields/components/FieldFactory';
 
 import {IFormConfig} from '@widgets/form/types/IFormConfig';
-import {formId_createProject} from '../../../../forms';
+import {formId_projectCreate} from '../../../../forms';
 
 export function convertToSlug(Text: string) {
   return Text.toLowerCase()
@@ -10,7 +10,7 @@ export function convertToSlug(Text: string) {
 }
 
 export const form__createProject: IFormConfig = {
-  formId: formId_createProject,
+  formId: formId_projectCreate,
   title:  'Create Project',
   items:  [
     {

@@ -2,7 +2,7 @@ import {makeFieldRequired} from '@widgets/form/features/fields/helpers/makeField
 import {gql} from '@apollo/client';
 import {FormFieldConfig} from '@widgets/form/features/fields/types/fieldConfig';
 import {IFormConfig} from '@widgets/form/types/IFormConfig';
-import {formId_loginForm} from '../../../../../forms';
+import {formId_userLogin} from '../../../../../forms';
 
 export const LOGIN_MUTATION = gql`
     mutation LogIn($user: UserLoginInput,$project: ProjectReferenceInput, $password: PasswordReferenceInput) {
@@ -56,7 +56,7 @@ const projectInput: FormFieldConfig = {
 
 export const form__login: IFormConfig =
                {
-                 formId: formId_loginForm,
+                 formId: formId_userLogin,
                  title:  'Login',
                  items:  [
                            userInput,

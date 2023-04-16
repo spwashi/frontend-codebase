@@ -1,23 +1,38 @@
-export const formId_emptyForm          = 'form.empty-form';
-export const formId_exampleSubform     = 'form.basicExampleForm-subform';
-export const formId_exampleForm        = 'form.basicExampleForm-form';
-export const formId_selectLoggedInUser = 'form.select-user-form';
-export const formId_signupForm         = 'form.user.signup-form';
-export const formId_loginForm          = 'form.user.login-form'
-export const formId_selectTagsForm     = 'form.select-tags-form';
-export const formId_createTagForm      = 'form.create-tag-form';
-export const formId_selectSceneForm    = 'form.select-scene-form';
-export const formId_uploadAssetForm    = 'form.upload-asset-form';
-export const formId_editSceneForm      = 'form.edit-scene_form';
-export const formId_selectAssetForm    = 'form.display-asset-form';
-export const formId_createScene        = 'form.create-scene_form';
-export const formId_createConcept      = 'form.create-concept_form';
-export const formId_selectProjectForm  = 'form.select-project-form';
-export const formId_createProject      = 'form.create-project-form';
-export const formId_editConceptForm    = 'form.edit-concept_form';
-export const formId_tagEventForm       = 'form.tag-event-form';
-export const formId_selectEventForm    = 'form.select-event-form';
-export const formId_editEventForm      = 'form.edit-event-form';
-export const formId_createEventForm    = 'form.create-event_form';
-export const formId_selectConceptForm  = 'form.select-concept-form';
-export const formId_tagConceptForm     = 'form.tag-concept-form';
+// internal
+export const formId_emptyForm            = 'form._.empty';
+export const formId_basicExampleFormForm = 'form._.example';
+export const formId_basicExampleFormSubform = 'form._.example.subform';
+
+// assets
+export const formId_assetSelect = 'form.asset.select';
+export const formId_assetUpload = 'form.asset.upload';
+
+// concepts
+export const formId_conceptCreate = 'form.concept.create';
+export const formId_conceptEdit   = 'form.concept.edit';
+export const formId_conceptSelect = 'form.concept.select';
+export const formId_conceptTag    = 'form.concept.tag';
+
+// events
+export const formId_eventCreate = 'form.event.create';
+export const formId_eventEdit   = 'form.event.edit';
+export const formId_eventSelect = 'form.event.select';
+export const formId_eventTag    = 'form.event.tag';
+
+// projects
+export const formId_projectCreate = 'form.project.create';
+export const formId_projectSelect = 'form.project.select';
+
+// scenes
+export const formId_sceneCreate = 'form.scene.create';
+export const formId_sceneEdit   = 'form.scene.edit';
+export const formId_sceneSelect = 'form.scene.select';
+
+// tags
+export const formId_tagCreate  = 'form.tag.create';
+export const formId_tagsSelect = 'form.tags.select';
+
+// users
+export const formId_userLogin          = 'form.user.login';
+export const formId_userSelectLoggedIn = 'form.user.select.loggedIn';
+export const formId_userSignup         = 'form.user.signup';
