@@ -1,13 +1,14 @@
 import React, {useState} from 'react';
 import {GraphqlMutationResponse} from '@services/graphql/components/api/GraphqlMutationResponse';
 import {useMutationFormSubmitCallback} from '@services/graphql/hooks/useMutationFormSubmitCallback';
-import {form__editConcept, selectEditConceptInput} from '../config';
+import {form__editConcept} from '../config';
 import {useEditConceptMutation} from '../mutation';
 import {FormWidget} from '@widgets/form/FormWidget';
 import {Log} from '@core/dev/components/Log';
 import {Feature} from '@services/features/item/components/Feature';
 import {editConceptFormFeatureName} from '@features/concepts/features';
 import {AllConceptsQuery} from '@features/concepts/services/graphql/all/components/FindAll';
+import {selectEditConceptInput} from '@features/concepts/behaviors/edit/selectors';
 
 function useConceptEditForm() {
   const [{data: {concept: concept} = {} as any} = {} as any, setConceptSelectionFormData] = useState({} as any);

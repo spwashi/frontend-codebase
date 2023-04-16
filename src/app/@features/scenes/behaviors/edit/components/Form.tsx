@@ -1,12 +1,13 @@
 import React, {useState} from 'react';
 import {GraphqlMutationResponse} from '@services/graphql/components/api/GraphqlMutationResponse';
 import {useMutationFormSubmitCallback} from '@services/graphql/hooks/useMutationFormSubmitCallback';
-import {form__editScene, selectEditSceneInput} from '../config';
+import {form__editScene} from '../config';
 import {useEditSceneMutation} from '../mutation';
 import {FormWidget} from '@widgets/form/FormWidget';
 import {formClassNames} from '@widgets/form/styles/classNames';
 import {Feature} from '@services/features/item/components/Feature';
 import {sceneEditFormFeatureName} from '@features/scenes/features';
+import {selectEditSceneInput} from '@features/scenes/behaviors/edit/selectors';
 
 function useSceneSelectForm() {
   const [{data: {scene: scene} = {} as any} = {} as any, setScene] = useState({} as any);

@@ -1,27 +1,27 @@
 import {mimeOptions} from './mimeOptions';
-import {FormFieldConfig} from '@widgets/form/features/fields/types/fieldConfig';
+import {IFormItemConfig} from '@widgets/form/features/fields/types/fieldConfig';
 
-export const tagsInput: FormFieldConfig        = {
+export const tagsInput: IFormItemConfig        = {
   title: 'Tags',
   name:  'tags',
   type:  'tags',
 }
-export const conceptInput: FormFieldConfig     = {
+export const conceptInput: IFormItemConfig     = {
   title: 'Concept',
   name:  'concept',
   type:  'concept',
 };
-export const userInput: FormFieldConfig        = {
+export const userInput: IFormItemConfig        = {
   title: 'User',
   name:  'user',
   type:  'user',
 };
-export const idInput: FormFieldConfig          = {
+export const idInput: IFormItemConfig          = {
   title: 'ID',
   name:  'id',
   type:  'value',
 }
-export const titleInput: FormFieldConfig       = {
+export const titleInput: IFormItemConfig       = {
   title:      'Concept Title',
   name:       'title',
   type:       'text',
@@ -33,13 +33,13 @@ export const titleInput: FormFieldConfig       = {
     ],
   },
 };
-export const contentTypeInput: FormFieldConfig = {
+export const contentTypeInput: IFormItemConfig = {
   title:   'Content Type',
   name:    'contentType',
   type:    'select',
   options: mimeOptions,
 };
-export const srcInput: FormFieldConfig         = {
+export const srcInput: IFormItemConfig         = {
   title:      'Concept Contents',
   name:       'src',
   type:       'content',

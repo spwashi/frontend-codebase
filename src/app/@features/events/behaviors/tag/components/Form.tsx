@@ -1,9 +1,10 @@
 import {useTagMutation} from '../mutation';
 import {useMutationFormSubmitCallback} from '@services/graphql/hooks/useMutationFormSubmitCallback';
-import {form__tagEvent, selectTagAdditionInput} from '../config';
+import {form__tagEvent} from '../config';
 import {GraphqlMutationResponse} from '@services/graphql/components/api/GraphqlMutationResponse';
 import React from 'react';
 import {FormWidget} from '@widgets/form/FormWidget';
+import {selectTagAdditionInput} from '@features/events/behaviors/tag/selectors';
 
 export function TagEventForm() {
   const {send, response} = useTagMutation();

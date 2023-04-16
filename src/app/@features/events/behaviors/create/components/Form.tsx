@@ -1,11 +1,12 @@
 import React from 'react';
 import {GraphqlMutationResponse} from '@services/graphql/components/api/GraphqlMutationResponse';
 import {useMutationFormSubmitCallback} from '@services/graphql/hooks/useMutationFormSubmitCallback';
-import {form__createEvent, selectCreateEventInput} from '../config';
+import {form__createEvent} from '../config';
 import {useCreateEventMutation} from '../mutation';
 import {FormWidget} from '@widgets/form/FormWidget';
 import {Feature} from '@services/features/item/components/Feature';
 import {eventCreateFormFeatureName} from '@features/events/features';
+import {selectCreateEventInput} from '@features/events/behaviors/create/selectors';
 
 function CreateEventForm() {
   const {send, response} = useCreateEventMutation();

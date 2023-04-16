@@ -1,41 +1,14 @@
 import {IFormConfig} from '@widgets/form/types/IFormConfig';
 import {formId_sceneEdit} from '../../../../forms';
-
-export type SelectMutationInputData = {
-  id: string;
-  title: string;
-  description?: string;
-}
+import {sceneDescriptionInput, sceneIdInput, sceneTitleInput} from '@features/scenes/data/config/inputs';
 
 export const form__editScene: IFormConfig = {
   title:  'Edit Scene',
   formId: formId_sceneEdit,
   items:  [
-    {
-      title: 'ID',
-      name:  'id',
-      type:  'value',
-      calc:  (data: any) => data?.concept?.id,
-    },
-    {
-      title: 'Scene Description',
-      name:  'description',
-      type:  'longtext',
-    },
-    {
-      title: 'Scene Title',
-      name:  'title',
-      type:  'text',
-    },
+    sceneIdInput,
+    sceneDescriptionInput,
+    sceneTitleInput,
   ],
 
-}
-export function selectEditSceneInput(data: SelectMutationInputData) {
-  const {id, description, title} = data ?? {};
-
-  return {
-    id,
-    description,
-    title,
-  };
 }

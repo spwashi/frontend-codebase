@@ -15,7 +15,7 @@ import {ContentInput} from './input/ContentInput';
 import {FormWidget} from '../../../FormWidget';
 import {useFormItem} from '../hooks/useFormItem';
 import {getConfiguredDomain} from '@core/dev/components/Dev';
-import {FormFieldConfig} from '../types/fieldConfig';
+import {IFormItemConfig} from '../types/fieldConfig';
 import {IFormConfig} from '../../../types/IFormConfig';
 
 /**
@@ -32,7 +32,7 @@ function SubformInput({formKey, config}: { formKey: string, config: IFormConfig 
   return <FormWidget config={config} defaultValue={formState} onSubmit={updateFormState}/>
 }
 
-function FormItemFactory({item: config}: { item: FormFieldConfig }) {
+function FormItemFactory({item: config}: { item: IFormItemConfig }) {
   const {title, type, name, value: v, ...rest} = config;
   switch (type) {
     case 'date':
@@ -86,7 +86,7 @@ function FormItemFactory({item: config}: { item: FormFieldConfig }) {
   }
 }
 
-export default function FormItems({items}: { items: FormFieldConfig[] }) {
+export default function FormItems({items}: { items: IFormItemConfig[] }) {
   const id = useMemo(() => `input--${Math.random()}`.replace('.', ''), []);
   if (!items) return null;
   return <>{items.map(item => {

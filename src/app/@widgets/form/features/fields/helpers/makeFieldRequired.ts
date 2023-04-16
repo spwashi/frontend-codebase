@@ -1,6 +1,6 @@
-import {FormFieldConfig} from '../types/fieldConfig';
+import {IFormItemConfig} from '../types/fieldConfig';
 
-export const makeFieldRequired = (f: FormFieldConfig): FormFieldConfig => {
+export const makeFieldRequired = (f: IFormItemConfig): IFormItemConfig => {
   return {
     ...f,
     validators: {

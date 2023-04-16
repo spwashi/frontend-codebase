@@ -1,6 +1,6 @@
-import {FormFieldConfig} from '../types/fieldConfig';
+import {IFormItemConfig} from '../types/fieldConfig';
 
-export const setFieldValue = (f: FormFieldConfig, value: any): FormFieldConfig => {
+export const setFieldValue = (f: IFormItemConfig, value: any): IFormItemConfig => {
   return {
     ...f,
     value,

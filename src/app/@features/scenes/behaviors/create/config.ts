@@ -1,42 +1,14 @@
 import {IFormConfig} from '@widgets/form/types/IFormConfig';
 import {formId_sceneCreate} from '../../../../forms';
-import {convertToSlug} from '@core/helpers/convertToSlug';
-
-export type SelectMutationInputData = {
-  name: string;
-  title: string;
-  description: string;
-}
+import {descriptionInput, nameInput, titleInput} from '@features/scenes/data/config/inputs';
 
 
 export const form__createScene: IFormConfig = {
   title:  'Create Scene',
   formId: formId_sceneCreate,
   items:  [
-    {
-      title: 'Scene Title',
-      name:  'title',
-      type:  'text',
-    },
-    {
-      type: 'value',
-      name: 'name',
-      calc: (data: any) => convertToSlug(data?.title ?? ''),
-    },
-    {
-      title: 'Scene Description',
-      name:  'description',
-      type:  'longtext',
-    },
+    titleInput,
+    nameInput,
+    descriptionInput,
   ],
-
-}
-export function selectCreateSceneInput(data: SelectMutationInputData) {
-  const {name, title, description} = data ?? {};
-
-  return {
-    description,
-    title,
-    name,
-  };
 }
