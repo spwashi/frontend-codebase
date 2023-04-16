@@ -30,8 +30,8 @@ const form__storybookExampleForm: IFormConfig = {
     {name: 'asset', type: 'asset', title: 'Asset'},
     {
       name: 'form', type: 'form', title: 'Form', config: {
-        formId: formId_basicExampleFormSubform,
         title:  'Example Subform for Storybook',
+        formId: formId_basicExampleFormSubform,
         items:  [
           {name: 'text', type: 'text', title: 'Text'},
         ],
