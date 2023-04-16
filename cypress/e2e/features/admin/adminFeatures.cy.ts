@@ -4,7 +4,7 @@ describe('Admin Features', () => {
   beforeEach(() => {
     cy.visit(SITE_URL + 'admin/')
   });
-  it('displays two todo items by default', () => {
+  it('Has Main Admin Navigation', () => {
     cy.get('main nav.admin').first().should('have.text', 'AllProjectsUsersScenesConceptsEventsTagsAssets')
   })
 });
