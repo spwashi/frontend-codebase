@@ -1,5 +1,5 @@
-import {feature_adminControlPanelsPostLogin, feature_adminControlPanelsPreLogin} from '../../@/featureIds';
+import {featureId__adminControlPanelsPostLogin, featureId__adminControlPanelsPreLogin} from '../../@/featureIds';
 
 export type IAdminFeatureNames =
-  | typeof feature_adminControlPanelsPreLogin
-  | typeof feature_adminControlPanelsPostLogin;
+  | typeof featureId__adminControlPanelsPreLogin
+  | typeof featureId__adminControlPanelsPostLogin;

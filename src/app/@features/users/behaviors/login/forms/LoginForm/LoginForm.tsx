@@ -12,7 +12,7 @@ import {setJwt} from '@services/jwt/helpers/setJwt';
 
 import {FeatureRequirement} from '@services/features/list/components/FeatureRequirement';
 import {form__login} from '@features/users/behaviors/login/config';
-import {feature_userLogin, feature_userLoginForm} from '../../../../../../@/featureIds';
+import {featureId__userLogin, featureId__userLoginForm} from '../../../../../../@/featureIds';
 
 
 function LoginReceivedEffect({username, user, jwt}: { username: string, user: IUser, jwt: string }) {
@@ -48,8 +48,8 @@ export function LoginForm({alt}: { alt?: any }) {
   const loggedInUser = useSelector(selectLoggedInUserName);
   if (loggedInUser) return alt ?? null;
   return (
-    <Feature name={feature_userLoginForm}>
-      <FeatureRequirement name={feature_userLogin} alternative={'Need Users'}>
+    <Feature name={featureId__userLoginForm}>
+      <FeatureRequirement name={featureId__userLogin} alternative={'Need Users'}>
         <ActiveForm/>
       </FeatureRequirement>
     </Feature>

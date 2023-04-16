@@ -8,7 +8,7 @@ import {LoggedIn} from '@features/users/behaviors/login/components/Requirement';
 import {ErrorBoundary} from '@core/error/components/ErrorBoundary';
 import {Feature} from '@services/features/item/components/Feature';
 import {selectCreateConceptInput} from '@features/concepts/behaviors/create/selectors';
-import {feature_createConceptForm} from '../../../../../@/featureIds';
+import {featureId__createConceptForm} from '../../../../../@/featureIds';
 
 function ActiveForm() {
   const {send, response} = useCreateConceptMutation();
@@ -24,7 +24,7 @@ function ActiveForm() {
 export function CreateConceptForm() {
   return (
     <LoggedIn>
-      <Feature name={feature_createConceptForm}>
+      <Feature name={featureId__createConceptForm}>
         <ActiveForm/>
       </Feature>
     </LoggedIn>

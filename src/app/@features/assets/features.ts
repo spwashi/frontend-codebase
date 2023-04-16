@@ -1,7 +1,7 @@
-import {feature_assetDisplay, feature_assetDisplayForm, feature_assets, feature_uploadAssetForm} from '../../@/featureIds';
+import {featureId__assetDisplay, featureId__assetDisplayForm, featureId__assets, featureId__uploadAssetForm} from '../../@/featureIds';
 
 export type IAssetFeatureNames =
-  | typeof feature_assets
-  | typeof feature_assetDisplay
-  | typeof feature_assetDisplayForm
-  | typeof feature_uploadAssetForm
+  | typeof featureId__assets
+  | typeof featureId__assetDisplay
+  | typeof featureId__assetDisplayForm
+  | typeof featureId__uploadAssetForm

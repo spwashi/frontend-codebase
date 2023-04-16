@@ -7,7 +7,7 @@ import {FormWidget} from '@widgets/form/FormWidget';
 import {LoggedIn} from '@features/users/behaviors/login/components/Requirement';
 import {Feature} from '@services/features/item/components/Feature';
 import {selectCreateSceneInput} from '@features/scenes/behaviors/create/selectors';
-import {feature_sceneCreateForm} from '../../../../../@/featureIds';
+import {featureId__sceneCreateForm} from '../../../../../@/featureIds';
 
 function CreateSceneForm() {
   const {send, response} = useCreateSceneMutation();
@@ -22,7 +22,7 @@ function CreateSceneForm() {
 
 export function CreateSceneFormFeature() {
   return (
-      <Feature name={feature_sceneCreateForm}>
+      <Feature name={featureId__sceneCreateForm}>
         <CreateSceneForm/>
       </Feature>
   );

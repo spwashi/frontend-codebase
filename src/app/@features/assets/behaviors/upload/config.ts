@@ -1,5 +1,5 @@
 import {IFormConfig} from '@widgets/form/types/IFormConfig';
-import {formId_assetUpload} from '../../../../@/formIds';
+import {formId__assetUpload} from '../../../../@/formIds';
 import {maybeLoggedInUserInput} from '@features/users/data/config/inputs';
 
 import {tagsInput} from '@features/tags/data/config/inputs';
@@ -7,7 +7,7 @@ import {assetInput} from '@features/assets/data/config/inputs';
 
 export const form__uploadAsset: IFormConfig = {
   title:  'Upload Asset',
-  formId: formId_assetUpload,
+  formId: formId__assetUpload,
   items:  [
     maybeLoggedInUserInput,
     assetInput,

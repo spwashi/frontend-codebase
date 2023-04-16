@@ -1,7 +1,7 @@
-import {feature_tagCreateForm, feature_tagDisplay, feature_tags, feature_tagsDisplayForm} from '../../@/featureIds';
+import {featureId__tagCreateForm, featureId__tagDisplay, featureId__tags, featureId__tagsDisplayForm} from '../../@/featureIds';
 
 export type ITagFeatureNames =
-  | typeof feature_tags
-  | typeof feature_tagDisplay
-  | typeof feature_tagCreateForm
-  | typeof feature_tagsDisplayForm
+  | typeof featureId__tags
+  | typeof featureId__tagDisplay
+  | typeof featureId__tagCreateForm
+  | typeof featureId__tagsDisplayForm

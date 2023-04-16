@@ -3,7 +3,7 @@ import {Meta, StoryObj} from '@storybook/react';
 import {mainDecorator} from '@services/storybook/decorators';
 import {FormWidget} from './FormWidget';
 import {IFormConfig} from '@widgets/form/types/IFormConfig';
-import {formId_basicExampleFormForm, formId_basicExampleFormSubform} from '../../@/formIds';
+import {formId__basicExampleFormForm, formId__basicExampleFormSubform} from '../../@/formIds';
 
 const meta: Meta = {
   title:      'Demo/Layout/Forms/Basic',
@@ -21,7 +21,7 @@ export default meta;
 type Story = StoryObj<any>;
 const form__storybookExampleForm: IFormConfig = {
   title:  'Example Form for Storybook',
-  formId: formId_basicExampleFormForm,
+  formId: formId__basicExampleFormForm,
   items:  [
     {name: 'text', type: 'text', title: 'Text'},
     {name: 'longtext', type: 'longtext', title: 'Long Text'},
@@ -31,7 +31,7 @@ const form__storybookExampleForm: IFormConfig = {
     {
       name: 'form', type: 'form', title: 'Form', config: {
         title:  'Example Subform for Storybook',
-        formId: formId_basicExampleFormSubform,
+        formId: formId__basicExampleFormSubform,
         items:  [
           {name: 'text', type: 'text', title: 'Text'},
         ],

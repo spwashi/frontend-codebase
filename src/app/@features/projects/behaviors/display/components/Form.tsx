@@ -5,7 +5,7 @@ import {useSelector} from 'react-redux';
 import {selectProjectStateProject} from '../../../services/redux/selectors';
 import {FeatureRequirement} from '@services/features/list/components/FeatureRequirement';
 import {form__selectProject} from '@features/projects/behaviors/select/config';
-import {feature_projectDisplay} from '../../../../../@/featureIds';
+import {featureId__projectDisplay} from '../../../../../@/featureIds';
 
 export function ProjectDisplayFormFeature() {
   const [state, setState] = useState<any | null>();
@@ -13,7 +13,7 @@ export function ProjectDisplayFormFeature() {
   const project           = state?.data?.project ?? activeProject;
 
   return (
-    <FeatureRequirement name={feature_projectDisplay} alternative={'Need Project Display'}>
+    <FeatureRequirement name={featureId__projectDisplay} alternative={'Need Project Display'}>
       <FormWidget config={form__selectProject} onSubmit={setState}/>
       <SiteProjectController id={project?.id}/>
     </FeatureRequirement>

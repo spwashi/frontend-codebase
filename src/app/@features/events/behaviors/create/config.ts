@@ -2,12 +2,12 @@ import {descriptionInput, endInput, startInput, titleInput, userInput} from '../
 import {makeFieldRequired} from '@widgets/form/features/fields/helpers/makeFieldRequired';
 
 import {IFormConfig} from '@widgets/form/types/IFormConfig';
-import {formId_eventCreate} from '../../../../@/formIds';
+import {formId__eventCreate} from '../../../../@/formIds';
 
 
 export const form__createEvent: IFormConfig = {
   title:  'Create Event',
-  formId: formId_eventCreate,
+  formId: formId__eventCreate,
   items:  [
             userInput,
             titleInput,

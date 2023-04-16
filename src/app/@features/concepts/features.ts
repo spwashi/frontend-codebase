@@ -1,9 +1,9 @@
-import {feature_conceptDisplay, feature_conceptDisplayForm, feature_concepts, feature_conceptTagForm, feature_createConceptForm, feature_editConceptForm} from '../../@/featureIds';
+import {featureId__conceptDisplay, featureId__conceptDisplayForm, featureId__concepts, featureId__conceptTagForm, featureId__createConceptForm, featureId__editConceptForm} from '../../@/featureIds';
 
 export type IConceptFeatureNames =
-  | typeof feature_concepts
-  | typeof feature_conceptDisplay
-  | typeof feature_conceptDisplayForm
-  | typeof feature_createConceptForm
-  | typeof feature_editConceptForm
-  | typeof feature_conceptTagForm
+  | typeof featureId__concepts
+  | typeof featureId__conceptDisplay
+  | typeof featureId__conceptDisplayForm
+  | typeof featureId__createConceptForm
+  | typeof featureId__editConceptForm
+  | typeof featureId__conceptTagForm

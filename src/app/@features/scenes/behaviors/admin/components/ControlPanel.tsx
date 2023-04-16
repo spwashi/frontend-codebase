@@ -11,7 +11,7 @@ import {EditSceneFormFeature} from '../../edit';
 import {AllScenesQuery} from '../../../services/graphql/all/components/FindAll';
 import {FeatureRequirement} from '@services/features/list/components/FeatureRequirement';
 import {LoggedIn} from '@features/users/behaviors/login/components/Requirement';
-import {feature_sceneDisplay, feature_scenes} from '../../../../../@/featureIds';
+import {featureId__sceneDisplay, featureId__scenes} from '../../../../../@/featureIds';
 
 export function ScenesControlPanel() {
   return (
@@ -23,7 +23,7 @@ export function ScenesControlPanel() {
           <li><NavLink to="../scenes/all">All Scenes</NavLink></li>
         </ul>
       </nav>
-      <FeatureRequirement name={feature_scenes} alternative={'Need Scenes'}>
+      <FeatureRequirement name={featureId__scenes} alternative={'Need Scenes'}>
         <Routes>
           <Route
             path="all"
@@ -42,7 +42,7 @@ export function ScenesControlPanel() {
                   <CreateSceneFormFeature/>
                   <EditSceneFormFeature/>
                 </LoggedIn>
-                <FeatureRequirement name={feature_sceneDisplay} alternative={'Need Scene Display'}>
+                <FeatureRequirement name={featureId__sceneDisplay} alternative={'Need Scene Display'}>
                   <SceneDisplayForm/>
                 </FeatureRequirement>
               </React.Fragment>

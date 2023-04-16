@@ -1,9 +1,9 @@
-import {feature_users, feature_userLogin, feature_userLoginForm, feature_userLoginVerify, feature_userSignup, feature_userSignupForm} from '../../@/featureIds';
+import {featureId__users, featureId__userLogin, featureId__userLoginForm, featureId__userLoginVerify, featureId__userSignup, featureId__userSignupForm} from '../../@/featureIds';
 
 export type IUserFeatureNames =
-  | typeof feature_users
-  | typeof feature_userLogin
-  | typeof feature_userSignup
-  | typeof feature_userLoginVerify
-  | typeof feature_userLoginForm
-  | typeof feature_userSignupForm
+  | typeof featureId__users
+  | typeof featureId__userLogin
+  | typeof featureId__userSignup
+  | typeof featureId__userLoginVerify
+  | typeof featureId__userLoginForm
+  | typeof featureId__userSignupForm

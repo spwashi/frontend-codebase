@@ -1,11 +1,11 @@
 import {contentTypeInput, idInput, srcInput, titleInput, userInput} from '../../data/config/inputs';
 
 import {IFormConfig} from '@widgets/form/types/IFormConfig';
-import {formId_conceptEdit} from '../../../../@/formIds';
+import {formId__conceptEdit} from '../../../../@/formIds';
 
 export const form__editConcept: IFormConfig = {
   title:  'Edit Concept',
-  formId: formId_conceptEdit,
+  formId: formId__conceptEdit,
   items:  [
     userInput,
     idInput,

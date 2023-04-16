@@ -1,9 +1,9 @@
-import {feature_eventCreateForm, feature_eventDisplay, feature_eventDisplayForm, feature_eventEditForm, feature_events, feature_eventTagForm} from '../../@/featureIds';
+import {featureId__eventCreateForm, featureId__eventDisplay, featureId__eventDisplayForm, featureId__eventEditForm, featureId__events, featureId__eventTagForm} from '../../@/featureIds';
 
 export type IEventFeatureNames =
-  | typeof feature_events
-  | typeof feature_eventDisplay
-  | typeof feature_eventCreateForm
-  | typeof feature_eventEditForm
-  | typeof feature_eventTagForm
-  | typeof feature_eventDisplayForm
+  | typeof featureId__events
+  | typeof featureId__eventDisplay
+  | typeof featureId__eventCreateForm
+  | typeof featureId__eventEditForm
+  | typeof featureId__eventTagForm
+  | typeof featureId__eventDisplayForm

@@ -8,7 +8,7 @@ import {NavLink} from 'react-router-dom';
 import {Route, Routes} from 'react-router';
 import {FeatureRequirement} from '@services/features/list/components/FeatureRequirement';
 import {LoggedIn} from '@features/users/behaviors/login/components/Requirement';
-import {feature_tags} from '../../../../../@/featureIds';
+import {featureId__tags} from '../../../../../@/featureIds';
 
 export function TagsControlPanel() {
   return (
@@ -25,7 +25,7 @@ export function TagsControlPanel() {
       <Routes>
         <Route path="all" element={'[unimplemented]'}/>
         <Route path="" element={
-          <FeatureRequirement name={feature_tags} alternative={'Need Tags'}>
+          <FeatureRequirement name={featureId__tags} alternative={'Need Tags'}>
             <LoggedIn>
               <CreateTagFormFeature/>
               <DisplayTagsFormFeature/>

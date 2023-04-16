@@ -1,6 +1,6 @@
-import {feature_projectCreate, feature_projectDisplay, feature_projects} from '../../@/featureIds';
+import {featureId__projectCreate, featureId__projectDisplay, featureId__projects} from '../../@/featureIds';
 
 export type IProjectFeatureNames =
-  | typeof feature_projects
-  | typeof feature_projectDisplay
-  | typeof feature_projectCreate
+  | typeof featureId__projects
+  | typeof featureId__projectDisplay
+  | typeof featureId__projectCreate

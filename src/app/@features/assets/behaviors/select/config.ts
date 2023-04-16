@@ -1,5 +1,5 @@
 import {IFormConfig} from '@widgets/form/types/IFormConfig';
-import {formId_assetSelect} from '../../../../@/formIds';
+import {formId__assetSelect} from '../../../../@/formIds';
 import {get_assetSelectInput} from '@features/assets/data/config/inputs';
 
 /**
@@ -9,10 +9,8 @@ export function getform__assetSelect(user: { username: string }): IFormConfig {
   return (
     {
       title:  'Select Asset',
-      formId: formId_assetSelect,
-      items:  user ? [
-        get_assetSelectInput(user),
-      ] : [],
+      formId: formId__assetSelect,
+      items:  [get_assetSelectInput(user)],
     }
   );
 }

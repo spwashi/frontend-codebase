@@ -6,15 +6,15 @@ import {Log} from '@core/dev/components/Log';
 import {LoggedIn} from '@features/users/behaviors/login/components/Requirement';
 import {FeatureRequirement} from '@services/features/list/components/FeatureRequirement';
 import {form__selectConcept} from '../../select/config';
-import {feature_conceptDisplay, feature_conceptDisplayForm} from '../../../../../@/featureIds';
+import {featureId__conceptDisplay, featureId__conceptDisplayForm} from '../../../../../@/featureIds';
 
 export function ConceptDisplayForm() {
   const [state, setState] = useState<any | null>();
   const id                = state?.data?.concept?.id;
   return (
-    <FeatureRequirement name={feature_conceptDisplay} alternative={'Need Concepts Display'}>
+    <FeatureRequirement name={featureId__conceptDisplay} alternative={'Need Concepts Display'}>
       <LoggedIn>
-        <Feature name={feature_conceptDisplayForm}>
+        <Feature name={featureId__conceptDisplayForm}>
           <Log>{{id}}</Log>
           <FormWidget config={form__selectConcept}
                       onSubmit={setState}/>

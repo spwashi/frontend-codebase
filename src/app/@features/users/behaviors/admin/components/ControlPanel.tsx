@@ -7,15 +7,15 @@ import {SignupForm} from '../../signup/forms/SignupForm';
 import React from 'react';
 import {UserFeatures} from '../../../components/Features';
 import {FeatureRequirement} from '@services/features/list/components/FeatureRequirement';
-import {feature_users, feature_userLogin} from '../../../../../@/featureIds';
+import {featureId__users, featureId__userLogin} from '../../../../../@/featureIds';
 
 export function UsersControlPanel() {
   return <>
     <ProjectFeatures/>
     <UserFeatures/>
-    <FeatureRequirement name={feature_users} alternative={'Need Users'}>
+    <FeatureRequirement name={featureId__users} alternative={'Need Users'}>
       <LogoutButton/>
-      <FeatureRequirement name={feature_userLogin} alternative={'Need User Login'}>
+      <FeatureRequirement name={featureId__userLogin} alternative={'Need User Login'}>
         <VerifyLogin/>
         <LoggedIn state={false}>
           <LoginForm/>

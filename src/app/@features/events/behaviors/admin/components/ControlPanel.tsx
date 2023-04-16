@@ -11,7 +11,7 @@ import {UserFeatures} from '@features/users/components/Features';
 import {EditEventFormFeature} from '../../edit';
 import {FeatureRequirement} from '@services/features/list/components/FeatureRequirement';
 import {LoggedIn} from '@features/users/behaviors/login/components/Requirement';
-import {feature_events} from '../../../../../@/featureIds';
+import {featureId__events} from '../../../../../@/featureIds';
 
 export function EventsControlPanel() {
   return (
@@ -27,7 +27,7 @@ export function EventsControlPanel() {
         </ul>
       </nav>
 
-      <FeatureRequirement name={feature_events} alternative={'Need Events for Admin.All Events Route'}>
+      <FeatureRequirement name={featureId__events} alternative={'Need Events for Admin.All Events Route'}>
         <Routes>
           <Route path={'all'} element={<div style={{width: 500 + 'px'}}><AllEventsEventDisplay/></div>}/>
           <Route path="" element={

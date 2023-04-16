@@ -8,7 +8,7 @@ import {Log} from '@core/dev/components/Log';
 import {Feature} from '@services/features/item/components/Feature';
 import {AllConceptsQuery} from '@features/concepts/services/graphql/all/components/FindAll';
 import {selectEditConceptInput} from '@features/concepts/behaviors/edit/selectors';
-import {feature_editConceptForm} from '../../../../../@/featureIds';
+import {featureId__editConceptForm} from '../../../../../@/featureIds';
 
 function useConceptEditForm() {
   const [{data: {concept: concept} = {} as any} = {} as any, setConceptSelectionFormData] = useState({} as any);
@@ -36,7 +36,7 @@ function EditConceptForm() {
 
 export function EditConceptFormFeature() {
   return (
-    <Feature name={feature_editConceptForm}>
+    <Feature name={featureId__editConceptForm}>
       <AllConceptsQuery/>
       <EditConceptForm/>
     </Feature>

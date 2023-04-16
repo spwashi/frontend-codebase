@@ -9,7 +9,7 @@ import {Feature} from '@services/features/item/components/Feature';
 import {AllEventsQuery} from '@features/events/services/graphql/all/components/FindAll';
 import {form__selectEvent} from '@features/events/behaviors/select/config';
 import {selectEditEventInput} from '@features/events/behaviors/edit/selectors';
-import {feature_eventEditForm} from '../../../../../@/featureIds';
+import {featureId__eventEditForm} from '../../../../../@/featureIds';
 
 function useEventSelectForm() {
   const [{data: {event} = {} as any} = {} as any, setEventFromForm] = useState({} as any);
@@ -35,7 +35,7 @@ function EditEventForm() {
 
 export function EditEventFormFeature() {
   return (
-    <Feature name={feature_eventEditForm}>
+    <Feature name={featureId__eventEditForm}>
       <AllEventsQuery/>
       <EditEventForm/>
     </Feature>
