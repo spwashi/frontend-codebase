@@ -1,6 +1,5 @@
 // internal
-export const formId_emptyForm            = 'form._.empty';
-export const formId_basicExampleFormForm = 'form._.example';
+export const formId_basicExampleFormForm    = 'form._.example';
 export const formId_basicExampleFormSubform = 'form._.example.subform';
 
 // assets

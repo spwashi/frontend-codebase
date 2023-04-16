@@ -13,8 +13,8 @@ type TagEventFormData = {
 
 
 export const form__tagEvent: IFormConfig = {
-  formId: formId_eventTag,
   title:  'Tag Event',
+  formId: formId_eventTag,
   items:  [
     eventInput,
     tagsInput,

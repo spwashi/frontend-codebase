@@ -17,8 +17,8 @@ export type CreateEventFormData = {
 
 
 export const form__createEvent: IFormConfig = {
-  formId: formId_eventCreate,
   title:  'Create Event',
+  formId: formId_eventCreate,
   items:  [
             userInput,
             titleInput,

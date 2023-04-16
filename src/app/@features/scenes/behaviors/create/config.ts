@@ -11,27 +11,25 @@ export type SelectMutationInputData = {
 
 
 export const form__createScene: IFormConfig = {
+  title:  'Create Scene',
   formId: formId_sceneCreate,
-  title:
-          'Create Scene',
-  items:
-          [
-            {
-              title: 'Scene Title',
-              name:  'title',
-              type:  'text',
-            },
-            {
-              type: 'value',
-              name: 'name',
-              calc: (data: any) => convertToSlug(data?.title ?? ''),
-            },
-            {
-              title: 'Scene Description',
-              name:  'description',
-              type:  'longtext',
-            },
-          ],
+  items:  [
+    {
+      title: 'Scene Title',
+      name:  'title',
+      type:  'text',
+    },
+    {
+      type: 'value',
+      name: 'name',
+      calc: (data: any) => convertToSlug(data?.title ?? ''),
+    },
+    {
+      title: 'Scene Description',
+      name:  'description',
+      type:  'longtext',
+    },
+  ],
 
 }
 export function selectCreateSceneInput(data: SelectMutationInputData) {

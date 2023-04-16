@@ -37,8 +37,8 @@ function selectMutationInput(data: any) {
 
 const form__userSignup: IFormConfig =
         {
+          title:  'Signup',
           formId: formId_userSignup,
-          title:  'Signup Form',
           items:  [
             {type: 'text', name: 'name', title: 'Name'},
             {type: 'text', name: 'username', title: 'Username'},

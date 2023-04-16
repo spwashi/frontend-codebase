@@ -17,8 +17,8 @@ export type SelectMutationInputData = {
 
 
 export const form__editEvent: IFormConfig = {
-  formId: formId_eventEdit,
   title:  'Edit Event',
+  formId: formId_eventEdit,
   items:  [
     userInput,
     idInput,
@@ -30,8 +30,8 @@ export const form__editEvent: IFormConfig = {
 };
 
 export const form__selectEvent: IFormConfig = {
-  formId: formId_eventSelect,
   title:  'Select Event',
+  formId: formId_eventSelect,
   items:  [
     eventInput,
   ],

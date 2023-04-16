@@ -14,8 +14,8 @@ export type SelectMutationInputData = {
 }
 
 export const form__editConcept: IFormConfig = {
-  formId: formId_conceptEdit,
   title:  'Edit Concept',
+  formId: formId_conceptEdit,
   items:  [
     userInput,
     idInput,

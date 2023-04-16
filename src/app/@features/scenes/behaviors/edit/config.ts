@@ -8,8 +8,8 @@ export type SelectMutationInputData = {
 }
 
 export const form__editScene: IFormConfig = {
-  formId: formId_sceneEdit,
   title:  'Edit Scene',
+  formId: formId_sceneEdit,
   items:  [
     {
       title: 'ID',

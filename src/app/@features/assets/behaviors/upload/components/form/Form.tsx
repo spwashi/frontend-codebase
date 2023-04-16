@@ -45,8 +45,8 @@ function submissionCallback({jwt, assets, uploadLocation, tags}: SubmissionCallb
 
 const form__uploadAsset: IFormConfig =
         {
-          formId: formId_assetUpload,
           title:  'Upload Asset',
+          formId: formId_assetUpload,
           items:  [
             {type: 'user', name: 'name', title: 'User', ignoreLogin: false},
             {type: 'asset', name: 'assets', title: 'Asset'},

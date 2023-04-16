@@ -56,8 +56,8 @@ const projectInput: FormFieldConfig = {
 
 export const form__login: IFormConfig =
                {
+                 title:  'Log In',
                  formId: formId_userLogin,
-                 title:  'Login',
                  items:  [
                            userInput,
                            passwordInput,

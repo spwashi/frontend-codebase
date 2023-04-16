@@ -20,8 +20,8 @@ export default meta;
 
 type Story = StoryObj<any>;
 const form__storybookExampleForm: IFormConfig = {
+  title:  'Example Form for Storybook',
   formId: formId_basicExampleFormForm,
-  title:  'This is an example form',
   items:  [
     {name: 'text', type: 'text', title: 'Text'},
     {name: 'longtext', type: 'longtext', title: 'Long Text'},
@@ -31,7 +31,7 @@ const form__storybookExampleForm: IFormConfig = {
     {
       name: 'form', type: 'form', title: 'Form', config: {
         formId: formId_basicExampleFormSubform,
-        title:  'Basic Example Subform',
+        title:  'Example Subform for Storybook',
         items:  [
           {name: 'text', type: 'text', title: 'Text'},
         ],

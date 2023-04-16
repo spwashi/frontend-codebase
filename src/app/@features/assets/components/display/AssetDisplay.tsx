@@ -14,7 +14,7 @@ import {formId_assetSelect} from '../../../../forms';
 function getDisplayAssetForm(user: { username?: string }): IFormConfig {
   return (
     {
-      title:  'Display Asset Form',
+      title:  'Select Asset',
       formId: formId_assetSelect,
       items:  !user.username
               ? [] :

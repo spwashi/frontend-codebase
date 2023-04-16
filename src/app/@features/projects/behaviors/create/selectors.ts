@@ -10,8 +10,8 @@ export function convertToSlug(Text: string) {
 }
 
 export const form__createProject: IFormConfig = {
-  formId: formId_projectCreate,
   title:  'Create Project',
+  formId: formId_projectCreate,
   items:  [
     {
       type:  'text',

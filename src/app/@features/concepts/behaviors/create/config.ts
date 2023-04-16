@@ -17,8 +17,8 @@ export type CreateConceptFormData = {
 
 
 export const form__createConcept: IFormConfig = {
-  formId: formId_conceptCreate,
   title:  'Create Concept',
+  formId: formId_conceptCreate,
   items:
           [
             userInput,

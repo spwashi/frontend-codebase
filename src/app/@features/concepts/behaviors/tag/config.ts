@@ -16,8 +16,8 @@ type TagConceptFormData = {
 }
 
 export const form__tagConcept: IFormConfig = {
-  formId: formId_conceptTag,
   title:  'Tag Concept',
+  formId: formId_conceptTag,
   items:  [
     makeFieldRequired(userInput),
     makeFieldRequired(conceptInput),

@@ -17,8 +17,8 @@ const titleInput: FormFieldConfig        = {title: 'Title', name: 'title', type:
 const domainInput: FormFieldConfig       = {title: 'Domain', name: 'domain', type: 'text'};
 const descriptionInput: FormFieldConfig   = {title: 'Description', name: 'description', type: 'longtext'};
 export const form__createTag: IFormConfig = {
-  formId: formId_tagCreate,
   title:  'Create Tag',
+  formId: formId_tagCreate,
   items:  [userInput, titleInput, domainInput, descriptionInput].map(makeFieldRequired),
 };
 
