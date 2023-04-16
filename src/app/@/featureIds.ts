@@ -6,15 +6,14 @@ export const featureId__adminControlPanelsPostLogin = 'feature--admin--routes[po
 export const featureId__assets           = 'feature--assets';
 export const featureId__assetDisplay     = 'feature--asset--display';
 export const featureId__assetDisplayForm = 'feature--asset--display--form';
-export const featureId__uploadAssetForm  = 'feature--asset--upload--form';
-
+export const featureId__assetUploadForm  = 'feature--asset--upload--form';
 
 // concepts
 export const featureId__concepts           = 'feature--concepts';
 export const featureId__conceptDisplay     = 'feature--concept--display';
 export const featureId__conceptDisplayForm = 'feature--concept--display--form';
-export const featureId__createConceptForm  = 'feature--concept--create--form';
-export const featureId__editConceptForm    = 'feature--concept--edit--form';
+export const featureId__conceptCreateForm  = 'feature--concept--create--form';
+export const featureId__conceptEditForm    = 'feature--concept--edit--form';
 export const featureId__conceptTagForm     = 'feature--concept--tag--form';
 
 // events
