@@ -9,12 +9,13 @@ import {IFormConfig} from '@widgets/form/types/IFormConfig';
 import {Feature} from '@services/features/item/components/Feature';
 import {assetDisplayFeatureName, assetDisplayFormFeatureName} from '@features/assets/features';
 import {form__selectLoggedInUser} from '@features/assets/behaviors/display/config';
+import {formId_selectAssetForm} from '../../../../forms';
 
 function getDisplayAssetForm(user: { username?: string }): IFormConfig {
   return (
     {
       title:  'Display Asset Form',
-      formId: 'display-asset-form',
+      formId: formId_selectAssetForm,
       items:  !user.username
               ? [] :
               [{type: 'assetSelect', name: 'asset', title: 'Asset', username: user.username}],

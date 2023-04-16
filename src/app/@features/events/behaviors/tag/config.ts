@@ -4,6 +4,7 @@ import {eventInput, tagsInput} from '../../data/config/inputs';
 import {TagEventMutationInput} from '@junction/models/event/behaviors/tag';
 
 import {IFormConfig} from '@widgets/form/types/IFormConfig';
+import {formId_tagEventForm} from '../../../../forms';
 
 type TagEventFormData = {
   event: IEvent;
@@ -12,7 +13,7 @@ type TagEventFormData = {
 
 
 export const form__tagEvent: IFormConfig = {
-  formId: 'tag-event-form',
+  formId: formId_tagEventForm,
   title:  'Tag Event',
   items:  [
     eventInput,

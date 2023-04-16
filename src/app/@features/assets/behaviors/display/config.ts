@@ -1,9 +1,10 @@
 import {loggedInUserInput} from '@features/users/data/config';
 import {IFormConfig} from '@widgets/form/types/IFormConfig';
+import {formId_selectLoggedInUser} from '../../../../forms';
 
 export const form__selectLoggedInUser: IFormConfig = {
   title:  'Select User Form',
-  formId: 'select-user-form',
+  formId: formId_selectLoggedInUser,
   items:  [
     loggedInUserInput,
   ],

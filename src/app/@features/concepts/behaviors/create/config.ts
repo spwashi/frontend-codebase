@@ -5,6 +5,7 @@ import {makeFieldRequired} from '@widgets/form/features/fields/helpers/makeField
 import {contentTypeInput, srcInput, titleInput, userInput} from '../../data/config/inputs';
 
 import {IFormConfig} from '@widgets/form/types/IFormConfig';
+import {formId_createConcept} from '../../../../forms';
 
 export type CreateConceptFormData = {
   username: string;
@@ -15,18 +16,17 @@ export type CreateConceptFormData = {
 }
 
 
-export const form__createConcept: IFormConfig =
-               {
-                 formId: 'create-concept_form',
-                 title:  'Create Concept',
-                 items:
-                         [
-                           userInput,
-                           titleInput,
-                           setFieldValue(contentTypeInput, 'text/plain'),
-                           srcInput,
-                         ].map(makeFieldRequired),
-               };
+export const form__createConcept: IFormConfig = {
+  formId: formId_createConcept,
+  title:  'Create Concept',
+  items:
+          [
+            userInput,
+            titleInput,
+            setFieldValue(contentTypeInput, 'text/plain'),
+            srcInput,
+          ].map(makeFieldRequired),
+};
 
 export const selectCreateConceptInput =
                (data: CreateConceptFormData): CreateConceptMutationInput => {

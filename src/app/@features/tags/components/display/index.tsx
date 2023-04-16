@@ -13,7 +13,7 @@ export function DisplayTagsFormFeature() {
   return (
     <Feature name={tagsDisplayFormFeatureName}>
       <FeatureRequirement name={tagDisplayFeatureName} alternative={'Need Tag Display'}>
-        <FormWidget onSubmit={setState} config={form__selectTags}/>
+        <FormWidget config={form__selectTags} onSubmit={setState} />
         {tags && tags.map(({id}: ITag) => <Tag id={id} key={id}/>)}
       </FeatureRequirement>
     </Feature>

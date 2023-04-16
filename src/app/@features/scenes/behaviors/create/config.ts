@@ -1,6 +1,7 @@
 import {convertToSlug} from '../../../projects/behaviors/create/selectors';
 
 import {IFormConfig} from '@widgets/form/types/IFormConfig';
+import {formId_createScene} from '../../../../forms';
 
 export type SelectMutationInputData = {
   name: string;
@@ -9,32 +10,30 @@ export type SelectMutationInputData = {
 }
 
 
-export const form__createScene: IFormConfig =
-               {
-                 formId:
-                   'create-scene_form',
-                 title:
-                   'Create Scene',
-                 items:
-                   [
-                     {
-                       title: 'Scene Title',
-                       name:  'title',
-                       type:  'text',
-                     },
-                     {
-                       type: 'value',
-                       name: 'name',
-                       calc: (data: any) => convertToSlug(data?.title ?? ''),
-                     },
-                     {
-                       title: 'Scene Description',
-                       name:  'description',
-                       type:  'longtext',
-                     },
-                   ],
+export const form__createScene: IFormConfig = {
+  formId: formId_createScene,
+  title:
+          'Create Scene',
+  items:
+          [
+            {
+              title: 'Scene Title',
+              name:  'title',
+              type:  'text',
+            },
+            {
+              type: 'value',
+              name: 'name',
+              calc: (data: any) => convertToSlug(data?.title ?? ''),
+            },
+            {
+              title: 'Scene Description',
+              name:  'description',
+              type:  'longtext',
+            },
+          ],
 
-               }
+}
 export function selectCreateSceneInput(data: SelectMutationInputData) {
   const {name, title, description} = data ?? {};
 

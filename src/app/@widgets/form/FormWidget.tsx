@@ -5,6 +5,7 @@ import FormItems from './features/fields/components/FieldFactory';
 import InnerFormComponent from './components/InnerFormComponent';
 
 import {IFormConfig} from './types/IFormConfig';
+import {formId_emptyForm} from '../../forms';
 
 function useHandler(form: IFormConfig, index: 'onReset' | 'onChange' | 'onSubmit', origHandler?: (e: any) => void): [boolean, (d: any) => void] {
   const [canSubmit, setCanSubmit] = useState(false);
@@ -47,7 +48,7 @@ export function FormWidget({
                              children,
                              onChange,
                            }: Params) {
-  const defaultForm = useMemo(() => cloneDeep(formConfig ?? {formId: 'empty-form', title: 'empty form', items: []} as IFormConfig), [formConfig]);
+  const defaultForm = useMemo(() => cloneDeep(formConfig ?? {formId: formId_emptyForm, title: 'empty form', items: []} as IFormConfig), [formConfig]);
   const formRef     = useRef(defaultForm)
   const form        = formRef.current;
 

@@ -6,6 +6,7 @@ import {makeFieldRequired} from '@widgets/form/features/fields/helpers/makeField
 import {conceptInput, tagsInput, userInput} from '../../data/config/inputs';
 
 import {IFormConfig} from '@widgets/form/types/IFormConfig';
+import {formId_tagConceptForm} from '../../../../forms';
 
 type TagConceptFormData = {
   username: string;
@@ -15,7 +16,7 @@ type TagConceptFormData = {
 }
 
 export const form__tagConcept: IFormConfig = {
-  formId: 'tag-concept-form',
+  formId: formId_tagConceptForm,
   title:  'Tag Concept',
   items:  [
     makeFieldRequired(userInput),

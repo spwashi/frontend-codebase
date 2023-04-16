@@ -3,6 +3,7 @@ import {EditConceptMutationInput} from '@junction/models/concept/behaviors/edit'
 import {contentTypeInput, idInput, srcInput, titleInput, userInput} from '../../data/config/inputs';
 
 import {IFormConfig} from '@widgets/form/types/IFormConfig';
+import {formId_editConceptForm} from '../../../../forms';
 
 export type SelectMutationInputData = {
   user: IUser;
@@ -13,7 +14,7 @@ export type SelectMutationInputData = {
 }
 
 export const form__editConcept: IFormConfig = {
-  formId: 'edit-concept_form',
+  formId: formId_editConceptForm,
   title:  'Edit Concept',
   items:  [
     userInput,
@@ -22,12 +23,6 @@ export const form__editConcept: IFormConfig = {
     contentTypeInput,
     srcInput,
   ],
-};
-
-const form__selectConcept: IFormConfig = {
-  title:  'Select Concept to Edit',
-  formId: 'concept-select-form',
-  items:  [{name: 'concept', title: 'Concept', type: 'concept'}],
 };
 
 export const selectEditConceptInput =

@@ -4,6 +4,7 @@ import {IEvent} from '@junction/models/event/models';
 import {EditEventMutationInput} from '@junction/models/event/behaviors/edit';
 
 import {IFormConfig} from '@widgets/form/types/IFormConfig';
+import {formId_editEventForm, formId_selectEventForm} from '../../../../forms';
 
 export type SelectMutationInputData = {
   user: IUser;
@@ -16,7 +17,7 @@ export type SelectMutationInputData = {
 
 
 export const form__editEvent: IFormConfig = {
-  formId: 'edit-event-form',
+  formId: formId_editEventForm,
   title:  'Edit Event',
   items:  [
     userInput,
@@ -29,7 +30,7 @@ export const form__editEvent: IFormConfig = {
 };
 
 export const form__selectEvent: IFormConfig = {
-  formId: 'select-event-form',
+  formId: formId_selectEventForm,
   title:  'Select Event',
   items:  [
     eventInput,

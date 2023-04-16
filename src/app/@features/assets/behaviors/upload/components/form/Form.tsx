@@ -6,6 +6,7 @@ import {useJwt} from '@services/jwt/hooks/useJwt';
 
 import {IFormConfig} from '@widgets/form/types/IFormConfig';
 import {Feature} from '@services/features/item/components/Feature';
+import {formId_uploadAssetForm} from '../../../../../../forms';
 
 const uploadAssetFormFeature = 'feature.asset.upload.form';
 
@@ -44,7 +45,7 @@ function submissionCallback({jwt, assets, uploadLocation, tags}: SubmissionCallb
 
 const form__uploadAsset: IFormConfig =
         {
-          formId: 'upload-asset-form',
+          formId: formId_uploadAssetForm,
           title:  'Upload Asset',
           items:  [
             {type: 'user', name: 'name', title: 'User', ignoreLogin: false},

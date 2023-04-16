@@ -4,6 +4,7 @@ import {CreateEventMutationInput} from '@junction/models/event/behaviors/create'
 import {makeFieldRequired} from '@widgets/form/features/fields/helpers/makeFieldRequired';
 
 import {IFormConfig} from '@widgets/form/types/IFormConfig';
+import {formId_createEventForm} from '../../../../forms';
 
 export type CreateEventFormData = {
   username: string;
@@ -16,7 +17,7 @@ export type CreateEventFormData = {
 
 
 export const form__createEvent: IFormConfig = {
-  formId: 'create-event_form',
+  formId: formId_createEventForm,
   title:  'Create Event',
   items:  [
             userInput,
