@@ -4,7 +4,7 @@ import React, {useContext, useEffect} from 'react';
 import {ConceptContext} from '../context/context';
 import {useDispatch} from 'react-redux';
 import {ACTION_RECEIVE_ONE_CONCEPT} from '../../../redux/reducer';
-import {gqlNode_CONCEPT_FINDONE} from '@features/concepts/services/graphql/queries/one/find';
+import {gqlNode_CONCEPT_FINDONE} from '@features/concepts/services/graphql/one/queries/find';
 
 export function OneConceptQuery({id}: IConceptIdentifyingPartial) {
   const context       = useContext(ConceptContext) ?? ({} as any);

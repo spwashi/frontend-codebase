@@ -3,7 +3,7 @@ import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {selectPossibleUsersLastFetched} from '../../redux/selectors';
 import {ACTION_RECEIVE_ALL_USERS} from '../../redux/reducer';
-import {gqlNode_USER_FINDALL} from '@features/users/services/graphql/queries/list/list';
+import {gqlNode_USER_FINDALL} from '@features/users/services/graphql/list/queries/list';
 
 export function UserListQuery() {
   const {data: query = {}} = useQuery(gqlNode_USER_FINDALL);

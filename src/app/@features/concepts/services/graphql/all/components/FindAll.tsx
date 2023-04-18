@@ -4,7 +4,7 @@ import {selectConceptStateKey, selectPossibleConceptsLastFetched} from '../../..
 import {ACTION_RECEIVE_ALL_CONCEPTS} from '../../../redux/reducer';
 import {useFeatureQuery} from '@services/features/hooks/useFeatureQuery';
 import {IConcept_Complete} from '@junction/models/concept/hybrids';
-import {gqlNode_CONCEPT_FINDALL} from '@features/concepts/services/graphql/queries/list/list';
+import {gqlNode_CONCEPT_FINDALL} from '@features/concepts/services/graphql/list/queries/list';
 
 export function ConceptListQuery() {
   const stateKey = useSelector(selectConceptStateKey);

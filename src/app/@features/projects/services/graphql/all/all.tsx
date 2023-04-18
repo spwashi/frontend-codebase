@@ -4,7 +4,7 @@ import {selectPossibleProjectsLastFetched, selectProjectStateKey} from '../../re
 import {ACTION_RECEIVE_ALL_PROJECTS} from '../../redux/reducer';
 import {useFeatureQuery} from '@services/features/hooks/useFeatureQuery';
 import {getDomain} from '@widgets/form/features/fields/components/FieldFactory';
-import {gqlNode_PROJECT_FINDALL} from '@features/projects/services/graphql/queries/list/list';
+import {gqlNode_PROJECT_FINDALL} from '@features/projects/services/graphql/list/queries/list';
 
 
 export function ProjectListQuery() {

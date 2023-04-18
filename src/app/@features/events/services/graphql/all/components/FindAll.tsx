@@ -4,7 +4,7 @@ import {selectEventStateKey, selectPossibleEventsLastFetched} from '../../../red
 import {ACTION_RECEIVE_ALL_EVENTS} from '../../../redux/reducer';
 import {useFeatureQuery} from '@services/features/hooks/useFeatureQuery';
 import {IEvent_Complete} from '@junction/models/event/hybrids';
-import {gqlNode_EVENT_FINDALL} from '@features/events/services/graphql/queries/list/list';
+import {gqlNode_EVENT_FINDALL} from '@features/events/services/graphql/list/queries/list';
 
 export function EventListQuery() {
   const stateKey      = useSelector(selectEventStateKey);

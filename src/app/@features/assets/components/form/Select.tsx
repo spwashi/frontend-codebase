@@ -2,7 +2,7 @@ import {useQuery} from '@apollo/client';
 import React, {useMemo} from 'react';
 import {SelectInput, SelectOption} from '@widgets/form/features/fields/components/input/select/SelectInput';
 import {IAsset} from '@junction/models/asset/models';
-import {gqlNode_ASSET_FINDALL} from '@features/assets/services/graphql/queries/list/list';
+import {gqlNode_ASSET_FINDALL} from '@features/assets/services/graphql/list/queries/list';
 
 function assetToOption(asset: IAsset): SelectOption<IAsset> {
   return {
