@@ -1,8 +1,8 @@
 import {gql} from '@apollo/client';
 
-export const gqlNode_SCENE_FINDONE = gql`
-    query Scene($id: String!) {
-        scene(id: $id) {
+export const gqlNode_SCENE_FETCH_LIST = gql`
+    query AllScenes {
+        sceneList {
             id
             name
             title

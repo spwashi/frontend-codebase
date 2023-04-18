@@ -1,6 +1,6 @@
 import {gql} from '@apollo/client';
 
-export const gqlNode_EVENT_FINDALL = gql`
+export const gqlNode_EVENT_FETCH_LIST = gql`
     query EventList {
         eventList {
             id

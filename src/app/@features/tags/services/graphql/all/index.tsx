@@ -4,7 +4,7 @@ import {selectPossibleTagsLastFetched, selectTagStateKey} from '../../redux/sele
 import {ACTION_RECEIVE_ALL_TAGS} from '../../redux/reducer';
 import {ACTION_GRAPHQL, ACTION_NOGRAPHQL} from '@services/redux/reducer';
 import {useFeatureQuery} from '@services/features/hooks/useFeatureQuery';
-import {gqlNode_TAG_FINDALL} from '@features/tags/services/graphql/list/queries/list';
+import {gqlNode_TAG_FETCH_LIST} from '@features/tags/services/graphql/list/queries/fetchList';
 
 
 function useDispatchGraphqlError(error: any) {
@@ -23,7 +23,7 @@ function useDispatchGraphqlError(error: any) {
 
 export function TagListQuery() {
   const stateKey      = useSelector(selectTagStateKey);
-  const {data, error} = useFeatureQuery(gqlNode_TAG_FINDALL, {}, stateKey);
+  const {data, error} = useFeatureQuery(gqlNode_TAG_FETCH_LIST, {}, stateKey);
   const lastFetched   = useSelector(selectPossibleTagsLastFetched)
   const dispatch      = useDispatch();
 

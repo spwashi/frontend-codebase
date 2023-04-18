@@ -26,5 +26,5 @@ export {passwordInput} from '@features/users/data/config/inputs';
 export {anyUserInput} from '@features/users/data/config/inputs';
 export {form__login} from '@features/users/behaviors/login/config';
 export {gqlNode_USER_LOGIN} from '@features/users/services/graphql/one/mutations/login';
-export {gqlNode_USER_FINDALL} from '@features/users/services/graphql/list/queries/list';
-export {gqlNode_TAG_FINDALL} from '@features/tags/services/graphql/list/queries/list';
+export {gqlNode_USER_FETCH_LIST} from '@features/users/services/graphql/list/queries/fetchList';
+export {gqlNode_TAG_FETCH_LIST} from '@features/tags/services/graphql/list/queries/fetchList';

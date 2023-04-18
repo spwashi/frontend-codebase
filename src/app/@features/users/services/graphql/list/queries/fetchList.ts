@@ -1,6 +1,6 @@
 import {gql} from '@apollo/client';
 
-export const gqlNode_USER_FINDALL = gql`
+export const gqlNode_USER_FETCH_LIST = gql`
     query UserList {
         userList {
             id

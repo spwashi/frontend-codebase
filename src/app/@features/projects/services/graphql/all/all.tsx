@@ -4,12 +4,12 @@ import {selectPossibleProjectsLastFetched, selectProjectStateKey} from '../../re
 import {ACTION_RECEIVE_ALL_PROJECTS} from '../../redux/reducer';
 import {useFeatureQuery} from '@services/features/hooks/useFeatureQuery';
 import {getDomain} from '@widgets/form/features/fields/components/FieldFactory';
-import {gqlNode_PROJECT_FINDALL} from '@features/projects/services/graphql/list/queries/list';
+import {gqlNode_PROJECT_FETCH_LIST} from '@features/projects/services/graphql/list/queries/fetchList';
 
 
 export function ProjectListQuery() {
   const projectStateKey = useSelector(selectProjectStateKey);
-  const {data}          = useFeatureQuery(gqlNode_PROJECT_FINDALL, {domain: getDomain()}, projectStateKey);
+  const {data}          = useFeatureQuery(gqlNode_PROJECT_FETCH_LIST, {domain: getDomain()}, projectStateKey);
   const lastFetched     = useSelector(selectPossibleProjectsLastFetched)
   const dispatch        = useDispatch();
   useEffect(() => {
