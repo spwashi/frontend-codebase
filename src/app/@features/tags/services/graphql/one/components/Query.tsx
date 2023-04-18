@@ -3,7 +3,7 @@ import {gql, useQuery} from '@apollo/client';
 import React, {useContext, useEffect} from 'react';
 import {TagContext} from '../context/context';
 
-export const TAG_QUERY = gql`
+export const gqlQueryNode_TAG = gql`
     query OneTag($id: Int!) {
         tag(id: $id) {
             id
@@ -18,7 +18,7 @@ export function OneTagQuery({id}: ITagIdentifyingPartial) {
   const context  = useContext(TagContext) ?? ({} as any);
   const {setTag} = context;
 
-  const {data: query} = useQuery(TAG_QUERY, {variables: {id} as ITagIdentifyingPartial});
+  const {data: query} = useQuery(gqlQueryNode_TAG, {variables: {id} as ITagIdentifyingPartial});
   const {tag}         = query ?? {};
 
   useEffect(() => {

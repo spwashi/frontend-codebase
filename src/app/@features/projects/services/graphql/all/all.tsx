@@ -6,7 +6,7 @@ import {ACTION_RECEIVE_ALL_PROJECTS} from '../../redux/reducer';
 import {useFeatureQuery} from '@services/features/hooks/useFeatureQuery';
 import {getDomain} from '@widgets/form/features/fields/components/FieldFactory';
 
-export const PROJECT_LIST_QUERY = gql`
+export const gqlQueryNode_PROJECT_LIST = gql`
     query AllProjects($domain: String) {
         projectList(domain: $domain) {
             id
@@ -21,7 +21,7 @@ export const PROJECT_LIST_QUERY = gql`
 
 export function ProjectListQuery() {
   const projectStateKey = useSelector(selectProjectStateKey);
-  const {data}          = useFeatureQuery(PROJECT_LIST_QUERY, {domain: getDomain()}, projectStateKey);
+  const {data}          = useFeatureQuery(gqlQueryNode_PROJECT_LIST, {domain: getDomain()}, projectStateKey);
   const lastFetched     = useSelector(selectPossibleProjectsLastFetched)
   const dispatch        = useDispatch();
   useEffect(() => {

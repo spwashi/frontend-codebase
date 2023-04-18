@@ -3,7 +3,7 @@ import {gql, useQuery} from '@apollo/client';
 import React, {useContext, useEffect} from 'react';
 import {ProjectContext} from '../../../../context/context';
 
-export const PROJECT_QUERY = gql`
+export const gqlQueryNode_PROJECT = gql`
     query Project($id: Int!) {
         project(id: $id) {
             id
@@ -16,7 +16,7 @@ export const PROJECT_QUERY = gql`
 
 export function OneProjectQuery({id}: IProjectIdentifyingPartial) {
   const context       = useContext(ProjectContext);
-  const {data: query} = useQuery(PROJECT_QUERY, {variables: {id}});
+  const {data: query} = useQuery(gqlQueryNode_PROJECT, {variables: {id}});
   const {project}     = query ?? {};
   const {setProject}  = context;
 

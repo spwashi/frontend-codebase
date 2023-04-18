@@ -5,7 +5,7 @@ import {Log} from '@core/dev/components/Log';
 import {ACTION_DELETE_ONE_CONCEPT} from '../../../redux/reducer';
 import {DeleteConceptMutationInput} from '@junction/models/concept/behaviors/delete';
 
-export const DELETE_CONCEPT_MUTATION = gql`
+export const gqlMutationNode_DELETE_CONCEPT = gql`
     mutation DeleteConcept($id: String!) {
         deleteConcept (concept: {id: $id}) {
             id
@@ -15,7 +15,7 @@ export const DELETE_CONCEPT_MUTATION = gql`
 
 
 function useDeleteConceptMutation() {
-  return useMutation(DELETE_CONCEPT_MUTATION);
+  return useMutation(gqlMutationNode_DELETE_CONCEPT);
 }
 
 export function DeleteConceptButton({id}: DeleteConceptMutationInput['concept']) {

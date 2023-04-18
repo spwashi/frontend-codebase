@@ -21,7 +21,7 @@ function useDispatchGraphqlError(error: any) {
   }, [error]);
 }
 
-export const TAG_LIST_QUERY = gql`
+export const gqlQueryNode_TAG_LIST = gql`
     query TagList {
         tagList {
             id
@@ -33,7 +33,7 @@ export const TAG_LIST_QUERY = gql`
 
 export function TagListQuery() {
   const stateKey      = useSelector(selectTagStateKey);
-  const {data, error} = useFeatureQuery(TAG_LIST_QUERY, {}, stateKey);
+  const {data, error} = useFeatureQuery(gqlQueryNode_TAG_LIST, {}, stateKey);
   const lastFetched   = useSelector(selectPossibleTagsLastFetched)
   const dispatch      = useDispatch();
 

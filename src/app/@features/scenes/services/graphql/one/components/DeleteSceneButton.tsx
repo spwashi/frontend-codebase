@@ -4,7 +4,7 @@ import React, {useCallback} from 'react';
 import {Log} from '@core/dev/components/Log';
 import {ACTION_DELETE_ONE_SCENE} from '../../../redux/reducer';
 
-export const DELETE_SCENE_MUTATION = gql`
+export const gqlMutationNode_DELETE_SCENE = gql`
     mutation DeleteScene($id: Int) {
         deleteScene (scene: {id: $id}) {
             id
@@ -12,7 +12,7 @@ export const DELETE_SCENE_MUTATION = gql`
     }
 `
 function useDeleteSceneMutation() {
-  return useMutation(DELETE_SCENE_MUTATION);
+  return useMutation(gqlMutationNode_DELETE_SCENE);
 }
 export function DeleteSceneButton({id}: { id: number }) {
   const [deleteScene, {error}] = useDeleteSceneMutation();

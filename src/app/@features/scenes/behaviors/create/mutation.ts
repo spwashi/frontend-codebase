@@ -1,7 +1,7 @@
 // Define mutation
 import {gql, useMutation} from '@apollo/client';
 
-export const CREATE_SCENE_MUTATION = gql`
+export const gqlMutationNode_CREATE_SCENE = gql`
     mutation CreateScene($title: String!, $name: String!, $description: String) {
         createScene(scene: {title: $title, name: $name, description: $description}) {
             id
@@ -12,6 +12,6 @@ export const CREATE_SCENE_MUTATION = gql`
     }
 `;
 export function useCreateSceneMutation() {
-  const [send, response] = useMutation(CREATE_SCENE_MUTATION);
+  const [send, response] = useMutation(gqlMutationNode_CREATE_SCENE);
   return {send, response};
 }

@@ -5,7 +5,7 @@ import {EventContext} from '../context/context';
 import {useDispatch} from 'react-redux';
 import {ACTION_RECEIVE_ONE_EVENT} from '../../../redux/reducer';
 
-export const EVENT_QUERY = gql`
+export const gqlQueryNode_EVENT = gql`
     query OneEvent($id: Int!) {
         event(id: $id) {
             id
@@ -32,7 +32,7 @@ export const EVENT_QUERY = gql`
 export function OneEventQuery({id}: IEventIdentifyingPartial) {
   const context       = useContext(EventContext) ?? ({} as any);
   const {setEvent}    = context;
-  const {data: query} = useQuery(EVENT_QUERY, {variables: {id}});
+  const {data: query} = useQuery(gqlQueryNode_EVENT, {variables: {id}});
   const dispatch      = useDispatch();
   const {event}       = query ?? {};
 

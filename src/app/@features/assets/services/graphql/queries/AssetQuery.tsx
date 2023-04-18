@@ -2,7 +2,7 @@ import {gql, useQuery} from '@apollo/client';
 import {AssetContents} from '../../../behaviors/display/components/AssetContents';
 import React from 'react';
 
-export const ASSET_QUERY = gql`
+export const gqlQueryNode_ASSET = gql`
     query Asset($realname: String!) {
         asset( realname: $realname) {
             name
@@ -14,7 +14,7 @@ export const ASSET_QUERY = gql`
 `;
 
 export function AssetQuery({realname, username}: { realname: string, username?: string }) {
-  const {data: query = {}} = useQuery(ASSET_QUERY, {variables: {username, realname}});
+  const {data: query = {}} = useQuery(gqlQueryNode_ASSET, {variables: {username, realname}});
   if (!query.asset) return null;
   const {name, contentType} = query?.asset ?? {};
 

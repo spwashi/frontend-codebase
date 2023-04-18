@@ -11,7 +11,7 @@ function assetToOption(asset: IAsset): SelectOption<IAsset> {
   };
 }
 
-export const ASSET_LIST_QUERY = gql`
+export const gqlQueryNode_ASSET_LIST = gql`
     query AllFiles($user: UserReferenceInput) {
         assetList(user: $user) {
             name
@@ -21,7 +21,7 @@ export const ASSET_LIST_QUERY = gql`
 `;
 
 export function AssetSelect({formKey, username}: { formKey?: string, username: string }) {
-  const {data: query = {}} = useQuery(ASSET_LIST_QUERY, {variables: {user: {username}}});
+  const {data: query = {}} = useQuery(gqlQueryNode_ASSET_LIST, {variables: {user: {username}}});
   const result             = useMemo(() => query.assetList ? query.assetList.map(assetToOption) : [], [query]);
 
   return (

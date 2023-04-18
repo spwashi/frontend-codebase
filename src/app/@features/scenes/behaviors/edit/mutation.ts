@@ -1,7 +1,7 @@
 // Define mutation
 import {gql, useMutation} from '@apollo/client';
 
-export const EDIT_SCENE_MUTATION = gql`
+export const gqlMutationNode_EDIT_SCENE = gql`
     mutation EditScene($scene: EditSceneInput, $user: UserReferenceInput) {
         editScene(scene: $scene, user: $user) {
             id
@@ -12,6 +12,6 @@ export const EDIT_SCENE_MUTATION = gql`
     }
 `;
 export function useEditSceneMutation() {
-  const [send, response] = useMutation(EDIT_SCENE_MUTATION);
+  const [send, response] = useMutation(gqlMutationNode_EDIT_SCENE);
   return {send, response};
 }

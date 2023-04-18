@@ -6,7 +6,7 @@ import {useFeatureQuery} from '@services/features/hooks/useFeatureQuery';
 import {gql} from '@apollo/client';
 import {IEvent_Complete} from '@junction/models/event/hybrids';
 
-export const EVENT_LIST_QUERY = gql`
+export const gqlQueryNode_EVENT_LIST = gql`
     query EventList {
         eventList {
             id
@@ -23,7 +23,7 @@ export const EVENT_LIST_QUERY = gql`
 
 export function EventListQuery() {
   const stateKey      = useSelector(selectEventStateKey);
-  const {data: query} = useFeatureQuery<{ eventList: IEvent_Complete[] }>(EVENT_LIST_QUERY, {}, stateKey);
+  const {data: query} = useFeatureQuery<{ eventList: IEvent_Complete[] }>(gqlQueryNode_EVENT_LIST, {}, stateKey);
   const lastFetched   = useSelector(selectPossibleEventsLastFetched);
   const dispatch      = useDispatch();
   useEffect(() => {

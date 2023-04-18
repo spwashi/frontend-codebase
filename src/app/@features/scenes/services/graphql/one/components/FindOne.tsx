@@ -5,7 +5,7 @@ import {SceneContext} from '../context/context';
 import {useDispatch} from 'react-redux';
 import {ACTION_RECEIVE_ONE_SCENE} from '../../../redux/reducer';
 
-export const SCENE_QUERY = gql`
+export const gqlQueryNode_SCENE = gql`
     query Scene($id: String!) {
         scene(id: $id) {
             id
@@ -19,7 +19,7 @@ export const SCENE_QUERY = gql`
 export function OneSceneQuery({id}: ISceneIdentifyingPartial) {
   const context       = useContext(SceneContext) ?? ({} as any);
   const {setScene}    = context;
-  const {data: query} = useQuery(SCENE_QUERY, {variables: {id}});
+  const {data: query} = useQuery(gqlQueryNode_SCENE, {variables: {id}});
   const dispatch      = useDispatch();
   const {scene}       = query ?? {};
   useEffect(() => {

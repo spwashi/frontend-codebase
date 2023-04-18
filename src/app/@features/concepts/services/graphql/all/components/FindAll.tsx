@@ -6,7 +6,7 @@ import {useFeatureQuery} from '@services/features/hooks/useFeatureQuery';
 import {gql} from '@apollo/client';
 import {IConcept_Complete} from '@junction/models/concept/hybrids';
 
-export const CONCEPT_LIST_QUERY = gql`
+export const gqlQueryNode_CONCEPT_LIST = gql`
     query AllConcepts {
         conceptList {
             id
@@ -21,7 +21,7 @@ export const CONCEPT_LIST_QUERY = gql`
 export function ConceptListQuery() {
   const stateKey = useSelector(selectConceptStateKey);
 
-  const {data: query} = useFeatureQuery<{ conceptList: IConcept_Complete[] }>(CONCEPT_LIST_QUERY, {}, stateKey);
+  const {data: query} = useFeatureQuery<{ conceptList: IConcept_Complete[] }>(gqlQueryNode_CONCEPT_LIST, {}, stateKey);
   const lastFetched   = useSelector(selectPossibleConceptsLastFetched);
   const dispatch      = useDispatch();
 

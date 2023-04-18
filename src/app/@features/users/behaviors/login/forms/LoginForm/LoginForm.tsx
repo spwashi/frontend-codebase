@@ -4,7 +4,7 @@ import {useMutationFormSubmitCallback} from '@services/graphql/hooks/useMutation
 import {GraphqlMutationResponse} from '@services/graphql/components/api/GraphqlMutationResponse';
 import {useDispatch, useSelector} from 'react-redux';
 import {ACTION_RECEIVE_LOGIN, selectLoggedInUserName} from '../../redux/reducer';
-import {LOGIN_MUTATION, selectLoginInput} from '../../selectors';
+import {gqlMutationNode_LOGIN, selectLoginInput} from '../../selectors';
 import {FormWidget} from '@widgets/form/FormWidget';
 import {IUser} from '@junction/models/user/models';
 import {Feature} from '@services/features/item/components/Feature';
@@ -31,7 +31,7 @@ function LoginReceivedEffect({username, user, jwt}: { username: string, user: IU
 }
 
 function ActiveForm() {
-  const [send, response]    = useMutation(LOGIN_MUTATION);
+  const [send, response]    = useMutation(gqlMutationNode_LOGIN);
   const onsubmit            = useMutationFormSubmitCallback(send, selectLoginInput);
   const resp                  = response?.data?.logIn ?? {};
   const {username, jwt, user} = resp;

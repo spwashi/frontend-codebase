@@ -9,7 +9,7 @@ import {selectLoggedInUser} from '@features/users/behaviors/login/redux/reducer'
 import {useSelector} from 'react-redux';
 import {Log} from '@core/dev/components/Log';
 
-export const DELETE_TAG_MUTATION = gql`
+export const gqlMutationNode_DELETE_TAG = gql`
     mutation DeleteTag($user:UserReferenceInput!, $tag: DeleteTagInput!) {
         deleteTag(tag: $tag, user: $user) {
             title
@@ -22,7 +22,7 @@ export const DELETE_TAG_MUTATION = gql`
 function DeleteTag() {
   const tag              = useActiveTag();
   const user             = useSelector(selectLoggedInUser)
-  const [send, response] = useMutation(DELETE_TAG_MUTATION);
+  const [send, response] = useMutation(gqlMutationNode_DELETE_TAG);
 
   if (!tag || !user) return null;
   return (

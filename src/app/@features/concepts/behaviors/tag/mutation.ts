@@ -1,7 +1,7 @@
 // Define mutation
 import {gql, useMutation} from '@apollo/client';
 
-export const TAG_CONCEPT_MUTATION = gql`
+export const gqlMutationNode_TAG_CONCEPT = gql`
     mutation TagConcept($concept: ConceptReferenceInput, $user: UserReferenceInput, $tags: [TagReferenceInput]) {
         tagConcept(concept: $concept, user: $user, tags: $tags) {
             id
@@ -9,6 +9,6 @@ export const TAG_CONCEPT_MUTATION = gql`
     }
 `;
 export function useTagMutation() {
-  const [send, response] = useMutation(TAG_CONCEPT_MUTATION);
+  const [send, response] = useMutation(gqlMutationNode_TAG_CONCEPT);
   return {send, response};
 }

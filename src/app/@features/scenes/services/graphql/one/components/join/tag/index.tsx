@@ -3,7 +3,7 @@ import {ITag} from '@junction/models/tag/models';
 import {IScene} from '@junction/models/scene/models';
 import React from 'react';
 
-export const UNTAG_SCENE_MUTATION = gql`
+export const gqlMutationNode_UNTAG_SCENE = gql`
     mutation UntagScene($scene: SceneReferenceInput!, $tags: [TagReferenceInput], $user: UserReferenceInput) {
         untagScene(scene: $scene, tags: $tags, user: $user) {
             scene {
@@ -16,7 +16,7 @@ export const UNTAG_SCENE_MUTATION = gql`
     }
 `;
 function useDeleteSceneTagMutation() {
-  const [deleteTag] = useMutation(UNTAG_SCENE_MUTATION)
+  const [deleteTag] = useMutation(gqlMutationNode_UNTAG_SCENE)
   return deleteTag;
 }
 export function SceneTag({scene, tag}: { tag: ITag, scene: IScene }) {

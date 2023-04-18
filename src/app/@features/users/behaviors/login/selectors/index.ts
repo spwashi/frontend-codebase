@@ -1,6 +1,6 @@
 import {gql} from '@apollo/client';
 
-export export const LOGIN_MUTATION = gql`
+export export const gqlMutationNode_LOGIN = gql`
     mutation LogIn($user: UserLoginInput,$project: ProjectReferenceInput, $password: PasswordReferenceInput) {
         logIn(user: $user, project: $project, password: $password) {
             jwt

@@ -11,7 +11,7 @@ import {FeatureRequirement} from '@services/features/list/components/FeatureRequ
 import {form__userSignup} from '@features/users/behaviors/signup/config';
 import {featureId__projectDisplay, featureId__userSignup, featureId__userSignupForm} from '../../../../../../@/featureIds';
 
-export const SIGNUP_MUTATION = gql`
+export const gqlMutationNode_SIGNUP = gql`
     mutation SignUp($user: CreateUserInput!, $password: CreatePasswordInput!, $project: ProjectReferenceInput) {
         signUp(user: $user, password: $password, project: $project) {
             user {
@@ -34,7 +34,7 @@ function selectMutationInput(data: any) {
 
 
 function ActiveForm() {
-  const [send, response] = useMutation(SIGNUP_MUTATION);
+  const [send, response] = useMutation(gqlMutationNode_SIGNUP);
   const onsubmit         = useMutationFormSubmitCallback(send, selectMutationInput);
   return (
     <React.Fragment>

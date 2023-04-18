@@ -3,7 +3,7 @@ import {ITag} from '@junction/models/tag/models';
 import {IConcept} from '@junction/models/concept/models';
 import React from 'react';
 
-export const UNTAG_CONCEPT_MUTATION = gql`
+export const gqlMutationNode_UNTAG_CONCEPT = gql`
     mutation DeleteConceptTag($concept: ConceptReferenceInput!, $user: UserReferenceInput, $tags: [TagReferenceInput]) {
         untagConcept(concept: $concept, user: $user, tags: $tags) {
             id
@@ -18,7 +18,7 @@ export const UNTAG_CONCEPT_MUTATION = gql`
 `;
 
 function useDeleteConceptTagMutation() {
-  const [deleteTag] = useMutation(UNTAG_CONCEPT_MUTATION)
+  const [deleteTag] = useMutation(gqlMutationNode_UNTAG_CONCEPT)
   return deleteTag;
 }
 export function ConceptTag({concept, tag}: { tag: ITag, concept: IConcept }) {
