@@ -18,3 +18,5 @@ export function Scene({id}: ISceneIdentifyingPartial) {
     </SceneContextProvider>
   )
 }
+export {useDeleteSceneTagMutation} from '@features/scenes/services/graphql/one/mutations';
+export {gqlMutationNode_UNTAG_SCENE} from '@features/scenes/services/graphql/one/mutations';

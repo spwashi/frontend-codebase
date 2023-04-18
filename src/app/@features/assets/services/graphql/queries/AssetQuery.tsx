@@ -1,17 +1,7 @@
-import {gql, useQuery} from '@apollo/client';
+import {useQuery} from '@apollo/client';
 import {AssetContents} from '../../../behaviors/display/components/AssetContents';
 import React from 'react';
-
-export const gqlQueryNode_ASSET = gql`
-    query Asset($realname: String!) {
-        asset( realname: $realname) {
-            name
-            realname
-            contentType
-            uri
-        }
-    }
-`;
+import {gqlQueryNode_ASSET} from '@features/assets/services/graphql/queries/one/query';
 
 export function AssetQuery({realname, username}: { realname: string, username?: string }) {
   const {data: query = {}} = useQuery(gqlQueryNode_ASSET, {variables: {username, realname}});

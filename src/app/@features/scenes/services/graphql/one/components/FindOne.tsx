@@ -1,20 +1,10 @@
 import {IScene, ISceneIdentifyingPartial} from '@junction/models/scene/models';
-import {gql, useQuery} from '@apollo/client';
+import {useQuery} from '@apollo/client';
 import React, {useContext, useEffect} from 'react';
 import {SceneContext} from '../context/context';
 import {useDispatch} from 'react-redux';
 import {ACTION_RECEIVE_ONE_SCENE} from '../../../redux/reducer';
-
-export const gqlQueryNode_SCENE = gql`
-    query Scene($id: String!) {
-        scene(id: $id) {
-            id
-            name
-            title
-            description
-        }
-    }
-`;
+import {gqlQueryNode_SCENE} from '@features/scenes/services/graphql/queries/one/query';
 
 export function OneSceneQuery({id}: ISceneIdentifyingPartial) {
   const context       = useContext(SceneContext) ?? ({} as any);

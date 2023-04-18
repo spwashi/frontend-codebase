@@ -4,19 +4,11 @@ import {TagContextProvider} from './context/Provider';
 import {TagDisplay} from './components/Display';
 import {OneTagQuery} from './components/Query';
 import {useActiveTag} from './context/hooks/useActiveOne';
-import {gql, useMutation} from '@apollo/client';
+import {useMutation} from '@apollo/client';
 import {selectLoggedInUser} from '@features/users/behaviors/login/redux/reducer';
 import {useSelector} from 'react-redux';
 import {Log} from '@core/dev/components/Log';
-
-export const gqlMutationNode_DELETE_TAG = gql`
-    mutation DeleteTag($user:UserReferenceInput!, $tag: DeleteTagInput!) {
-        deleteTag(tag: $tag, user: $user) {
-            title
-            domain
-        }
-    }
-`;
+import {gqlMutationNode_DELETE_TAG} from '@features/tags/services/graphql/one/mutations';
 
 
 function DeleteTag() {

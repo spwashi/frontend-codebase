@@ -1,5 +1,5 @@
 import React from 'react';
-import {gql, useMutation} from '@apollo/client';
+import {useMutation} from '@apollo/client';
 import {GraphqlMutationResponse} from '@services/graphql/components/api/GraphqlMutationResponse';
 import {useMutationFormSubmitCallback} from '@services/graphql/hooks/useMutationFormSubmitCallback';
 import {useSelector} from 'react-redux';
@@ -10,27 +10,8 @@ import {FormWidget} from '@widgets/form/FormWidget';
 import {FeatureRequirement} from '@services/features/list/components/FeatureRequirement';
 import {form__userSignup} from '@features/users/behaviors/signup/config';
 import {featureId__projectDisplay, featureId__userSignup, featureId__userSignupForm} from '../../../../../../@/featureIds';
-
-export const gqlMutationNode_SIGNUP = gql`
-    mutation SignUp($user: CreateUserInput!, $password: CreatePasswordInput!, $project: ProjectReferenceInput) {
-        signUp(user: $user, password: $password, project: $project) {
-            user {
-                id
-                name
-                username
-            }
-        }
-    }
-`;
-
-function selectMutationInput(data: any) {
-  const {name, username, password, passwordConfirm, project} = data ?? {};
-  return {
-    user:     {name, username},
-    password: {password, passwordConfirm},
-    project:  {id: project.id},
-  };
-}
+import {gqlMutationNode_SIGNUP} from '@features/users/behaviors/signup/mutations';
+import {selectMutationInput} from '@features/users/behaviors/signup/selectors';
 
 
 function ActiveForm() {

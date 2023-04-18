@@ -1,33 +1,10 @@
 import {IEvent, IEventIdentifyingPartial} from '@junction/models/event/models';
-import {gql, useQuery} from '@apollo/client';
+import {useQuery} from '@apollo/client';
 import React, {useContext, useEffect} from 'react';
 import {EventContext} from '../context/context';
 import {useDispatch} from 'react-redux';
 import {ACTION_RECEIVE_ONE_EVENT} from '../../../redux/reducer';
-
-export const gqlQueryNode_EVENT = gql`
-    query OneEvent($id: Int!) {
-        event(id: $id) {
-            id
-            title
-            start
-            startDate
-            end
-            endDate
-            description
-            eventTags {
-                event {
-                    id
-                }
-                tag {
-                    id
-                    title
-                    domain
-                }
-            }
-        }
-    }
-`;
+import {gqlQueryNode_EVENT} from '@features/events/services/graphql/queries/one/query';
 
 export function OneEventQuery({id}: IEventIdentifyingPartial) {
   const context       = useContext(EventContext) ?? ({} as any);

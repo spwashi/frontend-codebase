@@ -1,22 +1,10 @@
-import {gql} from '@apollo/client';
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {selectPossibleProjectsLastFetched, selectProjectStateKey} from '../../redux/selectors';
 import {ACTION_RECEIVE_ALL_PROJECTS} from '../../redux/reducer';
 import {useFeatureQuery} from '@services/features/hooks/useFeatureQuery';
 import {getDomain} from '@widgets/form/features/fields/components/FieldFactory';
-
-export const gqlQueryNode_PROJECT_LIST = gql`
-    query AllProjects($domain: String) {
-        projectList(domain: $domain) {
-            id
-            title
-            name
-            description
-            domain
-        }
-    }
-`;
+import {gqlQueryNode_PROJECT_LIST} from '@features/projects/services/graphql/queries/list/query';
 
 
 export function ProjectListQuery() {

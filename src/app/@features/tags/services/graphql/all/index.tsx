@@ -1,10 +1,10 @@
-import {gql} from '@apollo/client';
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {selectPossibleTagsLastFetched, selectTagStateKey} from '../../redux/selectors';
 import {ACTION_RECEIVE_ALL_TAGS} from '../../redux/reducer';
 import {ACTION_GRAPHQL, ACTION_NOGRAPHQL} from '@services/redux/reducer';
 import {useFeatureQuery} from '@services/features/hooks/useFeatureQuery';
+import {gqlQueryNode_TAG_LIST} from '@features/tags/services/graphql/queries/list/query';
 
 
 function useDispatchGraphqlError(error: any) {
@@ -20,16 +20,6 @@ function useDispatchGraphqlError(error: any) {
     }
   }, [error]);
 }
-
-export const gqlQueryNode_TAG_LIST = gql`
-    query TagList {
-        tagList {
-            id
-            title
-            domain
-        }
-    }
-`;
 
 export function TagListQuery() {
   const stateKey      = useSelector(selectTagStateKey);

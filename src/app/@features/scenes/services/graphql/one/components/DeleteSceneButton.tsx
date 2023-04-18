@@ -1,19 +1,9 @@
-import {gql, useMutation} from '@apollo/client';
 import {useDispatch} from 'react-redux';
 import React, {useCallback} from 'react';
 import {Log} from '@core/dev/components/Log';
 import {ACTION_DELETE_ONE_SCENE} from '../../../redux/reducer';
+import {useDeleteSceneMutation} from '@features/scenes/services/graphql/one/mutations';
 
-export const gqlMutationNode_DELETE_SCENE = gql`
-    mutation DeleteScene($id: Int) {
-        deleteScene (scene: {id: $id}) {
-            id
-        }
-    }
-`
-function useDeleteSceneMutation() {
-  return useMutation(gqlMutationNode_DELETE_SCENE);
-}
 export function DeleteSceneButton({id}: { id: number }) {
   const [deleteScene, {error}] = useDeleteSceneMutation();
   const dispatch               = useDispatch();

@@ -1,22 +1,10 @@
-import {gql, useMutation} from '@apollo/client';
 import {useDispatch} from 'react-redux';
 import React, {useCallback} from 'react';
 import {Log} from '@core/dev/components/Log';
 import {ACTION_DELETE_ONE_CONCEPT} from '../../../redux/reducer';
 import {DeleteConceptMutationInput} from '@junction/models/concept/behaviors/delete';
+import {useDeleteConceptMutation} from '@features/concepts/services/graphql/one/mutations';
 
-export const gqlMutationNode_DELETE_CONCEPT = gql`
-    mutation DeleteConcept($id: String!) {
-        deleteConcept (concept: {id: $id}) {
-            id
-        }
-    }
-`
-
-
-function useDeleteConceptMutation() {
-  return useMutation(gqlMutationNode_DELETE_CONCEPT);
-}
 
 export function DeleteConceptButton({id}: DeleteConceptMutationInput['concept']) {
   const [deleteConcept, {error}] = useDeleteConceptMutation();

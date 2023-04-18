@@ -1,26 +1,8 @@
-import {gql, useMutation} from '@apollo/client';
 import {ITag} from '@junction/models/tag/models';
 import {IConcept} from '@junction/models/concept/models';
 import React from 'react';
+import {useDeleteConceptTagMutation} from '@features/concepts/services/graphql/one';
 
-export const gqlMutationNode_UNTAG_CONCEPT = gql`
-    mutation DeleteConceptTag($concept: ConceptReferenceInput!, $user: UserReferenceInput, $tags: [TagReferenceInput]) {
-        untagConcept(concept: $concept, user: $user, tags: $tags) {
-            id
-            concept {
-                id
-            }
-            tag {
-                id
-            }
-        }
-    }
-`;
-
-function useDeleteConceptTagMutation() {
-  const [deleteTag] = useMutation(gqlMutationNode_UNTAG_CONCEPT)
-  return deleteTag;
-}
 export function ConceptTag({concept, tag}: { tag: ITag, concept: IConcept }) {
   const {title, domain} = tag;
   const deleteTag       = useDeleteConceptTagMutation();

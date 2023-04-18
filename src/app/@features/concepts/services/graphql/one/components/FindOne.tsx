@@ -1,26 +1,10 @@
 import {IConcept, IConceptIdentifyingPartial} from '@junction/models/concept/models';
-import {gql, useQuery} from '@apollo/client';
+import {useQuery} from '@apollo/client';
 import React, {useContext, useEffect} from 'react';
 import {ConceptContext} from '../context/context';
 import {useDispatch} from 'react-redux';
 import {ACTION_RECEIVE_ONE_CONCEPT} from '../../../redux/reducer';
-
-export const gqlQueryNode_CONCEPT = gql`
-    query Concept($id: String!) {
-        concept(id: $id) {
-            id
-            title
-            src
-            contentType
-            conceptTags {
-                tag {
-                    title
-                    domain
-                }
-            }
-        }
-    }
-`;
+import {gqlQueryNode_CONCEPT} from '@features/concepts/services/graphql/queries/one/query';
 
 export function OneConceptQuery({id}: IConceptIdentifyingPartial) {
   const context       = useContext(ConceptContext) ?? ({} as any);

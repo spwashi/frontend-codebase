@@ -1,37 +1,36 @@
 // Mutations  t
-import {gqlMutationNode_CREATE_CONCEPT} from '@features/concepts/behaviors/create/mutation';
-import {gqlMutationNode_CREATE_EVENT} from '@features/events/behaviors/create/mutation';
-import {gqlMutationNode_CREATE_PROJECT} from '@features/projects/behaviors/create/mutations';
-import {gqlMutationNode_CREATE_SCENE} from '@features/scenes/behaviors/create/mutation';
-import {gqlMutationNode_CREATE_TAG} from '@features/tags/behaviors/create/mutations';
-import {gqlMutationNode_DELETE_CONCEPT} from '@features/concepts/services/graphql/one/components/DeleteButton';
-import {gqlMutationNode_DELETE_EVENT} from '@features/events/services/graphql/one/components/DeleteButton';
-import {gqlMutationNode_DELETE_SCENE} from '@features/scenes/services/graphql/one/components/DeleteSceneButton';
-import {gqlMutationNode_DELETE_TAG} from '@features/tags/services/graphql/one';
-import {gqlMutationNode_EDIT_CONCEPT} from '@features/concepts/behaviors/edit/mutation';
-import {gqlMutationNode_EDIT_EVENT} from '@features/events/behaviors/edit/mutation';
-import {gqlMutationNode_EDIT_SCENE} from '@features/scenes/behaviors/edit/mutation';
-import {gqlMutationNode_LOGIN} from '@features/users/behaviors/login/selectors';
-import {gqlMutationNode_SIGNUP} from '@features/users/behaviors/signup/forms/SignupForm/SignupForm';
-import {gqlMutationNode_TAG_CONCEPT} from '@features/concepts/behaviors/tag/mutation';
-import {gqlMutationNode_TAG_EVENT} from '@features/events/behaviors/tag/mutation';
-import {gqlMutationNode_UNTAG_CONCEPT} from '@features/concepts/services/graphql/one/components/join/tag';
-import {gqlMutationNode_UNTAG_EVENT} from '@features/events/services/graphql/one/components/join/tag';
-import {gqlMutationNode_UNTAG_SCENE} from '@features/scenes/services/graphql/one/components/join/tag';
+import {gqlMutationNode_CREATE_CONCEPT} from                                  '@features/concepts/behaviors/create/mutations';
+import {gqlMutationNode_CREATE_EVENT} from                                    '@features/events/behaviors/create/mutations';
+import {gqlMutationNode_CREATE_PROJECT} from                                  '@features/projects/behaviors/create/mutations';
+import {gqlMutationNode_CREATE_SCENE} from                                    '@features/scenes/behaviors/create/mutations';
+import {gqlMutationNode_CREATE_TAG} from                                      '@features/tags/behaviors/create/mutations';
+import {gqlMutationNode_EDIT_CONCEPT} from                                    '@features/concepts/behaviors/edit/mutations';
+import {gqlMutationNode_EDIT_EVENT} from                                      '@features/events/behaviors/edit/mutations';
+import {gqlMutationNode_EDIT_SCENE} from                                      '@features/scenes/behaviors/edit/mutations';
+import {gqlMutationNode_TAG_CONCEPT} from                                     '@features/concepts/behaviors/tag/mutations';
+import {gqlMutationNode_TAG_EVENT} from                                       '@features/events/behaviors/tag/mutations';
+import {gqlMutationNode_DELETE_CONCEPT, gqlMutationNode_UNTAG_CONCEPT} from   '@features/concepts/services/graphql/one/mutations';
+import {gqlMutationNode_DELETE_EVENT, gqlMutationNode_UNTAG_EVENT} from       '@features/events/services/graphql/one/mutations';
+import {gqlMutationNode_DELETE_SCENE, gqlMutationNode_UNTAG_SCENE} from       '@features/scenes/services/graphql/one/mutations';
+import {gqlMutationNode_DELETE_TAG} from                                      '@features/tags/services/graphql/one/mutations';
+import {gqlMutationNode_LOGIN} from                                           '@features/users/behaviors/login/mutations';
+import {gqlMutationNode_SIGNUP} from                                          '@features/users/behaviors/signup/mutations';
+
 // Queries
-import {gqlQueryNode_ASSET_LIST} from '@features/assets/components/form/Select';
-import {gqlQueryNode_ASSET} from '@features/assets/services/graphql/queries/AssetQuery';
-import {gqlQueryNode_CONCEPT_LIST} from '@features/concepts/services/graphql/all/components/FindAll';
-import {gqlQueryNode_CONCEPT} from '@features/concepts/services/graphql/one/components/FindOne';
-import {gqlQueryNode_EVENT_LIST} from '@features/events/services/graphql/all/components/FindAll';
-import {gqlQueryNode_EVENT} from '@features/events/services/graphql/one/components/FindOne';
-import {gqlQueryNode_PROJECT_LIST} from '@features/projects/services/graphql/all/all';
-import {gqlQueryNode_PROJECT} from '@features/projects/services/graphql/one/components/Query';
-import {gqlQueryNode_SCENE_LIST} from '@features/scenes/services/graphql/all/components/FindAll';
-import {gqlQueryNode_SCENE} from '@features/scenes/services/graphql/one/components/FindOne';
-import {gqlQueryNode_TAG_LIST} from '@features/tags/services/graphql/all';
-import {gqlQueryNode_TAG} from '@features/tags/services/graphql/one/components/Query';
-import {gqlQueryNode_USER_LIST} from '@features/users/services/graphql/all';
+import {gqlQueryNode_ASSET_LIST} from      '@features/assets/services/graphql/queries/list/query';
+import {gqlQueryNode_ASSET} from           '@features/assets/services/graphql/queries/one/query';
+import {gqlQueryNode_CONCEPT_LIST} from    '@features/concepts/services/graphql/queries/list/query';
+import {gqlQueryNode_CONCEPT} from         '@features/concepts/services/graphql/queries/one/query';
+import {gqlQueryNode_EVENT_LIST} from      '@features/events/services/graphql/queries/list/query';
+import {gqlQueryNode_EVENT} from           '@features/events/services/graphql/queries/one/query';
+import {gqlQueryNode_PROJECT_LIST} from    '@features/projects/services/graphql/queries/list/query';
+import {gqlQueryNode_PROJECT} from         '@features/projects/services/graphql/queries/one/query';
+import {gqlQueryNode_SCENE_LIST} from      '@features/scenes/services/graphql/queries/list/query';
+import {gqlQueryNode_SCENE} from           '@features/scenes/services/graphql/queries/one/query';
+import {gqlQueryNode_TAG_LIST} from        '@features/tags/services/graphql/queries/list/query';
+import {gqlQueryNode_TAG} from             '@features/tags/services/graphql/queries/one/query';
+import {gqlQueryNode_USER_LIST} from       '@features/users/services/graphql/queries/list/query';
+
 
 export const allQueries =
                {

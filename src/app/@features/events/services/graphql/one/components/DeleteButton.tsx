@@ -1,19 +1,9 @@
-import {gql, useMutation} from '@apollo/client';
 import {useDispatch} from 'react-redux';
 import React, {useCallback} from 'react';
 import {Log} from '@core/dev/components/Log';
 import {ACTION_DELETE_ONE_EVENT} from '../../../redux/reducer';
+import {useDeleteEventMutation} from '@features/events/services/graphql/one/mutations';
 
-export const gqlMutationNode_DELETE_EVENT = gql`
-    mutation DeleteEvent($id: Int) {
-        deleteEvent (event: {id: $id}) {
-            id
-        }
-    }
-`;
-function useDeleteEventMutation() {
-  return useMutation(gqlMutationNode_DELETE_EVENT);
-}
 export function DeleteEventButton({id}: { id: number }) {
   const [deleteEvent, {error}] = useDeleteEventMutation();
   const dispatch               = useDispatch();
