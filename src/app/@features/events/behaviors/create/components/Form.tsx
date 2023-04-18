@@ -2,7 +2,7 @@ import React from 'react';
 import {GraphqlMutationResponse} from '@services/graphql/components/api/GraphqlMutationResponse';
 import {useMutationFormSubmitCallback} from '@services/graphql/hooks/useMutationFormSubmitCallback';
 import {form__createEvent} from '../config';
-import {useCreateEventMutation} from '../mutations';
+import {useCreateEventMutation} from '../../../services/graphql/one/mutations/create';
 import {FormWidget} from '@widgets/form/FormWidget';
 import {Feature} from '@services/features/item/components/Feature';
 import {selectCreateEventInput} from '@features/events/behaviors/create/selectors';

@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {GraphqlMutationResponse} from '@services/graphql/components/api/GraphqlMutationResponse';
 import {useMutationFormSubmitCallback} from '@services/graphql/hooks/useMutationFormSubmitCallback';
 import {selectCreateProjectInput} from '../selectors';
-import {useCreateProjectMutation} from '../mutations';
+import {useCreateProjectMutation} from '../../../services/graphql/one/mutations/create';
 import {useDispatch} from 'react-redux';
 import {ACTION_PROJECT_CREATED} from '../../../services/redux/reducer';
 import {FormWidget} from '@widgets/form/FormWidget';

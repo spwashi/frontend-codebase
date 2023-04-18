@@ -10,7 +10,7 @@ import {FormWidget} from '@widgets/form/FormWidget';
 import {FeatureRequirement} from '@services/features/list/components/FeatureRequirement';
 import {form__userSignup} from '@features/users/behaviors/signup/config';
 import {featureId__projectDisplay, featureId__userSignup, featureId__userSignupForm} from '../../../../../../@/featureIds';
-import {gqlMutationNode_SIGNUP} from '@features/users/behaviors/signup/mutations';
+import {gqlMutationNode_SIGNUP} from '@features/users/services/graphql/one/mutations/signup';
 import {selectMutationInput} from '@features/users/behaviors/signup/selectors';
 
 

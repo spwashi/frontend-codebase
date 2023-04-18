@@ -3,7 +3,8 @@ import React, {useCallback} from 'react';
 import {Log} from '@core/dev/components/Log';
 import {ACTION_DELETE_ONE_CONCEPT} from '../../../redux/reducer';
 import {DeleteConceptMutationInput} from '@junction/models/concept/behaviors/delete';
-import {useDeleteConceptMutation} from '@features/concepts/services/graphql/one/mutations';
+
+import {useDeleteConceptMutation} from '@features/concepts/services/graphql/one/mutations/delete';
 
 
 export function DeleteConceptButton({id}: DeleteConceptMutationInput['concept']) {

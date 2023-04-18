@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {GraphqlMutationResponse} from '@services/graphql/components/api/GraphqlMutationResponse';
 import {useMutationFormSubmitCallback} from '@services/graphql/hooks/useMutationFormSubmitCallback';
 import {form__editScene} from '../config';
-import {useEditSceneMutation} from '../mutations';
+import {useEditSceneMutation} from '../../../services/graphql/one/mutations/edit';
 import {FormWidget} from '@widgets/form/FormWidget';
 import {formClassNames} from '@widgets/form/styles/classNames';
 import {Feature} from '@services/features/item/components/Feature';

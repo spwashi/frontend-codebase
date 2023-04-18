@@ -13,7 +13,7 @@ import {setJwt} from '@services/jwt/helpers/setJwt';
 import {FeatureRequirement} from '@services/features/list/components/FeatureRequirement';
 import {form__login} from '@features/users/behaviors/login/config';
 import {featureId__userLogin, featureId__userLoginForm} from '../../../../../../@/featureIds';
-import {gqlMutationNode_LOGIN} from '@features/users/behaviors/login/mutations';
+import {gqlMutationNode_LOGIN} from '@features/users/services/graphql/one/mutations/login';
 
 
 function LoginReceivedEffect({username, user, jwt}: { username: string, user: IUser, jwt: string }) {

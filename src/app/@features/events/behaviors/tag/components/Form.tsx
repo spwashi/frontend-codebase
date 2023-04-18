@@ -1,4 +1,4 @@
-import {useTagMutation} from '../mutations';
+import {useTagMutation} from '../../../services/graphql/one/mutations/tag';
 import {useMutationFormSubmitCallback} from '@services/graphql/hooks/useMutationFormSubmitCallback';
 import {form__tagEvent} from '../config';
 import {GraphqlMutationResponse} from '@services/graphql/components/api/GraphqlMutationResponse';

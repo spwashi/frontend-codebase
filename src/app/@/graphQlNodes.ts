@@ -1,20 +1,23 @@
 // Mutations  t
-import {gqlMutationNode_CREATE_CONCEPT} from                                  '@features/concepts/behaviors/create/mutations';
-import {gqlMutationNode_CREATE_EVENT} from                                    '@features/events/behaviors/create/mutations';
-import {gqlMutationNode_CREATE_PROJECT} from                                  '@features/projects/behaviors/create/mutations';
-import {gqlMutationNode_CREATE_SCENE} from                                    '@features/scenes/behaviors/create/mutations';
-import {gqlMutationNode_CREATE_TAG} from                                      '@features/tags/behaviors/create/mutations';
-import {gqlMutationNode_EDIT_CONCEPT} from                                    '@features/concepts/behaviors/edit/mutations';
-import {gqlMutationNode_EDIT_EVENT} from                                      '@features/events/behaviors/edit/mutations';
-import {gqlMutationNode_EDIT_SCENE} from                                      '@features/scenes/behaviors/edit/mutations';
-import {gqlMutationNode_TAG_CONCEPT} from                                     '@features/concepts/behaviors/tag/mutations';
-import {gqlMutationNode_TAG_EVENT} from                                       '@features/events/behaviors/tag/mutations';
-import {gqlMutationNode_DELETE_CONCEPT, gqlMutationNode_UNTAG_CONCEPT} from   '@features/concepts/services/graphql/one/mutations';
-import {gqlMutationNode_DELETE_EVENT, gqlMutationNode_UNTAG_EVENT} from       '@features/events/services/graphql/one/mutations';
-import {gqlMutationNode_DELETE_SCENE, gqlMutationNode_UNTAG_SCENE} from       '@features/scenes/services/graphql/one/mutations';
-import {gqlMutationNode_DELETE_TAG} from                                      '@features/tags/services/graphql/one/mutations';
-import {gqlMutationNode_LOGIN} from                                           '@features/users/behaviors/login/mutations';
-import {gqlMutationNode_SIGNUP} from                                          '@features/users/behaviors/signup/mutations';
+import {gqlMutationNode_CREATE_CONCEPT} from '@features/concepts/services/graphql/one/mutations/create';
+import {gqlMutationNode_CREATE_EVENT} from '@features/events/services/graphql/one/mutations/create';
+import {gqlMutationNode_CREATE_PROJECT} from '@features/projects/services/graphql/one/mutations/create';
+import {gqlMutationNode_CREATE_SCENE} from '@features/scenes/services/graphql/one/mutations/create';
+import {gqlMutationNode_CREATE_TAG} from '@features/tags/services/graphql/one/mutations/create';
+import {gqlMutationNode_DELETE_CONCEPT} from '@features/concepts/services/graphql/one/mutations/delete';
+import {gqlMutationNode_DELETE_EVENT} from '@features/events/services/graphql/one/mutations/delete';
+import {gqlMutationNode_DELETE_SCENE} from '@features/scenes/services/graphql/one/mutations/delete';
+import {gqlMutationNode_DELETE_TAG} from '@features/tags/services/graphql/one/mutations/delete';
+import {gqlMutationNode_EDIT_CONCEPT} from '@features/concepts/services/graphql/one/mutations/edit';
+import {gqlMutationNode_EDIT_EVENT} from '@features/events/services/graphql/one/mutations/edit';
+import {gqlMutationNode_EDIT_SCENE} from '@features/scenes/services/graphql/one/mutations/edit';
+import {gqlMutationNode_LOGIN} from '@features/users/services/graphql/one/mutations/login';
+import {gqlMutationNode_SIGNUP} from '@features/users/services/graphql/one/mutations/signup';
+import {gqlMutationNode_TAG_CONCEPT} from '@features/concepts/services/graphql/one/mutations/tag';
+import {gqlMutationNode_TAG_EVENT} from '@features/events/services/graphql/one/mutations/tag';
+import {gqlMutationNode_UNTAG_CONCEPT} from '@features/concepts/services/graphql/one/mutations/untag';
+import {gqlMutationNode_UNTAG_EVENT} from '@features/events/services/graphql/one/mutations/untag';
+import {gqlMutationNode_UNTAG_SCENE} from '@features/scenes/services/graphql/one/mutations/untag';
 
 // Queries
 import {gqlQueryNode_ASSET_LIST} from      '@features/assets/services/graphql/queries/list/query';

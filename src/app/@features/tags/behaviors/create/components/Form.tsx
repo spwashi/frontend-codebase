@@ -2,7 +2,7 @@ import React from 'react';
 import {GraphqlMutationResponse} from '@services/graphql/components/api/GraphqlMutationResponse';
 import {useMutationFormSubmitCallback} from '@services/graphql/hooks/useMutationFormSubmitCallback';
 import {selectCreateTagInput} from '../selectors';
-import {useCreateTagMutation} from '../mutations';
+import {useCreateTagMutation} from '../../../services/graphql/one/mutations/create';
 import {FormWidget} from '@widgets/form/FormWidget';
 import {ACTION_TAG_CREATED} from '../../../services/redux/reducer';
 import {useDispatch} from 'react-redux';
