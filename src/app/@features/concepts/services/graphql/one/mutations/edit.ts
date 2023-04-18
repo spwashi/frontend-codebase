@@ -1,7 +1,7 @@
 // Define mutation
 import {gql, useMutation} from '@apollo/client';
 
-export const gqlMutationNode_EDIT_CONCEPT = gql`
+export const gqlNode_CONCEPT_EDIT = gql`
     mutation EditConcept($concept: EditConceptInput, $user: UserReferenceInput) {
         editConcept(concept: $concept, user: $user) {
             id
@@ -13,6 +13,6 @@ export const gqlMutationNode_EDIT_CONCEPT = gql`
     }
 `;
 export function useEditConceptMutation() {
-  const [send, response] = useMutation(gqlMutationNode_EDIT_CONCEPT);
+  const [send, response] = useMutation(gqlNode_CONCEPT_EDIT);
   return {send, response};
 }

@@ -4,11 +4,11 @@ import {selectPossibleScenesLastFetched, selectSceneStateKey} from '../../../red
 import {ACTION_RECEIVE_ALL_SCENES} from '../../../redux/reducer';
 import {useFeatureQuery} from '@services/features/hooks/useFeatureQuery';
 import {IScene} from '@junction/models/scene/models';
-import {gqlQueryNode_SCENE_LIST} from '@features/scenes/services/graphql/queries/list/query';
+import {gqlNode_SCENE_FINDALL} from '@features/scenes/services/graphql/queries/list/list';
 
 export function SceneListQuery() {
   const stateKey      = useSelector(selectSceneStateKey);
-  const {data: query} = useFeatureQuery<{ sceneList: IScene[] }>(gqlQueryNode_SCENE_LIST, {}, stateKey);
+  const {data: query} = useFeatureQuery<{ sceneList: IScene[] }>(gqlNode_SCENE_FINDALL, {}, stateKey);
   const lastFetched   = useSelector(selectPossibleScenesLastFetched);
   const dispatch      = useDispatch();
   useEffect(() => {

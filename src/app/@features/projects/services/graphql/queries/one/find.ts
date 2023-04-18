@@ -1,6 +1,6 @@
 import {gql} from '@apollo/client';
 
-export const gqlQueryNode_PROJECT = gql`
+export const gqlNode_PROJECT_FINDONE = gql`
     query Project($id: Int!) {
         project(id: $id) {
             id

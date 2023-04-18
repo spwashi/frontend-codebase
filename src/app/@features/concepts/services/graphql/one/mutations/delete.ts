@@ -1,6 +1,6 @@
 import {gql, useMutation} from '@apollo/client';
 
-export const gqlMutationNode_DELETE_CONCEPT = gql`
+export const gqlNode_CONCEPT_DELETE = gql`
     mutation DeleteConcept($id: String!) {
         deleteConcept (concept: {id: $id}) {
             id
@@ -8,5 +8,5 @@ export const gqlMutationNode_DELETE_CONCEPT = gql`
     }
 `
 export function useDeleteConceptMutation() {
-  return useMutation(gqlMutationNode_DELETE_CONCEPT);
+  return useMutation(gqlNode_CONCEPT_DELETE);
 }

@@ -1,6 +1,6 @@
 import {gql, useMutation} from '@apollo/client';
 
-export const gqlMutationNode_UNTAG_CONCEPT = gql`
+export const gqlNode_CONCEPT_UNTAG = gql`
     mutation DeleteConceptTag($concept: ConceptReferenceInput!, $user: UserReferenceInput, $tags: [TagReferenceInput]) {
         untagConcept(concept: $concept, user: $user, tags: $tags) {
             id
@@ -14,6 +14,6 @@ export const gqlMutationNode_UNTAG_CONCEPT = gql`
     }
 `;
 export function useDeleteConceptTagMutation() {
-    const [deleteTag] = useMutation(gqlMutationNode_UNTAG_CONCEPT)
+    const [deleteTag] = useMutation(gqlNode_CONCEPT_UNTAG)
     return deleteTag;
 }

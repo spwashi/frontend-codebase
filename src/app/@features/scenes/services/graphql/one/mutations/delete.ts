@@ -1,6 +1,6 @@
 import {gql, useMutation} from '@apollo/client';
 
-export const gqlMutationNode_DELETE_SCENE = gql`
+export const gqlNode_SCENE_DELETE = gql`
     mutation DeleteScene($id: Int) {
         deleteScene (scene: {id: $id}) {
             id
@@ -8,5 +8,5 @@ export const gqlMutationNode_DELETE_SCENE = gql`
     }
 `
 export function useDeleteSceneMutation() {
-  return useMutation(gqlMutationNode_DELETE_SCENE);
+  return useMutation(gqlNode_SCENE_DELETE);
 }

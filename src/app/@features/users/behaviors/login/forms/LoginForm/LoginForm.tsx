@@ -13,7 +13,7 @@ import {setJwt} from '@services/jwt/helpers/setJwt';
 import {FeatureRequirement} from '@services/features/list/components/FeatureRequirement';
 import {form__login} from '@features/users/behaviors/login/config';
 import {featureId__userLogin, featureId__userLoginForm} from '../../../../../../@/featureIds';
-import {gqlMutationNode_LOGIN} from '@features/users/services/graphql/one/mutations/login';
+import {gqlNode_USER_LOGIN} from '@features/users/services/graphql/one/mutations/login';
 
 
 function LoginReceivedEffect({username, user, jwt}: { username: string, user: IUser, jwt: string }) {
@@ -32,7 +32,7 @@ function LoginReceivedEffect({username, user, jwt}: { username: string, user: IU
 }
 
 function ActiveForm() {
-  const [send, response]    = useMutation(gqlMutationNode_LOGIN);
+  const [send, response]    = useMutation(gqlNode_USER_LOGIN);
   const onsubmit            = useMutationFormSubmitCallback(send, selectLoginInput);
   const resp                  = response?.data?.logIn ?? {};
   const {username, jwt, user} = resp;

@@ -1,6 +1,6 @@
 import {gql, useMutation} from '@apollo/client';
 
-export const gqlMutationNode_DELETE_EVENT = gql`
+export const gqlNode_EVENT_DELETE = gql`
     mutation DeleteEvent($id: Int) {
         deleteEvent (event: {id: $id}) {
             id
@@ -8,5 +8,5 @@ export const gqlMutationNode_DELETE_EVENT = gql`
     }
 `;
 export function useDeleteEventMutation() {
-  return useMutation(gqlMutationNode_DELETE_EVENT);
+  return useMutation(gqlNode_EVENT_DELETE);
 }

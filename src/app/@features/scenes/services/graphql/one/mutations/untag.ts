@@ -1,6 +1,6 @@
 import {gql, useMutation} from '@apollo/client';
 
-export const gqlMutationNode_UNTAG_SCENE = gql`
+export const gqlNode_SCENE_UNTAG = gql`
     mutation UntagScene($scene: SceneReferenceInput!, $tags: [TagReferenceInput], $user: UserReferenceInput) {
         untagScene(scene: $scene, tags: $tags, user: $user) {
             scene {
@@ -13,6 +13,6 @@ export const gqlMutationNode_UNTAG_SCENE = gql`
     }
 `;
 export function useDeleteSceneTagMutation() {
-    const [deleteTag] = useMutation(gqlMutationNode_UNTAG_SCENE)
+    const [deleteTag] = useMutation(gqlNode_SCENE_UNTAG)
     return deleteTag;
 }

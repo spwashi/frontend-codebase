@@ -20,4 +20,4 @@ export function Event({id}: IEventIdentifyingPartial) {
 }
 
 export {useDeleteEventTagMutation} from '@features/events/services/graphql/one/mutations/untag';
-export {gqlMutationNode_UNTAG_EVENT} from '@features/events/services/graphql/one/mutations/untag';
+export {gqlNode_EVENT_UNTAG} from '@features/events/services/graphql/one/mutations/untag';

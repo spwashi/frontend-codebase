@@ -1,6 +1,6 @@
 import {gql} from '@apollo/client';
 
-export const gqlQueryNode_CONCEPT = gql`
+export const gqlNode_CONCEPT_FINDONE = gql`
     query Concept($id: String!) {
         concept(id: $id) {
             id

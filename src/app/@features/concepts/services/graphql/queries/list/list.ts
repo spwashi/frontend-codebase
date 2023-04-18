@@ -1,6 +1,6 @@
 import {gql} from '@apollo/client';
 
-export const gqlQueryNode_CONCEPT_LIST = gql`
+export const gqlNode_CONCEPT_FINDALL = gql`
     query AllConcepts {
         conceptList {
             id

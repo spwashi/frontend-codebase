@@ -8,13 +8,13 @@ import {useMutation} from '@apollo/client';
 import {selectLoggedInUser} from '@features/users/behaviors/login/redux/reducer';
 import {useSelector} from 'react-redux';
 import {Log} from '@core/dev/components/Log';
-import {gqlMutationNode_DELETE_TAG} from '@features/tags/services/graphql/one/mutations/delete';
+import {gqlNode_TAG_DELETE} from '@features/tags/services/graphql/one/mutations/delete';
 
 
 function DeleteTag() {
   const tag              = useActiveTag();
   const user             = useSelector(selectLoggedInUser)
-  const [send, response] = useMutation(gqlMutationNode_DELETE_TAG);
+  const [send, response] = useMutation(gqlNode_TAG_DELETE);
 
   if (!tag || !user) return null;
   return (

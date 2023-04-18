@@ -2,11 +2,11 @@ import {IProject, IProjectIdentifyingPartial} from '@junction/models/project/mod
 import {useQuery} from '@apollo/client';
 import React, {useContext, useEffect} from 'react';
 import {ProjectContext} from '../../../../context/context';
-import {gqlQueryNode_PROJECT} from '@features/projects/services/graphql/queries/one/query';
+import {gqlNode_PROJECT_FINDONE} from '@features/projects/services/graphql/queries/one/find';
 
 export function OneProjectQuery({id}: IProjectIdentifyingPartial) {
   const context       = useContext(ProjectContext);
-  const {data: query} = useQuery(gqlQueryNode_PROJECT, {variables: {id}});
+  const {data: query} = useQuery(gqlNode_PROJECT_FINDONE, {variables: {id}});
   const {project}     = query ?? {};
   const {setProject}  = context;
 

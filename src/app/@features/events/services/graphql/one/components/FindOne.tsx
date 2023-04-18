@@ -4,12 +4,12 @@ import React, {useContext, useEffect} from 'react';
 import {EventContext} from '../context/context';
 import {useDispatch} from 'react-redux';
 import {ACTION_RECEIVE_ONE_EVENT} from '../../../redux/reducer';
-import {gqlQueryNode_EVENT} from '@features/events/services/graphql/queries/one/query';
+import {gqlNode_EVENT_FINDONE} from '@features/events/services/graphql/queries/one/find';
 
 export function OneEventQuery({id}: IEventIdentifyingPartial) {
   const context       = useContext(EventContext) ?? ({} as any);
   const {setEvent}    = context;
-  const {data: query} = useQuery(gqlQueryNode_EVENT, {variables: {id}});
+  const {data: query} = useQuery(gqlNode_EVENT_FINDONE, {variables: {id}});
   const dispatch      = useDispatch();
   const {event}       = query ?? {};
 

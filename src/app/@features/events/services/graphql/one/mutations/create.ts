@@ -1,7 +1,7 @@
 // Define mutation
 import {gql, useMutation} from '@apollo/client';
 
-export const gqlMutationNode_CREATE_EVENT = gql`
+export const gqlNode_EVENT_CREATE = gql`
     mutation CreateEvent($event: CreateEventInput, $user: UserReferenceInput) {
         createEvent(event: $event, user:$user) {
             id
@@ -12,6 +12,6 @@ export const gqlMutationNode_CREATE_EVENT = gql`
     }
 `;
 export function useCreateEventMutation() {
-  const [send, response] = useMutation(gqlMutationNode_CREATE_EVENT);
+  const [send, response] = useMutation(gqlNode_EVENT_CREATE);
   return {send, response};
 }

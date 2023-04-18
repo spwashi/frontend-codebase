@@ -1,6 +1,6 @@
 import {gql} from '@apollo/client';
 
-export const gqlQueryNode_EVENT = gql`
+export const gqlNode_EVENT_FINDONE = gql`
     query OneEvent($id: Int!) {
         event(id: $id) {
             id

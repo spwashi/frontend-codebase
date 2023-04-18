@@ -10,12 +10,12 @@ import {FormWidget} from '@widgets/form/FormWidget';
 import {FeatureRequirement} from '@services/features/list/components/FeatureRequirement';
 import {form__userSignup} from '@features/users/behaviors/signup/config';
 import {featureId__projectDisplay, featureId__userSignup, featureId__userSignupForm} from '../../../../../../@/featureIds';
-import {gqlMutationNode_SIGNUP} from '@features/users/services/graphql/one/mutations/signup';
+import {gqlNode_USER_SIGNUP} from '@features/users/services/graphql/one/mutations/signup';
 import {selectMutationInput} from '@features/users/behaviors/signup/selectors';
 
 
 function ActiveForm() {
-  const [send, response] = useMutation(gqlMutationNode_SIGNUP);
+  const [send, response] = useMutation(gqlNode_USER_SIGNUP);
   const onsubmit         = useMutationFormSubmitCallback(send, selectMutationInput);
   return (
     <React.Fragment>

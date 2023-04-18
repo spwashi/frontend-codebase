@@ -1,7 +1,7 @@
 // Define mutation
 import {gql, useMutation} from '@apollo/client';
 
-export const gqlMutationNode_CREATE_PROJECT = gql`
+export const gqlNode_PROJECT_CREATE = gql`
     mutation CreateProject($project:CreateProjectInput!) {
         createProject(project: $project) {
             id
@@ -12,7 +12,7 @@ export const gqlMutationNode_CREATE_PROJECT = gql`
     }
 `;
 export function useCreateProjectMutation() {
-  const [send, response] = useMutation(gqlMutationNode_CREATE_PROJECT);
+  const [send, response] = useMutation(gqlNode_PROJECT_CREATE);
 
   return {send, response};
 }

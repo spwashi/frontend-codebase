@@ -4,12 +4,12 @@ import React, {useContext, useEffect} from 'react';
 import {SceneContext} from '../context/context';
 import {useDispatch} from 'react-redux';
 import {ACTION_RECEIVE_ONE_SCENE} from '../../../redux/reducer';
-import {gqlQueryNode_SCENE} from '@features/scenes/services/graphql/queries/one/query';
+import {gqlNode_SCENE_FINDONE} from '@features/scenes/services/graphql/queries/one/find';
 
 export function OneSceneQuery({id}: ISceneIdentifyingPartial) {
   const context       = useContext(SceneContext) ?? ({} as any);
   const {setScene}    = context;
-  const {data: query} = useQuery(gqlQueryNode_SCENE, {variables: {id}});
+  const {data: query} = useQuery(gqlNode_SCENE_FINDONE, {variables: {id}});
   const dispatch      = useDispatch();
   const {scene}       = query ?? {};
   useEffect(() => {

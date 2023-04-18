@@ -19,4 +19,4 @@ export function Concept({id}: IConceptIdentifyingPartial) {
   )
 }
 export {useDeleteConceptTagMutation} from '@features/concepts/services/graphql/one/mutations/untag';
-export {gqlMutationNode_UNTAG_CONCEPT} from '@features/concepts/services/graphql/one/mutations/untag';
+export {gqlNode_CONCEPT_UNTAG} from '@features/concepts/services/graphql/one/mutations/untag';

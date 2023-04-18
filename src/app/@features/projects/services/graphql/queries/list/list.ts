@@ -1,6 +1,6 @@
 import {gql} from '@apollo/client';
 
-export const gqlQueryNode_PROJECT_LIST = gql`
+export const gqlNode_PROJECT_FINDALL = gql`
     query AllProjects($domain: String) {
         projectList(domain: $domain) {
             id

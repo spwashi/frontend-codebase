@@ -1,6 +1,6 @@
 import {gql} from '@apollo/client';
 
-export const gqlQueryNode_ASSET_LIST = gql`
+export const gqlNode_ASSET_FINDALL = gql`
     query AllFiles($user: UserReferenceInput) {
         assetList(user: $user) {
             name

@@ -1,6 +1,6 @@
 import {gql} from '@apollo/client';
 
-export const gqlQueryNode_TAG = gql`
+export const gqlNode_TAG_FINDONE = gql`
     query OneTag($id: Int!) {
         tag(id: $id) {
             id

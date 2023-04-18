@@ -1,72 +1,76 @@
-// Mutations  t
-import {gqlMutationNode_CREATE_CONCEPT} from '@features/concepts/services/graphql/one/mutations/create';
-import {gqlMutationNode_CREATE_EVENT} from '@features/events/services/graphql/one/mutations/create';
-import {gqlMutationNode_CREATE_PROJECT} from '@features/projects/services/graphql/one/mutations/create';
-import {gqlMutationNode_CREATE_SCENE} from '@features/scenes/services/graphql/one/mutations/create';
-import {gqlMutationNode_CREATE_TAG} from '@features/tags/services/graphql/one/mutations/create';
-import {gqlMutationNode_DELETE_CONCEPT} from '@features/concepts/services/graphql/one/mutations/delete';
-import {gqlMutationNode_DELETE_EVENT} from '@features/events/services/graphql/one/mutations/delete';
-import {gqlMutationNode_DELETE_SCENE} from '@features/scenes/services/graphql/one/mutations/delete';
-import {gqlMutationNode_DELETE_TAG} from '@features/tags/services/graphql/one/mutations/delete';
-import {gqlMutationNode_EDIT_CONCEPT} from '@features/concepts/services/graphql/one/mutations/edit';
-import {gqlMutationNode_EDIT_EVENT} from '@features/events/services/graphql/one/mutations/edit';
-import {gqlMutationNode_EDIT_SCENE} from '@features/scenes/services/graphql/one/mutations/edit';
-import {gqlMutationNode_LOGIN} from '@features/users/services/graphql/one/mutations/login';
-import {gqlMutationNode_SIGNUP} from '@features/users/services/graphql/one/mutations/signup';
-import {gqlMutationNode_TAG_CONCEPT} from '@features/concepts/services/graphql/one/mutations/tag';
-import {gqlMutationNode_TAG_EVENT} from '@features/events/services/graphql/one/mutations/tag';
-import {gqlMutationNode_UNTAG_CONCEPT} from '@features/concepts/services/graphql/one/mutations/untag';
-import {gqlMutationNode_UNTAG_EVENT} from '@features/events/services/graphql/one/mutations/untag';
-import {gqlMutationNode_UNTAG_SCENE} from '@features/scenes/services/graphql/one/mutations/untag';
-
-// Queries
-import {gqlQueryNode_ASSET_LIST} from      '@features/assets/services/graphql/queries/list/query';
-import {gqlQueryNode_ASSET} from           '@features/assets/services/graphql/queries/one/query';
-import {gqlQueryNode_CONCEPT_LIST} from    '@features/concepts/services/graphql/queries/list/query';
-import {gqlQueryNode_CONCEPT} from         '@features/concepts/services/graphql/queries/one/query';
-import {gqlQueryNode_EVENT_LIST} from      '@features/events/services/graphql/queries/list/query';
-import {gqlQueryNode_EVENT} from           '@features/events/services/graphql/queries/one/query';
-import {gqlQueryNode_PROJECT_LIST} from    '@features/projects/services/graphql/queries/list/query';
-import {gqlQueryNode_PROJECT} from         '@features/projects/services/graphql/queries/one/query';
-import {gqlQueryNode_SCENE_LIST} from      '@features/scenes/services/graphql/queries/list/query';
-import {gqlQueryNode_SCENE} from           '@features/scenes/services/graphql/queries/one/query';
-import {gqlQueryNode_TAG_LIST} from        '@features/tags/services/graphql/queries/list/query';
-import {gqlQueryNode_TAG} from             '@features/tags/services/graphql/queries/one/query';
-import {gqlQueryNode_USER_LIST} from       '@features/users/services/graphql/queries/list/query';
+// Assets
+import {gqlNode_ASSET_FINDALL} from '@features/assets/services/graphql/queries/list/list';
+import {gqlNode_ASSET_FINDONE} from '@features/assets/services/graphql/queries/one/find';
+// Concepts
+import {gqlNode_CONCEPT_CREATE} from '@features/concepts/services/graphql/one/mutations/create';
+import {gqlNode_CONCEPT_DELETE} from '@features/concepts/services/graphql/one/mutations/delete';
+import {gqlNode_CONCEPT_EDIT} from '@features/concepts/services/graphql/one/mutations/edit';
+import {gqlNode_CONCEPT_FINDALL} from '@features/concepts/services/graphql/queries/list/list';
+import {gqlNode_CONCEPT_FINDONE} from '@features/concepts/services/graphql/queries/one/find';
+import {gqlNode_CONCEPT_TAG} from '@features/concepts/services/graphql/one/mutations/tag';
+import {gqlNode_CONCEPT_UNTAG} from '@features/concepts/services/graphql/one/mutations/untag';
+// Events
+import {gqlNode_EVENT_CREATE} from '@features/events/services/graphql/one/mutations/create';
+import {gqlNode_EVENT_DELETE} from '@features/events/services/graphql/one/mutations/delete';
+import {gqlNode_EVENT_EDIT} from '@features/events/services/graphql/one/mutations/edit';
+import {gqlNode_EVENT_FINDALL} from '@features/events/services/graphql/queries/list/list';
+import {gqlNode_EVENT_FINDONE} from '@features/events/services/graphql/queries/one/find';
+import {gqlNode_EVENT_TAG} from '@features/events/services/graphql/one/mutations/tag';
+import {gqlNode_EVENT_UNTAG} from '@features/events/services/graphql/one/mutations/untag';
+// Projects
+import {gqlNode_PROJECT_CREATE} from '@features/projects/services/graphql/one/mutations/create';
+import {gqlNode_PROJECT_FINDALL} from '@features/projects/services/graphql/queries/list/list';
+import {gqlNode_PROJECT_FINDONE} from '@features/projects/services/graphql/queries/one/find';
+// Scenes
+import {gqlNode_SCENE_CREATE} from '@features/scenes/services/graphql/one/mutations/create';
+import {gqlNode_SCENE_DELETE} from '@features/scenes/services/graphql/one/mutations/delete';
+import {gqlNode_SCENE_EDIT} from '@features/scenes/services/graphql/one/mutations/edit';
+import {gqlNode_SCENE_FINDALL} from '@features/scenes/services/graphql/queries/list/list';
+import {gqlNode_SCENE_FINDONE} from '@features/scenes/services/graphql/queries/one/find';
+import {gqlNode_SCENE_UNTAG} from '@features/scenes/services/graphql/one/mutations/untag';
+// Tags
+import {gqlNode_TAG_CREATE} from '@features/tags/services/graphql/one/mutations/create';
+import {gqlNode_TAG_DELETE} from '@features/tags/services/graphql/one/mutations/delete';
+import {gqlNode_TAG_FINDALL} from '@features/tags/services/graphql/queries/list/list';
+import {gqlNode_TAG_FINDONE} from '@features/tags/services/graphql/queries/one/find';
+// Users
+import {gqlNode_USER_FINDALL} from '@features/users/services/graphql/queries/list/list';
+import {gqlNode_USER_LOGIN} from '@features/users/services/graphql/one/mutations/login';
+import {gqlNode_USER_SIGNUP} from '@features/users/services/graphql/one/mutations/signup';
 
 
 export const allQueries =
                {
-                 gqlQueryNode_PROJECT_LIST,
-                 gqlQueryNode_ASSET,
-                 gqlMutationNode_DELETE_CONCEPT,
-                 gqlMutationNode_DELETE_EVENT,
-                 gqlMutationNode_DELETE_SCENE,
-                 gqlQueryNode_CONCEPT_LIST,
-                 gqlQueryNode_EVENT_LIST,
-                 gqlQueryNode_SCENE_LIST,
-                 gqlQueryNode_CONCEPT,
-                 gqlQueryNode_EVENT,
-                 gqlQueryNode_SCENE,
-                 gqlMutationNode_LOGIN,
-                 gqlMutationNode_UNTAG_CONCEPT,
-                 gqlMutationNode_UNTAG_EVENT,
-                 gqlMutationNode_UNTAG_SCENE,
-                 gqlQueryNode_TAG_LIST,
-                 gqlMutationNode_DELETE_TAG,
-                 gqlQueryNode_USER_LIST,
-                 gqlMutationNode_CREATE_CONCEPT,
-                 gqlMutationNode_EDIT_CONCEPT,
-                 gqlMutationNode_TAG_CONCEPT,
-                 gqlMutationNode_CREATE_EVENT,
-                 gqlMutationNode_EDIT_EVENT,
-                 gqlMutationNode_TAG_EVENT,
-                 gqlMutationNode_CREATE_SCENE,
-                 gqlMutationNode_EDIT_SCENE,
-                 gqlMutationNode_CREATE_PROJECT,
-                 gqlMutationNode_CREATE_TAG,
-                 gqlQueryNode_PROJECT,
-                 gqlQueryNode_TAG,
-                 gqlQueryNode_ASSET_LIST,
-                 gqlMutationNode_SIGNUP,
+                 gqlNode_PROJECT_FINDALL,
+                 gqlNode_ASSET_FINDONE,
+                 gqlNode_CONCEPT_DELETE,
+                 gqlNode_EVENT_DELETE,
+                 gqlNode_SCENE_DELETE,
+                 gqlNode_CONCEPT_FINDALL,
+                 gqlNode_EVENT_FINDALL,
+                 gqlNode_SCENE_FINDALL,
+                 gqlNode_CONCEPT_FINDONE,
+                 gqlNode_EVENT_FINDONE,
+                 gqlNode_SCENE_FINDONE,
+                 gqlNode_LOGIN:  gqlNode_USER_LOGIN,
+                 gqlNode_CONCEPT_UNTAG,
+                 gqlNode_EVENT_UNTAG,
+                 gqlNode_SCENE_UNTAG,
+                 gqlNode_TAG_FINDALL,
+                 gqlNode_TAG_DELETE,
+                 gqlNode_USER_FINDALL,
+                 gqlNode_CONCEPT_CREATE,
+                 gqlNode_CONCEPT_EDIT,
+                 gqlNode_CONCEPT_TAG,
+                 gqlNode_EVENT_CREATE,
+                 gqlNode_EVENT_EDIT,
+                 gqlNode_EVENT_TAG,
+                 gqlNode_SCENE_CREATE,
+                 gqlNode_SCENE_EDIT,
+                 gqlNode_PROJECT_CREATE,
+                 gqlNode_TAG_CREATE,
+                 gqlNode_PROJECT_FINDONE,
+                 gqlNode_TAG_FINDONE,
+                 gqlNode_ASSET_FINDALL,
+                 gqlNode_SIGNUP: gqlNode_USER_SIGNUP,
                }

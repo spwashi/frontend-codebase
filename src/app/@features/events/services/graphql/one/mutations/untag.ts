@@ -1,6 +1,6 @@
 import {gql, useMutation} from '@apollo/client';
 
-export const gqlMutationNode_UNTAG_EVENT = gql`
+export const gqlNode_EVENT_UNTAG = gql`
     mutation DeleteEventTag($event: EventReferenceInput!, $user: UserReferenceInput, $tags: [TagReferenceInput]) {
         untagEvent(event: $event, user: $user, tags: $tags) {
             tag {
@@ -13,6 +13,6 @@ export const gqlMutationNode_UNTAG_EVENT = gql`
     }
 `;
 export function useDeleteEventTagMutation() {
-  const [deleteTag] = useMutation(gqlMutationNode_UNTAG_EVENT)
+  const [deleteTag] = useMutation(gqlNode_EVENT_UNTAG)
   return deleteTag;
 }
