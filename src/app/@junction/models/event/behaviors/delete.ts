@@ -1,9 +1,9 @@
-import {IEvent} from '../models';
+import { IEvent } from "../models";
 
 export type DeleteEventInput = {
-  id: IEvent['id'];
-}
+  id: IEvent["id"];
+};
 
 export type DeleteEventMutationInput = {
-  event: DeleteEventInput
+  event: DeleteEventInput;
 };

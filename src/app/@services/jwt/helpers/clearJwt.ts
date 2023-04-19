@@ -1,3 +1,5 @@
-import Cookie from 'js-cookie';
+import Cookie from "js-cookie";
 
-export function clearJwt() { Cookie.remove('jwt') }
+export function clearJwt() {
+  Cookie.remove("jwt");
+}

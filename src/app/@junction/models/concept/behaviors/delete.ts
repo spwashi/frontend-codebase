@@ -1,9 +1,9 @@
-import {IConcept} from '../models';
+import { IConcept } from "../models";
 
 export type DeleteConceptInput = {
-  id: IConcept['id'];
-}
+  id: IConcept["id"];
+};
 
 export type DeleteConceptMutationInput = {
-  concept: DeleteConceptInput
+  concept: DeleteConceptInput;
 };

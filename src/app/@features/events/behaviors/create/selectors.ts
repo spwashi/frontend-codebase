@@ -1,5 +1,5 @@
-import {IUser} from '@junction/models/user/models';
-import {CreateEventMutationInput} from '@junction/models/event/behaviors/create';
+import { IUser } from "@junction/models/user/models";
+import { CreateEventMutationInput } from "@junction/models/event/behaviors/create";
 
 export type CreateEventFormData = {
   username: string;
@@ -8,9 +8,11 @@ export type CreateEventFormData = {
   start: string;
   end: string;
   description: string;
-}
-export const selectCreateEventInput = (data: CreateEventFormData): CreateEventMutationInput => {
-  const {user, title, start, end, description} = data ?? {};
+};
+export const selectCreateEventInput = (
+  data: CreateEventFormData
+): CreateEventMutationInput => {
+  const { user, title, start, end, description } = data ?? {};
   return {
     event: {
       title,
@@ -18,6 +20,6 @@ export const selectCreateEventInput = (data: CreateEventFormData): CreateEventMu
       description,
       start,
     },
-    user:  {id: user.id},
+    user: { id: user.id },
   };
 };

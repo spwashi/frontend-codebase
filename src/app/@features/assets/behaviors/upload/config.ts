@@ -1,16 +1,12 @@
-import {IFormConfig} from '@widgets/form/types/IFormConfig';
-import {formId__assetUpload} from '../../../../@/formIds';
-import {maybeLoggedInUserInput} from '@features/users/data/config/inputs';
+import { IFormConfig } from "@widgets/form/types/IFormConfig";
+import { formId__assetUpload } from "../../../../@/formIds";
+import { maybeLoggedInUserInput } from "@features/users/data/config/inputs";
 
-import {tagsInput} from '@features/tags/data/config/inputs';
-import {assetInput} from '@features/assets/data/config/inputs';
+import { tagsInput } from "@features/tags/data/config/inputs";
+import { assetInput } from "@features/assets/data/config/inputs";
 
 export const form__uploadAsset: IFormConfig = {
-  title:  'Upload Asset',
+  title: "Upload Asset",
   formId: formId__assetUpload,
-  items:  [
-    maybeLoggedInUserInput,
-    assetInput,
-    tagsInput,
-  ],
+  items: [maybeLoggedInUserInput, assetInput, tagsInput],
 };

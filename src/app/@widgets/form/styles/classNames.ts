@@ -1,3 +1,3 @@
 export const formClassNames = {
-  formWrapper: 'form-wrapper',
-}
+  formWrapper: "form-wrapper",
+};

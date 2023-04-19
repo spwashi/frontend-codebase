@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 type INavLink = {
   href: string;
@@ -6,22 +6,20 @@ type INavLink = {
   children?: INavLink[];
 };
 
-function NavLink({link}: { link: INavLink }) {
+function NavLink({ link }: { link: INavLink }) {
   return (
     <li>
-      <a href={'/'}>{link.title}</a>
-      {
-        link.children
-        ? <Navigation items={link.children}/>
-        : null
-      }
+      <a href={"/"}>{link.title}</a>
+      {link.children ? <Navigation items={link.children} /> : null}
     </li>
   );
 }
-export function Navigation({items}: { items: INavLink[] }) {
+export function Navigation({ items }: { items: INavLink[] }) {
   return (
     <ul>
-      {items.map(link => <NavLink link={link} key={link.title}/>)}
+      {items.map((link) => (
+        <NavLink link={link} key={link.title} />
+      ))}
     </ul>
   );
 }

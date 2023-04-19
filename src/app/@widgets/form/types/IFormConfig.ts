@@ -1,9 +1,8 @@
-import {IFormItemConfig} from '../features/fields/types/fieldConfig';
+import { IFormItemConfig } from "../features/fields/types/fieldConfig";
 
-export type IFormConfig =
-  {
-    formId: `form--${string}`,
-    title: string,
-    items: IFormItemConfig[];
-    defaultValue?: { [k: string]: any }
-  }
+export type IFormConfig = {
+  formId: `form--${string}`;
+  title: string;
+  items: IFormItemConfig[];
+  defaultValue?: { [k: string]: any };
+};

@@ -1,19 +1,19 @@
-import {DocumentNode, useApolloClient, useQuery} from '@apollo/client';
-import {useChangeEffect} from '@core/hooks/useChangeEffect';
-import {useDispatch} from 'react-redux';
-import {useEffect} from 'react';
-import {ACTION_GRAPHQL, ACTION_NOGRAPHQL} from '../../redux/reducer';
+import { DocumentNode, useApolloClient, useQuery } from "@apollo/client";
+import { useChangeEffect } from "@core/hooks/useChangeEffect";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { ACTION_GRAPHQL, ACTION_NOGRAPHQL } from "../../redux/reducer";
 
 export function useDispatchGraphqlError(error: any) {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (/Failed to fetch/i.test(error?.message ?? '')) {
-      dispatch({type: ACTION_NOGRAPHQL})
+    if (/Failed to fetch/i.test(error?.message ?? "")) {
+      dispatch({ type: ACTION_NOGRAPHQL });
       return;
     }
     if (!error) {
-      dispatch({type: ACTION_GRAPHQL})
+      dispatch({ type: ACTION_GRAPHQL });
     }
   }, [error]);
 }
@@ -21,14 +21,14 @@ export function useDispatchGraphqlError(error: any) {
 export function useFeatureQuery<T = any>(
   node: DocumentNode,
   variables: any,
-  changeKey: any,
-): { data: T, error?: any } {
-  const {data = {}, error} = useQuery(node, {variables});
+  changeKey: any
+): { data: T; error?: any } {
+  const { data = {}, error } = useQuery(node, { variables });
   useDispatchGraphqlError(error);
 
-  const client = useApolloClient()
+  const client = useApolloClient();
   useChangeEffect(() => {
-    client.refetchQueries({include: [node]});
+    client.refetchQueries({ include: [node] });
   }, [changeKey, client]);
-  return {data: data, error};
+  return { data: data, error };
 }

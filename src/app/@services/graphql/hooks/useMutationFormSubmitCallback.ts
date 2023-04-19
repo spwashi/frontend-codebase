@@ -1,5 +1,5 @@
-import {MutationFunctionOptions, OperationVariables} from '@apollo/client';
-import {useCallback} from 'react';
+import { MutationFunctionOptions, OperationVariables } from "@apollo/client";
+import { useCallback } from "react";
 
 /**
  * Provides a callback that could be used to submit a form via ajax.
@@ -7,13 +7,18 @@ import {useCallback} from 'react';
  * @param send
  * @param selector
  */
-export function useMutationFormSubmitCallback<T extends OperationVariables | undefined = any>(
+export function useMutationFormSubmitCallback<
+  T extends OperationVariables | undefined = any
+>(
   send: (options?: MutationFunctionOptions) => any,
-  selector: (data: any) => T,
+  selector: (data: any) => T
 ) {
-  return useCallback(async ({data}: any) => {
-    const variables  = selector(data);
-    const parameters = {variables};
-    await send(parameters)
-  }, [send, selector]);
+  return useCallback(
+    async ({ data }: any) => {
+      const variables = selector(data);
+      const parameters = { variables };
+      await send(parameters);
+    },
+    [send, selector]
+  );
 }

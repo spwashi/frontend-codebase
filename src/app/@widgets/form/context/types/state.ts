@@ -1,14 +1,14 @@
-import {FormEvent} from 'react';
+import { FormEvent } from "react";
 
-export interface FormState<T= any> {
+export interface FormState<T = any> {
   id?: string;
 
   key: number;
   data: T;
   initialValue?: T;
-  lastReset: number | undefined,
-  submit: (e?: FormEvent) => void,
+  lastReset: number | undefined;
+  submit: (e?: FormEvent) => void;
 
-  dispatch?: (action: { type: string, payload: any }) => void;
-  changed: { [k: string]: boolean }
+  dispatch?: (action: { type: string; payload: any }) => void;
+  changed: { [k: string]: boolean };
 }

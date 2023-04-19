@@ -1,6 +1,6 @@
-import {IEvent, IEventTag} from '../models';
-import {ITag} from '../../tag/models';
-import {IUser} from '../../user/models';
+import { IEvent, IEventTag } from "../models";
+import { ITag } from "../../tag/models";
+import { IUser } from "../../user/models";
 
 export interface IEventTag_Complete extends IEventTag {
   event: IEvent;
@@ -9,5 +9,5 @@ export interface IEventTag_Complete extends IEventTag {
 
 export interface IEvent_Complete extends IEvent {
   user: IUser;
-  eventTags?: IEventTag_Complete[]
+  eventTags?: IEventTag_Complete[];
 }

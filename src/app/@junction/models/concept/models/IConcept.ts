@@ -1,5 +1,5 @@
 export interface IConceptIdentifyingPartial {
-  id: string
+  id: string;
 }
 
 type IConceptId = string;

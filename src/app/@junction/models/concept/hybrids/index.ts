@@ -1,6 +1,6 @@
-import {IConcept, IConceptTag} from '../models';
-import {ITag} from '../../tag/models';
-import {IUser} from '../../user/models';
+import { IConcept, IConceptTag } from "../models";
+import { ITag } from "../../tag/models";
+import { IUser } from "../../user/models";
 
 export interface IConceptTag_Complete extends IConceptTag {
   concept: IConcept;
@@ -9,5 +9,5 @@ export interface IConceptTag_Complete extends IConceptTag {
 
 export interface IConcept_Complete extends IConcept {
   user: IUser;
-  ConceptTag?: IConceptTag_Complete[]
+  ConceptTag?: IConceptTag_Complete[];
 }

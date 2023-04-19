@@ -1,2 +1,2 @@
-export * from './IProject'
-export * from './IProjectEnvironment'
+export * from "./IProject";
+export * from "./IProjectEnvironment";

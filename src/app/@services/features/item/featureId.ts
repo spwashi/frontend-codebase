@@ -1,11 +1,11 @@
-import {IAdminFeatureNames} from '@features/admin/features';
-import {IAssetFeatureNames} from '@features/assets/features';
-import {IConceptFeatureNames} from '@features/concepts/features';
-import {IEventFeatureNames} from '@features/events/features';
-import {IProjectFeatureNames} from '@features/projects/features';
-import {ISceneFeatureNames} from '@features/scenes/features';
-import {ITagFeatureNames} from '@features/tags/features';
-import {IUserFeatureNames} from '@features/users/features';
+import { IAdminFeatureNames } from "@features/admin/features";
+import { IAssetFeatureNames } from "@features/assets/features";
+import { IConceptFeatureNames } from "@features/concepts/features";
+import { IEventFeatureNames } from "@features/events/features";
+import { IProjectFeatureNames } from "@features/projects/features";
+import { ISceneFeatureNames } from "@features/scenes/features";
+import { ITagFeatureNames } from "@features/tags/features";
+import { IUserFeatureNames } from "@features/users/features";
 
 export type IPossibleFeatureName =
   | IAdminFeatureNames
@@ -17,6 +17,4 @@ export type IPossibleFeatureName =
   | ITagFeatureNames
   | IUserFeatureNames;
 
-export type IFeatureId =
-  `feature--${string}`
-  & IPossibleFeatureName;
+export type IFeatureId = `feature--${string}` & IPossibleFeatureName;

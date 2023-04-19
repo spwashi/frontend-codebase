@@ -1,6 +1,6 @@
-import {IUser} from '@junction/models/user/models';
-import {IFeatureState} from '@services/redux/types/state.types';
-import {SelectOption} from '@widgets/form/features/fields/components/input/select/SelectInput';
+import { IUser } from "@junction/models/user/models";
+import { IFeatureState } from "@services/redux/types/state.types";
+import { SelectOption } from "@widgets/form/features/fields/components/input/select/SelectInput";
 
 export type UserOption = SelectOption<IUser>;
 
@@ -27,7 +27,7 @@ export type UserFeatureSignupFeatureState = IFeatureState;
  */
 export interface UserFeatureStateFeatures {
   login: UserFeatureLoginFeatureState;
-  signup: UserFeatureSignupFeatureState
+  signup: UserFeatureSignupFeatureState;
 }
 
 /**
@@ -36,9 +36,14 @@ export interface UserFeatureStateFeatures {
  */
 export interface UserFeatureStateDataUsers {
   list: IUser[];
-  lastFetched: number | null
+  lastFetched: number | null;
 }
 
-export interface UserFeatureStateData {users: UserFeatureStateDataUsers;}
+export interface UserFeatureStateData {
+  users: UserFeatureStateDataUsers;
+}
 
-export type UserFeatureState = IFeatureState<UserFeatureStateData, UserFeatureStateFeatures>
+export type UserFeatureState = IFeatureState<
+  UserFeatureStateData,
+  UserFeatureStateFeatures
+>;

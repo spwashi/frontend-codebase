@@ -1,5 +1,5 @@
-import {EditConceptMutationInput} from '@junction/models/concept/behaviors/edit';
-import {IUser} from '@junction/models/user/models';
+import { EditConceptMutationInput } from "@junction/models/concept/behaviors/edit";
+import { IUser } from "@junction/models/user/models";
 
 export type SelectMutationInputData = {
   user: IUser;
@@ -7,9 +7,11 @@ export type SelectMutationInputData = {
   src: string;
   contentType: string;
   id: string;
-}
-export const selectEditConceptInput = (data: SelectMutationInputData): EditConceptMutationInput => {
-  const {title, id, src, contentType} = data ?? {};
+};
+export const selectEditConceptInput = (
+  data: SelectMutationInputData
+): EditConceptMutationInput => {
+  const { title, id, src, contentType } = data ?? {};
   return {
     concept: {
       id,

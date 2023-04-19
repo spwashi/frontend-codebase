@@ -30,6 +30,13 @@ module.exports = {
   'rules':         {
     "@typescript-eslint/no-explicit-any": ["off"],
     "@typescript-eslint/no-unused-vars":  ["error", {"ignoreRestSiblings": true}],
+    "sort-imports":                       ["error", {
+      "ignoreCase":            false,
+      "ignoreDeclarationSort": false,
+      "ignoreMemberSort":      false,
+      "memberSyntaxSortOrder": ["none", "all", "multiple", "single"],
+      "allowSeparatedGroups":  false
+    }],
     'import/no-restricted-paths':         [
       'error',
       {

@@ -1,2 +1,2 @@
-export * from './IEvent'
-export * from './IEventTag'
+export * from "./IEvent";
+export * from "./IEventTag";

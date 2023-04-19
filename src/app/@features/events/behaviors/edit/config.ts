@@ -1,13 +1,19 @@
-import {descriptionInput, endInput, idInput, startInput, titleInput, userInput} from '../../data/config/inputs';
+import {
+  descriptionInput,
+  endInput,
+  idInput,
+  startInput,
+  titleInput,
+  userInput,
+} from "../../data/config/inputs";
 
-import {IFormConfig} from '@widgets/form/types/IFormConfig';
-import {formId__eventEdit} from '../../../../@/formIds';
-
+import { IFormConfig } from "@widgets/form/types/IFormConfig";
+import { formId__eventEdit } from "../../../../@/formIds";
 
 export const form__editEvent: IFormConfig = {
-  title:  'Edit Event',
+  title: "Edit Event",
   formId: formId__eventEdit,
-  items:  [
+  items: [
     userInput,
     idInput,
     titleInput,

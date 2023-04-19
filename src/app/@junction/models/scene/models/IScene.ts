@@ -1,11 +1,10 @@
-import {ISceneConcept} from './ISceneConcept';
-import {IProjectEnvironment} from '../../project/models';
+import { ISceneConcept } from "./ISceneConcept";
+import { IProjectEnvironment } from "../../project/models";
 
 type ISceneName = string;
 type ISceneTitle = string;
 type ISceneDescription = string;
 type ISceneId = number;
-
 
 export interface IScene {
   id: ISceneId;
@@ -14,9 +13,9 @@ export interface IScene {
   description?: ISceneDescription;
   SceneConcept?: ISceneConcept[];
   projectEnvironment?: IProjectEnvironment;
-  projectEnvironmentId: IProjectEnvironment['id']
+  projectEnvironmentId: IProjectEnvironment["id"];
 }
 
 export interface ISceneIdentifyingPartial {
-  id: ISceneId
+  id: ISceneId;
 }

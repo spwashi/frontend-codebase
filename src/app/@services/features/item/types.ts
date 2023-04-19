@@ -1,5 +1,5 @@
-import {IFeatureId} from '@services/features/item/featureId';
+import { IFeatureId } from "@services/features/item/featureId";
 
 export type IFeature = {
-  featureId: IFeatureId
+  featureId: IFeatureId;
 };

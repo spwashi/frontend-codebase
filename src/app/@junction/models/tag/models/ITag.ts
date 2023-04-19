@@ -9,5 +9,5 @@ export interface ITag {
 }
 
 export interface ITagIdentifyingPartial {
-  id: ITagId
+  id: ITagId;
 }

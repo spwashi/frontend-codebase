@@ -1,11 +1,11 @@
-import {ITag} from '../models';
-import {IUser} from '../../user/models';
+import { ITag } from "../models";
+import { IUser } from "../../user/models";
 
 export type DeleteTagInput = {
-  id: ITag['id'];
-}
+  id: ITag["id"];
+};
 
 export type DeleteTagMutationInput = {
   tag: DeleteTagInput;
-  user: { id: IUser['id'] }
+  user: { id: IUser["id"] };
 };

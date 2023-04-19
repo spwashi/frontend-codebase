@@ -1,4 +1,6 @@
-import {useMemo} from 'react';
-import Cookie from 'js-cookie';
+import { useMemo } from "react";
+import Cookie from "js-cookie";
 
-export function useJwt() { return useMemo(() => Cookie.get('jwt'), []); }
+export function useJwt() {
+  return useMemo(() => Cookie.get("jwt"), []);
+}

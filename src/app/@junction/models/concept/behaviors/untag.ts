@@ -1,9 +1,9 @@
-import {IConcept} from '../models';
-import {ITag} from '../../tag/models';
+import { IConcept } from "../models";
+import { ITag } from "../../tag/models";
 
 export type UntagConceptMutationInput = {
   concept: {
-    id: IConcept['id']
+    id: IConcept["id"];
   };
-  tags: ITag[]
+  tags: ITag[];
 };

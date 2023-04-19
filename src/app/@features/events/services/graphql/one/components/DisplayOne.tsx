@@ -1,47 +1,56 @@
-import {EventTag} from './join/tag';
-import React from 'react';
-import {IEvent_Complete, IEventTag_Complete} from '@junction/models/event/hybrids';
-import {useActiveEvent} from '../context/context';
-import {IEvent} from '@junction/models/event/models';
-import {ErrorBoundary} from '@core/error/components/ErrorBoundary';
-import {DeleteEventButton} from './DeleteButton';
+import { EventTag } from "./join/tag";
+import React from "react";
+import {
+  IEventTag_Complete,
+  IEvent_Complete,
+} from "@junction/models/event/hybrids";
+import { useActiveEvent } from "../context/context";
+import { IEvent } from "@junction/models/event/models";
+import { ErrorBoundary } from "@core/error/components/ErrorBoundary";
+import { DeleteEventButton } from "./DeleteButton";
 
-interface EventDisplayParams {event: IEvent | IEvent_Complete;}
-
-
-function Internal({event}: EventDisplayParams) {
-  const {title, start, end, eventTags} = event as IEvent_Complete;
-
-  return <div className="event-wrapper">
-    <article className="event">
-      <section>
-        <header><span className="title">{title}</span></header>
-        <section className="body">
-          <div className="start">{start}</div>
-          <div className="end">{end}</div>
-          d <div style={{border: 'thick solid black', display: 'inline-flex'}}>
-          {eventTags && eventTags.map(({tag}: IEventTag_Complete) => <EventTag
-            key={tag.id}
-            tag={tag}
-            event={event}
-          />)}
-        </div>
-        </section>
-      </section>
-    </article>
-  </div>;
+interface EventDisplayParams {
+  event: IEvent | IEvent_Complete;
 }
-export function EventDisplay({event}: EventDisplayParams) {
-  const {id} = event as IEvent_Complete;
+
+function Internal({ event }: EventDisplayParams) {
+  const { title, start, end, eventTags } = event as IEvent_Complete;
+
+  return (
+    <div className="event-wrapper">
+      <article className="event">
+        <section>
+          <header>
+            <span className="title">{title}</span>
+          </header>
+          <section className="body">
+            <div className="start">{start}</div>
+            <div className="end">{end}</div>d{" "}
+            <div
+              style={{ border: "thick solid black", display: "inline-flex" }}
+            >
+              {eventTags &&
+                eventTags.map(({ tag }: IEventTag_Complete) => (
+                  <EventTag key={tag.id} tag={tag} event={event} />
+                ))}
+            </div>
+          </section>
+        </section>
+      </article>
+    </div>
+  );
+}
+export function EventDisplay({ event }: EventDisplayParams) {
+  const { id } = event as IEvent_Complete;
 
   return (
     <>
-      <DeleteEventButton id={id}/>
+      <DeleteEventButton id={id} />
       <ErrorBoundary>
-        <Internal event={event}/>
+        <Internal event={event} />
       </ErrorBoundary>
     </>
-  )
+  );
 }
 
 /**
@@ -51,5 +60,5 @@ export function EventDisplay({event}: EventDisplayParams) {
 export function EventContextDisplay() {
   const event = useActiveEvent();
   if (!event) return null;
-  return <EventDisplay event={event}/>
+  return <EventDisplay event={event} />;
 }

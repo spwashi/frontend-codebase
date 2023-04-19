@@ -1,2 +1,2 @@
-export * from './IUser';
-export * from './IUserAsset';
+export * from "./IUser";
+export * from "./IUserAsset";

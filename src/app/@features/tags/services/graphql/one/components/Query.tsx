@@ -1,15 +1,17 @@
-import {ITag, ITagIdentifyingPartial} from '@junction/models/tag/models';
-import {useQuery} from '@apollo/client';
-import React, {useContext, useEffect} from 'react';
-import {TagContext} from '../context/context';
-import {gqlNode_TAG_FETCH_ONE} from '@features/tags/services/graphql/one/queries/fetchOne';
+import { ITag, ITagIdentifyingPartial } from "@junction/models/tag/models";
+import { useQuery } from "@apollo/client";
+import React, { useContext, useEffect } from "react";
+import { TagContext } from "../context/context";
+import { gqlNode_TAG_FETCH_ONE } from "@features/tags/services/graphql/one/queries/fetchOne";
 
-export function OneTagQuery({id}: ITagIdentifyingPartial) {
-  const context  = useContext(TagContext) ?? ({} as any);
-  const {setTag} = context;
+export function OneTagQuery({ id }: ITagIdentifyingPartial) {
+  const context = useContext(TagContext) ?? ({} as any);
+  const { setTag } = context;
 
-  const {data: query} = useQuery(gqlNode_TAG_FETCH_ONE, {variables: {id} as ITagIdentifyingPartial});
-  const {tag}         = query ?? {};
+  const { data: query } = useQuery(gqlNode_TAG_FETCH_ONE, {
+    variables: { id } as ITagIdentifyingPartial,
+  });
+  const { tag } = query ?? {};
 
   useEffect(() => {
     if (tag && setTag) {
@@ -17,5 +19,5 @@ export function OneTagQuery({id}: ITagIdentifyingPartial) {
     }
   }, [tag, setTag]);
 
-  return <></>
+  return <></>;
 }

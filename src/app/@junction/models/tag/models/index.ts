@@ -1,1 +1,1 @@
-export * from './ITag'
+export * from "./ITag";

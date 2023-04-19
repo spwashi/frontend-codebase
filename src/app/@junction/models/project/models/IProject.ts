@@ -1,15 +1,20 @@
-import {IProjectEnvironment} from './IProjectEnvironment';
+import { IProjectEnvironment } from "./IProjectEnvironment";
 
-interface HasProjectDescription {description: string;}
+interface HasProjectDescription {
+  description: string;
+}
 
-interface HasProjectEnvironment {ProjectEnvironment: IProjectEnvironment;}
+interface HasProjectEnvironment {
+  ProjectEnvironment: IProjectEnvironment;
+}
 
 type IProjectId = number;
 type IProjectName = string;
 type IProjectTitle = string;
 type IProjectDomain = string;
 
-export interface IProject extends Partial<HasProjectDescription & HasProjectEnvironment> {
+export interface IProject
+  extends Partial<HasProjectDescription & HasProjectEnvironment> {
   id: IProjectId;
   name: IProjectName;
   title: IProjectTitle;

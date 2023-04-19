@@ -1,23 +1,29 @@
-import React, {ChangeEvent, useCallback, useContext, useEffect, useMemo} from 'react';
-import {useFormItem} from '../../../hooks/useFormItem';
-import {FormContext} from '@widgets/form/context/context';
+import React, {
+  ChangeEvent,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+} from "react";
+import { useFormItem } from "../../../hooks/useFormItem";
+import { FormContext } from "@widgets/form/context/context";
 
-export type SelectOption<T = any> =
-  {
-    title: string;
-    value: string;
-    payload: T;
-  };
+export type SelectOption<T = any> = {
+  title: string;
+  value: string;
+  payload: T;
+};
 
-type Params<T = any> =
-  {
-    formKey?: string;
-    type?: string;
-    name?: string;
-    multiple?: boolean;
-    options: SelectOption<T>[];
-  }
-  & React.DetailedHTMLProps<React.SelectHTMLAttributes<HTMLSelectElement>, HTMLSelectElement>;
+type Params<T = any> = {
+  formKey?: string;
+  type?: string;
+  name?: string;
+  multiple?: boolean;
+  options: SelectOption<T>[];
+} & React.DetailedHTMLProps<
+  React.SelectHTMLAttributes<HTMLSelectElement>,
+  HTMLSelectElement
+>;
 
 /**
  *
@@ -25,13 +31,18 @@ type Params<T = any> =
  * @param multiple
  * @constructor
  */
-function Options({options, multiple}: { multiple: boolean, options: SelectOption[] }) {
-  return <>
-    <option value="">Select {multiple ? 'multiple' : 'one'}...</option>
-    {
-
-      options.map((option, index) => {
-        if (typeof option === 'string') {
+function Options({
+  options,
+  multiple,
+}: {
+  multiple: boolean;
+  options: SelectOption[];
+}) {
+  return (
+    <>
+      <option value="">Select {multiple ? "multiple" : "one"}...</option>
+      {options.map((option, index) => {
+        if (typeof option === "string") {
           return <option key={option}>{option}</option>;
         }
 
@@ -39,31 +50,33 @@ function Options({options, multiple}: { multiple: boolean, options: SelectOption
           <option key={option.title + index} value={option.value}>
             {option.title}
           </option>
-        )
-      })
-    }
-  </>;
+        );
+      })}
+    </>
+  );
 }
 
-function useOnChangeCallback(multiple: undefined | boolean, setValues: (t: any) => void) {
+function useOnChangeCallback(
+  multiple: undefined | boolean,
+  setValues: (t: any) => void
+) {
   return useCallback(
     (e: ChangeEvent<HTMLSelectElement>) => {
       if (!multiple) {
-        return setValues((e.target.value));
+        return setValues(e.target.value);
       }
       const options = e.target.options;
-      const value   = [];
-      let i         = 0;
+      const value = [];
+      let i = 0;
       for (; i < options.length; i++) {
         if (options[i].selected) {
-          value.push((options[i].value));
+          value.push(options[i].value);
         }
       }
       setValues(value);
     },
-    [multiple, setValues],
+    [multiple, setValues]
   );
-
 }
 /**
  *
@@ -74,27 +87,29 @@ function useOnChangeCallback(multiple: undefined | boolean, setValues: (t: any) 
  * @param rest
  * @constructor
  */
-export function SelectInput(
-  {
-    name,
-    formKey,
-    options,
-    multiple,
-    type,
-    ...rest
-  }: Params,
-) {
-  const form                   = useContext(FormContext);
-  const valueMap               = useMemo(() => new Map(options.map(option => [
-    option.value, option.payload,
-  ])), [options]);
-  const [{localValue}, update] = useFormItem(form, formKey ?? '', v => Array.isArray(v) ? v.map(v => valueMap.get(v)) : valueMap.get(v));
-  const id                     = useMemo(() => 'input--' + Math.random(), []);
-  const value                  = multiple ? localValue ?? [] : localValue ?? '';
-  const onChange               = useOnChangeCallback(multiple, update);
+export function SelectInput({
+  name,
+  formKey,
+  options,
+  multiple,
+  type,
+  ...rest
+}: Params) {
+  const form = useContext(FormContext);
+  const valueMap = useMemo(
+    () => new Map(options.map((option) => [option.value, option.payload])),
+    [options]
+  );
+  const [{ localValue }, update] = useFormItem(form, formKey ?? "", (v) =>
+    Array.isArray(v) ? v.map((v) => valueMap.get(v)) : valueMap.get(v)
+  );
+  const id = useMemo(() => "input--" + Math.random(), []);
+  const value = multiple ? localValue ?? [] : localValue ?? "";
+  const onChange = useOnChangeCallback(multiple, update);
 
-  useEffect(() => { rest.value && update(rest.value); }, [rest.value])
-
+  useEffect(() => {
+    rest.value && update(rest.value);
+  }, [rest.value]);
 
   return (
     <React.Fragment>
@@ -106,10 +121,7 @@ export function SelectInput(
         multiple={multiple}
         onChange={onChange}
       >
-        <Options
-          options={options}
-          multiple={!!multiple}
-        />
+        <Options options={options} multiple={!!multiple} />
       </select>
     </React.Fragment>
   );

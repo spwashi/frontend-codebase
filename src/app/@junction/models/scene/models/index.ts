@@ -1,2 +1,2 @@
-export * from './IScene'
-export * from './ISceneConcept'
+export * from "./IScene";
+export * from "./ISceneConcept";

@@ -1,5 +1,5 @@
 export interface IEventIdentifyingPartial {
-  id: IEventId
+  id: IEventId;
 }
 
 type IEventId = number;

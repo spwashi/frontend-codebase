@@ -1,11 +1,13 @@
-import {useActiveProject} from '../../../../context/hooks/useActiveOne';
-import React from 'react';
-import {IProject} from '@junction/models/project/models';
+import { useActiveProject } from "../../../../context/hooks/useActiveOne";
+import React from "react";
+import { IProject } from "@junction/models/project/models";
 
-interface ProjectParams {project: IProject;}
+interface ProjectParams {
+  project: IProject;
+}
 
-export function Project({project}: ProjectParams) {
-  const {title, domain, description} = project as IProject;
+export function Project({ project }: ProjectParams) {
+  const { title, domain, description } = project as IProject;
   return (
     <>
       <details open>
@@ -17,10 +19,10 @@ export function Project({project}: ProjectParams) {
         </section>
       </details>
     </>
-  )
+  );
 }
 export function ActiveProject() {
   const project = useActiveProject();
   if (!project) return null;
-  return <Project project={project}/>;
+  return <Project project={project} />;
 }

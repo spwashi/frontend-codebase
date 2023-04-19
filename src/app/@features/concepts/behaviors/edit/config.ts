@@ -1,16 +1,16 @@
-import {contentTypeInput, idInput, srcInput, titleInput, userInput} from '../../data/config/inputs';
+import {
+  contentTypeInput,
+  idInput,
+  srcInput,
+  titleInput,
+  userInput,
+} from "../../data/config/inputs";
 
-import {IFormConfig} from '@widgets/form/types/IFormConfig';
-import {formId__conceptEdit} from '../../../../@/formIds';
+import { IFormConfig } from "@widgets/form/types/IFormConfig";
+import { formId__conceptEdit } from "../../../../@/formIds";
 
 export const form__editConcept: IFormConfig = {
-  title:  'Edit Concept',
+  title: "Edit Concept",
   formId: formId__conceptEdit,
-  items:  [
-    userInput,
-    idInput,
-    titleInput,
-    contentTypeInput,
-    srcInput,
-  ],
+  items: [userInput, idInput, titleInput, contentTypeInput, srcInput],
 };
