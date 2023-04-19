@@ -1,30 +1,19 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 import { Route, Routes } from "react-router";
 import { FeatureRequirement } from "@services/features/list/components/FeatureRequirement";
 import { AssetUploadFormFeature } from "../../upload/components/AssetUploadFormFeature";
 import { AssetDisplayForm } from "../../display/components/AssetDisplayForm";
-import { UserFeatures } from "../../../../users/components/Features";
-import { ProjectFeatures } from "../../../../projects/components/Features";
-import { LoginRequirement } from "../../../../users/behaviors/login/components/gates/LoginRequirement";
+import { LoginRequirement } from "@features/users/behaviors/login/components/gates/LoginRequirement";
 import { featureId__assets } from "../../../../../@/featureIds";
+import { AssetsAdminNavigation } from "@features/assets/behaviors/admin/components/AssetsAdminNavigation";
+import { AssetsRequisiteFeatures } from "@features/assets/behaviors/admin/components/AssetsRequisiteFeatures";
 
 export function AssetsControlPanel() {
   return (
-    <>
-      <UserFeatures />
-      <ProjectFeatures />
+    <React.Fragment>
+      <AssetsRequisiteFeatures />
       <FeatureRequirement name={featureId__assets} alternative={"Need Assets"}>
-        <nav>
-          <ul>
-            <li>
-              <NavLink to="../assets">Asset Home</NavLink>
-            </li>
-            <li>
-              <NavLink to="../assets/all">All Assets</NavLink>
-            </li>
-          </ul>
-        </nav>
+        <AssetsAdminNavigation />
         <Routes>
           <Route path="all" element={"[unimplemented]"} />
           <Route
@@ -38,6 +27,6 @@ export function AssetsControlPanel() {
           />
         </Routes>
       </FeatureRequirement>
-    </>
+    </React.Fragment>
   );
 }

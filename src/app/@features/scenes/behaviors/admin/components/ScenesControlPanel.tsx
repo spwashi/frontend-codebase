@@ -1,9 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router";
-import { NavLink } from "react-router-dom";
 import { ListDisplay } from "@features/scenes/services/graphql/list/components/ListDisplay";
-import { TagFeatures } from "@features/tags/components/Features";
-import { UserFeatures } from "@features/users/components/Features";
 import { ListQuery } from "@features/scenes/services/graphql/list/components/ListQuery";
 import { FeatureRequirement } from "@services/features/list/components/FeatureRequirement";
 import { LoginRequirement } from "@features/users/behaviors/login/components/gates/LoginRequirement";
@@ -14,22 +11,14 @@ import {
   featureId__scenes,
 } from "../../../../../@/featureIds";
 import { SceneDisplayFormFeature } from "../../display/components/SceneDisplayFormFeature";
-import { SceneFeatures } from "../../../components/Features";
+import { ScenesAdminNavigation } from "@features/scenes/behaviors/admin/components/ScenesAdminNavigation";
+import { ScenesRequisiteFeatures } from "@features/scenes/behaviors/admin/components/ScenesRequisiteFeatures";
 
 export function ScenesControlPanel() {
   return (
     <React.Fragment>
-      <UserFeatures /> <SceneFeatures /> <TagFeatures />
-      <nav>
-        <ul>
-          <li>
-            <NavLink to="../scenes">Scene Home</NavLink>
-          </li>
-          <li>
-            <NavLink to="../scenes/all">All Scenes</NavLink>
-          </li>
-        </ul>
-      </nav>
+      <ScenesRequisiteFeatures />
+      <ScenesAdminNavigation />
       <FeatureRequirement name={featureId__scenes} alternative={"Need Scenes"}>
         <Routes>
           <Route

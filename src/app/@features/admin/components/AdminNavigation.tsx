@@ -4,7 +4,7 @@ import React from "react";
 import { adminPaths } from "@junction/routes/routes";
 import { adminNavigation } from "@junction/routes/nav";
 
-export function AdminNav() {
+export function AdminNavigation() {
   return (
     <Routes>
       <Route

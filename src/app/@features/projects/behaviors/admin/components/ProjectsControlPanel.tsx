@@ -1,6 +1,5 @@
 import React from "react";
 import { FeatureRequirement } from "@services/features/list/components/FeatureRequirement";
-import { ProjectFeatures } from "../../../components/Features";
 import { ProjectDisplayFormFeature } from "../../display/components/ProjectDisplayFormFeature";
 import { ProjectListQuery } from "../../../services/graphql/list/components/ListQuery";
 import {
@@ -8,12 +7,13 @@ import {
   featureId__projects,
 } from "../../../../../@/featureIds";
 import { ProjectCreateForm } from "../../create/components/ProjectCreateForm";
+import { ProjectsRequisiteFeatures } from "@features/projects/behaviors/admin/components/ProjectsRequisiteFeatures";
 
 export function ProjectsControlPanel() {
   return (
     <>
       <ProjectListQuery />
-      <ProjectFeatures />
+      {ProjectsRequisiteFeatures()}
       <FeatureRequirement
         name={featureId__projects}
         alternative={"Need Projects"}

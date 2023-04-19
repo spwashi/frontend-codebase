@@ -1,31 +1,18 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 import { Route, Routes } from "react-router";
-import { UserFeatures } from "@features/users/components/Features";
-import { ProjectFeatures } from "@features/projects/components/Features";
 import { FeatureRequirement } from "@services/features/list/components/FeatureRequirement";
 import { LoginRequirement } from "@features/users/behaviors/login/components/gates/LoginRequirement";
 import { TagsDisplayFormFeature } from "../../display/components/TagsDisplayFormFeature";
-import { TagFeatures } from "../../../components/Features";
 import { featureId__tags } from "../../../../../@/featureIds";
 import { TagCreateFormFeature } from "../../create/components/TagCreateFormFeature";
+import { TagsAdminNavigation } from "@features/tags/behaviors/admin/components/TagsAdminNavigation";
+import { TagsRequisiteFeatures } from "@features/tags/behaviors/admin/components/TagsRequisiteFeatures";
 
 export function TagsControlPanel() {
   return (
-    <>
-      <TagFeatures />
-      <UserFeatures />
-      <ProjectFeatures />
-      <nav>
-        <ul>
-          <li>
-            <NavLink to="../tags">Tag Home</NavLink>
-          </li>
-          <li>
-            <NavLink to="../tags/all">All Tags</NavLink>
-          </li>
-        </ul>
-      </nav>
+    <React.Fragment>
+      <TagsRequisiteFeatures />
+      <TagsAdminNavigation />
       <Routes>
         <Route path="all" element={"[unimplemented]"} />
         <Route
@@ -43,6 +30,6 @@ export function TagsControlPanel() {
           }
         />
       </Routes>
-    </>
+    </React.Fragment>
   );
 }

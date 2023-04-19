@@ -1,34 +1,21 @@
 import React from "react";
 import { Route, Routes } from "react-router";
-import { NavLink } from "react-router-dom";
-import { TagFeatures } from "@features/tags/components/Features";
-import { UserFeatures } from "@features/users/components/Features";
 import { FeatureRequirement } from "@services/features/list/components/FeatureRequirement";
 import { LoginRequirement } from "@features/users/behaviors/login/components/gates/LoginRequirement";
 import { ConceptListDisplay } from "../../../services/graphql/list/components/ListDisplay";
 import { ConceptDisplayFormFeature } from "../../display/components/ConceptDisplayFormFeature";
-import { ConceptFeatures } from "../../../components/Features";
 import { featureId__concepts } from "../../../../../@/featureIds";
 import { ConceptCreateFormFeature } from "../../create/components/ConceptCreateFormFeature";
 import { ConceptEditFormFeature } from "../../edit/components/ConceptEditFormFeature";
 import { ConceptTagFormFeature } from "../../tag/components/ConceptTagFormFeature";
+import { ConceptsAdminNavigation } from "@features/concepts/behaviors/admin/components/ConceptsAdminNavigation";
+import { ConceptsRequisiteFeatures } from "@features/concepts/behaviors/admin/components/ConceptsRequisiteFeatures";
 
 export function ConceptsControlPanel() {
   return (
     <React.Fragment>
-      <UserFeatures />
-      <ConceptFeatures />
-      <TagFeatures />
-      <nav>
-        <ul>
-          <li>
-            <NavLink to="../concepts">Concept Home</NavLink>
-          </li>
-          <li>
-            <NavLink to="../concepts/all">All Concepts</NavLink>
-          </li>
-        </ul>
-      </nav>
+      <ConceptsRequisiteFeatures />
+      <ConceptsAdminNavigation />
       <FeatureRequirement
         name={featureId__concepts}
         alternative={"Need Concepts"}

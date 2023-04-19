@@ -1,11 +1,11 @@
 import React from "react";
-import { AdminNav } from "./AdminNav";
+import { AdminNavigation } from "./AdminNavigation";
 import { AdminRoutes } from "./AdminRoutes";
 
 export function AdminControlPanel() {
   return (
     <>
-      <AdminNav />
+      <AdminNavigation />
       <AdminRoutes />
     </>
   );
