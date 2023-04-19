@@ -38,37 +38,56 @@ import { gqlNode_USER_FETCH_LIST } from "@features/users/services/graphql/list/q
 import { gqlNode_USER_LOGIN } from "@features/users/services/graphql/one/mutations/login";
 import { gqlNode_USER_SIGNUP } from "@features/users/services/graphql/one/mutations/signup";
 
-export const allQueries = {
-  gqlNode_PROJECT_FETCH_LIST,
-  gqlNode_ASSET_FETCH_ONE,
-  gqlNode_CONCEPT_DELETE,
-  gqlNode_EVENT_DELETE,
-  gqlNode_SCENE_DELETE,
-  gqlNode_CONCEPT_FETCH_LIST,
-  gqlNode_EVENT_FETCH_LIST,
-  gqlNode_SCENE_FETCH_LIST,
-  gqlNode_CONCEPT_FETCH_ONE,
-  gqlNode_EVENT_FETCH_ONE,
-  gqlNode_SCENE_FETCH_ONE,
-  gqlNode_LOGIN: gqlNode_USER_LOGIN,
-  gqlNode_CONCEPT_UNTAG,
-  gqlNode_EVENT_UNTAG,
-  gqlNode_SCENE_UNTAG,
-  gqlNode_TAG_FETCH_LIST,
-  gqlNode_TAG_DELETE,
-  gqlNode_USER_FETCH_LIST,
-  gqlNode_CONCEPT_CREATE,
-  gqlNode_CONCEPT_EDIT,
-  gqlNode_CONCEPT_TAG,
-  gqlNode_EVENT_CREATE,
-  gqlNode_EVENT_EDIT,
-  gqlNode_EVENT_TAG,
-  gqlNode_SCENE_CREATE,
-  gqlNode_SCENE_EDIT,
-  gqlNode_PROJECT_CREATE,
-  gqlNode_TAG_CREATE,
-  gqlNode_PROJECT_FETCH_ONE,
-  gqlNode_TAG_FETCH_ONE,
-  gqlNode_ASSET_FETCH_LIST,
-  gqlNode_SIGNUP: gqlNode_USER_SIGNUP,
+// todo actually use this?
+export const graphQlNodes = {
+  asset: {
+    fetchList: gqlNode_ASSET_FETCH_LIST,
+    fetch: gqlNode_ASSET_FETCH_ONE,
+  },
+
+  concept: {
+    create: gqlNode_CONCEPT_CREATE,
+    delete: gqlNode_CONCEPT_DELETE,
+    edit: gqlNode_CONCEPT_EDIT,
+    fetchList: gqlNode_CONCEPT_FETCH_LIST,
+    fetch: gqlNode_CONCEPT_FETCH_ONE,
+    tag: gqlNode_CONCEPT_TAG,
+    untag: gqlNode_CONCEPT_UNTAG,
+  },
+
+  event: {
+    create: gqlNode_EVENT_CREATE,
+    delete: gqlNode_EVENT_DELETE,
+    edit: gqlNode_EVENT_EDIT,
+    fetchList: gqlNode_EVENT_FETCH_LIST,
+    fetch: gqlNode_EVENT_FETCH_ONE,
+    tag: gqlNode_EVENT_TAG,
+    untag: gqlNode_EVENT_UNTAG,
+  },
+  project: {
+    create: gqlNode_PROJECT_CREATE,
+    fetchList: gqlNode_PROJECT_FETCH_LIST,
+    fetch: gqlNode_PROJECT_FETCH_ONE,
+  },
+
+  scene: {
+    create: gqlNode_SCENE_CREATE,
+    delete: gqlNode_SCENE_DELETE,
+    edit: gqlNode_SCENE_EDIT,
+    fetchList: gqlNode_SCENE_FETCH_LIST,
+    fetch: gqlNode_SCENE_FETCH_ONE,
+    untag: gqlNode_SCENE_UNTAG,
+  },
+  tag: {
+    create: gqlNode_TAG_CREATE,
+    delete: gqlNode_TAG_DELETE,
+    fetchList: gqlNode_TAG_FETCH_LIST,
+    fetch: gqlNode_TAG_FETCH_ONE,
+  },
+
+  user: {
+    fetch: gqlNode_USER_FETCH_LIST,
+    login: gqlNode_USER_LOGIN,
+    signup: gqlNode_USER_SIGNUP,
+  },
 };
