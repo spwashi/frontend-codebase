@@ -12,6 +12,7 @@ import {
   featureId__projectDisplay,
   featureId__projects,
 } from "../../../@/featureIds";
+import { AssetFeatures } from "@features/assets/components/Features";
 
 function ProjectDisplayFeature() {
   const lastFetched = useSelector(selectPossibleProjectsLastFetched);
@@ -29,7 +30,7 @@ export function ProjectFeatures() {
     <Feature name={featureId__projects}>
       <ProjectDisplayFeature />
       <ProjectCreateFeature />
-      <Feature name={featureId__assets} />
+      <AssetFeatures />
     </Feature>
   );
 }
