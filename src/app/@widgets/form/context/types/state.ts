@@ -1,8 +1,5 @@
-import { FormEvent } from "react";
-
-export interface FormState<T = any> {
+export interface IAppFormContextState<T = any> {
   id?: string;
-
   key: number;
   data: T;
   initialValue?: T;

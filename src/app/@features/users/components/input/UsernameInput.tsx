@@ -1,6 +1,6 @@
 import React from "react";
 import { Input } from "@widgets/form/features/fields/components/input/text/Input";
-import { UserSelect } from "./Select";
+import { UserSelect } from "./UserSelect";
 
 export function UsernameInput({
   doSelect = false,

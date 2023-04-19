@@ -1,15 +1,18 @@
 import { useCallback, useContext, useEffect, useState } from "react";
 import { ACTION_UPDATE_INDEX } from "@widgets/form/state/reducer";
-import { FormState } from "../../../context/types/state";
+import { IAppFormContextState } from "../../../context/types/state";
 import { FormContext, ID_EMPTY } from "../../../context/context";
 
 export function updateFormItem<T>(
-  form: FormState,
   formKey: string,
   value: T,
+  dispatch?: (action: any) => void,
   passive = false
 ) {
-  form.dispatch?.({
+  if (!dispatch) {
+    throw new Error("we used to be able to dispatch on the form");
+  }
+  dispatch({
     type: ACTION_UPDATE_INDEX,
     payload: {
       index: formKey,
@@ -25,8 +28,8 @@ type FormItemStateTuple<T = any> = [
 ];
 
 export function useFormItem<T = any>(
-  form: FormState,
-  formKey: string | null,
+  form: IAppFormContextState,
+  formKey?: string | null | undefined,
   valueMapper: (v: any) => T = (v) => v,
   passive = false
 ) {
@@ -46,7 +49,7 @@ export function useFormItem<T = any>(
   const setValue = useCallback(
     (input: T) => {
       const trueVal = valueMapper(input);
-      formKey && updateFormItem(form, formKey, trueVal, passive);
+      formKey && updateFormItem(formKey, trueVal, undefined, passive);
       setLocalValue(input);
     },
     [form, formKey, valueMapper, passive]

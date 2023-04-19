@@ -25,18 +25,14 @@ export function AssetSelect({
   const { data: query = {} } = useQuery(gqlNode_ASSET_FETCH_LIST, {
     variables: { user: { username } },
   });
-  const result = useMemo(
+  const options = useMemo(
     () => (query.assetList ? query.assetList.map(assetToOption) : []),
     [query]
   );
 
   return (
     <>
-      <SelectInput
-        placeholder="File"
-        formKey={formKey ?? ""}
-        options={result}
-      />
+      <SelectInput placeholder="Asset" formKey={formKey} options={options} />
     </>
   );
 }

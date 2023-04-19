@@ -1,11 +1,11 @@
 import React, { useContext, useMemo } from "react";
 import { UsernameInput } from "@features/users/components/input/UsernameInput";
-import { TagSelect } from "@features/tags/components/input/Select";
-import { ProjectSelect } from "@features/projects/components/input/Select";
-import { ConceptSelect } from "@features/concepts/components/input/Select";
-import { AssetSelect } from "@features/assets/components/input/Select";
-import { EventSelect } from "@features/events/components/input/Select";
-import { SceneSelect } from "@features/scenes/components/input/Select";
+import { TagsSelect } from "@features/tags/components/input/TagsSelect";
+import { ProjectSelect } from "@features/projects/components/input/ProjectSelect";
+import { ConceptSelect } from "@features/concepts/components/input/ConceptSelect";
+import { AssetSelect } from "@features/assets/components/input/AssetSelect";
+import { EventSelect } from "@features/events/components/input/EventSelect";
+import { SceneSelect } from "@features/scenes/components/input/SceneSelect";
 import { getConfiguredDomain } from "@core/dev/components/Dev";
 import { FormWidget } from "../../../FormWidget";
 import { useFormItem } from "../hooks/useFormItem";
@@ -72,7 +72,7 @@ function FormItemFactory({ item: config }: { item: IFormItemConfig }) {
       return <SelectInput formKey={name} {...config} />;
     }
     case "tags": {
-      return <TagSelect formKey={name} />;
+      return <TagsSelect formKey={name} />;
     }
     case "project": {
       return <ProjectSelect formKey={name} {...rest} />;

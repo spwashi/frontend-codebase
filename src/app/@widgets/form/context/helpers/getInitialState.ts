@@ -1,6 +1,9 @@
-import { FormState } from "../types/state";
+import { IAppFormContextState } from "../types/state";
 
-export function getInitialState<T = any>(d?: T, id?: string): FormState<T> {
+export function getInitialState<T = any>(
+  d?: T,
+  id?: string
+): IAppFormContextState<T> {
   return {
     id,
     key: 0,

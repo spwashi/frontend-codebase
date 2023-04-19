@@ -11,7 +11,7 @@ import {
 } from "../../../redux/selectors";
 import { ACTION_RECEIVE_ALL_TAGS } from "../../../redux/reducer";
 
-export function ListQuery() {
+export function TagListQuery() {
   const stateKey = useSelector(selectTagStateKey);
   const { data, error } = useFeatureQuery(gqlNode_TAG_FETCH_LIST, {}, stateKey);
   const lastFetched = useSelector(selectPossibleTagsLastFetched);

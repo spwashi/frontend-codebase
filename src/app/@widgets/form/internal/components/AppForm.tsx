@@ -30,9 +30,8 @@ export default function AppForm({
   );
   useFormOnChangeEffect(formState, onChange);
   useSetFormDefaultEffect(dispatchOnFormContext, defaultValue);
-  const handleSubmit = useSubmitHandlerCallback(formState, onSubmit);
   const formContextValue = useMemo(() => ({ ...formState }), [formState.data]);
-
+  const handleSubmit = useSubmitHandlerCallback(formState, onSubmit);
   return (
     <FormContext.Provider value={formContextValue}>
       <form onSubmit={handleSubmit} data-form-id={id}>

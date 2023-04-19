@@ -78,15 +78,7 @@ function useOnChangeCallback(
     [multiple, setValues]
   );
 }
-/**
- *
- * @param name
- * @param formKey
- * @param options
- * @param multiple
- * @param rest
- * @constructor
- */
+
 export function SelectInput({
   name,
   formKey,
@@ -100,7 +92,7 @@ export function SelectInput({
     () => new Map(options.map((option) => [option.value, option.payload])),
     [options]
   );
-  const [{ localValue }, update] = useFormItem(form, formKey ?? "", (v) =>
+  const [{ localValue }, update] = useFormItem(form, formKey, (v) =>
     Array.isArray(v) ? v.map((v) => valueMap.get(v)) : valueMap.get(v)
   );
   const id = useMemo(() => "input--" + Math.random(), []);

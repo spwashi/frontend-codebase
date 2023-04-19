@@ -17,10 +17,10 @@ export function ProjectSelect({
 }) {
   const options = useProjectOptions();
   const project = useSelector(selectProjectStateProject);
-  const context = useContext(FormContext);
 
   useEffect(() => {
-    !ignore && project && updateFormItem(context, formKey ?? "", project);
+    const value = project;
+    !ignore && value && updateFormItem(formKey ?? "", value);
   }, [project]);
 
   const activeProject = project;

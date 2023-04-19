@@ -1,7 +1,7 @@
 import React from "react";
 import { Feature } from "@services/features/item/components/Feature";
 import { FeatureRequirement } from "@services/features/list/components/FeatureRequirement";
-import { ListQuery } from "@features/tags/services/graphql/list/components/ListQuery";
+import { TagListQuery } from "@features/tags/services/graphql/list/components/TagListQuery";
 import {
   featureId__conceptDisplay,
   featureId__conceptTagForm,
@@ -20,7 +20,7 @@ export function ConceptTagFormFeature() {
         alternative={"Need Tags Display"}
       >
         <Feature name={featureId__conceptTagForm}>
-          <ListQuery />
+          <TagListQuery />
           <ConceptTagForm />
         </Feature>
       </FeatureRequirement>
