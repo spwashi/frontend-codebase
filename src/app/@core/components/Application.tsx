@@ -4,6 +4,7 @@ import classnames from "classnames";
 import { AdminControlPanel } from "@features/admin/components/AdminControlPanel";
 import { select_noGraphql } from "@services/redux/reducer";
 import { appClassnames } from "../styles/classNames";
+import { LogAppReduxState } from "@core/dev/components/Log";
 
 interface ApplicationParams {
   canBeAdmin: boolean;
@@ -22,6 +23,7 @@ export function Application({ canBeAdmin }: ApplicationParams) {
       <div className="app-wrapper">
         {canBeAdmin && <AdminControlPanel />}
         <main></main>
+        <LogAppReduxState />
       </div>
       <div className="stage-close" aria-hidden="true" />
     </div>
