@@ -1,13 +1,13 @@
+import { useQuery } from "@apollo/client";
+import React, { useContext, useEffect } from "react";
+import { useDispatch } from "react-redux";
 import {
   IConcept,
   IConceptIdentifyingPartial,
 } from "@junction/models/concept/models";
-import { useQuery } from "@apollo/client";
-import React, { useContext, useEffect } from "react";
-import { ConceptContext } from "../context/context";
-import { useDispatch } from "react-redux";
-import { ACTION_RECEIVE_ONE_CONCEPT } from "../../../redux/reducer";
 import { gqlNode_CONCEPT_FETCH_ONE } from "@features/concepts/services/graphql/one/queries/fetchOne";
+import { ACTION_RECEIVE_ONE_CONCEPT } from "../../../redux/reducer";
+import { ConceptContext } from "../context/context";
 
 export function OneConceptQuery({ id }: IConceptIdentifyingPartial) {
   const context = useContext(ConceptContext) ?? ({} as any);

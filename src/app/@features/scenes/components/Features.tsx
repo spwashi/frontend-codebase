@@ -1,11 +1,11 @@
-import { Feature } from "@services/features/item/components/Feature";
 import React from "react";
 import { useSelector } from "react-redux";
+import { Feature } from "@services/features/item/components/Feature";
+import { ListQuery } from "@features/scenes/services/graphql/list/components/ListQuery";
 import {
   selectPossibleScenesLastFetched,
   selectPossibleScenesList,
 } from "../services/redux/selectors";
-import { ListQuery } from "@features/scenes/services/graphql/list/components/ListQuery";
 import {
   featureId__sceneDisplay,
   featureId__scenes,

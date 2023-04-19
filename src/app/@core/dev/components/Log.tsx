@@ -1,9 +1,9 @@
 import React, { useCallback, useState } from "react";
-import { Dev } from "./Dev";
 import { useSelector } from "react-redux";
 import ReactJson from "react-json-view";
 import classNames from "classnames";
 import { appClassnames as classes } from "../../styles/classNames";
+import { Dev } from "./Dev";
 
 const LOGGER = classes.widgets.dev.logger;
 

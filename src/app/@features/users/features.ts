@@ -2,9 +2,9 @@ import {
   featureId__userLogin,
   featureId__userLoginForm,
   featureId__userLoginVerify,
-  featureId__users,
   featureId__userSignup,
   featureId__userSignupForm,
+  featureId__users,
 } from "../../@/featureIds";
 
 export type IUserFeatureNames =

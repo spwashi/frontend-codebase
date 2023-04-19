@@ -1,12 +1,12 @@
 import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import { mainDecorator } from "@services/storybook/decorators";
-import { FormWidget } from "./FormWidget";
 import { IFormConfig } from "@widgets/form/types/IFormConfig";
 import {
   formId__basicExampleFormForm,
   formId__basicExampleFormSubform,
 } from "../../@/formIds";
+import { FormWidget } from "./FormWidget";
 
 const meta: Meta = {
   title: "Demo/Layout/Forms/Basic",

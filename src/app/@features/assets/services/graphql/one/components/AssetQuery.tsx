@@ -1,7 +1,7 @@
 import { useQuery } from "@apollo/client";
-import { AssetContents } from "../../../../behaviors/display/components/AssetContents";
 import React from "react";
 import { gqlNode_ASSET_FETCH_ONE } from "@features/assets/services/graphql/one/queries/fetchOne";
+import { AssetContents } from "../../../../behaviors/display/components/AssetContents";
 
 export function AssetQuery({
   realname,

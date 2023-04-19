@@ -1,6 +1,6 @@
 import React from "react";
-import { Navigation } from "../navigation/Navigation";
 import { mainNavigation } from "@junction/routes/nav";
+import { Navigation } from "../navigation/Navigation";
 
 interface PageProps {
   children?: any;

@@ -1,16 +1,16 @@
 import React, { useContext, useEffect, useMemo } from "react";
+import { useSelector } from "react-redux";
 import {
   SelectInput,
   SelectOption,
 } from "@widgets/form/features/fields/components/input/select/SelectInput";
-import { useSelector } from "react-redux";
 import { FormContext } from "@widgets/form/context/context";
 import { updateFormItem } from "@widgets/form/features/fields/hooks/useFormItem";
+import { IUser } from "@junction/models/user/models";
+import { Value } from "@widgets/form/features/fields/components/input/text/Input";
 import { selectPossibleUsersList } from "../../services/redux/selectors";
 import { selectLoggedInUser } from "../../behaviors/login/redux/reducer";
 import { UserListQuery } from "../../services/graphql/list/components/ListQuery";
-import { IUser } from "@junction/models/user/models";
-import { Value } from "@widgets/form/features/fields/components/input/text/Input";
 
 export const getUserSelectorUsername = (data?: string | IUser) => {
   return typeof data === "string" ? data : data?.username;

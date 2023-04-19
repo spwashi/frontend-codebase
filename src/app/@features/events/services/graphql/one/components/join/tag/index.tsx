@@ -1,6 +1,6 @@
+import React from "react";
 import { ITag } from "@junction/models/tag/models";
 import { IEvent } from "@junction/models/event/models";
-import React from "react";
 import { useDeleteEventTagMutation } from "@features/events/services/graphql/one";
 
 export function EventTag({ event, tag }: { tag: ITag; event: IEvent }) {

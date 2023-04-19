@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from "react";
-import { TagContext } from "./context";
 import { ITag_Complete } from "@junction/models/tag/hybrids";
+import { TagContext } from "./context";
 
 export function TagContextProvider({ children }: { children: any }) {
   const [tag, setTag] = useState<ITag_Complete | null>(null);

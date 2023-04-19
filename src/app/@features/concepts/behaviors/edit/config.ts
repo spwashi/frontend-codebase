@@ -1,3 +1,4 @@
+import { IFormConfig } from "@widgets/form/types/IFormConfig";
 import {
   contentTypeInput,
   idInput,
@@ -6,7 +7,6 @@ import {
   userInput,
 } from "../../data/config/inputs";
 
-import { IFormConfig } from "@widgets/form/types/IFormConfig";
 import { formId__conceptEdit } from "../../../../@/formIds";
 
 export const form__editConcept: IFormConfig = {

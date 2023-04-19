@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { featureComponentMap, IFeatureName } from "@features/index";
+import { IFeatureName, featureComponentMap } from "@features/index";
 
 export function FeatureList({ list }: { list: IFeatureName[] }) {
   return (

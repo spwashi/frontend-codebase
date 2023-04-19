@@ -1,13 +1,13 @@
 import {
   ApolloClient,
   ApolloProvider,
-  createHttpLink,
   InMemoryCache,
+  createHttpLink,
 } from "@apollo/client";
 import { Provider } from "react-redux";
-import { persistor, store } from "../redux/store";
 import { PersistGate } from "redux-persist/integration/react";
 import React from "react";
+import { persistor, store } from "@services/redux/store";
 import "../../@core/styles/app.scss";
 import { GRAPHQL_URL } from "@core/constants";
 import { FeatureRegistrationBoundary } from "@services/features/list/components/FeatureRegistrationBoundary";

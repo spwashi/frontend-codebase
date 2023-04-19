@@ -1,11 +1,11 @@
 import React, { ReactNode, useState } from "react";
 import { useSelector } from "react-redux";
-import { selectLoggedInUserName } from "../../redux/reducer";
 import classNames from "classnames";
 import { appClassnames } from "@core/styles/classNames";
 import { useJwt } from "@services/jwt/hooks/useJwt";
 import { FeatureRegistrationBoundary } from "@services/features/list/components/FeatureRegistrationBoundary";
 import { IFeatureRegistrationContextState } from "@services/features/list/types";
+import { selectLoggedInUserName } from "../../redux/reducer";
 
 /**
  * An error message indicating that a user must log in

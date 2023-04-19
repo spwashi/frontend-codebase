@@ -1,5 +1,5 @@
-import { SelectOption } from "../components/input/select/SelectInput";
 import { ContentType } from "@features/concepts/data/config/contentTypes";
+import { SelectOption } from "../components/input/select/SelectInput";
 import { IFormConfig } from "../../../types/IFormConfig";
 
 type ProjectSelectInputConfig = IFieldConfig & {
@@ -51,7 +51,7 @@ type IFieldConfig<T = any> = {
   };
 };
 
-export type IFormItemConfig<T = any> =
+export type IFormItemConfig =
   | ValueInputConfig
   | TextInputConfig
   | DateInputConfig

@@ -1,6 +1,5 @@
 import React from "react";
 import { Feature } from "@services/features/item/components/Feature";
-import { EventTagForm } from "./EventTagForm";
 import { FeatureRequirement } from "@services/features/list/components/FeatureRequirement";
 import { ListQuery } from "@features/tags/services/graphql/list/components/ListQuery";
 import {
@@ -8,6 +7,7 @@ import {
   featureId__eventTagForm,
   featureId__tagDisplay,
 } from "../../../../../@/featureIds";
+import { EventTagForm } from "./EventTagForm";
 
 export function EventTagFormFeature() {
   return (

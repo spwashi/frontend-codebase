@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { Scene } from "../../../services/graphql/one";
 import { FormWidget } from "@widgets/form/FormWidget";
 
 import { FeatureRequirement } from "@services/features/list/components/FeatureRequirement";
 import { form__selectScene } from "@features/scenes/behaviors/select/config";
+import { Scene } from "../../../services/graphql/one";
 import { featureId__sceneDisplay } from "../../../../../@/featureIds";
 
 export function SceneDisplayFormFeature() {

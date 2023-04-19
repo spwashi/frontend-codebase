@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from "react";
-import { SceneContext } from "./context";
 import { IScene } from "@junction/models/scene/models";
+import { SceneContext } from "./context";
 
 export function SceneContextProvider({
   children,

@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useFeatureQuery } from "@services/features/hooks/useFeatureQuery";
+import { IConcept_Complete } from "@junction/models/concept/hybrids";
+import { gqlNode_CONCEPT_FETCH_LIST } from "@features/concepts/services/graphql/list/queries/fetchList";
+import { ACTION_RECEIVE_ALL_CONCEPTS } from "../../../redux/reducer";
 import {
   selectConceptStateKey,
   selectPossibleConceptsLastFetched,
 } from "../../../redux/selectors";
-import { ACTION_RECEIVE_ALL_CONCEPTS } from "../../../redux/reducer";
-import { useFeatureQuery } from "@services/features/hooks/useFeatureQuery";
-import { IConcept_Complete } from "@junction/models/concept/hybrids";
-import { gqlNode_CONCEPT_FETCH_LIST } from "@features/concepts/services/graphql/list/queries/fetchList";
 
 export function ListQuery() {
   const stateKey = useSelector(selectConceptStateKey);

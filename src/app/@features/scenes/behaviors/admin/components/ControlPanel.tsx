@@ -1,20 +1,20 @@
 import React from "react";
-import { SceneFeatures } from "../../../components/Features";
-import { SceneDisplayFormFeature } from "../../display/components/SceneDisplayFormFeature";
-import { ListDisplay } from "@features/scenes/services/graphql/list/components/ListDisplay";
 import { Route, Routes } from "react-router";
 import { NavLink } from "react-router-dom";
+import { ListDisplay } from "@features/scenes/services/graphql/list/components/ListDisplay";
 import { TagFeatures } from "@features/tags/components/Features";
 import { UserFeatures } from "@features/users/components/Features";
 import { ListQuery } from "@features/scenes/services/graphql/list/components/ListQuery";
 import { FeatureRequirement } from "@services/features/list/components/FeatureRequirement";
 import { LoginRequirement } from "@features/users/behaviors/login/components/gates/LoginRequirement";
+import { SceneCreateFormFeature } from "@features/scenes/behaviors/create/components/SceneCreateFormFeature";
+import { SceneEditFormFeature } from "@features/scenes/behaviors/edit/components/SceneEditFormFeature";
 import {
   featureId__sceneDisplay,
   featureId__scenes,
 } from "../../../../../@/featureIds";
-import { SceneCreateFormFeature } from "@features/scenes/behaviors/create/components/SceneCreateFormFeature";
-import { SceneEditFormFeature } from "@features/scenes/behaviors/edit/components/SceneEditFormFeature";
+import { SceneDisplayFormFeature } from "../../display/components/SceneDisplayFormFeature";
+import { SceneFeatures } from "../../../components/Features";
 
 export function ScenesControlPanel() {
   return (

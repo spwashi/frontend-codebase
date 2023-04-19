@@ -1,9 +1,9 @@
 import React, { ReactNode, useEffect, useMemo, useReducer } from "react";
-import { featuresReducer } from "../reducer";
 import { getFrbContextStartState } from "@services/features/list/helpers/getInitialState";
 import { Log } from "@core/dev/components/Log";
-import { FeaturesRegistrationContext } from "../context";
 import { IFeatureRegistrationContextState } from "@services/features/list/types";
+import { FeaturesRegistrationContext } from "../context";
+import { featuresReducer } from "../reducer";
 
 type IFRB_Props = {
   children: ReactNode;

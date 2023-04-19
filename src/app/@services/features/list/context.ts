@@ -1,6 +1,6 @@
 import { createContext } from "react";
-import { IFeatureRegistrationContext } from "./types";
 import { getFrbContextStartState } from "@services/features/list/helpers/getInitialState";
+import { IFeatureRegistrationContext } from "./types";
 
 /**
  * Describes a collection of states about features

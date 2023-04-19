@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { FormWidget } from "@widgets/form/FormWidget";
-import { SiteProjectController } from "../../../services/graphql/one";
 import { useSelector } from "react-redux";
-import { selectProjectStateProject } from "../../../services/redux/selectors";
+import { FormWidget } from "@widgets/form/FormWidget";
 import { FeatureRequirement } from "@services/features/list/components/FeatureRequirement";
 import { form__selectProject } from "@features/projects/behaviors/select/config";
+import { SiteProjectController } from "../../../services/graphql/one";
+import { selectProjectStateProject } from "../../../services/redux/selectors";
 import { featureId__projectDisplay } from "../../../../../@/featureIds";
 
 export function ProjectDisplayFormFeature() {

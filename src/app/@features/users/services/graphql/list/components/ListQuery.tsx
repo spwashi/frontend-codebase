@@ -1,9 +1,9 @@
 import { useQuery } from "@apollo/client";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { gqlNode_USER_FETCH_LIST } from "@features/users/services/graphql/list/queries/fetchList";
 import { selectPossibleUsersLastFetched } from "../../../redux/selectors";
 import { ACTION_RECEIVE_ALL_USERS } from "../../../redux/reducer";
-import { gqlNode_USER_FETCH_LIST } from "@features/users/services/graphql/list/queries/fetchList";
 
 export function UserListQuery() {
   const { data: query = {} } = useQuery(gqlNode_USER_FETCH_LIST);

@@ -1,12 +1,12 @@
 import React from "react";
-import { TagFeatures } from "../../../components/Features";
-import { TagsDisplayFormFeature } from "../../display/components/TagsDisplayFormFeature";
-import { UserFeatures } from "@features/users/components/Features";
-import { ProjectFeatures } from "@features/projects/components/Features";
 import { NavLink } from "react-router-dom";
 import { Route, Routes } from "react-router";
+import { UserFeatures } from "@features/users/components/Features";
+import { ProjectFeatures } from "@features/projects/components/Features";
 import { FeatureRequirement } from "@services/features/list/components/FeatureRequirement";
 import { LoginRequirement } from "@features/users/behaviors/login/components/gates/LoginRequirement";
+import { TagsDisplayFormFeature } from "../../display/components/TagsDisplayFormFeature";
+import { TagFeatures } from "../../../components/Features";
 import { featureId__tags } from "../../../../../@/featureIds";
 import { TagCreateFormFeature } from "../../create/components/TagCreateFormFeature";
 

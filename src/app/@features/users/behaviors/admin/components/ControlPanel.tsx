@@ -1,10 +1,10 @@
-import { ProjectFeatures } from "@features/projects/components/Features";
-import { LoginRequirement } from "../../login/components/gates/LoginRequirement";
-import { LoginChecker } from "@features/users/behaviors/login/components/actions/LoginChecker";
-import { UserLogoutButton } from "../../logout/components/buttons/UserLogoutButton";
 import React from "react";
-import { UserFeatures } from "../../../components/Features";
+import { ProjectFeatures } from "@features/projects/components/Features";
+import { LoginChecker } from "@features/users/behaviors/login/components/actions/LoginChecker";
 import { FeatureRequirement } from "@services/features/list/components/FeatureRequirement";
+import { LoginRequirement } from "../../login/components/gates/LoginRequirement";
+import { UserLogoutButton } from "../../logout/components/buttons/UserLogoutButton";
+import { UserFeatures } from "../../../components/Features";
 import {
   featureId__userLogin,
   featureId__users,

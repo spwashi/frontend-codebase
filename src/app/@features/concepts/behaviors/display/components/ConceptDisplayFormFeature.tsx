@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { Concept } from "../../../services/graphql/one";
 import { Feature } from "@services/features/item/components/Feature";
 import { FormWidget } from "@widgets/form/FormWidget";
-import { Log } from "@core/dev/components/Log";
 import { FeatureRequirement } from "@services/features/list/components/FeatureRequirement";
+import { Concept } from "../../../services/graphql/one";
 import { form__selectConcept } from "../../select/config";
 import {
   featureId__conceptDisplay,

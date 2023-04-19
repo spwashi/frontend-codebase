@@ -3,8 +3,8 @@ import {
   featureId__eventDisplay,
   featureId__eventDisplayForm,
   featureId__eventEditForm,
-  featureId__events,
   featureId__eventTagForm,
+  featureId__events,
 } from "../../@/featureIds";
 
 export type IEventFeatureNames =

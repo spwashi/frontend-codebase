@@ -1,12 +1,12 @@
-import { AssetUploadFormFeature } from "../../upload/components/AssetUploadFormFeature";
-import { AssetDisplayForm } from "../../display/components/AssetDisplayForm";
 import React from "react";
-import { UserFeatures } from "../../../../users/components/Features";
-import { ProjectFeatures } from "../../../../projects/components/Features";
-import { LoginRequirement } from "../../../../users/behaviors/login/components/gates/LoginRequirement";
 import { NavLink } from "react-router-dom";
 import { Route, Routes } from "react-router";
 import { FeatureRequirement } from "@services/features/list/components/FeatureRequirement";
+import { AssetUploadFormFeature } from "../../upload/components/AssetUploadFormFeature";
+import { AssetDisplayForm } from "../../display/components/AssetDisplayForm";
+import { UserFeatures } from "../../../../users/components/Features";
+import { ProjectFeatures } from "../../../../projects/components/Features";
+import { LoginRequirement } from "../../../../users/behaviors/login/components/gates/LoginRequirement";
 import { featureId__assets } from "../../../../../@/featureIds";
 
 export function AssetsControlPanel() {

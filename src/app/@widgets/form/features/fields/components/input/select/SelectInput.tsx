@@ -5,8 +5,8 @@ import React, {
   useEffect,
   useMemo,
 } from "react";
-import { useFormItem } from "../../../hooks/useFormItem";
 import { FormContext } from "@widgets/form/context/context";
+import { useFormItem } from "../../../hooks/useFormItem";
 
 export type SelectOption<T = any> = {
   title: string;

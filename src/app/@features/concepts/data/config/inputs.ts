@@ -1,5 +1,5 @@
-import { mimeOptions } from "./mimeOptions";
 import { IFormItemConfig } from "@widgets/form/features/fields/types/fieldConfig";
+import { mimeOptions } from "./mimeOptions";
 
 export const tagsInput: IFormItemConfig = {
   title: "Tags",

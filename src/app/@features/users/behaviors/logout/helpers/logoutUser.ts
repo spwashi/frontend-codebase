@@ -1,6 +1,6 @@
 import { Dispatch } from "redux";
-import { ACTION_LOGOUT } from "@features/users/behaviors/login/redux/reducer";
 import { PURGE } from "redux-persist";
+import { ACTION_LOGOUT } from "@features/users/behaviors/login/redux/reducer";
 import { clearJwt } from "@services/jwt/helpers/clearJwt";
 
 export function logoutUser(dispatch: Dispatch<any>) {

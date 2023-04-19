@@ -1,13 +1,13 @@
 import React from "react";
-import { EventFeatures } from "../../../components/Features";
-import { EventDisplayFormFeature } from "../../display/components/EventDisplayFormFeature";
-import { EventListDisplay } from "@features/events/services/graphql/list/components/ListDisplay";
 import { Route, Routes } from "react-router";
 import { NavLink } from "react-router-dom";
+import { EventListDisplay } from "@features/events/services/graphql/list/components/ListDisplay";
 import { TagFeatures } from "@features/tags/components/Features";
 import { UserFeatures } from "@features/users/components/Features";
 import { FeatureRequirement } from "@services/features/list/components/FeatureRequirement";
 import { LoginRequirement } from "@features/users/behaviors/login/components/gates/LoginRequirement";
+import { EventDisplayFormFeature } from "../../display/components/EventDisplayFormFeature";
+import { EventFeatures } from "../../../components/Features";
 import { featureId__events } from "../../../../../@/featureIds";
 import { EventTagFormFeature } from "../../tag/components/EventTagFormFeature";
 import { EventCreateFormFeature } from "../../create/components/EventCreateFormFeature";

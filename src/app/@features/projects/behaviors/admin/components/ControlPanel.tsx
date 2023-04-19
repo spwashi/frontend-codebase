@@ -1,8 +1,8 @@
 import React from "react";
+import { FeatureRequirement } from "@services/features/list/components/FeatureRequirement";
 import { ProjectFeatures } from "../../../components/Features";
 import { ProjectDisplayFormFeature } from "../../display/components/ProjectDisplayFormFeature";
 import { ProjectListQuery } from "../../../services/graphql/list/components/ListQuery";
-import { FeatureRequirement } from "@services/features/list/components/FeatureRequirement";
 import {
   featureId__projectCreate,
   featureId__projects,

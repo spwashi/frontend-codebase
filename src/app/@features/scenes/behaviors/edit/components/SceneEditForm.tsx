@@ -1,3 +1,4 @@
+import React from "react";
 import { useEditSceneMutation } from "@features/scenes/services/graphql/one/mutations/edit";
 import { useMutationFormSubmitCallback } from "@services/graphql/hooks/useMutationFormSubmitCallback";
 import { selectEditSceneInput } from "@features/scenes/behaviors/edit/selectors";
@@ -5,7 +6,6 @@ import { formClassNames } from "@widgets/form/styles/classNames";
 import { FormWidget } from "@widgets/form/FormWidget";
 import { form__editScene } from "@features/scenes/behaviors/edit/config";
 import { GraphqlMutationResponse } from "@services/graphql/components/api/GraphqlMutationResponse";
-import React from "react";
 import { useSceneSelectForm } from "@features/scenes/behaviors/select/hooks/useSceneSelectForm";
 
 export function SceneEditForm() {

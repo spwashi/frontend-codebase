@@ -1,12 +1,12 @@
-import { EventTag } from "./join/tag";
 import React from "react";
 import {
-  IEvent_Complete,
   IEventTag_Complete,
+  IEvent_Complete,
 } from "@junction/models/event/hybrids";
-import { useActiveEvent } from "../context/context";
 import { IEvent } from "@junction/models/event/models";
 import { ErrorBoundary } from "@core/error/components/ErrorBoundary";
+import { useActiveEvent } from "../context/context";
+import { EventTag } from "./join/tag";
 import { DeleteEventButton } from "./DeleteButton";
 
 interface EventDisplayParams {

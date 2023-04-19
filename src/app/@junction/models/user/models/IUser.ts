@@ -1,7 +1,7 @@
-import { IUserAsset } from "./IUserAsset";
 import { IConcept } from "../../concept/models";
 import { ILogin } from "../../login/models";
 import { IProject } from "../../project/models";
+import { IUserAsset } from "./IUserAsset";
 
 export type IUserUsername = string;
 type IUserName = string;

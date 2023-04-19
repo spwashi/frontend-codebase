@@ -1,6 +1,6 @@
+import React from "react";
 import { ITag } from "@junction/models/tag/models";
 import { IScene } from "@junction/models/scene/models";
-import React from "react";
 import { useDeleteSceneTagMutation } from "@features/scenes/services/graphql/one";
 
 export function SceneTag({ scene, tag }: { tag: ITag; scene: IScene }) {

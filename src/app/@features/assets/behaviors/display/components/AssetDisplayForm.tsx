@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { AssetQuery } from "../../../services/graphql/one/components/AssetQuery";
-import { getUserSelectorUsername } from "../../../../users/components/input/Select";
 import { IUser } from "@junction/models/user/models";
 import { FormWidget } from "@widgets/form/FormWidget";
-import { LoginRequirement } from "../../../../users/behaviors/login/components/gates/LoginRequirement";
 import { Feature } from "@services/features/item/components/Feature";
 import { form__selectLoggedInUser } from "@features/users/behaviors/select-loggedIn/config";
 import { getform__assetSelect } from "@features/assets/behaviors/select/config";
+import { LoginRequirement } from "../../../../users/behaviors/login/components/gates/LoginRequirement";
+import { getUserSelectorUsername } from "../../../../users/components/input/Select";
+import { AssetQuery } from "../../../services/graphql/one/components/AssetQuery";
 import {
   featureId__assetDisplay,
   featureId__assetDisplayForm,

@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from "react";
-import { ConceptContext } from "./context";
 import { IConcept } from "@junction/models/concept/models";
+import { ConceptContext } from "./context";
 
 export function ConceptContextProvider({
   children,

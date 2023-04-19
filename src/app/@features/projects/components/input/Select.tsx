@@ -1,12 +1,12 @@
 import React, { useContext, useEffect } from "react";
-import { SelectInput } from "@widgets/form/features/fields/components/input/select/SelectInput";
-import { useProjectOptions } from "../../hooks/useOptions";
 import { useSelector } from "react-redux";
-import { selectProjectStateProject } from "../../services/redux/selectors";
+import { SelectInput } from "@widgets/form/features/fields/components/input/select/SelectInput";
 import { updateFormItem } from "@widgets/form/features/fields/hooks/useFormItem";
 import { FormContext } from "@widgets/form/context/context";
-import { ProjectListQuery } from "../../services/graphql/list/components/ListQuery";
 import { Value } from "@widgets/form/features/fields/components/input/text/Input";
+import { useProjectOptions } from "../../hooks/useOptions";
+import { selectProjectStateProject } from "../../services/redux/selectors";
+import { ProjectListQuery } from "../../services/graphql/list/components/ListQuery";
 
 export function ProjectSelect({
   formKey,

@@ -1,8 +1,8 @@
 import { useDispatch } from "react-redux";
 import React, { useCallback } from "react";
 import { Log } from "@core/dev/components/Log";
-import { ACTION_DELETE_ONE_EVENT } from "../../../redux/reducer";
 import { useDeleteEventMutation } from "@features/events/services/graphql/one/mutations/delete";
+import { ACTION_DELETE_ONE_EVENT } from "../../../redux/reducer";
 
 export function DeleteEventButton({ id }: { id: number }) {
   const [deleteEvent, { error }] = useDeleteEventMutation();

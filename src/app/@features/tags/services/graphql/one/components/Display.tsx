@@ -1,6 +1,6 @@
-import { useActiveTag } from "../context/hooks/useActiveOne";
 import React from "react";
 import { ITag_Complete } from "@junction/models/tag/hybrids";
+import { useActiveTag } from "../context/hooks/useActiveOne";
 
 export function TagDisplay() {
   const tag = useActiveTag();

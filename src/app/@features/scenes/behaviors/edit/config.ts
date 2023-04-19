@@ -1,10 +1,10 @@
 import { IFormConfig } from "@widgets/form/types/IFormConfig";
-import { formId__sceneEdit } from "../../../../@/formIds";
 import {
   sceneDescriptionInput,
   sceneIdInput,
   sceneTitleInput,
 } from "@features/scenes/data/config/inputs";
+import { formId__sceneEdit } from "../../../../@/formIds";
 
 export const form__editScene: IFormConfig = {
   title: "Edit Scene",

@@ -1,7 +1,7 @@
 import React from "react";
-import { useActiveScene } from "../context/context";
 import { IScene } from "@junction/models/scene/models";
 import { ErrorBoundary } from "@core/error/components/ErrorBoundary";
+import { useActiveScene } from "../context/context";
 import { DeleteSceneButton } from "./DeleteSceneButton";
 
 interface SceneDisplayParams {

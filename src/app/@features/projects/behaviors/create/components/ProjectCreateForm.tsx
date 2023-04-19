@@ -1,13 +1,13 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { GraphqlMutationResponse } from "@services/graphql/components/api/GraphqlMutationResponse";
 import { useMutationFormSubmitCallback } from "@services/graphql/hooks/useMutationFormSubmitCallback";
-import { selectCreateProjectInput } from "../selectors";
-import { useCreateProjectMutation } from "../../../services/graphql/one/mutations/create";
-import { useDispatch } from "react-redux";
-import { ACTION_PROJECT_CREATED } from "../../../services/redux/reducer";
 import { FormWidget } from "@widgets/form/FormWidget";
 import { ErrorBoundary } from "@core/error/components/ErrorBoundary";
 import { form__createProject } from "@features/projects/behaviors/create/config";
+import { selectCreateProjectInput } from "../selectors";
+import { useCreateProjectMutation } from "../../../services/graphql/one/mutations/create";
+import { ACTION_PROJECT_CREATED } from "../../../services/redux/reducer";
 
 export function ProjectCreateForm() {
   const { send, response } = useCreateProjectMutation();

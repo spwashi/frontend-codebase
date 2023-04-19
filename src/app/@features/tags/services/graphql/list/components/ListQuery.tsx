@@ -1,15 +1,15 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  selectPossibleTagsLastFetched,
-  selectTagStateKey,
-} from "../../../redux/selectors";
-import { ACTION_RECEIVE_ALL_TAGS } from "../../../redux/reducer";
-import {
   useDispatchGraphqlError,
   useFeatureQuery,
 } from "@services/features/hooks/useFeatureQuery";
 import { gqlNode_TAG_FETCH_LIST } from "@features/tags/services/graphql/list/queries/fetchList";
+import {
+  selectPossibleTagsLastFetched,
+  selectTagStateKey,
+} from "../../../redux/selectors";
+import { ACTION_RECEIVE_ALL_TAGS } from "../../../redux/reducer";
 
 export function ListQuery() {
   const stateKey = useSelector(selectTagStateKey);

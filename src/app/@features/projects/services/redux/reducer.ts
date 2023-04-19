@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
-import { ProjectFeatureState, ProjectFeatureStateDataProjects } from "./types";
 import { REHYDRATE } from "redux-persist";
+import { ProjectFeatureState, ProjectFeatureStateDataProjects } from "./types";
 import { selectProjectState } from "./selectors";
 
 export const ACTION_RECEIVE_ALL_PROJECTS = "RECEIVE_ALL_PROJECTS";

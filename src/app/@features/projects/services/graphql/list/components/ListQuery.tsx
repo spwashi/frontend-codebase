@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useFeatureQuery } from "@services/features/hooks/useFeatureQuery";
+import { getDomain } from "@widgets/form/features/fields/components/FieldFactory";
+import { gqlNode_PROJECT_FETCH_LIST } from "@features/projects/services/graphql/list/queries/fetchList";
+import { ACTION_RECEIVE_ALL_PROJECTS } from "../../../redux/reducer";
 import {
   selectPossibleProjectsLastFetched,
   selectProjectStateKey,
 } from "../../../redux/selectors";
-import { ACTION_RECEIVE_ALL_PROJECTS } from "../../../redux/reducer";
-import { useFeatureQuery } from "@services/features/hooks/useFeatureQuery";
-import { getDomain } from "@widgets/form/features/fields/components/FieldFactory";
-import { gqlNode_PROJECT_FETCH_LIST } from "@features/projects/services/graphql/list/queries/fetchList";
 
 export function ProjectListQuery() {
   const projectStateKey = useSelector(selectProjectStateKey);

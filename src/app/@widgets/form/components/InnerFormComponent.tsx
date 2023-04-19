@@ -1,10 +1,10 @@
 import React, { useCallback, useEffect, useMemo, useReducer } from "react";
+import { Log } from "@core/dev/components/Log";
 import { ACTION_SET_DEFAULT, formReducer } from "../state/reducer";
 import { getInitialState } from "../context/helpers/getInitialState";
-import { Log } from "@core/dev/components/Log";
-import { ButtonConfig, ButtonContainer } from "./buttons/ButtonContainer";
 import { FormState } from "../context/types/state";
 import { FormContext } from "../context/context";
+import { ButtonConfig, ButtonContainer } from "./buttons/ButtonContainer";
 
 type ProviderProps<T = any> = {
   children: any;

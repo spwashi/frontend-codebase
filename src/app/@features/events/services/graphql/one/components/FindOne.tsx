@@ -1,13 +1,13 @@
+import { useQuery } from "@apollo/client";
+import React, { useContext, useEffect } from "react";
+import { useDispatch } from "react-redux";
 import {
   IEvent,
   IEventIdentifyingPartial,
 } from "@junction/models/event/models";
-import { useQuery } from "@apollo/client";
-import React, { useContext, useEffect } from "react";
-import { EventContext } from "../context/context";
-import { useDispatch } from "react-redux";
-import { ACTION_RECEIVE_ONE_EVENT } from "../../../redux/reducer";
 import { gqlNode_EVENT_FETCH_ONE } from "@features/events/services/graphql/one/queries/fetchOne";
+import { ACTION_RECEIVE_ONE_EVENT } from "../../../redux/reducer";
+import { EventContext } from "../context/context";
 
 export function OneEventQuery({ id }: IEventIdentifyingPartial) {
   const context = useContext(EventContext) ?? ({} as any);

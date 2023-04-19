@@ -1,5 +1,4 @@
 import { IFormConfig } from "@widgets/form/types/IFormConfig";
-import { formId__userSignup } from "../../../../@/formIds";
 import {
   nameInput,
   passwordConfirmInput,
@@ -7,6 +6,7 @@ import {
   projectInput,
   usernameInput,
 } from "@features/users/data/config/inputs";
+import { formId__userSignup } from "../../../../@/formIds";
 
 export const form__userSignup: IFormConfig = {
   title: "Signup",

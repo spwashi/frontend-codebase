@@ -1,15 +1,15 @@
 import React from "react";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
-import { LogAppReduxState } from "@core/dev/components/Log";
 import {
   ApolloClient,
   ApolloProvider,
-  createHttpLink,
   InMemoryCache,
+  createHttpLink,
 } from "@apollo/client";
-import { persistor, store } from "@services/redux/store";
 import { PersistGate } from "redux-persist/integration/react";
+import { LogAppReduxState } from "@core/dev/components/Log";
+import { persistor, store } from "@services/redux/store";
 import { Application } from "@core/components/Application";
 import { GRAPHQL_URL } from "@core/constants";
 import { FeatureRegistrationBoundary } from "@services/features/list/components/FeatureRegistrationBoundary";

@@ -1,8 +1,8 @@
 import { useMutation } from "@apollo/client";
+import React from "react";
 import { gqlNode_USER_SIGNUP } from "@features/users/services/graphql/one/mutations/signup";
 import { useMutationFormSubmitCallback } from "@services/graphql/hooks/useMutationFormSubmitCallback";
 import { selectMutationInput } from "@features/users/behaviors/signup/selectors";
-import React from "react";
 import { FormWidget } from "@widgets/form/FormWidget";
 import { form__userSignup } from "@features/users/behaviors/signup/config";
 import { GraphqlMutationResponse } from "@services/graphql/components/api/GraphqlMutationResponse";

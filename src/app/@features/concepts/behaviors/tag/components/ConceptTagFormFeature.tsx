@@ -1,6 +1,5 @@
 import React from "react";
 import { Feature } from "@services/features/item/components/Feature";
-import { ConceptTagForm } from "./ConceptTagForm";
 import { FeatureRequirement } from "@services/features/list/components/FeatureRequirement";
 import { ListQuery } from "@features/tags/services/graphql/list/components/ListQuery";
 import {
@@ -8,6 +7,7 @@ import {
   featureId__conceptTagForm,
   featureId__tagDisplay,
 } from "../../../../../@/featureIds";
+import { ConceptTagForm } from "./ConceptTagForm";
 
 export function ConceptTagFormFeature() {
   return (

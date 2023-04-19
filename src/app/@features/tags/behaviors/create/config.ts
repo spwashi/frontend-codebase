@@ -1,5 +1,4 @@
 import { IFormConfig } from "@widgets/form/types/IFormConfig";
-import { formId__tagCreate } from "../../../../@/formIds";
 import {
   descriptionInput,
   domainInput,
@@ -7,6 +6,7 @@ import {
   userInput,
 } from "@features/tags/data/config/inputs";
 import { makeFieldRequired } from "@widgets/form/features/fields/helpers/makeFieldRequired";
+import { formId__tagCreate } from "../../../../@/formIds";
 
 export const form__createTag: IFormConfig = {
   title: "Create Tag",

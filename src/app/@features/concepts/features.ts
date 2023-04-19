@@ -3,8 +3,8 @@ import {
   featureId__conceptDisplay,
   featureId__conceptDisplayForm,
   featureId__conceptEditForm,
-  featureId__concepts,
   featureId__conceptTagForm,
+  featureId__concepts,
 } from "../../@/featureIds";
 
 export type IConceptFeatureNames =

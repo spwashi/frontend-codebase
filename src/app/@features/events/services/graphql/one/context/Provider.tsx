@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from "react";
-import { EventContext } from "./context";
 import { IEvent } from "@junction/models/event/models";
+import { EventContext } from "./context";
 
 export function EventContextProvider({
   children,

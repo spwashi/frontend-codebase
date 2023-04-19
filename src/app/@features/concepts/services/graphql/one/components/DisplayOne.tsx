@@ -1,14 +1,14 @@
-import { ConceptTag } from "./join/tag/TagOne";
 import React, { useState } from "react";
+import { Editor, EditorState, convertFromRaw } from "draft-js";
 import {
-  IConcept_Complete,
   IConceptTag_Complete,
+  IConcept_Complete,
 } from "@junction/models/concept/hybrids";
-import { useActiveConcept } from "../context/context";
-import { convertFromRaw, Editor, EditorState } from "draft-js";
 import { Log } from "@core/dev/components/Log";
 import { IConcept } from "@junction/models/concept/models";
 import { ErrorBoundary } from "@core/error/components/ErrorBoundary";
+import { useActiveConcept } from "../context/context";
+import { ConceptTag } from "./join/tag/TagOne";
 import { DeleteConceptButton } from "./DeleteButton";
 
 function RichText({ src }: { src: string }) {

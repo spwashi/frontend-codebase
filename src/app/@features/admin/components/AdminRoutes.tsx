@@ -1,6 +1,8 @@
 import { Routes } from "react-router-dom";
 import { Route } from "react-router";
+import React from "react";
 import { adminPaths } from "@junction/routes/routes";
+import { Feature } from "@services/features/item/components/Feature";
 import { UsersControlPanel } from "../../users/behaviors/admin/components/ControlPanel";
 import { ProjectsControlPanel } from "../../projects/behaviors/admin/components/ControlPanel";
 import { ConceptsControlPanel } from "../../concepts/behaviors/admin/components/ControlPanel";
@@ -9,8 +11,6 @@ import { EventsControlPanel } from "../../events/behaviors/admin/components/Cont
 import { TagsControlPanel } from "../../tags/behaviors/admin/components/ControlPanel";
 import { AssetsControlPanel } from "../../assets/behaviors/admin/components/ControlPanel";
 import { LoginRequirement } from "../../users/behaviors/login/components/gates/LoginRequirement";
-import React from "react";
-import { Feature } from "@services/features/item/components/Feature";
 import {
   featureId__adminControlPanelsPostLogin,
   featureId__adminControlPanelsPreLogin,

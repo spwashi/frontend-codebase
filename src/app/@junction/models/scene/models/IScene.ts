@@ -1,5 +1,5 @@
-import { ISceneConcept } from "./ISceneConcept";
 import { IProjectEnvironment } from "../../project/models";
+import { ISceneConcept } from "./ISceneConcept";
 
 type ISceneName = string;
 type ISceneTitle = string;

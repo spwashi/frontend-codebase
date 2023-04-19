@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
-import { Feature } from "@services/features/item/components/Feature";
 import React from "react";
+import { Feature } from "@services/features/item/components/Feature";
 import {
   selectPossibleTagsLastFetched,
   selectPossibleTagsList,

@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
-import { selectPossibleScenesList } from "../../../redux/selectors";
 import React from "react";
+import { selectPossibleScenesList } from "../../../redux/selectors";
 import { SceneDisplay } from "../../one/components/DisplayOne";
 import { ListQuery } from "./ListQuery";
 

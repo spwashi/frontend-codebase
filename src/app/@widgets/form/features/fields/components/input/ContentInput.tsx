@@ -1,7 +1,7 @@
+import React from "react";
 import { ContentType } from "@features/concepts/data/config/contentTypes";
 import { Input } from "./text/Input";
 import { Textarea } from "./text/Textarea";
-import React from "react";
 
 interface ContentParams {
   data: any;

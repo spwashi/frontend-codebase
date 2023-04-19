@@ -5,9 +5,9 @@ import React, {
   useMemo,
   useState,
 } from "react";
-import { useFormItem } from "../../../hooks/useFormItem";
+import { Editor, EditorState, convertFromRaw, convertToRaw } from "draft-js";
 import { FormContext } from "@widgets/form/context/context";
-import { convertFromRaw, convertToRaw, Editor, EditorState } from "draft-js";
+import { useFormItem } from "../../../hooks/useFormItem";
 
 type InputParams = { formKey?: string } & React.DetailedHTMLProps<
   React.InputHTMLAttributes<HTMLInputElement>,

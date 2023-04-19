@@ -1,8 +1,8 @@
-import { selectUserFeature } from "../../../services/redux/selectors";
 import { combineReducers } from "redux";
-import { IRootAppState } from "@core/types/IRootAppState";
-import { UserFeatureLoginFeatureState } from "../../../services/redux/types";
 import { REHYDRATE } from "redux-persist";
+import { IRootAppState } from "@core/types/IRootAppState";
+import { selectUserFeature } from "../../../services/redux/selectors";
+import { UserFeatureLoginFeatureState } from "../../../services/redux/types";
 
 export const ACTION_RECEIVE_LOGIN = "RECEIVE_LOGIN";
 export const ACTION_LOGOUT = "LOGOUT";

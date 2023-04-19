@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { ProjectContext } from "../context";
 import { IProject } from "@junction/models/project/models";
+import { ProjectContext } from "../context";
 
 export function useActiveProject(): IProject | null {
   const { project = null } = useContext(ProjectContext);

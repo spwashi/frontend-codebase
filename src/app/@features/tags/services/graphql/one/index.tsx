@@ -1,14 +1,14 @@
 import React from "react";
+import { useMutation } from "@apollo/client";
+import { useSelector } from "react-redux";
 import { ITagIdentifyingPartial } from "@junction/models/tag/models";
+import { selectLoggedInUser } from "@features/users/behaviors/login/redux/reducer";
+import { Log } from "@core/dev/components/Log";
+import { gqlNode_TAG_DELETE } from "@features/tags/services/graphql/one/mutations/delete";
 import { TagContextProvider } from "./context/Provider";
 import { TagDisplay } from "./components/Display";
 import { OneTagQuery } from "./components/Query";
 import { useActiveTag } from "./context/hooks/useActiveOne";
-import { useMutation } from "@apollo/client";
-import { selectLoggedInUser } from "@features/users/behaviors/login/redux/reducer";
-import { useSelector } from "react-redux";
-import { Log } from "@core/dev/components/Log";
-import { gqlNode_TAG_DELETE } from "@features/tags/services/graphql/one/mutations/delete";
 
 function DeleteTag() {
   const tag = useActiveTag();
