@@ -1,13 +1,13 @@
-import {ProjectFeatures} from '../../../../projects/components/Features';
-import {LoggedIn} from '../../login/components/Requirement';
+import {ProjectFeatures} from '@features/projects/components/Features';
+import {LoginRequirement} from '../../login/components/LoginRequirement';
 import {VerifyLogin} from '../../login/components/VerifyLogin';
 import {LogoutButton} from '../../login/components/Logout';
-import {LoginForm} from '../../login/forms/LoginForm';
-import {SignupForm} from '../../signup/forms/SignupForm';
 import React from 'react';
 import {UserFeatures} from '../../../components/Features';
 import {FeatureRequirement} from '@services/features/list/components/FeatureRequirement';
 import {featureId__users, featureId__userLogin} from '../../../../../@/featureIds';
+import {UserLoginForm} from '../../login/components/UserLoginForm';
+import {UserSignupForm} from '../../signup/components/UserSignupForm';
 
 export function UsersControlPanel() {
   return <>
@@ -17,10 +17,10 @@ export function UsersControlPanel() {
       <LogoutButton/>
       <FeatureRequirement name={featureId__userLogin} alternative={'Need User Login'}>
         <VerifyLogin/>
-        <LoggedIn state={false}>
-          <LoginForm/>
-          <SignupForm/>
-        </LoggedIn>
+        <LoginRequirement state={false}>
+          <UserLoginForm/>
+          <UserSignupForm/>
+        </LoginRequirement>
       </FeatureRequirement>
     </FeatureRequirement>
   </>;

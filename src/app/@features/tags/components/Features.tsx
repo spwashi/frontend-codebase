@@ -2,7 +2,7 @@ import {useSelector} from 'react-redux';
 import {Feature} from '@services/features/item/components/Feature';
 import React from 'react';
 import {selectPossibleTagsLastFetched, selectPossibleTagsList} from '../services/redux/selectors';
-import {TagListQuery} from '../services/graphql/all';
+import {ListQuery} from '../services/graphql/list/components/ListQuery';
 import {featureId__tagDisplay, featureId__tags} from '../../../@/featureIds';
 
 function TagDisplayFeature() {
@@ -19,4 +19,4 @@ export function TagFeatures() {
   )
 }
 
-TagFeatures.featureDeps = [TagListQuery]
+TagFeatures.featureDeps = [ListQuery]

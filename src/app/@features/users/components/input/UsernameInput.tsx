@@ -1,4 +1,4 @@
-import {UserSelect} from '../form/Select';
+import {UserSelect} from './Select';
 import {Input} from '@widgets/form/features/fields/components/input/text/Input';
 import React from 'react';
 

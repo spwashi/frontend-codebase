@@ -1,17 +1,17 @@
-import {CreateConceptForm} from '../../create';
-import {TagConceptFormFeature} from '../../tag';
 import React from 'react';
 import {ConceptFeatures} from '../../../components/Features';
-import {ConceptDisplayForm} from '../../display/components/Form';
-import {AllConceptsConceptDisplay} from '../../../services/graphql/all/components/DisplayAll';
+import {ConceptDisplayFormFeature} from '../../display/components/ConceptDisplayFormFeature';
+import {ConceptListDisplay} from '../../../services/graphql/list/components/ListDisplay';
 import {Route, Routes} from 'react-router';
 import {NavLink} from 'react-router-dom';
 import {TagFeatures} from '@features/tags/components/Features';
 import {UserFeatures} from '@features/users/components/Features';
-import {EditConceptFormFeature} from '../../edit';
 import {FeatureRequirement} from '@services/features/list/components/FeatureRequirement';
-import {LoggedIn} from '@features/users/behaviors/login/components/Requirement';
+import {LoginRequirement} from '@features/users/behaviors/login/components/LoginRequirement';
 import {featureId__concepts} from '../../../../../@/featureIds';
+import {ConceptCreateFormFeature} from '../../create/components/ConceptCreateFormFeature';
+import {ConceptEditFormFeature} from '../../edit/components/ConceptEditFormFeature';
+import {ConceptTagFormFeature} from '../../tag/components/ConceptTagFormFeature';
 
 export function ConceptsControlPanel() {
   return (
@@ -27,14 +27,14 @@ export function ConceptsControlPanel() {
       </nav>
       <FeatureRequirement name={featureId__concepts} alternative={'Need Concepts'}>
         <Routes>
-          <Route path={'all'} element={<div style={{width: 500 + 'px'}}><AllConceptsConceptDisplay/></div>}/>
+          <Route path={'all'} element={<div style={{width: 500 + 'px'}}><ConceptListDisplay/></div>}/>
           <Route path="" element={
-            <LoggedIn>
-              <CreateConceptForm/>
-              <EditConceptFormFeature/>
-              <ConceptDisplayForm/>
-              <TagConceptFormFeature/>
-            </LoggedIn>
+            <LoginRequirement>
+              <ConceptCreateFormFeature/>
+              <ConceptEditFormFeature/>
+              <ConceptDisplayFormFeature/>
+              <ConceptTagFormFeature/>
+            </LoginRequirement>
           }/>
         </Routes>
       </FeatureRequirement>

@@ -1,4 +1,4 @@
-import {ConceptTag} from './join/tag';
+import {ConceptTag} from './join/tag/TagOne';
 import React, {useState} from 'react';
 import {IConcept_Complete, IConceptTag_Complete} from '@junction/models/concept/hybrids';
 import {useActiveConcept} from '../context/context';

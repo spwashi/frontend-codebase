@@ -1,17 +1,19 @@
 import React from 'react';
 import {ProjectFeatures} from '../../../components/Features';
-import {ProjectDisplayFormFeature} from '../../display/components/Form';
-import {CreateProjectForm} from '../../create';
-import {ProjectListQuery} from '../../../services/graphql/all/all';
+import {ProjectDisplayFormFeature} from '../../display/components/ProjectDisplayFormFeature';
+import {ProjectListQuery} from '../../../services/graphql/list/components/ListQuery';
 import {FeatureRequirement} from '@services/features/list/components/FeatureRequirement';
-import {featureId__projects} from '../../../../../@/featureIds';
+import {featureId__projectCreate, featureId__projects} from '../../../../../@/featureIds';
+import {ProjectCreateForm} from '../../create/components/ProjectCreateForm';
 
 export function ProjectsControlPanel() {
   return <>
     <ProjectListQuery/>
     <ProjectFeatures/>
     <FeatureRequirement name={featureId__projects} alternative={'Need Projects'}>
-      <CreateProjectForm/>
+      <FeatureRequirement name={featureId__projectCreate} alternative={'Need Projects Create'}>
+        <ProjectCreateForm/>
+      </FeatureRequirement>
       <ProjectDisplayFormFeature/>
     </FeatureRequirement>
   </>;

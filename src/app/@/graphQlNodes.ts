@@ -38,7 +38,6 @@ import {gqlNode_USER_FETCH_LIST} from '@features/users/services/graphql/list/que
 import {gqlNode_USER_LOGIN} from '@features/users/services/graphql/one/mutations/login';
 import {gqlNode_USER_SIGNUP} from '@features/users/services/graphql/one/mutations/signup';
 
-
 export const allQueries =
                {
                  gqlNode_PROJECT_FETCH_LIST,

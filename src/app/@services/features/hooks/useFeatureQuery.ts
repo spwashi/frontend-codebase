@@ -4,7 +4,7 @@ import {useDispatch} from 'react-redux';
 import {useEffect} from 'react';
 import {ACTION_GRAPHQL, ACTION_NOGRAPHQL} from '../../redux/reducer';
 
-function useDispatchGraphqlError(error: any) {
+export function useDispatchGraphqlError(error: any) {
   const dispatch = useDispatch();
 
   useEffect(() => {

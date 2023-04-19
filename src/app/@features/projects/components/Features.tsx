@@ -2,7 +2,7 @@ import React from 'react';
 import {useSelector} from 'react-redux';
 import {Feature} from '@services/features/item/components/Feature';
 import {selectPossibleProjectsLastFetched, selectPossibleProjectsList} from '../services/redux/selectors';
-import {ProjectListQuery} from '../services/graphql/all/all';
+import {ProjectListQuery} from '../services/graphql/list/components/ListQuery';
 import {featureId__assets, featureId__projectCreate, featureId__projectDisplay, featureId__projects} from '../../../@/featureIds';
 
 function ProjectDisplayFeature() {

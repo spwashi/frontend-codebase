@@ -2,7 +2,7 @@ import {Feature} from '@services/features/item/components/Feature';
 import React from 'react';
 import {useSelector} from 'react-redux';
 import {selectPossibleUsersLastFetched, selectPossibleUsersList} from '../services/redux/selectors';
-import {UserListQuery} from '../services/graphql/all';
+import {UserListQuery} from '../services/graphql/list/components/ListQuery';
 import {featureId__users, featureId__userLogin, featureId__userSignup} from '../../../@/featureIds';
 
 const requireFetch = false;

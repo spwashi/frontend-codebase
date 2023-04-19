@@ -1,17 +1,17 @@
-import {CreateSceneFormFeature} from '../../create';
 import React from 'react';
 import {SceneFeatures} from '../../../components/Features';
-import {SceneDisplayForm} from '../../display/components/Form';
-import {AllScenesSceneDisplay} from '../../../services/graphql/all/components/DisplayAll';
+import {SceneDisplayFormFeature} from '../../display/components/SceneDisplayFormFeature';
+import {ListDisplay} from '@features/scenes/services/graphql/list/components/ListDisplay';
 import {Route, Routes} from 'react-router';
 import {NavLink} from 'react-router-dom';
-import {TagFeatures} from '../../../../tags/components/Features';
-import {UserFeatures} from '../../../../users/components/Features';
-import {EditSceneFormFeature} from '../../edit';
-import {SceneListQuery} from '../../../services/graphql/all/components/FindAll';
+import {TagFeatures} from '@features/tags/components/Features';
+import {UserFeatures} from '@features/users/components/Features';
+import {ListQuery} from '@features/scenes/services/graphql/list/components/ListQuery';
 import {FeatureRequirement} from '@services/features/list/components/FeatureRequirement';
-import {LoggedIn} from '@features/users/behaviors/login/components/Requirement';
+import {LoginRequirement} from '@features/users/behaviors/login/components/LoginRequirement';
 import {featureId__sceneDisplay, featureId__scenes} from '../../../../../@/featureIds';
+import {SceneCreateFormFeature} from '@features/scenes/behaviors/create/components/SceneCreateFormFeature';
+import {SceneEditFormFeature} from '@features/scenes/behaviors/edit/components/SceneEditFormFeature';
 
 export function ScenesControlPanel() {
   return (
@@ -29,7 +29,7 @@ export function ScenesControlPanel() {
             path="all"
             element={
               <div style={{width: 500 + 'px'}}>
-                <AllScenesSceneDisplay/>
+                <ListDisplay/>
               </div>
             }
           />
@@ -37,13 +37,13 @@ export function ScenesControlPanel() {
             path=""
             element={
               <React.Fragment>
-                <SceneListQuery/>
-                <LoggedIn>
-                  <CreateSceneFormFeature/>
-                  <EditSceneFormFeature/>
-                </LoggedIn>
+                <ListQuery/>
+                <LoginRequirement>
+                  <SceneCreateFormFeature/>
+                  <SceneEditFormFeature/>
+                </LoginRequirement>
                 <FeatureRequirement name={featureId__sceneDisplay} alternative={'Need Scene Display'}>
-                  <SceneDisplayForm/>
+                  <SceneDisplayFormFeature/>
                 </FeatureRequirement>
               </React.Fragment>
             }

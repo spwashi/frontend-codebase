@@ -1,14 +1,14 @@
 import React from 'react';
 import {TagFeatures} from '../../../components/Features';
-import {CreateTagFormFeature} from '../../create';
-import {DisplayTagsFormFeature} from '../../display/components/Form';
-import {UserFeatures} from '../../../../users/components/Features';
-import {ProjectFeatures} from '../../../../projects/components/Features';
+import {TagsDisplayFormFeature} from '../../display/components/TagsDisplayFormFeature';
+import {UserFeatures} from '@features/users/components/Features';
+import {ProjectFeatures} from '@features/projects/components/Features';
 import {NavLink} from 'react-router-dom';
 import {Route, Routes} from 'react-router';
 import {FeatureRequirement} from '@services/features/list/components/FeatureRequirement';
-import {LoggedIn} from '@features/users/behaviors/login/components/Requirement';
+import {LoginRequirement} from '@features/users/behaviors/login/components/LoginRequirement';
 import {featureId__tags} from '../../../../../@/featureIds';
+import {TagCreateFormFeature} from '../../create/components/TagCreateFormFeature';
 
 export function TagsControlPanel() {
   return (
@@ -26,10 +26,10 @@ export function TagsControlPanel() {
         <Route path="all" element={'[unimplemented]'}/>
         <Route path="" element={
           <FeatureRequirement name={featureId__tags} alternative={'Need Tags'}>
-            <LoggedIn>
-              <CreateTagFormFeature/>
-              <DisplayTagsFormFeature/>
-            </LoggedIn>
+            <LoginRequirement>
+              <TagCreateFormFeature/>
+              <TagsDisplayFormFeature/>
+            </LoginRequirement>
           </FeatureRequirement>
         }/>
       </Routes>

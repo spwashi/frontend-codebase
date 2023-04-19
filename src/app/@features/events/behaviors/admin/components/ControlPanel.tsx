@@ -1,17 +1,17 @@
-import {CreateEventFormFeature} from '../../create';
-import {TagEventFormFeature} from '../../tag';
 import React from 'react';
 import {EventFeatures} from '../../../components/Features';
-import {EventDisplayFormFeature} from '../../display/components/Form';
-import {AllEventsEventDisplay} from '../../../services/graphql/all/components/DisplayAll';
+import {EventDisplayFormFeature} from '../../display/components/EventDisplayFormFeature';
+import {EventListDisplay} from '@features/events/services/graphql/list/components/ListDisplay';
 import {Route, Routes} from 'react-router';
 import {NavLink} from 'react-router-dom';
 import {TagFeatures} from '@features/tags/components/Features';
 import {UserFeatures} from '@features/users/components/Features';
-import {EditEventFormFeature} from '../../edit';
 import {FeatureRequirement} from '@services/features/list/components/FeatureRequirement';
-import {LoggedIn} from '@features/users/behaviors/login/components/Requirement';
+import {LoginRequirement} from '@features/users/behaviors/login/components/LoginRequirement';
 import {featureId__events} from '../../../../../@/featureIds';
+import {EventTagFormFeature} from '../../tag/components/EventTagFormFeature';
+import {EventCreateFormFeature} from '../../create/components/EventCreateFormFeature';
+import {EventEditFormFeature} from '../../edit/components/EventEditFormFeature';
 
 export function EventsControlPanel() {
   return (
@@ -29,14 +29,14 @@ export function EventsControlPanel() {
 
       <FeatureRequirement name={featureId__events} alternative={'Need Events for Admin.All Events Route'}>
         <Routes>
-          <Route path={'all'} element={<div style={{width: 500 + 'px'}}><AllEventsEventDisplay/></div>}/>
+          <Route path={'all'} element={<div style={{width: 500 + 'px'}}><EventListDisplay/></div>}/>
           <Route path="" element={
-            <LoggedIn>
-              <CreateEventFormFeature/>
-              <EditEventFormFeature/>
+            <LoginRequirement>
+              <EventCreateFormFeature/>
+              <EventEditFormFeature/>
               <EventDisplayFormFeature/>
-              <TagEventFormFeature/>
-            </LoggedIn>
+              <EventTagFormFeature/>
+            </LoginRequirement>
           }/>
         </Routes>
       </FeatureRequirement>

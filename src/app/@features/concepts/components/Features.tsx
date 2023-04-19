@@ -2,7 +2,7 @@ import {Feature} from '@services/features/item/components/Feature';
 import React from 'react';
 import {useSelector} from 'react-redux';
 import {selectPossibleConceptsLastFetched, selectPossibleConceptsList} from '../services/redux/selectors';
-import {ConceptListQuery} from '../services/graphql/all/components/FindAll';
+import {ListQuery} from '@features/concepts/services/graphql/list/components/ListQuery';
 import {featureId__conceptDisplay, featureId__concepts} from '../../../@/featureIds';
 
 function ConceptDisplayFeature() {
@@ -21,5 +21,5 @@ export function ConceptFeatures() {
 
 ConceptFeatures.featureDeps =
   [
-    ConceptListQuery,
+    ListQuery,
   ]

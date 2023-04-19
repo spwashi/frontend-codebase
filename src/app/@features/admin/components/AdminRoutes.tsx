@@ -8,7 +8,7 @@ import {ScenesControlPanel} from '../../scenes/behaviors/admin/components/Contro
 import {EventsControlPanel} from '../../events/behaviors/admin/components/ControlPanel';
 import {TagsControlPanel} from '../../tags/behaviors/admin/components/ControlPanel';
 import {AssetsControlPanel} from '../../assets/behaviors/admin/components/ControlPanel';
-import {LoggedIn} from '../../users/behaviors/login/components/Requirement';
+import {LoginRequirement} from '../../users/behaviors/login/components/LoginRequirement';
 import React from 'react';
 import {Feature} from '@services/features/item/components/Feature';
 import {featureId__adminControlPanelsPostLogin, featureId__adminControlPanelsPreLogin} from '../../../@/featureIds';
@@ -26,12 +26,12 @@ export function AdminRoutes() {
           <Route path="tags/*" element={<TagsControlPanel/>}/>
           <Route path="assets/*" element={<AssetsControlPanel/>}/>
           <Route path="all/*" element={<>
-            <LoggedIn state={false}>
+            <LoginRequirement state={false}>
               <Feature name={featureId__adminControlPanelsPreLogin}>
                 <UsersControlPanel/>
               </Feature>
-            </LoggedIn>
-            <LoggedIn>
+            </LoginRequirement>
+            <LoginRequirement>
               <Feature name={featureId__adminControlPanelsPostLogin}>
                 <AssetsControlPanel/>
                 <ConceptsControlPanel/>
@@ -39,7 +39,7 @@ export function AdminRoutes() {
                 <ScenesControlPanel/>
                 <TagsControlPanel/>
               </Feature>
-            </LoggedIn>
+            </LoginRequirement>
           </>}/>
         </Routes>
       }/>
