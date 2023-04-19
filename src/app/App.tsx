@@ -5,8 +5,8 @@ import { LogAppReduxState } from "@core/dev/components/Log";
 import {
   ApolloClient,
   ApolloProvider,
-  InMemoryCache,
   createHttpLink,
+  InMemoryCache,
 } from "@apollo/client";
 import { persistor, store } from "@services/redux/store";
 import { PersistGate } from "redux-persist/integration/react";

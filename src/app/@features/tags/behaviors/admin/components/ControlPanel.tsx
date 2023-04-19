@@ -9,6 +9,7 @@ import { FeatureRequirement } from "@services/features/list/components/FeatureRe
 import { LoginRequirement } from "@features/users/behaviors/login/components/LoginRequirement";
 import { featureId__tags } from "../../../../../@/featureIds";
 import { TagCreateFormFeature } from "../../create/components/TagCreateFormFeature";
+
 export function TagsControlPanel() {
   return (
     <>

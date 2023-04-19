@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { BACKEND_URL, IS_AUTHENTICATED_URL } from "@core/constants";
+import { IS_AUTHENTICATED_URL } from "@core/constants";
 import { logout } from "./Logout";
 import { useJwt } from "@services/jwt/hooks/useJwt";
 import { Feature } from "@services/features/item/components/Feature";

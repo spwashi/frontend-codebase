@@ -1,11 +1,11 @@
 import { ConceptTag } from "./join/tag/TagOne";
 import React, { useState } from "react";
 import {
-  IConceptTag_Complete,
   IConcept_Complete,
+  IConceptTag_Complete,
 } from "@junction/models/concept/hybrids";
 import { useActiveConcept } from "../context/context";
-import { Editor, EditorState, convertFromRaw } from "draft-js";
+import { convertFromRaw, Editor, EditorState } from "draft-js";
 import { Log } from "@core/dev/components/Log";
 import { IConcept } from "@junction/models/concept/models";
 import { ErrorBoundary } from "@core/error/components/ErrorBoundary";

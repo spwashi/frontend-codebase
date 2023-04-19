@@ -1,8 +1,8 @@
 import {
   ApolloClient,
   ApolloProvider,
-  InMemoryCache,
   createHttpLink,
+  InMemoryCache,
 } from "@apollo/client";
 import { Provider } from "react-redux";
 import { persistor, store } from "../redux/store";
