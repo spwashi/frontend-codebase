@@ -1,9 +1,9 @@
-import { AssetUploadForm } from "../../upload/components/AssetUploadForm";
+import { AssetUploadFormFeature } from "../../upload/components/AssetUploadFormFeature";
 import { AssetDisplayForm } from "../../display/components/AssetDisplayForm";
 import React from "react";
 import { UserFeatures } from "../../../../users/components/Features";
 import { ProjectFeatures } from "../../../../projects/components/Features";
-import { LoginRequirement } from "../../../../users/behaviors/login/components/LoginRequirement";
+import { LoginRequirement } from "../../../../users/behaviors/login/components/gates/LoginRequirement";
 import { NavLink } from "react-router-dom";
 import { Route, Routes } from "react-router";
 import { FeatureRequirement } from "@services/features/list/components/FeatureRequirement";
@@ -31,7 +31,7 @@ export function AssetsControlPanel() {
             path=""
             element={
               <LoginRequirement>
-                <AssetUploadForm />
+                <AssetUploadFormFeature />
                 <AssetDisplayForm />
               </LoginRequirement>
             }

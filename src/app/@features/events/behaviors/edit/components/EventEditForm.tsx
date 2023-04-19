@@ -7,7 +7,7 @@ import { form__selectEvent } from "@features/events/behaviors/select/config";
 import { form__editEvent } from "@features/events/behaviors/edit/config";
 import { GraphqlMutationResponse } from "@services/graphql/components/api/GraphqlMutationResponse";
 import React from "react";
-import { useEventSelectForm } from "@features/events/behaviors/edit/hooks/useEventSelectForm";
+import { useEventSelectForm } from "@features/events/behaviors/select/hooks/useEventSelectForm";
 
 export function EventEditForm() {
   const { send, response } = useEditEventMutation();
@@ -15,7 +15,6 @@ export function EventEditForm() {
   const [event, setEventFromForm] = useEventSelectForm();
   return (
     <div>
-      <Log>{event}</Log>
       <FormWidget config={form__selectEvent} onSubmit={setEventFromForm} />
       {event && (
         <FormWidget

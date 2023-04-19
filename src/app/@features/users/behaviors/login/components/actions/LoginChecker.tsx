@@ -1,15 +1,15 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { IS_AUTHENTICATED_URL } from "@core/constants";
-import { logout } from "./Logout";
 import { useJwt } from "@services/jwt/hooks/useJwt";
 import { Feature } from "@services/features/item/components/Feature";
-import { featureId__userLoginVerify } from "../../../../../@/featureIds";
+import { featureId__userLoginVerify } from "../../../../../../@/featureIds";
+import { logoutUser } from "@features/users/behaviors/logout/helpers/logoutUser";
 
 /**
  * Checks the current jwt, logging out if the jwt is invalid
  */
-export function VerifyLogin() {
+export function LoginChecker() {
   const dispatch = useDispatch();
   const jwt = useJwt();
   useEffect(() => {
@@ -23,7 +23,7 @@ export function VerifyLogin() {
       },
     }).then((res) => {
       if (res.status !== 200) {
-        logout(dispatch);
+        logoutUser(dispatch);
       }
     });
   }, [jwt]);

@@ -5,13 +5,9 @@ import { formClassNames } from "@widgets/form/styles/classNames";
 import { FormWidget } from "@widgets/form/FormWidget";
 import { form__editScene } from "@features/scenes/behaviors/edit/config";
 import { GraphqlMutationResponse } from "@services/graphql/components/api/GraphqlMutationResponse";
-import React, { useState } from "react";
+import React from "react";
+import { useSceneSelectForm } from "@features/scenes/behaviors/select/hooks/useSceneSelectForm";
 
-function useSceneSelectForm() {
-  const [{ data: { scene: scene } = {} as any } = {} as any, setScene] =
-    useState({} as any);
-  return [scene, setScene];
-}
 export function SceneEditForm() {
   const { send, response } = useEditSceneMutation();
   const onsubmit = useMutationFormSubmitCallback(send, selectEditSceneInput);

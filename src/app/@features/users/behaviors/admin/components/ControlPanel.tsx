@@ -1,7 +1,7 @@
 import { ProjectFeatures } from "@features/projects/components/Features";
-import { LoginRequirement } from "../../login/components/LoginRequirement";
-import { VerifyLogin } from "../../login/components/VerifyLogin";
-import { LogoutButton } from "../../login/components/Logout";
+import { LoginRequirement } from "../../login/components/gates/LoginRequirement";
+import { LoginChecker } from "@features/users/behaviors/login/components/actions/LoginChecker";
+import { UserLogoutButton } from "../../logout/components/buttons/UserLogoutButton";
 import React from "react";
 import { UserFeatures } from "../../../components/Features";
 import { FeatureRequirement } from "@services/features/list/components/FeatureRequirement";
@@ -9,8 +9,8 @@ import {
   featureId__userLogin,
   featureId__users,
 } from "../../../../../@/featureIds";
-import { UserLoginForm } from "../../login/components/UserLoginForm";
-import { UserSignupForm } from "../../signup/components/UserSignupForm";
+import { UserLoginFormFeature } from "../../login/components/forms/UserLoginFormFeature";
+import { UserSignupFormFeature } from "../../signup/components/forms/UserSignupFormFeature";
 
 export function UsersControlPanel() {
   return (
@@ -18,15 +18,15 @@ export function UsersControlPanel() {
       <ProjectFeatures />
       <UserFeatures />
       <FeatureRequirement name={featureId__users} alternative={"Need Users"}>
-        <LogoutButton />
+        <UserLogoutButton />
         <FeatureRequirement
           name={featureId__userLogin}
           alternative={"Need User Login"}
         >
-          <VerifyLogin />
+          <LoginChecker />
           <LoginRequirement state={false}>
-            <UserLoginForm />
-            <UserSignupForm />
+            <UserLoginFormFeature />
+            <UserSignupFormFeature />
           </LoginRequirement>
         </FeatureRequirement>
       </FeatureRequirement>

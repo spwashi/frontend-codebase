@@ -1,10 +1,11 @@
 import React, { ReactNode, useState } from "react";
 import { useSelector } from "react-redux";
-import { selectLoggedInUserName } from "../redux/reducer";
+import { selectLoggedInUserName } from "../../redux/reducer";
 import classNames from "classnames";
 import { appClassnames } from "@core/styles/classNames";
 import { useJwt } from "@services/jwt/hooks/useJwt";
 import { FeatureRegistrationBoundary } from "@services/features/list/components/FeatureRegistrationBoundary";
+import { IFeatureRegistrationContextState } from "@services/features/list/types";
 
 /**
  * An error message indicating that a user must log in
@@ -17,12 +18,15 @@ function MustLoginErrorMessage({ children }: { children: ReactNode }) {
     appClassnames.states.isWidget,
   ]);
   const [registry, setRegistry] = useState<string[]>([]);
+  const onAttemptRegister = (
+    contextState: IFeatureRegistrationContextState
+  ) => {
+    setRegistry(Object.keys(contextState.features.available));
+  };
   return (
     <FeatureRegistrationBoundary
-      disabled
-      onAttemptRegister={(contextState) =>
-        setRegistry(Object.keys(contextState.features.available))
-      }
+      featuresDisabled={true}
+      onAttemptRegister={onAttemptRegister}
     >
       <div className={className} data-error-msg={errorMsg}>
         <header>

@@ -6,7 +6,7 @@ import { ProjectFeatures } from "@features/projects/components/Features";
 import { NavLink } from "react-router-dom";
 import { Route, Routes } from "react-router";
 import { FeatureRequirement } from "@services/features/list/components/FeatureRequirement";
-import { LoginRequirement } from "@features/users/behaviors/login/components/LoginRequirement";
+import { LoginRequirement } from "@features/users/behaviors/login/components/gates/LoginRequirement";
 import { featureId__tags } from "../../../../../@/featureIds";
 import { TagCreateFormFeature } from "../../create/components/TagCreateFormFeature";
 

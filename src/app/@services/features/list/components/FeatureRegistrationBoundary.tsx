@@ -7,7 +7,7 @@ import { IFeatureRegistrationContextState } from "@services/features/list/types"
 
 type IFRB_Props = {
   children: ReactNode;
-  disabled?: boolean;
+  featuresDisabled?: boolean;
   onAttemptRegister?: (state: IFeatureRegistrationContextState) => void;
 };
 /**
@@ -15,12 +15,12 @@ type IFRB_Props = {
  */
 export function FeatureRegistrationBoundary({
   children,
-  disabled,
+  featuresDisabled,
   onAttemptRegister,
 }: IFRB_Props) {
   const [state, dispatch] = useReducer(
     featuresReducer,
-    getFrbContextStartState({ disabled })
+    getFrbContextStartState({ featuresDisabled: featuresDisabled })
   );
   const contextValue = useMemo(() => ({ state, dispatch }), [state, dispatch]);
 

@@ -46,7 +46,7 @@ function submissionCallback({
   );
 }
 
-export function AssetUploadForm() {
+export function AssetUploadFormFeature() {
   const [out, setOut] = useState<any | null>(null);
   const jwt = useJwt();
   const [error, setError] = useState<any | null>(null);

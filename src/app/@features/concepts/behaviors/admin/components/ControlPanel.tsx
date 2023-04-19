@@ -7,7 +7,7 @@ import { NavLink } from "react-router-dom";
 import { TagFeatures } from "@features/tags/components/Features";
 import { UserFeatures } from "@features/users/components/Features";
 import { FeatureRequirement } from "@services/features/list/components/FeatureRequirement";
-import { LoginRequirement } from "@features/users/behaviors/login/components/LoginRequirement";
+import { LoginRequirement } from "@features/users/behaviors/login/components/gates/LoginRequirement";
 import { featureId__concepts } from "../../../../../@/featureIds";
 import { ConceptCreateFormFeature } from "../../create/components/ConceptCreateFormFeature";
 import { ConceptEditFormFeature } from "../../edit/components/ConceptEditFormFeature";

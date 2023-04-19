@@ -1,10 +1,10 @@
-import { useCreateTagMutation } from "@features/tags/services/graphql/one/mutations/create";
+import { useCreateTagMutation } from "../../../services/graphql/one/mutations/create";
 import { useDispatch } from "react-redux";
 import { useMutationFormSubmitCallback } from "@services/graphql/hooks/useMutationFormSubmitCallback";
-import { ACTION_TAG_CREATED } from "@features/tags/services/redux/reducer";
-import { selectCreateTagInput } from "@features/tags/behaviors/create/selectors";
+import { ACTION_TAG_CREATED } from "../../../services/redux/reducer";
+import { selectCreateTagInput } from "../selectors";
 import { FormWidget } from "@widgets/form/FormWidget";
-import { form__createTag } from "@features/tags/behaviors/create/config";
+import { form__createTag } from "../config";
 import { GraphqlMutationResponse } from "@services/graphql/components/api/GraphqlMutationResponse";
 import React from "react";
 

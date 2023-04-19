@@ -8,7 +8,7 @@ import { TagFeatures } from "@features/tags/components/Features";
 import { UserFeatures } from "@features/users/components/Features";
 import { ListQuery } from "@features/scenes/services/graphql/list/components/ListQuery";
 import { FeatureRequirement } from "@services/features/list/components/FeatureRequirement";
-import { LoginRequirement } from "@features/users/behaviors/login/components/LoginRequirement";
+import { LoginRequirement } from "@features/users/behaviors/login/components/gates/LoginRequirement";
 import {
   featureId__sceneDisplay,
   featureId__scenes,

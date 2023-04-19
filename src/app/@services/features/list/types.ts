@@ -2,7 +2,7 @@ import React from "react";
 
 export type IFeatureRegistrationContextState = {
   stateKey: number;
-  disabled: boolean;
+  featuresDisabled: boolean;
   lastAction: IFeatureRegistrationContextAction | null;
   features: {
     available: {

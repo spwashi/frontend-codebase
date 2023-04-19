@@ -43,7 +43,7 @@ export function Feature({ name, children, enabled = true }: IFeatureProps) {
   const features = useContext(FeaturesRegistrationContext);
 
   if (!enabled) return null;
-  if (features.state?.disabled) return null;
+  if (features.state?.featuresDisabled) return null;
   return (
     <FeatureInternalContext.Provider value={value}>
       {children && (

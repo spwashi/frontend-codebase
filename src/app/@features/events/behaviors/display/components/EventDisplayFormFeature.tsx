@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Event } from "../../../services/graphql/one";
 import { Feature } from "@services/features/item/components/Feature";
 import { FormWidget } from "@widgets/form/FormWidget";
@@ -11,15 +11,10 @@ import {
   featureId__eventDisplay,
   featureId__eventDisplayForm,
 } from "../../../../../@/featureIds";
-
-function useSelectEventForm() {
-  const [state, setState] = useState<any | null>();
-  const event = state?.data?.event;
-  return [event, setState] as const;
-}
+import { useEventSelectForm } from "@features/events/behaviors/select/hooks/useEventSelectForm";
 
 export function EventDisplayFormFeature() {
-  const [event, setState] = useSelectEventForm();
+  const [event, setState] = useEventSelectForm();
   return (
     <FeatureRequirement
       name={featureId__eventDisplay}

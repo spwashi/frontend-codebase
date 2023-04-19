@@ -8,7 +8,7 @@ import { ScenesControlPanel } from "../../scenes/behaviors/admin/components/Cont
 import { EventsControlPanel } from "../../events/behaviors/admin/components/ControlPanel";
 import { TagsControlPanel } from "../../tags/behaviors/admin/components/ControlPanel";
 import { AssetsControlPanel } from "../../assets/behaviors/admin/components/ControlPanel";
-import { LoginRequirement } from "../../users/behaviors/login/components/LoginRequirement";
+import { LoginRequirement } from "../../users/behaviors/login/components/gates/LoginRequirement";
 import React from "react";
 import { Feature } from "@services/features/item/components/Feature";
 import {

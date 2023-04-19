@@ -3,7 +3,6 @@ import { Concept } from "../../../services/graphql/one";
 import { Feature } from "@services/features/item/components/Feature";
 import { FormWidget } from "@widgets/form/FormWidget";
 import { Log } from "@core/dev/components/Log";
-import { LoginRequirement } from "@features/users/behaviors/login/components/LoginRequirement";
 import { FeatureRequirement } from "@services/features/list/components/FeatureRequirement";
 import { form__selectConcept } from "../../select/config";
 import {
@@ -19,13 +18,10 @@ export function ConceptDisplayFormFeature() {
       name={featureId__conceptDisplay}
       alternative={"Need Concepts Display"}
     >
-      <LoginRequirement>
-        <Feature name={featureId__conceptDisplayForm}>
-          <Log>{{ id }}</Log>
-          <FormWidget config={form__selectConcept} onSubmit={setState} />
-          {id && <Concept id={id} />}
-        </Feature>
-      </LoginRequirement>
+      <Feature name={featureId__conceptDisplayForm}>
+        <FormWidget config={form__selectConcept} onSubmit={setState} />
+        {id && <Concept id={id} />}
+      </Feature>
     </FeatureRequirement>
   );
 }
