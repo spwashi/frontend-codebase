@@ -6,11 +6,8 @@ import { select_noGraphql } from "@services/redux/reducer";
 import { appClassnames } from "../styles/classNames";
 import { LogAppReduxState } from "@core/dev/components/Log";
 
-interface ApplicationParams {
-  canBeAdmin: boolean;
-}
-
-export function Application({ canBeAdmin }: ApplicationParams) {
+const canBeAdmin = true;
+export function Application() {
   const noGraphql = useSelector(select_noGraphql);
   const className = classnames({
     noGraphql,

@@ -7,8 +7,5 @@ export interface FormState<T = any> {
   data: T;
   initialValue?: T;
   lastReset: number | undefined;
-  submit: (e?: FormEvent) => void;
-
-  dispatch?: (action: { type: string; payload: any }) => void;
   changed: { [k: string]: boolean };
 }

@@ -21,23 +21,17 @@ import { Route } from "react-router";
 const httpLink = createHttpLink({ uri: GRAPHQL_URL });
 const client = new ApolloClient({ link: httpLink, cache: new InMemoryCache() });
 
+const browserRouter = createBrowserRouter(
+  createRoutesFromElements(<Route path={"/*"} element={<Application />} />)
+);
+
 function App() {
-  const canBeAdmin = true;
   return (
     <Provider store={store}>
       <ApolloProvider client={client}>
         <PersistGate loading={null} persistor={persistor}>
           <FeatureRegistrationBoundary>
-            <RouterProvider
-              router={createBrowserRouter(
-                createRoutesFromElements(
-                  <Route
-                    path={"/*"}
-                    element={<Application canBeAdmin={canBeAdmin} />}
-                  />
-                )
-              )}
-            />
+            <RouterProvider router={browserRouter} />
           </FeatureRegistrationBoundary>
         </PersistGate>
       </ApolloProvider>

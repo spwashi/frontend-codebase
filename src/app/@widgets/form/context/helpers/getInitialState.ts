@@ -7,9 +7,6 @@ export function getInitialState<T = any>(d?: T, id?: string): FormState<T> {
     data: {} as T,
     initialValue: d,
     lastReset: undefined,
-    submit: () => {
-      console.log("submitted");
-    },
     changed: {},
   };
 }

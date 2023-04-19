@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import { FormContext } from "../../context/context";
-import { ACTION_RESET } from "../../state/reducer";
+import { FormContext } from "../../../context/context";
+import { ACTION_RESET } from "../../../state/reducer";
 
 export function ResetFormButton() {
   const dispatch = useContext(FormContext)?.dispatch;

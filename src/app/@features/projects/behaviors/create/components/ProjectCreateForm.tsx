@@ -34,7 +34,6 @@ export function ProjectCreateForm() {
       <ErrorBoundary handler={(e) => setFatal(e)} error={fatal}>
         <FormWidget
           config={form__createProject}
-          onReset={() => response.reset()}
           onSubmit={onsubmit}
           defaultValue={{}}
         />
