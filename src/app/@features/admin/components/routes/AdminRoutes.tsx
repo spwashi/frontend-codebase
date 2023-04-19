@@ -3,18 +3,18 @@ import { Route } from "react-router";
 import React from "react";
 import { adminPaths } from "@junction/routes/routes";
 import { Feature } from "@services/features/item/components/Feature";
-import { UsersControlPanel } from "../../users/behaviors/admin/components/UsersControlPanel";
-import { ProjectsControlPanel } from "../../projects/behaviors/admin/components/ProjectsControlPanel";
-import { ConceptsControlPanel } from "../../concepts/behaviors/admin/components/ConceptsControlPanel";
-import { ScenesControlPanel } from "../../scenes/behaviors/admin/components/ScenesControlPanel";
-import { EventsControlPanel } from "../../events/behaviors/admin/components/EventsControlPanel";
-import { TagsControlPanel } from "../../tags/behaviors/admin/components/TagsControlPanel";
-import { AssetsControlPanel } from "../../assets/behaviors/admin/components/AssetsControlPanel";
-import { LoginRequirement } from "../../users/behaviors/login/components/gates/LoginRequirement";
+import { UsersControlPanel } from "../../../users/behaviors/admin/components/UsersControlPanel";
+import { ProjectsControlPanel } from "../../../projects/behaviors/admin/components/ProjectsControlPanel";
+import { ConceptsControlPanel } from "../../../concepts/behaviors/admin/components/ConceptsControlPanel";
+import { ScenesControlPanel } from "../../../scenes/behaviors/admin/components/ScenesControlPanel";
+import { EventsControlPanel } from "../../../events/behaviors/admin/components/EventsControlPanel";
+import { TagsControlPanel } from "../../../tags/behaviors/admin/components/TagsControlPanel";
+import { AssetsControlPanel } from "../../../assets/behaviors/admin/components/AssetsControlPanel";
+import { LoginRequirement } from "../../../users/behaviors/login/components/gates/LoginRequirement";
 import {
   featureId__adminControlPanelsPostLogin,
   featureId__adminControlPanelsPreLogin,
-} from "../../../@/featureIds";
+} from "../../../../@/featureIds";
 
 export function AdminRoutes() {
   return (
