@@ -44,7 +44,6 @@ export const graphQlNodes = {
     fetchList: gqlNode_ASSET_FETCH_LIST,
     fetch: gqlNode_ASSET_FETCH_ONE,
   },
-
   concept: {
     create: gqlNode_CONCEPT_CREATE,
     delete: gqlNode_CONCEPT_DELETE,
@@ -54,7 +53,6 @@ export const graphQlNodes = {
     tag: gqlNode_CONCEPT_TAG,
     untag: gqlNode_CONCEPT_UNTAG,
   },
-
   event: {
     create: gqlNode_EVENT_CREATE,
     delete: gqlNode_EVENT_DELETE,
@@ -69,7 +67,6 @@ export const graphQlNodes = {
     fetchList: gqlNode_PROJECT_FETCH_LIST,
     fetch: gqlNode_PROJECT_FETCH_ONE,
   },
-
   scene: {
     create: gqlNode_SCENE_CREATE,
     delete: gqlNode_SCENE_DELETE,
@@ -84,7 +81,6 @@ export const graphQlNodes = {
     fetchList: gqlNode_TAG_FETCH_LIST,
     fetch: gqlNode_TAG_FETCH_ONE,
   },
-
   user: {
     fetch: gqlNode_USER_FETCH_LIST,
     login: gqlNode_USER_LOGIN,
