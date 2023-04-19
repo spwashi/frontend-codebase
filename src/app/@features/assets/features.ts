@@ -1,8 +1,8 @@
 import {
   featureId__assetDisplay,
   featureId__assetDisplayForm,
-  featureId__assetUploadForm,
   featureId__assets,
+  featureId__assetUploadForm,
 } from "../../@/featureIds";
 
 export type IAssetFeatureNames =

@@ -1,7 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Feature } from "@services/features/item/components/Feature";
-import { EventListQuery } from "@features/events/services/graphql/list/components/ListQuery";
 import {
   selectPossibleEventsLastFetched,
   selectPossibleEventsList,
@@ -24,5 +23,3 @@ export function EventFeatures() {
     </Feature>
   );
 }
-
-EventFeatures.featureDeps = [EventListQuery];

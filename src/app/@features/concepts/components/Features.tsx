@@ -1,7 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Feature } from "@services/features/item/components/Feature";
-import { ListQuery } from "@features/concepts/services/graphql/list/components/ListQuery";
 import {
   selectPossibleConceptsLastFetched,
   selectPossibleConceptsList,
@@ -24,5 +23,3 @@ export function ConceptFeatures() {
     </Feature>
   );
 }
-
-ConceptFeatures.featureDeps = [ListQuery];

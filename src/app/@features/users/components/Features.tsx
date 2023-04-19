@@ -5,11 +5,10 @@ import {
   selectPossibleUsersLastFetched,
   selectPossibleUsersList,
 } from "../services/redux/selectors";
-import { UserListQuery } from "../services/graphql/list/components/ListQuery";
 import {
   featureId__userLogin,
-  featureId__userSignup,
   featureId__users,
+  featureId__userSignup,
 } from "../../../@/featureIds";
 
 const requireFetch = false;
@@ -29,5 +28,3 @@ export function UserFeatures() {
     </Feature>
   );
 }
-
-UserFeatures.featureDeps = [UserListQuery];

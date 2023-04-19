@@ -4,8 +4,8 @@ import { BrowserRouter } from "react-router-dom";
 import {
   ApolloClient,
   ApolloProvider,
-  InMemoryCache,
   createHttpLink,
+  InMemoryCache,
 } from "@apollo/client";
 import { PersistGate } from "redux-persist/integration/react";
 import { LogAppReduxState } from "@core/dev/components/Log";

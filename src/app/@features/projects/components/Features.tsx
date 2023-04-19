@@ -5,9 +5,7 @@ import {
   selectPossibleProjectsLastFetched,
   selectPossibleProjectsList,
 } from "../services/redux/selectors";
-import { ProjectListQuery } from "../services/graphql/list/components/ListQuery";
 import {
-  featureId__assets,
   featureId__projectCreate,
   featureId__projectDisplay,
   featureId__projects,
@@ -34,5 +32,3 @@ export function ProjectFeatures() {
     </Feature>
   );
 }
-
-ProjectFeatures.featureDeps = [ProjectListQuery];

@@ -4,7 +4,6 @@ import { Log } from "@core/dev/components/Log";
 import { useDeleteSceneMutation } from "@features/scenes/services/graphql/one/mutations/delete";
 import { ACTION_DELETE_ONE_SCENE } from "../../../redux/reducer";
 
-
 export function DeleteSceneButton({ id }: { id: number }) {
   const [deleteScene, { error }] = useDeleteSceneMutation();
   const dispatch = useDispatch();

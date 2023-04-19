@@ -1,7 +1,7 @@
 import React from "react";
 import {
-  IEventTag_Complete,
   IEvent_Complete,
+  IEventTag_Complete,
 } from "@junction/models/event/hybrids";
 import { IEvent } from "@junction/models/event/models";
 import { ErrorBoundary } from "@core/error/components/ErrorBoundary";

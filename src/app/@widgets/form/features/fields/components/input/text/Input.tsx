@@ -5,7 +5,7 @@ import React, {
   useMemo,
   useState,
 } from "react";
-import { Editor, EditorState, convertFromRaw, convertToRaw } from "draft-js";
+import { convertFromRaw, convertToRaw, Editor, EditorState } from "draft-js";
 import { FormContext } from "@widgets/form/context/context";
 import { useFormItem } from "../../../hooks/useFormItem";
 

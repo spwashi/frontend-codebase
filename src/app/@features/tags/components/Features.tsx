@@ -5,7 +5,6 @@ import {
   selectPossibleTagsLastFetched,
   selectPossibleTagsList,
 } from "../services/redux/selectors";
-import { ListQuery } from "../services/graphql/list/components/ListQuery";
 import { featureId__tagDisplay, featureId__tags } from "../../../@/featureIds";
 
 function TagDisplayFeature() {
@@ -21,5 +20,3 @@ export function TagFeatures() {
     </Feature>
   );
 }
-
-TagFeatures.featureDeps = [ListQuery];

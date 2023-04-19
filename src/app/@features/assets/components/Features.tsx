@@ -9,5 +9,3 @@ export function AssetFeatures() {
     </React.Fragment>
   );
 }
-
-AssetFeatures.featureDeps = [] as any[];
