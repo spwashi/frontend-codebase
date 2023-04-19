@@ -4,8 +4,7 @@ import { FormWidget } from "@widgets/form/FormWidget";
 import { Feature } from "@services/features/item/components/Feature";
 import { form__selectLoggedInUser } from "@features/users/behaviors/select-loggedIn/config";
 import { getform__assetSelect } from "@features/assets/behaviors/select/config";
-import { LoginRequirement } from "../../../../users/behaviors/login/components/gates/LoginRequirement";
-import { getUserSelectorUsername } from "../../../../users/components/input/UserSelect";
+import { LoginRequirement } from "@features/users/behaviors/login/components/gates/LoginRequirement";
 import { AssetQuery } from "../../../services/graphql/one/components/AssetQuery";
 import {
   featureId__assetDisplay,
@@ -14,8 +13,6 @@ import {
 
 /**
  * Selects an asset to display, then displays it
- * @param user
- * @constructor
  */
 function DisplayAssetForm(user: { username: string }) {
   const [state, setState] = useState<any | null>();
@@ -50,7 +47,7 @@ function useUserSelectForm() {
  */
 export function AssetDisplayForm() {
   const [user, setUserFromForm] = useUserSelectForm();
-  const username = getUserSelectorUsername(user);
+  const username = user?.username;
   return (
     <Feature name={featureId__assetDisplay}>
       <FormWidget

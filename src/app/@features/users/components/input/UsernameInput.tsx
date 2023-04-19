@@ -12,9 +12,9 @@ export function UsernameInput({
   return (
     <>
       {doSelect || !ignoreLogin ? (
-        <UserSelect formKey="user" ignoreLogin={ignoreLogin} />
+        <UserSelect formKey="username" />
       ) : (
-        <Input formKey="user" placeholder="Username" />
+        <Input formKey="username" placeholder="Username" />
       )}
     </>
   );
