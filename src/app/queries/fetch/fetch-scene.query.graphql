@@ -1,0 +1,8 @@
+query FetchScene($scene: SceneReferenceInput!) {
+    scene(scene: $scene) {
+        id
+        name
+        title
+        description
+    }
+}

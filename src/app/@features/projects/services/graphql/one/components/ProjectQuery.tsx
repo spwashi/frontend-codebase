@@ -7,7 +7,7 @@ import {
 import { ProjectContext } from "../../../../context/context";
 import { graphQlNodes } from "../../../../../../@/graphQlNodes";
 
-export function OneProjectQuery({ id }: IProjectIdentifyingPartial) {
+export function ProjectQuery({ id }: IProjectIdentifyingPartial) {
   const context = useContext(ProjectContext);
   let query: any;
   ({ data: query } = useQuery(graphQlNodes.project.fetch, {

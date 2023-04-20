@@ -1,13 +1,7 @@
-import { gql, useMutation } from "@apollo/client";
-import { graphQlNodes } from "../../../../../../@/graphQlNodes";
+import { appGql } from "../../../../../../../__generated__";
 
-export const gqlNode_EVENT_DELETE = gql`
-  mutation DeleteEvent($id: Int) {
-    deleteEvent(event: { id: $id }) {
-      id
-    }
+export const gqlNode_EVENT_DELETE = appGql(`mutation DeleteEvent($id: String!) {
+  deleteEvent(event: {id: $id}) {
+    id
   }
-`;
-export function useDeleteEventMutation() {
-  return useMutation(graphQlNodes.event.delete);
-}
+}`);

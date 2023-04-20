@@ -1,26 +1,26 @@
 type Query {
     # Assets
-    asset(realname: String!): Asset
-    assetList(user: CreateUserInput): [Asset]
+    asset(asset: AssetReferenceInput!): Asset
+    assetList(user: UserReferenceInput): [Asset]
 
     # Concepts
-    concept(id: String!): Concept
+    concept(concept: ConceptReferenceInput!): Concept
     conceptList: [Concept]!
 
     # Events
-    event(id: String!): Event
+    event(event: EventReferenceInput!): Event
     eventList: [Event]!
 
     # Projects
-    project(id: String): Project
+    project(project: ProjectReferenceInput!): Project
     projectList(domain:String): [Project]!
 
     # Scenes
-    scene(id: String!): Scene
+    scene(scene: SceneReferenceInput!): Scene
     sceneList: [Scene]!
 
     # Tags
-    tag(id: String!): Tag
+    tag(tag: TagReferenceInput!): Tag
     tagList: [Tag]!
 
     # Users
@@ -28,49 +28,54 @@ type Query {
 }
 type Mutation {
     # Concepts
-    createConcept(concept: CreateConceptInput, user: UserReferenceInput): Concept
-    editConcept(concept: EditConceptInput, user: UserReferenceInput): Concept
-    deleteConcept(concept: DeleteConceptInput, user: UserReferenceInput): Concept
-    linkConcepts(primary: ConceptReferenceInput, secondary: ConceptReferenceInput, user: UserReferenceInput): ConceptConcept
-    tagConcept(concept: ConceptReferenceInput, tags: [TagReferenceInput], user: UserReferenceInput): ConceptTag
-    untagConcept(concept: ConceptReferenceInput, tags: [TagReferenceInput], user: UserReferenceInput): ConceptTag
+    createConcept(concept: CreateConceptInput!, user: UserReferenceInput): Concept
+    editConcept(concept: EditConceptInput!, user: UserReferenceInput): Concept
+    deleteConcept(concept: DeleteConceptInput!, user: UserReferenceInput): Concept
+    linkConcepts(primary: ConceptReferenceInput!, secondary: ConceptReferenceInput!, user: UserReferenceInput): ConceptConcept
+    tagConcept(concept: ConceptReferenceInput!, tags: [TagReferenceInput], user: UserReferenceInput): ConceptTag
+    untagConcept(concept: ConceptReferenceInput!, tags: [TagReferenceInput], user: UserReferenceInput): ConceptTag
 
     # Events
-    createEvent(event: CreateEventInput, user: UserReferenceInput): Event
-    editEvent(event: EditEventInput, user: UserReferenceInput): Event
-    deleteEvent(event: DeleteEventInput, user: UserReferenceInput): Event
-    tagEvent(event: EventReferenceInput, tags: [TagReferenceInput], user: UserReferenceInput): EventTag
-    untagEvent(event: EventReferenceInput, tags: [TagReferenceInput], user: UserReferenceInput): EventTag
+    createEvent(event: CreateEventInput!, user: UserReferenceInput): Event
+    editEvent(event: EditEventInput!, user: UserReferenceInput): Event
+    deleteEvent(event: DeleteEventInput!, user: UserReferenceInput): Event
+    tagEvent(event: EventReferenceInput!, tags: [TagReferenceInput], user: UserReferenceInput): EventTag
+    untagEvent(event: EventReferenceInput!, tags: [TagReferenceInput], user: UserReferenceInput): EventTag
 
     # Projects
-    createProject(project: CreateProjectInput): Project
-    editProject(project: EditProjectInput, user: UserReferenceInput): Project
-    deleteProject(project: DeleteProjectInput, user: UserReferenceInput): Project
-    tagProject(project: ProjectReferenceInput, tags: [TagReferenceInput], user: UserReferenceInput): ProjectTag
-    untagProject(project: ProjectReferenceInput, tags: [TagReferenceInput], user: UserReferenceInput): ProjectTag
+    createProject(project: CreateProjectInput!): Project
+    editProject(project: EditProjectInput!, user: UserReferenceInput): Project
+    deleteProject(project: DeleteProjectInput!, user: UserReferenceInput): Project
+    tagProject(project: ProjectReferenceInput!, tags: [TagReferenceInput], user: UserReferenceInput): ProjectTag
+    untagProject(project: ProjectReferenceInput!, tags: [TagReferenceInput], user: UserReferenceInput): ProjectTag
 
     # Scenes
-    createScene(scene: CreateSceneInput, user: UserReferenceInput): Scene
-    editScene(scene: EditSceneInput, user: UserReferenceInput): Scene
-    deleteScene(scene: DeleteSceneInput, user: UserReferenceInput): Scene
-    tagScene(scene: SceneReferenceInput, tags: [TagReferenceInput], user: UserReferenceInput): SceneTag
-    untagScene(scene: SceneReferenceInput, tags: [TagReferenceInput], user: UserReferenceInput): SceneTag
+    createScene(scene: CreateSceneInput!, user: UserReferenceInput): Scene
+    editScene(scene: EditSceneInput!, user: UserReferenceInput): Scene
+    deleteScene(scene: DeleteSceneInput!, user: UserReferenceInput): Scene
+    tagScene(scene: SceneReferenceInput!, tags: [TagReferenceInput], user: UserReferenceInput): SceneTag
+    untagScene(scene: SceneReferenceInput!, tags: [TagReferenceInput], user: UserReferenceInput): SceneTag
 
     # Tags
-    createTag(tag: CreateTagInput, user: UserReferenceInput): Tag
-    editTag(tag: EditTagInput, user: UserReferenceInput): Tag
-    deleteTag(tag: DeleteTagInput, user: UserReferenceInput): Tag
+    createTag(tag: CreateTagInput!, user: UserReferenceInput): Tag
+    editTag(tag: EditTagInput!, user: UserReferenceInput): Tag
+    deleteTag(tag: DeleteTagInput!, user: UserReferenceInput): Tag
 
     # Users
-    editUser(user: EditUserInput): User
-    logIn(user: UserLoginInput, password: PasswordReferenceInput, project: ProjectReferenceInput): UserLoginResponse
+    editUser(user: EditUserInput!): User
+    logIn(user: UserLoginInput!, password: PasswordReferenceInput, project: ProjectReferenceInput): UserLoginResponse
     signUp(user: CreateUserInput!, password: CreatePasswordInput!, project: ProjectReferenceInput): UserSignupResponse
 }
+
+# Asset
 type Asset {
     name: String!
     realname: String!
     contentType: String!
     uri: String!
+}
+input AssetReferenceInput {
+    realname: String!
 }
 type Concept {
     id: String
@@ -108,6 +113,8 @@ type ConceptConcept {
     secondary: Concept
     relationship: String
 }
+
+# Event
 type Event {
     id: String
     title: String!
@@ -144,6 +151,8 @@ type EventTag {
     event: Event
     tag: Tag
 }
+
+# Project
 type Project {
     id: String
     name: String!
@@ -173,6 +182,8 @@ type ProjectTag {
     project: Project
     tag: Tag
 }
+
+# Scene
 type Scene {
     id: String
     name: String!
@@ -199,6 +210,8 @@ type SceneTag {
     scene: Scene
     tag: Tag
 }
+
+# Tag
 type Tag {
     id: String
     description:String
@@ -223,6 +236,8 @@ input EditTagInput {
 input DeleteTagInput {
     id: String!
 }
+
+# User
 type User {
     id: String
     username: String!

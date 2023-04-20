@@ -1,13 +1,12 @@
-import { gql } from "@apollo/client";
+import { appGql } from "../../../../../../../__generated__";
 
-export const gqlNode_PROJECT_FETCH_LIST = gql`
-  query AllProjects($domain: String) {
-    projectList(domain: $domain) {
-      id
-      title
-      name
-      description
-      domain
-    }
+export const gqlNode_PROJECT_FETCH_LIST =
+  appGql(`query FetchProjectList($domain: String) {
+  projectList(domain: $domain) {
+    id
+    title
+    name
+    description
+    domain
   }
-`;
+}`);

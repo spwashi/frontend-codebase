@@ -1,13 +1,11 @@
-import { gql } from "@apollo/client";
+import { appGql } from "../../../../../../../__generated__";
 
-export const gqlNode_CONCEPT_FETCH_LIST = gql`
-  query AllConcepts {
-    conceptList {
-      id
-      title
-      contentType
-      src
-      published
-    }
+export const gqlNode_CONCEPT_FETCH_LIST = appGql(`query FetchConceptList {
+  conceptList {
+    id
+    title
+    contentType
+    src
+    published
   }
-`;
+}`);

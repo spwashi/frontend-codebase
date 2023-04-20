@@ -9,7 +9,7 @@ import { ACTION_RECEIVE_ONE_EVENT } from "../../../redux/reducer";
 import { EventContext } from "../context/context";
 import { graphQlNodes } from "../../../../../../@/graphQlNodes";
 
-export function OneEventQuery({ id }: IEventIdentifyingPartial) {
+export function EventQuery({ id }: IEventIdentifyingPartial) {
   const context = useContext(EventContext) ?? ({} as any);
   const { setEvent } = context;
   const { data: query } = useQuery(graphQlNodes.event.fetch, {

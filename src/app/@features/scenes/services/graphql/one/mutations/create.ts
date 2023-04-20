@@ -1,15 +1,13 @@
 // Define mutation
-import { gql } from "@apollo/client";
 
-export const gqlNode_SCENE_CREATE = gql`
-  mutation CreateScene($title: String!, $name: String!, $description: String) {
-    createScene(
-      scene: { title: $title, name: $name, description: $description }
-    ) {
-      id
-      name
-      title
-      description
-    }
+import { appGql } from "../../../../../../../__generated__";
+
+export const gqlNode_SCENE_CREATE =
+  appGql(`mutation CreateScene($scene: CreateSceneInput!) {
+  createScene(scene: $scene) {
+    id
+    name
+    title
+    description
   }
-`;
+}`);

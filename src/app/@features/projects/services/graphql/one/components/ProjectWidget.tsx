@@ -6,7 +6,7 @@ interface ProjectParams {
   project: IProject;
 }
 
-export function Project({ project }: ProjectParams) {
+export function ProjectWidget({ project }: ProjectParams) {
   const { title, domain, description } = project as IProject;
   return (
     <>
@@ -24,5 +24,5 @@ export function Project({ project }: ProjectParams) {
 export function ActiveProject() {
   const project = useActiveProject();
   if (!project) return null;
-  return <Project project={project} />;
+  return <ProjectWidget project={project} />;
 }

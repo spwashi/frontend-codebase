@@ -5,7 +5,7 @@ import {
 } from "@junction/models/event/hybrids";
 import { IEvent } from "@junction/models/event/models";
 import { useActiveEvent } from "../context/context";
-import { EventTag } from "./join/tag";
+import { EventTagWidget } from "./join/tag/EventTagWidget";
 import { DeleteEventButton } from "./DeleteButton";
 
 interface EventDisplayParams {
@@ -30,7 +30,7 @@ function Internal({ event }: EventDisplayParams) {
             >
               {eventTags &&
                 eventTags.map(({ tag }: IEventTag_Complete) => (
-                  <EventTag key={tag.id} tag={tag} event={event} />
+                  <EventTagWidget key={tag.id} tag={tag} event={event} />
                 ))}
             </div>
           </section>

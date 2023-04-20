@@ -1,11 +1,9 @@
-import { gql } from "@apollo/client";
+import { appGql } from "../../../../../../../__generated__";
 
-export const gqlNode_TAG_FETCH_LIST = gql`
-  query TagList {
-    tagList {
-      id
-      title
-      domain
-    }
+export const gqlNode_TAG_FETCH_LIST = appGql(`query FetchTagList {
+  tagList {
+    id
+    title
+    domain
   }
-`;
+}`);

@@ -5,11 +5,13 @@ import { DeleteConceptMutationInput } from "@junction/models/concept/behaviors/d
 
 import { useDeleteConceptMutation } from "@features/concepts/services/graphql/one/mutations/delete";
 import { ACTION_DELETE_ONE_CONCEPT } from "../../../redux/reducer";
+import { useMutation } from "@apollo/client";
+import { graphQlNodes } from "../../../../../../@/graphQlNodes";
 
 export function DeleteConceptButton({
   id,
 }: DeleteConceptMutationInput["concept"]) {
-  const [deleteConcept, { error }] = useDeleteConceptMutation();
+  const [deleteConcept, { error }] = useMutation(graphQlNodes.concept.delete);
   const dispatch = useDispatch();
   const doDelete = useCallback(() => {
     if (error) {

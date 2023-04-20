@@ -1,0 +1,9 @@
+query FetchProjectList($domain: String) {
+    projectList(domain: $domain) {
+        id
+        title
+        name
+        description
+        domain
+    }
+}

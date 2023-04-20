@@ -1,4 +1,4 @@
-mutation EditConcept($concept: EditConceptInput, $user: UserReferenceInput) {
+mutation EditConcept($concept: EditConceptInput!, $user: UserReferenceInput) {
     editConcept(concept: $concept, user: $user) {
         id
         title

@@ -1,12 +1,11 @@
-import { gql } from "@apollo/client";
+import { appGql } from "../../../../../../../__generated__";
 
-export const gqlNode_TAG_FETCH_ONE = gql`
-  query OneTag($id: Int!) {
-    tag(id: $id) {
-      id
-      domain
-      title
-      description
-    }
+export const gqlNode_TAG_FETCH_ONE =
+  appGql(`query FetchTag($tag: TagReferenceInput!) {
+  tag(tag: $tag) {
+    id
+    domain
+    title
+    description
   }
-`;
+}`);

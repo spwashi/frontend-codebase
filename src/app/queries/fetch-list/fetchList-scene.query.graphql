@@ -1,0 +1,8 @@
+query FetchSceneList {
+    sceneList {
+        id
+        name
+        title
+        description
+    }
+}

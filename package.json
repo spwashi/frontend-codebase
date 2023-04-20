@@ -10,7 +10,7 @@
     "start": "vite",
     "storybook": "storybook dev -p 6006",
     "eslint": "eslint --fix",
-    "codegen:graphql": "yarn graphql-codegen --watch"
+    "codegen:graphql": "yarn graphql-codegen"
   },
   "browserslist": {
     "production": [

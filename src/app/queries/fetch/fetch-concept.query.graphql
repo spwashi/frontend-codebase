@@ -1,0 +1,14 @@
+query FetchConcept($concept: ConceptReferenceInput!) {
+    concept(concept: $concept) {
+        id
+        title
+        src
+        contentType
+        conceptTags {
+            tag {
+                title
+                domain
+            }
+        }
+    }
+}

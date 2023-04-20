@@ -1,12 +1,13 @@
 import { useDispatch } from "react-redux";
 import React, { useCallback } from "react";
 import { Log } from "@core/dev/components/Log";
-import { useDeleteSceneMutation } from "@features/scenes/services/graphql/one/mutations/delete";
 import { ACTION_DELETE_ONE_SCENE } from "../../../redux/reducer";
 import { IScene } from "@junction/models/scene/models";
+import { useMutation } from "@apollo/client";
+import { graphQlNodes } from "../../../../../../@/graphQlNodes";
 
 export function DeleteSceneButton({ id }: { id: IScene["id"] }) {
-  const [deleteScene, { error }] = useDeleteSceneMutation();
+  const [deleteScene, { error }] = useMutation(graphQlNodes.scene.delete);
   const dispatch = useDispatch();
   const doDelete = useCallback(() => {
     if (error) {

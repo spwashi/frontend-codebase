@@ -12,9 +12,12 @@ import {
 } from "../../../../../@/featureIds";
 import { Event } from "../../../services/graphql/one";
 import { IFormContextState } from "@widgets/form/context/types/state";
+import { IEvent } from "@junction/models/event/models";
 
 export function EventDisplayFormFeature() {
-  const [formState, setFormState] = useState<IFormContextState>();
+  const [formState, setFormState] =
+    useState<IFormContextState<{ event: IEvent["id"] }>>();
+
   const event = formState?.currentValue?.event;
 
   return (
@@ -25,7 +28,7 @@ export function EventDisplayFormFeature() {
       <EventListQuery />
       <Feature name={featureId__eventDisplayForm}>
         <FormWidget config={form__selectEvent} onSubmit={setFormState} />
-        {event && <Event id={event.id} />}
+        {event && <Event id={event} />}
       </Feature>
     </FeatureRequirement>
   );

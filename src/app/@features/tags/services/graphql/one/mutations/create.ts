@@ -1,13 +1,12 @@
 // Define mutation
-import { gql } from "@apollo/client";
+import { appGql } from "../../../../../../../__generated__";
 
-export const gqlNode_TAG_CREATE = gql`
-  mutation CreateTag($tag: CreateTagInput, $user: UserReferenceInput!) {
-    createTag(tag: $tag, user: $user) {
-      id
-      title
-      domain
-      description
-    }
+export const gqlNode_TAG_CREATE =
+  appGql(`mutation CreateTag($tag: CreateTagInput!, $user: UserReferenceInput!) {
+  createTag(tag: $tag, user: $user) {
+    id
+    title
+    domain
+    description
   }
-`;
+}`);

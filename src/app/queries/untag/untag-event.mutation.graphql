@@ -1,4 +1,4 @@
-mutation DeleteEventTag(
+mutation UntagEvent(
     $event: EventReferenceInput!
     $user: UserReferenceInput
     $tags: [TagReferenceInput]

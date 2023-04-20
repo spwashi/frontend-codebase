@@ -5,8 +5,8 @@ import { useChangeEffect } from "@core/hooks/useChangeEffect";
 import { ProjectTemporaryContextProvider } from "../../../context/Provider";
 import { ProjectContext } from "../../../context/context";
 import { ACTION_PROJECT_SELECTED } from "../../redux/reducer";
-import { ActiveProject } from "./components/Display";
-import { OneProjectQuery } from "./components/Query";
+import { ActiveProject } from "./components/ProjectWidget";
+import { ProjectQuery } from "./components/ProjectQuery";
 
 function SiteProjectDeactivateButton() {
   const context = useContext(ProjectContext);
@@ -43,7 +43,7 @@ function SiteProjectAutoActivator() {
 export function SiteProjectController({ id }: IProjectIdentifyingPartial) {
   return (
     <ProjectTemporaryContextProvider>
-      {id && <OneProjectQuery id={id} />}
+      {id && <ProjectQuery id={id} />}
       <ActiveProject />
       <SiteProjectAutoActivator />
       <SiteProjectDeactivateButton />

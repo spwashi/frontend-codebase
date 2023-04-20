@@ -4,22 +4,18 @@ import { IEvent } from "@junction/models/event/models";
 import { useMutation } from "@apollo/client";
 import { graphQlNodes } from "../../../../../../../../@/graphQlNodes";
 
-export function EventTag({ event, tag }: { tag: ITag; event: IEvent }) {
+type IEventTagWidgetParams = { tag: ITag; event: IEvent };
+
+export function EventTagWidget({ event, tag }: IEventTagWidgetParams) {
   const { title, domain } = tag;
   const [deleteTag] = useMutation(graphQlNodes.event.untag);
-
+  const variables = {
+    event: { id: event.id },
+    tags: [{ id: tag.id }],
+  };
   return (
     <div>
-      <button
-        onClick={() =>
-          deleteTag({
-            variables: {
-              event: { id: event.id },
-              tags: [{ id: tag.id }],
-            },
-          })
-        }
-      >
+      <button onClick={() => deleteTag({ variables: variables })}>
         Remove Tag
       </button>
       <span>

@@ -1,10 +1,9 @@
-import { gql } from "@apollo/client";
+import { appGql } from "../../../../../../../__generated__";
 
-export const gqlNode_ASSET_FETCH_LIST = gql`
-  query AllFiles($user: UserReferenceInput) {
-    assetList(user: $user) {
-      name
-      realname
-    }
+export const gqlNode_ASSET_FETCH_LIST =
+  appGql(`query FetchAssetList($user: UserReferenceInput) {
+  assetList(user: $user) {
+    name
+    realname
   }
-`;
+}`);

@@ -1,5 +1,5 @@
-mutation CreateOneConcept(
-    $concept: CreateConceptInput
+mutation CreateConcept(
+    $concept: CreateConceptInput!
     $user: UserReferenceInput!
 ) {
     createConcept(user: $user, concept: $concept) {

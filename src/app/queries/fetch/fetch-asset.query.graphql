@@ -1,0 +1,8 @@
+query FetchAsset($asset: AssetReferenceInput!) {
+    asset(asset: $asset) {
+        name
+        realname
+        contentType
+        uri
+    }
+}
