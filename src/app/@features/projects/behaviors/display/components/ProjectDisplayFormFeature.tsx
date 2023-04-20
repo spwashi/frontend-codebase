@@ -6,18 +6,19 @@ import { form__selectProject } from "@features/projects/behaviors/select/config"
 import { SiteProjectController } from "../../../services/graphql/one";
 import { selectProjectStateProject } from "../../../services/redux/selectors";
 import { featureId__projectDisplay } from "../../../../../@/featureIds";
+import { IFormContextState } from "@widgets/form/context/types/state";
 
 export function ProjectDisplayFormFeature() {
-  const [state, setState] = useState<any | null>();
+  const [formState, setFormState] = useState<IFormContextState>();
   const activeProject = useSelector(selectProjectStateProject);
-  const project = state?.data?.project ?? activeProject;
+  const project = formState?.currentValue?.project ?? activeProject;
 
   return (
     <FeatureRequirement
       name={featureId__projectDisplay}
       alternative={"Need Project Display"}
     >
-      <FormWidget config={form__selectProject} onSubmit={setState} />
+      <FormWidget config={form__selectProject} onSubmit={setFormState} />
       <SiteProjectController id={project?.id} />
     </FeatureRequirement>
   );

@@ -1,24 +1,24 @@
-import React from "react";
+import React, { useContext } from "react";
 import { ContentType } from "@features/concepts/data/config/contentTypes";
 import { Input } from "./text/Input";
 import { Textarea } from "./text/Textarea";
+import { FormContext } from "@widgets/form/context/context";
+import { useFormItem } from "@widgets/form/features/fields/hooks/useFormItem";
 
-interface ContentParams {
-  data: any;
-  name: string;
+interface IContentParams {
+  formKey: string;
   title?: string;
   value?: any;
   contentType?: ContentType;
 }
 
 export function ContentInput({
-  data,
   contentType: _contentType,
-  name,
+  formKey: name,
   title,
   value,
-}: ContentParams) {
-  const { contentType: contextMime } = data;
+}: IContentParams) {
+  const [{ value: contextMime }] = useFormItem("contentType");
   switch (_contentType ?? contextMime) {
     case "text/spw":
     case "text/plain":

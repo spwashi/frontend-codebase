@@ -18,7 +18,8 @@ export function ProjectSelect({
 }) {
   const project = useSelector(selectProjectStateProject);
   const options = useProjectOptions();
-  const { dispatch } = useContext(FormContext);
+  const form = useContext(FormContext);
+  const { dispatch } = form;
 
   useEffect(() => {
     const value = project;

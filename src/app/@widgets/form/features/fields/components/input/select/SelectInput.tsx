@@ -87,12 +87,11 @@ export function SelectInput({
   type,
   ...rest
 }: Params) {
-  const form = useContext(FormContext);
   const valueMap = useMemo(
     () => new Map(options.map((option) => [option.value, option.payload])),
     [options]
   );
-  const [{ localValue }, update] = useFormItem(form, formKey, (v) =>
+  const [{ localValue }, update] = useFormItem(formKey, (v) =>
     Array.isArray(v) ? v.map((v) => valueMap.get(v)) : valueMap.get(v)
   );
   const id = useMemo(() => "input--" + Math.random(), []);

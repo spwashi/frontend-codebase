@@ -31,46 +31,35 @@ export function Value({
   formKey,
   children,
   value,
-  calc,
 }: {
   formKey: string;
   value?: any;
   children?: any;
-  calc?: (data?: any) => any;
 }) {
   const form = useContext(FormContext);
   const [{ localValue }, update] = useFormItem(
-    form,
     formKey ?? null,
     undefined,
     true
   );
 
   useEffect(() => {
-    const v = calc ? calc(form?.data) : localValue;
+    const v = localValue;
     if (v !== value) update(v);
-  }, [update, localValue, calc, form.key]);
+  }, [update, localValue, form.key]);
 
   const doUpdate = useCallback(() => {
-    update(calc ? calc(form?.data) : localValue);
+    update(localValue);
   }, [localValue]);
 
   useMemo(() => `input--${Math.random()}`.replace(".", ""), []);
 
   return (
-    <>
-      <div className="input-wrapper">
-        <FormContext.Consumer>
-          {({ key }) => {
-            return (
-              <InnerValue key={key} value={value} update={doUpdate}>
-                {children}
-              </InnerValue>
-            );
-          }}
-        </FormContext.Consumer>
-      </div>
-    </>
+    <div className="input-wrapper">
+      <InnerValue key={form.key} value={value} update={doUpdate}>
+        {children}
+      </InnerValue>
+    </div>
   );
 }
 
@@ -116,8 +105,7 @@ function useRichTextEditor(
 
 export function Input(params: InputParams) {
   const { formKey, name, ...rest } = params;
-  const form = useContext(FormContext);
-  const [{ value }, update] = useFormItem(form, formKey ?? name ?? null);
+  const [{ value }, update] = useFormItem(formKey ?? name ?? null);
   const { type = "text" } = rest;
   const editor = useRichTextEditor(params, [value, update]);
 

@@ -8,8 +8,7 @@ type Params = { formKey: string; name: string } & React.DetailedHTMLProps<
 >;
 
 export function FileInput({ formKey, name, ...rest }: Params) {
-  const form = useContext(FormContext);
-  const [{ localValue }, update] = useFormItem(form, formKey);
+  const [{ localValue }, update] = useFormItem(formKey);
   const id = useMemo(() => `input--${Math.random()}`.replace(".", ""), []);
   console.log(localValue);
   return (

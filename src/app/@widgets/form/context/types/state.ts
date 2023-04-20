@@ -1,7 +1,7 @@
-export interface IAppFormContextState<T = any> {
+export interface IFormContextState<T = any> {
   id?: string;
   key: number;
-  data: T;
+  currentValue: T;
   initialValue?: T;
   lastReset: number | undefined;
   changed: { [k: string]: boolean };

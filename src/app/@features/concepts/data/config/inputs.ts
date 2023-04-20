@@ -1,5 +1,6 @@
 import { IFormItemConfig } from "@widgets/form/features/fields/types/fieldConfig";
 import { mimeOptions } from "./mimeOptions";
+import { IFormContextState } from "@widgets/form/context/types/state";
 
 export const tagsInput: IFormItemConfig = {
   title: "Tags",
@@ -27,8 +28,10 @@ export const titleInput: IFormItemConfig = {
   type: "text",
   validators: {
     onChange: [
-      (v: any) => {
-        return v?.data.title === "boon" ? "cannot be boon" : true;
+      (formState: IFormContextState) => {
+        return formState?.currentValue.title === "boon"
+          ? "cannot be boon"
+          : true;
       },
     ],
   },

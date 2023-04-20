@@ -32,8 +32,7 @@ function SubformInput({
   formKey: string;
   config: IFormConfig;
 }) {
-  const form = useContext(FormContext);
-  const [formState, updateFormState] = useFormItem(form, formKey);
+  const [formState, updateFormState] = useFormItem(formKey);
 
   return (
     <FormWidget
@@ -78,11 +77,7 @@ function FormItemFactory({ item: config }: { item: IFormItemConfig }) {
       return <ProjectSelect formKey={name} {...rest} />;
     }
     case "content": {
-      return (
-        <FormContext.Consumer>
-          {({ data }) => <ContentInput {...config} data={data} />}
-        </FormContext.Consumer>
-      );
+      return <ContentInput formKey={name} {...config} />;
     }
     case "assetSelect": {
       const { username } = config;

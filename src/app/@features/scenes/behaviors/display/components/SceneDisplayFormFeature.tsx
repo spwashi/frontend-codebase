@@ -5,16 +5,17 @@ import { FeatureRequirement } from "@services/features/list/components/FeatureRe
 import { form__selectScene } from "@features/scenes/behaviors/select/config";
 import { Scene } from "../../../services/graphql/one";
 import { featureId__sceneDisplay } from "../../../../../@/featureIds";
+import { IFormContextState } from "@widgets/form/context/types/state";
 
 export function SceneDisplayFormFeature() {
-  const [state, setState] = useState<any | null>();
-  const id = state?.data?.scene?.id;
+  const [formState, setFormState] = useState<IFormContextState>();
+  const id = formState?.currentValue?.scene?.id;
   return (
     <FeatureRequirement
       name={featureId__sceneDisplay}
       alternative={"Need Scene Display"}
     >
-      <FormWidget config={form__selectScene} onSubmit={setState} />
+      <FormWidget config={form__selectScene} onSubmit={setFormState} />
       {id && <Scene id={id} />}
     </FeatureRequirement>
   );

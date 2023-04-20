@@ -10,8 +10,7 @@ type TextareaParams = {
   HTMLTextAreaElement
 >;
 export function Textarea({ formKey, name, ...rest }: TextareaParams) {
-  const form = useContext(FormContext);
-  const [{ value }, update] = useFormItem(form, formKey ?? null);
+  const [{ value }, update] = useFormItem(formKey ?? null);
   return (
     <React.Fragment>
       <textarea

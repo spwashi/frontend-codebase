@@ -10,13 +10,14 @@ import {
   featureId__assetDisplay,
   featureId__assetDisplayForm,
 } from "../../../../../@/featureIds";
+import { IFormContextState } from "@widgets/form/context/types/state";
 
 /**
  * Selects an asset to display, then displays it
  */
 function DisplayAssetForm(user: { username: string }) {
-  const [state, setState] = useState<any | null>();
-  const realname = state?.data?.asset?.realname ?? "";
+  const [formState, setFormState] = useState<IFormContextState>();
+  const realname = formState?.currentValue?.asset?.realname ?? "";
   const form__displayAsset = user ? getform__assetSelect(user) : null;
   if (!form__displayAsset) return null;
   return (
@@ -24,8 +25,8 @@ function DisplayAssetForm(user: { username: string }) {
       <Feature name={featureId__assetDisplayForm}>
         <FormWidget
           config={form__displayAsset}
-          onSubmit={setState}
-          onChange={setState}
+          onSubmit={setFormState}
+          onChange={setFormState}
         />
         <AssetQuery realname={realname} username={user?.username} />
       </Feature>

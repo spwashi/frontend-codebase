@@ -5,21 +5,21 @@ export const ACTION_RESET = "reset";
 export const ACTION_SET_DEFAULT = "setDefault";
 
 export function formReducer(
-  state = getInitialState(),
+  formState = getInitialState(),
   action: { type: string; payload: any }
 ) {
   switch (action.type) {
     case ACTION_RESET: {
       return {
-        ...state,
-        key: state.key + 1,
+        ...formState,
+        key: formState.key + 1,
         lastReset: Date.now(),
         data: {
-          ...state.data,
+          ...formState.currentValue,
           ...Object.fromEntries(
-            Object.entries(state.data ?? {}).map(([k]) => [
+            Object.entries(formState.currentValue ?? {}).map(([k]) => [
               k,
-              state.initialValue?.[k],
+              formState.initialValue?.[k],
             ])
           ),
         },
@@ -29,14 +29,14 @@ export function formReducer(
     case ACTION_SET_DEFAULT: {
       const initialValue = action.payload;
       return {
-        ...state,
-        key: state.key + 1,
+        ...formState,
+        key: formState.key + 1,
         initialValue,
         data: {
-          ...state.data,
+          ...formState.currentValue,
           ...Object.fromEntries(
             Object.entries(initialValue ?? {}).filter(
-              ([key]) => !state.changed[key]
+              ([key]) => !formState.changed[key]
             )
           ),
         },
@@ -44,26 +44,26 @@ export function formReducer(
     }
     case ACTION_UPDATE_INDEX: {
       const { index, value } = action.payload;
-      if (value === state.data?.[index]) return state;
+      if (value === formState.currentValue?.[index]) return formState;
       const passive = action.payload?.passive;
       let data: any;
       let changed: { [p: string]: boolean };
-      if (value === state.initialValue?.[index]) {
-        changed = { ...state.changed, [index]: false };
-        data = state.data;
+      if (value === formState.initialValue?.[index]) {
+        changed = { ...formState.changed, [index]: false };
+        data = formState.currentValue;
       } else {
-        changed = { ...state.changed, [index]: Date.now() };
-        data = { ...state.data, [index]: value };
+        changed = { ...formState.changed, [index]: Date.now() };
+        data = { ...formState.currentValue, [index]: value };
       }
 
-      const nextKey = passive ? state.key : state.key + 1;
+      const nextKey = passive ? formState.key : formState.key + 1;
       return {
-        ...state,
+        ...formState,
         key: nextKey,
-        changed: passive ? state.changed : changed,
+        changed: passive ? formState.changed : changed,
         data: data,
       };
     }
   }
-  return state;
+  return formState;
 }

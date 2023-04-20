@@ -1,13 +1,13 @@
-import { IAppFormContextState } from "../types/state";
+import { IFormContextState } from "../types/state";
 
 export function getInitialState<T = any>(
   d?: T,
   id?: string
-): IAppFormContextState<T> {
+): IFormContextState<T> {
   return {
     id,
     key: 0,
-    data: {} as T,
+    currentValue: {} as T,
     initialValue: d,
     lastReset: undefined,
     changed: {},

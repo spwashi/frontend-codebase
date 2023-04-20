@@ -3,7 +3,8 @@ import { FormContext } from "../../../context/context";
 import { ACTION_RESET } from "../../../state/reducer";
 
 export function ResetFormButton() {
-  const dispatch = useContext(FormContext)?.dispatch;
+  const form = useContext(FormContext);
+  const { dispatch } = form;
   if (!dispatch) return null;
   return (
     <>

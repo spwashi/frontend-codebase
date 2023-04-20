@@ -9,17 +9,18 @@ import {
   featureId__tagDisplay,
   featureId__tagsDisplayForm,
 } from "../../../../../@/featureIds";
+import { IFormContextState } from "@widgets/form/context/types/state";
 
 export function TagsDisplayFormFeature() {
-  const [state, setState] = useState<any | null>();
-  const tags = state?.data?.tags;
+  const [formState, setFormState] = useState<IFormContextState>();
+  const tags = formState?.currentValue?.tags;
   return (
     <Feature name={featureId__tagsDisplayForm}>
       <FeatureRequirement
         name={featureId__tagDisplay}
         alternative={"Need Tag Display"}
       >
-        <FormWidget config={form__selectTags} onSubmit={setState} />
+        <FormWidget config={form__selectTags} onSubmit={setFormState} />
         {tags && tags.map(({ id }: ITag) => <Tag id={id} key={id} />)}
       </FeatureRequirement>
     </Feature>

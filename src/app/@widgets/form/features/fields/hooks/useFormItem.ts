@@ -1,6 +1,6 @@
 import { useCallback, useContext, useEffect, useState } from "react";
 import { ACTION_UPDATE_INDEX } from "@widgets/form/state/reducer";
-import { IAppFormContextState } from "../../../context/types/state";
+import { IFormContextState } from "../../../context/types/state";
 import { FormContext, ID_EMPTY } from "../../../context/context";
 
 export function updateFormItem<T>(
@@ -25,23 +25,25 @@ type FormItemStateTuple<T = any> = [
 ];
 
 export function useFormItem<T = any>(
-  form: IAppFormContextState,
   formKey?: string | null | undefined,
   valueMapper: (v: any) => T = (v) => v,
   passive = false
 ) {
-  const [localValue, setLocalValue] = useState<T | null>(
-    form?.data?.[formKey ?? ""] ?? null
-  );
+  const form = useContext(FormContext);
+  const value = form?.currentValue?.[`${formKey}`];
+  const itemHasChangedState = form?.changed?.[formKey ?? ""];
 
-  const { id, dispatch } = useContext(FormContext);
+  const { id, dispatch } = form;
 
+  const [localValue, setLocalValue] = useState<T | null>(value);
+
+  // If the form item hasn't changed, the local value is null
   useEffect(() => {
-    const changed = typeof form?.changed?.[formKey ?? ""] === "undefined";
+    const changed = typeof itemHasChangedState === "undefined";
     if (changed) {
       setLocalValue(null);
     }
-  }, [form?.changed?.[formKey ?? ""]]);
+  }, [itemHasChangedState]);
 
   const setValue = useCallback(
     (input: T) => {
@@ -49,10 +51,9 @@ export function useFormItem<T = any>(
       formKey && updateFormItem(formKey, trueVal, dispatch, passive);
       setLocalValue(input);
     },
-    [form, formKey, valueMapper, passive, dispatch]
+    [formKey, valueMapper, passive, dispatch]
   );
 
-  const value = form?.data?.[`${formKey}`];
   const valueObject = {
     value: value ?? (id === ID_EMPTY ? localValue : undefined),
     localValue: localValue ?? value,
