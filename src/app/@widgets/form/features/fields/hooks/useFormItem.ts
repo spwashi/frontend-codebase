@@ -50,13 +50,12 @@ export function useFormItem<T = any>(
       formKey && updateFormItem(formKey, trueVal, dispatch, passive);
       setLocalValue(input);
     },
-    [formKey, valueMapper, passive, dispatch]
+    [formKey, valueMapper, passive]
   );
 
   const valueObject = {
     value: value ?? (id === ID_EMPTY ? localValue : undefined),
     localValue: localValue ?? value,
   };
-
   return [valueObject, setValue] as FormItemStateTuple<T>;
 }

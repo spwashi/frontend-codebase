@@ -6,6 +6,7 @@ import { ButtonConfig, ButtonContainer } from "./buttons/ButtonContainer";
 import { useFormOnChangeEffect } from "@widgets/form/internal/hooks/useFormOnChangeEffect";
 import { useSetFormDefaultEffect } from "@widgets/form/internal/hooks/useSetFormDefaultEffect";
 import { useSubmitHandlerCallback } from "@widgets/form/internal/hooks/useSubmitHandlerCallback";
+import { IFormContextState } from "@widgets/form/context/types/state";
 
 type IAppFormProps<T = any> = {
   children: any;
@@ -26,13 +27,14 @@ export default function AppForm({
 }: IAppFormProps) {
   const [state, dispatch] = useReducer(
     formReducer,
-    getInitialState(defaultValue, id)
+    { defaultValue, id },
+    getInitialState
   );
   useFormOnChangeEffect(state, onChange);
-  useSetFormDefaultEffect(dispatch, defaultValue);
+  useSetFormDefaultEffect(defaultValue, dispatch);
   const handleSubmit = useSubmitHandlerCallback(state, onSubmit);
-  const formContextValue = useMemo(
-    () => ({ ...state, dispatch }),
+  const formContextValue: IFormContextState = useMemo(
+    () => ({ ...state, dispatch: dispatch }),
     [state.currentValue, dispatch]
   );
   return (

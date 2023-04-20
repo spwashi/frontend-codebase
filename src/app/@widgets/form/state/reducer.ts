@@ -1,20 +1,21 @@
 import { getInitialState } from "../context/helpers/getInitialState";
+import { IFormContextState } from "@widgets/form/context/types/state";
 
 export const ACTION_UPDATE_INDEX = "update";
 export const ACTION_RESET = "reset";
 export const ACTION_SET_DEFAULT = "setDefault";
 
 export function formReducer(
-  formState = getInitialState(),
+  formState: IFormContextState,
   action: { type: string; payload: any }
-) {
+): IFormContextState {
   switch (action.type) {
     case ACTION_RESET: {
       return {
         ...formState,
         key: formState.key + 1,
         lastReset: Date.now(),
-        data: {
+        currentValue: {
           ...formState.currentValue,
           ...Object.fromEntries(
             Object.entries(formState.currentValue ?? {}).map(([k]) => [
@@ -32,7 +33,7 @@ export function formReducer(
         ...formState,
         key: formState.key + 1,
         initialValue,
-        data: {
+        currentValue: {
           ...formState.currentValue,
           ...Object.fromEntries(
             Object.entries(initialValue ?? {}).filter(
@@ -46,14 +47,14 @@ export function formReducer(
       const { index, value } = action.payload;
       if (value === formState.currentValue?.[index]) return formState;
       const passive = action.payload?.passive;
-      let data: any;
+      let currentValue: any;
       let changed: { [p: string]: boolean };
       if (value === formState.initialValue?.[index]) {
         changed = { ...formState.changed, [index]: false };
-        data = formState.currentValue;
+        currentValue = formState.currentValue;
       } else {
         changed = { ...formState.changed, [index]: Date.now() };
-        data = { ...formState.currentValue, [index]: value };
+        currentValue = { ...formState.currentValue, [index]: value };
       }
 
       const nextKey = passive ? formState.key : formState.key + 1;
@@ -61,7 +62,7 @@ export function formReducer(
         ...formState,
         key: nextKey,
         changed: passive ? formState.changed : changed,
-        data: data,
+        currentValue: currentValue,
       };
     }
   }

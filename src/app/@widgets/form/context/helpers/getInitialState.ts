@@ -1,14 +1,15 @@
 import { IFormContextState } from "../types/state";
 
-export function getInitialState<T = any>(
-  d?: T,
-  id?: string
-): IFormContextState<T> {
+type IFormReducerParams<T = any> = { initialValue?: T; id?: string };
+export function getInitialState<T = any>({
+  initialValue,
+  id,
+}: IFormReducerParams<T>): IFormContextState<T> {
   return {
     id,
     key: 0,
     currentValue: {} as T,
-    initialValue: d,
+    initialValue: initialValue,
     lastReset: undefined,
     changed: {},
     dispatch: (v: any) => {},

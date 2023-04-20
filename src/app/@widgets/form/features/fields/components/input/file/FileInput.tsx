@@ -9,7 +9,6 @@ type Params = { formKey: string; name: string } & React.DetailedHTMLProps<
 export function FileInput({ formKey, name, ...rest }: Params) {
   const [{ localValue }, update] = useFormItem(formKey);
   const id = useMemo(() => `input--${Math.random()}`.replace(".", ""), []);
-  console.log(localValue);
   return (
     <React.Fragment>
       {[...((localValue ?? []) as FileList)].map((asset) => {
@@ -31,7 +30,6 @@ export function FileInput({ formKey, name, ...rest }: Params) {
         name={name}
         onChange={(e) => {
           const files = e.target.files;
-          console.log(files);
           update(files);
         }}
       />
