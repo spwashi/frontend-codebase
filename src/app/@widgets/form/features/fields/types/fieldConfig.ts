@@ -2,70 +2,79 @@ import { ContentType } from "@features/concepts/data/config/contentTypes";
 import { SelectOption } from "../components/input/select/SelectInput";
 import { IFormConfig } from "../../../types/IFormConfig";
 
-type ProjectSelectInputConfig = IFieldConfig & {
+type ProjectSelectInputConfig<T> = IFieldConfig<T> & {
   type: "project";
   ignore?: boolean;
 };
-type UserSelectInputConfig = IFieldConfig & {
+type UserSelectInputConfig<T> = IFieldConfig<T> & {
   type: "user";
   ignoreLogin?: boolean;
   doSelect?: boolean;
 };
-type PasswordInputConfig = IFieldConfig & { type: "password" };
-type LongtextInputConfig = IFieldConfig & { type: "longtext" };
-type TextInputConfig = IFieldConfig & { type: "text" };
-type DateInputConfig = IFieldConfig & { type: "date" };
-type DatetimeInputConfig = IFieldConfig & { type: "datetime-local" };
-type ValueInputConfig = IFieldConfig & {
+type PasswordInputConfig<T> = IFieldConfig<T> & { type: "password" };
+type LongtextInputConfig<T> = IFieldConfig<T> & { type: "longtext" };
+type TextInputConfig<T> = IFieldConfig<T> & { type: "text" };
+type DateInputConfig<T> = IFieldConfig<T> & { type: "date" };
+type DatetimeInputConfig<T> = IFieldConfig<T> & { type: "datetime-local" };
+type ValueInputConfig<T> = IFieldConfig<T> & {
   type: "value";
   calc?: (data: any) => any;
 };
-type ConceptInputConfig = IFieldConfig & { type: "concept" };
-type SceneInputConfig = IFieldConfig & { type: "scene" };
-type EventInputConfig = IFieldConfig & { type: "event" };
-type AssetInputConfig = IFieldConfig & { type: "asset"; multiple?: boolean };
-type AssetSelectInputConfig = IFieldConfig & {
+type ConceptInputConfig<T> = IFieldConfig<T> & { type: "concept" };
+type SceneInputConfig<T> = IFieldConfig<T> & { type: "scene" };
+type EventInputConfig<T> = IFieldConfig<T> & { type: "event" };
+type AssetInputConfig<T> = IFieldConfig<T> & {
+  type: "asset";
+  multiple?: boolean;
+};
+type AssetSelectInputConfig<T> = IFieldConfig<T> & {
   type: "assetSelect";
   username: string;
 };
-type TagInputConfig = IFieldConfig & { type: "tags" };
-type FormInputConfig = IFieldConfig & { type: "form"; config: IFormConfig };
-type ContentInputConfig = IFieldConfig & {
+type TagInputConfig<T> = IFieldConfig<T> & { type: "tags" };
+type FormInputConfig<T> = IFieldConfig<T> & {
+  type: "form";
+  config: IFormConfig;
+};
+type ContentInputConfig<T> = IFieldConfig<T> & {
   type: "content";
   contentType?: ContentType;
 };
-type SelectInputConfig = IFieldConfig & {
+type SelectInputConfig<T> = IFieldConfig<T> & {
   type: "select";
   options: SelectOption[];
 };
 
-type IFieldConfig<T = any> = {
+type IFieldConfig<ValueType> = {
   name: string;
   title?: string;
-  value?: T;
+  value?: ValueType;
   id?: string;
   validators?: {
-    onReset?: ((v: T, d: any) => boolean | string)[];
-    onChange?: ((v: T, d: any) => boolean | string)[];
-    onSubmit?: ((v: T, d: any) => boolean | string)[];
+    onReset?: ((v: ValueType, d: any) => boolean | string)[];
+    onChange?: ((v: ValueType, d: any) => boolean | string)[];
+    onSubmit?: ((v: ValueType, d: any) => boolean | string)[];
   };
 };
 
-export type IFormItemConfig =
-  | ValueInputConfig
-  | TextInputConfig
-  | DateInputConfig
-  | DatetimeInputConfig
-  | LongtextInputConfig
-  | PasswordInputConfig
-  | UserSelectInputConfig
-  | ProjectSelectInputConfig
-  | ConceptInputConfig
-  | EventInputConfig
-  | FormInputConfig
-  | SceneInputConfig
-  | AssetInputConfig
-  | AssetSelectInputConfig
-  | TagInputConfig
-  | ContentInputConfig
-  | SelectInputConfig;
+export type IFormItemConfig<Name = string, ValueType = any> = {
+  name: Name;
+} & (
+  | ValueInputConfig<ValueType>
+  | TextInputConfig<ValueType>
+  | DateInputConfig<ValueType>
+  | DatetimeInputConfig<ValueType>
+  | LongtextInputConfig<ValueType>
+  | PasswordInputConfig<ValueType>
+  | UserSelectInputConfig<ValueType>
+  | ProjectSelectInputConfig<ValueType>
+  | ConceptInputConfig<ValueType>
+  | EventInputConfig<ValueType>
+  | FormInputConfig<ValueType>
+  | SceneInputConfig<ValueType>
+  | AssetInputConfig<ValueType>
+  | AssetSelectInputConfig<ValueType>
+  | TagInputConfig<ValueType>
+  | ContentInputConfig<ValueType>
+  | SelectInputConfig<ValueType>
+);

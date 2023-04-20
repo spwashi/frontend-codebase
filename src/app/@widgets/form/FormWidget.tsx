@@ -7,9 +7,12 @@ import AppForm from "@widgets/form/internal/components/AppForm";
 import { IFormConfig } from "./types/IFormConfig";
 import { useFormModifierHandler } from "@widgets/form/hooks/useFormWidgetModifierHandler";
 import { FormErrorBoundary } from "@widgets/form/error/components/FormErrorBoundary";
+import { IFormItemConfig } from "@widgets/form/features/fields/types/fieldConfig";
 
-type Params = {
-  config: IFormConfig;
+type IFormWidgetParams<
+  ValueStruct extends { [k: string]: IFormItemConfig } = any
+> = {
+  config: IFormConfig<ValueStruct>;
   children?: any;
   defaultValue?: any;
   onSubmit?: (data: any) => void;
@@ -22,7 +25,7 @@ export function FormWidget({
   onSubmit,
   children,
   onChange,
-}: Params) {
+}: IFormWidgetParams) {
   const defaultForm = useMemo(() => cloneDeep(formConfig), [formConfig]);
   const formRef = useRef(defaultForm);
   const form = formRef.current;
