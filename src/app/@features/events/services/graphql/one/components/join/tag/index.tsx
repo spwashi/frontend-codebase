@@ -1,11 +1,12 @@
 import React from "react";
 import { ITag } from "@junction/models/tag/models";
 import { IEvent } from "@junction/models/event/models";
-import { useDeleteEventTagMutation } from "@features/events/services/graphql/one";
+import { useMutation } from "@apollo/client";
+import { graphQlNodes } from "../../../../../../../../@/graphQlNodes";
 
 export function EventTag({ event, tag }: { tag: ITag; event: IEvent }) {
   const { title, domain } = tag;
-  const deleteTag = useDeleteEventTagMutation();
+  const [deleteTag] = useMutation(graphQlNodes.event.untag);
 
   return (
     <div>
@@ -13,8 +14,8 @@ export function EventTag({ event, tag }: { tag: ITag; event: IEvent }) {
         onClick={() =>
           deleteTag({
             variables: {
-              event: { id: +event.id },
-              tags: [{ title, domain }],
+              event: { id: event.id },
+              tags: [{ id: tag.id }],
             },
           })
         }

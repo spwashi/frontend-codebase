@@ -4,11 +4,6 @@ import { EventContextProvider } from "./context/Provider";
 import { EventContextDisplay } from "./components/DisplayOne";
 import { OneEventQuery } from "./components/FindOne";
 
-/**
- *
- * @param title
- * @constructor
- */
 export function Event({ id }: IEventIdentifyingPartial) {
   if (!id) return null;
   return (
@@ -18,6 +13,3 @@ export function Event({ id }: IEventIdentifyingPartial) {
     </EventContextProvider>
   );
 }
-
-export { useDeleteEventTagMutation } from "@features/events/services/graphql/one/mutations/untag";
-export { gqlNode_EVENT_UNTAG } from "@features/events/services/graphql/one/mutations/untag";

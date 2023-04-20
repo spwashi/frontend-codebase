@@ -15,6 +15,7 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
 const documents = {
     "mutation CreateOneConcept($concept: CreateConceptInput, $user: UserReferenceInput!) {\n  createConcept(user: $user, concept: $concept) {\n    __typename\n    id\n    title\n    src\n    published\n    contentType\n  }\n}": types.CreateOneConceptDocument,
     "mutation EditConcept($concept: EditConceptInput, $user: UserReferenceInput) {\n  editConcept(concept: $concept, user: $user) {\n    id\n    title\n    src\n    contentType\n    published\n  }\n}": types.EditConceptDocument,
+    "mutation DeleteEventTag($event: EventReferenceInput!, $user: UserReferenceInput, $tags: [TagReferenceInput]) {\n  untagEvent(event: $event, user: $user, tags: $tags) {\n    tag {\n      id\n    }\n    event {\n      id\n    }\n  }\n}": types.DeleteEventTagDocument,
 };
 
 /**
@@ -39,6 +40,10 @@ export function appGql(source: "mutation CreateOneConcept($concept: CreateConcep
  * The appGql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function appGql(source: "mutation EditConcept($concept: EditConceptInput, $user: UserReferenceInput) {\n  editConcept(concept: $concept, user: $user) {\n    id\n    title\n    src\n    contentType\n    published\n  }\n}"): (typeof documents)["mutation EditConcept($concept: EditConceptInput, $user: UserReferenceInput) {\n  editConcept(concept: $concept, user: $user) {\n    id\n    title\n    src\n    contentType\n    published\n  }\n}"];
+/**
+ * The appGql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function appGql(source: "mutation DeleteEventTag($event: EventReferenceInput!, $user: UserReferenceInput, $tags: [TagReferenceInput]) {\n  untagEvent(event: $event, user: $user, tags: $tags) {\n    tag {\n      id\n    }\n    event {\n      id\n    }\n  }\n}"): (typeof documents)["mutation DeleteEventTag($event: EventReferenceInput!, $user: UserReferenceInput, $tags: [TagReferenceInput]) {\n  untagEvent(event: $event, user: $user, tags: $tags) {\n    tag {\n      id\n    }\n    event {\n      id\n    }\n  }\n}"];
 
 export function appGql(source: string) {
   return (documents as any)[source] ?? {};
