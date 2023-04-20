@@ -1,4 +1,5 @@
 import { gql, useMutation } from "@apollo/client";
+import { graphQlNodes } from "../../../../../../@/graphQlNodes";
 
 export const gqlNode_EVENT_UNTAG = gql`
   mutation DeleteEventTag(
@@ -17,6 +18,6 @@ export const gqlNode_EVENT_UNTAG = gql`
   }
 `;
 export function useDeleteEventTagMutation() {
-  const [deleteTag] = useMutation(gqlNode_EVENT_UNTAG);
+  const [deleteTag] = useMutation(graphQlNodes.event.untag);
   return deleteTag;
 }

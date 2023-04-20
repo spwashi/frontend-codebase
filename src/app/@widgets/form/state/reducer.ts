@@ -1,4 +1,3 @@
-import { getInitialState } from "../context/helpers/getInitialState";
 import { IFormContextState } from "@widgets/form/context/types/state";
 
 export const ACTION_UPDATE_INDEX = "update";

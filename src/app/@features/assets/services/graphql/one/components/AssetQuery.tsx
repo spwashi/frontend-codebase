@@ -1,7 +1,7 @@
 import { useQuery } from "@apollo/client";
 import React from "react";
-import { gqlNode_ASSET_FETCH_ONE } from "@features/assets/services/graphql/one/queries/fetchOne";
 import { AssetContents } from "../../../../behaviors/display/components/AssetContents";
+import { graphQlNodes } from "../../../../../../@/graphQlNodes";
 
 export function AssetQuery({
   realname,
@@ -10,7 +10,7 @@ export function AssetQuery({
   realname: string;
   username?: string;
 }) {
-  const { data: query = {} } = useQuery(gqlNode_ASSET_FETCH_ONE, {
+  const { data: query = {} } = useQuery(graphQlNodes.asset.fetch, {
     variables: { username, realname },
   });
   if (!query.asset) return null;

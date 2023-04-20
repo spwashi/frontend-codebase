@@ -5,14 +5,14 @@ import {
   IConcept,
   IConceptIdentifyingPartial,
 } from "@junction/models/concept/models";
-import { gqlNode_CONCEPT_FETCH_ONE } from "@features/concepts/services/graphql/one/queries/fetchOne";
 import { ACTION_RECEIVE_ONE_CONCEPT } from "../../../redux/reducer";
 import { ConceptContext } from "../context/context";
+import { graphQlNodes } from "../../../../../../@/graphQlNodes";
 
 export function OneConceptQuery({ id }: IConceptIdentifyingPartial) {
   const context = useContext(ConceptContext) ?? ({} as any);
   const { setConcept } = context;
-  const { data: query } = useQuery(gqlNode_CONCEPT_FETCH_ONE, {
+  const { data: query } = useQuery(graphQlNodes.concept.fetch, {
     variables: { id } as IConceptIdentifyingPartial,
   });
   const dispatch = useDispatch();

@@ -4,14 +4,15 @@ import {
   IProject,
   IProjectIdentifyingPartial,
 } from "@junction/models/project/models";
-import { gqlNode_PROJECT_FETCH_ONE } from "@features/projects/services/graphql/one/queries/fetchOne";
 import { ProjectContext } from "../../../../context/context";
+import { graphQlNodes } from "../../../../../../@/graphQlNodes";
 
 export function OneProjectQuery({ id }: IProjectIdentifyingPartial) {
   const context = useContext(ProjectContext);
-  const { data: query } = useQuery(gqlNode_PROJECT_FETCH_ONE, {
+  let query: any;
+  ({ data: query } = useQuery(graphQlNodes.project.fetch, {
     variables: { id },
-  });
+  }));
   const { project } = query ?? {};
   const { setProject } = context;
 

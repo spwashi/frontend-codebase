@@ -5,14 +5,14 @@ import {
   IScene,
   ISceneIdentifyingPartial,
 } from "@junction/models/scene/models";
-import { gqlNode_SCENE_FETCH_ONE } from "@features/scenes/services/graphql/one/queries/fetchOne";
 import { ACTION_RECEIVE_ONE_SCENE } from "../../../redux/reducer";
 import { SceneContext } from "../context/context";
+import { graphQlNodes } from "../../../../../../@/graphQlNodes";
 
 export function OneSceneQuery({ id }: ISceneIdentifyingPartial) {
   const context = useContext(SceneContext) ?? ({} as any);
   const { setScene } = context;
-  const { data: query } = useQuery(gqlNode_SCENE_FETCH_ONE, {
+  const { data: query } = useQuery(graphQlNodes.scene.fetch, {
     variables: { id },
   });
   const dispatch = useDispatch();

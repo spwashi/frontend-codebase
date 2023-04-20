@@ -6,6 +6,7 @@ import AppForm from "@widgets/form/internal/components/AppForm";
 
 import { IFormConfig } from "./types/IFormConfig";
 import { useFormModifierHandler } from "@widgets/form/hooks/useFormWidgetModifierHandler";
+import { FormErrorBoundary } from "@widgets/form/error/components/FormErrorBoundary";
 
 type Params = {
   config: IFormConfig;
@@ -37,16 +38,18 @@ export function FormWidget({
       <header>
         {form.title} <small className="dev-only">{form.formId}</small>
       </header>
-      <AppForm
-        id={form.formId}
-        defaultValue={defaultValue}
-        onSubmit={submitHandler}
-        onChange={changeHandler}
-        buttons={[canSubmit && { type: "submit" }]}
-      >
-        <FormItems items={form.items} />
-        {children}
-      </AppForm>
+      <FormErrorBoundary>
+        <AppForm
+          id={form.formId}
+          defaultValue={defaultValue}
+          onSubmit={submitHandler}
+          onChange={changeHandler}
+          buttons={[canSubmit && { type: "submit" }]}
+        >
+          <FormItems items={form.items} />
+          {children}
+        </AppForm>
+      </FormErrorBoundary>
     </section>
   );
 }

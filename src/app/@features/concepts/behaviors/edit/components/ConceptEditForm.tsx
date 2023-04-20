@@ -1,16 +1,22 @@
 import React from "react";
-import { gqlNode_CONCEPT_EDIT } from "@features/concepts/services/graphql/one/mutations/edit";
 import { useMutationForm } from "@services/graphql/hooks/useMutationForm";
-import { selectEditConceptInput } from "@features/concepts/behaviors/edit/selectors";
 import { useConceptEditForm } from "@features/concepts/behaviors/edit/hooks/useConceptEditForm";
 import { FormWidget } from "@widgets/form/FormWidget";
 import { form__editConcept } from "@features/concepts/behaviors/edit/config";
 import { GraphqlMutationResponse } from "@services/graphql/components/api/GraphqlMutationResponse";
+import { graphQlNodes } from "../../../../../@/graphQlNodes";
 
 export function ConceptEditForm() {
   const [onsubmit, response] = useMutationForm(
-    gqlNode_CONCEPT_EDIT,
-    selectEditConceptInput
+    graphQlNodes.concept.edit,
+    (formState) => ({
+      concept: {
+        id: formState.id,
+        src: formState.src,
+        title: formState.title,
+      },
+      user: { username: formState.username },
+    })
   );
   const [concept, setConceptFromForm] = useConceptEditForm();
 

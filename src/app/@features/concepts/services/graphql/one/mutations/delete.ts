@@ -1,4 +1,5 @@
 import { gql, useMutation } from "@apollo/client";
+import { graphQlNodes } from "../../../../../../@/graphQlNodes";
 
 export const gqlNode_CONCEPT_DELETE = gql`
   mutation DeleteConcept($id: String!) {
@@ -8,5 +9,5 @@ export const gqlNode_CONCEPT_DELETE = gql`
   }
 `;
 export function useDeleteConceptMutation() {
-  return useMutation(gqlNode_CONCEPT_DELETE);
+  return useMutation(graphQlNodes.concept.delete);
 }

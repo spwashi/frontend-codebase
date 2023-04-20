@@ -5,14 +5,14 @@ import {
   IEvent,
   IEventIdentifyingPartial,
 } from "@junction/models/event/models";
-import { gqlNode_EVENT_FETCH_ONE } from "@features/events/services/graphql/one/queries/fetchOne";
 import { ACTION_RECEIVE_ONE_EVENT } from "../../../redux/reducer";
 import { EventContext } from "../context/context";
+import { graphQlNodes } from "../../../../../../@/graphQlNodes";
 
 export function OneEventQuery({ id }: IEventIdentifyingPartial) {
   const context = useContext(EventContext) ?? ({} as any);
   const { setEvent } = context;
-  const { data: query } = useQuery(gqlNode_EVENT_FETCH_ONE, {
+  const { data: query } = useQuery(graphQlNodes.event.fetch, {
     variables: { id },
   });
   const dispatch = useDispatch();

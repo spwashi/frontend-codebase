@@ -4,7 +4,6 @@ import {
   IEventTag_Complete,
 } from "@junction/models/event/hybrids";
 import { IEvent } from "@junction/models/event/models";
-import { ErrorBoundary } from "@core/error/components/ErrorBoundary";
 import { useActiveEvent } from "../context/context";
 import { EventTag } from "./join/tag";
 import { DeleteEventButton } from "./DeleteButton";
@@ -46,9 +45,7 @@ export function EventDisplay({ event }: EventDisplayParams) {
   return (
     <>
       <DeleteEventButton id={id} />
-      <ErrorBoundary>
-        <Internal event={event} />
-      </ErrorBoundary>
+      <Internal event={event} />
     </>
   );
 }

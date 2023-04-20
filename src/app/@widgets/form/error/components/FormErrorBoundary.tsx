@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 
-export class ErrorBoundary extends React.Component<{
+export class FormErrorBoundary extends React.Component<{
   handler?: (e: Error | any) => any;
   error?: any;
   children: ReactNode;

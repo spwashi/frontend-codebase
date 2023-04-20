@@ -1,14 +1,14 @@
 import React from "react";
-import { gqlNode_USER_SIGNUP } from "@features/users/services/graphql/one/mutations/signup";
 import { useMutationForm } from "@services/graphql/hooks/useMutationForm";
 import { selectMutationInput } from "@features/users/behaviors/signup/selectors";
 import { FormWidget } from "@widgets/form/FormWidget";
 import { form__userSignup } from "@features/users/behaviors/signup/config";
 import { GraphqlMutationResponse } from "@services/graphql/components/api/GraphqlMutationResponse";
+import { graphQlNodes } from "../../../../../../@/graphQlNodes";
 
 export function UserSignupForm() {
   const [onsubmit, response] = useMutationForm(
-    gqlNode_USER_SIGNUP,
+    graphQlNodes.user.signup,
     selectMutationInput
   );
   return (

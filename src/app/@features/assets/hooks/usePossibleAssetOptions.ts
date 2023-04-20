@@ -1,8 +1,8 @@
 import { useQuery } from "@apollo/client";
-import { gqlNode_ASSET_FETCH_LIST } from "@features/assets/services/graphql/list/queries/fetchList";
 import { useMemo } from "react";
 import { IAsset } from "@junction/models/asset/models";
 import { SelectOption } from "@widgets/form/features/fields/components/input/select/SelectInput";
+import { graphQlNodes } from "../../../@/graphQlNodes";
 
 function assetToOption(asset: IAsset): SelectOption<IAsset["id"]> {
   return {
@@ -13,7 +13,7 @@ function assetToOption(asset: IAsset): SelectOption<IAsset["id"]> {
 }
 
 export function usePossibleAssetOptions(username: string) {
-  const { data: query = {} } = useQuery(gqlNode_ASSET_FETCH_LIST, {
+  const { data: query = {} } = useQuery(graphQlNodes.asset.fetchList, {
     variables: { user: { username } },
   });
   return useMemo(

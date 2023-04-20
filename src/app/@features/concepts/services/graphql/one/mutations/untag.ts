@@ -1,4 +1,5 @@
 import { gql, useMutation } from "@apollo/client";
+import { graphQlNodes } from "../../../../../../@/graphQlNodes";
 
 export const gqlNode_CONCEPT_UNTAG = gql`
   mutation DeleteConceptTag(
@@ -18,6 +19,6 @@ export const gqlNode_CONCEPT_UNTAG = gql`
   }
 `;
 export function useDeleteConceptTagMutation() {
-  const [deleteTag] = useMutation(gqlNode_CONCEPT_UNTAG);
+  const [deleteTag] = useMutation(graphQlNodes.concept.untag);
   return deleteTag;
 }

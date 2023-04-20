@@ -4,11 +4,11 @@ import { useMutationForm } from "@services/graphql/hooks/useMutationForm";
 import { FormWidget } from "@widgets/form/FormWidget";
 import { selectTagAdditionInput } from "@features/events/behaviors/tag/selectors";
 import { form__tagEvent } from "../config";
-import { gqlNode_EVENT_TAG } from "../../../services/graphql/one/mutations/tag";
+import { graphQlNodes } from "../../../../../@/graphQlNodes";
 
 export function EventTagForm() {
   const [onsubmit, response] = useMutationForm(
-    gqlNode_EVENT_TAG,
+    graphQlNodes.event.tag,
     selectTagAdditionInput
   );
   return (

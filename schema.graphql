@@ -66,16 +66,12 @@ type Mutation {
     logIn(user: UserLoginInput, password: PasswordReferenceInput, project: ProjectReferenceInput): UserLoginResponse
     signUp(user: CreateUserInput!, password: CreatePasswordInput!, project: ProjectReferenceInput): UserSignupResponse
 }
-
-# Asset
 type Asset {
     name: String!
     realname: String!
     contentType: String!
     uri: String!
 }
-
-# Concept
 type Concept {
     id: String
     title: String!
@@ -112,8 +108,6 @@ type ConceptConcept {
     secondary: Concept
     relationship: String
 }
-
-# Event
 type Event {
     id: String
     title: String!
@@ -150,8 +144,6 @@ type EventTag {
     event: Event
     tag: Tag
 }
-
-# Project
 type Project {
     id: String
     name: String!
@@ -181,8 +173,6 @@ type ProjectTag {
     project: Project
     tag: Tag
 }
-
-# Scene
 type Scene {
     id: String
     name: String!
@@ -209,8 +199,6 @@ type SceneTag {
     scene: Scene
     tag: Tag
 }
-
-# Tag
 type Tag {
     id: String
     description:String
@@ -235,8 +223,6 @@ input EditTagInput {
 input DeleteTagInput {
     id: String!
 }
-
-# User
 type User {
     id: String
     username: String!

@@ -1,5 +1,4 @@
 import React from "react";
-import { gqlNode_SCENE_EDIT } from "@features/scenes/services/graphql/one/mutations/edit";
 import { useMutationForm } from "@services/graphql/hooks/useMutationForm";
 import { selectEditSceneInput } from "@features/scenes/behaviors/edit/selectors";
 import { formClassNames } from "@widgets/form/styles/classNames";
@@ -7,10 +6,11 @@ import { FormWidget } from "@widgets/form/FormWidget";
 import { form__editScene } from "@features/scenes/behaviors/edit/config";
 import { GraphqlMutationResponse } from "@services/graphql/components/api/GraphqlMutationResponse";
 import { useSceneSelectForm } from "@features/scenes/behaviors/select/hooks/useSceneSelectForm";
+import { graphQlNodes } from "../../../../../@/graphQlNodes";
 
 export function SceneEditForm() {
   const [onsubmit, response] = useMutationForm(
-    gqlNode_SCENE_EDIT,
+    graphQlNodes.scene.edit,
     selectEditSceneInput
   );
   const [scene, setScene] = useSceneSelectForm();

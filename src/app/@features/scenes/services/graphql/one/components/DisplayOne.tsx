@@ -1,6 +1,5 @@
 import React from "react";
 import { IScene } from "@junction/models/scene/models";
-import { ErrorBoundary } from "@core/error/components/ErrorBoundary";
 import { useActiveScene } from "../context/context";
 import { DeleteSceneButton } from "./DeleteSceneButton";
 
@@ -31,9 +30,7 @@ export function SceneDisplay({ scene }: SceneDisplayParams) {
   return (
     <>
       <DeleteSceneButton id={id} />
-      <ErrorBoundary>
-        <Internal scene={scene} />
-      </ErrorBoundary>
+      <Internal scene={scene} />
     </>
   );
 }

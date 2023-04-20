@@ -34,11 +34,9 @@ import { gqlNode_TAG_DELETE } from "@features/tags/services/graphql/one/mutation
 import { gqlNode_TAG_FETCH_LIST } from "@features/tags/services/graphql/list/queries/fetchList";
 import { gqlNode_TAG_FETCH_ONE } from "@features/tags/services/graphql/one/queries/fetchOne";
 // Users
-import { gqlNode_USER_FETCH_LIST } from "@features/users/services/graphql/list/queries/fetchList";
 import { gqlNode_USER_LOGIN } from "@features/users/services/graphql/one/mutations/login";
 import { gqlNode_USER_SIGNUP } from "@features/users/services/graphql/one/mutations/signup";
 
-// todo actually use this?
 export const graphQlNodes = {
   asset: {
     fetchList: gqlNode_ASSET_FETCH_LIST,
@@ -82,7 +80,6 @@ export const graphQlNodes = {
     fetch: gqlNode_TAG_FETCH_ONE,
   },
   user: {
-    fetch: gqlNode_USER_FETCH_LIST,
     login: gqlNode_USER_LOGIN,
     signup: gqlNode_USER_SIGNUP,
   },

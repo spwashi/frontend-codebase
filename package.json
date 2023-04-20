@@ -9,7 +9,8 @@
     "serve": "vite preview",
     "start": "vite",
     "storybook": "storybook dev -p 6006",
-    "eslint": "eslint --fix"
+    "eslint": "eslint --fix",
+    "codegen:graphql": "yarn graphql-codegen --watch"
   },
   "browserslist": {
     "production": [

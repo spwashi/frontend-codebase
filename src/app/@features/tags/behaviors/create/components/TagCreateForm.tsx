@@ -2,13 +2,13 @@ import React from "react";
 import { useMutationForm } from "@services/graphql/hooks/useMutationForm";
 import { FormWidget } from "@widgets/form/FormWidget";
 import { GraphqlMutationResponse } from "@services/graphql/components/api/GraphqlMutationResponse";
-import { gqlNode_TAG_CREATE } from "../../../services/graphql/one/mutations/create";
 import { selectCreateTagInput } from "../selectors";
 import { form__createTag } from "../config";
+import { graphQlNodes } from "../../../../../@/graphQlNodes";
 
 export function TagCreateForm() {
   const [onsubmit, response] = useMutationForm(
-    gqlNode_TAG_CREATE,
+    graphQlNodes.tag.create,
     selectCreateTagInput
   );
   return (

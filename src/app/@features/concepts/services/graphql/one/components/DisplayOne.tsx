@@ -6,7 +6,6 @@ import {
 } from "@junction/models/concept/hybrids";
 import { Log } from "@core/dev/components/Log";
 import { IConcept } from "@junction/models/concept/models";
-import { ErrorBoundary } from "@core/error/components/ErrorBoundary";
 import { useActiveConcept } from "../context/context";
 import { ConceptTag } from "./join/tag/TagOne";
 import { DeleteConceptButton } from "./DeleteButton";
@@ -74,9 +73,7 @@ export function ConceptDisplay({ concept }: ConceptDisplayParams) {
   return (
     <>
       <DeleteConceptButton id={id} />
-      <ErrorBoundary>
-        <Internal concept={concept} />
-      </ErrorBoundary>
+      <Internal concept={concept} />
     </>
   );
 }
