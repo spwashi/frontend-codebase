@@ -1,5 +1,5 @@
 // Define mutation
-import { gql, useMutation } from "@apollo/client";
+import { gql } from "@apollo/client";
 
 export const gqlNode_EVENT_TAG = gql`
   mutation TagEvent(
@@ -12,7 +12,3 @@ export const gqlNode_EVENT_TAG = gql`
     }
   }
 `;
-export function useTagMutation() {
-  const [send, response] = useMutation(gqlNode_EVENT_TAG);
-  return { send, response };
-}

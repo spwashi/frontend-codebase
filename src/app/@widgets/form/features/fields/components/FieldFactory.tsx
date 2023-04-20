@@ -1,4 +1,4 @@
-import React, { useContext, useMemo } from "react";
+import React, { useMemo } from "react";
 import { UsernameInput } from "@features/users/components/input/UsernameInput";
 import { TagsSelect } from "@features/tags/components/input/TagsSelect";
 import { ProjectSelect } from "@features/projects/components/input/ProjectSelect";
@@ -9,7 +9,6 @@ import { SceneSelect } from "@features/scenes/components/input/SceneSelect";
 import { getConfiguredDomain } from "@core/dev/components/Dev";
 import { FormWidget } from "../../../FormWidget";
 import { useFormItem } from "../hooks/useFormItem";
-import { FormContext } from "../../../context/context";
 import { IFormItemConfig } from "../types/fieldConfig";
 import { IFormConfig } from "../../../types/IFormConfig";
 import { ContentInput } from "./input/ContentInput";

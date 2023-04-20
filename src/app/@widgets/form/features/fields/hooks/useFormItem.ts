@@ -1,6 +1,5 @@
 import { useCallback, useContext, useEffect, useState } from "react";
 import { ACTION_UPDATE_INDEX } from "@widgets/form/state/reducer";
-import { IFormContextState } from "../../../context/types/state";
 import { FormContext, ID_EMPTY } from "../../../context/context";
 
 export function updateFormItem<T>(

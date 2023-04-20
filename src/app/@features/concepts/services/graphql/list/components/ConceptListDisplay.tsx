@@ -1,9 +1,6 @@
 import { useSelector } from "react-redux";
 import React from "react";
-import {
-  selectConceptList,
-  selectPossibleConceptOptions,
-} from "../../../redux/selectors";
+import { selectConceptList } from "../../../redux/selectors";
 import { ConceptDisplay } from "../../one/components/DisplayOne";
 
 export function ConceptListDisplay() {

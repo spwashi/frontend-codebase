@@ -6,7 +6,6 @@ import { FeatureRequirement } from "@services/features/list/components/FeatureRe
 import { EventListQuery } from "@features/events/services/graphql/list/components/EventListQuery";
 
 import { form__selectEvent } from "@features/events/behaviors/select/config";
-import { useEventSelectForm } from "@features/events/behaviors/select/hooks/useEventSelectForm";
 import {
   featureId__eventDisplay,
   featureId__eventDisplayForm,

@@ -1,11 +1,4 @@
-import React, {
-  ChangeEvent,
-  useCallback,
-  useContext,
-  useEffect,
-  useMemo,
-} from "react";
-import { FormContext } from "@widgets/form/context/context";
+import React, { ChangeEvent, useCallback, useEffect, useMemo } from "react";
 import { useFormItem } from "../../../hooks/useFormItem";
 
 export type SelectOption<T = any> = {

@@ -1,27 +1,16 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
 import { GraphqlMutationResponse } from "@services/graphql/components/api/GraphqlMutationResponse";
-import { useMutationFormSubmitCallback } from "@services/graphql/hooks/useMutationFormSubmitCallback";
+import { useMutationForm } from "@services/graphql/hooks/useMutationForm";
 import { FormWidget } from "@widgets/form/FormWidget";
 import { ErrorBoundary } from "@core/error/components/ErrorBoundary";
 import { form__createProject } from "@features/projects/behaviors/create/config";
 import { selectCreateProjectInput } from "../selectors";
-import { useCreateProjectMutation } from "../../../services/graphql/one/mutations/create";
-import { ACTION_PROJECT_CREATED } from "../../../services/redux/reducer";
+import { gqlNode_PROJECT_CREATE } from "../../../services/graphql/one/mutations/create";
 
 export function ProjectCreateForm() {
-  const { send, response } = useCreateProjectMutation();
-  const dispatch = useDispatch();
   const [fatal, setFatal] = useState<any>(null);
-  const onsubmit = useMutationFormSubmitCallback(
-    (o) =>
-      send(o)
-        .then(() => {
-          dispatch({ type: ACTION_PROJECT_CREATED });
-        })
-        .catch((e) => {
-          console.log(e);
-        }),
+  const [onsubmit, response] = useMutationForm(
+    gqlNode_PROJECT_CREATE,
     selectCreateProjectInput
   );
   return (

@@ -1,15 +1,16 @@
-import { useMutation } from "@apollo/client";
 import React from "react";
 import { gqlNode_USER_SIGNUP } from "@features/users/services/graphql/one/mutations/signup";
-import { useMutationFormSubmitCallback } from "@services/graphql/hooks/useMutationFormSubmitCallback";
+import { useMutationForm } from "@services/graphql/hooks/useMutationForm";
 import { selectMutationInput } from "@features/users/behaviors/signup/selectors";
 import { FormWidget } from "@widgets/form/FormWidget";
 import { form__userSignup } from "@features/users/behaviors/signup/config";
 import { GraphqlMutationResponse } from "@services/graphql/components/api/GraphqlMutationResponse";
 
 export function UserSignupForm() {
-  const [send, response] = useMutation(gqlNode_USER_SIGNUP);
-  const onsubmit = useMutationFormSubmitCallback(send, selectMutationInput);
+  const [onsubmit, response] = useMutationForm(
+    gqlNode_USER_SIGNUP,
+    selectMutationInput
+  );
   return (
     <React.Fragment>
       <FormWidget config={form__userSignup} onSubmit={onsubmit} />

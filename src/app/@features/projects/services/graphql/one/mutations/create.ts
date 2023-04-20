@@ -1,5 +1,5 @@
 // Define mutation
-import { gql, useMutation } from "@apollo/client";
+import { gql } from "@apollo/client";
 
 export const gqlNode_PROJECT_CREATE = gql`
   mutation CreateProject($project: CreateProjectInput!) {
@@ -11,8 +11,3 @@ export const gqlNode_PROJECT_CREATE = gql`
     }
   }
 `;
-export function useCreateProjectMutation() {
-  const [send, response] = useMutation(gqlNode_PROJECT_CREATE);
-
-  return { send, response };
-}

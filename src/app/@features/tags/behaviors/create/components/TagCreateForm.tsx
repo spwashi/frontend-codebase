@@ -1,22 +1,14 @@
-import { useDispatch } from "react-redux";
 import React from "react";
-import { useMutationFormSubmitCallback } from "@services/graphql/hooks/useMutationFormSubmitCallback";
+import { useMutationForm } from "@services/graphql/hooks/useMutationForm";
 import { FormWidget } from "@widgets/form/FormWidget";
 import { GraphqlMutationResponse } from "@services/graphql/components/api/GraphqlMutationResponse";
-import { useCreateTagMutation } from "../../../services/graphql/one/mutations/create";
-import { ACTION_TAG_CREATED } from "../../../services/redux/reducer";
+import { gqlNode_TAG_CREATE } from "../../../services/graphql/one/mutations/create";
 import { selectCreateTagInput } from "../selectors";
 import { form__createTag } from "../config";
 
 export function TagCreateForm() {
-  const { send, response } = useCreateTagMutation();
-  const dispatch = useDispatch();
-  const onsubmit = useMutationFormSubmitCallback(
-    (o) =>
-      send(o).then((o) => {
-        dispatch({ type: ACTION_TAG_CREATED });
-        return o;
-      }),
+  const [onsubmit, response] = useMutationForm(
+    gqlNode_TAG_CREATE,
     selectCreateTagInput
   );
   return (

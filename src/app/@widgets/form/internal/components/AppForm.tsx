@@ -33,7 +33,7 @@ export default function AppForm({
   const handleSubmit = useSubmitHandlerCallback(state, onSubmit);
   const formContextValue = useMemo(
     () => ({ ...state, dispatch }),
-    [state.data, dispatch]
+    [state.currentValue, dispatch]
   );
   return (
     <FormContext.Provider value={formContextValue}>

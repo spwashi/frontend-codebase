@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { IUser } from "@junction/models/user/models";
 import { FormWidget } from "@widgets/form/FormWidget";
 import { Feature } from "@services/features/item/components/Feature";
 import { form__selectLoggedInUser } from "@features/users/behaviors/select-loggedIn/config";

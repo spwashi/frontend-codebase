@@ -1,14 +1,16 @@
 import React from "react";
-import { useCreateEventMutation } from "@features/events/services/graphql/one/mutations/create";
-import { useMutationFormSubmitCallback } from "@services/graphql/hooks/useMutationFormSubmitCallback";
+import { gqlNode_EVENT_CREATE } from "@features/events/services/graphql/one/mutations/create";
+import { useMutationForm } from "@services/graphql/hooks/useMutationForm";
 import { selectCreateEventInput } from "@features/events/behaviors/create/selectors";
 import { FormWidget } from "@widgets/form/FormWidget";
 import { form__createEvent } from "@features/events/behaviors/create/config";
 import { GraphqlMutationResponse } from "@services/graphql/components/api/GraphqlMutationResponse";
 
 export function EventCreateForm() {
-  const { send, response } = useCreateEventMutation();
-  const onsubmit = useMutationFormSubmitCallback(send, selectCreateEventInput);
+  const [onsubmit, response] = useMutationForm(
+    gqlNode_EVENT_CREATE,
+    selectCreateEventInput
+  );
   return (
     <>
       <FormWidget config={form__createEvent} onSubmit={onsubmit} />

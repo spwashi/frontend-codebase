@@ -3,6 +3,7 @@ import { REHYDRATE } from "redux-persist";
 import { ProjectFeatureState, ProjectFeatureStateDataProjects } from "./types";
 import { selectProjectState } from "./selectors";
 
+// todo revisit this for all entity types
 export const ACTION_RECEIVE_ALL_PROJECTS = "RECEIVE_ALL_PROJECTS";
 export const ACTION_PROJECT_CREATED = "PROJECT_CREATED";
 export const ACTION_PROJECT_SELECTED = "PROJECT_SELECTED";
