@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Feature } from "@services/features/item/components/Feature";
 import { FormWidget } from "@widgets/form/FormWidget";
 
@@ -12,9 +12,12 @@ import {
   featureId__eventDisplayForm,
 } from "../../../../../@/featureIds";
 import { Event } from "../../../services/graphql/one";
+import { IFormContextState } from "@widgets/form/context/types/state";
 
 export function EventDisplayFormFeature() {
-  const [event, setState] = useEventSelectForm();
+  const [formState, setFormState] = useState<IFormContextState>();
+  const event = formState?.currentValue?.event;
+
   return (
     <FeatureRequirement
       name={featureId__eventDisplay}
@@ -22,7 +25,7 @@ export function EventDisplayFormFeature() {
     >
       <EventListQuery />
       <Feature name={featureId__eventDisplayForm}>
-        <FormWidget config={form__selectEvent} onSubmit={setState} />
+        <FormWidget config={form__selectEvent} onSubmit={setFormState} />
         {event && <Event id={event.id} />}
       </Feature>
     </FeatureRequirement>

@@ -34,20 +34,13 @@ function DisplayAssetForm(user: { username: string }) {
   );
 }
 
-function useUserSelectForm() {
-  const [state, setUserFromForm] = useState<{ data: { user: IUser } } | null>(
-    null
-  );
-  const user = state?.data?.user;
-  return [user, setUserFromForm] as const;
-}
-
 /**
  * Displays an asset
  * @constructor
  */
 export function AssetDisplayForm() {
-  const [user, setUserFromForm] = useUserSelectForm();
+  const [formState, setUserFromForm] = useState<IFormContextState>();
+  const user = formState?.currentValue?.user;
   const username = user?.username;
   return (
     <Feature name={featureId__assetDisplay}>

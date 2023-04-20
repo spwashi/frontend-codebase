@@ -32,13 +32,13 @@ function SubformInput({
   formKey: string;
   config: IFormConfig;
 }) {
-  const [formState, updateFormState] = useFormItem(formKey);
+  const [formState, setFormState] = useFormItem(formKey);
 
   return (
     <FormWidget
       config={config}
       defaultValue={formState}
-      onSubmit={updateFormState}
+      onSubmit={setFormState}
     />
   );
 }

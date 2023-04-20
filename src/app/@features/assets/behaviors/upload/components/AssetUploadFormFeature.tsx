@@ -6,6 +6,7 @@ import { useJwt } from "@services/jwt/hooks/useJwt";
 import { Feature } from "@services/features/item/components/Feature";
 import { form__uploadAsset } from "@features/assets/behaviors/upload/config";
 import { featureId__assetUploadForm } from "../../../../../@/featureIds";
+import { IFormContextState } from "@widgets/form/context/types/state";
 
 interface SubmissionCallbackParams {
   data: any;
@@ -51,7 +52,7 @@ export function AssetUploadFormFeature() {
   const jwt = useJwt();
   const [error, setError] = useState<any | null>(null);
   const onSubmit = useCallback(
-    async ({ data }: any) => {
+    async ({ currentValue: data }: IFormContextState) => {
       if (!jwt) {
         return setError("No JWT");
       }

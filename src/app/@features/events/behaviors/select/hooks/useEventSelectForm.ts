@@ -1,7 +1,4 @@
 import { useState } from "react";
+import { IFormContextState } from "@widgets/form/context/types/state";
 
-export function useEventSelectForm() {
-  const [{ data: { event } = {} as any } = {} as any, setEventFromForm] =
-    useState({} as any);
-  return [event, setEventFromForm] as const;
-}
+export function useEventSelectForm() {}
