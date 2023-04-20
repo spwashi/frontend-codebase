@@ -1,13 +1,13 @@
 import React from "react";
 import { Feature } from "@services/features/item/components/Feature";
-import { ListQuery } from "@features/concepts/services/graphql/list/components/ListQuery";
+import { ConceptListQuery } from "@features/concepts/services/graphql/list/components/ConceptListQuery";
 import { ConceptEditForm } from "@features/concepts/behaviors/edit/components/ConceptEditForm";
 import { featureId__conceptEditForm } from "../../../../../@/featureIds";
 
 export function ConceptEditFormFeature() {
   return (
     <Feature name={featureId__conceptEditForm}>
-      <ListQuery />
+      <ConceptListQuery />
       <ConceptEditForm />
     </Feature>
   );

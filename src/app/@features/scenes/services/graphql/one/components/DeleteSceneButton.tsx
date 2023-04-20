@@ -3,8 +3,9 @@ import React, { useCallback } from "react";
 import { Log } from "@core/dev/components/Log";
 import { useDeleteSceneMutation } from "@features/scenes/services/graphql/one/mutations/delete";
 import { ACTION_DELETE_ONE_SCENE } from "../../../redux/reducer";
+import { IScene } from "@junction/models/scene/models";
 
-export function DeleteSceneButton({ id }: { id: number }) {
+export function DeleteSceneButton({ id }: { id: IScene["id"] }) {
   const [deleteScene, { error }] = useDeleteSceneMutation();
   const dispatch = useDispatch();
   const doDelete = useCallback(() => {

@@ -1,4 +1,4 @@
-type ITagId = number;
+type ITagId = string;
 
 export interface ITag {
   id: ITagId;

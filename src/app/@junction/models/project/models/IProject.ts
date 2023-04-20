@@ -8,7 +8,7 @@ interface HasProjectEnvironment {
   ProjectEnvironment: IProjectEnvironment;
 }
 
-type IProjectId = number;
+type IProjectId = string;
 type IProjectName = string;
 type IProjectTitle = string;
 type IProjectDomain = string;

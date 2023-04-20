@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { Feature } from "@services/features/item/components/Feature";
 import {
   selectPossibleEventsLastFetched,
-  selectPossibleEventsList,
+  selectPossibleEventOptions,
 } from "../services/redux/selectors";
 import {
   featureId__eventDisplay,
@@ -12,7 +12,7 @@ import {
 
 function EventDisplayFeature() {
   const lastFetched = useSelector(selectPossibleEventsLastFetched);
-  const list = useSelector(selectPossibleEventsList);
+  const list = useSelector(selectPossibleEventOptions);
   const enabled = lastFetched ? !!list.length : false;
   return <Feature name={featureId__eventDisplay} enabled={enabled} />;
 }

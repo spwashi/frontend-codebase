@@ -11,5 +11,6 @@ export function getInitialState<T = any>(
     initialValue: d,
     lastReset: undefined,
     changed: {},
+    dispatch: (v: any) => {},
   };
 }

@@ -5,15 +5,17 @@ import { EventOption } from "./types";
 function eventToOption(event: IEvent): EventOption {
   return {
     title: event.title,
-    value: event.title,
-    payload: event,
+    value: event.id,
+    payload: event.id,
   };
 }
 
 export const selectEventFeature = (state: IRootAppState) =>
   state.features.event;
-export const selectPossibleEventsList = (state: IRootAppState) =>
-  selectEventFeature(state).data.events.list?.map(eventToOption);
+export const selectEventList = (state: IRootAppState) =>
+  selectEventFeature(state).data.events.list;
+export const selectPossibleEventOptions = (state: IRootAppState) =>
+  selectEventList(state)?.map(eventToOption);
 export const selectPossibleEventsLastFetched = (state: IRootAppState) =>
   selectEventFeature(state).data.events.lastFetched;
 export const selectEventStateKey = (state: IRootAppState) =>

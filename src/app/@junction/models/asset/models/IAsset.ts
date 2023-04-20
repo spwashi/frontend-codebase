@@ -1,4 +1,4 @@
-type IAssetId = number;
+type IAssetId = string;
 
 export interface IAsset {
   id: IAssetId;

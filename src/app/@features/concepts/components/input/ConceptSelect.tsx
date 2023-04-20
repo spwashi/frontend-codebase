@@ -1,20 +1,11 @@
 import React from "react";
 import { SelectInput } from "@widgets/form/features/fields/components/input/select/SelectInput";
-import { useConceptOptions } from "../../hooks/useOptions";
+import { useConceptOptions } from "../../hooks/useConceptOptions";
 
-export function ConceptSelect({
-  formKey,
-}: {
-  formKey?: string;
-  value?: string;
-}) {
+type IConceptSelectParams = { formKey: string };
+export function ConceptSelect({ formKey }: IConceptSelectParams) {
   const options = useConceptOptions();
-
   return (
-    <SelectInput
-      placeholder={"Concept"}
-      formKey={formKey ?? ""}
-      options={options}
-    />
+    <SelectInput placeholder={"Concept"} formKey={formKey} options={options} />
   );
 }

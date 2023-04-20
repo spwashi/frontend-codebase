@@ -24,14 +24,17 @@ export default function AppForm({
   onChange,
   defaultValue,
 }: IAppFormProps) {
-  const [formState, dispatchOnFormContext] = useReducer(
+  const [state, dispatch] = useReducer(
     formReducer,
     getInitialState(defaultValue, id)
   );
-  useFormOnChangeEffect(formState, onChange);
-  useSetFormDefaultEffect(dispatchOnFormContext, defaultValue);
-  const formContextValue = useMemo(() => ({ ...formState }), [formState.data]);
-  const handleSubmit = useSubmitHandlerCallback(formState, onSubmit);
+  useFormOnChangeEffect(state, onChange);
+  useSetFormDefaultEffect(dispatch, defaultValue);
+  const handleSubmit = useSubmitHandlerCallback(state, onSubmit);
+  const formContextValue = useMemo(
+    () => ({ ...state, dispatch }),
+    [state.data, dispatch]
+  );
   return (
     <FormContext.Provider value={formContextValue}>
       <form onSubmit={handleSubmit} data-form-id={id}>

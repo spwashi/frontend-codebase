@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { Feature } from "@services/features/item/components/Feature";
 import {
   selectPossibleConceptsLastFetched,
-  selectPossibleConceptsList,
+  selectPossibleConceptOptions,
 } from "../services/redux/selectors";
 import {
   featureId__conceptDisplay,
@@ -12,7 +12,7 @@ import {
 
 function ConceptDisplayFeature() {
   const lastFetched = useSelector(selectPossibleConceptsLastFetched);
-  const list = useSelector(selectPossibleConceptsList);
+  const list = useSelector(selectPossibleConceptOptions);
   const enabled = lastFetched ? !!list.length : false;
   return <Feature name={featureId__conceptDisplay} enabled={enabled} />;
 }

@@ -1,19 +1,6 @@
-import { useQuery } from "@apollo/client";
-import React, { useMemo } from "react";
-import {
-  SelectInput,
-  SelectOption,
-} from "@widgets/form/features/fields/components/input/select/SelectInput";
-import { IAsset } from "@junction/models/asset/models";
-import { gqlNode_ASSET_FETCH_LIST } from "@features/assets/services/graphql/list/queries/fetchList";
-
-function assetToOption(asset: IAsset): SelectOption<IAsset> {
-  return {
-    title: asset.name,
-    value: asset.name,
-    payload: asset,
-  };
-}
+import React from "react";
+import { SelectInput } from "@widgets/form/features/fields/components/input/select/SelectInput";
+import { usePossibleAssetOptions } from "@features/assets/hooks/usePossibleAssetOptions";
 
 export function AssetSelect({
   formKey,
@@ -22,17 +9,8 @@ export function AssetSelect({
   formKey?: string;
   username: string;
 }) {
-  const { data: query = {} } = useQuery(gqlNode_ASSET_FETCH_LIST, {
-    variables: { user: { username } },
-  });
-  const options = useMemo(
-    () => (query.assetList ? query.assetList.map(assetToOption) : []),
-    [query]
-  );
-
+  const options = usePossibleAssetOptions(username);
   return (
-    <>
-      <SelectInput placeholder="Asset" formKey={formKey} options={options} />
-    </>
+    <SelectInput placeholder="Asset" formKey={formKey} options={options} />
   );
 }

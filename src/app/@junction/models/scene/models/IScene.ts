@@ -4,7 +4,7 @@ import { ISceneConcept } from "./ISceneConcept";
 type ISceneName = string;
 type ISceneTitle = string;
 type ISceneDescription = string;
-type ISceneId = number;
+type ISceneId = string;
 
 export interface IScene {
   id: ISceneId;

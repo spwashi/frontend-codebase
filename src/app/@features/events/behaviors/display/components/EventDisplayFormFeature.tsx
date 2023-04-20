@@ -3,7 +3,7 @@ import { Feature } from "@services/features/item/components/Feature";
 import { FormWidget } from "@widgets/form/FormWidget";
 
 import { FeatureRequirement } from "@services/features/list/components/FeatureRequirement";
-import { EventListQuery } from "@features/events/services/graphql/list/components/ListQuery";
+import { EventListQuery } from "@features/events/services/graphql/list/components/EventListQuery";
 
 import { form__selectEvent } from "@features/events/behaviors/select/config";
 import { useEventSelectForm } from "@features/events/behaviors/select/hooks/useEventSelectForm";

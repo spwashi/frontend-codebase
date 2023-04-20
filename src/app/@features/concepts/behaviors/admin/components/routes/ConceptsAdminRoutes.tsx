@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router";
-import { ConceptListDisplay } from "@features/concepts/services/graphql/list/components/ListDisplay";
+import { ConceptListDisplay } from "@features/concepts/services/graphql/list/components/ConceptListDisplay";
 import { LoginRequirement } from "@features/users/behaviors/login/components/gates/LoginRequirement";
 import { ConceptCreateFormFeature } from "@features/concepts/behaviors/create/components/ConceptCreateFormFeature";
 import { ConceptEditFormFeature } from "@features/concepts/behaviors/edit/components/ConceptEditFormFeature";

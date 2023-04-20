@@ -2,7 +2,7 @@ export interface IEventIdentifyingPartial {
   id: IEventId;
 }
 
-type IEventId = number;
+type IEventId = string;
 type IEventTitle = string;
 type IEventDescription = string;
 type IEventStart = string;

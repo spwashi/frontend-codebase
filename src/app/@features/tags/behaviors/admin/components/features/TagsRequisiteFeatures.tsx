@@ -1,6 +1,6 @@
-import { TagFeatures } from "@features/tags/components/Features";
+import { TagFeatures } from "@features/tags/components/TagFeatures";
 import { UserFeatures } from "@features/users/components/Features";
-import { ProjectFeatures } from "@features/projects/components/Features";
+import { ProjectFeatures } from "@features/projects/components/ProjectFeatures";
 import React from "react";
 
 export function TagsRequisiteFeatures() {

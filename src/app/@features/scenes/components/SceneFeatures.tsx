@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { Feature } from "@services/features/item/components/Feature";
 import {
   selectPossibleScenesLastFetched,
-  selectPossibleScenesList,
+  selectPossibleSceneOptions,
 } from "../services/redux/selectors";
 import {
   featureId__sceneDisplay,
@@ -12,7 +12,7 @@ import {
 
 function SceneDisplayFeature() {
   const lastFetched = useSelector(selectPossibleScenesLastFetched);
-  const list = useSelector(selectPossibleScenesList);
+  const list = useSelector(selectPossibleSceneOptions);
   const enabled = lastFetched ? !!list.length : false;
   return <Feature name={featureId__sceneDisplay} enabled={enabled} />;
 }

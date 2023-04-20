@@ -5,14 +5,14 @@ import { UserOption } from "./types";
 function userToOption(user: IUser): UserOption {
   return {
     title: user.username,
-    value: user.username,
-    payload: user,
+    value: user.id,
+    payload: user.id,
   };
 }
 
 export const selectUserFeature = (state: IRootAppState) =>
   state?.features?.user;
-export const selectPossibleUsersList = (state: IRootAppState) =>
+export const selectPossibleUsersOptions = (state: IRootAppState) =>
   selectUserFeature(state).data.users.list.map(userToOption);
 export const selectPossibleUsersLastFetched = (state: IRootAppState) =>
   selectUserFeature(state).data.users.lastFetched;

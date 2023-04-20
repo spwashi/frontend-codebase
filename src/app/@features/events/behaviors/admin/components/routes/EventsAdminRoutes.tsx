@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router";
-import { EventListDisplay } from "@features/events/services/graphql/list/components/ListDisplay";
+import { EventListDisplay } from "@features/events/services/graphql/list/components/EventListDisplay";
 import { LoginRequirement } from "@features/users/behaviors/login/components/gates/LoginRequirement";
 import { EventCreateFormFeature } from "@features/events/behaviors/create/components/EventCreateFormFeature";
 import { EventEditFormFeature } from "@features/events/behaviors/edit/components/EventEditFormFeature";

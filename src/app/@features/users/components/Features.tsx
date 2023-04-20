@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { Feature } from "@services/features/item/components/Feature";
 import {
   selectPossibleUsersLastFetched,
-  selectPossibleUsersList,
+  selectPossibleUsersOptions,
 } from "../services/redux/selectors";
 import {
   featureId__userLogin,
@@ -15,7 +15,7 @@ const requireFetch = false;
 
 function UserLoginFeature() {
   const lastFetched = useSelector(selectPossibleUsersLastFetched);
-  const list = useSelector(selectPossibleUsersList);
+  const list = useSelector(selectPossibleUsersOptions);
   const enabled = !requireFetch || (lastFetched ? !!list.length : false);
   return <Feature name={featureId__userLogin} enabled={enabled} />;
 }

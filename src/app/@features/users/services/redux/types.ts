@@ -2,7 +2,7 @@ import { IUser } from "@junction/models/user/models";
 import { IFeatureState } from "@services/redux/types/state.types";
 import { SelectOption } from "@widgets/form/features/fields/components/input/select/SelectInput";
 
-export type UserOption = SelectOption<IUser>;
+export type UserOption = SelectOption<IUser["username"]>;
 
 /**
  * User Feature:

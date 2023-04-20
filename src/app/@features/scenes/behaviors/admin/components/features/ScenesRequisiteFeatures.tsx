@@ -1,6 +1,6 @@
 import { UserFeatures } from "@features/users/components/Features";
-import { SceneFeatures } from "@features/scenes/components/Features";
-import { TagFeatures } from "@features/tags/components/Features";
+import { SceneFeatures } from "@features/scenes/components/SceneFeatures";
+import { TagFeatures } from "@features/tags/components/TagFeatures";
 import React from "react";
 
 export function ScenesRequisiteFeatures() {

@@ -6,12 +6,9 @@ import { FormContext, ID_EMPTY } from "../../../context/context";
 export function updateFormItem<T>(
   formKey: string,
   value: T,
-  dispatch?: (action: any) => void,
+  dispatch: (action: any) => void,
   passive = false
 ) {
-  if (!dispatch) {
-    throw new Error("we used to be able to dispatch on the form");
-  }
   dispatch({
     type: ACTION_UPDATE_INDEX,
     payload: {
@@ -37,7 +34,7 @@ export function useFormItem<T = any>(
     form?.data?.[formKey ?? ""] ?? null
   );
 
-  const { id } = useContext(FormContext);
+  const { id, dispatch } = useContext(FormContext);
 
   useEffect(() => {
     const changed = typeof form?.changed?.[formKey ?? ""] === "undefined";
@@ -49,10 +46,10 @@ export function useFormItem<T = any>(
   const setValue = useCallback(
     (input: T) => {
       const trueVal = valueMapper(input);
-      formKey && updateFormItem(formKey, trueVal, undefined, passive);
+      formKey && updateFormItem(formKey, trueVal, dispatch, passive);
       setLocalValue(input);
     },
-    [form, formKey, valueMapper, passive]
+    [form, formKey, valueMapper, passive, dispatch]
   );
 
   const value = form?.data?.[`${formKey}`];

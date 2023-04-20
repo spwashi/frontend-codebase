@@ -5,13 +5,13 @@ import { TagOption } from "./types";
 function tagToOption(tag: ITag): TagOption {
   return {
     title: tag.title,
-    value: tag.title,
-    payload: tag,
+    value: tag.id,
+    payload: tag.id,
   };
 }
 
 export const selectTagFeature = (state: IRootAppState) => state.features.tag;
-export const selectPossibleTagsList = (state: IRootAppState) =>
+export const selectPossibleTagOptions = (state: IRootAppState) =>
   selectTagFeature(state).data.tags.list.map(tagToOption);
 export const selectPossibleTagsLastFetched = (state: IRootAppState) =>
   selectTagFeature(state).data.tags.lastFetched;

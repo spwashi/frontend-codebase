@@ -2,7 +2,7 @@ import { SelectOption } from "@widgets/form/features/fields/components/input/sel
 import { IScene } from "@junction/models/scene/models";
 import { IFeatureState, IKeyedState } from "@services/redux/types/state.types";
 
-export type SceneOption = SelectOption<IScene>;
+export type SceneOption = SelectOption<IScene["id"]>;
 export type SceneFeatureStateDataScenes = {
   list: IScene[];
   lastFetched: number | null;

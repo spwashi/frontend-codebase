@@ -9,7 +9,7 @@ import {
   selectPossibleConceptsLastFetched,
 } from "../../../redux/selectors";
 
-export function ListQuery() {
+export function ConceptListQuery() {
   const stateKey = useSelector(selectConceptStateKey);
 
   const { data: query } = useFeatureQuery<{ conceptList: IConcept_Complete[] }>(

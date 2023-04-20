@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router";
-import { ListDisplay } from "@features/scenes/services/graphql/list/components/ListDisplay";
+import { SceneListDisplay } from "@features/scenes/services/graphql/list/components/SceneListDisplay";
 import React from "react";
 import { ListQuery } from "@features/scenes/services/graphql/list/components/ListQuery";
 import { LoginRequirement } from "@features/users/behaviors/login/components/gates/LoginRequirement";
@@ -16,7 +16,7 @@ export function ScenesAdminRoutes() {
         path="all"
         element={
           <div style={{ width: 500 + "px" }}>
-            <ListDisplay />
+            <SceneListDisplay />
           </div>
         }
       />

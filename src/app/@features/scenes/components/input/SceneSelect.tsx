@@ -1,15 +1,13 @@
 import React from "react";
 import { SelectInput } from "@widgets/form/features/fields/components/input/select/SelectInput";
-import { useSceneOptions } from "../../hooks/useOptions";
+import { useSceneOptions } from "../../hooks/useSceneOptions";
 
-export function SceneSelect({ formKey }: { formKey?: string; value?: string }) {
+type ISceneSelectParams = { formKey?: string };
+
+export function SceneSelect({ formKey }: ISceneSelectParams) {
   const options = useSceneOptions();
 
   return (
-    <SelectInput
-      placeholder={"Scene"}
-      formKey={formKey ?? ""}
-      options={options}
-    />
+    <SelectInput placeholder={"Scene"} formKey={formKey} options={options} />
   );
 }

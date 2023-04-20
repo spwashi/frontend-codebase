@@ -4,24 +4,26 @@ import { SelectInput } from "@widgets/form/features/fields/components/input/sele
 import { updateFormItem } from "@widgets/form/features/fields/hooks/useFormItem";
 import { FormContext } from "@widgets/form/context/context";
 import { Value } from "@widgets/form/features/fields/components/input/text/Input";
-import { useProjectOptions } from "../../hooks/useOptions";
+import { useProjectOptions } from "../../hooks/useProjectOptions";
 import { selectProjectStateProject } from "../../services/redux/selectors";
 import { ProjectListQuery } from "../../services/graphql/list/components/ListQuery";
 
+// refactor this
 export function ProjectSelect({
   formKey,
   ignore,
 }: {
-  formKey?: string;
+  formKey: string;
   ignore?: boolean;
 }) {
-  const options = useProjectOptions();
   const project = useSelector(selectProjectStateProject);
+  const options = useProjectOptions();
+  const { dispatch } = useContext(FormContext);
 
   useEffect(() => {
     const value = project;
-    !ignore && value && updateFormItem(formKey ?? "", value);
-  }, [project]);
+    !ignore && value && updateFormItem(formKey, value, dispatch);
+  }, [project, dispatch]);
 
   const activeProject = project;
   const doUseActive = !ignore && activeProject;
@@ -38,7 +40,7 @@ export function ProjectSelect({
       <ProjectListQuery />
       <SelectInput
         placeholder={"Project"}
-        formKey={formKey ?? ""}
+        formKey={formKey}
         options={options}
       />
     </React.Fragment>

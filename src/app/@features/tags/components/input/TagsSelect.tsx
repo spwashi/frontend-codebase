@@ -1,6 +1,6 @@
 import React from "react";
 import { SelectInput } from "@widgets/form/features/fields/components/input/select/SelectInput";
-import { useTagOptions } from "../../hooks/useOptions";
+import { useTagOptions } from "../../hooks/useTagOptions";
 import { TagListQuery } from "../../services/graphql/list/components/TagListQuery";
 
 export function TagsSelect({ formKey }: { formKey?: string }) {
@@ -12,7 +12,7 @@ export function TagsSelect({ formKey }: { formKey?: string }) {
       <SelectInput
         multiple
         placeholder={"Tag"}
-        formKey={formKey ?? ""}
+        formKey={formKey}
         options={options}
       />
     </React.Fragment>
