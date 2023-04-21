@@ -15,7 +15,7 @@ export function TagListQuery() {
   const stateKey = useSelector(selectTagStateKey);
   const { data, error } = useFeatureQuery(
     graphQlNodes.tag.fetchList,
-    {},
+    null,
     stateKey
   );
   const lastFetched = useSelector(selectPossibleTagsLastFetched);

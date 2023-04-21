@@ -1,10 +1,10 @@
 import { SelectOption } from "@widgets/form/features/fields/components/input/select/SelectInput";
-import { IConcept } from "@junction/models/concept/models";
 import { IFeatureState, IKeyedState } from "@services/redux/types/state.types";
+import { Concept } from "../../../../../__generated__/graphql";
 
-export type ConceptOption = SelectOption<IConcept["id"]>;
+export type ConceptOption = SelectOption<Concept["id"]>;
 export type ConceptFeatureStateDataConcepts = {
-  list: IConcept[];
+  list: Concept[];
   lastFetched: number | null;
 };
 export type ConceptFeatureData = { concepts: ConceptFeatureStateDataConcepts };

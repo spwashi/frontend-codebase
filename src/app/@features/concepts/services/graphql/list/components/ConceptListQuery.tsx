@@ -12,7 +12,7 @@ import { graphQlNodes } from "../../../../../../@/graphQlNodes";
 export function ConceptListQuery() {
   const stateKey = useSelector(selectConceptStateKey);
 
-  const { data: query } = useFeatureQuery<{ conceptList: IConcept_Complete[] }>(
+  const { data: query } = useFeatureQuery(
     graphQlNodes.concept.fetchList,
     {},
     stateKey

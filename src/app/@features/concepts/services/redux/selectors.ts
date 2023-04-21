@@ -1,8 +1,8 @@
-import { IConcept } from "@junction/models/concept/models";
 import { IRootAppState } from "@core/types/IRootAppState";
 import { ConceptOption } from "./types";
+import { Concept } from "../../../../../__generated__/graphql";
 
-function conceptToOption(concept: IConcept): ConceptOption {
+function conceptToOption(concept: Concept): ConceptOption {
   return {
     title: concept.title,
     value: concept.id,
@@ -13,9 +13,9 @@ function conceptToOption(concept: IConcept): ConceptOption {
 export const selectConceptFeature = (state: IRootAppState) =>
   state.features.concept;
 export const selectConceptList = (state: IRootAppState) =>
-  selectConceptFeature(state).data.concepts.list;
+  selectConceptFeature(state).data.concepts.list ?? [];
 export const selectPossibleConceptOptions = (state: IRootAppState) =>
-  selectConceptList(state)?.map(conceptToOption);
+  selectConceptList(state).map(conceptToOption);
 export const selectPossibleConceptsLastFetched = (state: IRootAppState) =>
   selectConceptFeature(state).data.concepts.lastFetched;
 export const selectConceptStateKey = (state: IRootAppState) =>

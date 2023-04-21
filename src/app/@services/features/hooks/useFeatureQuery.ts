@@ -19,7 +19,11 @@ export function useDispatchGraphqlError(error: any) {
   }, [error]);
 }
 
-export function useFeatureQuery(node: TypedDocumentNode, variables, changeKey) {
+export function useFeatureQuery(
+  node: TypedDocumentNode<any, any>,
+  variables?: any,
+  changeKey?: any
+) {
   const client = useApolloClient();
   const { data = {}, error } = useQuery(node, { variables: variables ?? {} });
   useChangeEffect(() => {

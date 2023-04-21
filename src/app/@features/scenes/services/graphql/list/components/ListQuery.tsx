@@ -11,9 +11,9 @@ import { graphQlNodes } from "../../../../../../@/graphQlNodes";
 
 export function ListQuery() {
   const stateKey = useSelector(selectSceneStateKey);
-  const { data: query } = useFeatureQuery<{ sceneList: IScene[] }>(
+  const { data: query } = useFeatureQuery(
     graphQlNodes.scene.fetchList,
-    {},
+    null,
     stateKey
   );
   const lastFetched = useSelector(selectPossibleScenesLastFetched);
