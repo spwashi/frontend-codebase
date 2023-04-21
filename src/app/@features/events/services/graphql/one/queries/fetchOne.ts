@@ -1,7 +1,8 @@
 import { appGql } from "../../../../../../../__generated__";
 
-export const gqlNode_EVENT_FETCH_ONE = appGql(`query FetchEvent($id: String!) {
-  event(id: $id) {
+export const gqlNode_EVENT_FETCH_ONE =
+  appGql(`query FetchEvent($event: EventReferenceInput!) {
+  event(event: $event) {
     id
     title
     start

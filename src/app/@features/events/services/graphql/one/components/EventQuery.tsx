@@ -13,7 +13,7 @@ export function EventQuery({ id }: IEventIdentifyingPartial) {
   const context = useContext(EventContext) ?? ({} as any);
   const { setEvent } = context;
   const { data: query } = useQuery(graphQlNodes.event.fetch, {
-    variables: { id },
+    variables: { event: { id } },
   });
   const dispatch = useDispatch();
   const { event } = query ?? {};

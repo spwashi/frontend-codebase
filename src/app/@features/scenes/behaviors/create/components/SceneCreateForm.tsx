@@ -9,7 +9,11 @@ import { graphQlNodes } from "../../../../../@/graphQlNodes";
 export function SceneCreateForm() {
   const [onsubmit, response] = useMutationForm(
     graphQlNodes.scene.create,
-    selectCreateSceneInput
+    (formState) => {
+      return {
+        scene: formState,
+      };
+    }
   );
   return (
     <>

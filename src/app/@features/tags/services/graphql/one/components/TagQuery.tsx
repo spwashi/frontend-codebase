@@ -4,12 +4,12 @@ import { ITag, ITagIdentifyingPartial } from "@junction/models/tag/models";
 import { TagContext } from "../context/context";
 import { graphQlNodes } from "../../../../../../@/graphQlNodes";
 
-export function OneTagQuery({ id }: ITagIdentifyingPartial) {
+export function TagQuery({ id }: ITagIdentifyingPartial) {
   const context = useContext(TagContext) ?? ({} as any);
   const { setTag } = context;
 
   const { data: query } = useQuery(graphQlNodes.tag.fetch, {
-    variables: { id } as ITagIdentifyingPartial,
+    variables: { tag: { id } },
   });
   const { tag } = query ?? {};
 

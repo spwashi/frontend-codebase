@@ -6,7 +6,7 @@ import { selectLoggedInUser } from "@features/users/behaviors/login/redux/reduce
 import { Log } from "@core/dev/components/Log";
 import { TagContextProvider } from "./context/Provider";
 import { TagDisplay } from "./components/Display";
-import { OneTagQuery } from "./components/Query";
+import { TagQuery } from "./components/TagQuery";
 import { useActiveTag } from "./context/hooks/useActiveOne";
 import { graphQlNodes } from "../../../../../@/graphQlNodes";
 
@@ -23,9 +23,8 @@ function DeleteTag() {
         onClick={() =>
           send({
             variables: {
-              title: tag?.title,
-              domain: tag?.domain,
-              user: { username: user.username },
+              tag: tag,
+              user: user,
             },
           })
         }
@@ -46,7 +45,7 @@ export function Tag({ id }: ITagIdentifyingPartial) {
   return (
     <TagContextProvider>
       <DeleteTag />
-      <OneTagQuery id={id} />
+      <TagQuery id={id} />
       <TagDisplay />
     </TagContextProvider>
   );

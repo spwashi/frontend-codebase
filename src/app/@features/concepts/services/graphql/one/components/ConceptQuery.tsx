@@ -9,11 +9,11 @@ import { ACTION_RECEIVE_ONE_CONCEPT } from "../../../redux/reducer";
 import { ConceptContext } from "../context/context";
 import { graphQlNodes } from "../../../../../../@/graphQlNodes";
 
-export function OneConceptQuery({ id }: IConceptIdentifyingPartial) {
+export function ConceptQuery({ id }: IConceptIdentifyingPartial) {
   const context = useContext(ConceptContext) ?? ({} as any);
   const { setConcept } = context;
   const { data: query } = useQuery(graphQlNodes.concept.fetch, {
-    variables: { id } as IConceptIdentifyingPartial,
+    variables: { concept: { id } },
   });
   const dispatch = useDispatch();
   const { concept } = query ?? {};

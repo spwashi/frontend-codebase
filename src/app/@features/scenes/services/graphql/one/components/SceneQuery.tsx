@@ -9,11 +9,11 @@ import { ACTION_RECEIVE_ONE_SCENE } from "../../../redux/reducer";
 import { SceneContext } from "../context/context";
 import { graphQlNodes } from "../../../../../../@/graphQlNodes";
 
-export function OneSceneQuery({ id }: ISceneIdentifyingPartial) {
+export function SceneQuery({ id }: ISceneIdentifyingPartial) {
   const context = useContext(SceneContext) ?? ({} as any);
   const { setScene } = context;
   const { data: query } = useQuery(graphQlNodes.scene.fetch, {
-    variables: { id },
+    variables: { scene: { id } },
   });
   const dispatch = useDispatch();
   const { scene } = query ?? {};

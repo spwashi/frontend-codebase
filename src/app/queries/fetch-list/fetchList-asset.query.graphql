@@ -1,5 +1,6 @@
 query FetchAssetList($user: UserReferenceInput) {
     assetList(user: $user) {
+        id
         name
         realname
     }

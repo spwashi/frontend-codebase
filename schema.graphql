@@ -1,7 +1,7 @@
 type Query {
     # Assets
     asset(asset: AssetReferenceInput!): Asset
-    assetList(user: UserReferenceInput): [Asset]
+    assetList(user: UserReferenceInput): [Asset]!
 
     # Concepts
     concept(concept: ConceptReferenceInput!): Concept
@@ -69,6 +69,7 @@ type Mutation {
 
 # Asset
 type Asset {
+    id: String!
     name: String!
     realname: String!
     contentType: String!

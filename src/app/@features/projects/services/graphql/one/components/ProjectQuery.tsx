@@ -11,7 +11,7 @@ export function ProjectQuery({ id }: IProjectIdentifyingPartial) {
   const context = useContext(ProjectContext);
   let query: any;
   ({ data: query } = useQuery(graphQlNodes.project.fetch, {
-    variables: { id },
+    variables: { project: { id } },
   }));
   const { project } = query ?? {};
   const { setProject } = context;

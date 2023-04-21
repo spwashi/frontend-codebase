@@ -11,7 +11,11 @@ import { graphQlNodes } from "../../../../../@/graphQlNodes";
 export function SceneEditForm() {
   const [onsubmit, response] = useMutationForm(
     graphQlNodes.scene.edit,
-    selectEditSceneInput
+    (formState) => {
+      return {
+        scene: formState.scene,
+      };
+    }
   );
   const [scene, setScene] = useSceneSelectForm();
   return (

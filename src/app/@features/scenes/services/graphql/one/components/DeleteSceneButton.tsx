@@ -13,7 +13,7 @@ export function DeleteSceneButton({ id }: { id: IScene["id"] }) {
     if (error) {
       return;
     }
-    deleteScene({ variables: { id } }).then(() => {
+    deleteScene({ variables: { scene: { id } } }).then(() => {
       dispatch({ type: ACTION_DELETE_ONE_SCENE, payload: { id } });
     });
   }, [id, deleteScene]);

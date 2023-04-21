@@ -13,7 +13,7 @@ export function DeleteEventButton({ id }: { id: IEvent["id"] }) {
     if (error) {
       return;
     }
-    deleteEvent({ variables: { id } }).then(() => {
+    deleteEvent({ variables: { event: { id } } }).then(() => {
       dispatch({ type: ACTION_DELETE_ONE_EVENT, payload: { id } });
     });
   }, [id, deleteEvent]);

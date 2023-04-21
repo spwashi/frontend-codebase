@@ -7,7 +7,7 @@ import {
 import { Log } from "@core/dev/components/Log";
 import { IConcept } from "@junction/models/concept/models";
 import { useActiveConcept } from "../context/context";
-import { ConceptTag } from "./join/tag/TagOne";
+import { ConceptTagWidget } from "./join/tag/ConceptTagWidget";
 import { DeleteConceptButton } from "./DeleteButton";
 
 function RichText({ src }: { src: string }) {
@@ -58,7 +58,7 @@ function Internal({ concept }: ConceptDisplayParams) {
             >
               {conceptTags &&
                 conceptTags.map(({ tag }: IConceptTag_Complete) => (
-                  <ConceptTag key={tag.id} tag={tag} concept={concept} />
+                  <ConceptTagWidget key={tag.id} tag={tag} concept={concept} />
                 ))}
             </div>
           </section>

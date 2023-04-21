@@ -16,6 +16,7 @@ export function EventEditForm() {
   );
   const [formState, setFormState] =
     useState<IFormContextState<{ event: IEvent["id"] }>>();
+
   const event = formState?.currentValue?.event;
   return (
     <div>

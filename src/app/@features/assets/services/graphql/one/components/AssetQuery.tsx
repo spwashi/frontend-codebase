@@ -11,7 +11,7 @@ export function AssetQuery({
   username?: string;
 }) {
   const { data: query = {} } = useQuery(graphQlNodes.asset.fetch, {
-    variables: { username, realname },
+    variables: { asset: { realname } },
   });
   if (!query.asset) return null;
   const { name, contentType } = query?.asset ?? {};
