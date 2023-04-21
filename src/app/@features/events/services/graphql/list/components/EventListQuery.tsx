@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useFeatureQuery } from "@services/features/hooks/useFeatureQuery";
-import { IEvent_Complete } from "@junction/models/event/hybrids";
 import { ACTION_RECEIVE_ALL_EVENTS } from "../../../redux/reducer";
 import {
   selectEventStateKey,
@@ -9,14 +8,13 @@ import {
 } from "../../../redux/selectors";
 import { graphQlNodes } from "../../../../../../@/graphQlNodes";
 
-export function EventListQuery() {
+function useEventListQuery() {
   const stateKey = useSelector(selectEventStateKey);
-  const { data: query } = useFeatureQuery<{ eventList: IEvent_Complete[] }>(
+  const { data: query } = useFeatureQuery(
     graphQlNodes.event.fetchList,
-    {},
+    null,
     stateKey
   );
-  const lastFetched = useSelector(selectPossibleEventsLastFetched);
   const dispatch = useDispatch();
   useEffect(() => {
     if (!query) console.error("no query");
@@ -25,6 +23,11 @@ export function EventListQuery() {
       payload: query.eventList ? query.eventList : [],
     });
   }, [query?.eventList]);
+}
+
+export function EventListQuery() {
+  const lastFetched = useSelector(selectPossibleEventsLastFetched);
+  useEventListQuery();
 
   return !lastFetched ? <>Loading...</> : null;
 }

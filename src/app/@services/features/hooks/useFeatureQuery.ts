@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { useChangeEffect } from "@core/hooks/useChangeEffect";
 import { ACTION_GRAPHQL, ACTION_NOGRAPHQL } from "../../redux/reducer";
+import { TypedDocumentNode } from "@graphql-typed-document-node/core";
 
 export function useDispatchGraphqlError(error: any) {
   const dispatch = useDispatch();
@@ -18,17 +19,12 @@ export function useDispatchGraphqlError(error: any) {
   }, [error]);
 }
 
-export function useFeatureQuery<T = any>(
-  node: DocumentNode,
-  variables: any,
-  changeKey: any
-): { data: T; error?: any } {
-  const { data = {}, error } = useQuery(node, { variables });
-  useDispatchGraphqlError(error);
-
+export function useFeatureQuery(node: TypedDocumentNode, variables, changeKey) {
   const client = useApolloClient();
+  const { data = {}, error } = useQuery(node, { variables: variables ?? {} });
   useChangeEffect(() => {
     client.refetchQueries({ include: [node] });
   }, [changeKey, client]);
+  useDispatchGraphqlError(error);
   return { data: data, error };
 }

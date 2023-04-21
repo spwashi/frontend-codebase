@@ -6,7 +6,7 @@ import {
   IEventIdentifyingPartial,
 } from "@junction/models/event/models";
 import { ACTION_RECEIVE_ONE_EVENT } from "../../../redux/reducer";
-import { EventContext } from "../context/context";
+import { EventContext } from "@features/events/context/context";
 import { graphQlNodes } from "../../../../../../@/graphQlNodes";
 
 export function EventQuery({ id }: IEventIdentifyingPartial) {

@@ -1,15 +1,15 @@
 import React from "react";
 import { IEventIdentifyingPartial } from "@junction/models/event/models";
-import { EventContextProvider } from "./context/Provider";
-import { EventContextDisplay } from "./components/DisplayOne";
+import { EventGate } from "@features/events/context/Provider";
+import { EventContextDisplay } from "./components/EventDisplay";
 import { EventQuery } from "./components/EventQuery";
 
 export function Event({ id }: IEventIdentifyingPartial) {
   if (!id) return null;
   return (
-    <EventContextProvider>
+    <EventGate>
       <EventQuery id={id} />
       <EventContextDisplay />
-    </EventContextProvider>
+    </EventGate>
   );
 }

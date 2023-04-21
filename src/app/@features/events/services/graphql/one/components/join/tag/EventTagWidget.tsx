@@ -1,14 +1,14 @@
 import React from "react";
-import { ITag } from "@junction/models/tag/models";
-import { IEvent } from "@junction/models/event/models";
 import { useMutation } from "@apollo/client";
 import { graphQlNodes } from "../../../../../../../../@/graphQlNodes";
+import { Tag } from "../../../../../../../../../__generated__/graphql";
+import { IEventContext } from "@features/events/context/context";
 
-type IEventTagWidgetParams = { tag: ITag; event: IEvent };
+type IEventTagWidgetParams = { tag: Tag; event: IEventContext["event"] };
 
 export function EventTagWidget({ event, tag }: IEventTagWidgetParams) {
-  const { title, domain } = tag;
   const [deleteTag] = useMutation(graphQlNodes.event.untag);
+  if (!tag || !event) return null;
   const variables = {
     event: { id: event.id },
     tags: [{ id: tag.id }],
@@ -19,7 +19,7 @@ export function EventTagWidget({ event, tag }: IEventTagWidgetParams) {
         Remove Tag
       </button>
       <span>
-        {title} {domain}
+        {tag.title} {tag.domain}
       </span>
     </div>
   );

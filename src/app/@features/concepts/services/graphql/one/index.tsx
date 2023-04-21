@@ -1,7 +1,7 @@
 import React from "react";
 import { IConceptIdentifyingPartial } from "@junction/models/concept/models";
-import { ConceptContextProvider } from "./context/Provider";
-import { ConceptContextDisplay } from "./components/DisplayOne";
+import { ConceptGate } from "@features/concepts/context/Provider";
+import { ConceptContextDisplay } from "./components/ConceptDisplay";
 import { ConceptQuery } from "./components/ConceptQuery";
 
 /**
@@ -12,9 +12,9 @@ import { ConceptQuery } from "./components/ConceptQuery";
 export function Concept({ id }: IConceptIdentifyingPartial) {
   if (!id) return null;
   return (
-    <ConceptContextProvider>
+    <ConceptGate>
       <ConceptQuery id={id} />
       <ConceptContextDisplay />
-    </ConceptContextProvider>
+    </ConceptGate>
   );
 }

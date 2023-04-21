@@ -6,22 +6,26 @@ import {
   IConceptIdentifyingPartial,
 } from "@junction/models/concept/models";
 import { ACTION_RECEIVE_ONE_CONCEPT } from "../../../redux/reducer";
-import { ConceptContext } from "../context/context";
+import { ConceptContext } from "@features/concepts/context/context";
 import { graphQlNodes } from "../../../../../../@/graphQlNodes";
+import { Concept } from "../../../../../../../__generated__/graphql";
 
-export function ConceptQuery({ id }: IConceptIdentifyingPartial) {
-  const context = useContext(ConceptContext) ?? ({} as any);
-  const { setConcept } = context;
-  const { data: query } = useQuery(graphQlNodes.concept.fetch, {
+function useConceptQuery(id: string): Concept | null {
+  const { data } = useQuery(graphQlNodes.concept.fetch, {
     variables: { concept: { id } },
   });
+  return data?.concept || null;
+}
+
+export function ConceptQuery({ id }: IConceptIdentifyingPartial) {
+  const { setConcept } = useContext(ConceptContext);
   const dispatch = useDispatch();
-  const { concept } = query ?? {};
+  const concept = useConceptQuery(id);
 
   useEffect(() => {
     if (!(concept && setConcept)) return;
     dispatch({ type: ACTION_RECEIVE_ONE_CONCEPT, payload: concept });
-    setConcept(concept as IConcept);
+    setConcept(concept);
   }, [concept, setConcept]);
 
   return <></>;

@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import React from "react";
 import { selectEventList } from "../../../redux/selectors";
-import { EventDisplay } from "../../one/components/DisplayOne";
+import { EventDisplay } from "../../one/components/EventDisplay";
 
 export function EventListDisplay() {
   const allEvents = useSelector(selectEventList);

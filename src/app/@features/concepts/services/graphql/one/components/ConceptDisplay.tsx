@@ -5,9 +5,11 @@ import {
   IConceptTag_Complete,
 } from "@junction/models/concept/hybrids";
 import { Log } from "@core/dev/components/Log";
-import { IConcept } from "@junction/models/concept/models";
-import { useActiveConcept } from "../context/context";
-import { ConceptTagWidget } from "./join/tag/ConceptTagWidget";
+import {
+  IConceptContext,
+  useActiveConcept,
+} from "@features/concepts/context/context";
+import { ConceptTagWidget } from "./components/ConceptTagWidget";
 import { DeleteConceptButton } from "./DeleteButton";
 
 function RichText({ src }: { src: string }) {
@@ -19,17 +21,13 @@ function RichText({ src }: { src: string }) {
   );
 }
 
-interface ConceptDisplayParams {
-  concept: IConcept | IConcept_Complete;
+interface IConceptDisplayParams {
+  concept: IConceptContext["concept"];
 }
 
-function Internal({ concept }: ConceptDisplayParams) {
-  const {
-    title,
-    contentType,
-    src,
-    ConceptTag: conceptTags,
-  } = concept as IConcept_Complete;
+function ConceptDisplayBody({ concept }: IConceptDisplayParams) {
+  if (!concept) return null;
+  const { title, contentType, src, ConceptTag: conceptTags } = concept;
 
   return (
     <div className="concept-wrapper">
@@ -67,13 +65,13 @@ function Internal({ concept }: ConceptDisplayParams) {
     </div>
   );
 }
-export function ConceptDisplay({ concept }: ConceptDisplayParams) {
+export function ConceptDisplay({ concept }: IConceptDisplayParams) {
   const { id } = concept as IConcept_Complete;
 
   return (
     <>
       <DeleteConceptButton id={id} />
-      <Internal concept={concept} />
+      <ConceptDisplayBody concept={concept} />
     </>
   );
 }
