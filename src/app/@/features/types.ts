@@ -1,5 +1,3 @@
-import { featureIDs } from "@/features/ids";
+import { featureIds } from "@/features/ids";
 
-type IFeatureIDs = typeof featureIDs;
-type Groups = IFeatureIDs;
-export type IExtantFeatureID = Groups[keyof Groups];
+export type IExtantFeatureID = (typeof featureIds)[number];

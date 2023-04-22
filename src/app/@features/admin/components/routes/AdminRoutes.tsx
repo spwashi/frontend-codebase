@@ -2,7 +2,7 @@ import { Routes } from "react-router-dom";
 import { Route } from "react-router";
 import React from "react";
 import { Feature } from "@widgets/feature";
-import { featureIDs } from "@/features/ids";
+import { featureIdMap } from "@/features/ids";
 import { routes } from "src/app/@/routes";
 import { UsersControlPanel } from "@features/users/behaviors/admin/components/UsersControlPanel";
 import { ProjectsControlPanel } from "@features/projects/behaviors/admin/components/ProjectsControlPanel";
@@ -36,12 +36,12 @@ export function AdminRoutes() {
               element={
                 <>
                   <LoginRequirement state={false}>
-                    <Feature name={featureIDs.admin.prelogin_admin}>
+                    <Feature name={featureIdMap.admin.prelogin_admin}>
                       <UsersControlPanel />
                     </Feature>
                   </LoginRequirement>
                   <LoginRequirement>
-                    <Feature name={featureIDs.admin.postlogin_admin}>
+                    <Feature name={featureIdMap.admin.postlogin_admin}>
                       <AssetsControlPanel />
                       <ConceptsControlPanel />
                       <EventsControlPanel />
