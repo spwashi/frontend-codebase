@@ -1,4 +1,4 @@
-import { appGql } from "../../../../../../../__generated__";
+import { appGql } from '@generated/gql';
 
 export const gqlNode_ASSET_FETCH_ONE =
   appGql(`query FetchAsset($asset: AssetReferenceInput!) {

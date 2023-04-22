@@ -6,7 +6,7 @@ import { form__editEvent } from "@features/events/behaviors/edit/config";
 import { GraphqlMutationResponse } from "@services/graphql/components/api/GraphqlMutationResponse";
 import { IFormContextState } from "@widgets/form/context/types/state";
 import { graphQlNodes } from "@/graphQlNodes";
-import { Event } from "../../../../../../__generated__/graphql";
+import { Event } from '@generated/graphql';
 
 export function EventEditForm() {
   const [onsubmit, response] = useMutationForm(

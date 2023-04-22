@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { Tag } from "../../../../__generated__/graphql";
+import { Tag } from '@generated/graphql';
 
 export type ITagContext = {
   tag: Tag | null;

@@ -1,4 +1,4 @@
-import { appGql } from "../../../../../../../__generated__";
+import { appGql } from '@generated/gql';
 
 export const gqlNode_TAG_DELETE =
   appGql(`mutation DeleteTag($user: UserReferenceInput!, $tag: DeleteTagInput!) {

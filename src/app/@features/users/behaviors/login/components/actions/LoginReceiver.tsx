@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 import React, { useEffect } from "react";
 import { setJwt } from "@services/jwt/helpers/setJwt";
 import { ACTION_RECEIVE_LOGIN } from "@features/users/behaviors/login/redux/reducer";
-import { User } from "../../../../../../../__generated__/graphql";
+import { User } from '@generated/graphql';
 
 export function LoginReceiver({
   username,

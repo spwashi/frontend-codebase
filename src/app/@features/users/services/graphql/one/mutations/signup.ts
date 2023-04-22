@@ -1,4 +1,4 @@
-import { appGql } from "../../../../../../../__generated__";
+import { appGql } from '@generated/gql';
 
 export const gqlNode_USER_SIGNUP =
   appGql(`mutation SignUp($user: CreateUserInput!, $password: CreatePasswordInput!, $project: ProjectReferenceInput) {

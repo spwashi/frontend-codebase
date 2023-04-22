@@ -1,6 +1,6 @@
 import { SelectOption } from "@widgets/form/features/fields/components/input/select/SelectInput";
 import { IFeatureState, IKeyedState } from "@services/redux/types/state.types";
-import { Scene } from "../../../../../__generated__/graphql";
+import { Scene } from '@generated/graphql';
 
 export type SceneOption = SelectOption<Scene["id"]>;
 export type SceneFeatureStateDataScenes = {

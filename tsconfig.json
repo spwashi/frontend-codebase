@@ -25,6 +25,7 @@
     "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
+      "@generated/*": ["./src/__generated__/*"],
       "@/*": ["./src/app/@/*"],
       "@core/*": [ "./src/app/@core/*" ],
       "@features/*": [ "./src/app/@features/*" ],

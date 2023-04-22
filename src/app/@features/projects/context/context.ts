@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { Project } from "../../../../__generated__/graphql";
+import { Project } from '@generated/graphql';
 
 export type IProjectContext = {
   project: Project | null;

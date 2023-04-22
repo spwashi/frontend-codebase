@@ -4,7 +4,7 @@ import { useMutation } from "@apollo/client";
 import { Log } from "@core/dev/components/Log";
 import { graphQlNodes } from "@/graphQlNodes";
 import { ACTION_DELETE_ONE_EVENT } from "../../services/redux/reducer";
-import { DeleteEventInput, Event } from "../../../../../__generated__/graphql";
+import { DeleteEventInput, Event } from '@generated/graphql';
 
 export function EventDeleteButton({ id }: DeleteEventInput) {
   const [deleteEvent, { error }] = useMutation(graphQlNodes.event.delete);

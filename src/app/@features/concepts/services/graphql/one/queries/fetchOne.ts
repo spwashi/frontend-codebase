@@ -1,4 +1,4 @@
-import { appGql } from "../../../../../../../__generated__";
+import { appGql } from '@generated/gql';
 
 export const gqlNode_CONCEPT_FETCH_ONE =
   appGql(`query FetchConcept($concept: ConceptReferenceInput!) {

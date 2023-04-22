@@ -6,7 +6,7 @@ import { ProjectContext } from "../../../context/context";
 import { ACTION_PROJECT_SELECTED } from "../../redux/reducer";
 import { ActiveProject } from "./components/ProjectDisplay";
 import { ProjectQuery } from "./components/ProjectQuery";
-import { ProjectReferenceInput } from "../../../../../../__generated__/graphql";
+import { ProjectReferenceInput } from '@generated/graphql';
 
 function SiteProjectDeactivateButton() {
   const context = useContext(ProjectContext);

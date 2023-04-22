@@ -1,7 +1,7 @@
 import React from "react";
 import { IEventContext } from "@features/events/context/context";
 import { EventTagWidget } from "@features/events/components/tag/EventTagWidget";
-import { EventTag } from "../../../../../__generated__/graphql";
+import { EventTag } from '@generated/graphql';
 
 export interface IEventBodyParams {
   event: IEventContext["event"];

@@ -11,7 +11,7 @@ import { useActiveTag } from "@features/tags/context/hooks/useActiveTag";
 import {
   DeleteTagInput,
   TagReferenceInput,
-} from "../../../../../../__generated__/graphql";
+} from '@generated/graphql';
 
 function DeleteTag() {
   const tag = useActiveTag();

@@ -1,5 +1,5 @@
 // Define mutation
-import { appGql } from "../../../../../../../__generated__";
+import { appGql } from '@generated/gql';
 
 export const gqlNode_EVENT_CREATE =
   appGql(`mutation CreateEvent($event: CreateEventInput!, $user: UserReferenceInput) {

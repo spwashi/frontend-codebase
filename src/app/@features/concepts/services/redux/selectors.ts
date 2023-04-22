@@ -1,5 +1,5 @@
 import { IRootAppState } from "@core/types/IRootAppState";
-import { Concept } from "../../../../../__generated__/graphql";
+import { Concept } from '@generated/graphql';
 import { ConceptOption } from "./types";
 
 function conceptToOption(concept: Concept): ConceptOption {

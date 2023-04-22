@@ -4,7 +4,7 @@ import { useMutation } from "@apollo/client";
 import { Log } from "@core/dev/components/Log";
 import { graphQlNodes } from "@/graphQlNodes";
 import { ACTION_DELETE_ONE_SCENE } from "../../../redux/reducer";
-import { DeleteSceneInput } from "../../../../../../../__generated__/graphql";
+import { DeleteSceneInput } from '@generated/graphql';
 
 export function SceneDeleteButton({ id }: DeleteSceneInput) {
   const [deleteScene, { error }] = useMutation(graphQlNodes.scene.delete);

@@ -1,7 +1,7 @@
 import { SelectOption } from "@widgets/form/features/fields/components/input/select/SelectInput";
 import { IRootAppState } from "@core/types/IRootAppState";
 import { ProjectOption } from "./types";
-import { Project } from "../../../../../__generated__/graphql";
+import { Project } from '@generated/graphql';
 
 const projectToOption = (project: Project): SelectOption & ProjectOption => ({
   title: project.title,

@@ -7,7 +7,7 @@ import { ACTION_RECEIVE_ONE_CONCEPT } from "../../../redux/reducer";
 import {
   Concept,
   ConceptReferenceInput,
-} from "../../../../../../../__generated__/graphql";
+} from '@generated/graphql';
 
 function useConceptQuery(id: string): Concept | null {
   const { data } = useQuery(graphQlNodes.concept.fetch, {

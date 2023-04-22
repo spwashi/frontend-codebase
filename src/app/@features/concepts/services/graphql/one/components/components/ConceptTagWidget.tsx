@@ -4,7 +4,7 @@ import { graphQlNodes } from '@/graphQlNodes';
 import {
   ConceptReferenceInput,
   Tag,
-} from "../../../../../../../../__generated__/graphql";
+} from '@generated/graphql';
 
 type IConceptTagWidgetParams = {
   tag: Tag;

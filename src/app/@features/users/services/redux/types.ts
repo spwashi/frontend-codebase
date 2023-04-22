@@ -1,6 +1,6 @@
 import { IFeatureState } from "@services/redux/types/state.types";
 import { SelectOption } from "@widgets/form/features/fields/components/input/select/SelectInput";
-import { User } from "../../../../../__generated__/graphql";
+import { User } from '@generated/graphql';
 
 export type UserOption = SelectOption<User["username"]>;
 

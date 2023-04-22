@@ -7,7 +7,7 @@ import { ACTION_RECEIVE_ONE_SCENE } from "../../../redux/reducer";
 import {
   Scene,
   SceneReferenceInput,
-} from "../../../../../../../__generated__/graphql";
+} from '@generated/graphql';
 
 export function SceneQuery({ id }: SceneReferenceInput) {
   const context = useContext(SceneContext) ?? ({} as any);

@@ -1,4 +1,4 @@
-import { appGql } from "../../../../../../../__generated__";
+import { appGql } from '@generated/gql';
 
 export const gqlNode_EVENT_EDIT =
   appGql(`mutation EditEvent($event: EditEventInput!, $user: UserReferenceInput) {

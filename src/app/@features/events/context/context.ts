@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { Event } from "../../../../__generated__/graphql";
+import { Event } from '@generated/graphql';
 
 export type IEventContext = {
   event: Event | null;

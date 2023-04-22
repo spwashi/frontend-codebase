@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { Scene } from "../../../../__generated__/graphql";
+import { Scene } from '@generated/graphql';
 
 export type ISceneContext = {
   scene: Scene | null;

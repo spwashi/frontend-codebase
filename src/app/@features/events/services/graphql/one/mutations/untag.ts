@@ -1,4 +1,4 @@
-import { appGql } from "../../../../../../../__generated__";
+import { appGql } from '@generated/gql';
 
 export const gqlNode_EVENT_UNTAG = appGql(
   `mutation UntagEvent($event: EventReferenceInput!, $user: UserReferenceInput, $tags: [TagReferenceInput]) {

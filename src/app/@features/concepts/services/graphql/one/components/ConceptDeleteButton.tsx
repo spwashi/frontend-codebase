@@ -4,7 +4,7 @@ import { useMutation } from "@apollo/client";
 import { Log } from "@core/dev/components/Log";
 import { graphQlNodes } from "@/graphQlNodes";
 import { ACTION_DELETE_ONE_CONCEPT } from "../../../redux/reducer";
-import { DeleteConceptInput } from "../../../../../../../__generated__/graphql";
+import { DeleteConceptInput } from '@generated/graphql';
 
 export function ConceptDeleteButton({ id }: DeleteConceptInput) {
   const [deleteConcept, { error }] = useMutation(graphQlNodes.concept.delete);

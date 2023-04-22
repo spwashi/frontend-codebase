@@ -5,7 +5,7 @@ import { ProjectContext } from "../../../../context/context";
 import {
   Project,
   ProjectReferenceInput,
-} from "../../../../../../../__generated__/graphql";
+} from '@generated/graphql';
 
 export function ProjectQuery({ id }: ProjectReferenceInput) {
   const context = useContext(ProjectContext);

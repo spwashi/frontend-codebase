@@ -5,7 +5,7 @@ import { TagContext } from "@features/tags/context/context";
 import {
   Tag,
   TagReferenceInput,
-} from "../../../../../../../__generated__/graphql";
+} from '@generated/graphql';
 
 export function TagQuery({ id }: TagReferenceInput) {
   const context = useContext(TagContext) ?? ({} as any);

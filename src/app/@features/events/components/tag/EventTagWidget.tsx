@@ -2,7 +2,7 @@ import React from "react";
 import { useMutation } from "@apollo/client";
 import { graphQlNodes } from '@/graphQlNodes';
 import { IEventContext } from "@features/events/context/context";
-import { Tag } from "../../../../../__generated__/graphql";
+import { Tag } from '@generated/graphql';
 
 type IEventTagWidgetParams = { tag: Tag; event: IEventContext["event"] };
 

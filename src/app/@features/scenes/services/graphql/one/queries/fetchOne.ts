@@ -1,4 +1,4 @@
-import { appGql } from "../../../../../../../__generated__";
+import { appGql } from '@generated/gql';
 
 export const gqlNode_SCENE_FETCH_ONE =
   appGql(`query FetchScene($scene: SceneReferenceInput!) {

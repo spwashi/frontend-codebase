@@ -1,6 +1,6 @@
 // Define mutation
 
-import { appGql } from "../../../../../../../__generated__";
+import { appGql } from '@generated/gql';
 
 export const gqlNode_CONCEPT_EDIT = appGql(
   `mutation EditConcept($concept: EditConceptInput!, $user: UserReferenceInput) {
