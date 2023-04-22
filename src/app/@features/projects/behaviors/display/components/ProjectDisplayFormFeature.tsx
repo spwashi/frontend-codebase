@@ -3,10 +3,10 @@ import { useSelector } from "react-redux";
 import { FormWidget } from "@widgets/form/FormWidget";
 import { FeatureRequirement } from "@services/features/list/components/FeatureRequirement";
 import { form__selectProject } from "@features/projects/behaviors/select/config";
-import { SiteProjectController } from "../../../services/graphql/one";
-import { selectProjectStateProject } from "../../../services/redux/selectors";
 import { featureId__projectDisplay } from '@/featureIds';
 import { IFormContextState } from "@widgets/form/context/types/state";
+import { SiteProjectController } from "../../../services/graphql/one";
+import { selectProjectStateProject } from "../../../services/redux/selectors";
 
 export function ProjectDisplayFormFeature() {
   const [formState, setFormState] = useState<IFormContextState>();

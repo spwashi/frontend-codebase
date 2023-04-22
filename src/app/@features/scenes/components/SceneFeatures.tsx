@@ -2,13 +2,13 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Feature } from "@services/features/item/components/Feature";
 import {
-  selectPossibleSceneOptions,
-  selectPossibleScenesLastFetched,
-} from "../services/redux/selectors";
-import {
   featureId__sceneDisplay,
   featureId__scenes,
 } from '@/featureIds';
+import {
+  selectPossibleSceneOptions,
+  selectPossibleScenesLastFetched,
+} from "../services/redux/selectors";
 
 function SceneDisplayFeature() {
   const lastFetched = useSelector(selectPossibleScenesLastFetched);

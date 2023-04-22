@@ -1,14 +1,13 @@
 import { useQuery } from "@apollo/client";
 import React, { useContext, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import {
-  IConcept,
-  IConceptIdentifyingPartial,
-} from "@junction/models/concept/models";
-import { ACTION_RECEIVE_ONE_CONCEPT } from "../../../redux/reducer";
 import { ConceptContext } from "@features/concepts/context/context";
-import { graphQlNodes } from '@/graphQlNodes';
-import { Concept } from "../../../../../../../__generated__/graphql";
+import { graphQlNodes } from "@/graphQlNodes";
+import { ACTION_RECEIVE_ONE_CONCEPT } from "../../../redux/reducer";
+import {
+  Concept,
+  ConceptReferenceInput,
+} from "../../../../../../../__generated__/graphql";
 
 function useConceptQuery(id: string): Concept | null {
   const { data } = useQuery(graphQlNodes.concept.fetch, {
@@ -17,7 +16,7 @@ function useConceptQuery(id: string): Concept | null {
   return data?.concept || null;
 }
 
-export function ConceptQuery({ id }: IConceptIdentifyingPartial) {
+export function ConceptQuery({ id }: ConceptReferenceInput) {
   const { setConcept } = useContext(ConceptContext);
   const dispatch = useDispatch();
   const concept = useConceptQuery(id);

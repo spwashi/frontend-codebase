@@ -1,7 +1,7 @@
 import React from "react";
+import { useFormHasChangedState } from "@widgets/form/internal/hooks/useFormHasChangedState";
 import { ResetFormButton } from "./ResetFormButton";
 import { SubmitButton } from "./SubmitButton";
-import { useFormHasChangedState } from "@widgets/form/internal/hooks/useFormHasChangedState";
 
 export type ButtonConfig = { type: "submit" | "reset" };
 

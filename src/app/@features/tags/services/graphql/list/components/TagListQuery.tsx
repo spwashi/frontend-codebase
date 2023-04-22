@@ -4,12 +4,12 @@ import {
   useDispatchGraphqlError,
   useFeatureQuery,
 } from "@services/features/hooks/useFeatureQuery";
+import { graphQlNodes } from '@/graphQlNodes';
 import {
   selectPossibleTagsLastFetched,
   selectTagStateKey,
 } from "../../../redux/selectors";
 import { ACTION_RECEIVE_ALL_TAGS } from "../../../redux/reducer";
-import { graphQlNodes } from '@/graphQlNodes';
 
 export function TagListQuery() {
   const stateKey = useSelector(selectTagStateKey);

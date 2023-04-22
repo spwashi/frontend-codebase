@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import { IProject } from "@junction/models/project/models";
 import { ProjectContext } from "../context";
 import { Project } from "../../../../../__generated__/graphql";
 

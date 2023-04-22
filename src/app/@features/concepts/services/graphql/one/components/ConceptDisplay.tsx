@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { convertFromRaw, Editor, EditorState } from "draft-js";
 import { Log } from "@core/dev/components/Log";
 import { IConceptContext } from "@features/concepts/context/context";
-import { DeleteConceptButton } from "./DeleteButton";
 import { useActiveConcept } from "@features/concepts/context/hooks/useActiveConcept";
+import { DeleteConceptButton } from "./DeleteButton";
 
 function RichText({ src }: { src: string }) {
   const [editorState, setEditorState] = useState(() =>

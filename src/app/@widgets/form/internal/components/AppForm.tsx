@@ -1,12 +1,12 @@
 import React, { useMemo, useReducer } from "react";
-import { formReducer } from "../../state/reducer";
-import { getInitialState } from "../../context/helpers/getInitialState";
-import { FormContext } from "../../context/context";
-import { ButtonConfig, ButtonContainer } from "./buttons/ButtonContainer";
 import { useFormOnChangeEffect } from "@widgets/form/internal/hooks/useFormOnChangeEffect";
 import { useSetFormDefaultEffect } from "@widgets/form/internal/hooks/useSetFormDefaultEffect";
 import { useSubmitHandlerCallback } from "@widgets/form/internal/hooks/useSubmitHandlerCallback";
 import { IFormContextState } from "@widgets/form/context/types/state";
+import { formReducer } from "../../state/reducer";
+import { getInitialState } from "../../context/helpers/getInitialState";
+import { FormContext } from "../../context/context";
+import { ButtonConfig, ButtonContainer } from "./buttons/ButtonContainer";
 
 type IAppFormProps<T = any> = {
   children: any;

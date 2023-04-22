@@ -4,11 +4,11 @@ import { useSelector } from "react-redux";
 import { ITagIdentifyingPartial } from "@junction/models/tag/models";
 import { selectLoggedInUser } from "@features/users/behaviors/login/redux/reducer";
 import { Log } from "@core/dev/components/Log";
+import { graphQlNodes } from '@/graphQlNodes';
 import { TagContextProvider } from "./context/Provider";
 import { TagDisplay } from "./components/Display";
 import { TagQuery } from "./components/TagQuery";
 import { useActiveTag } from "./context/hooks/useActiveOne";
-import { graphQlNodes } from '@/graphQlNodes';
 
 function DeleteTag() {
   const tag = useActiveTag();

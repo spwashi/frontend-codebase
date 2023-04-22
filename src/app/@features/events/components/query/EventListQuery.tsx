@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useFeatureQuery } from "@services/features/hooks/useFeatureQuery";
+import { graphQlNodes } from '@/graphQlNodes';
 import { ACTION_RECEIVE_ALL_EVENTS } from "../../services/redux/reducer";
 import {
   selectEventStateKey,
   selectPossibleEventsLastFetched,
 } from "../../services/redux/selectors";
-import { graphQlNodes } from '@/graphQlNodes';
 
 function useEventListQuery() {
   const stateKey = useSelector(selectEventStateKey);

@@ -3,8 +3,8 @@ import { useSelector } from "react-redux";
 import classnames from "classnames";
 import { AdminControlPanel } from "@features/admin/components/AdminControlPanel";
 import { select_noGraphql } from "@services/redux/reducer";
-import { appClassnames } from "../styles/classNames";
 import { LogAppReduxState } from "@core/dev/components/Log";
+import { appClassnames } from "../styles/classNames";
 
 const canBeAdmin = true;
 export function Application() {

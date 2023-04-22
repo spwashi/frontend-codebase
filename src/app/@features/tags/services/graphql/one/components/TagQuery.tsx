@@ -1,8 +1,8 @@
 import { useQuery } from "@apollo/client";
 import React, { useContext, useEffect } from "react";
 import { ITag, ITagIdentifyingPartial } from "@junction/models/tag/models";
-import { TagContext } from "../context/context";
 import { graphQlNodes } from '@/graphQlNodes';
+import { TagContext } from "../context/context";
 
 export function TagQuery({ id }: ITagIdentifyingPartial) {
   const context = useContext(TagContext) ?? ({} as any);

@@ -1,11 +1,11 @@
 import { Route, Routes } from "react-router";
+import React from "react";
 import { ConceptListDisplay } from "@features/concepts/services/graphql/list/components/ConceptListDisplay";
 import { LoginRequirement } from "@features/users/behaviors/login/components/gates/LoginRequirement";
 import { ConceptCreateFormFeature } from "@features/concepts/behaviors/create/components/ConceptCreateFormFeature";
 import { ConceptEditFormFeature } from "@features/concepts/behaviors/edit/components/ConceptEditFormFeature";
 import { ConceptDisplayFormFeature } from "@features/concepts/behaviors/display/components/ConceptDisplayFormFeature";
 import { ConceptTagFormFeature } from "@features/concepts/behaviors/tag/components/ConceptTagFormFeature";
-import React from "react";
 
 export function ConceptsAdminRoutes() {
   return (

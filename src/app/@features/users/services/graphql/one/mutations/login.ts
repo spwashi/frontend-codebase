@@ -1,4 +1,3 @@
-import { gql } from "@apollo/client";
 import { appGql } from "../../../../../../../__generated__";
 
 export const gqlNode_USER_LOGIN =

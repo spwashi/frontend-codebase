@@ -4,15 +4,14 @@ import {
   IProject,
   IProjectIdentifyingPartial,
 } from "@junction/models/project/models";
+import { graphQlNodes } from "@/graphQlNodes";
 import { ProjectContext } from "../../../../context/context";
-import { graphQlNodes } from '@/graphQlNodes';
 
 export function ProjectQuery({ id }: IProjectIdentifyingPartial) {
   const context = useContext(ProjectContext);
-  let query: any;
-  ({ data: query } = useQuery(graphQlNodes.project.fetch, {
+  const { data: query } = useQuery(graphQlNodes.project.fetch, {
     variables: { project: { id } },
-  }));
+  });
   const { project } = query ?? {};
   const { setProject } = context;
 

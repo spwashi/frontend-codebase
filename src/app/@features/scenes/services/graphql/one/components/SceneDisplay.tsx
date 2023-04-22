@@ -1,6 +1,6 @@
 import React from "react";
-import { DeleteSceneButton } from "./DeleteSceneButton";
 import { useActiveScene } from "@features/scenes/context/hooks/useActiveScene";
+import { DeleteSceneButton } from "./DeleteSceneButton";
 import { SceneDisplayBody, SceneDisplayParams } from "./SceneDisplayBody";
 
 export function SceneDisplay({ scene }: SceneDisplayParams) {

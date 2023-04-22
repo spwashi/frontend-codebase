@@ -1,13 +1,13 @@
 import React, { useMemo, useRef } from "react";
 import cloneDeep from "lodash/cloneDeep";
-import { formClassNames } from "./styles/classNames";
-import FormItems from "./features/fields/components/FieldFactory";
 import AppForm from "@widgets/form/internal/components/AppForm";
 
-import { IFormConfig } from "./types/IFormConfig";
 import { useFormModifierHandler } from "@widgets/form/hooks/useFormWidgetModifierHandler";
 import { FormErrorBoundary } from "@widgets/form/error/components/FormErrorBoundary";
 import { IFormItemConfig } from "@widgets/form/features/fields/types/fieldConfig";
+import { IFormConfig } from "./types/IFormConfig";
+import FormItems from "./features/fields/components/FieldFactory";
+import { formClassNames } from "./styles/classNames";
 
 type IFormWidgetParams<
   ValueStruct extends { [k: string]: IFormItemConfig } = any

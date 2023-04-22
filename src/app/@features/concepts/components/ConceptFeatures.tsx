@@ -2,13 +2,13 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Feature } from "@services/features/item/components/Feature";
 import {
-  selectPossibleConceptOptions,
-  selectPossibleConceptsLastFetched,
-} from "../services/redux/selectors";
-import {
   featureId__conceptDisplay,
   featureId__concepts,
 } from '@/featureIds';
+import {
+  selectPossibleConceptOptions,
+  selectPossibleConceptsLastFetched,
+} from "../services/redux/selectors";
 
 function ConceptDisplayFeature() {
   const lastFetched = useSelector(selectPossibleConceptsLastFetched);

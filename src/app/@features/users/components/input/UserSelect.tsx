@@ -1,8 +1,8 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { SelectInput } from "@widgets/form/features/fields/components/input/select/SelectInput";
-import { selectLoggedInUser } from "../../behaviors/login/redux/reducer";
 import { useUserOptions } from "@features/users/hooks/useUserOptions";
+import { selectLoggedInUser } from "../../behaviors/login/redux/reducer";
 
 type IUserSelectParams = { formKey: string };
 

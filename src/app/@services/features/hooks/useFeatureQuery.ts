@@ -1,9 +1,9 @@
-import { DocumentNode, useApolloClient, useQuery } from "@apollo/client";
+import { useApolloClient, useQuery } from "@apollo/client";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
+import { TypedDocumentNode } from "@graphql-typed-document-node/core";
 import { useChangeEffect } from "@core/hooks/useChangeEffect";
 import { ACTION_GRAPHQL, ACTION_NOGRAPHQL } from "../../redux/reducer";
-import { TypedDocumentNode } from "@graphql-typed-document-node/core";
 
 export function useDispatchGraphqlError(error: any) {
   const dispatch = useDispatch();

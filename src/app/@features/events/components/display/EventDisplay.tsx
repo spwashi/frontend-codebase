@@ -1,6 +1,6 @@
 import React from "react";
-import { DeleteEventButton } from "../delete/DeleteButton";
 import { useActiveEvent } from "@features/events/context/hooks/useActiveEvent";
+import { DeleteEventButton } from "../delete/DeleteButton";
 import { EventDisplayBody, IEventBodyParams } from "./EventDisplayBody";
 
 export function EventDisplay({ event }: IEventBodyParams) {

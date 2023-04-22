@@ -1,15 +1,9 @@
 import { useQuery } from "@apollo/client";
 import React from "react";
+import { graphQlNodes } from "@/graphQlNodes";
 import { AssetContents } from "../../../../behaviors/display/components/AssetContents";
-import { graphQlNodes } from '@/graphQlNodes';
 
-export function AssetQuery({
-  realname,
-  username,
-}: {
-  realname: string;
-  username?: string;
-}) {
+export function AssetQuery({ realname }: { realname: string }) {
   const { data: query = {} } = useQuery(graphQlNodes.asset.fetch, {
     variables: { asset: { realname } },
   });

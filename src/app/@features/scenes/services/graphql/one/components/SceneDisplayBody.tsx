@@ -1,5 +1,5 @@
-import { ISceneContext } from "@features/scenes/context/context";
 import React from "react";
+import { ISceneContext } from "@features/scenes/context/context";
 
 export interface SceneDisplayParams {
   scene: ISceneContext["scene"];

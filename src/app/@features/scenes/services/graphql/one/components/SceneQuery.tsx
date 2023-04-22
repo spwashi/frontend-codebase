@@ -5,9 +5,9 @@ import {
   IScene,
   ISceneIdentifyingPartial,
 } from "@junction/models/scene/models";
-import { ACTION_RECEIVE_ONE_SCENE } from "../../../redux/reducer";
 import { SceneContext } from "@features/scenes/context/context";
 import { graphQlNodes } from '@/graphQlNodes';
+import { ACTION_RECEIVE_ONE_SCENE } from "../../../redux/reducer";
 
 export function SceneQuery({ id }: ISceneIdentifyingPartial) {
   const context = useContext(SceneContext) ?? ({} as any);

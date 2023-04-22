@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router";
+import React from "react";
 import { FeatureRequirement } from "@services/features/list/components/FeatureRequirement";
 import {
   featureId__projectCreate,
@@ -6,7 +7,6 @@ import {
 } from '@/featureIds';
 import { ProjectCreateForm } from "@features/projects/behaviors/create/components/ProjectCreateForm";
 import { ProjectDisplayFormFeature } from "@features/projects/behaviors/display/components/ProjectDisplayFormFeature";
-import React from "react";
 
 export function ProjectsAdminRoutes() {
   return (

@@ -12,11 +12,3 @@ export type IFormConfig<
   items: Items;
   defaultValue?: Partial<ValueStruct>;
 };
-
-type Example = { key1: "something"; key2: "another" };
-
-let formConfig: IFormConfig<Example> = {
-  formId: "form--something",
-  title: "something",
-  items: [{ name: "key2", type: "asset", value: "another" }],
-};

@@ -3,8 +3,8 @@ import { GraphqlMutationResponse } from "@services/graphql/components/api/Graphq
 import { useMutationForm } from "@services/graphql/hooks/useMutationForm";
 import { FormWidget } from "@widgets/form/FormWidget";
 import { form__createProject } from "@features/projects/behaviors/create/config";
-import { selectCreateProjectInput } from "../selectors";
 import { graphQlNodes } from '@/graphQlNodes';
+import { selectCreateProjectInput } from "../selectors";
 
 export function ProjectCreateForm() {
   const [onsubmit, response] = useMutationForm(

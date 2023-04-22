@@ -1,8 +1,8 @@
 import React from "react";
 import { ContentType } from "@features/concepts/data/config/contentTypes";
+import { useFormItem } from "@widgets/form/features/fields/hooks/useFormItem";
 import { Input } from "./text/Input";
 import { Textarea } from "./text/Textarea";
-import { useFormItem } from "@widgets/form/features/fields/hooks/useFormItem";
 
 interface IContentParams {
   formKey: string;

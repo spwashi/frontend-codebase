@@ -1,15 +1,14 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useFeatureQuery } from "@services/features/hooks/useFeatureQuery";
-import { IScene } from "@junction/models/scene/models";
+import { graphQlNodes } from "@/graphQlNodes";
 import { ACTION_RECEIVE_ALL_SCENES } from "../../../redux/reducer";
 import {
   selectPossibleScenesLastFetched,
   selectSceneStateKey,
 } from "../../../redux/selectors";
-import { graphQlNodes } from '@/graphQlNodes';
 
-export function ListQuery() {
+export function SceneListQuery() {
   const stateKey = useSelector(selectSceneStateKey);
   const { data: query } = useFeatureQuery(
     graphQlNodes.scene.fetchList,

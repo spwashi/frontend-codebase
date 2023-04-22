@@ -1,7 +1,7 @@
-import { IEventContext } from "@features/events/context/context";
-import { EventTag } from "../../../../../__generated__/graphql";
-import { EventTagWidget } from "@features/events/components/tag/EventTagWidget";
 import React from "react";
+import { IEventContext } from "@features/events/context/context";
+import { EventTagWidget } from "@features/events/components/tag/EventTagWidget";
+import { EventTag } from "../../../../../__generated__/graphql";
 
 export interface IEventBodyParams {
   event: IEventContext["event"];
@@ -24,7 +24,7 @@ export function EventDisplayBody({ event }: IEventBodyParams) {
             <ul className="tag-list">
               {eventTags &&
                 eventTags.map(
-                  (eventTag: EventTag | null, index) =>
+                  (eventTag: EventTag | null) =>
                     eventTag?.tag && (
                       <li key={eventTag.tag.id}>
                         <EventTagWidget tag={eventTag.tag} event={event} />

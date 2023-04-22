@@ -1,5 +1,5 @@
-import { IFormConfig } from "@widgets/form/types/IFormConfig";
 import { useCallback, useState } from "react";
+import { IFormConfig } from "@widgets/form/types/IFormConfig";
 
 export function useFormModifierHandler(
   form: IFormConfig,

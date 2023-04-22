@@ -2,12 +2,12 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useFeatureQuery } from "@services/features/hooks/useFeatureQuery";
 import { getDomain } from "@widgets/form/features/fields/components/FieldFactory";
+import { graphQlNodes } from '@/graphQlNodes';
 import { ACTION_RECEIVE_ALL_PROJECTS } from "../../../redux/reducer";
 import {
   selectPossibleProjectsLastFetched,
   selectProjectStateKey,
 } from "../../../redux/selectors";
-import { graphQlNodes } from '@/graphQlNodes';
 
 export function ProjectListQuery() {
   const projectStateKey = useSelector(selectProjectStateKey);

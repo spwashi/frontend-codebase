@@ -1,7 +1,7 @@
 import { useMutation } from "@apollo/client";
 import { useCallback } from "react";
-import { IFormContextState } from "@widgets/form/context/types/state";
 import { TypedDocumentNode } from "@graphql-typed-document-node/core";
+import { IFormContextState } from "@widgets/form/context/types/state";
 
 /**
  * Provides a callback that could be used to submit a form via ajax.
