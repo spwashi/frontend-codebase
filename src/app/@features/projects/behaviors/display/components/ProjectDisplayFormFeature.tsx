@@ -14,10 +14,7 @@ export function ProjectDisplayFormFeature() {
   const project = formState?.currentValue?.project ?? activeProject;
 
   return (
-    <FeatureRequirement
-      name={featureId__projectDisplay}
-      alternative={"Need Project Display"}
-    >
+    <FeatureRequirement name={featureId__projectDisplay}>
       <FormWidget config={form__selectProject} onSubmit={setFormState} />
       <Project id={project?.id} />
     </FeatureRequirement>

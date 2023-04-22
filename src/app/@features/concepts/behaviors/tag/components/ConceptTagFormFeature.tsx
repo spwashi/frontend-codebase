@@ -6,19 +6,13 @@ import {
   featureId__conceptDisplay,
   featureId__conceptTagForm,
   featureId__tagDisplay,
-} from '@/featureIds';
+} from "@/featureIds";
 import { ConceptTagForm } from "./ConceptTagForm";
 
 export function ConceptTagFormFeature() {
   return (
-    <FeatureRequirement
-      name={featureId__conceptDisplay}
-      alternative={"Need Concepts Display"}
-    >
-      <FeatureRequirement
-        name={featureId__tagDisplay}
-        alternative={"Need Tags Display"}
-      >
+    <FeatureRequirement name={featureId__conceptDisplay}>
+      <FeatureRequirement name={featureId__tagDisplay}>
         <Feature name={featureId__conceptTagForm}>
           <TagListQuery />
           <ConceptTagForm />

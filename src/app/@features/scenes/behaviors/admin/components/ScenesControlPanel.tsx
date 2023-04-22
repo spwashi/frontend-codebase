@@ -1,6 +1,6 @@
 import React from "react";
 import { FeatureRequirement } from "@services/features/list/components/FeatureRequirement";
-import { featureId__scenes } from '@/featureIds';
+import { featureId__scenes } from "@/featureIds";
 import { ScenesAdminNavigation } from "@features/scenes/behaviors/admin/components/navigation/ScenesAdminNavigation";
 import { ScenesRequisiteFeatures } from "@features/scenes/behaviors/admin/components/features/ScenesRequisiteFeatures";
 import { ScenesAdminRoutes } from "@features/scenes/behaviors/admin/components/routes/ScenesAdminRoutes";
@@ -10,7 +10,7 @@ export function ScenesControlPanel() {
     <React.Fragment>
       <ScenesRequisiteFeatures />
       <ScenesAdminNavigation />
-      <FeatureRequirement name={featureId__scenes} alternative={"Need Scenes"}>
+      <FeatureRequirement name={featureId__scenes}>
         <ScenesAdminRoutes />
       </FeatureRequirement>
     </React.Fragment>

@@ -6,7 +6,6 @@ import { IFeature } from "../../item/types";
 type IFeatureRequirementProps = {
   name: IFeature["featureId"];
   children: any;
-  alternative: any;
 };
 
 /**
@@ -15,9 +14,8 @@ type IFeatureRequirementProps = {
 export function FeatureRequirement({
   name,
   children,
-  alternative,
 }: IFeatureRequirementProps) {
   const features = useContext(FeaturesRegistrationContext);
   if (features.state?.features?.available[name]) return children;
-  return alternative ?? <Dev>[disabled]</Dev>;
+  return <Dev>[disabled]</Dev>;
 }

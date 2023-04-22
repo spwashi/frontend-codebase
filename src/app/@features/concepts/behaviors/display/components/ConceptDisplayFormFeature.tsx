@@ -5,7 +5,7 @@ import { FeatureRequirement } from "@services/features/list/components/FeatureRe
 import {
   featureId__conceptDisplay,
   featureId__conceptDisplayForm,
-} from '@/featureIds';
+} from "@/featureIds";
 import { IFormContextState } from "@widgets/form/context/types/state";
 import { Concept } from "../../../services/graphql/one";
 import { form__selectConcept } from "../../select/config";
@@ -14,10 +14,7 @@ export function ConceptDisplayFormFeature() {
   const [formState, setFormState] = useState<IFormContextState>();
   const id = formState?.currentValue?.concept?.id;
   return (
-    <FeatureRequirement
-      name={featureId__conceptDisplay}
-      alternative={"Need Concepts Display"}
-    >
+    <FeatureRequirement name={featureId__conceptDisplay}>
       <Feature name={featureId__conceptDisplayForm}>
         <FormWidget config={form__selectConcept} onSubmit={setFormState} />
         {id && <Concept id={id} />}

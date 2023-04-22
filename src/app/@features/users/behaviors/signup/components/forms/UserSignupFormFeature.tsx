@@ -7,22 +7,16 @@ import {
   featureId__projectDisplay,
   featureId__userSignup,
   featureId__userSignupForm,
-} from '@/featureIds';
+} from "@/featureIds";
 import { selectLoggedInUserName } from "../../../login/redux/reducer";
 
 export function UserSignupFormFeature() {
   const loggedInUser = useSelector(selectLoggedInUserName);
   if (loggedInUser) return null;
   return (
-    <FeatureRequirement
-      name={featureId__userSignup}
-      alternative={"Need User Signup"}
-    >
+    <FeatureRequirement name={featureId__userSignup}>
       <Feature name={featureId__userSignupForm}>
-        <FeatureRequirement
-          name={featureId__projectDisplay}
-          alternative={"Need Projects"}
-        >
+        <FeatureRequirement name={featureId__projectDisplay}>
           <UserSignupForm />
         </FeatureRequirement>
       </Feature>

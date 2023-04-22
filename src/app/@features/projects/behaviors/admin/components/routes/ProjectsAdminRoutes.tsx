@@ -1,10 +1,7 @@
 import { Route, Routes } from "react-router";
 import React from "react";
 import { FeatureRequirement } from "@services/features/list/components/FeatureRequirement";
-import {
-  featureId__projectCreate,
-  featureId__projects,
-} from '@/featureIds';
+import { featureId__projectCreate, featureId__projects } from "@/featureIds";
 import { ProjectCreateForm } from "@features/projects/behaviors/create/components/ProjectCreateForm";
 import { ProjectDisplayFormFeature } from "@features/projects/behaviors/display/components/ProjectDisplayFormFeature";
 
@@ -14,14 +11,8 @@ export function ProjectsAdminRoutes() {
       <Route
         path={""}
         element={
-          <FeatureRequirement
-            name={featureId__projects}
-            alternative={"Need Projects"}
-          >
-            <FeatureRequirement
-              name={featureId__projectCreate}
-              alternative={"Need Projects Create"}
-            >
+          <FeatureRequirement name={featureId__projects}>
+            <FeatureRequirement name={featureId__projectCreate}>
               <ProjectCreateForm />
             </FeatureRequirement>
             <ProjectDisplayFormFeature />

@@ -1,10 +1,7 @@
 import { Route, Routes } from "react-router";
 import React from "react";
 import { FeatureRequirement } from "@services/features/list/components/FeatureRequirement";
-import {
-  featureId__userLogin,
-  featureId__users,
-} from '@/featureIds';
+import { featureId__userLogin, featureId__users } from "@/featureIds";
 import { UserLogoutButton } from "@features/users/behaviors/logout/components/buttons/UserLogoutButton";
 import { LoginChecker } from "@features/users/behaviors/login/components/actions/LoginChecker";
 import { LoginRequirement } from "@features/users/behaviors/login/components/gates/LoginRequirement";
@@ -17,15 +14,9 @@ export function UserAdminRoutes() {
       <Route
         path=""
         element={
-          <FeatureRequirement
-            name={featureId__users}
-            alternative={"Need Users"}
-          >
+          <FeatureRequirement name={featureId__users}>
             <UserLogoutButton />
-            <FeatureRequirement
-              name={featureId__userLogin}
-              alternative={"Need User Login"}
-            >
+            <FeatureRequirement name={featureId__userLogin}>
               <LoginChecker />
               <LoginRequirement state={false}>
                 <UserLoginFormFeature />

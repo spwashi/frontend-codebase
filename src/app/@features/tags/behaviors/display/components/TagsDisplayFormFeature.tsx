@@ -16,10 +16,7 @@ export function TagsDisplayFormFeature() {
   const tags = formState?.currentValue?.tags;
   return (
     <Feature name={featureId__tagsDisplayForm}>
-      <FeatureRequirement
-        name={featureId__tagDisplay}
-        alternative={"Need Tag Display"}
-      >
+      <FeatureRequirement name={featureId__tagDisplay}>
         <FormWidget config={form__selectTags} onSubmit={setFormState} />
         {tags &&
           tags.map((params: ITagContext["tag"]) => (

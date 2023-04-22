@@ -29,10 +29,7 @@ export function ScenesAdminRoutes() {
               <SceneCreateFormFeature />
               <SceneEditFormFeature />
             </LoginRequirement>
-            <FeatureRequirement
-              name={featureId__sceneDisplay}
-              alternative={"Need Scene Display"}
-            >
+            <FeatureRequirement name={featureId__sceneDisplay}>
               <SceneDisplayFormFeature />
             </FeatureRequirement>
           </React.Fragment>

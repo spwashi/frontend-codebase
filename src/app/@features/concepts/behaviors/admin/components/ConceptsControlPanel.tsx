@@ -1,6 +1,6 @@
 import React from "react";
 import { FeatureRequirement } from "@services/features/list/components/FeatureRequirement";
-import { featureId__concepts } from '@/featureIds';
+import { featureId__concepts } from "@/featureIds";
 import { ConceptsAdminNavigation } from "@features/concepts/behaviors/admin/components/navigation/ConceptsAdminNavigation";
 import { ConceptsRequisiteFeatures } from "@features/concepts/behaviors/admin/components/features/ConceptsRequisiteFeatures";
 import { ConceptsAdminRoutes } from "@features/concepts/behaviors/admin/components/routes/ConceptsAdminRoutes";
@@ -10,10 +10,7 @@ export function ConceptsControlPanel() {
     <React.Fragment>
       <ConceptsRequisiteFeatures />
       <ConceptsAdminNavigation />
-      <FeatureRequirement
-        name={featureId__concepts}
-        alternative={"Need Concepts"}
-      >
+      <FeatureRequirement name={featureId__concepts}>
         <ConceptsAdminRoutes />
       </FeatureRequirement>
     </React.Fragment>

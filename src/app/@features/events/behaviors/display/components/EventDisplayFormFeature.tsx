@@ -7,7 +7,7 @@ import { form__selectEvent } from "@features/events/behaviors/select/config";
 import {
   featureId__eventDisplay,
   featureId__eventDisplayForm,
-} from '@/featureIds';
+} from "@/featureIds";
 import { IFormContextState } from "@widgets/form/context/types/state";
 import { IEventContext } from "@features/events/context/context";
 import { Event } from "../../../services/graphql/one/Event";
@@ -19,10 +19,7 @@ export function EventDisplayFormFeature() {
   const event = formState?.currentValue?.event;
 
   return (
-    <FeatureRequirement
-      name={featureId__eventDisplay}
-      alternative={"Need Events"}
-    >
+    <FeatureRequirement name={featureId__eventDisplay}>
       <EventListQuery />
       <Feature name={featureId__eventDisplayForm}>
         <FormWidget config={form__selectEvent} onSubmit={setFormState} />
