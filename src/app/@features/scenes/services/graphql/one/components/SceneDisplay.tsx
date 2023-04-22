@@ -1,6 +1,6 @@
 import React from "react";
 import { useActiveScene } from "@features/scenes/context/hooks/useActiveScene";
-import { DeleteSceneButton } from "./DeleteSceneButton";
+import { SceneDeleteButton } from "./SceneDeleteButton";
 import { SceneDisplayBody, SceneDisplayParams } from "./SceneDisplayBody";
 
 export function SceneDisplay({ scene }: SceneDisplayParams) {
@@ -9,7 +9,7 @@ export function SceneDisplay({ scene }: SceneDisplayParams) {
 
   return (
     <>
-      {id && <DeleteSceneButton id={id} />}
+      {id && <SceneDeleteButton id={id} />}
       <SceneDisplayBody scene={scene} />
     </>
   );

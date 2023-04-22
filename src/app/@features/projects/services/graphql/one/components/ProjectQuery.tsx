@@ -1,13 +1,13 @@
 import { useQuery } from "@apollo/client";
 import React, { useContext, useEffect } from "react";
-import {
-  IProject,
-  IProjectIdentifyingPartial,
-} from "@junction/models/project/models";
 import { graphQlNodes } from "@/graphQlNodes";
 import { ProjectContext } from "../../../../context/context";
+import {
+  Project,
+  ProjectReferenceInput,
+} from "../../../../../../../__generated__/graphql";
 
-export function ProjectQuery({ id }: IProjectIdentifyingPartial) {
+export function ProjectQuery({ id }: ProjectReferenceInput) {
   const context = useContext(ProjectContext);
   const { data: query } = useQuery(graphQlNodes.project.fetch, {
     variables: { project: { id } },
@@ -17,7 +17,7 @@ export function ProjectQuery({ id }: IProjectIdentifyingPartial) {
 
   useEffect(() => {
     if (project && setProject) {
-      setProject(project as IProject);
+      setProject(project as Project);
     }
   }, [project, setProject]);
 

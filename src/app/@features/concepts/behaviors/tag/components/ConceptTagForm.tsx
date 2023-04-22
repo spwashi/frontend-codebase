@@ -2,14 +2,13 @@ import React from "react";
 import { GraphqlMutationResponse } from "@services/graphql/components/api/GraphqlMutationResponse";
 import { useMutationForm } from "@services/graphql/hooks/useMutationForm";
 import { FormWidget } from "@widgets/form/FormWidget";
-import { selectTagAdditionInput } from "@features/concepts/behaviors/tag/selectors";
-import { graphQlNodes } from '@/graphQlNodes';
+import { graphQlNodes } from "@/graphQlNodes";
 import { form__tagConcept } from "../config";
 
 export function ConceptTagForm() {
   const [onsubmit, response] = useMutationForm(
     graphQlNodes.concept.tag,
-    selectTagAdditionInput
+    (formState) => formState
   );
   return (
     <section id="form__concept-tag">

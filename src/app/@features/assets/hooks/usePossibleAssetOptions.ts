@@ -1,7 +1,7 @@
 import { useQuery } from "@apollo/client";
 import { useMemo } from "react";
-import { IAsset } from "@junction/models/asset/models";
-import { graphQlNodes } from '@/graphQlNodes';
+import { graphQlNodes } from "@/graphQlNodes";
+import { Asset } from "../../../../__generated__/graphql";
 
 export function usePossibleAssetOptions(username: string) {
   const { data: query } = useQuery(graphQlNodes.asset.fetchList, {
@@ -10,7 +10,7 @@ export function usePossibleAssetOptions(username: string) {
   return useMemo(
     () =>
       query?.assetList
-        ? (query.assetList.filter((i) => !!i) as IAsset[]).map((asset) => ({
+        ? (query.assetList.filter((i) => !!i) as Asset[]).map((asset) => ({
             title: asset.name,
             value: asset.id,
             payload: asset.realname,

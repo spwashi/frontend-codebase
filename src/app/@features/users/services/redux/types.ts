@@ -1,8 +1,8 @@
-import { IUser } from "@junction/models/user/models";
 import { IFeatureState } from "@services/redux/types/state.types";
 import { SelectOption } from "@widgets/form/features/fields/components/input/select/SelectInput";
+import { User } from "../../../../../__generated__/graphql";
 
-export type UserOption = SelectOption<IUser["username"]>;
+export type UserOption = SelectOption<User["username"]>;
 
 /**
  * User Feature:
@@ -11,7 +11,7 @@ export type UserOption = SelectOption<IUser["username"]>;
  */
 export type UserFeatureLoginFeatureState = IFeatureState<{
   username: string | null;
-  user: IUser | null;
+  user: User | null;
 }>;
 
 /**
@@ -35,7 +35,7 @@ export interface UserFeatureStateFeatures {
  *   Data
  */
 export interface UserFeatureStateDataUsers {
-  list: IUser[];
+  list: User[];
   lastFetched: number | null;
 }
 

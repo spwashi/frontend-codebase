@@ -1,9 +1,9 @@
-import { IProject } from "@junction/models/project/models";
 import { SelectOption } from "@widgets/form/features/fields/components/input/select/SelectInput";
 import { IRootAppState } from "@core/types/IRootAppState";
 import { ProjectOption } from "./types";
+import { Project } from "../../../../../__generated__/graphql";
 
-const projectToOption = (project: IProject): SelectOption & ProjectOption => ({
+const projectToOption = (project: Project): SelectOption & ProjectOption => ({
   title: project.title,
   value: project.id,
   payload: project.id,

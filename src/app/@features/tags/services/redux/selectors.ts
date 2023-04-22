@@ -1,8 +1,8 @@
-import { ITag } from "@junction/models/tag/models";
 import { IRootAppState } from "@core/types/IRootAppState";
 import { TagOption } from "./types";
+import { Tag } from "../../../../../__generated__/graphql";
 
-function tagToOption(tag: ITag): TagOption {
+function tagToOption(tag: Tag): TagOption {
   return {
     title: tag.title,
     value: tag.id,

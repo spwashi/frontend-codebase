@@ -1,8 +1,8 @@
-import { IScene } from "@junction/models/scene/models";
 import { IRootAppState } from "@core/types/IRootAppState";
 import { SceneOption } from "./types";
+import { Scene } from "../../../../../__generated__/graphql";
 
-function sceneToOption(scene: IScene): SceneOption {
+function sceneToOption(scene: Scene): SceneOption {
   return {
     title: scene.title ?? scene.name,
     value: scene.id,

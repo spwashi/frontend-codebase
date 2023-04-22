@@ -4,7 +4,7 @@ import { useFormItem } from "../../../hooks/useFormItem";
 export type SelectOption<T = any> = {
   title: string;
   value: string | any;
-  payload: T;
+  payload?: T | null;
 };
 
 type Params<T = any> = {

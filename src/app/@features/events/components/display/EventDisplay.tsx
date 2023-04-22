@@ -1,6 +1,6 @@
 import React from "react";
 import { useActiveEvent } from "@features/events/context/hooks/useActiveEvent";
-import { DeleteEventButton } from "../delete/DeleteButton";
+import { EventDeleteButton } from "../delete/EventDeleteButton";
 import { EventDisplayBody, IEventBodyParams } from "./EventDisplayBody";
 
 export function EventDisplay({ event }: IEventBodyParams) {
@@ -9,7 +9,7 @@ export function EventDisplay({ event }: IEventBodyParams) {
 
   return (
     <>
-      {id && <DeleteEventButton id={id} />}
+      {id && <EventDeleteButton id={id} />}
       <EventDisplayBody event={event} />
     </>
   );

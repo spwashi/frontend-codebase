@@ -3,7 +3,7 @@ import { convertFromRaw, Editor, EditorState } from "draft-js";
 import { Log } from "@core/dev/components/Log";
 import { IConceptContext } from "@features/concepts/context/context";
 import { useActiveConcept } from "@features/concepts/context/hooks/useActiveConcept";
-import { DeleteConceptButton } from "./DeleteButton";
+import { ConceptDeleteButton } from "./ConceptDeleteButton";
 
 function RichText({ src }: { src: string }) {
   const [editorState, setEditorState] = useState(() =>
@@ -60,7 +60,7 @@ export function ConceptDisplay({ concept }: IConceptDisplayParams) {
   const { id } = concept;
   return (
     <>
-      {id && <DeleteConceptButton id={id} />}
+      {id && <ConceptDeleteButton id={id} />}
       <ConceptDisplayBody concept={concept} />
     </>
   );

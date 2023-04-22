@@ -1,14 +1,17 @@
 import React from "react";
 import { useMutation } from "@apollo/client";
 import { useSelector } from "react-redux";
-import { ITagIdentifyingPartial } from "@junction/models/tag/models";
 import { selectLoggedInUser } from "@features/users/behaviors/login/redux/reducer";
 import { Log } from "@core/dev/components/Log";
-import { graphQlNodes } from '@/graphQlNodes';
-import { TagContextProvider } from "./context/Provider";
-import { TagDisplay } from "./components/Display";
+import { graphQlNodes } from "@/graphQlNodes";
+import { TagGate } from "@features/tags/context/Provider";
+import { TagDisplay } from "./components/TagDisplay";
 import { TagQuery } from "./components/TagQuery";
-import { useActiveTag } from "./context/hooks/useActiveOne";
+import { useActiveTag } from "@features/tags/context/hooks/useActiveTag";
+import {
+  DeleteTagInput,
+  TagReferenceInput,
+} from "../../../../../../__generated__/graphql";
 
 function DeleteTag() {
   const tag = useActiveTag();
@@ -23,7 +26,7 @@ function DeleteTag() {
         onClick={() =>
           send({
             variables: {
-              tag: tag,
+              tag: tag as DeleteTagInput,
               user: user,
             },
           })
@@ -35,18 +38,13 @@ function DeleteTag() {
   );
 }
 
-/**
- *
- * @param title
- * @constructor
- */
-export function Tag({ id }: ITagIdentifyingPartial) {
+export function Tag({ id }: TagReferenceInput) {
   if (!id) return null;
   return (
-    <TagContextProvider>
+    <TagGate>
       <DeleteTag />
       <TagQuery id={id} />
       <TagDisplay />
-    </TagContextProvider>
+    </TagGate>
   );
 }

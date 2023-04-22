@@ -1,8 +1,8 @@
 import { useDispatch } from "react-redux";
 import React, { useEffect } from "react";
-import { IUser } from "@junction/models/user/models";
 import { setJwt } from "@services/jwt/helpers/setJwt";
 import { ACTION_RECEIVE_LOGIN } from "@features/users/behaviors/login/redux/reducer";
+import { User } from "../../../../../../../__generated__/graphql";
 
 export function LoginReceiver({
   username,
@@ -10,7 +10,7 @@ export function LoginReceiver({
   jwt,
 }: {
   username: string;
-  user: IUser;
+  user: User;
   jwt: string;
 }) {
   const dispatch = useDispatch();

@@ -1,10 +1,10 @@
 import { SelectOption } from "@widgets/form/features/fields/components/input/select/SelectInput";
-import { IScene } from "@junction/models/scene/models";
 import { IFeatureState, IKeyedState } from "@services/redux/types/state.types";
+import { Scene } from "../../../../../__generated__/graphql";
 
-export type SceneOption = SelectOption<IScene["id"]>;
+export type SceneOption = SelectOption<Scene["id"]>;
 export type SceneFeatureStateDataScenes = {
-  list: IScene[];
+  list: Scene[];
   lastFetched: number | null;
 };
 export type SceneFeatureData = { scenes: SceneFeatureStateDataScenes };

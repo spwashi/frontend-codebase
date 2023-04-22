@@ -1,8 +1,8 @@
-import { IEvent } from "@junction/models/event/models";
 import { IRootAppState } from "@core/types/IRootAppState";
 import { EventOption } from "./types";
+import { Event } from "../../../../../__generated__/graphql";
 
-function eventToOption(event: IEvent): EventOption {
+function eventToOption(event: Event): EventOption {
   return {
     title: event.title,
     value: event.id,

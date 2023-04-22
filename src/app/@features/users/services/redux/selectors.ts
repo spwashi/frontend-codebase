@@ -1,8 +1,8 @@
-import { IUser } from "@junction/models/user/models";
 import { IRootAppState } from "@core/types/IRootAppState";
 import { UserOption } from "./types";
+import { User } from "../../../../../__generated__/graphql";
 
-function userToOption(user: IUser): UserOption {
+function userToOption(user: User): UserOption {
   return {
     title: user.username,
     value: user.id,

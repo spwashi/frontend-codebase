@@ -1,21 +1,20 @@
 import React, { useState } from "react";
 import { useMutationForm } from "@services/graphql/hooks/useMutationForm";
-import { selectEditEventInput } from "@features/events/behaviors/edit/selectors";
 import { FormWidget } from "@widgets/form/FormWidget";
 import { form__selectEvent } from "@features/events/behaviors/select/config";
 import { form__editEvent } from "@features/events/behaviors/edit/config";
 import { GraphqlMutationResponse } from "@services/graphql/components/api/GraphqlMutationResponse";
 import { IFormContextState } from "@widgets/form/context/types/state";
-import { graphQlNodes } from '@/graphQlNodes';
-import { IEvent } from "@junction/models/event/models";
+import { graphQlNodes } from "@/graphQlNodes";
+import { Event } from "../../../../../../__generated__/graphql";
 
 export function EventEditForm() {
   const [onsubmit, response] = useMutationForm(
     graphQlNodes.event.edit,
-    selectEditEventInput
+    (formState) => formState
   );
   const [formState, setFormState] =
-    useState<IFormContextState<{ event: IEvent["id"] }>>();
+    useState<IFormContextState<{ event: Event["id"] }>>();
 
   const event = formState?.currentValue?.event;
   return (

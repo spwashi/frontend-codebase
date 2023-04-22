@@ -1,15 +1,15 @@
 import React from "react";
-import { IConceptIdentifyingPartial } from "@junction/models/concept/models";
-import { ConceptGate } from "@features/concepts/context/Provider";
+import { ConceptGate } from "@features/concepts/context/ConceptGate";
 import { ConceptContextDisplay } from "./components/ConceptDisplay";
 import { ConceptQuery } from "./components/ConceptQuery";
+import { ConceptReferenceInput } from "../../../../../../__generated__/graphql";
 
 /**
  *
  * @param title
  * @constructor
  */
-export function Concept({ id }: IConceptIdentifyingPartial) {
+export function Concept({ id }: ConceptReferenceInput) {
   if (!id) return null;
   return (
     <ConceptGate>

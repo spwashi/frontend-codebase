@@ -1,10 +1,10 @@
 import { SelectOption } from "@widgets/form/features/fields/components/input/select/SelectInput";
-import { IEvent } from "@junction/models/event/models";
 import { IFeatureState, IKeyedState } from "@services/redux/types/state.types";
+import { Event } from "../../../../../__generated__/graphql";
 
-export type EventOption = SelectOption<IEvent["id"]>;
+export type EventOption = SelectOption<Event["id"]>;
 export type EventFeatureStateDataEvents = {
-  list: IEvent[];
+  list: Event[];
   lastFetched: number | null;
 };
 export type EventFeatureData = { events: EventFeatureStateDataEvents };

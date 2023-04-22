@@ -1,10 +1,13 @@
 import { useQuery } from "@apollo/client";
 import React, { useContext, useEffect } from "react";
-import { ITag, ITagIdentifyingPartial } from "@junction/models/tag/models";
-import { graphQlNodes } from '@/graphQlNodes';
-import { TagContext } from "../context/context";
+import { graphQlNodes } from "@/graphQlNodes";
+import { TagContext } from "@features/tags/context/context";
+import {
+  Tag,
+  TagReferenceInput,
+} from "../../../../../../../__generated__/graphql";
 
-export function TagQuery({ id }: ITagIdentifyingPartial) {
+export function TagQuery({ id }: TagReferenceInput) {
   const context = useContext(TagContext) ?? ({} as any);
   const { setTag } = context;
 
@@ -15,7 +18,7 @@ export function TagQuery({ id }: ITagIdentifyingPartial) {
 
   useEffect(() => {
     if (tag && setTag) {
-      setTag(tag as ITag);
+      setTag(tag as Tag);
     }
   }, [tag, setTag]);
 

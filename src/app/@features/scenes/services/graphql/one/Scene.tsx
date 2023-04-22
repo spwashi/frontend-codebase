@@ -1,10 +1,10 @@
 import React from "react";
-import { ISceneIdentifyingPartial } from "@junction/models/scene/models";
-import { SceneGate } from "@features/scenes/context/Provider";
+import { SceneGate } from "@features/scenes/context/SceneGate";
 import { SceneContextDisplay } from "./components/SceneDisplay";
 import { SceneQuery } from "./components/SceneQuery";
+import { SceneReferenceInput } from "../../../../../../__generated__/graphql";
 
-export function Scene({ id }: ISceneIdentifyingPartial) {
+export function Scene({ id }: SceneReferenceInput) {
   if (!id) return null;
   return (
     <SceneGate>

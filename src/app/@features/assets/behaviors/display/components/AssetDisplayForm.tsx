@@ -7,7 +7,7 @@ import { LoginRequirement } from "@features/users/behaviors/login/components/gat
 import {
   featureId__assetDisplay,
   featureId__assetDisplayForm,
-} from '@/featureIds';
+} from "@/featureIds";
 import { IFormContextState } from "@widgets/form/context/types/state";
 import { AssetQuery } from "../../../services/graphql/one/components/AssetQuery";
 
@@ -27,7 +27,7 @@ function DisplayAssetForm(user: { username: string }) {
           onSubmit={setFormState}
           onChange={setFormState}
         />
-        <AssetQuery realname={realname} username={user?.username} />
+        <AssetQuery realname={realname} />
       </Feature>
     </LoginRequirement>
   );

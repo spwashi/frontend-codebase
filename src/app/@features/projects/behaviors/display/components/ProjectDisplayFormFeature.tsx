@@ -3,9 +3,9 @@ import { useSelector } from "react-redux";
 import { FormWidget } from "@widgets/form/FormWidget";
 import { FeatureRequirement } from "@services/features/list/components/FeatureRequirement";
 import { form__selectProject } from "@features/projects/behaviors/select/config";
-import { featureId__projectDisplay } from '@/featureIds';
+import { featureId__projectDisplay } from "@/featureIds";
 import { IFormContextState } from "@widgets/form/context/types/state";
-import { SiteProjectController } from "../../../services/graphql/one";
+import { Project } from "../../../services/graphql/one/Project";
 import { selectProjectStateProject } from "../../../services/redux/selectors";
 
 export function ProjectDisplayFormFeature() {
@@ -19,7 +19,7 @@ export function ProjectDisplayFormFeature() {
       alternative={"Need Project Display"}
     >
       <FormWidget config={form__selectProject} onSubmit={setFormState} />
-      <SiteProjectController id={project?.id} />
+      <Project id={project?.id} />
     </FeatureRequirement>
   );
 }
