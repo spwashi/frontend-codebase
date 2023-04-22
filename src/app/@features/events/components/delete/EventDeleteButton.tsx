@@ -3,7 +3,7 @@ import React, { useCallback } from "react";
 import { useMutation } from "@apollo/client";
 import { Log } from "@core/dev/components/Log";
 import { graphQlNodes } from "@/graphQlNodes";
-import { DeleteEventInput, Event } from '@generated/graphql';
+import { DeleteEventInput } from "@generated/graphql";
 import { ACTION_DELETE_ONE_EVENT } from "../../services/redux/reducer";
 
 export function EventDeleteButton({ id }: DeleteEventInput) {

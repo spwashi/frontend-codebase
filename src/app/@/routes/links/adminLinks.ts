@@ -44,5 +44,4 @@ const adminLinkConfigs: INavLinkConfigMap = {
     title: "Users",
   },
 };
-export const adminNavList =
-  Object.values(adminLinkConfigs).filter(routeHasHref);
+export default Object.values(adminLinkConfigs).filter(routeHasHref);

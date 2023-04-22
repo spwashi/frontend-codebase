@@ -16,4 +16,5 @@ const mainLinkConfigs: INavLinkConfigMap = {
   home: homeRoute,
   about: aboutRoute,
 };
-export const mainNavList = Object.values(mainLinkConfigs).filter(routeHasHref);
+
+export default Object.values(mainLinkConfigs).filter(routeHasHref);

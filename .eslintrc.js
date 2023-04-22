@@ -44,11 +44,6 @@ module.exports = {
         ],
       },
     ],
-    "import/no-restricted-paths": [
-      "error",
-      {
-        zones: [],
-      },
-    ],
+    "import/no-restricted-paths": ["error"],
   },
 };

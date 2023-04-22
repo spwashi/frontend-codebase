@@ -4,7 +4,7 @@ import React from "react";
 import { NavigationList } from "@core/layout/components/navigation/NavigationList";
 
 import { routes } from "src/app/@/routes";
-import { adminNavList } from "@/routes/links/adminLinks";
+import { adminNavLinks } from "@/routes";
 
 export function AdminNavigation() {
   return (
@@ -13,7 +13,7 @@ export function AdminNavigation() {
         path={routes.admin.path}
         element={
           <nav className="admin">
-            <NavigationList items={adminNavList} />
+            <NavigationList items={adminNavLinks} />
           </nav>
         }
       />

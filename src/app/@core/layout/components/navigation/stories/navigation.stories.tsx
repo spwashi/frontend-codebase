@@ -1,13 +1,12 @@
 import React from "react";
+import { mainNavLinks } from "@/routes";
 import { Page } from "../../page/Page";
 import { NavigationList } from "../NavigationList";
-
-import { mainNavList } from "@/routes/links/mainLinks";
 
 export default {
   title: "Demo/Layout/Regions/Navigation",
   component: Page,
 };
 
-const Template = () => <NavigationList items={mainNavList} />;
+const Template = () => <NavigationList items={mainNavLinks} />;
 export const NavBar = Template.bind({});

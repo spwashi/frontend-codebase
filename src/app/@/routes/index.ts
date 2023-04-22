@@ -1,5 +1,3 @@
-import { IRouteConfigMap } from "@/routes/types/routeConfig";
-
 export const routes = {
   admin: {
     prefix: "/admin",
@@ -10,3 +8,6 @@ export const routes = {
     path: "/*",
   },
 };
+
+export { default as adminNavLinks } from "./links/adminLinks";
+export { default as mainNavLinks } from "./links/mainLinks";

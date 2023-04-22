@@ -1,6 +1,6 @@
 import React from "react";
+import { mainNavLinks } from "@/routes";
 import { NavigationList } from "../navigation/NavigationList";
-import { mainNavList } from "@/routes/links/mainLinks";
 
 interface PageProps {
   children?: any;
@@ -10,7 +10,7 @@ export function Page({ children }: PageProps) {
   return (
     <article>
       <header>
-        <NavigationList items={mainNavList} />
+        <NavigationList items={mainNavLinks} />
       </header>
       {children}
     </article>

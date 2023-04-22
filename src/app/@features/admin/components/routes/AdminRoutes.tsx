@@ -6,6 +6,7 @@ import {
   featureId__adminControlPanelsPostLogin,
   featureId__adminControlPanelsPreLogin,
 } from "@/featureIds";
+import { routes } from "src/app/@/routes";
 import { UsersControlPanel } from "../../../users/behaviors/admin/components/UsersControlPanel";
 import { ProjectsControlPanel } from "../../../projects/behaviors/admin/components/ProjectsControlPanel";
 import { ConceptsControlPanel } from "../../../concepts/behaviors/admin/components/ConceptsControlPanel";
@@ -15,7 +16,6 @@ import { TagsControlPanel } from "../../../tags/behaviors/admin/components/TagsC
 import { AssetsControlPanel } from "../../../assets/behaviors/admin/components/AssetsControlPanel";
 import { LoginRequirement } from "../../../users/behaviors/login/components/gates/LoginRequirement";
 
-import { routes } from "src/app/@/routes";
 
 export function AdminRoutes() {
   return (
