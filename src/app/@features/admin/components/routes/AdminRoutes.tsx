@@ -1,12 +1,11 @@
 import { Routes } from "react-router-dom";
 import { Route } from "react-router";
 import React from "react";
-import { adminPaths } from "@junction/routes/routes";
 import { Feature } from "@services/features/item/components/Feature";
 import {
   featureId__adminControlPanelsPostLogin,
   featureId__adminControlPanelsPreLogin,
-} from '@/featureIds';
+} from "@/featureIds";
 import { UsersControlPanel } from "../../../users/behaviors/admin/components/UsersControlPanel";
 import { ProjectsControlPanel } from "../../../projects/behaviors/admin/components/ProjectsControlPanel";
 import { ConceptsControlPanel } from "../../../concepts/behaviors/admin/components/ConceptsControlPanel";
@@ -16,11 +15,13 @@ import { TagsControlPanel } from "../../../tags/behaviors/admin/components/TagsC
 import { AssetsControlPanel } from "../../../assets/behaviors/admin/components/AssetsControlPanel";
 import { LoginRequirement } from "../../../users/behaviors/login/components/gates/LoginRequirement";
 
+import { routes } from "src/app/@/routes";
+
 export function AdminRoutes() {
   return (
     <Routes>
       <Route
-        path={adminPaths.admin._path}
+        path={routes.admin.path}
         element={
           <Routes>
             <Route path="users/*" element={<UsersControlPanel />} />

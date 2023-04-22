@@ -17,13 +17,13 @@ import { persistor, store } from "@services/redux/store";
 import { Application } from "@core/components/Application";
 import { GRAPHQL_URL } from "@core/constants";
 import { FeatureRegistrationBoundary } from "@services/features/list/components/FeatureRegistrationBoundary";
+import { routes } from "src/app/@/routes";
 
 const httpLink = createHttpLink({ uri: GRAPHQL_URL });
 const client = new ApolloClient({ link: httpLink, cache: new InMemoryCache() });
 
-const browserRouter = createBrowserRouter(
-  createRoutesFromElements(<Route path={"/*"} element={<Application />} />)
-);
+const rootElement = <Route path={routes.main.path} element={<Application />} />;
+const router = createBrowserRouter(createRoutesFromElements(rootElement));
 
 function App() {
   return (
@@ -31,7 +31,7 @@ function App() {
       <ApolloProvider client={client}>
         <PersistGate loading={null} persistor={persistor}>
           <FeatureRegistrationBoundary>
-            <RouterProvider router={browserRouter} />
+            <RouterProvider router={router} />
           </FeatureRegistrationBoundary>
         </PersistGate>
       </ApolloProvider>

@@ -1,18 +1,19 @@
 import { Routes } from "react-router-dom";
 import { Route } from "react-router";
 import React from "react";
-import { adminPaths } from "@junction/routes/routes";
-import { adminNavigation } from "@junction/routes/nav";
 import { NavigationList } from "@core/layout/components/navigation/NavigationList";
+
+import { routes } from "src/app/@/routes";
+import { adminNavList } from "@/routes/links/adminLinks";
 
 export function AdminNavigation() {
   return (
     <Routes>
       <Route
-        path={adminPaths.admin._path}
+        path={routes.admin.path}
         element={
           <nav className="admin">
-            <NavigationList items={adminNavigation} />
+            <NavigationList items={adminNavList} />
           </nav>
         }
       />

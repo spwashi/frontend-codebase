@@ -14,7 +14,6 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src/app/@"),
       "@core": path.resolve(__dirname, "./src/app/@core"),
       "@features": path.resolve(__dirname, "./src/app/@features"),
-      "@junction": path.resolve(__dirname, "./src/app/@junction"),
       "@services": path.resolve(__dirname, "./src/app/@services"),
       "@widgets": path.resolve(__dirname, "./src/app/@widgets"),
     },

@@ -1,7 +1,8 @@
 import React from "react";
-import { INavLink } from "@junction/routes/routes";
 
-function NavLink({ link }: { link: INavLink }) {
+import { INavLinkConfig } from "@/routes/types/linkConfig";
+
+function NavLink({ link }: { link: INavLinkConfig }) {
   return (
     <li>
       <a href={"/"}>{link.title}</a>
@@ -10,7 +11,7 @@ function NavLink({ link }: { link: INavLink }) {
   );
 }
 
-export function NavigationList({ items }: { items: INavLink[] }) {
+export function NavigationList({ items }: { items: INavLinkConfig[] }) {
   return (
     <ul>
       {items.map((link) => (

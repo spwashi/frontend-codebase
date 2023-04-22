@@ -47,14 +47,7 @@ module.exports = {
     "import/no-restricted-paths": [
       "error",
       {
-        zones: [
-          {
-            target: "./src/app/@junction",
-            from: ["./src/app"],
-            except: ["./@junction"],
-            message: "The @junction folder should not depend on the client",
-          },
-        ],
+        zones: [],
       },
     ],
   },

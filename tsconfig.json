@@ -29,7 +29,6 @@
       "@/*": ["./src/app/@/*"],
       "@core/*": [ "./src/app/@core/*" ],
       "@features/*": [ "./src/app/@features/*" ],
-      "@junction/*": [ "./src/app/@junction/*" ],
       "@services/*": [ "./src/app/@services/*" ],
       "@widgets/*": [ "./src/app/@widgets/*" ],
     }
