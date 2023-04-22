@@ -1,20 +1,16 @@
 import React from "react";
-
-type INavLink = {
-  href: string;
-  title: string;
-  children?: INavLink[];
-};
+import { INavLink } from "@junction/routes/routes";
 
 function NavLink({ link }: { link: INavLink }) {
   return (
     <li>
       <a href={"/"}>{link.title}</a>
-      {link.children ? <Navigation items={link.children} /> : null}
+      {link.children ? <NavigationList items={link.children} /> : null}
     </li>
   );
 }
-export function Navigation({ items }: { items: INavLink[] }) {
+
+export function NavigationList({ items }: { items: INavLink[] }) {
   return (
     <ul>
       {items.map((link) => (

@@ -1,8 +1,9 @@
-import { NavLink, Routes } from "react-router-dom";
+import { Routes } from "react-router-dom";
 import { Route } from "react-router";
 import React from "react";
 import { adminPaths } from "@junction/routes/routes";
 import { adminNavigation } from "@junction/routes/nav";
+import { NavigationList } from "@core/layout/components/navigation/NavigationList";
 
 export function AdminNavigation() {
   return (
@@ -10,17 +11,9 @@ export function AdminNavigation() {
       <Route
         path={adminPaths.admin._path}
         element={
-          <>
-            <nav className="admin">
-              <ul>
-                {adminNavigation.map((link) => (
-                  <li key={link.href}>
-                    <NavLink to={link.href}>{link.title}</NavLink>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          </>
+          <nav className="admin">
+            <NavigationList items={adminNavigation} />
+          </nav>
         }
       />
     </Routes>
