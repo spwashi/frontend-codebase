@@ -5,7 +5,7 @@ import {
   featureId__assetUploadForm,
 } from "@/features/ids";
 
-export type IAssetFeatureNames =
+export type IAssetFeatureID =
   | typeof featureId__assets
   | typeof featureId__assetDisplay
   | typeof featureId__assetDisplayForm

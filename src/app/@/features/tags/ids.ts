@@ -5,7 +5,7 @@ import {
   featureId__tagsDisplayForm,
 } from "@/features/ids";
 
-export type ITagFeatureNames =
+export type ITagFeatureID =
   | typeof featureId__tags
   | typeof featureId__tagDisplay
   | typeof featureId__tagCreateForm

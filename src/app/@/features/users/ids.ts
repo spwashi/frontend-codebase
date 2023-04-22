@@ -7,7 +7,7 @@ import {
   featureId__userSignupForm,
 } from "@/features/ids";
 
-export type IUserFeatureNames =
+export type IUserFeatureID =
   | typeof featureId__users
   | typeof featureId__userLogin
   | typeof featureId__userSignup

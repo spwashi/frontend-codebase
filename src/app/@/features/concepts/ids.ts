@@ -7,7 +7,7 @@ import {
   featureId__conceptTagForm,
 } from "@/features/ids";
 
-export type IConceptFeatureNames =
+export type IConceptFeatureID =
   | typeof featureId__concepts
   | typeof featureId__conceptDisplay
   | typeof featureId__conceptDisplayForm

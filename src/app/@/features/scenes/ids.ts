@@ -5,7 +5,7 @@ import {
   featureId__scenes,
 } from "@/features/ids";
 
-export type ISceneFeatureNames =
+export type ISceneFeatureID =
   | typeof featureId__scenes
   | typeof featureId__sceneDisplay
   | typeof featureId__sceneCreateForm

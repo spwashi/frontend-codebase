@@ -4,7 +4,7 @@ import {
   featureId__projects,
 } from "@/features/ids";
 
-export type IProjectFeatureNames =
+export type IProjectFeatureID =
   | typeof featureId__projects
   | typeof featureId__projectDisplay
   | typeof featureId__projectCreate;

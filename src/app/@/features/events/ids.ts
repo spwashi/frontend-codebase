@@ -7,7 +7,7 @@ import {
   featureId__eventTagForm,
 } from "@/features/ids";
 
-export type IEventFeatureNames =
+export type IEventFeatureID =
   | typeof featureId__events
   | typeof featureId__eventDisplay
   | typeof featureId__eventCreateForm

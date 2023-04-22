@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useMemo, useReducer } from "react";
 import { FeaturesRegistrationContext } from "@widgets/feature/context/group/context";
 import { appClassnames } from "@core/styles/classNames";
 import { FeatureInternalContext } from "../context/internal/context";
-import { IFeature } from "../types/feature";
+import { IFeature } from "../types";
 
 export type IFeatureProps = {
   name: IFeature["featureId"];

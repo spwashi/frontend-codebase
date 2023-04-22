@@ -3,8 +3,9 @@ import { Route } from "react-router";
 import React from "react";
 import { Feature } from "@widgets/feature";
 import {
-  featureId__adminControlPanelsPostLogin,
-  featureId__adminControlPanelsPreLogin,
+  featureId__adminPostLogin,
+  featureId__adminPreLogin,
+  featureIDs,
 } from "@/features/ids";
 import { routes } from "src/app/@/routes";
 import { UsersControlPanel } from "@features/users/behaviors/admin/components/UsersControlPanel";
@@ -35,12 +36,12 @@ export function AdminRoutes() {
               element={
                 <>
                   <LoginRequirement state={false}>
-                    <Feature name={featureId__adminControlPanelsPreLogin}>
+                    <Feature name={featureIDs.admin.prelogin_admin}>
                       <UsersControlPanel />
                     </Feature>
                   </LoginRequirement>
                   <LoginRequirement>
-                    <Feature name={featureId__adminControlPanelsPostLogin}>
+                    <Feature name={featureIDs.admin.postlogin_admin}>
                       <AssetsControlPanel />
                       <ConceptsControlPanel />
                       <EventsControlPanel />

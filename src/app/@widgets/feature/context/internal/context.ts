@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { IFeature } from "../../types/feature";
+import { IFeature } from "../../types";
 
 /**
  * Describes the internal state of a feature
