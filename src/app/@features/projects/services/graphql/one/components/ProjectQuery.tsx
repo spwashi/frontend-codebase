@@ -1,11 +1,11 @@
 import { useQuery } from "@apollo/client";
 import React, { useContext, useEffect } from "react";
 import { graphQlNodes } from "@/graphQlNodes";
-import { ProjectContext } from "../../../../context/context";
 import {
   Project,
   ProjectReferenceInput,
 } from '@generated/graphql';
+import { ProjectContext } from "../../../../context/context";
 
 export function ProjectQuery({ id }: ProjectReferenceInput) {
   const context = useContext(ProjectContext);

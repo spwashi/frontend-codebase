@@ -1,6 +1,6 @@
 import React from "react";
-import { useActiveProject } from "../../../../context/hooks/useActiveProject";
 import { Project } from '@generated/graphql';
+import { useActiveProject } from "../../../../context/hooks/useActiveProject";
 
 interface ProjectParams {
   project: Project;

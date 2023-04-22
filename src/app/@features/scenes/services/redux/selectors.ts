@@ -1,6 +1,6 @@
 import { IRootAppState } from "@core/types/IRootAppState";
-import { SceneOption } from "./types";
 import { Scene } from '@generated/graphql';
+import { SceneOption } from "./types";
 
 function sceneToOption(scene: Scene): SceneOption {
   return {

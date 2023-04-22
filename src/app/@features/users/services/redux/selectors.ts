@@ -1,6 +1,6 @@
 import { IRootAppState } from "@core/types/IRootAppState";
-import { UserOption } from "./types";
 import { User } from '@generated/graphql';
+import { UserOption } from "./types";
 
 function userToOption(user: User): UserOption {
   return {

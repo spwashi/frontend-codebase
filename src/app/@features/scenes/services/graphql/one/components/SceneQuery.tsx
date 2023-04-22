@@ -3,11 +3,11 @@ import React, { useContext, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { SceneContext } from "@features/scenes/context/context";
 import { graphQlNodes } from "@/graphQlNodes";
-import { ACTION_RECEIVE_ONE_SCENE } from "../../../redux/reducer";
 import {
   Scene,
   SceneReferenceInput,
 } from '@generated/graphql';
+import { ACTION_RECEIVE_ONE_SCENE } from "../../../redux/reducer";
 
 export function SceneQuery({ id }: SceneReferenceInput) {
   const context = useContext(SceneContext) ?? ({} as any);

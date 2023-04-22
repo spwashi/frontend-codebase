@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { ProjectContext } from "../context";
 import { Project } from '@generated/graphql';
+import { ProjectContext } from "../context";
 
 export function useActiveProject(): Project | null {
   const { project = null } = useContext(ProjectContext);

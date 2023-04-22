@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
 import { useDispatch } from "react-redux";
 import { useChangeEffect } from "@core/hooks/useChangeEffect";
+import { ProjectReferenceInput } from '@generated/graphql';
 import { ProjectGate } from "../../../context/ProjectGate";
 import { ProjectContext } from "../../../context/context";
 import { ACTION_PROJECT_SELECTED } from "../../redux/reducer";
 import { ActiveProject } from "./components/ProjectDisplay";
 import { ProjectQuery } from "./components/ProjectQuery";
-import { ProjectReferenceInput } from '@generated/graphql';
 
 function SiteProjectDeactivateButton() {
   const context = useContext(ProjectContext);

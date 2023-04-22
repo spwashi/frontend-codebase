@@ -3,11 +3,11 @@ import React, { useContext, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { ConceptContext } from "@features/concepts/context/context";
 import { graphQlNodes } from "@/graphQlNodes";
-import { ACTION_RECEIVE_ONE_CONCEPT } from "../../../redux/reducer";
 import {
   Concept,
   ConceptReferenceInput,
 } from '@generated/graphql';
+import { ACTION_RECEIVE_ONE_CONCEPT } from "../../../redux/reducer";
 
 function useConceptQuery(id: string): Concept | null {
   const { data } = useQuery(graphQlNodes.concept.fetch, {

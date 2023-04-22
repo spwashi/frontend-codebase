@@ -1,6 +1,6 @@
 import { IRootAppState } from "@core/types/IRootAppState";
-import { EventOption } from "./types";
 import { Event } from '@generated/graphql';
+import { EventOption } from "./types";
 
 function eventToOption(event: Event): EventOption {
   return {

@@ -3,8 +3,8 @@ import React, { useContext, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { EventContext } from "@features/events/context/context";
 import { graphQlNodes } from "@/graphQlNodes";
-import { ACTION_RECEIVE_ONE_EVENT } from "../../services/redux/reducer";
 import { Event } from '@generated/graphql';
+import { ACTION_RECEIVE_ONE_EVENT } from "../../services/redux/reducer";
 
 export function EventQuery(variables: { event: Event }) {
   const context = useContext(EventContext);

@@ -1,8 +1,8 @@
 import React from "react";
 import { ConceptGate } from "@features/concepts/context/ConceptGate";
+import { ConceptReferenceInput } from '@generated/graphql';
 import { ConceptContextDisplay } from "./components/ConceptDisplay";
 import { ConceptQuery } from "./components/ConceptQuery";
-import { ConceptReferenceInput } from '@generated/graphql';
 
 /**
  *

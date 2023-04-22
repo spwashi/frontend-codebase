@@ -3,8 +3,8 @@ import React, { useCallback } from "react";
 import { useMutation } from "@apollo/client";
 import { Log } from "@core/dev/components/Log";
 import { graphQlNodes } from "@/graphQlNodes";
-import { ACTION_DELETE_ONE_CONCEPT } from "../../../redux/reducer";
 import { DeleteConceptInput } from '@generated/graphql';
+import { ACTION_DELETE_ONE_CONCEPT } from "../../../redux/reducer";
 
 export function ConceptDeleteButton({ id }: DeleteConceptInput) {
   const [deleteConcept, { error }] = useMutation(graphQlNodes.concept.delete);

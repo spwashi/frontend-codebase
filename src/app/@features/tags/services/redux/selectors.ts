@@ -1,6 +1,6 @@
 import { IRootAppState } from "@core/types/IRootAppState";
-import { TagOption } from "./types";
 import { Tag } from '@generated/graphql';
+import { TagOption } from "./types";
 
 function tagToOption(tag: Tag): TagOption {
   return {

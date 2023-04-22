@@ -1,8 +1,8 @@
 import React from "react";
 import { SceneGate } from "@features/scenes/context/SceneGate";
+import { SceneReferenceInput } from '@generated/graphql';
 import { SceneContextDisplay } from "./components/SceneDisplay";
 import { SceneQuery } from "./components/SceneQuery";
-import { SceneReferenceInput } from '@generated/graphql';
 
 export function Scene({ id }: SceneReferenceInput) {
   if (!id) return null;

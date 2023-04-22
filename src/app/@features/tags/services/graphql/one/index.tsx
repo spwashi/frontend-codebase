@@ -5,13 +5,13 @@ import { selectLoggedInUser } from "@features/users/behaviors/login/redux/reduce
 import { Log } from "@core/dev/components/Log";
 import { graphQlNodes } from "@/graphQlNodes";
 import { TagGate } from "@features/tags/context/Provider";
-import { TagDisplay } from "./components/TagDisplay";
-import { TagQuery } from "./components/TagQuery";
 import { useActiveTag } from "@features/tags/context/hooks/useActiveTag";
 import {
   DeleteTagInput,
   TagReferenceInput,
 } from '@generated/graphql';
+import { TagDisplay } from "./components/TagDisplay";
+import { TagQuery } from "./components/TagQuery";
 
 function DeleteTag() {
   const tag = useActiveTag();

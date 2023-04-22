@@ -7,9 +7,9 @@ import {
   featureId__tagsDisplayForm,
 } from "@/featureIds";
 import { IFormContextState } from "@widgets/form/context/types/state";
+import { ITagContext } from "@features/tags/context/context";
 import { Tag } from "../../../services/graphql/one";
 import { form__selectTags } from "../../select/config";
-import { ITagContext } from "@features/tags/context/context";
 
 export function TagsDisplayFormFeature() {
   const [formState, setFormState] = useState<IFormContextState>();
