@@ -16,7 +16,7 @@ import { Route } from "react-router";
 import { persistor, store } from "@services/redux/store";
 import { Application } from "@core/components/Application";
 import { GRAPHQL_URL } from "@core/constants";
-import { FeatureRegistrationBoundary } from "@services/features/list/components/FeatureRegistrationBoundary";
+import { FeatureRegistrationBoundary } from "@widgets/feature";
 import { routes } from "src/app/@/routes";
 
 const httpLink = createHttpLink({ uri: GRAPHQL_URL });

@@ -5,7 +5,7 @@ import { SceneListQuery } from "@features/scenes/services/graphql/list/component
 import { LoginRequirement } from "@features/users/behaviors/login/components/gates/LoginRequirement";
 import { SceneCreateFormFeature } from "@features/scenes/behaviors/create/components/SceneCreateFormFeature";
 import { SceneEditFormFeature } from "@features/scenes/behaviors/edit/components/SceneEditFormFeature";
-import { FeatureRequirement } from "@services/features/list/components/FeatureRequirement";
+import { FeatureRequirement } from "@widgets/feature";
 import { featureId__sceneDisplay } from "@/features/ids";
 import { SceneDisplayFormFeature } from "@features/scenes/behaviors/display/components/SceneDisplayFormFeature";
 

@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { getFrbContextStartState } from "@services/features/list/helpers/getInitialState";
+import { getFrbContextStartState } from "@widgets/feature/context/group/helpers/getInitialState";
 import { IFeatureRegistrationContext } from "./types";
 
 /**
@@ -7,7 +7,5 @@ import { IFeatureRegistrationContext } from "./types";
  */
 export const FeaturesRegistrationContext = createContext({
   state: getFrbContextStartState(),
-  dispatch: () => {
-    console.log("dispatched");
-  },
+  dispatch: () => {},
 } as IFeatureRegistrationContext);

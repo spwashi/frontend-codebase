@@ -1,5 +1,5 @@
 import React from "react";
-import { Feature } from "@services/features/item/components/Feature";
+import { Feature } from "@widgets/feature";
 import { featureId__tagCreateForm } from "@/features/ids";
 import { TagCreateForm } from "./TagCreateForm";
 

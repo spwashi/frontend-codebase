@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Feature } from "@services/features/item/components/Feature";
+import { Feature } from "@widgets/feature";
 import { FormWidget } from "@widgets/form/FormWidget";
-import { FeatureRequirement } from "@services/features/list/components/FeatureRequirement";
+import { FeatureRequirement } from "@widgets/feature";
 import {
   featureId__tagDisplay,
   featureId__tagsDisplayForm,

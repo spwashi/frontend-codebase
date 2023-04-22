@@ -1,20 +1,20 @@
 import { Routes } from "react-router-dom";
 import { Route } from "react-router";
 import React from "react";
-import { Feature } from "@services/features/item/components/Feature";
+import { Feature } from "@widgets/feature";
 import {
   featureId__adminControlPanelsPostLogin,
   featureId__adminControlPanelsPreLogin,
 } from "@/features/ids";
 import { routes } from "src/app/@/routes";
-import { UsersControlPanel } from "../../../users/behaviors/admin/components/UsersControlPanel";
-import { ProjectsControlPanel } from "../../../projects/behaviors/admin/components/ProjectsControlPanel";
-import { ConceptsControlPanel } from "../../../concepts/behaviors/admin/components/ConceptsControlPanel";
-import { ScenesControlPanel } from "../../../scenes/behaviors/admin/components/ScenesControlPanel";
-import { EventsControlPanel } from "../../../events/behaviors/admin/components/EventsControlPanel";
-import { TagsControlPanel } from "../../../tags/behaviors/admin/components/TagsControlPanel";
-import { AssetsControlPanel } from "../../../assets/behaviors/admin/components/AssetsControlPanel";
-import { LoginRequirement } from "../../../users/behaviors/login/components/gates/LoginRequirement";
+import { UsersControlPanel } from "@features/users/behaviors/admin/components/UsersControlPanel";
+import { ProjectsControlPanel } from "@features/projects/behaviors/admin/components/ProjectsControlPanel";
+import { ConceptsControlPanel } from "@features/concepts/behaviors/admin/components/ConceptsControlPanel";
+import { ScenesControlPanel } from "@features/scenes/behaviors/admin/components/ScenesControlPanel";
+import { EventsControlPanel } from "@features/events/behaviors/admin/components/EventsControlPanel";
+import { TagsControlPanel } from "@features/tags/behaviors/admin/components/TagsControlPanel";
+import { AssetsControlPanel } from "@features/assets/behaviors/admin/components/AssetsControlPanel";
+import { LoginRequirement } from "@features/users/behaviors/login/components/gates/LoginRequirement";
 
 export function AdminRoutes() {
   return (

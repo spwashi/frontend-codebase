@@ -1,5 +1,5 @@
 import React from "react";
-import { FeatureRequirement } from "@services/features/list/components/FeatureRequirement";
+import { FeatureRequirement } from "@widgets/feature";
 import { featureId__events } from "@/features/ids";
 import { EventsAdminNavigation } from "@features/events/behaviors/admin/components/navigation/EventsAdminNavigation";
 import { EventsRequisiteFeatures } from "@features/events/behaviors/admin/components/features/EventsRequisiteFeatures";

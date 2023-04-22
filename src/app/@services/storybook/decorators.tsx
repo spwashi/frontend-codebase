@@ -10,7 +10,7 @@ import React from "react";
 import { persistor, store } from "@services/redux/store";
 import "../../@core/styles/app.scss";
 import { GRAPHQL_URL } from "@core/constants";
-import { FeatureRegistrationBoundary } from "@services/features/list/components/FeatureRegistrationBoundary";
+import { FeatureRegistrationBoundary } from "@widgets/feature";
 
 const httpLink = createHttpLink({ uri: GRAPHQL_URL });
 const client = new ApolloClient({ link: httpLink, cache: new InMemoryCache() });

@@ -3,8 +3,8 @@ import { useSelector } from "react-redux";
 import classNames from "classnames";
 import { appClassnames } from "@core/styles/classNames";
 import { useJwt } from "@services/jwt/hooks/useJwt";
-import { FeatureRegistrationBoundary } from "@services/features/list/components/FeatureRegistrationBoundary";
-import { IFeatureRegistrationContextState } from "@services/features/list/types";
+import { FeatureRegistrationBoundary } from "@widgets/feature";
+import { IFeatureRegistrationContextState } from "@widgets/feature/context/group/types";
 import { selectLoggedInUserName } from "../../redux/reducer";
 
 /**

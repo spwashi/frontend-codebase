@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import React from "react";
-import { Feature } from "@services/features/item/components/Feature";
+import { Feature } from "@widgets/feature";
 import { featureId__tagDisplay, featureId__tags } from "@/features/ids";
 import {
   selectPossibleTagOptions,

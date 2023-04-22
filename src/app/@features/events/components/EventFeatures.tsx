@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { Feature } from "@services/features/item/components/Feature";
+import { Feature } from "@widgets/feature";
 import { featureId__eventDisplay, featureId__events } from "@/features/ids";
 import {
   selectPossibleEventOptions,

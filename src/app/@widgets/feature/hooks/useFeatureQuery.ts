@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { TypedDocumentNode } from "@graphql-typed-document-node/core";
 import { useChangeEffect } from "@core/hooks/useChangeEffect";
-import { ACTION_GRAPHQL, ACTION_NOGRAPHQL } from "../../redux/reducer";
+import { ACTION_GRAPHQL, ACTION_NOGRAPHQL } from "@services/redux/reducer";
 
 export function useDispatchGraphqlError(error: any) {
   const dispatch = useDispatch();

@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   useDispatchGraphqlError,
   useFeatureQuery,
-} from "@services/features/hooks/useFeatureQuery";
+} from "@widgets/feature/hooks/useFeatureQuery";
 import { graphQlNodes } from "@/graphql/nodes";
 import {
   selectPossibleTagsLastFetched,

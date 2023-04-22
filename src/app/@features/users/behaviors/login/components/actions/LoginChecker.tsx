@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { IS_AUTHENTICATED_URL } from "@core/constants";
 import { useJwt } from "@services/jwt/hooks/useJwt";
-import { Feature } from "@services/features/item/components/Feature";
+import { Feature } from "@widgets/feature";
 import { logoutUser } from "@features/users/behaviors/logout/helpers/logoutUser";
 import { featureId__userLoginVerify } from "@/features/ids";
 

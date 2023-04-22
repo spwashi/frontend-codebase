@@ -1,6 +1,6 @@
 import React from "react";
-import { Feature } from "@services/features/item/components/Feature";
-import { FeatureRequirement } from "@services/features/list/components/FeatureRequirement";
+import { Feature } from "@widgets/feature";
+import { FeatureRequirement } from "@widgets/feature";
 import { TagListQuery } from "@features/tags/services/graphql/list/components/TagListQuery";
 import {
   featureId__conceptDisplay,

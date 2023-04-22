@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { Feature } from "@services/features/item/components/Feature";
-import { FeatureRequirement } from "@services/features/list/components/FeatureRequirement";
+import { Feature } from "@widgets/feature";
+import { FeatureRequirement } from "@widgets/feature";
 import { UserSignupForm } from "@features/users/behaviors/signup/components/forms/UserSignupForm";
 import {
   featureId__projectDisplay,

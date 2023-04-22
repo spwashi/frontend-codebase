@@ -1,6 +1,6 @@
 import React from "react";
 import { LoginRequirement } from "@features/users/behaviors/login/components/gates/LoginRequirement";
-import { Feature } from "@services/features/item/components/Feature";
+import { Feature } from "@widgets/feature";
 import { ConceptCreateForm } from "@features/concepts/behaviors/create/components/ConceptCreateForm";
 import { featureId__conceptCreateForm } from "@/features/ids";
 

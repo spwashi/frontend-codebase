@@ -1,5 +1,5 @@
 import React from "react";
-import { FeatureRequirement } from "@services/features/list/components/FeatureRequirement";
+import { FeatureRequirement } from "@widgets/feature";
 import { featureId__scenes } from "@/features/ids";
 import { ScenesAdminNavigation } from "@features/scenes/behaviors/admin/components/navigation/ScenesAdminNavigation";
 import { ScenesRequisiteFeatures } from "@features/scenes/behaviors/admin/components/features/ScenesRequisiteFeatures";

@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router";
 import React from "react";
-import { FeatureRequirement } from "@services/features/list/components/FeatureRequirement";
+import { FeatureRequirement } from "@widgets/feature";
 import { featureId__tags } from "@/features/ids";
 import { LoginRequirement } from "@features/users/behaviors/login/components/gates/LoginRequirement";
 import { TagCreateFormFeature } from "@features/tags/behaviors/create/components/TagCreateFormFeature";

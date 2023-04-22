@@ -1,4 +1,4 @@
-import { IFeatureRegistrationContextState } from "@services/features/list/types";
+import { IFeatureRegistrationContextState } from "@widgets/feature/context/group/types";
 
 export function getFrbContextStartState(
   { featuresDisabled }: { featuresDisabled?: boolean } = {

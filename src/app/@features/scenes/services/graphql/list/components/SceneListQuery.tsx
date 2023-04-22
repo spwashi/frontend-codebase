@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useFeatureQuery } from "@services/features/hooks/useFeatureQuery";
+import { useFeatureQuery } from "@widgets/feature/hooks/useFeatureQuery";
 import { graphQlNodes } from "@/graphql/nodes";
 import { ACTION_RECEIVE_ALL_SCENES } from "../../../redux/reducer";
 import {

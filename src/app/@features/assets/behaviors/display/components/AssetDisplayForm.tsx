@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FormWidget } from "@widgets/form/FormWidget";
-import { Feature } from "@services/features/item/components/Feature";
+import { Feature } from "@widgets/feature";
 import { form__selectLoggedInUser } from "@features/users/behaviors/select-loggedIn/config";
 import { getform__assetSelect } from "@features/assets/behaviors/select/config";
 import { LoginRequirement } from "@features/users/behaviors/login/components/gates/LoginRequirement";

@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Dev } from "@core/dev/components/Dev";
-import { FeaturesRegistrationContext } from "../context";
-import { IFeature } from "../../item/types";
+import { FeaturesRegistrationContext } from "../context/group/context";
+import { IFeature } from "../types/feature";
 
 type IFeatureRequirementProps = {
   name: IFeature["featureId"];
