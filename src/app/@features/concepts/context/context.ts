@@ -1,4 +1,4 @@
-import { createContext, useContext } from "react";
+import { createContext } from "react";
 import { Concept } from "../../../../__generated__/graphql";
 
 export type IConceptContext = {
@@ -10,9 +10,3 @@ export const ConceptContext = createContext<IConceptContext>({
   concept: null,
   setConcept() {},
 });
-
-export function useActiveConcept(): IConceptContext["concept"] {
-  const { concept } = useContext(ConceptContext);
-
-  return concept ?? null;
-}

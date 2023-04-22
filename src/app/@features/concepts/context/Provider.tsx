@@ -13,7 +13,7 @@ export function ConceptGate(params: IConceptContextProviderParams) {
 
   return (
     <ConceptContext.Provider value={context}>
-      {params.children}{" "}
+      {params.children}
     </ConceptContext.Provider>
   );
 }

@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { useDispatch } from "react-redux";
 import { IProjectIdentifyingPartial } from "@junction/models/project/models";
 import { useChangeEffect } from "@core/hooks/useChangeEffect";
-import { ProjectTemporaryContextProvider } from "../../../context/Provider";
+import { ProjectGate } from "../../../context/Provider";
 import { ProjectContext } from "../../../context/context";
 import { ACTION_PROJECT_SELECTED } from "../../redux/reducer";
 import { ActiveProject } from "./components/ProjectWidget";
@@ -42,11 +42,11 @@ function SiteProjectAutoActivator() {
  */
 export function SiteProjectController({ id }: IProjectIdentifyingPartial) {
   return (
-    <ProjectTemporaryContextProvider>
+    <ProjectGate>
       {id && <ProjectQuery id={id} />}
       <ActiveProject />
       <SiteProjectAutoActivator />
       <SiteProjectDeactivateButton />
-    </ProjectTemporaryContextProvider>
+    </ProjectGate>
   );
 }

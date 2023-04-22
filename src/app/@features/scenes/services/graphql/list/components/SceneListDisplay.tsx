@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import React from "react";
 import { selectSceneList } from "../../../redux/selectors";
-import { SceneDisplay } from "../../one/components/DisplayOne";
+import { SceneDisplay } from "../../one/components/SceneDisplay";
 import { ListQuery } from "./ListQuery";
 
 export function SceneListDisplay() {
