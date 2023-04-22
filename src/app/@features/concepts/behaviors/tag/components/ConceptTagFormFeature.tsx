@@ -2,12 +2,12 @@ import React from "react";
 import { Feature } from "@widgets/feature";
 import { FeatureRequirement } from "@widgets/feature";
 import { TagListQuery } from "@features/tags/services/graphql/list/components/TagListQuery";
+import { ConceptTagForm } from "./ConceptTagForm";
 import {
   featureId__conceptDisplay,
   featureId__conceptTagForm,
-  featureId__tagDisplay,
-} from "@/features/ids";
-import { ConceptTagForm } from "./ConceptTagForm";
+} from "@/features/concepts/ids";
+import { featureId__tagDisplay } from "@/features/tags/ids";
 
 export function ConceptTagFormFeature() {
   return (

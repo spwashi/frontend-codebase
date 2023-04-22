@@ -1,7 +1,7 @@
 import React from "react";
 import { Feature } from "@widgets/feature";
-import { featureId__tagCreateForm } from "@/features/ids";
 import { TagCreateForm } from "./TagCreateForm";
+import { featureId__tagCreateForm } from "@/features/tags/ids";
 
 export function TagCreateFormFeature() {
   return (

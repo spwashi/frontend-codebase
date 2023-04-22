@@ -1,8 +1,6 @@
-import { IConventionalFeatureID as id } from "@widgets/feature/types/id";
-
-export const tag: { [k: string]: id } = {
-  tags: "app--tags",
-  display: "app--tag-display",
-  create_form: "app--tag-create-form",
-  display_form: "app--tags-display-form",
+export default {
+  tags: "app--tags" as const,
+  display: "app--tag-display" as const,
+  create_form: "app--tag-create-form" as const,
+  display_form: "app--tags-display-form" as const,
 };

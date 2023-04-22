@@ -1,16 +1,8 @@
-import {
-  featureId__userLogin,
-  featureId__userLoginForm,
-  featureId__userLoginVerify,
-  featureId__users,
-  featureId__userSignup,
-  featureId__userSignupForm,
-} from "@/features/ids";
+import user from "@/features/users/user";
 
-export type IUserFeatureID =
-  | typeof featureId__users
-  | typeof featureId__userLogin
-  | typeof featureId__userSignup
-  | typeof featureId__userLoginVerify
-  | typeof featureId__userLoginForm
-  | typeof featureId__userSignupForm;
+export const featureId__users = user.users;
+export const featureId__userSignup = user.signup;
+export const featureId__userSignupForm = user.signup_form;
+export const featureId__userLogin = user.login;
+export const featureId__userLoginForm = user.login_form;
+export const featureId__userLoginVerify = user.login_verify;

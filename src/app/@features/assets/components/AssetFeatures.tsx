@@ -1,6 +1,7 @@
 import React from "react";
 import { Feature } from "@widgets/feature";
-import { featureId__assets } from "@/features/ids";
+
+import { featureId__assets } from "@/features/assets/ids";
 
 export function AssetFeatures() {
   return (

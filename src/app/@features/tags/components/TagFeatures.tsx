@@ -1,11 +1,11 @@
 import { useSelector } from "react-redux";
 import React from "react";
 import { Feature } from "@widgets/feature";
-import { featureId__tagDisplay, featureId__tags } from "@/features/ids";
 import {
   selectPossibleTagOptions,
   selectPossibleTagsLastFetched,
 } from "../services/redux/selectors";
+import { featureId__tagDisplay, featureId__tags } from "@/features/tags/ids";
 
 function TagDisplayFeature() {
   const lastFetched = useSelector(selectPossibleTagsLastFetched);

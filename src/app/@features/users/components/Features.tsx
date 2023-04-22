@@ -2,14 +2,14 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Feature } from "@widgets/feature";
 import {
-  featureId__userLogin,
-  featureId__users,
-  featureId__userSignup,
-} from "@/features/ids";
-import {
   selectPossibleUsersLastFetched,
   selectPossibleUsersOptions,
 } from "../services/redux/selectors";
+import {
+  featureId__userLogin,
+  featureId__users,
+  featureId__userSignup,
+} from "@/features/users/ids";
 
 const requireFetch = false;
 

@@ -4,7 +4,8 @@ import { IS_AUTHENTICATED_URL } from "@core/constants";
 import { useJwt } from "@services/jwt/hooks/useJwt";
 import { Feature } from "@widgets/feature";
 import { logoutUser } from "@features/users/behaviors/logout/helpers/logoutUser";
-import { featureId__userLoginVerify } from "@/features/ids";
+
+import { featureId__userLoginVerify } from "@/features/users/ids";
 
 /**
  * Checks the current jwt, logging out if the jwt is invalid

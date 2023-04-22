@@ -1,9 +1,9 @@
 import React from "react";
 import { FeatureRequirement } from "@widgets/feature";
-import { featureId__events } from "@/features/ids";
 import { EventsAdminNavigation } from "@features/events/behaviors/admin/components/navigation/EventsAdminNavigation";
 import { EventsRequisiteFeatures } from "@features/events/behaviors/admin/components/features/EventsRequisiteFeatures";
 import { EventsAdminRoutes } from "@features/events/behaviors/admin/components/routes/EventsAdminRoutes";
+import { featureId__events } from "@/features/events/ids";
 
 export function EventsControlPanel() {
   return (

@@ -2,11 +2,7 @@ import { Routes } from "react-router-dom";
 import { Route } from "react-router";
 import React from "react";
 import { Feature } from "@widgets/feature";
-import {
-  featureId__adminPostLogin,
-  featureId__adminPreLogin,
-  featureIDs,
-} from "@/features/ids";
+import { featureIDs } from "@/features/ids";
 import { routes } from "src/app/@/routes";
 import { UsersControlPanel } from "@features/users/behaviors/admin/components/UsersControlPanel";
 import { ProjectsControlPanel } from "@features/projects/behaviors/admin/components/ProjectsControlPanel";
@@ -16,6 +12,10 @@ import { EventsControlPanel } from "@features/events/behaviors/admin/components/
 import { TagsControlPanel } from "@features/tags/behaviors/admin/components/TagsControlPanel";
 import { AssetsControlPanel } from "@features/assets/behaviors/admin/components/AssetsControlPanel";
 import { LoginRequirement } from "@features/users/behaviors/login/components/gates/LoginRequirement";
+import {
+  featureId__adminPostLogin,
+  featureId__adminPreLogin,
+} from "@/features/admin/ids";
 
 export function AdminRoutes() {
   return (

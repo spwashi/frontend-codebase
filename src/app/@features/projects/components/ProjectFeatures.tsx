@@ -1,16 +1,16 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Feature } from "@widgets/feature";
-import {
-  featureId__projectCreate,
-  featureId__projectDisplay,
-  featureId__projects,
-} from "@/features/ids";
 import { AssetFeatures } from "@features/assets/components/AssetFeatures";
 import {
   selectPossibleProjectOptions,
   selectPossibleProjectsLastFetched,
 } from "../services/redux/selectors";
+import {
+  featureId__projectCreate,
+  featureId__projectDisplay,
+  featureId__projects,
+} from "@/features/projects/ids";
 
 function ProjectDisplayFeature() {
   const lastFetched = useSelector(selectPossibleProjectsLastFetched);

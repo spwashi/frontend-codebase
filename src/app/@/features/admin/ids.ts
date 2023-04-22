@@ -1,8 +1,4 @@
-import {
-  featureId__adminPostLogin,
-  featureId__adminPreLogin,
-} from "@/features/ids";
+import admin from "./admin";
 
-export type IAdminFeatureID =
-  | typeof featureId__adminPreLogin
-  | typeof featureId__adminPostLogin;
+export const featureId__adminPreLogin = admin.prelogin_admin;
+export const featureId__adminPostLogin = admin.postlogin_admin;

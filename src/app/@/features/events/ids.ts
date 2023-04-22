@@ -1,16 +1,8 @@
-import {
-  featureId__eventCreateForm,
-  featureId__eventDisplay,
-  featureId__eventDisplayForm,
-  featureId__eventEditForm,
-  featureId__events,
-  featureId__eventTagForm,
-} from "@/features/ids";
+import event from "@/features/events/event";
 
-export type IEventFeatureID =
-  | typeof featureId__events
-  | typeof featureId__eventDisplay
-  | typeof featureId__eventCreateForm
-  | typeof featureId__eventEditForm
-  | typeof featureId__eventTagForm
-  | typeof featureId__eventDisplayForm;
+export const featureId__events = event.events;
+export const featureId__eventDisplay = event.display;
+export const featureId__eventCreateForm = event.create_form;
+export const featureId__eventEditForm = event.edit_form;
+export const featureId__eventTagForm = event.tag_form;
+export const featureId__eventDisplayForm = event.display_form;

@@ -1,12 +1,6 @@
-import {
-  featureId__assetDisplay,
-  featureId__assetDisplayForm,
-  featureId__assets,
-  featureId__assetUploadForm,
-} from "@/features/ids";
+import asset from "@/features/assets/asset";
 
-export type IAssetFeatureID =
-  | typeof featureId__assets
-  | typeof featureId__assetDisplay
-  | typeof featureId__assetDisplayForm
-  | typeof featureId__assetUploadForm;
+export const featureId__assets = asset.assets;
+export const featureId__assetDisplay = asset.display;
+export const featureId__assetDisplayForm = asset.display_form;
+export const featureId__assetUploadForm = asset.upload_form;

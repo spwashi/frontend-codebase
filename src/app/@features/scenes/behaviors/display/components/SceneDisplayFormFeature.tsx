@@ -3,9 +3,9 @@ import { FormWidget } from "@widgets/form/FormWidget";
 
 import { FeatureRequirement } from "@widgets/feature";
 import { form__selectScene } from "@features/scenes/behaviors/select/config";
-import { featureId__sceneDisplay } from "@/features/ids";
 import { IFormContextState } from "@widgets/form/context/types/state";
 import { Scene } from "../../../services/graphql/one/Scene";
+import { featureId__sceneDisplay } from "@/features/scenes/ids";
 
 export function SceneDisplayFormFeature() {
   const [formState, setFormState] = useState<IFormContextState>();

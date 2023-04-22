@@ -4,12 +4,12 @@ import { Feature } from "@widgets/feature";
 import { form__selectLoggedInUser } from "@features/users/behaviors/select-loggedIn/config";
 import { getform__assetSelect } from "@features/assets/behaviors/select/config";
 import { LoginRequirement } from "@features/users/behaviors/login/components/gates/LoginRequirement";
+import { IFormContextState } from "@widgets/form/context/types/state";
+import { AssetQuery } from "../../../services/graphql/one/components/AssetQuery";
 import {
   featureId__assetDisplay,
   featureId__assetDisplayForm,
-} from "@/features/ids";
-import { IFormContextState } from "@widgets/form/context/types/state";
-import { AssetQuery } from "../../../services/graphql/one/components/AssetQuery";
+} from "@/features/assets/ids";
 
 /**
  * Selects an asset to display, then displays it

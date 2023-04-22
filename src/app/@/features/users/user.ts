@@ -1,10 +1,9 @@
 import { IConventionalFeatureID as id } from "@widgets/feature/types/id";
-
-export const user: { [k: string]: id } = {
-  users: "app--users",
-  signup: "app--user-signup",
-  signup_form: "app--user-signup-form",
-  login: "app--user-login",
-  login_form: "app--user-login-form",
-  login_verify: "app--user-login-verify",
+export default {
+  users: "app--users" as const,
+  signup: "app--user-signup" as const,
+  signup_form: "app--user-signup-form" as const,
+  login: "app--user-login" as const,
+  login_form: "app--user-login-form" as const,
+  login_verify: "app--user-login-verify" as const,
 };

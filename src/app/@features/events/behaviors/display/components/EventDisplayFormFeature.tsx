@@ -4,13 +4,13 @@ import { FormWidget } from "@widgets/form/FormWidget";
 import { FeatureRequirement } from "@widgets/feature";
 import { EventListQuery } from "@features/events/components/query/EventListQuery";
 import { form__selectEvent } from "@features/events/behaviors/select/config";
-import {
-  featureId__eventDisplay,
-  featureId__eventDisplayForm,
-} from "@/features/ids";
 import { IFormContextState } from "@widgets/form/context/types/state";
 import { IEventContext } from "@features/events/context/context";
 import { Event } from "../../../services/graphql/one/Event";
+import {
+  featureId__eventDisplay,
+  featureId__eventDisplayForm,
+} from "@/features/events/ids";
 
 export function EventDisplayFormFeature() {
   const [formState, setFormState] =

@@ -2,12 +2,12 @@ import React from "react";
 import { Feature } from "@widgets/feature";
 import { FeatureRequirement } from "@widgets/feature";
 import { TagListQuery } from "@features/tags/services/graphql/list/components/TagListQuery";
+import { EventTagForm } from "./EventTagForm";
 import {
   featureId__eventDisplay,
   featureId__eventTagForm,
-  featureId__tagDisplay,
-} from "@/features/ids";
-import { EventTagForm } from "./EventTagForm";
+} from "@/features/events/ids";
+import { featureId__tagDisplay } from "@/features/tags/ids";
 
 export function EventTagFormFeature() {
   return (

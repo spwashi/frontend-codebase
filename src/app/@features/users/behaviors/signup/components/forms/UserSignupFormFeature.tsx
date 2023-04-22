@@ -3,12 +3,12 @@ import { useSelector } from "react-redux";
 import { Feature } from "@widgets/feature";
 import { FeatureRequirement } from "@widgets/feature";
 import { UserSignupForm } from "@features/users/behaviors/signup/components/forms/UserSignupForm";
+import { selectLoggedInUserName } from "../../../login/redux/reducer";
+import { featureId__projectDisplay } from "@/features/projects/ids";
 import {
-  featureId__projectDisplay,
   featureId__userSignup,
   featureId__userSignupForm,
-} from "@/features/ids";
-import { selectLoggedInUserName } from "../../../login/redux/reducer";
+} from "@/features/users/ids";
 
 export function UserSignupFormFeature() {
   const loggedInUser = useSelector(selectLoggedInUserName);

@@ -1,5 +1,5 @@
-import { IExtantFeatureID } from "@/features/types";
 import { IConventionalFeatureID } from "@widgets/feature/types/id";
 
-type IRealFeatureID = IConventionalFeatureID & IExtantFeatureID;
+// todo
+type IRealFeatureID = IConventionalFeatureID;
 export type IFeature = { featureId: IRealFeatureID };

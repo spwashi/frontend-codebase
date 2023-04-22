@@ -1,16 +1,8 @@
-import {
-  featureId__conceptCreateForm,
-  featureId__conceptDisplay,
-  featureId__conceptDisplayForm,
-  featureId__conceptEditForm,
-  featureId__concepts,
-  featureId__conceptTagForm,
-} from "@/features/ids";
+import concept from "@/features/concepts/concept";
 
-export type IConceptFeatureID =
-  | typeof featureId__concepts
-  | typeof featureId__conceptDisplay
-  | typeof featureId__conceptDisplayForm
-  | typeof featureId__conceptCreateForm
-  | typeof featureId__conceptEditForm
-  | typeof featureId__conceptTagForm;
+export const featureId__concepts = concept.concepts;
+export const featureId__conceptDisplay = concept.display;
+export const featureId__conceptDisplayForm = concept.display_form;
+export const featureId__conceptCreateForm = concept.create_form;
+export const featureId__conceptEditForm = concept.edit_form;
+export const featureId__conceptTagForm = concept.tag_form;
