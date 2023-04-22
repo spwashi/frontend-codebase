@@ -5,7 +5,7 @@ import {
   featureId__projectCreate,
   featureId__projectDisplay,
   featureId__projects,
-} from '@/featureIds';
+} from "@/features/ids";
 import { AssetFeatures } from "@features/assets/components/AssetFeatures";
 import {
   selectPossibleProjectOptions,

@@ -2,11 +2,8 @@ import { useQuery } from "@apollo/client";
 import React, { useContext, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { ConceptContext } from "@features/concepts/context/context";
-import { graphQlNodes } from "@/graphQlNodes";
-import {
-  Concept,
-  ConceptReferenceInput,
-} from '@generated/graphql';
+import { graphQlNodes } from "@/graphql/nodes";
+import { Concept, ConceptReferenceInput } from "@generated/graphql";
 import { ACTION_RECEIVE_ONE_CONCEPT } from "../../../redux/reducer";
 
 function useConceptQuery(id: string): Concept | null {

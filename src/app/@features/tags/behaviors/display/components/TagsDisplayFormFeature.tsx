@@ -5,7 +5,7 @@ import { FeatureRequirement } from "@services/features/list/components/FeatureRe
 import {
   featureId__tagDisplay,
   featureId__tagsDisplayForm,
-} from "@/featureIds";
+} from "@/features/ids";
 import { IFormContextState } from "@widgets/form/context/types/state";
 import { ITagContext } from "@features/tags/context/context";
 import { Tag } from "../../../services/graphql/one";

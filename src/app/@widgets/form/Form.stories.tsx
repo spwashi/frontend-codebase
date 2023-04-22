@@ -5,7 +5,7 @@ import { IFormConfig } from "@widgets/form/types/IFormConfig";
 import {
   formId__basicExampleFormForm,
   formId__basicExampleFormSubform,
-} from '@/formIds';
+} from "@/forms/ids";
 import { FormWidget } from "./FormWidget";
 
 const meta: Meta = {

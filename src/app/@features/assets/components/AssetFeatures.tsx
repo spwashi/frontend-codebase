@@ -1,6 +1,6 @@
 import React from "react";
 import { Feature } from "@services/features/item/components/Feature";
-import { featureId__assets } from '@/featureIds';
+import { featureId__assets } from "@/features/ids";
 
 export function AssetFeatures() {
   return (

@@ -3,7 +3,7 @@ import { useMutationForm } from "@services/graphql/hooks/useMutationForm";
 import { FormWidget } from "@widgets/form/FormWidget";
 import { form__createScene } from "@features/scenes/behaviors/create/config";
 import { GraphqlMutationResponse } from "@services/graphql/components/api/GraphqlMutationResponse";
-import { graphQlNodes } from "@/graphQlNodes";
+import { graphQlNodes } from "@/graphql/nodes";
 
 export function SceneCreateForm() {
   const [onsubmit, response] = useMutationForm(

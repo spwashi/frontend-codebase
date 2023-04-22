@@ -2,7 +2,7 @@ import {
   featureId__projectCreate,
   featureId__projectDisplay,
   featureId__projects,
-} from '@/featureIds';
+} from "@/features/ids";
 
 export type IProjectFeatureNames =
   | typeof featureId__projects

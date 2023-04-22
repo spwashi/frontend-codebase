@@ -6,7 +6,7 @@ import {
   featureId__conceptDisplay,
   featureId__conceptTagForm,
   featureId__tagDisplay,
-} from "@/featureIds";
+} from "@/features/ids";
 import { ConceptTagForm } from "./ConceptTagForm";
 
 export function ConceptTagFormFeature() {

@@ -1,7 +1,7 @@
 import {
   featureId__adminControlPanelsPostLogin,
   featureId__adminControlPanelsPreLogin,
-} from '@/featureIds';
+} from "@/features/ids";
 
 export type IAdminFeatureNames =
   | typeof featureId__adminControlPanelsPreLogin

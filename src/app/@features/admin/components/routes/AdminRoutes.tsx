@@ -5,7 +5,7 @@ import { Feature } from "@services/features/item/components/Feature";
 import {
   featureId__adminControlPanelsPostLogin,
   featureId__adminControlPanelsPreLogin,
-} from "@/featureIds";
+} from "@/features/ids";
 import { routes } from "src/app/@/routes";
 import { UsersControlPanel } from "../../../users/behaviors/admin/components/UsersControlPanel";
 import { ProjectsControlPanel } from "../../../projects/behaviors/admin/components/ProjectsControlPanel";
@@ -15,7 +15,6 @@ import { EventsControlPanel } from "../../../events/behaviors/admin/components/E
 import { TagsControlPanel } from "../../../tags/behaviors/admin/components/TagsControlPanel";
 import { AssetsControlPanel } from "../../../assets/behaviors/admin/components/AssetsControlPanel";
 import { LoginRequirement } from "../../../users/behaviors/login/components/gates/LoginRequirement";
-
 
 export function AdminRoutes() {
   return (

@@ -7,7 +7,7 @@ import { LoginRequirement } from "@features/users/behaviors/login/components/gat
 import {
   featureId__assetDisplay,
   featureId__assetDisplayForm,
-} from "@/featureIds";
+} from "@/features/ids";
 import { IFormContextState } from "@widgets/form/context/types/state";
 import { AssetQuery } from "../../../services/graphql/one/components/AssetQuery";
 

@@ -5,7 +5,7 @@ import {
   featureId__conceptEditForm,
   featureId__concepts,
   featureId__conceptTagForm,
-} from '@/featureIds';
+} from "@/features/ids";
 
 export type IConceptFeatureNames =
   | typeof featureId__concepts

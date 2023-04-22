@@ -1,7 +1,7 @@
 import { makeFieldRequired } from "@widgets/form/features/fields/helpers/makeFieldRequired";
 
 import { IFormConfig } from "@widgets/form/types/IFormConfig";
-import { formId__eventCreate } from '@/formIds';
+import { formId__eventCreate } from "@/forms/ids";
 import {
   descriptionInput,
   endInput,

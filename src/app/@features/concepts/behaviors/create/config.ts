@@ -1,7 +1,7 @@
 import { setFieldValue } from "@widgets/form/features/fields/helpers/setFieldValue";
 import { makeFieldRequired } from "@widgets/form/features/fields/helpers/makeFieldRequired";
 import { IFormConfig } from "@widgets/form/types/IFormConfig";
-import { formId__conceptCreate } from '@/formIds';
+import { formId__conceptCreate } from "@/forms/ids";
 import {
   contentTypeInput,
   srcInput,

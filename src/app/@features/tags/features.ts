@@ -3,7 +3,7 @@ import {
   featureId__tagDisplay,
   featureId__tags,
   featureId__tagsDisplayForm,
-} from '@/featureIds';
+} from "@/features/ids";
 
 export type ITagFeatureNames =
   | typeof featureId__tags

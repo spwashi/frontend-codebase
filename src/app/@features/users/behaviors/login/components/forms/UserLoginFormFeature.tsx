@@ -4,7 +4,7 @@ import { Feature } from "@services/features/item/components/Feature";
 
 import { FeatureRequirement } from "@services/features/list/components/FeatureRequirement";
 import { UserLoginForm } from "@features/users/behaviors/login/components/forms/UserLoginForm";
-import { featureId__userLogin, featureId__userLoginForm } from "@/featureIds";
+import { featureId__userLogin, featureId__userLoginForm } from "@/features/ids";
 import { selectLoggedInUserName } from "../../redux/reducer";
 
 export function UserLoginFormFeature({ alt }: { alt?: any }) {

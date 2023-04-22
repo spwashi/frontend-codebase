@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useFeatureQuery } from "@services/features/hooks/useFeatureQuery";
-import { graphQlNodes } from "@/graphQlNodes";
+import { graphQlNodes } from "@/graphql/nodes";
 import { ACTION_RECEIVE_ALL_CONCEPTS } from "../../../redux/reducer";
 import {
   selectConceptStateKey,

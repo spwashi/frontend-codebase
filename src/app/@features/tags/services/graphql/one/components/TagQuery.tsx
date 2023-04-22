@@ -1,11 +1,8 @@
 import { useQuery } from "@apollo/client";
 import React, { useContext, useEffect } from "react";
-import { graphQlNodes } from "@/graphQlNodes";
+import { graphQlNodes } from "@/graphql/nodes";
 import { TagContext } from "@features/tags/context/context";
-import {
-  Tag,
-  TagReferenceInput,
-} from '@generated/graphql';
+import { Tag, TagReferenceInput } from "@generated/graphql";
 
 export function TagQuery({ id }: TagReferenceInput) {
   const context = useContext(TagContext) ?? ({} as any);

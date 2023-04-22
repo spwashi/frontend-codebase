@@ -4,7 +4,7 @@ import {
   useDispatchGraphqlError,
   useFeatureQuery,
 } from "@services/features/hooks/useFeatureQuery";
-import { graphQlNodes } from '@/graphQlNodes';
+import { graphQlNodes } from "@/graphql/nodes";
 import {
   selectPossibleTagsLastFetched,
   selectTagStateKey,

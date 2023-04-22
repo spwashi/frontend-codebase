@@ -1,7 +1,7 @@
 import React from "react";
 import { Feature } from "@services/features/item/components/Feature";
 import { SceneCreateForm } from "@features/scenes/behaviors/create/components/SceneCreateForm";
-import { featureId__sceneCreateForm } from '@/featureIds';
+import { featureId__sceneCreateForm } from "@/features/ids";
 
 export function SceneCreateFormFeature() {
   return (

@@ -6,7 +6,7 @@ import {
   featureId__eventDisplay,
   featureId__eventTagForm,
   featureId__tagDisplay,
-} from "@/featureIds";
+} from "@/features/ids";
 import { EventTagForm } from "./EventTagForm";
 
 export function EventTagFormFeature() {

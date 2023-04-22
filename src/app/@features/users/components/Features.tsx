@@ -5,7 +5,7 @@ import {
   featureId__userLogin,
   featureId__users,
   featureId__userSignup,
-} from '@/featureIds';
+} from "@/features/ids";
 import {
   selectPossibleUsersLastFetched,
   selectPossibleUsersOptions,

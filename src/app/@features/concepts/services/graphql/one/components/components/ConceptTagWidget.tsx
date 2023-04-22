@@ -1,10 +1,7 @@
 import React from "react";
 import { useMutation } from "@apollo/client";
-import { graphQlNodes } from '@/graphQlNodes';
-import {
-  ConceptReferenceInput,
-  Tag,
-} from '@generated/graphql';
+import { graphQlNodes } from "@/graphql/nodes";
+import { ConceptReferenceInput, Tag } from "@generated/graphql";
 
 type IConceptTagWidgetParams = {
   tag: Tag;

@@ -3,7 +3,7 @@ import {
   featureId__assetDisplayForm,
   featureId__assets,
   featureId__assetUploadForm,
-} from '@/featureIds';
+} from "@/features/ids";
 
 export type IAssetFeatureNames =
   | typeof featureId__assets

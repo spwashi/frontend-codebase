@@ -3,13 +3,10 @@ import { useMutation } from "@apollo/client";
 import { useSelector } from "react-redux";
 import { selectLoggedInUser } from "@features/users/behaviors/login/redux/reducer";
 import { Log } from "@core/dev/components/Log";
-import { graphQlNodes } from "@/graphQlNodes";
+import { graphQlNodes } from "@/graphql/nodes";
 import { TagGate } from "@features/tags/context/Provider";
 import { useActiveTag } from "@features/tags/context/hooks/useActiveTag";
-import {
-  DeleteTagInput,
-  TagReferenceInput,
-} from '@generated/graphql';
+import { DeleteTagInput, TagReferenceInput } from "@generated/graphql";
 import { TagDisplay } from "./components/TagDisplay";
 import { TagQuery } from "./components/TagQuery";
 

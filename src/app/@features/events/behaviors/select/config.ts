@@ -1,6 +1,6 @@
 import { IFormConfig } from "@widgets/form/types/IFormConfig";
 import { eventInput } from "@features/events/data/config/inputs";
-import { formId__eventSelect } from '@/formIds';
+import { formId__eventSelect } from "@/forms/ids";
 
 export const form__selectEvent: IFormConfig = {
   title: "Select Event",

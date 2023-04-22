@@ -5,7 +5,7 @@ import {
   featureId__users,
   featureId__userSignup,
   featureId__userSignupForm,
-} from '@/featureIds';
+} from "@/features/ids";
 
 export type IUserFeatureNames =
   | typeof featureId__users

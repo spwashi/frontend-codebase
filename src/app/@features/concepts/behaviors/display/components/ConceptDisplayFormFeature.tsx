@@ -5,7 +5,7 @@ import { FeatureRequirement } from "@services/features/list/components/FeatureRe
 import {
   featureId__conceptDisplay,
   featureId__conceptDisplayForm,
-} from "@/featureIds";
+} from "@/features/ids";
 import { IFormContextState } from "@widgets/form/context/types/state";
 import { Concept } from "../../../services/graphql/one";
 import { form__selectConcept } from "../../select/config";

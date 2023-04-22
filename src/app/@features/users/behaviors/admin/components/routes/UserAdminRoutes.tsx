@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router";
 import React from "react";
 import { FeatureRequirement } from "@services/features/list/components/FeatureRequirement";
-import { featureId__userLogin, featureId__users } from "@/featureIds";
+import { featureId__userLogin, featureId__users } from "@/features/ids";
 import { UserLogoutButton } from "@features/users/behaviors/logout/components/buttons/UserLogoutButton";
 import { LoginChecker } from "@features/users/behaviors/login/components/actions/LoginChecker";
 import { LoginRequirement } from "@features/users/behaviors/login/components/gates/LoginRequirement";

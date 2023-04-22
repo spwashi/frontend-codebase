@@ -1,10 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Feature } from "@services/features/item/components/Feature";
-import {
-  featureId__eventDisplay,
-  featureId__events,
-} from '@/featureIds';
+import { featureId__eventDisplay, featureId__events } from "@/features/ids";
 import {
   selectPossibleEventOptions,
   selectPossibleEventsLastFetched,

@@ -1,5 +1,5 @@
 import { IFormConfig } from "@widgets/form/types/IFormConfig";
-import { formId__eventEdit } from '@/formIds';
+import { formId__eventEdit } from "@/forms/ids";
 import {
   descriptionInput,
   endInput,
@@ -8,7 +8,6 @@ import {
   titleInput,
   userInput,
 } from "../../data/config/inputs";
-
 
 export const form__editEvent: IFormConfig = {
   title: "Edit Event",
