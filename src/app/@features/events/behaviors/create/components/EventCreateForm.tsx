@@ -4,7 +4,7 @@ import { selectCreateEventInput } from "@features/events/behaviors/create/select
 import { FormWidget } from "@widgets/form/FormWidget";
 import { form__createEvent } from "@features/events/behaviors/create/config";
 import { GraphqlMutationResponse } from "@services/graphql/components/api/GraphqlMutationResponse";
-import { graphQlNodes } from "../../../../../@/graphQlNodes";
+import { graphQlNodes } from '@/graphQlNodes';
 
 export function EventCreateForm() {
   const [onsubmit, response] = useMutationForm(

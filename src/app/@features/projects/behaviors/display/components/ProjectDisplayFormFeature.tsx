@@ -5,7 +5,7 @@ import { FeatureRequirement } from "@services/features/list/components/FeatureRe
 import { form__selectProject } from "@features/projects/behaviors/select/config";
 import { SiteProjectController } from "../../../services/graphql/one";
 import { selectProjectStateProject } from "../../../services/redux/selectors";
-import { featureId__projectDisplay } from "../../../../../@/featureIds";
+import { featureId__projectDisplay } from '@/featureIds';
 import { IFormContextState } from "@widgets/form/context/types/state";
 
 export function ProjectDisplayFormFeature() {

@@ -7,7 +7,7 @@ import {
   selectConceptStateKey,
   selectPossibleConceptsLastFetched,
 } from "../../../redux/selectors";
-import { graphQlNodes } from "../../../../../../@/graphQlNodes";
+import { graphQlNodes } from '@/graphQlNodes';
 
 export function ConceptListQuery() {
   const stateKey = useSelector(selectConceptStateKey);

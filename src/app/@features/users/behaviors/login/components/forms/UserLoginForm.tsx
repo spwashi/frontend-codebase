@@ -5,7 +5,7 @@ import { LoginReceiver } from "@features/users/behaviors/login/components/action
 import { FormWidget } from "@widgets/form/FormWidget";
 import { form__login } from "@features/users/behaviors/login/config";
 import { GraphqlMutationResponse } from "@services/graphql/components/api/GraphqlMutationResponse";
-import { graphQlNodes } from "../../../../../../@/graphQlNodes";
+import { graphQlNodes } from '@/graphQlNodes';
 
 export function UserLoginForm() {
   const [onsubmit, response] = useMutationForm(

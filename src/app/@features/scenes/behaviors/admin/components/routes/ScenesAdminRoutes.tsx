@@ -6,7 +6,7 @@ import { LoginRequirement } from "@features/users/behaviors/login/components/gat
 import { SceneCreateFormFeature } from "@features/scenes/behaviors/create/components/SceneCreateFormFeature";
 import { SceneEditFormFeature } from "@features/scenes/behaviors/edit/components/SceneEditFormFeature";
 import { FeatureRequirement } from "@services/features/list/components/FeatureRequirement";
-import { featureId__sceneDisplay } from "../../../../../../@/featureIds";
+import { featureId__sceneDisplay } from '@/featureIds';
 import { SceneDisplayFormFeature } from "@features/scenes/behaviors/display/components/SceneDisplayFormFeature";
 
 export function ScenesAdminRoutes() {

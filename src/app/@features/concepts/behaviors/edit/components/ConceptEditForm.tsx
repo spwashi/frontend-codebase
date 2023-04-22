@@ -4,7 +4,7 @@ import { useConceptEditForm } from "@features/concepts/behaviors/edit/hooks/useC
 import { FormWidget } from "@widgets/form/FormWidget";
 import { form__editConcept } from "@features/concepts/behaviors/edit/config";
 import { GraphqlMutationResponse } from "@services/graphql/components/api/GraphqlMutationResponse";
-import { graphQlNodes } from "../../../../../@/graphQlNodes";
+import { graphQlNodes } from '@/graphQlNodes';
 
 export function ConceptEditForm() {
   const [onsubmit, response] = useMutationForm(

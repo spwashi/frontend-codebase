@@ -5,7 +5,7 @@ import {
   projectInput,
 } from "@features/users/data/config/inputs";
 import { makeFieldRequired } from "@widgets/form/features/fields/helpers/makeFieldRequired";
-import { formId__userLogin } from "../../../../@/formIds";
+import { formId__userLogin } from '@/formIds';
 
 export const form__login: IFormConfig = {
   title: "Log In",

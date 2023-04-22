@@ -14,7 +14,7 @@ import { LoginRequirement } from "../../../users/behaviors/login/components/gate
 import {
   featureId__adminControlPanelsPostLogin,
   featureId__adminControlPanelsPreLogin,
-} from "../../../../@/featureIds";
+} from '@/featureIds';
 
 export function AdminRoutes() {
   return (

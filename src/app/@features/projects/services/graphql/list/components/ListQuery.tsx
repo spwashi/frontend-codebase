@@ -7,7 +7,7 @@ import {
   selectPossibleProjectsLastFetched,
   selectProjectStateKey,
 } from "../../../redux/selectors";
-import { graphQlNodes } from "../../../../../../@/graphQlNodes";
+import { graphQlNodes } from '@/graphQlNodes';
 
 export function ProjectListQuery() {
   const projectStateKey = useSelector(selectProjectStateKey);

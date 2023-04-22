@@ -1,7 +1,7 @@
 import { useQuery } from "@apollo/client";
 import { useMemo } from "react";
 import { IAsset } from "@junction/models/asset/models";
-import { graphQlNodes } from "../../../@/graphQlNodes";
+import { graphQlNodes } from '@/graphQlNodes';
 
 export function usePossibleAssetOptions(username: string) {
   const { data: query } = useQuery(graphQlNodes.asset.fetchList, {

@@ -3,7 +3,7 @@ import { GraphqlMutationResponse } from "@services/graphql/components/api/Graphq
 import { useMutationForm } from "@services/graphql/hooks/useMutationForm";
 import { FormWidget } from "@widgets/form/FormWidget";
 import { form__tagEvent } from "../config";
-import { graphQlNodes } from "../../../../../@/graphQlNodes";
+import { graphQlNodes } from '@/graphQlNodes';
 
 export function EventTagForm() {
   const [onsubmit, response] = useMutationForm(

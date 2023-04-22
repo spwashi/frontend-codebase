@@ -9,7 +9,7 @@ import {
   featureId__projectCreate,
   featureId__projectDisplay,
   featureId__projects,
-} from "../../../@/featureIds";
+} from '@/featureIds';
 import { AssetFeatures } from "@features/assets/components/AssetFeatures";
 
 function ProjectDisplayFeature() {

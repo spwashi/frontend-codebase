@@ -7,7 +7,7 @@ import {
   selectPossibleScenesLastFetched,
   selectSceneStateKey,
 } from "../../../redux/selectors";
-import { graphQlNodes } from "../../../../../../@/graphQlNodes";
+import { graphQlNodes } from '@/graphQlNodes';
 
 export function ListQuery() {
   const stateKey = useSelector(selectSceneStateKey);

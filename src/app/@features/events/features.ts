@@ -5,7 +5,7 @@ import {
   featureId__eventEditForm,
   featureId__events,
   featureId__eventTagForm,
-} from "../../@/featureIds";
+} from '@/featureIds';
 
 export type IEventFeatureNames =
   | typeof featureId__events

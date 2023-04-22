@@ -8,7 +8,7 @@ import { form__selectTags } from "../../select/config";
 import {
   featureId__tagDisplay,
   featureId__tagsDisplayForm,
-} from "../../../../../@/featureIds";
+} from '@/featureIds';
 import { IFormContextState } from "@widgets/form/context/types/state";
 
 export function TagsDisplayFormFeature() {

@@ -5,7 +5,7 @@ import {
   IProjectIdentifyingPartial,
 } from "@junction/models/project/models";
 import { ProjectContext } from "../../../../context/context";
-import { graphQlNodes } from "../../../../../../@/graphQlNodes";
+import { graphQlNodes } from '@/graphQlNodes';
 
 export function ProjectQuery({ id }: IProjectIdentifyingPartial) {
   const context = useContext(ProjectContext);

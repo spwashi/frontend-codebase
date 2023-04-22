@@ -4,7 +4,7 @@ import { FormWidget } from "@widgets/form/FormWidget";
 import { GraphqlMutationResponse } from "@services/graphql/components/api/GraphqlMutationResponse";
 import { selectCreateTagInput } from "../selectors";
 import { form__createTag } from "../config";
-import { graphQlNodes } from "../../../../../@/graphQlNodes";
+import { graphQlNodes } from '@/graphQlNodes';
 
 export function TagCreateForm() {
   const [onsubmit, response] = useMutationForm(

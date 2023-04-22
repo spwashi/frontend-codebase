@@ -8,7 +8,7 @@ import {
 import {
   featureId__conceptDisplay,
   featureId__concepts,
-} from "../../../@/featureIds";
+} from '@/featureIds';
 
 function ConceptDisplayFeature() {
   const lastFetched = useSelector(selectPossibleConceptsLastFetched);

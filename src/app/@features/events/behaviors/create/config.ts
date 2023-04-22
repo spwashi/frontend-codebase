@@ -8,7 +8,7 @@ import {
   titleInput,
   userInput,
 } from "../../data/config/inputs";
-import { formId__eventCreate } from "../../../../@/formIds";
+import { formId__eventCreate } from '@/formIds';
 
 export const form__createEvent: IFormConfig = {
   title: "Create Event",

@@ -1,6 +1,6 @@
 import { IFormConfig } from "@widgets/form/types/IFormConfig";
 import { projectInput } from "@features/projects/data/config/inputs";
-import { formId__projectSelect } from "../../../../@/formIds";
+import { formId__projectSelect } from '@/formIds';
 
 export const form__selectProject: IFormConfig = {
   title: "Select Project",

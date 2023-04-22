@@ -8,7 +8,7 @@ import { AssetQuery } from "../../../services/graphql/one/components/AssetQuery"
 import {
   featureId__assetDisplay,
   featureId__assetDisplayForm,
-} from "../../../../../@/featureIds";
+} from '@/featureIds';
 import { IFormContextState } from "@widgets/form/context/types/state";
 
 /**

@@ -7,7 +7,7 @@ import { form__selectConcept } from "../../select/config";
 import {
   featureId__conceptDisplay,
   featureId__conceptDisplayForm,
-} from "../../../../../@/featureIds";
+} from '@/featureIds';
 import { IFormContextState } from "@widgets/form/context/types/state";
 
 export function ConceptDisplayFormFeature() {

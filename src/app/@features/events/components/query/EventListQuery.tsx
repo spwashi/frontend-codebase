@@ -6,7 +6,7 @@ import {
   selectEventStateKey,
   selectPossibleEventsLastFetched,
 } from "../../services/redux/selectors";
-import { graphQlNodes } from "../../../../@/graphQlNodes";
+import { graphQlNodes } from '@/graphQlNodes';
 
 function useEventListQuery() {
   const stateKey = useSelector(selectEventStateKey);

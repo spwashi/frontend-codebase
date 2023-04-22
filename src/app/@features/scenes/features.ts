@@ -3,7 +3,7 @@ import {
   featureId__sceneDisplay,
   featureId__sceneEditForm,
   featureId__scenes,
-} from "../../@/featureIds";
+} from '@/featureIds';
 
 export type ISceneFeatureNames =
   | typeof featureId__scenes

@@ -8,7 +8,7 @@ import {
 import {
   featureId__eventDisplay,
   featureId__events,
-} from "../../../@/featureIds";
+} from '@/featureIds';
 
 function EventDisplayFeature() {
   const lastFetched = useSelector(selectPossibleEventsLastFetched);

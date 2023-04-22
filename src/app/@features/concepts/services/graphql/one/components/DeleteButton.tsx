@@ -4,7 +4,7 @@ import { Log } from "@core/dev/components/Log";
 import { DeleteConceptMutationInput } from "@junction/models/concept/behaviors/delete";
 import { ACTION_DELETE_ONE_CONCEPT } from "../../../redux/reducer";
 import { useMutation } from "@apollo/client";
-import { graphQlNodes } from "../../../../../../@/graphQlNodes";
+import { graphQlNodes } from '@/graphQlNodes';
 
 export function DeleteConceptButton({
   id,

@@ -9,7 +9,7 @@ import {
   featureId__userLogin,
   featureId__users,
   featureId__userSignup,
-} from "../../../@/featureIds";
+} from '@/featureIds';
 
 const requireFetch = false;
 

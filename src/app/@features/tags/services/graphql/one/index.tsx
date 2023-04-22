@@ -8,7 +8,7 @@ import { TagContextProvider } from "./context/Provider";
 import { TagDisplay } from "./components/Display";
 import { TagQuery } from "./components/TagQuery";
 import { useActiveTag } from "./context/hooks/useActiveOne";
-import { graphQlNodes } from "../../../../../@/graphQlNodes";
+import { graphQlNodes } from '@/graphQlNodes';
 
 function DeleteTag() {
   const tag = useActiveTag();

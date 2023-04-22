@@ -3,7 +3,7 @@ import { FeatureRequirement } from "@services/features/list/components/FeatureRe
 import {
   featureId__projectCreate,
   featureId__projects,
-} from "../../../../../../@/featureIds";
+} from '@/featureIds';
 import { ProjectCreateForm } from "@features/projects/behaviors/create/components/ProjectCreateForm";
 import { ProjectDisplayFormFeature } from "@features/projects/behaviors/display/components/ProjectDisplayFormFeature";
 import React from "react";

@@ -7,7 +7,7 @@ import {
   titleInput,
   userInput,
 } from "../../data/config/inputs";
-import { formId__conceptCreate } from "../../../../@/formIds";
+import { formId__conceptCreate } from '@/formIds';
 
 export const form__createConcept: IFormConfig = {
   title: "Create Concept",

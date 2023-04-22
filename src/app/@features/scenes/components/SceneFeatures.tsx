@@ -8,7 +8,7 @@ import {
 import {
   featureId__sceneDisplay,
   featureId__scenes,
-} from "../../../@/featureIds";
+} from '@/featureIds';
 
 function SceneDisplayFeature() {
   const lastFetched = useSelector(selectPossibleScenesLastFetched);

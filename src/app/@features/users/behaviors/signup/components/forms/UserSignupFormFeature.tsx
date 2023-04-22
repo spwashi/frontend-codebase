@@ -7,7 +7,7 @@ import {
   featureId__projectDisplay,
   featureId__userSignup,
   featureId__userSignupForm,
-} from "../../../../../../@/featureIds";
+} from '@/featureIds';
 import { selectLoggedInUserName } from "../../../login/redux/reducer";
 
 export function UserSignupFormFeature() {

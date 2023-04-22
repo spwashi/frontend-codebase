@@ -7,7 +7,7 @@ import {
 } from "@junction/models/concept/models";
 import { ACTION_RECEIVE_ONE_CONCEPT } from "../../../redux/reducer";
 import { ConceptContext } from "@features/concepts/context/context";
-import { graphQlNodes } from "../../../../../../@/graphQlNodes";
+import { graphQlNodes } from '@/graphQlNodes';
 import { Concept } from "../../../../../../../__generated__/graphql";
 
 function useConceptQuery(id: string): Concept | null {

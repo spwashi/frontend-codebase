@@ -6,7 +6,7 @@ import { form__selectEvent } from "@features/events/behaviors/select/config";
 import { form__editEvent } from "@features/events/behaviors/edit/config";
 import { GraphqlMutationResponse } from "@services/graphql/components/api/GraphqlMutationResponse";
 import { IFormContextState } from "@widgets/form/context/types/state";
-import { graphQlNodes } from "../../../../../@/graphQlNodes";
+import { graphQlNodes } from '@/graphQlNodes';
 import { IEvent } from "@junction/models/event/models";
 
 export function EventEditForm() {

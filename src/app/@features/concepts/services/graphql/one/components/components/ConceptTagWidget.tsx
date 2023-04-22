@@ -1,6 +1,6 @@
 import React from "react";
 import { useMutation } from "@apollo/client";
-import { graphQlNodes } from "../../../../../../../@/graphQlNodes";
+import { graphQlNodes } from '@/graphQlNodes';
 import {
   ConceptReferenceInput,
   Tag,
