@@ -4,8 +4,7 @@ import { IS_AUTHENTICATED_URL } from "@core/constants";
 import { useJwt } from "@services/jwt/hooks/useJwt";
 import { Feature } from "@widgets/feature";
 import { logoutUser } from "@features/users/behaviors/logout/helpers/logoutUser";
-
-import { featureId__userLoginVerify } from "@/features/users/ids";
+import { featureIds } from "@/features/ids";
 
 /**
  * Checks the current jwt, logging out if the jwt is invalid
@@ -29,5 +28,5 @@ export function LoginChecker() {
     });
   }, [jwt]);
 
-  return <Feature name={featureId__userLoginVerify} />;
+  return <Feature name={featureIds.user.login_verify} />;
 }

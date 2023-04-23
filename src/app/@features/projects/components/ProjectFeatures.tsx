@@ -6,26 +6,22 @@ import {
   selectPossibleProjectOptions,
   selectPossibleProjectsLastFetched,
 } from "../services/redux/selectors";
-import {
-  featureId__projectCreate,
-  featureId__projectDisplay,
-  featureId__projects,
-} from "@/features/projects/ids";
+import { featureIds } from "@/features/ids";
 
 function ProjectDisplayFeature() {
   const lastFetched = useSelector(selectPossibleProjectsLastFetched);
   const list = useSelector(selectPossibleProjectOptions);
   const enabled = lastFetched ? !!list.length : false;
-  return <Feature name={featureId__projectDisplay} enabled={enabled} />;
+  return <Feature name={featureIds.project.display} enabled={enabled} />;
 }
 
 function ProjectCreateFeature() {
-  return <Feature name={featureId__projectCreate} enabled={true} />;
+  return <Feature name={featureIds.project.create} enabled={true} />;
 }
 
 export function ProjectFeatures() {
   return (
-    <Feature name={featureId__projects}>
+    <Feature name={featureIds.project.projects}>
       <ProjectDisplayFeature />
       <ProjectCreateFeature />
       <AssetFeatures />

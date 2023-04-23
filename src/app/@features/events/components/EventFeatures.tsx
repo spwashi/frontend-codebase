@@ -5,20 +5,17 @@ import {
   selectPossibleEventOptions,
   selectPossibleEventsLastFetched,
 } from "../services/redux/selectors";
-import {
-  featureId__eventDisplay,
-  featureId__events,
-} from "@/features/events/ids";
+import { featureIds } from "@/features/ids";
 
 function EventDisplayFeature() {
   const lastFetched = useSelector(selectPossibleEventsLastFetched);
   const list = useSelector(selectPossibleEventOptions);
   const enabled = lastFetched ? !!list.length : false;
-  return <Feature name={featureId__eventDisplay} enabled={enabled} />;
+  return <Feature name={featureIds.event.display} enabled={enabled} />;
 }
 export function EventFeatures() {
   return (
-    <Feature name={featureId__events}>
+    <Feature name={featureIds.event.events}>
       <EventDisplayFeature />
     </Feature>
   );

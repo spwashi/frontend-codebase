@@ -3,10 +3,7 @@ import React from "react";
 import { FeatureRequirement } from "@widgets/feature";
 import { ProjectCreateForm } from "@features/projects/behaviors/create/components/ProjectCreateForm";
 import { ProjectDisplayFormFeature } from "@features/projects/behaviors/display/components/ProjectDisplayFormFeature";
-import {
-  featureId__projectCreate,
-  featureId__projects,
-} from "@/features/projects/ids";
+import { featureIds } from "@/features/ids";
 
 export function ProjectsAdminRoutes() {
   return (
@@ -14,8 +11,8 @@ export function ProjectsAdminRoutes() {
       <Route
         path={""}
         element={
-          <FeatureRequirement name={featureId__projects}>
-            <FeatureRequirement name={featureId__projectCreate}>
+          <FeatureRequirement name={featureIds.project.projects}>
+            <FeatureRequirement name={featureIds.project.create}>
               <ProjectCreateForm />
             </FeatureRequirement>
             <ProjectDisplayFormFeature />

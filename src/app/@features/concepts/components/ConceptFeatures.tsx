@@ -5,20 +5,17 @@ import {
   selectPossibleConceptOptions,
   selectPossibleConceptsLastFetched,
 } from "../services/redux/selectors";
-import {
-  featureId__conceptDisplay,
-  featureId__concepts,
-} from "@/features/concepts/ids";
+import { featureIds } from "@/features/ids";
 
 function ConceptDisplayFeature() {
   const lastFetched = useSelector(selectPossibleConceptsLastFetched);
   const list = useSelector(selectPossibleConceptOptions);
   const enabled = lastFetched ? !!list.length : false;
-  return <Feature name={featureId__conceptDisplay} enabled={enabled} />;
+  return <Feature name={featureIds.concept.display} enabled={enabled} />;
 }
 export function ConceptFeatures() {
   return (
-    <Feature name={featureId__concepts}>
+    <Feature name={featureIds.concept.concepts}>
       <ConceptDisplayFeature />
     </Feature>
   );

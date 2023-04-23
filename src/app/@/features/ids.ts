@@ -7,7 +7,7 @@ import { sceneIds } from "./scenes/ids";
 import { tagIds } from "./tags/ids";
 import { userIds } from "./users/ids";
 
-export const featureIdMap = <const>{
+export const featureIds = <const>{
   admin: adminIds,
   asset: assetIds,
   concept: conceptIds,
@@ -17,13 +17,13 @@ export const featureIdMap = <const>{
   tag: tagIds,
   user: userIds,
 };
-export const featureIds = <const>[
-  ...Object.values(featureIdMap.admin),
-  ...Object.values(featureIdMap.asset),
-  ...Object.values(featureIdMap.concept),
-  ...Object.values(featureIdMap.event),
-  ...Object.values(featureIdMap.project),
-  ...Object.values(featureIdMap.scene),
-  ...Object.values(featureIdMap.tag),
-  ...Object.values(featureIdMap.user),
+export const featureIdList = <const>[
+  ...Object.values(featureIds.admin),
+  ...Object.values(featureIds.asset),
+  ...Object.values(featureIds.concept),
+  ...Object.values(featureIds.event),
+  ...Object.values(featureIds.project),
+  ...Object.values(featureIds.scene),
+  ...Object.values(featureIds.tag),
+  ...Object.values(featureIds.user),
 ];

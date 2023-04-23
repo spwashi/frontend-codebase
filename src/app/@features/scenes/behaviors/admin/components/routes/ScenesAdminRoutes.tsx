@@ -7,7 +7,7 @@ import { SceneCreateFormFeature } from "@features/scenes/behaviors/create/compon
 import { SceneEditFormFeature } from "@features/scenes/behaviors/edit/components/SceneEditFormFeature";
 import { FeatureRequirement } from "@widgets/feature";
 import { SceneDisplayFormFeature } from "@features/scenes/behaviors/display/components/SceneDisplayFormFeature";
-import { featureId__sceneDisplay } from "@/features/scenes/ids";
+import { featureIds } from "@/features/ids";
 
 export function ScenesAdminRoutes() {
   return (
@@ -29,7 +29,7 @@ export function ScenesAdminRoutes() {
               <SceneCreateFormFeature />
               <SceneEditFormFeature />
             </LoginRequirement>
-            <FeatureRequirement name={featureId__sceneDisplay}>
+            <FeatureRequirement name={featureIds.scene.display}>
               <SceneDisplayFormFeature />
             </FeatureRequirement>
           </React.Fragment>

@@ -5,20 +5,17 @@ import {
   selectPossibleSceneOptions,
   selectPossibleScenesLastFetched,
 } from "../services/redux/selectors";
-import {
-  featureId__sceneDisplay,
-  featureId__scenes,
-} from "@/features/scenes/ids";
+import { featureIds } from "@/features/ids";
 
 function SceneDisplayFeature() {
   const lastFetched = useSelector(selectPossibleScenesLastFetched);
   const list = useSelector(selectPossibleSceneOptions);
   const enabled = lastFetched ? !!list.length : false;
-  return <Feature name={featureId__sceneDisplay} enabled={enabled} />;
+  return <Feature name={featureIds.scene.display} enabled={enabled} />;
 }
 export function SceneFeatures() {
   return (
-    <Feature name={featureId__scenes}>
+    <Feature name={featureIds.scene.scenes}>
       <SceneDisplayFeature />
     </Feature>
   );

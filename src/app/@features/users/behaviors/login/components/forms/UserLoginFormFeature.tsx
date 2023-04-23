@@ -1,23 +1,18 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { Feature } from "@widgets/feature";
-
-import { FeatureRequirement } from "@widgets/feature";
+import { Feature, FeatureRequirement } from "@widgets/feature";
 import { UserLoginForm } from "@features/users/behaviors/login/components/forms/UserLoginForm";
 import { selectLoggedInUserName } from "../../redux/reducer";
-import {
-  featureId__userLogin,
-  featureId__userLoginForm,
-} from "@/features/users/ids";
+import { featureIds } from "@/features/ids";
 
 export function UserLoginFormFeature({ alt }: { alt?: any }) {
   const loggedInUser = useSelector(selectLoggedInUserName);
   if (loggedInUser) return alt ?? null;
   return (
-    <Feature name={featureId__userLoginForm}>
-      <FeatureRequirement name={featureId__userLogin}>
+    <FeatureRequirement name={featureIds.user.login}>
+      <Feature name={featureIds.user.login_form}>
         <UserLoginForm />
-      </FeatureRequirement>
-    </Feature>
+      </Feature>
+    </FeatureRequirement>
   );
 }

@@ -6,7 +6,7 @@ import { useJwt } from "@services/jwt/hooks/useJwt";
 import { Feature } from "@widgets/feature";
 import { form__uploadAsset } from "@features/assets/behaviors/upload/config";
 import { IFormContextState } from "@widgets/form/context/types/state";
-import { featureId__assetUploadForm } from "@/features/assets/ids";
+import { featureIds } from "@/features/ids";
 
 interface SubmissionCallbackParams {
   data: any;
@@ -71,7 +71,7 @@ export function AssetUploadFormFeature() {
 
   if (!BACKEND_URL) return null;
   return (
-    <Feature name={featureId__assetUploadForm}>
+    <Feature name={featureIds.asset.upload_form}>
       <Dev>{error}</Dev>
       <FormWidget config={form__uploadAsset} onSubmit={onSubmit} />
       {out ? <pre>{JSON.stringify(out, null, 3)}</pre> : null}

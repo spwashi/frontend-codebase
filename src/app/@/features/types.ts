@@ -1,3 +1,3 @@
-import { featureIds } from "@/features/ids";
+import { featureIdList } from "@/features/ids";
 
-export type IExtantFeatureID = (typeof featureIds)[number];
+export type IExtantFeatureID = (typeof featureIdList)[number];

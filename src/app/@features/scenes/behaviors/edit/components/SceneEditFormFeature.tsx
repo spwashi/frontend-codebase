@@ -1,12 +1,11 @@
 import React from "react";
 import { Feature } from "@widgets/feature";
 import { SceneEditForm } from "@features/scenes/behaviors/edit/components/SceneEditForm";
-
-import { featureId__sceneEditForm } from "@/features/scenes/ids";
+import { featureIds } from "@/features/ids";
 
 export function SceneEditFormFeature() {
   return (
-    <Feature name={featureId__sceneEditForm}>
+    <Feature name={featureIds.scene.edit_form}>
       <SceneEditForm />
     </Feature>
   );

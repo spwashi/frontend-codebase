@@ -4,7 +4,7 @@ import { FeatureRequirement } from "@widgets/feature";
 import { LoginRequirement } from "@features/users/behaviors/login/components/gates/LoginRequirement";
 import { TagCreateFormFeature } from "@features/tags/behaviors/create/components/TagCreateFormFeature";
 import { TagsDisplayFormFeature } from "@features/tags/behaviors/display/components/TagsDisplayFormFeature";
-import { featureId__tags } from "@/features/tags/ids";
+import { featureIds } from "@/features/ids";
 
 export function TagsAdminRoutes() {
   return (
@@ -13,7 +13,7 @@ export function TagsAdminRoutes() {
       <Route
         path=""
         element={
-          <FeatureRequirement name={featureId__tags}>
+          <FeatureRequirement name={featureIds.tag.tags}>
             <LoginRequirement>
               <TagCreateFormFeature />
               <TagsDisplayFormFeature />

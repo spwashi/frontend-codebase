@@ -6,7 +6,7 @@ import { LoginChecker } from "@features/users/behaviors/login/components/actions
 import { LoginRequirement } from "@features/users/behaviors/login/components/gates/LoginRequirement";
 import { UserLoginFormFeature } from "@features/users/behaviors/login/components/forms/UserLoginFormFeature";
 import { UserSignupFormFeature } from "@features/users/behaviors/signup/components/forms/UserSignupFormFeature";
-import { featureId__userLogin, featureId__users } from "@/features/users/ids";
+import { featureIds } from "@/features/ids";
 
 export function UserAdminRoutes() {
   return (
@@ -14,9 +14,9 @@ export function UserAdminRoutes() {
       <Route
         path=""
         element={
-          <FeatureRequirement name={featureId__users}>
+          <FeatureRequirement name={featureIds.user.users}>
             <UserLogoutButton />
-            <FeatureRequirement name={featureId__userLogin}>
+            <FeatureRequirement name={featureIds.user.login}>
               <LoginChecker />
               <LoginRequirement state={false}>
                 <UserLoginFormFeature />

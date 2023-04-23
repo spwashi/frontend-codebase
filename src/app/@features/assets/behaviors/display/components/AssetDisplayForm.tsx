@@ -6,10 +6,7 @@ import { getform__assetSelect } from "@features/assets/behaviors/select/config";
 import { LoginRequirement } from "@features/users/behaviors/login/components/gates/LoginRequirement";
 import { IFormContextState } from "@widgets/form/context/types/state";
 import { AssetQuery } from "../../../services/graphql/one/components/AssetQuery";
-import {
-  featureId__assetDisplay,
-  featureId__assetDisplayForm,
-} from "@/features/assets/ids";
+import { featureIds } from "@/features/ids";
 
 /**
  * Selects an asset to display, then displays it
@@ -21,7 +18,7 @@ function DisplayAssetForm(user: { username: string }) {
   if (!form__displayAsset) return null;
   return (
     <LoginRequirement>
-      <Feature name={featureId__assetDisplayForm}>
+      <Feature name={featureIds.asset.display_form}>
         <FormWidget
           config={form__displayAsset}
           onSubmit={setFormState}
@@ -42,7 +39,7 @@ export function AssetDisplayForm() {
   const user = formState?.currentValue?.user;
   const username = user?.username;
   return (
-    <Feature name={featureId__assetDisplay}>
+    <Feature name={featureIds.asset.display}>
       <FormWidget
         config={form__selectLoggedInUser}
         onSubmit={setUserFromForm}
