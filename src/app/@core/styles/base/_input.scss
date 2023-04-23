@@ -4,8 +4,9 @@
   outline: var(--input-wrapper-outline);
   flex-flow: column;
   padding: 1ch;
-  &:hover, &:focus-within {
-    background: rgba(#ccc, .5);
+  &:hover,
+  &:focus-within {
+    background: rgba(#ccc, 0.5);
   }
 }
 .form-item {

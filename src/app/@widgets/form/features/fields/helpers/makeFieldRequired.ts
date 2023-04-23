@@ -1,18 +1,18 @@
-import {FormFieldConfig} from '../types/fieldConfig';
+import { IFormItemConfig } from "../types/fieldConfig";
 
-export const makeFieldRequired = (f: FormFieldConfig): FormFieldConfig => {
+export const makeFieldRequired = (f: IFormItemConfig): IFormItemConfig => {
   return {
     ...f,
     validators: {
       ...f.validators,
       onChange: [
-        ...f.validators?.onChange ?? [],
-        ({data}) => {
+        ...(f.validators?.onChange ?? []),
+        ({ data }) => {
           const val = data?.[f.name];
-          if (typeof val === 'string') return !!val.length;
+          if (typeof val === "string") return !!val.length;
           return !!val;
         },
       ],
     },
-  }
-}
+  };
+};

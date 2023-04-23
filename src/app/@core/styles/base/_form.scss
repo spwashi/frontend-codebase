@@ -6,27 +6,31 @@ form {
   &:empty {
     display: none;
   }
-  input, button, select, textarea {
+  input,
+  button,
+  select,
+  textarea {
     border: thin solid var(--input-border-color);
   }
   input {
     border-radius: 0;
   }
-
 }
 
 .button-container {
   padding: 0 2ch;
 }
 
-button, .button {
+button,
+.button {
   outline: var(--button-outline);
   &:focus {
     outline: var(--button-focus-outline);
     font-weight: bold;
     z-index: 10;
   }
-  &:hover, &:active {
+  &:hover,
+  &:active {
     outline: var(--button-hover-outline);
     cursor: pointer;
   }
@@ -42,6 +46,8 @@ button, .button {
   > form {
     padding: 0;
     margin: 0;
-    &:empty {display: none;}
+    &:empty {
+      display: none;
+    }
   }
 }

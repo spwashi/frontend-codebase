@@ -1,43 +1,37 @@
-import {FormFieldConfig} from '@widgets/form/features/fields/types/fieldConfig';
+import { IFormItemConfig } from "@widgets/form/features/fields/types/fieldConfig";
 
-export const tagsInput: FormFieldConfig = {
-  title: 'Tags',
-  name:  'tags',
-  type:  'tags',
-}
-
-export const eventInput: FormFieldConfig       = {
-  title: 'Event',
-  name:  'event',
-  type:  'event',
+export const eventInput: IFormItemConfig = {
+  title: "Event",
+  name: "event",
+  type: "event",
 };
-export const userInput: FormFieldConfig        = {
-  title: 'User',
-  name:  'user',
-  type:  'user',
+export const userInput: IFormItemConfig = {
+  title: "User",
+  name: "user",
+  type: "user",
 };
-export const idInput: FormFieldConfig          = {
-  title: 'ID',
-  name:  'id',
-  type:  'value',
-}
-export const titleInput: FormFieldConfig       = {
-  title: 'Event Title',
-  name:  'title',
-  type:  'text',
+export const idInput: IFormItemConfig = {
+  title: "ID",
+  name: "id",
+  type: "value",
 };
-export const startInput: FormFieldConfig       = {
-  title: 'Event Start',
-  name:  'start',
-  type:  'datetime-local',
+export const titleInput: IFormItemConfig = {
+  title: "Event Title",
+  name: "title",
+  type: "text",
 };
-export const endInput: FormFieldConfig         = {
-  title: 'Event End',
-  name:  'end',
-  type:  'datetime-local',
+export const startInput: IFormItemConfig = {
+  title: "Event Start",
+  name: "start",
+  type: "datetime-local",
 };
-export const descriptionInput: FormFieldConfig = {
-  title: 'Event Contents',
-  name:  'description',
-  type:  'longtext',
+export const endInput: IFormItemConfig = {
+  title: "Event End",
+  name: "end",
+  type: "datetime-local",
+};
+export const descriptionInput: IFormItemConfig = {
+  title: "Event Contents",
+  name: "description",
+  type: "longtext",
 };

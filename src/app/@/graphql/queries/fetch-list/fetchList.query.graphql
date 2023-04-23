@@ -1,0 +1,7 @@
+query FetchTagList {
+    tagList {
+        id
+        title
+        domain
+    }
+}

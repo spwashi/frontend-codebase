@@ -1,1 +1,0 @@
-export {TagEventFormFeature} from './components'

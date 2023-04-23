@@ -1,7 +1,7 @@
 nav {
   --nav-outline-color: green;
   outline: thin solid var(--nav-outline-color);
-  margin: .5rem 0;
+  margin: 0.5rem 0;
   display: block;
   ul {
     display: flex;
@@ -15,8 +15,8 @@ nav {
   }
 
   &:before {
-    content: 'nav';
+    content: "nav";
     position: absolute;
-    opacity: .3;
+    opacity: 0.3;
   }
 }

@@ -1,0 +1,8 @@
+query FetchTag($tag: TagReferenceInput!) {
+    tag(tag: $tag) {
+        id
+        domain
+        title
+        description
+    }
+}

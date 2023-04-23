@@ -6,7 +6,9 @@
   }
 
   nav.admin {
-    &:before {content: 'admin nav'}
+    &:before {
+      content: "admin nav";
+    }
   }
 
   .app-wrapper {

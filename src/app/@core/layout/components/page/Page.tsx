@@ -1,19 +1,18 @@
-import React from 'react';
-import {Navigation} from '../navigation/Navigation';
-import {mainNavigation} from '@junction/routes/nav';
-
+import React from "react";
+import { mainNavLinks } from "@/routes";
+import { NavigationList } from "../navigation/NavigationList";
 
 interface PageProps {
-  children?: any
+  children?: any;
 }
 
-export function Page({children}: PageProps) {
+export function Page({ children }: PageProps) {
   return (
     <article>
       <header>
-        <Navigation items={mainNavigation}/>
+        <NavigationList items={mainNavLinks} />
       </header>
       {children}
     </article>
-  )
+  );
 }

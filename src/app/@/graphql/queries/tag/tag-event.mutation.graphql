@@ -1,0 +1,9 @@
+mutation TagEvent(
+    $event: EventReferenceInput!
+    $user: UserReferenceInput!
+    $tags: [TagReferenceInput]
+) {
+    tagEvent(event: $event, user: $user, tags: $tags) {
+        __typename
+    }
+}

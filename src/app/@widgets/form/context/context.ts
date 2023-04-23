@@ -1,9 +1,8 @@
-import React from 'react';
-import {getInitialState} from './helpers/getInitialState';
-import {FormState} from './types/state';
+import React from "react";
+import { getInitialState } from "./helpers/getInitialState";
+import { IFormContextState } from "./types/state";
 
-export const ID_EMPTY = '[empty]';
+export const ID_EMPTY = "[empty]";
 
-export const FormContext: React.Context<FormState> = React.createContext(getInitialState({}, ID_EMPTY));
-
-
+export const FormContext: React.Context<IFormContextState> =
+  React.createContext(getInitialState({ initialValue: {}, id: ID_EMPTY }));

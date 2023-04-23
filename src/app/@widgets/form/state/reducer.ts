@@ -1,66 +1,69 @@
-import {getInitialState} from '../context/helpers/getInitialState';
+import { IFormContextState } from "@widgets/form/context/types/state";
 
-export const ACTION_UPDATE_INDEX = 'update';
-export const ACTION_RESET        = 'reset';
-export const ACTION_SET_DEFAULT  = 'setDefault';
+export const ACTION_UPDATE_INDEX = "update";
+export const ACTION_RESET = "reset";
+export const ACTION_SET_DEFAULT = "setDefault";
 
-export function formReducer(state = getInitialState(), action: { type: string, payload: any }) {
+export function formReducer(
+  formState: IFormContextState,
+  action: { type: string; payload: any }
+): IFormContextState {
   switch (action.type) {
     case ACTION_RESET: {
       return {
-        ...state,
-        key:       state.key + 1,
+        ...formState,
+        key: formState.key + 1,
         lastReset: Date.now(),
-        data:      {
-          ...state.data,
+        currentValue: {
+          ...formState.currentValue,
           ...Object.fromEntries(
-            Object
-              .entries(state.data ?? {})
-              .map(([k]) => ([k, state.initialValue?.[k]])),
+            Object.entries(formState.currentValue ?? {}).map(([k]) => [
+              k,
+              formState.initialValue?.[k],
+            ])
           ),
         },
-        changed:   {},
-      }
-
+        changed: {},
+      };
     }
     case ACTION_SET_DEFAULT: {
       const initialValue = action.payload;
       return {
-        ...state,
-        key:  state.key + 1,
+        ...formState,
+        key: formState.key + 1,
         initialValue,
-        data: {
-          ...state.data,
+        currentValue: {
+          ...formState.currentValue,
           ...Object.fromEntries(
-            Object
-              .entries(initialValue ?? {})
-              .filter(([key]) => !state.changed[key]),
+            Object.entries(initialValue ?? {}).filter(
+              ([key]) => !formState.changed[key]
+            )
           ),
         },
       };
     }
     case ACTION_UPDATE_INDEX: {
-      const {index, value} = action.payload;
-      if (value === state.data?.[index]) return state;
+      const { index, value } = action.payload;
+      if (value === formState.currentValue?.[index]) return formState;
       const passive = action.payload?.passive;
-      let data: any;
+      let currentValue: any;
       let changed: { [p: string]: boolean };
-      if (value === state.initialValue?.[index]) {
-        changed = {...state.changed, [index]: false};
-        data    = state.data;
+      if (value === formState.initialValue?.[index]) {
+        changed = { ...formState.changed, [index]: false };
+        currentValue = formState.currentValue;
       } else {
-        changed = {...state.changed, [index]: Date.now()};
-        data    = {...state.data, [index]: value};
+        changed = { ...formState.changed, [index]: Date.now() };
+        currentValue = { ...formState.currentValue, [index]: value };
       }
 
-      const nextKey = passive ? state.key : state.key + 1;
+      const nextKey = passive ? formState.key : formState.key + 1;
       return {
-        ...state,
-        key:     nextKey,
-        changed: passive ? state.changed : changed,
-        data:    data,
+        ...formState,
+        key: nextKey,
+        changed: passive ? formState.changed : changed,
+        currentValue: currentValue,
       };
     }
   }
-  return state;
+  return formState;
 }

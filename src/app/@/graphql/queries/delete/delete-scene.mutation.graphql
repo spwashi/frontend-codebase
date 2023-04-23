@@ -1,0 +1,5 @@
+mutation DeleteScene($scene: DeleteSceneInput!) {
+    deleteScene(scene: $scene) {
+        id
+    }
+}

@@ -1,9 +1,14 @@
-import {FormFieldConfig} from '../features/fields/types/fieldConfig';
+import { IFormItemConfig } from "../features/fields/types/fieldConfig";
 
-export type IFormConfig =
-  {
-    formId: `form.${string}`,
-    title: string,
-    items: FormFieldConfig[];
-    defaultValue?: { [k: string]: any }
-  }
+export type IFormConfig<
+  ValueStruct = any,
+  Items extends IFormItemConfig<
+    keyof ValueStruct,
+    ValueStruct[keyof ValueStruct]
+  >[] = IFormItemConfig<keyof ValueStruct, ValueStruct[keyof ValueStruct]>[]
+> = {
+  formId: `form--${string}`;
+  title: string;
+  items: Items;
+  defaultValue?: Partial<ValueStruct>;
+};

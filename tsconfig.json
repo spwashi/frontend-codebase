@@ -25,11 +25,12 @@
     "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
-      "@features/*": [ "./src/app/@features/*" ],
-      "@widgets/*": [ "./src/app/@widgets/*" ],
-      "@services/*": [ "./src/app/@services/*" ],
-      "@junction/*": [ "./src/app/@junction/*" ],
+      "@generated/*": ["./src/__generated__/*"],
+      "@/*": ["./src/app/@/*"],
       "@core/*": [ "./src/app/@core/*" ],
+      "@features/*": [ "./src/app/@features/*" ],
+      "@services/*": [ "./src/app/@services/*" ],
+      "@widgets/*": [ "./src/app/@widgets/*" ],
     }
   },
   "include": [

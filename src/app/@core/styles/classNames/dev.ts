@@ -1,9 +1,9 @@
 export const loggerClassnames = {
-  devLog: 'dev-log',
+  devLog: "dev-log",
 
   components: {
-    container: 'dev-log--container',
-    wrapper:   'dev-log--wrapper',
-    controls:  'dev-log--controls',
+    container: "dev-log--container",
+    wrapper: "dev-log--wrapper",
+    controls: "dev-log--controls",
   },
-}
+};

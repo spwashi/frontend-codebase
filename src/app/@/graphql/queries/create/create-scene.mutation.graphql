@@ -1,0 +1,8 @@
+mutation CreateScene($scene: CreateSceneInput!) {
+    createScene(scene: $scene) {
+        id
+        name
+        title
+        description
+    }
+}

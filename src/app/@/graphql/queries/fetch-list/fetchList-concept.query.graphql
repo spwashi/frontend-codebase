@@ -1,0 +1,9 @@
+query FetchConceptList {
+    conceptList {
+        id
+        title
+        contentType
+        src
+        published
+    }
+}

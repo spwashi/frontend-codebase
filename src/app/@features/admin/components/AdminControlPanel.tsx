@@ -1,12 +1,12 @@
-import React from 'react';
-import {AdminNav} from './AdminNav';
-import {AdminRoutes} from './AdminRoutes';
+import React from "react";
+import { AdminNavigation } from "./navigation/AdminNavigation";
+import { AdminRoutes } from "./routes/AdminRoutes";
 
 export function AdminControlPanel() {
   return (
     <>
-      <AdminNav/>
-      <AdminRoutes/>
+      <AdminNavigation />
+      <AdminRoutes />
     </>
   );
 }

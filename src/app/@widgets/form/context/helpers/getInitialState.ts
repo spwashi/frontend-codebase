@@ -1,15 +1,17 @@
-import {FormState} from '../types/state';
+import { IFormContextState } from "../types/state";
 
-export function getInitialState<T = any>(d?: T, id?: string): FormState<T> {
+type IFormReducerParams<T = any> = { initialValue?: T; id?: string };
+export function getInitialState<T = any>({
+  initialValue,
+  id,
+}: IFormReducerParams<T>): IFormContextState<T> {
   return {
     id,
-    key:          0,
-    data:         {} as T,
-    initialValue: d,
-    lastReset:    undefined,
-    submit:       () => {
-      console.log('submitted')
-    },
-    changed:      {},
+    key: 0,
+    currentValue: {} as T,
+    initialValue: initialValue,
+    lastReset: undefined,
+    changed: {},
+    dispatch() {},
   };
 }

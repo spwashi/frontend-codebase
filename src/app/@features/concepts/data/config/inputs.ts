@@ -1,54 +1,56 @@
-import {mimeOptions} from './mimeOptions';
-import {FormFieldConfig} from '@widgets/form/features/fields/types/fieldConfig';
+import { IFormItemConfig } from "@widgets/form/features/fields/types/fieldConfig";
+import { IFormContextState } from "@widgets/form/context/types/state";
+import { mimeOptions } from "./mimeOptions";
 
-export const tagsInput: FormFieldConfig        = {
-  title: 'Tags',
-  name:  'tags',
-  type:  'tags',
-}
-export const conceptInput: FormFieldConfig     = {
-  title: 'Concept',
-  name:  'concept',
-  type:  'concept',
+export const tagsInput: IFormItemConfig = {
+  title: "Tags",
+  name: "tags",
+  type: "tags",
 };
-export const userInput: FormFieldConfig        = {
-  title: 'User',
-  name:  'user',
-  type:  'user',
+export const conceptInput: IFormItemConfig = {
+  title: "Concept",
+  name: "concept",
+  type: "concept",
 };
-export const idInput: FormFieldConfig          = {
-  title: 'ID',
-  name:  'id',
-  type:  'value',
-}
-export const titleInput: FormFieldConfig       = {
-  title:      'Concept Title',
-  name:       'title',
-  type:       'text',
+export const userInput: IFormItemConfig = {
+  title: "User",
+  name: "user",
+  type: "user",
+};
+export const idInput: IFormItemConfig = {
+  title: "ID",
+  name: "id",
+  type: "value",
+};
+export const titleInput: IFormItemConfig = {
+  title: "Concept Title",
+  name: "title",
+  type: "text",
   validators: {
     onChange: [
-      (v: any) => {
-        return v?.data.title === 'boon' ? 'cannot be boon' : true;
+      (formState: IFormContextState) => {
+        return formState?.currentValue.title === "boon"
+          ? "cannot be boon"
+          : true;
       },
     ],
   },
 };
-export const contentTypeInput: FormFieldConfig = {
-  title:   'Content Type',
-  name:    'contentType',
-  type:    'select',
+export const contentTypeInput: IFormItemConfig = {
+  title: "Content Type",
+  name: "contentType",
+  type: "select",
   options: mimeOptions,
 };
-export const srcInput: FormFieldConfig         = {
-  title:      'Concept Contents',
-  name:       'src',
-  type:       'content',
+export const srcInput: IFormItemConfig = {
+  title: "Concept Contents",
+  name: "src",
+  type: "content",
   validators: {
     onSubmit: [
       () => {
         return true;
       },
-
     ],
   },
 };

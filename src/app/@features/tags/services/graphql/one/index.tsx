@@ -1,58 +1,47 @@
-import React from 'react';
-import {ITagIdentifyingPartial} from '@junction/models/tag/models';
-import {TagContextProvider} from './context/Provider';
-import {TagDisplay} from './components/Display';
-import {OneTagQuery} from './components/Query';
-import {useActiveTag} from './context/hooks/useActiveOne';
-import {gql, useMutation} from '@apollo/client';
-import {selectLoggedInUser} from '@features/users/behaviors/login/redux/reducer';
-import {useSelector} from 'react-redux';
-import {Log} from '@core/dev/components/Log';
+import React from "react";
+import { useMutation } from "@apollo/client";
+import { useSelector } from "react-redux";
+import { selectLoggedInUser } from "@features/users/behaviors/login/redux/reducer";
+import { Log } from "@core/dev/components/Log";
+import { graphQlNodes } from "@/graphql/nodes";
+import { TagGate } from "@features/tags/context/Provider";
+import { useActiveTag } from "@features/tags/context/hooks/useActiveTag";
+import { DeleteTagInput, TagReferenceInput } from "@generated/graphql";
+import { TagDisplay } from "./components/TagDisplay";
+import { TagQuery } from "./components/TagQuery";
 
 function DeleteTag() {
-  const tag  = useActiveTag();
-  const user = useSelector(selectLoggedInUser)
-
-  const [send, response] =
-          useMutation(
-            gql`
-                mutation DeleteTag($user:UserReferenceInput!, $tag: TagReferenceInput!) {
-                    deleteTag(tag: $tag, user: $user) {
-                        title
-                        domain
-                    }
-                }
-            `,
-          );
+  const tag = useActiveTag();
+  const user = useSelector(selectLoggedInUser);
+  const [send, response] = useMutation(graphQlNodes.tag.delete);
 
   if (!tag || !user) return null;
   return (
     <React.Fragment>
       <Log>{response.data}</Log>
-      <button onClick={() => send({
-                                   variables: {
-                                     title:  tag?.title,
-                                     domain: tag?.domain,
-                                     user:   {username: user.username},
-                                   },
-                                 })}>DELETE
+      <button
+        onClick={() =>
+          send({
+            variables: {
+              tag: tag as DeleteTagInput,
+              user: user,
+            },
+          })
+        }
+      >
+        DELETE
       </button>
     </React.Fragment>
-  )
+  );
 }
 
-/**
- *
- * @param title
- * @constructor
- */
-export function Tag({id}: ITagIdentifyingPartial) {
+export function Tag({ id }: TagReferenceInput) {
   if (!id) return null;
   return (
-    <TagContextProvider>
-      <DeleteTag/>
-      <OneTagQuery id={id}/>
-      <TagDisplay/>
-    </TagContextProvider>
-  )
+    <TagGate>
+      <DeleteTag />
+      <TagQuery id={id} />
+      <TagDisplay />
+    </TagGate>
+  );
 }

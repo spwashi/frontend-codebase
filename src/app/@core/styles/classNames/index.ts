@@ -1,30 +1,30 @@
-import {loggerClassnames} from './dev';
+import { loggerClassnames } from "./dev";
 
 export const appClassnames = {
-  states:       {
-    active:       'active',
-    inactive:     'inactive',
-    userLoggedIn: 'user-logged-in',
-    isWidget:     'widget',
+  states: {
+    active: "active",
+    inactive: "inactive",
+    userLoggedIn: "user-logged-in",
+    isWidget: "widget",
   },
   requirements: {
-    login: 'must-login',
+    login: "must-login",
   },
-  widgets:      {
-    dev:  {
+  widgets: {
+    dev: {
       logger: loggerClassnames,
     },
     user: {
-      logout: 'logout-button',
+      logout: "logout-button",
     },
   },
-  permissions:  {
-    noAdmin:       'no-admin',
-    appCanBeAdmin: 'can-be-admin',
+  permissions: {
+    noAdmin: "no-admin",
+    appCanBeAdmin: "can-be-admin",
   },
-  services:     {
+  services: {
     features: {
-      component: 'feature',
+      component: "feature",
     },
   },
 };

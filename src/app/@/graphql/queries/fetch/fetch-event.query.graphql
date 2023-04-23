@@ -1,0 +1,21 @@
+query FetchEvent($event: EventReferenceInput!) {
+    event(event: $event) {
+        id
+        title
+        start
+        startDate
+        end
+        endDate
+        description
+        eventTags {
+            event {
+                id
+            }
+            tag {
+                id
+                title
+                domain
+            }
+        }
+    }
+}

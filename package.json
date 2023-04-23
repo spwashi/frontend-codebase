@@ -8,7 +8,9 @@
     "cypress:open": "cypress open",
     "serve": "vite preview",
     "start": "vite",
-    "storybook": "storybook dev -p 6006"
+    "storybook": "storybook dev -p 6006",
+    "eslint": "eslint --fix",
+    "codegen:graphql": "yarn graphql-codegen"
   },
   "browserslist": {
     "production": [
@@ -49,6 +51,8 @@
     "web-vitals": "^3.3.1"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "^3.3.0",
+    "@graphql-codegen/client-preset": "^3.0.0",
     "@storybook/addon-actions": "^7.0.4",
     "@storybook/addon-essentials": "^7.0.4",
     "@storybook/addon-links": "^7.0.4",

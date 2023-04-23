@@ -1,8 +1,8 @@
-import {IUser} from '@junction/models/user/models';
-import {IFeatureState} from '@services/redux/types/state.types';
-import {SelectOption} from '@widgets/form/features/fields/components/input/select/SelectInput';
+import { IFeatureState } from "@services/redux/types/state.types";
+import { SelectOption } from "@widgets/form/features/fields/components/input/select/SelectInput";
+import { User } from '@generated/graphql';
 
-export type UserOption = SelectOption<IUser>;
+export type UserOption = SelectOption<User["username"]>;
 
 /**
  * User Feature:
@@ -11,7 +11,7 @@ export type UserOption = SelectOption<IUser>;
  */
 export type UserFeatureLoginFeatureState = IFeatureState<{
   username: string | null;
-  user: IUser | null;
+  user: User | null;
 }>;
 
 /**
@@ -27,7 +27,7 @@ export type UserFeatureSignupFeatureState = IFeatureState;
  */
 export interface UserFeatureStateFeatures {
   login: UserFeatureLoginFeatureState;
-  signup: UserFeatureSignupFeatureState
+  signup: UserFeatureSignupFeatureState;
 }
 
 /**
@@ -35,10 +35,15 @@ export interface UserFeatureStateFeatures {
  *   Data
  */
 export interface UserFeatureStateDataUsers {
-  list: IUser[];
-  lastFetched: number | null
+  list: User[];
+  lastFetched: number | null;
 }
 
-export interface UserFeatureStateData {users: UserFeatureStateDataUsers;}
+export interface UserFeatureStateData {
+  users: UserFeatureStateDataUsers;
+}
 
-export type UserFeatureState = IFeatureState<UserFeatureStateData, UserFeatureStateFeatures>
+export type UserFeatureState = IFeatureState<
+  UserFeatureStateData,
+  UserFeatureStateFeatures
+>;

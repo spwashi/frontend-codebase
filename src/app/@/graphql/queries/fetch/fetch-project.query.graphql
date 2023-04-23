@@ -1,0 +1,8 @@
+query FetchProject($project: ProjectReferenceInput!) {
+    project(project: $project) {
+        id
+        title
+        domain
+        description
+    }
+}

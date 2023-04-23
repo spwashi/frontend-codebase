@@ -1,0 +1,13 @@
+mutation CreateConcept(
+    $concept: CreateConceptInput!
+    $user: UserReferenceInput!
+) {
+    createConcept(user: $user, concept: $concept) {
+        __typename
+        id
+        title
+        src
+        published
+        contentType
+    }
+}
