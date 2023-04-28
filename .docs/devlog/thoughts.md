@@ -1,23 +1,20 @@
-April 15 2023
+April 28 2023
 ===
 
 ```spw
-    <admin> 
-        [
-            All
-            Projects
-            Users
-            Scenes
-            Concepts
-            Events
-            Tags
-            Assets
-        ] 
-            {
-                ~ 
-                    {
-                        (@ each page), 
-                            verify structure [add cypress tests]
-                    } 
-            }
+    <git, boonbanebone>
+        frontend and backend repositories
+            => 
+                frontend repositories
+                    [
+                        share most of the same code
+                    ]
+    <git, boonbanebone>
+        frontend and backend repositories
+            => 
+                backend repositories
+                    [
+                        ; share the same architectural basis
+                        ; the unique components should define the identity of the websites
+                    ]
 ```
