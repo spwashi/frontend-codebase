@@ -18,12 +18,11 @@ April 28 2023
                         ; the unique components should define the identity of the websites
                     ]
     <boonbanebone, meaning>
-        relative to each other
-            [
-                ; boon describes an idea => (_? where does the idea come from)
-                ; bane describes the opposite => (_? what are the constraints)
-                ; bone describes something in-between => (_? how should this be structured)
-            ]
+        [_(relative to each other)
+            ; boon describes an idea => (_? where does the idea come from)
+            ; bane describes the opposite => (_? what are the constraints)
+            ; bone describes something in-between => (_? how should this be structured)
+        ]
     <boonbanebone, constraints>
         [
             ; boon [ curated ; towards thematic cohesion ]
