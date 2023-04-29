@@ -24,4 +24,11 @@ April 28 2023
                 ; bane describes the opposite => (_? what are the constraints)
                 ; bone describes something in-between => (_? how should this be structured)
             ]
+    <boonbanebone>
+        constraints
+            [
+                ; boon [ curated ; towards thematic cohesion ]
+                ; bane [ moderated ; community led ]
+                ; bone [ syndicated ; resident artist ]
+            ]
 ```
