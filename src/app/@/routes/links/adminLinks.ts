@@ -1,6 +1,6 @@
-import { routes } from "@/routes";
 import { routeHasHref } from "@/routes/helpers/routeHasHref";
 import { INavLinkConfigMap } from "@/routes/types/linkConfig";
+import { routes } from "@/routes/routes";
 
 const adminLinkConfigs: INavLinkConfigMap = {
   all: {

@@ -17,7 +17,8 @@ import { persistor, store } from "@services/redux/store";
 import { Application } from "@core/components/Application";
 import { GRAPHQL_URL } from "@core/constants";
 import { FeatureRegistrationBoundary } from "@widgets/feature";
-import { routes } from "src/app/@/routes";
+
+import { routes } from "@/routes/routes";
 
 const httpLink = createHttpLink({ uri: GRAPHQL_URL });
 const client = new ApolloClient({ link: httpLink, cache: new InMemoryCache() });
