@@ -5,7 +5,7 @@ import { INavLinkConfig } from "@/routes/types/linkConfig";
 function NavLink({ link }: { link: INavLinkConfig }) {
   return (
     <li>
-      <a href={"/"}>{link.title}</a>
+      <a href={link.href}>{link.title}</a>
       {link.children ? <NavigationList items={link.children} /> : null}
     </li>
   );
