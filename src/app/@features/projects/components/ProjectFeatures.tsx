@@ -6,7 +6,7 @@ import {
   selectPossibleProjectOptions,
   selectPossibleProjectsLastFetched,
 } from "../services/redux/selectors";
-import { featureIds } from "@/features/ids";
+import { featureIds } from "@identities/features/ids";
 
 function ProjectDisplayFeature() {
   const lastFetched = useSelector(selectPossibleProjectsLastFetched);

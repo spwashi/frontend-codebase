@@ -1,6 +1,6 @@
 import React from "react";
 
-import { INavLinkConfig } from "@/routes/types/linkConfig";
+import { INavLinkConfig } from "@identities/routes/types/linkConfig";
 
 function NavLink({ link }: { link: INavLinkConfig }) {
   return (

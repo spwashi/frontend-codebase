@@ -1,5 +1,5 @@
 import React from "react";
-import { mainNavLinks } from "@/routes";
+import { mainNavLinks } from "@identities/routes";
 import { Page } from "../../page/Page";
 import { NavigationList } from "../NavigationList";
 

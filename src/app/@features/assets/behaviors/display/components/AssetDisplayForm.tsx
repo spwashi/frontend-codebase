@@ -6,7 +6,7 @@ import { getform__assetSelect } from "@features/assets/behaviors/select/config";
 import { LoginRequirement } from "@features/users/behaviors/login/components/gates/LoginRequirement";
 import { IFormContextState } from "@widgets/form/context/types/state";
 import { AssetQuery } from "../../../services/graphql/one/components/AssetQuery";
-import { featureIds } from "@/features/ids";
+import { featureIds } from "@identities/features/ids";
 
 /**
  * Selects an asset to display, then displays it

@@ -5,7 +5,7 @@ import {
   nameInput,
   titleInput,
 } from "@features/projects/data/config/inputs";
-import { formId__projectCreate } from "@/forms/ids";
+import { formId__projectCreate } from "@identities/forms/ids";
 
 export const form__createProject: IFormConfig = {
   title: "Create Project",

@@ -3,8 +3,8 @@ import { Route } from "react-router";
 import React from "react";
 import { NavigationList } from "@core/layout/components/navigation/NavigationList";
 
-import { adminNavLinks } from "@/routes";
-import { routes } from "@/routes/routes";
+import { adminNavLinks } from "@identities/routes";
+import { routes } from "@identities/routes/routes";
 
 export function AdminNavigation() {
   return (

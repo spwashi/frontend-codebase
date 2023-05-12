@@ -6,7 +6,7 @@ import { useJwt } from "@services/jwt/hooks/useJwt";
 import { Feature } from "@widgets/feature";
 import { form__uploadAsset } from "@features/assets/behaviors/upload/config";
 import { IFormContextState } from "@widgets/form/context/types/state";
-import { featureIds } from "@/features/ids";
+import { featureIds } from "@identities/features/ids";
 
 interface SubmissionCallbackParams {
   data: any;

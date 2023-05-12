@@ -4,7 +4,7 @@ import {
   sceneIdInput,
   sceneTitleInput,
 } from "@features/scenes/data/config/inputs";
-import { formId__sceneEdit } from "@/forms/ids";
+import { formId__sceneEdit } from "@identities/forms/ids";
 
 export const form__editScene: IFormConfig = {
   title: "Edit Scene",

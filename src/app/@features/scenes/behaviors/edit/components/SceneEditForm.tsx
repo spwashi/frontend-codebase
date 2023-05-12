@@ -5,7 +5,7 @@ import { FormWidget } from "@widgets/form/FormWidget";
 import { form__editScene } from "@features/scenes/behaviors/edit/config";
 import { GraphqlMutationResponse } from "@services/graphql/components/api/GraphqlMutationResponse";
 import { useSceneSelectForm } from "@features/scenes/behaviors/select/hooks/useSceneSelectForm";
-import { graphQlNodes } from "@/graphql/nodes";
+import { graphQlNodes } from "@identities/graphql/nodes";
 
 export function SceneEditForm() {
   const [onsubmit, response] = useMutationForm(

@@ -1,5 +1,5 @@
 import { IConventionalFeatureID } from "@widgets/feature/types/id";
-import { IExtantFeatureID } from "@/features/types";
+import { IExtantFeatureID } from "@identities/features/types";
 
 // todo
 type IRealFeatureID = IConventionalFeatureID & IExtantFeatureID;

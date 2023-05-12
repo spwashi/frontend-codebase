@@ -2,7 +2,7 @@ import React from "react";
 import { useMutationForm } from "@services/graphql/hooks/useMutationForm";
 import { FormWidget } from "@widgets/form/FormWidget";
 import { GraphqlMutationResponse } from "@services/graphql/components/api/GraphqlMutationResponse";
-import { graphQlNodes } from "@/graphql/nodes";
+import { graphQlNodes } from "@identities/graphql/nodes";
 import { form__createTag } from "../config";
 
 export function TagCreateForm() {

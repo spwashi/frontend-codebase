@@ -5,7 +5,7 @@ import {
   selectPossibleUsersLastFetched,
   selectPossibleUsersOptions,
 } from "../services/redux/selectors";
-import { featureIds } from "@/features/ids";
+import { featureIds } from "@identities/features/ids";
 
 const requireFetch = false;
 

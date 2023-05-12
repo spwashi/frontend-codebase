@@ -1,6 +1,6 @@
 import { useQuery } from "@apollo/client";
 import { useMemo } from "react";
-import { graphQlNodes } from "@/graphql/nodes";
+import { graphQlNodes } from "@identities/graphql/nodes";
 import { Asset } from "@generated/graphql";
 
 export function usePossibleAssetOptions(username: string) {

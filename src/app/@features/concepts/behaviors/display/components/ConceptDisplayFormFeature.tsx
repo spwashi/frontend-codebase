@@ -4,7 +4,7 @@ import { FormWidget } from "@widgets/form/FormWidget";
 import { IFormContextState } from "@widgets/form/context/types/state";
 import { Concept } from "../../../services/graphql/one";
 import { form__selectConcept } from "../../select/config";
-import { featureIds } from "@/features/ids";
+import { featureIds } from "@identities/features/ids";
 
 export function ConceptDisplayFormFeature() {
   const [formState, setFormState] = useState<IFormContextState>();

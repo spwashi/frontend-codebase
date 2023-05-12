@@ -5,7 +5,7 @@ import {
   selectPossibleTagOptions,
   selectPossibleTagsLastFetched,
 } from "../services/redux/selectors";
-import { featureIds } from "@/features/ids";
+import { featureIds } from "@identities/features/ids";
 
 function TagDisplayFeature() {
   const lastFetched = useSelector(selectPossibleTagsLastFetched);

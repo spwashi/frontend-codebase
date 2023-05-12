@@ -5,7 +5,7 @@ import {
   selectPossibleSceneOptions,
   selectPossibleScenesLastFetched,
 } from "../services/redux/selectors";
-import { featureIds } from "@/features/ids";
+import { featureIds } from "@identities/features/ids";
 
 function SceneDisplayFeature() {
   const lastFetched = useSelector(selectPossibleScenesLastFetched);

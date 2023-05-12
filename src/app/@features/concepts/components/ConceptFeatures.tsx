@@ -5,7 +5,7 @@ import {
   selectPossibleConceptOptions,
   selectPossibleConceptsLastFetched,
 } from "../services/redux/selectors";
-import { featureIds } from "@/features/ids";
+import { featureIds } from "@identities/features/ids";
 
 function ConceptDisplayFeature() {
   const lastFetched = useSelector(selectPossibleConceptsLastFetched);

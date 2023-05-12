@@ -6,7 +6,7 @@ import {
   projectInput,
   usernameInput,
 } from "@features/users/data/config/inputs";
-import { formId__userSignup } from "@/forms/ids";
+import { formId__userSignup } from "@identities/forms/ids";
 
 export const form__userSignup: IFormConfig = {
   title: "Signup",

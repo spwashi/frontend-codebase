@@ -6,7 +6,7 @@ import { LoginChecker } from "@features/users/behaviors/login/components/actions
 import { LoginRequirement } from "@features/users/behaviors/login/components/gates/LoginRequirement";
 import { UserLoginFormFeature } from "@features/users/behaviors/login/components/forms/UserLoginFormFeature";
 import { UserSignupFormFeature } from "@features/users/behaviors/signup/components/forms/UserSignupFormFeature";
-import { featureIds } from "@/features/ids";
+import { featureIds } from "@identities/features/ids";
 
 export function UserAdminRoutes() {
   return (

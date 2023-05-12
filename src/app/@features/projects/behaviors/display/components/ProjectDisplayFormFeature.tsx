@@ -6,7 +6,7 @@ import { form__selectProject } from "@features/projects/behaviors/select/config"
 import { IFormContextState } from "@widgets/form/context/types/state";
 import { Project } from "../../../services/graphql/one/Project";
 import { selectProjectStateProject } from "../../../services/redux/selectors";
-import { featureIds } from "@/features/ids";
+import { featureIds } from "@identities/features/ids";
 
 export function ProjectDisplayFormFeature() {
   const [formState, setFormState] = useState<IFormContextState>();

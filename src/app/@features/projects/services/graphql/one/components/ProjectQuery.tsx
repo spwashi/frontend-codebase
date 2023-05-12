@@ -1,6 +1,6 @@
 import { useQuery } from "@apollo/client";
 import React, { useContext, useEffect } from "react";
-import { graphQlNodes } from "@/graphql/nodes";
+import { graphQlNodes } from "@identities/graphql/nodes";
 import { Project, ProjectReferenceInput } from "@generated/graphql";
 import { ProjectContext } from "../../../../context/context";
 

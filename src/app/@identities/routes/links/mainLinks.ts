@@ -1,5 +1,8 @@
-import { routeHasHref } from "@/routes/helpers/routeHasHref";
-import { INavLinkConfig, INavLinkConfigMap } from "@/routes/types/linkConfig";
+import { routeHasHref } from "@identities/routes/helpers/routeHasHref";
+import {
+  INavLinkConfig,
+  INavLinkConfigMap,
+} from "@identities/routes/types/linkConfig";
 
 const homeRoute: INavLinkConfig = {
   id: "home",

@@ -5,7 +5,7 @@ import {
   selectPossibleEventOptions,
   selectPossibleEventsLastFetched,
 } from "../services/redux/selectors";
-import { featureIds } from "@/features/ids";
+import { featureIds } from "@identities/features/ids";
 
 function EventDisplayFeature() {
   const lastFetched = useSelector(selectPossibleEventsLastFetched);

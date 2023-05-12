@@ -1,5 +1,5 @@
 import { IFormConfig } from "@widgets/form/types/IFormConfig";
-import { formId__eventEdit } from "@/forms/ids";
+import { formId__eventEdit } from "@identities/forms/ids";
 import {
   descriptionInput,
   endInput,

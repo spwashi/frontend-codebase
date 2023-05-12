@@ -1,6 +1,6 @@
 import { IFormConfig } from "@widgets/form/types/IFormConfig";
 import { sceneInput } from "@features/scenes/data/config/inputs";
-import { formId__sceneSelect } from "@/forms/ids";
+import { formId__sceneSelect } from "@identities/forms/ids";
 
 export const form__selectScene: IFormConfig = {
   title: "Select Scene",

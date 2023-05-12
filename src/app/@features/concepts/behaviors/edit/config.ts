@@ -1,5 +1,5 @@
 import { IFormConfig } from "@widgets/form/types/IFormConfig";
-import { formId__conceptEdit } from "@/forms/ids";
+import { formId__conceptEdit } from "@identities/forms/ids";
 import {
   contentTypeInput,
   idInput,

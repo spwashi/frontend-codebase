@@ -3,7 +3,7 @@ import { maybeLoggedInUserInput } from "@features/users/data/config/inputs";
 
 import { tagsInput } from "@features/tags/data/config/inputs";
 import { assetInput } from "@features/assets/data/config/inputs";
-import { formId__assetUpload } from "@/forms/ids";
+import { formId__assetUpload } from "@identities/forms/ids";
 
 export const form__uploadAsset: IFormConfig = {
   title: "Upload Asset",

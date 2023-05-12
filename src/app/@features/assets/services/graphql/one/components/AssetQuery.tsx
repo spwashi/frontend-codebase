@@ -1,6 +1,6 @@
 import { useQuery } from "@apollo/client";
 import React from "react";
-import { graphQlNodes } from "@/graphql/nodes";
+import { graphQlNodes } from "@identities/graphql/nodes";
 import { AssetContents } from "../../../../behaviors/display/components/AssetContents";
 
 export function AssetQuery({ realname }: { realname: string }) {

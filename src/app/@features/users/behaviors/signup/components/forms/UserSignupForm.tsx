@@ -4,7 +4,7 @@ import { selectMutationInput } from "@features/users/behaviors/signup/selectors"
 import { FormWidget } from "@widgets/form/FormWidget";
 import { form__userSignup } from "@features/users/behaviors/signup/config";
 import { GraphqlMutationResponse } from "@services/graphql/components/api/GraphqlMutationResponse";
-import { graphQlNodes } from "@/graphql/nodes";
+import { graphQlNodes } from "@identities/graphql/nodes";
 
 export function UserSignupForm() {
   const [onsubmit, response] = useMutationForm(

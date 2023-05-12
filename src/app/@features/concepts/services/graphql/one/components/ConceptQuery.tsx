@@ -2,7 +2,7 @@ import { useQuery } from "@apollo/client";
 import React, { useContext, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { ConceptContext } from "@features/concepts/context/context";
-import { graphQlNodes } from "@/graphql/nodes";
+import { graphQlNodes } from "@identities/graphql/nodes";
 import { Concept, ConceptReferenceInput } from "@generated/graphql";
 import { ACTION_RECEIVE_ONE_CONCEPT } from "../../../redux/reducer";
 

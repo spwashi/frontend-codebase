@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 import React, { useCallback } from "react";
 import { useMutation } from "@apollo/client";
 import { Log } from "@core/dev/components/Log";
-import { graphQlNodes } from "@/graphql/nodes";
+import { graphQlNodes } from "@identities/graphql/nodes";
 import { DeleteConceptInput } from "@generated/graphql";
 import { ACTION_DELETE_ONE_CONCEPT } from "../../../redux/reducer";
 

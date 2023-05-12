@@ -1,6 +1,6 @@
 import { useQuery } from "@apollo/client";
 import React, { useContext, useEffect } from "react";
-import { graphQlNodes } from "@/graphql/nodes";
+import { graphQlNodes } from "@identities/graphql/nodes";
 import { TagContext } from "@features/tags/context/context";
 import { Tag, TagReferenceInput } from "@generated/graphql";
 
