@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import classNames from "classnames";
-import { getButtonImageSrc } from "@core/sites/boon/util/getButtonImageSrc";
+import { getButtonImageSrc } from "@core/util/getButtonImageSrc";
 
 type LoadedState = "loaded" | "unloaded";
 
@@ -29,7 +29,7 @@ export function Button({ onClick, isActivated }: ButtonParams) {
           <img
             role="button"
             onLoad={onImageLoad}
-            src={getButtonImageSrc()}
+            src={getButtonImageSrc("boon")}
             alt="[The BoonButton]"
           />
           <figcaption>[The BoonButton]</figcaption>

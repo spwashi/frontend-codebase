@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 1000 1000">
     <style type="text/css">
-        .svg-logo-a{fill:#f4f4f4;}
-        .svg-logo-b{fill:#11A3A3;}
-        .svg-logo-d{fill:#50f0f0;}
+        .svg-logo-a{fill:#777;}
+        .svg-logo-b{fill:#999;}
+        .svg-logo-d{fill:#ccc;}
         .svg-logo-c{fill:#4C4C4C;}
         text {
             font-size: 500px;
@@ -18,8 +18,8 @@
         <g>
             <text class="svg-logo-a" x="100" y="900" fill="black">b</text>
             <text class="svg-logo-b" x="300" y="700" fill="black">o</text>
-            <text class="svg-logo-c" x="550" y="500" fill="black">o</text>
-            <text class="svg-logo-d" x="700" y="300" fill="black">n</text>
+            <text class="svg-logo-c" x="550" y="500" fill="black">n</text>
+            <text class="svg-logo-d" x="700" y="300" fill="black">k</text>
         </g>
     </g>
 </svg>
