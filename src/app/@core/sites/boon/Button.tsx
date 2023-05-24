@@ -18,8 +18,6 @@ export function Button({ onClick, isActivated }: ButtonParams) {
 
   return (
     <div className={classNames([isActivated ? "activated" : "deactivated"])}>
-      <div className="stage-open" aria-hidden="true" />
-      <div className="stage-main" />
       <button
         onClick={() => {
           setLoadedState("unloaded");
@@ -37,7 +35,6 @@ export function Button({ onClick, isActivated }: ButtonParams) {
           <figcaption>[The BoonButton]</figcaption>
         </figure>
       </button>
-      <div className="stage-close" aria-hidden="true" />
     </div>
   );
 }

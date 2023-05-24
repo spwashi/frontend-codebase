@@ -9,6 +9,7 @@ import { Route, Routes } from "react-router";
 import { DefaultPage } from "@core/routes/DefaultPage";
 import { Feature } from "@widgets/feature";
 import { featureIds } from "@identities/features/ids";
+import { UiStage } from "@core/components/UiStage";
 
 const canBeAdmin = true;
 
@@ -22,22 +23,22 @@ export function Application() {
 
   return (
     <div id="application-container" className={className}>
-      <div className="stage-open" aria-hidden="true" />
-      <div className="app-wrapper">
-        {canBeAdmin && <AdminControlPanel />}
-        <div className="app-body">
-          <Routes>
-            <Route path="/" element={<DefaultPage />} />
-          </Routes>
+      <UiStage>
+        <div className="app-wrapper">
+          {canBeAdmin && <AdminControlPanel />}
+          <div className="app-body">
+            <Routes>
+              <Route path="/" element={<DefaultPage />} />
+            </Routes>
+          </div>
+          <AppStateLog />
         </div>
-        <LogAppReduxState />
-      </div>
-      <div className="stage-close" aria-hidden="true" />
+      </UiStage>
     </div>
   );
 }
 
-function LogAppReduxState({ open }: { open?: boolean }) {
+function AppStateLog({ open }: { open?: boolean }) {
   const state = useSelector((state) => state);
   return (
     <Feature name={featureIds.app.application_state}>
