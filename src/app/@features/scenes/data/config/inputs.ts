@@ -1,5 +1,5 @@
 import { IFormItemConfig } from "@widgets/form/features/fields/types/fieldConfig";
-import { convertToSlug } from "@core/helpers/convertToSlug";
+import { convertToSlug } from "@core/util/convertToSlug";
 
 export const titleInput: IFormItemConfig = {
   title: "Scene Title",
