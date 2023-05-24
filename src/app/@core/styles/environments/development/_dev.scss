@@ -1,8 +1,14 @@
 .dev-log--container {
-  position: absolute;
-  right: 0;
+  display: none !important;
+}
+
+.dev-log--container {
   height: 1rem;
-  display: block;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
   &.active {
     .activate {
       display: none;
@@ -30,9 +36,9 @@
   overflow: hidden;
   display: flex;
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 1rem;
   padding: 2rem 1rem 1rem;
+  max-width: 500px;
 
   details {
     z-index: 10;
@@ -41,9 +47,8 @@
 }
 
 .dev-log--controls {
-  position: absolute;
   z-index: 1;
-  right: 0;
+  white-space: nowrap;
 }
 
 .dev-log {

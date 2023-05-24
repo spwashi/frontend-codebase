@@ -38,7 +38,7 @@ function LogActivatorButton({ isActive, toggle }: LogActivatorButtonParams) {
         className={isActive ? "deactivate" : "activate"}
         onClick={() => toggle(!isActive)}
       >
-        {isActive ? "close" : "open"} the Log <CurrentFeatureName />
+        {isActive ? "close" : "open"} <CurrentFeatureName /> Log
       </button>
     </div>
   );

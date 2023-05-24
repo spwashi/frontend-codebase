@@ -64,5 +64,9 @@ export function Feature({ name, children, enabled = true }: IFeatureProps) {
 export function CurrentFeatureName() {
   const featureContext = useContext(FeatureContextInternal);
   if (!featureContext) return null;
-  return <span>{featureContext.state?.featureId}</span>;
+  return (
+    <strong>
+      <span>{featureContext.state?.featureId}</span>
+    </strong>
+  );
 }

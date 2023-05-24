@@ -2,13 +2,19 @@ import { useToggle } from "@core/hooks/useToggle";
 import { SiteButton } from "@core/sites/SiteButton";
 import React, { useState } from "react";
 import { SiteNameOption, siteNames } from "@core/sites/types";
+import { Feature } from "@widgets/feature";
+import { featureIds } from "@identities/features/ids";
 
 const siteName = import.meta.env.VITE_PROJECT_NAME;
-export function DefaultPage() {
-  const [isActivated, toggleState] = useToggle();
-  const [site, setSite] = useState<SiteNameOption>(siteName);
+
+interface SiteSelectParams {
+  site: string;
+  setSite: (param: SiteNameOption) => void;
+}
+
+function SiteSelect({ site, setSite }: SiteSelectParams) {
   return (
-    <main>
+    <Feature name={featureIds.app.site_switcher}>
       <select
         value={site}
         onChange={(e) => setSite(e.target.value as SiteNameOption)}
@@ -19,6 +25,16 @@ export function DefaultPage() {
           </option>
         ))}
       </select>
+    </Feature>
+  );
+}
+
+export function DefaultPage() {
+  const [isActivated, toggleState] = useToggle();
+  const [site, setSite] = useState<SiteNameOption>(siteName);
+  return (
+    <main>
+      <SiteSelect site={site} setSite={setSite} />
       <SiteButton site={site} onClick={toggleState} isActivated={isActivated} />
     </main>
   );

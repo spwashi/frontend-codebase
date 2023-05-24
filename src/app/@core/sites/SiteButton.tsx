@@ -5,6 +5,8 @@ import { Button as BonkButton } from "@core/sites/bonk/Button";
 import { Button as HonkButton } from "@core/sites/honk/Button";
 import React from "react";
 import { SiteNameOption } from "@core/sites/types";
+import { Feature } from "@widgets/feature";
+import { featureIds } from "@identities/features/ids";
 
 interface ButtonParams {
   site: SiteNameOption;
@@ -12,7 +14,7 @@ interface ButtonParams {
   isActivated: number;
 }
 
-export const SiteButton = ({ site, onClick, isActivated }: ButtonParams) => {
+function Button({ site, onClick, isActivated }: ButtonParams) {
   switch (site) {
     case "boon":
       return <BoonButton onClick={onClick} isActivated={isActivated} />;
@@ -25,4 +27,11 @@ export const SiteButton = ({ site, onClick, isActivated }: ButtonParams) => {
     case "honk":
       return <HonkButton onClick={onClick} isActivated={isActivated} />;
   }
+}
+export const SiteButton = ({ site, onClick, isActivated }: ButtonParams) => {
+  return (
+    <Feature name={featureIds.app.site_button}>
+      <Button site={site} onClick={onClick} isActivated={isActivated} />
+    </Feature>
+  );
 };
