@@ -33,7 +33,7 @@ export function FeatureRegistrationBoundary({
   return (
     <FeatureContextExternal.Provider value={contextValue}>
       <Feature name={featureIds.app.aggregate_features}>
-        <Log title={"Features"}>{contextValue}</Log>
+        <Log title="Feature List">{contextValue}</Log>
       </Feature>
       {children}
     </FeatureContextExternal.Provider>

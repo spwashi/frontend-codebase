@@ -4,6 +4,8 @@ import { Log } from "@core/dev/components/Log";
 import { IConceptContext } from "@features/concepts/context/context";
 import { useActiveConcept } from "@features/concepts/context/hooks/useActiveConcept";
 import { ConceptDeleteButton } from "./ConceptDeleteButton";
+import { Feature } from "@widgets/feature";
+import { featureIds } from "@identities/features/ids";
 
 function RichText({ src }: { src: string }) {
   const [editorState, setEditorState] = useState(() =>
@@ -23,35 +25,36 @@ function ConceptDisplayBody({ concept }: IConceptDisplayParams) {
   const { title, contentType, src } = concept;
 
   return (
-    <div className="concept-wrapper">
-      <article className="concept">
-        <section>
-          <header>
-            <span className="title">{title}</span>
-          </header>
-          <section className="body">
-            <div className="contentType">{contentType}</div>
-
-            <div className="content">
-              {(() => {
-                switch (contentType) {
-                  case "text/rich":
-                    return (
-                      <div className="rich-text">
-                        {RichText({ src: src || "" })}
-                      </div>
-                    );
-                  case "text/text":
-                    return <span className="plain">{src}</span>;
-                  default:
-                    return <Log>{src}</Log>;
-                }
-              })()}
-            </div>
+    <Feature name={featureIds.concept.displayImpl}>
+      <div className="concept-wrapper">
+        <article className="concept">
+          <section>
+            <header>
+              <span className="title">{title}</span>
+            </header>
+            <section className="body">
+              <div className="contentType">{contentType}</div>
+              <div className="content">
+                {(() => {
+                  switch (contentType) {
+                    case "text/rich":
+                      return (
+                        <div className="rich-text">
+                          {RichText({ src: src || "" })}
+                        </div>
+                      );
+                    case "text/text":
+                      return <span className="plain">{src}</span>;
+                    default:
+                      return <Log title="Content Src">{src}</Log>;
+                  }
+                })()}
+              </div>
+            </section>
           </section>
-        </section>
-      </article>
-    </div>
+        </article>
+      </div>
+    </Feature>
   );
 }
 

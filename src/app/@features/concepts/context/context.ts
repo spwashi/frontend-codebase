@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { Concept } from '@generated/graphql';
+import { Concept } from "@generated/graphql";
 
 export type IConceptContext = {
   concept: Concept | null;

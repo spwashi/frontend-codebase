@@ -5,6 +5,8 @@ import { Log } from "@core/dev/components/Log";
 import { graphQlNodes } from "@identities/graphql/nodes";
 import { DeleteEventInput } from "@generated/graphql";
 import { ACTION_DELETE_ONE_EVENT } from "../../services/redux/reducer";
+import { Feature } from "@widgets/feature";
+import { featureIds } from "@identities/features/ids";
 
 export function EventDeleteButton({ id }: DeleteEventInput) {
   const [deleteEvent, { error }] = useMutation(graphQlNodes.event.delete);
@@ -21,12 +23,12 @@ export function EventDeleteButton({ id }: DeleteEventInput) {
   }, [id, deleteEvent]);
 
   return (
-    <>
+    <Feature name={featureIds.event.delete}>
       {error ? (
-        <Log>{{ error }}</Log>
+        <Log title="Event Delete Error">{{ error }}</Log>
       ) : (
         <button onClick={() => doDelete()}>Delete Event</button>
       )}
-    </>
+    </Feature>
   );
 }

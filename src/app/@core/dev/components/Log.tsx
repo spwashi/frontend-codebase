@@ -1,11 +1,9 @@
-import React, { useCallback, useContext, useState } from "react";
+import React, { useCallback, useState } from "react";
 import { useSelector } from "react-redux";
 import ReactJson from "react-json-view";
 import classNames from "classnames";
 import { appClassnames as classes } from "../../styles/classNames";
 import { Dev } from "./Dev";
-import { FeatureContextExternal } from "@widgets/feature/context/group/context";
-import { FeatureContextInternal } from "@widgets/feature/context/internal/context";
 import {
   CurrentFeatureName,
   Feature,
@@ -38,6 +36,23 @@ function useBinaryState(
   return [state, pushToggle];
 }
 
+interface LogActivatorButtonParams {
+  isActive: boolean;
+  toggle: (force?: boolean) => void;
+}
+function LogActivatorButton({ isActive, toggle }: LogActivatorButtonParams) {
+  return (
+    <div className={classNames([LOGGER.components.controls])}>
+      <button
+        className={isActive ? "deactivate" : "activate"}
+        onClick={() => toggle(!isActive)}
+      >
+        {isActive ? "close" : "open"} the Log <CurrentFeatureName />
+      </button>
+    </div>
+  );
+}
+
 export function Log({
   children,
   style = "json",
@@ -47,31 +62,20 @@ export function Log({
   title,
 }: type) {
   const [isActive, toggleActive] = useBinaryState(false);
+  const containerClassName = classNames([
+    LOGGER.components.container,
+    isActive ? classes.states.active : classes.states.inactive,
+  ]);
+  const detailsClassName = LOGGER.devLog + (error ? " error" : "");
   return (
     <Dev>
-      <div
-        className={classNames([
-          LOGGER.components.container,
-          isActive ? classes.states.active : classes.states.inactive,
-        ])}
-      >
-        <div className={classNames([LOGGER.components.controls])}>
-          <button
-            className={isActive ? "deactivate" : "activate"}
-            onClick={() => toggleActive(!isActive)}
-          >
-            {isActive ? "close" : "open"} the Log <CurrentFeatureName />
-          </button>
-        </div>
+      <div className={containerClassName}>
+        <LogActivatorButton isActive={isActive} toggle={toggleActive} />
         <div className={LOGGER.components.wrapper}>
-          <details
-            open={open}
-            className={LOGGER.devLog + (error ? " error" : "")}
-          >
+          <details open={open} className={detailsClassName}>
             {title && (
               <summary>
-                <span>{title}</span> <span className="reason">{logReason}</span>{" "}
-                <span className="generic">[devlog]</span>
+                <span>{title}</span> <span className="reason">{logReason}</span>
               </summary>
             )}
             {children &&
@@ -97,7 +101,7 @@ export function LogAppReduxState({
   const state = useSelector((state) => state);
   return (
     <Feature name={featureIds.app.application_state}>
-      <Log title={"App State"} style={style} open={open}>
+      <Log title="App State" style={style} open={open}>
         {state}
       </Log>
     </Feature>

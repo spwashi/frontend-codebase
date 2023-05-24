@@ -5,6 +5,8 @@ import { Log } from "@core/dev/components/Log";
 import { graphQlNodes } from "@identities/graphql/nodes";
 import { DeleteConceptInput } from "@generated/graphql";
 import { ACTION_DELETE_ONE_CONCEPT } from "../../../redux/reducer";
+import { Feature } from "@widgets/feature";
+import { featureIds } from "@identities/features/ids";
 
 export function ConceptDeleteButton({ id }: DeleteConceptInput) {
   const [deleteConcept, { error }] = useMutation(graphQlNodes.concept.delete);
@@ -22,12 +24,12 @@ export function ConceptDeleteButton({ id }: DeleteConceptInput) {
   }, [id, deleteConcept]);
 
   return (
-    <>
+    <Feature name={featureIds.concept.delete}>
       {error ? (
-        <Log>{{ error }}</Log>
+        <Log title="Concept Delete Error">{{ error }}</Log>
       ) : (
         <button onClick={() => doDelete()}>Delete Concept</button>
       )}
-    </>
+    </Feature>
   );
 }

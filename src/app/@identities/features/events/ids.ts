@@ -1,5 +1,6 @@
 export const eventIds = <const>{
   events: "app--events",
+  delete: "app--event-delete",
   display: "app--event-display",
   create_form: "app--event-create-form",
   edit_form: "app--event-edit-form",

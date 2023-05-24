@@ -9,6 +9,8 @@ import { useActiveTag } from "@features/tags/context/hooks/useActiveTag";
 import { DeleteTagInput, TagReferenceInput } from "@generated/graphql";
 import { TagDisplay } from "./components/TagDisplay";
 import { TagQuery } from "./components/TagQuery";
+import { Feature } from "@widgets/feature";
+import { featureIds } from "@identities/features/ids";
 
 function DeleteTag() {
   const tag = useActiveTag();
@@ -17,7 +19,7 @@ function DeleteTag() {
 
   if (!tag || !user) return null;
   return (
-    <React.Fragment>
+    <Feature name={featureIds.tag.delete}>
       <Log>{response.data}</Log>
       <button
         onClick={() =>
@@ -31,7 +33,7 @@ function DeleteTag() {
       >
         DELETE
       </button>
-    </React.Fragment>
+    </Feature>
   );
 }
 

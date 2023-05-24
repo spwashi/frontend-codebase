@@ -5,6 +5,8 @@ import { Log } from "@core/dev/components/Log";
 import { graphQlNodes } from "@identities/graphql/nodes";
 import { DeleteSceneInput } from "@generated/graphql";
 import { ACTION_DELETE_ONE_SCENE } from "../../../redux/reducer";
+import { Feature } from "@widgets/feature";
+import { featureIds } from "@identities/features/ids";
 
 export function SceneDeleteButton({ id }: DeleteSceneInput) {
   const [deleteScene, { error }] = useMutation(graphQlNodes.scene.delete);
@@ -19,12 +21,12 @@ export function SceneDeleteButton({ id }: DeleteSceneInput) {
   }, [id, deleteScene]);
 
   return (
-    <>
+    <Feature name={featureIds.scene.delete}>
       {error ? (
-        <Log>{{ error }}</Log>
+        <Log title="Scene Delete Error">{{ error }}</Log>
       ) : (
         <button onClick={() => doDelete()}>Delete Scene</button>
       )}
-    </>
+    </Feature>
   );
 }
