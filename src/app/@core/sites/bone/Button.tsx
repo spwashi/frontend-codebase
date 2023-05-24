@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import classNames from "classnames";
-import { getButtonImageSrc } from "@core/components/sites/honk/util/getButtonImageSrc";
+import { getButtonImageSrc } from "@core/sites/bone/util/getButtonImageSrc";
 
 type LoadedState = "loaded" | "unloaded";
 
@@ -25,16 +25,16 @@ export function Button({ onClick, isActivated }: ButtonParams) {
           setLoadedState("unloaded");
           onClick();
         }}
-        className={classNames(["honk-button"])}
+        className={classNames(["bone-button"])}
       >
         <figure className={classNames(["fade-image", loadedState])}>
           <img
             role="button"
             onLoad={onImageLoad}
             src={getButtonImageSrc()}
-            alt="[The HonkButton]"
+            alt="[The BoneButton]"
           />
-          <figcaption>[The HonkButton]</figcaption>
+          <figcaption>[The BoneButton]</figcaption>
         </figure>
       </button>
       <div className="stage-close" aria-hidden="true" />

@@ -1,10 +1,10 @@
-import { Button as BoonButton } from "@core/components/sites/boon/Button";
-import { Button as BaneButton } from "@core/components/sites/bane/Button";
-import { Button as BoneButton } from "@core/components/sites/bone/Button";
-import { Button as BonkButton } from "@core/components/sites/bonk/Button";
-import { Button as HonkButton } from "@core/components/sites/honk/Button";
+import { Button as BoonButton } from "@core/sites/boon/Button";
+import { Button as BaneButton } from "@core/sites/bane/Button";
+import { Button as BoneButton } from "@core/sites/bone/Button";
+import { Button as BonkButton } from "@core/sites/bonk/Button";
+import { Button as HonkButton } from "@core/sites/honk/Button";
 import React from "react";
-import { SiteNameOption } from "@core/components/sites/types";
+import { SiteNameOption } from "@core/sites/types";
 
 interface ButtonParams {
   site: SiteNameOption;

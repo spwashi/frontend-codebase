@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import classNames from "classnames";
-import { getButtonImageSrc } from "@core/components/sites/boon/util/getButtonImageSrc";
+import { getButtonImageSrc } from "@core/sites/bonk/util/getButtonImageSrc";
 
 type LoadedState = "loaded" | "unloaded";
 
@@ -25,16 +25,16 @@ export function Button({ onClick, isActivated }: ButtonParams) {
           setLoadedState("unloaded");
           onClick();
         }}
-        className={classNames(["boon-button"])}
+        className={classNames(["bonk-button"])}
       >
         <figure className={classNames(["fade-image", loadedState])}>
           <img
             role="button"
             onLoad={onImageLoad}
             src={getButtonImageSrc()}
-            alt="[The BoonButton]"
+            alt="[The BonkButton]"
           />
-          <figcaption>[The BoonButton]</figcaption>
+          <figcaption>[The BonkButton]</figcaption>
         </figure>
       </button>
       <div className="stage-close" aria-hidden="true" />
