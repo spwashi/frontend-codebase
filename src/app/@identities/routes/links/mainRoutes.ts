@@ -8,16 +8,18 @@ const homeRoute: INavLinkConfig = {
   id: "home",
   href: "/",
   title: "Home",
+  path: "/",
 };
 const aboutRoute: INavLinkConfig = {
   id: "about",
   href: "/about",
   title: "About",
+  path: "about",
 };
 
-const mainLinkConfigs: INavLinkConfigMap = {
+export const mainRoutes = {
   home: homeRoute,
   about: aboutRoute,
 };
 
-export default Object.values(mainLinkConfigs).filter(routeHasHref);
+export default Object.values(mainRoutes).filter(routeHasHref);

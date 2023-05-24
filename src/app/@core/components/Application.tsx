@@ -10,6 +10,7 @@ import { DefaultPage } from "@core/routes/DefaultPage";
 import { Feature } from "@widgets/feature";
 import { featureIds } from "@identities/features/ids";
 import { UiStage } from "@core/components/UiStage";
+import { mainRoutes } from "@identities/routes/links/mainRoutes";
 
 const canBeAdmin = true;
 
@@ -28,7 +29,7 @@ export function Application() {
           {canBeAdmin && <AdminControlPanel />}
           <div className="app-body">
             <Routes>
-              <Route path="/" element={<DefaultPage />} />
+              <Route path={mainRoutes.home.path} element={<DefaultPage />} />
             </Routes>
           </div>
           <AppStateLog />

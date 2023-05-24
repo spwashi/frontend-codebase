@@ -1,2 +1,2 @@
-export { default as adminNavLinks } from "./links/adminLinks";
-export { default as mainNavLinks } from "./links/mainLinks";
+export { default as adminNavLinks } from "./links/adminRoutes";
+export { default as mainNavLinks } from "./links/mainRoutes";

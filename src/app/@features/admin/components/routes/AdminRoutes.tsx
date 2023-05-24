@@ -11,24 +11,31 @@ import { EventsControlPanel } from "@features/events/behaviors/admin/components/
 import { TagsControlPanel } from "@features/tags/behaviors/admin/components/TagsControlPanel";
 import { AssetsControlPanel } from "@features/assets/behaviors/admin/components/AssetsControlPanel";
 import { LoginRequirement } from "@features/users/behaviors/login/components/gates/LoginRequirement";
-import { routes } from "@identities/routes/routes";
+import { routerCategories } from "@identities/routes/routerCategories";
+import { adminRoutes as routes } from "@identities/routes/links/adminRoutes";
 
 export function AdminRoutes() {
   return (
     <Routes>
       <Route
-        path={routes.admin.path}
+        path={routerCategories.admin.path}
         element={
           <Routes>
-            <Route path="users/*" element={<UsersControlPanel />} />
-            <Route path="projects/*" element={<ProjectsControlPanel />} />
-            <Route path="concepts/*" element={<ConceptsControlPanel />} />
-            <Route path="scenes/*" element={<ScenesControlPanel />} />
-            <Route path="events/*" element={<EventsControlPanel />} />
-            <Route path="tags/*" element={<TagsControlPanel />} />
-            <Route path="assets/*" element={<AssetsControlPanel />} />
+            <Route path={routes.users.path} element={<UsersControlPanel />} />
             <Route
-              path="all/*"
+              path={routes.projects.path}
+              element={<ProjectsControlPanel />}
+            />
+            <Route
+              path={routes.concepts.path}
+              element={<ConceptsControlPanel />}
+            />
+            <Route path={routes.scenes.path} element={<ScenesControlPanel />} />
+            <Route path={routes.events.path} element={<EventsControlPanel />} />
+            <Route path={routes.events.path} element={<TagsControlPanel />} />
+            <Route path={routes.assets.path} element={<AssetsControlPanel />} />
+            <Route
+              path={routes.all.path}
               element={
                 <>
                   <LoginRequirement state={false}>

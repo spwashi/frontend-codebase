@@ -1,4 +1,4 @@
-export const routes = {
+export const routerCategories = {
   admin: {
     prefix: "/admin",
     path: "/admin/*",

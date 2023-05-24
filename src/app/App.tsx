@@ -18,12 +18,14 @@ import { Application } from "@core/components/Application";
 import { GRAPHQL_URL } from "@core/constants";
 import { FeatureRegistrationBoundary } from "@widgets/feature";
 
-import { routes } from "@identities/routes/routes";
+import { routerCategories } from "@identities/routes/routerCategories";
 
 const httpLink = createHttpLink({ uri: GRAPHQL_URL });
 const client = new ApolloClient({ link: httpLink, cache: new InMemoryCache() });
 
-const rootElement = <Route path={routes.main.path} element={<Application />} />;
+const rootElement = (
+  <Route path={routerCategories.main.path} element={<Application />} />
+);
 const router = createBrowserRouter(createRoutesFromElements(rootElement));
 
 function App() {
