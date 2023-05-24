@@ -7,12 +7,13 @@ import { LoginRequirement } from "@features/users/behaviors/login/components/gat
 import { UserLoginFormFeature } from "@features/users/behaviors/login/components/forms/UserLoginFormFeature";
 import { UserSignupFormFeature } from "@features/users/behaviors/signup/components/forms/UserSignupFormFeature";
 import { featureIds } from "@identities/features/ids";
+import { adminRoutes } from "@identities/routes/links/adminRoutes";
 
 export function UserAdminRoutes() {
   return (
     <Routes>
       <Route
-        path=""
+        path={adminRoutes.users.sub.root.path}
         element={
           <FeatureRequirement name={featureIds.user.users}>
             <UserLogoutButton />

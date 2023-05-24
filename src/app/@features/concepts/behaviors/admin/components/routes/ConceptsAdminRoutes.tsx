@@ -6,12 +6,13 @@ import { ConceptCreateFormFeature } from "@features/concepts/behaviors/create/co
 import { ConceptEditFormFeature } from "@features/concepts/behaviors/edit/components/ConceptEditFormFeature";
 import { ConceptDisplayFormFeature } from "@features/concepts/behaviors/display/components/ConceptDisplayFormFeature";
 import { ConceptTagFormFeature } from "@features/concepts/behaviors/tag/components/ConceptTagFormFeature";
+import { adminRoutes } from "@identities/routes/links/adminRoutes";
 
 export function ConceptsAdminRoutes() {
   return (
     <Routes>
       <Route
-        path={"all"}
+        path={adminRoutes.concepts.sub.all.path}
         element={
           <div style={{ width: 500 + "px" }}>
             <ConceptListDisplay />
@@ -19,7 +20,7 @@ export function ConceptsAdminRoutes() {
         }
       />
       <Route
-        path=""
+        path={adminRoutes.concepts.sub.root.path}
         element={
           <LoginRequirement>
             <ConceptCreateFormFeature />

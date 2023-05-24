@@ -5,13 +5,14 @@ import { LoginRequirement } from "@features/users/behaviors/login/components/gat
 import { TagCreateFormFeature } from "@features/tags/behaviors/create/components/TagCreateFormFeature";
 import { TagsDisplayFormFeature } from "@features/tags/behaviors/display/components/TagsDisplayFormFeature";
 import { featureIds } from "@identities/features/ids";
+import { adminRoutes } from "@identities/routes/links/adminRoutes";
 
 export function TagsAdminRoutes() {
   return (
     <Routes>
-      <Route path="all" element={"[unimplemented]"} />
+      <Route path={adminRoutes.tags.sub.all.path} element={"[unimplemented]"} />
       <Route
-        path=""
+        path={adminRoutes.tags.sub.root.path}
         element={
           <FeatureRequirement name={featureIds.tag.tags}>
             <LoginRequirement>

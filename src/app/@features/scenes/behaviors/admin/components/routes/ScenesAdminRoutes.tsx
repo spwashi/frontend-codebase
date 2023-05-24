@@ -8,12 +8,13 @@ import { SceneEditFormFeature } from "@features/scenes/behaviors/edit/components
 import { FeatureRequirement } from "@widgets/feature";
 import { SceneDisplayFormFeature } from "@features/scenes/behaviors/display/components/SceneDisplayFormFeature";
 import { featureIds } from "@identities/features/ids";
+import { adminRoutes } from "@identities/routes/links/adminRoutes";
 
 export function ScenesAdminRoutes() {
   return (
     <Routes>
       <Route
-        path="all"
+        path={adminRoutes.scenes.sub.all.path}
         element={
           <div style={{ width: 500 + "px" }}>
             <SceneListDisplay />
@@ -21,7 +22,7 @@ export function ScenesAdminRoutes() {
         }
       />
       <Route
-        path=""
+        path={adminRoutes.scenes.sub.root.path}
         element={
           <React.Fragment>
             <SceneListQuery />
