@@ -3,12 +3,16 @@ import { SiteButton } from "@core/sites/SiteButton";
 import React, { useState } from "react";
 import { SiteNameOption, siteNames } from "@core/sites/types";
 
-export function AppRoot() {
+const siteName = import.meta.env.VITE_PROJECT_NAME;
+export function DefaultPage() {
   const [isActivated, toggleState] = useToggle();
-  const [site, setSite] = useState<SiteNameOption>("boon");
+  const [site, setSite] = useState<SiteNameOption>(siteName);
   return (
     <main>
-      <select onChange={(e) => setSite(e.target.value as SiteNameOption)}>
+      <select
+        value={site}
+        onChange={(e) => setSite(e.target.value as SiteNameOption)}
+      >
         {siteNames.map((name) => (
           <option value={name} key={name}>
             {name}

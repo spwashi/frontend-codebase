@@ -6,7 +6,7 @@ import { select_noGraphql } from "@services/redux/reducer";
 import { LogAppReduxState } from "@core/dev/components/Log";
 import { appClassnames } from "../styles/classNames";
 import { Route, Routes } from "react-router";
-import { AppRoot } from "@core/routes/AppRoot";
+import { DefaultPage } from "@core/routes/DefaultPage";
 
 const canBeAdmin = true;
 export function Application() {
@@ -24,7 +24,7 @@ export function Application() {
         {canBeAdmin && <AdminControlPanel />}
         <div className="app-body">
           <Routes>
-            <Route path="/" element={<AppRoot />} />
+            <Route path="/" element={<DefaultPage />} />
           </Routes>
         </div>
         <LogAppReduxState />
