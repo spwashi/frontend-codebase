@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Dev } from "@core/dev/components/Dev";
-import { FeaturesRegistrationContext } from "../context/group/context";
+import { FeatureContextExternal } from "../context/group/context";
 import { IFeature } from "../types";
 
 type IFeatureRequirementProps = {
@@ -15,7 +15,7 @@ export function FeatureRequirement({
   name,
   children,
 }: IFeatureRequirementProps) {
-  const features = useContext(FeaturesRegistrationContext);
+  const features = useContext(FeatureContextExternal);
   if (features.state?.features?.available[name]) return children;
   return <Dev>[disabled]</Dev>;
 }

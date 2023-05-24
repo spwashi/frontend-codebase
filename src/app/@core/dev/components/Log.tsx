@@ -1,9 +1,16 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useContext, useState } from "react";
 import { useSelector } from "react-redux";
 import ReactJson from "react-json-view";
 import classNames from "classnames";
 import { appClassnames as classes } from "../../styles/classNames";
 import { Dev } from "./Dev";
+import { FeatureContextExternal } from "@widgets/feature/context/group/context";
+import { FeatureContextInternal } from "@widgets/feature/context/internal/context";
+import {
+  CurrentFeatureName,
+  Feature,
+} from "@widgets/feature/components/Feature";
+import { featureIds } from "@identities/features/ids";
 
 const LOGGER = classes.widgets.dev.logger;
 
@@ -53,7 +60,7 @@ export function Log({
             className={isActive ? "deactivate" : "activate"}
             onClick={() => toggleActive(!isActive)}
           >
-            {isActive ? "close" : "open"}
+            {isActive ? "close" : "open"} the Log <CurrentFeatureName />
           </button>
         </div>
         <div className={LOGGER.components.wrapper}>
@@ -89,8 +96,10 @@ export function LogAppReduxState({
 }) {
   const state = useSelector((state) => state);
   return (
-    <Log title={"App State"} style={style} open={open}>
-      {state}
-    </Log>
+    <Feature name={featureIds.app.application_state}>
+      <Log title={"App State"} style={style} open={open}>
+        {state}
+      </Log>
+    </Feature>
   );
 }

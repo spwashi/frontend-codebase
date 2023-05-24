@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useMemo, useReducer } from "react";
-import { FeaturesRegistrationContext } from "@widgets/feature/context/group/context";
+import { FeatureContextExternal } from "@widgets/feature/context/group/context";
 import { appClassnames } from "@core/styles/classNames";
-import { FeatureInternalContext } from "../context/internal/context";
+import { FeatureContextInternal } from "../context/internal/context";
 import { IFeature } from "../types";
 
 export type IFeatureProps = {
@@ -18,7 +18,7 @@ function useFeatureRegistrationEffect(
   name: IFeature["featureId"],
   enabled: undefined | boolean
 ) {
-  const features = useContext(FeaturesRegistrationContext);
+  const features = useContext(FeatureContextExternal);
   useEffect(() => {
     features.dispatch({
       type: enabled ? "REGISTER" : "UNREGISTER",
@@ -32,20 +32,23 @@ function useFeatureRegistrationEffect(
     };
   }, [enabled]);
 }
+
 /**
  * Registers a Feature with a given name on the nearest FeatureBoundary
  */
 export function Feature({ name, children, enabled = true }: IFeatureProps) {
   useFeatureRegistrationEffect(name, enabled);
 
-  const [state, dispatch] = useReducer((state: IFeature | null) => state, null);
+  const [state, dispatch] = useReducer((state: IFeature | null) => state, {
+    featureId: name,
+  });
   const value = useMemo(() => ({ state, dispatch }), [state, dispatch]);
-  const features = useContext(FeaturesRegistrationContext);
+  const features = useContext(FeatureContextExternal);
 
   if (!enabled) return null;
   if (features.state?.featuresDisabled) return null;
   return (
-    <FeatureInternalContext.Provider value={value}>
+    <FeatureContextInternal.Provider value={value}>
       {children && (
         <section
           className={appClassnames.services.features.component}
@@ -54,6 +57,12 @@ export function Feature({ name, children, enabled = true }: IFeatureProps) {
           {children}
         </section>
       )}
-    </FeatureInternalContext.Provider>
+    </FeatureContextInternal.Provider>
   );
+}
+
+export function CurrentFeatureName() {
+  const featureContext = useContext(FeatureContextInternal);
+  if (!featureContext) return null;
+  return <span>{featureContext.state?.featureId}</span>;
 }

@@ -1,4 +1,5 @@
 import { adminIds } from "./admin/ids";
+import { appIds } from "./app/ids";
 import { assetIds } from "./assets/ids";
 import { conceptIds } from "./concepts/ids";
 import { eventIds } from "./events/ids";
@@ -8,6 +9,7 @@ import { tagIds } from "./tags/ids";
 import { userIds } from "./users/ids";
 
 export const featureIds = <const>{
+  app: appIds,
   admin: adminIds,
   asset: assetIds,
   concept: conceptIds,
@@ -18,6 +20,7 @@ export const featureIds = <const>{
   user: userIds,
 };
 export const featureIdList = <const>[
+  ...Object.values(featureIds.app),
   ...Object.values(featureIds.admin),
   ...Object.values(featureIds.asset),
   ...Object.values(featureIds.concept),

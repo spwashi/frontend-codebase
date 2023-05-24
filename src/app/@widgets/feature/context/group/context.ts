@@ -5,7 +5,7 @@ import { IFeatureRegistrationContext } from "./types";
 /**
  * Describes a collection of states about features
  */
-export const FeaturesRegistrationContext = createContext({
+export const FeatureContextExternal = createContext({
   state: getFrbContextStartState(),
   dispatch: () => {},
 } as IFeatureRegistrationContext);
