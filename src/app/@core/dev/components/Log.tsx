@@ -14,15 +14,6 @@ const LOGGER = classes.widgets.dev.logger;
 
 type StyleOptions = "json" | "plain";
 
-type type = {
-  style?: StyleOptions;
-  open?: boolean;
-  children: any;
-  title?: string;
-  error?: any;
-  logReason?: string | null;
-};
-
 function useBinaryState(
   defaultState?: boolean
 ): [boolean, (force?: boolean) => void] {
@@ -53,6 +44,14 @@ function LogActivatorButton({ isActive, toggle }: LogActivatorButtonParams) {
   );
 }
 
+type LogParams = {
+  style?: StyleOptions;
+  open?: boolean;
+  children: any;
+  title?: string;
+  error?: any;
+  logReason?: string | null;
+};
 export function Log({
   children,
   style = "json",
@@ -60,7 +59,7 @@ export function Log({
   logReason = null,
   error,
   title,
-}: type) {
+}: LogParams) {
   const [isActive, toggleActive] = useBinaryState(false);
   const containerClassName = classNames([
     LOGGER.components.container,
@@ -88,22 +87,5 @@ export function Log({
         </div>
       </div>
     </Dev>
-  );
-}
-
-export function LogAppReduxState({
-  open,
-  style,
-}: {
-  style?: StyleOptions;
-  open?: boolean;
-}) {
-  const state = useSelector((state) => state);
-  return (
-    <Feature name={featureIds.app.application_state}>
-      <Log title="App State" style={style} open={open}>
-        {state}
-      </Log>
-    </Feature>
   );
 }
