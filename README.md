@@ -2,12 +2,12 @@
 
 Main features
 - Feature Flags - which cluster of intent (to know what we are building)
-- Form handling - which process of engagement (to know how others interact)
+- Form Handling - which process of engagement (to know how others interact)
 - GraphQL - which shape of exchange (to remain internally and externally cohesive)
 - User Authentication - which form of identity (to recognize engagement)
 
 Third-party Libraries
-- TypeScript - which shape is the code (to make quality code more easily)
+- TypeScript - which shape is the code (to make quality code more accessible)
 - React - how should things flow (to have a rhythm about development)
 - Redux - how is state managed (to relate to how the application changes)
 - GraphQL - how are queries identified (to synchronize the frontend and the backend)
