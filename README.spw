@@ -1,42 +1,106 @@
-<this codebase >
+<this codebase>
 
 (Main Features) {
     Feature Flags:
-		which cluster of intent (to know what we are building)
+		which cluster of intent
+			(to know what we are building)
+			    [
+			        easier to communicate across teams about which things change
+			    ]
     Form Handling:
-		which process of engagement (to know how others interact)
+		which process of engagement
+			(to know how others interact)
+			    [
+			        simple channels for collecting input can help reduce complexity in the short and long term
+			    ]
     GraphQL:
-		which shape of exchange (to remain internally and externally cohesive)
+		which shape of exchange
+			(to remain internally and externally cohesive)
+			    [
+			        essential: build a bridge towards shared meaning
+			    ]
     User Authentication:
-		which form of identity (to recognize engagement)
+		which form of identity
+			(to recognize engagement)
+			    [
+			        consider how identity is represented to form structures that support its development
+			    ]
 }
 
 (Third-party Libraries) {
     TypeScript:
-		which shape is the code (to make quality code more accessible)
+		which shape is the code
+			(to make quality code more accessible)
+			    [
+		            find ways to reduce bugs
+			    ]
     React:
-		how should things flow (to have a rhythm about development)
+		how should things flow
+			(to have a rhythm about development)
+			    [
+			        choose an ecosystem that enables iterative development
+			    ]
     Redux:
-		how is state managed (to relate to how the application changes)
+		how is state managed
+			(to relate to how the application changes)
+			    [
+			        manage state changes with common language
+			    ]
     GraphQL:
-		how are queries identified (to synchronize the frontend and the backend)
+		how are queries identified
+			(to synchronize the frontend and the backend)
+			    [
+			        mind communication as a bottleneck
+			    ]
     Apollo:
-		how do we communicate (to funnel the options into more discrete channels)
+		how do we communicate
+			(to funnel the options into more discrete channels)
+			    [
+			        select tooling that supports your development pace
+			    ]
     Cypress:
-		how is behavior verified (to be confident about which changes are happening)
+		how is behavior verified
+			(to be confident about which changes are happening)
+			    [
+			        maintain velocity by understanding impact
+			    ]
     Storybook:
-		what is the visual language (to synchronize design and development)
+		what is the visual language
+			(to synchronize design and development)
+			    [
+			        place language in common areas to evolve
+			    ]
 }
 
 (Demo Sites) {
     boon.land:
-		what is the goal (to introduce ideas)
+		what is the goal
+			(to introduce ideas)
+			    [
+			        exploring imagination
+			    ]
     bane.land:
-		what are the constraints (to limit the noise)
+		what are the constraints
+			(to limit the noise)
+			    [
+			        grounding abstraction
+			    ]
     bone.land:
-		what defines the form (to add structure)
+		what defines the form
+			(to add structure)
+			    [
+			        considering details
+			    ]
     bonk.land:
-		how does it work (to introduce resilience)
+		how does it work
+			(to introduce resilience)
+			    [
+			        maintaining consistency
+			    ]
     honk.land:
-		how does it seem (to understand identity)
+		how does it seem
+			(to understand identity)
+			    [
+			        understanding delivery
+			    ]
 }
