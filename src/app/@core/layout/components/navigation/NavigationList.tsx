@@ -6,7 +6,7 @@ function NavLink({ link }: { link: INavLinkConfig }) {
   return (
     <li>
       <a href={link.href}>{link.title}</a>
-      {link.children ? <NavigationList items={link.children} /> : null}
+      {link.sub ? <NavigationList items={Object.values(link.sub)} /> : null}
     </li>
   );
 }
