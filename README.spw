@@ -1,19 +1,34 @@
 <this codebase>
 
 (to do) {
-    develop <a deployment process> for <each site>[boon,bane,bone,bonk,honk];
+    develop a <deployment process> for <each site>[boon,bane,bone,bonk,honk];
     update the <manifest.json> for <each site>;
-    begin adding <Storybook components> for the <client-facing features>;
+    begin adding <storybook components> for the <client-facing features>;
     create <art boards> in Illustrator for <each site>;
-    start a cycle about <design and development>;
-}
+    start a <cycle> about <design and development>;
+}[
+    <each site>
+        [
+            <manifest.json>;
+            <deployment process>;
+            <art boards>
+        ]
+    <client-facing features>
+        [
+            <storybook components>
+        ]
+    <design and development>
+        [
+            <cycle>
+        ]
+]
 
 (Main Features) {
     Feature Flags:
 		which cluster of intent
 			(to know what we are building)
 			    [
-			        easier to communicate across teams about which things change
+			        clear feature identities make it easier to communicate across teams about which things change
 			    ]
     Form Handling:
 		which process of engagement
@@ -25,13 +40,13 @@
 		which shape of exchange
 			(to remain internally and externally cohesive)
 			    [
-			        essential: build a bridge towards shared meaning
+			        build a bridge to maintain structure across contexts
 			    ]
     User Authentication:
 		which form of identity
 			(to recognize engagement)
 			    [
-			        consider how identity is represented to form structures that support its development
+			        form structures that facilitate the development of identity
 			    ]
 }
 
@@ -40,7 +55,7 @@
 		which shape is the code
 			(to make quality code more accessible)
 			    [
-		            find ways to reduce bugs
+		            reduce the vectors where bugs may be introduced
 			    ]
     React:
 		how should things flow
@@ -70,13 +85,13 @@
 		how is behavior verified
 			(to be confident about which changes are happening)
 			    [
-			        maintain velocity by understanding impact
+			        maintain velocity by monitoring impact
 			    ]
     Storybook:
 		what is the visual language
 			(to synchronize design and development)
 			    [
-			        place language in common areas to evolve
+			        communicate across teams to simplify how ideas are referenced
 			    ]
 }
 
@@ -109,6 +124,6 @@
 		how does it seem
 			(to understand identity)
 			    [
-			        understanding delivery
+			        minding delivery
 			    ]
 }
