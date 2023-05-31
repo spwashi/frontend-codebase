@@ -1,8 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import classNames from "classnames";
-import { getButtonImageSrc } from "@core/util/getButtonImageSrc";
-
-type LoadedState = "loaded" | "unloaded";
+import { SiteLogoSvg } from "@core/util/SiteLogoSvg";
 
 interface ButtonParams {
   onClick: () => void;
@@ -10,28 +8,11 @@ interface ButtonParams {
 }
 
 export function Button({ onClick, isActivated }: ButtonParams) {
-  const [loadedState, setLoadedState] = useState<LoadedState>("unloaded");
-
-  const onImageLoad = (e: any) => {
-    setLoadedState("loaded");
-  };
-
   return (
     <div className={classNames([isActivated ? "activated" : "deactivated"])}>
-      <button
-        onClick={() => {
-          setLoadedState("unloaded");
-          onClick();
-        }}
-        className={classNames(["bane-button"])}
-      >
-        <figure className={classNames(["fade-image", loadedState])}>
-          <img
-            role="button"
-            onLoad={onImageLoad}
-            src={getButtonImageSrc("bane")}
-            alt="[The BaneButton]"
-          />
+      <button onClick={onClick} className={classNames(["bane-button"])}>
+        <figure className={classNames([])}>
+          <SiteLogoSvg siteName="bane" />
           <figcaption>[The BaneButton]</figcaption>
         </figure>
       </button>
