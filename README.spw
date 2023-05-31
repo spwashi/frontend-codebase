@@ -1,25 +1,17 @@
 <this codebase>
 
 (to do) {
-    develop a <deployment process> for <each site>[boon,bane,bone,bonk,honk];
-    update the <manifest.json> for <each site>;
     begin adding <storybook components> for the <client-facing features>;
     create <art boards> in Illustrator for <each site>;
     start a <cycle> about <design and development>;
 }[
     <each site>
         [
-            <manifest.json>;
-            <deployment process>;
             <art boards>
         ]
     <client-facing features>
         [
             <storybook components>
-        ]
-    <design and development>
-        [
-            <cycle>
         ]
 ]
 
