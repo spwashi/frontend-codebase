@@ -1,7 +1,7 @@
-import {SITE_URL} from '../constants';
+import { SITE_URL } from "../constants";
 
-describe('Asset Features', () => {
+describe("Asset Features", () => {
   beforeEach(() => {
-    cy.visit(SITE_URL + 'admin/assets')
+    cy.visit(SITE_URL + "admin/assets");
   });
 });
