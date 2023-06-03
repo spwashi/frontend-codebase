@@ -1,17 +1,12 @@
-import { routeHasHref } from "@identities/routes/helpers/routeHasHref";
-import {
-  INavLinkConfig,
-  INavLinkConfigMap,
-} from "@identities/routes/types/linkConfig";
-import { routerCategories } from "@identities/routes/routerCategories";
+import { routerCategories } from "../helpers/routerCategories";
 
-const adminAllRoute = {
+const adminAllRoute = <const>{
   href: `${routerCategories.admin.prefix}/all`,
   id: "admin-all",
   title: "All",
   path: "all/*",
-} as INavLinkConfig;
-export const adminAssetsRoute = <const>{
+};
+const adminAssetsRoute = <const>{
   href: `${routerCategories.admin.prefix}/assets`,
   id: "admin-assets",
   title: "Assets",
@@ -71,12 +66,12 @@ const adminEventsRoute = <const>{
     },
   },
 };
-const adminProjectsRoute = {
+const adminProjectsRoute = <const>{
   href: `${routerCategories.admin.prefix}/projects`,
   id: "admin-projects",
   title: "Projects",
   path: "projects/*",
-} as INavLinkConfig;
+};
 const adminScenesRoute = <const>{
   href: `${routerCategories.admin.prefix}/scenes`,
   id: "admin-scenes",
@@ -142,6 +137,3 @@ export const adminRoutes = <const>{
   tags: adminTagsRoute,
   users: adminUsersRoute,
 };
-export default Object.values(adminRoutes as INavLinkConfigMap).filter(
-  routeHasHref
-);

@@ -1,8 +1,8 @@
-import { SITE_URL } from "../constants";
+import { adminRoutes, getAbsoluteUrl } from "../../../__generated__/routes";
 
 describe("Admin Features", () => {
   beforeEach(() => {
-    cy.visit(SITE_URL + "admin/");
+    cy.visit(getAbsoluteUrl(adminRoutes.all));
   });
   it("Has Main Admin Navigation", () => {
     cy.get("main nav.admin")

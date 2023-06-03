@@ -4,7 +4,7 @@ export const routerCategories = {
     path: "/admin/*",
   },
   main: {
-    prefix: "/admin",
+    prefix: "/",
     path: "/*",
   },
 };

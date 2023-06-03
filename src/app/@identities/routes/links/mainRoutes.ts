@@ -1,8 +1,4 @@
-import { routeHasHref } from "@identities/routes/helpers/routeHasHref";
-import {
-  INavLinkConfig,
-  INavLinkConfigMap,
-} from "@identities/routes/types/linkConfig";
+import { INavLinkConfig } from "../types/linkConfig";
 
 const homeRoute: INavLinkConfig = {
   id: "home",
@@ -21,5 +17,3 @@ export const mainRoutes = {
   home: homeRoute,
   about: aboutRoute,
 };
-
-export default Object.values(mainRoutes).filter(routeHasHref);

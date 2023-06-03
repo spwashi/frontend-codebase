@@ -3,10 +3,7 @@ import React from "react";
 import { LoginRequirement } from "@features/users/behaviors/login/components/gates/LoginRequirement";
 import { AssetUploadFormFeature } from "@features/assets/behaviors/upload/components/AssetUploadFormFeature";
 import { AssetDisplayForm } from "@features/assets/behaviors/display/components/AssetDisplayForm";
-import {
-  adminAssetsRoute,
-  adminRoutes,
-} from "@identities/routes/links/adminRoutes";
+import { adminRoutes } from "@identities/routes/links/adminRoutes";
 
 export function AssetsAdminRoutes() {
   return (

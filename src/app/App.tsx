@@ -18,7 +18,7 @@ import { Application } from "@core/components/Application";
 import { GRAPHQL_URL } from "@core/constants";
 import { FeatureRegistrationBoundary } from "@widgets/feature";
 
-import { routerCategories } from "@identities/routes/routerCategories";
+import { routerCategories } from "@identities/routes/helpers/routerCategories";
 
 const httpLink = createHttpLink({ uri: GRAPHQL_URL });
 const client = new ApolloClient({ link: httpLink, cache: new InMemoryCache() });

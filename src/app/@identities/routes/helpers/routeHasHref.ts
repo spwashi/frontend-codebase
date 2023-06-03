@@ -1,3 +1,3 @@
-import { INavLinkConfig } from "@identities/routes/types/linkConfig";
+import { INavLinkConfig } from "../types/linkConfig";
 
 export const routeHasHref = (route: INavLinkConfig) => !!route.href;

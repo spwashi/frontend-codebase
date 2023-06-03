@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.json",
+  "include": [
+    "src/app/@identities/routes/index.ts"
+  ],
+  "compilerOptions": {
+    "noEmit": false,
+    "outDir": "cypress/__generated__/routes",
+    "resolveJsonModule": false,
+    "module": "CommonJS",
+    "isolatedModules": false
+  }
+}
