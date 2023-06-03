@@ -5,6 +5,7 @@
   "scripts": {
     "build": "tsc && vite build",
     "build-storybook": "storybook build",
+    "precypress:open": "tsc -p tsconfig.sync.json",
     "cypress:open": "cypress open",
     "serve": "vite preview",
     "start": "vite",
