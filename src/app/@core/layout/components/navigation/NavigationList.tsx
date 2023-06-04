@@ -1,11 +1,12 @@
 import React from "react";
 
 import { INavLinkConfig } from "@identities/routes/types/linkConfig";
+import { Link } from "react-router-dom";
 
 function NavLink({ link }: { link: INavLinkConfig }) {
   return (
     <li>
-      <a href={link.href}>{link.title}</a>
+      <Link to={link.href}>{link.title}</Link>
       {link.sub ? <NavigationList items={Object.values(link.sub)} /> : null}
     </li>
   );
