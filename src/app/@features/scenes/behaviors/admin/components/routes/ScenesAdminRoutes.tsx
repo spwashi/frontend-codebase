@@ -13,30 +13,28 @@ import { getRouterPath } from "@identities/routes";
 
 export function ScenesAdminRoutes() {
   return (
-    <Routes>
-      <Route
-        path={getRouterPath(adminRoutes.scenes.sub.all)}
-        element={
-          <div style={{ width: 500 + "px" }}>
-            <SceneListDisplay />
-          </div>
-        }
-      />
-      <Route
-        path={getRouterPath(adminRoutes.scenes.sub.root)}
-        element={
-          <React.Fragment>
-            <SceneListQuery />
-            <LoginRequirement>
+    <FeatureRequirement name={featureIds.scene.scenes}>
+      <Routes>
+        <Route
+          path={getRouterPath(adminRoutes.scenes.sub.all)}
+          element={
+            <div style={{ width: 500 + "px" }}>
+              <SceneListDisplay />
+            </div>
+          }
+        />
+        <Route
+          path={getRouterPath(adminRoutes.scenes.sub.root)}
+          element={
+            <React.Fragment>
+              <SceneListQuery />
               <SceneCreateFormFeature />
               <SceneEditFormFeature />
-            </LoginRequirement>
-            <FeatureRequirement name={featureIds.scene.display}>
               <SceneDisplayFormFeature />
-            </FeatureRequirement>
-          </React.Fragment>
-        }
-      />
-    </Routes>
+            </React.Fragment>
+          }
+        />
+      </Routes>
+    </FeatureRequirement>
   );
 }

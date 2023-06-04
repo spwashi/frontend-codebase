@@ -7,12 +7,10 @@ import { featureIds } from "@identities/features/ids";
 
 export function EventsControlPanel() {
   return (
-    <React.Fragment>
+    <FeatureRequirement name={featureIds.event.events}>
       <EventsRequisiteFeatures />
       <EventsAdminNavigation />
-      <FeatureRequirement name={featureIds.event.events}>
-        <EventsAdminRoutes />
-      </FeatureRequirement>
-    </React.Fragment>
+      <EventsAdminRoutes />
+    </FeatureRequirement>
   );
 }

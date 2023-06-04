@@ -7,12 +7,10 @@ import { featureIds } from "@identities/features/ids";
 
 export function ConceptsControlPanel() {
   return (
-    <React.Fragment>
+    <FeatureRequirement name={featureIds.concept.concepts}>
       <ConceptsRequisiteFeatures />
       <ConceptsAdminNavigation />
-      <FeatureRequirement name={featureIds.concept.concepts}>
-        <ConceptsAdminRoutes />
-      </FeatureRequirement>
-    </React.Fragment>
+      <ConceptsAdminRoutes />
+    </FeatureRequirement>
   );
 }

@@ -10,9 +10,7 @@ export function UserLoginFormFeature({ alt }: { alt?: any }) {
   if (loggedInUser) return alt ?? null;
   return (
     <FeatureRequirement name={featureIds.user.login}>
-      <Feature name={featureIds.user.login_form}>
-        <UserLoginForm />
-      </Feature>
+      <UserLoginForm />
     </FeatureRequirement>
   );
 }

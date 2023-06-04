@@ -17,5 +17,5 @@ export function FeatureRequirement({
 }: IFeatureRequirementProps) {
   const features = useContext(FeatureContextExternal);
   if (features.state?.features?.available[name]) return children;
-  return <Dev>[disabled]</Dev>;
+  return <Dev>[this feature is not enabled: {name}]</Dev>;
 }

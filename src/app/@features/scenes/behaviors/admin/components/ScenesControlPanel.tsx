@@ -7,12 +7,10 @@ import { featureIds } from "@identities/features/ids";
 
 export function ScenesControlPanel() {
   return (
-    <React.Fragment>
+    <FeatureRequirement name={featureIds.scene.scenes}>
       <ScenesRequisiteFeatures />
       <ScenesAdminNavigation />
-      <FeatureRequirement name={featureIds.scene.scenes}>
-        <ScenesAdminRoutes />
-      </FeatureRequirement>
-    </React.Fragment>
+      <ScenesAdminRoutes />
+    </FeatureRequirement>
   );
 }

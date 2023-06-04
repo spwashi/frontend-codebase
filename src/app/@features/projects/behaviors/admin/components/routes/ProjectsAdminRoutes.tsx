@@ -8,18 +8,20 @@ import { adminRoutes, getRouterPath } from "@identities/routes";
 
 export function ProjectsAdminRoutes() {
   return (
-    <Routes>
-      <Route
-        path={getRouterPath(adminRoutes.projects.sub.root)}
-        element={
-          <FeatureRequirement name={featureIds.project.projects}>
-            <FeatureRequirement name={featureIds.project.create}>
-              <ProjectCreateForm />
-            </FeatureRequirement>
-            <ProjectDisplayFormFeature />
-          </FeatureRequirement>
-        }
-      ></Route>
-    </Routes>
+    <FeatureRequirement name={featureIds.project.projects}>
+      <Routes>
+        <Route
+          path={getRouterPath(adminRoutes.projects.sub.root)}
+          element={
+            <React.Fragment>
+              <FeatureRequirement name={featureIds.project.create}>
+                <ProjectCreateForm />
+              </FeatureRequirement>
+              <ProjectDisplayFormFeature />
+            </React.Fragment>
+          }
+        ></Route>
+      </Routes>
+    </FeatureRequirement>
   );
 }

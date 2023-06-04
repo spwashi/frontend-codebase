@@ -10,11 +10,7 @@ export function UserSignupFormFeature() {
   if (loggedInUser) return null;
   return (
     <FeatureRequirement name={featureIds.user.signup}>
-      <Feature name={featureIds.user.signup_form}>
-        <FeatureRequirement name={featureIds.project.display}>
-          <UserSignupForm />
-        </FeatureRequirement>
-      </Feature>
+      <UserSignupForm />
     </FeatureRequirement>
   );
 }

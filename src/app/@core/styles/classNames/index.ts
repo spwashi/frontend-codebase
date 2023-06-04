@@ -8,6 +8,7 @@ export const appClassnames = {
     isWidget: "widget",
   },
   requirements: {
+    feature: "feature-requirements",
     login: "must-login",
   },
   widgets: {

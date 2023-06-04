@@ -7,12 +7,10 @@ import { featureIds } from "@identities/features/ids";
 
 export function AssetsControlPanel() {
   return (
-    <React.Fragment>
+    <FeatureRequirement name={featureIds.asset.assets}>
       <AssetsRequisiteFeatures />
-      <FeatureRequirement name={featureIds.asset.assets}>
-        <AssetsAdminNavigation />
-        <AssetsAdminRoutes />
-      </FeatureRequirement>
-    </React.Fragment>
+      <AssetsAdminNavigation />
+      <AssetsAdminRoutes />
+    </FeatureRequirement>
   );
 }
