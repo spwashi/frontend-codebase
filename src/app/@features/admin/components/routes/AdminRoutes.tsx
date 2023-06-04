@@ -43,7 +43,7 @@ export function AdminRoutes() {
               element={<EventsControlPanel />}
             />
             <Route
-              path={getRouterPath(adminRoutes.events)}
+              path={getRouterPath(adminRoutes.tags)}
               element={<TagsControlPanel />}
             />
             <Route

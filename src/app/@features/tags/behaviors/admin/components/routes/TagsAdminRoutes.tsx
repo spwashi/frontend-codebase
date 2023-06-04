@@ -12,10 +12,6 @@ export function TagsAdminRoutes() {
   return (
     <Routes>
       <Route
-        path={getRouterPath(adminRoutes.tags.sub.all)}
-        element={"[unimplemented]"}
-      />
-      <Route
         path={getRouterPath(adminRoutes.tags.sub.root)}
         element={
           <FeatureRequirement name={featureIds.tag.tags}>
@@ -25,6 +21,10 @@ export function TagsAdminRoutes() {
             </LoginRequirement>
           </FeatureRequirement>
         }
+      />
+      <Route
+        path={getRouterPath(adminRoutes.tags.sub.all)}
+        element={"(all tags)[unimplemented]"}
       />
     </Routes>
   );

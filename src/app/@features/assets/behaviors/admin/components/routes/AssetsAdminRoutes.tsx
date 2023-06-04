@@ -11,7 +11,7 @@ export function AssetsAdminRoutes() {
     <Routes>
       <Route
         path={getRouterPath(adminRoutes.assets.sub.all)}
-        element={"[unimplemented]"}
+        element={"(all assets)[unimplemented]"}
       />
       <Route
         path={getRouterPath(adminRoutes.assets.sub.root)}
