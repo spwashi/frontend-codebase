@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.json",
+  "include": [
+    "src/app/@identities/features/ids.ts"
+  ],
+  "compilerOptions": {
+    "noEmit": false,
+    "outDir": "cypress/__generated__/features",
+    "resolveJsonModule": false,
+    "module": "CommonJS",
+    "isolatedModules": false
+  }
+}
