@@ -168,8 +168,8 @@ const adminUsersRoute = <const>{
 };
 
 export const adminRoutes = <const>{
-  root: adminRootRoute,
   all: adminAllRoute,
+  root: adminRootRoute,
   assets: adminAssetsRoute,
   concepts: adminConceptsRoute,
   events: adminEventsRoute,

@@ -14,7 +14,7 @@ export function AdminNavigation() {
       <Route
         path={getRouterPath(adminRoutes.root)}
         element={
-          <nav className="admin">
+          <nav className="admin--nav">
             <NavigationList
               items={Object.values(adminRoutes as INavLinkConfigMap).filter(
                 routeHasHref

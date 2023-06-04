@@ -1,11 +1,11 @@
 #application-container {
   &.no-admin {
-    .admin {
+    .admin--nav {
       display: none;
     }
   }
 
-  nav.admin {
+  .admin--nav {
     &:before {
       content: "admin nav";
     }
