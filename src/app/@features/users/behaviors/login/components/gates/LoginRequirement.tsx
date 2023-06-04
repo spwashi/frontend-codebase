@@ -32,9 +32,11 @@ function MustLoginErrorMessage({ children }: { children: ReactNode }) {
         <header>
           <span>{errorMsg}</span>
         </header>
-        {registry.map((i) => (
-          <div key={i}>{i}</div>
-        ))}
+        <ul className="available-features">
+          {registry.map((i) => (
+            <li key={i}>{i}</li>
+          ))}
+        </ul>
         {children}
       </div>
     </FeatureRegistrationBoundary>

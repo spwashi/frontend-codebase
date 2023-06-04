@@ -11,7 +11,6 @@ import { EventsControlPanel } from "@features/events/behaviors/admin/components/
 import { TagsControlPanel } from "@features/tags/behaviors/admin/components/TagsControlPanel";
 import { AssetsControlPanel } from "@features/assets/behaviors/admin/components/AssetsControlPanel";
 import { LoginRequirement } from "@features/users/behaviors/login/components/gates/LoginRequirement";
-import { routerCategories } from "@identities/routes/helpers/routerCategories";
 import { adminRoutes } from "@identities/routes/domains/adminRoutes";
 import { getRouterPath } from "@identities/routes";
 
