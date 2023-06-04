@@ -9,6 +9,9 @@ export const getAbsoluteUrl = (route: INavLinkConfig, siteUrl = envSiteUrl) => {
   return siteUrl + route.path;
 };
 export const getRouterPath = (route: INavLinkConfig) => {
-  console.log(route.path);
   return route.path;
+};
+export const getRouterPath_adminRelativePath = (route: INavLinkConfig) => {
+  if (!route.adminRelativePath) throw new Error("improper usage of routes");
+  return route.adminRelativePath;
 };

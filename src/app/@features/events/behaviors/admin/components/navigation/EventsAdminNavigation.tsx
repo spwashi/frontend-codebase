@@ -1,15 +1,27 @@
 import { NavLink } from "react-router-dom";
 import React from "react";
+import {
+  adminRoutes,
+  getRouterPath_adminRelativePath,
+} from "@identities/routes";
 
 export function EventsAdminNavigation() {
   return (
     <nav>
       <ul>
         <li>
-          <NavLink to="../events">Event Home</NavLink>
+          <NavLink
+            to={getRouterPath_adminRelativePath(adminRoutes.events.sub.root)}
+          >
+            Event Home
+          </NavLink>
         </li>
         <li>
-          <NavLink to="../events/all">All Events</NavLink>
+          <NavLink
+            to={getRouterPath_adminRelativePath(adminRoutes.events.sub.all)}
+          >
+            All Events
+          </NavLink>
         </li>
       </ul>
     </nav>
