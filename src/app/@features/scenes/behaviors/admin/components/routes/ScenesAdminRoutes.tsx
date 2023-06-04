@@ -8,7 +8,7 @@ import { SceneEditFormFeature } from "@features/scenes/behaviors/edit/components
 import { FeatureRequirement } from "@widgets/feature";
 import { SceneDisplayFormFeature } from "@features/scenes/behaviors/display/components/SceneDisplayFormFeature";
 import { featureIds } from "@identities/features/ids";
-import { adminRoutes } from "@identities/routes/links/adminRoutes";
+import { adminRoutes } from "@identities/routes/domains/adminRoutes";
 
 export function ScenesAdminRoutes() {
   return (

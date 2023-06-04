@@ -10,7 +10,7 @@ import { DefaultPage } from "@core/routes/DefaultPage";
 import { Feature } from "@widgets/feature";
 import { featureIds } from "@identities/features/ids";
 import { UiStage } from "@core/components/UiStage";
-import { mainRoutes } from "@identities/routes/links/mainRoutes";
+import { mainRoutes } from "@identities/routes/domains/mainRoutes";
 
 const canBeAdmin = true;
 

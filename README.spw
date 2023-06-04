@@ -87,6 +87,13 @@
 			    ]
 }
 
+(Generated Code) {
+    "package.json" {
+        "codegen:graphql",
+        "precypress:open"
+    }
+}
+
 <Concept Seeds>
 (Demo Sites) {
     "Boon" site:

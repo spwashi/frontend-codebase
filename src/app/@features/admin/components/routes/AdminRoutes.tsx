@@ -12,7 +12,7 @@ import { TagsControlPanel } from "@features/tags/behaviors/admin/components/Tags
 import { AssetsControlPanel } from "@features/assets/behaviors/admin/components/AssetsControlPanel";
 import { LoginRequirement } from "@features/users/behaviors/login/components/gates/LoginRequirement";
 import { routerCategories } from "@identities/routes/helpers/routerCategories";
-import { adminRoutes as routes } from "@identities/routes/links/adminRoutes";
+import { adminRoutes as routes } from "@identities/routes/domains/adminRoutes";
 
 export function AdminRoutes() {
   return (

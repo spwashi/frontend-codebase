@@ -5,7 +5,7 @@ import { LoginRequirement } from "@features/users/behaviors/login/components/gat
 import { TagCreateFormFeature } from "@features/tags/behaviors/create/components/TagCreateFormFeature";
 import { TagsDisplayFormFeature } from "@features/tags/behaviors/display/components/TagsDisplayFormFeature";
 import { featureIds } from "@identities/features/ids";
-import { adminRoutes } from "@identities/routes/links/adminRoutes";
+import { adminRoutes } from "@identities/routes/domains/adminRoutes";
 
 export function TagsAdminRoutes() {
   return (

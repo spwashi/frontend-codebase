@@ -6,7 +6,7 @@ import { ConceptCreateFormFeature } from "@features/concepts/behaviors/create/co
 import { ConceptEditFormFeature } from "@features/concepts/behaviors/edit/components/ConceptEditFormFeature";
 import { ConceptDisplayFormFeature } from "@features/concepts/behaviors/display/components/ConceptDisplayFormFeature";
 import { ConceptTagFormFeature } from "@features/concepts/behaviors/tag/components/ConceptTagFormFeature";
-import { adminRoutes } from "@identities/routes/links/adminRoutes";
+import { adminRoutes } from "@identities/routes/domains/adminRoutes";
 
 export function ConceptsAdminRoutes() {
   return (

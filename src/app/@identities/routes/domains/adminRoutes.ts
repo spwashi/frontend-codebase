@@ -71,6 +71,20 @@ const adminProjectsRoute = <const>{
   id: "admin-projects",
   title: "Projects",
   path: "projects/*",
+  sub: {
+    root: {
+      id: "admin-projects-root",
+      href: `${routerCategories.admin.prefix}/projects/admin`,
+      title: "Project Administration",
+      path: "/",
+    },
+    all: {
+      id: "admin-projects-all",
+      href: `${routerCategories.admin.prefix}/projects/`,
+      title: "Project List of All",
+      path: "all",
+    },
+  },
 };
 const adminScenesRoute = <const>{
   href: `${routerCategories.admin.prefix}/scenes`,
@@ -123,6 +137,13 @@ const adminUsersRoute = <const>{
       href: `${routerCategories.admin.prefix}/users/admin`,
       title: "User Administration",
       path: "/",
+    },
+
+    all: {
+      id: "admin-users-all",
+      href: `${routerCategories.admin.prefix}/users/`,
+      title: "User List of All",
+      path: "all",
     },
   },
 };
