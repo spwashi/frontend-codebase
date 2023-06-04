@@ -1,7 +1,7 @@
 import { INavLinkConfig } from "./types/linkConfig";
 
-export { adminRoutes } from "@identities/routes/domains/adminRoutes";
-export { mainRoutes } from "@identities/routes/domains/mainRoutes";
+export { adminRoutes } from "./domains/adminRoutes";
+export { mainRoutes } from "./domains/mainRoutes";
 
 const envSiteUrl = "http://localhost:5173";
 
