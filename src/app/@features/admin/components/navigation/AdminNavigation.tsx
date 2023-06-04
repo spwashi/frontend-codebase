@@ -3,7 +3,7 @@ import { Route } from "react-router";
 import React from "react";
 import { NavigationList } from "@core/layout/components/navigation/NavigationList";
 
-import { adminRoutes } from "@identities/routes";
+import { adminRoutes, getRouterPath } from "@identities/routes";
 import { routerCategories } from "@identities/routes/helpers/routerCategories";
 import { INavLinkConfigMap } from "@identities/routes/types/linkConfig";
 import { routeHasHref } from "@identities/routes/helpers/routeHasHref";
@@ -12,7 +12,7 @@ export function AdminNavigation() {
   return (
     <Routes>
       <Route
-        path={routerCategories.admin.path}
+        path={getRouterPath(adminRoutes.root)}
         element={
           <nav className="admin">
             <NavigationList

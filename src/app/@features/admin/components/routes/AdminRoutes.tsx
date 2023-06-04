@@ -12,30 +12,46 @@ import { TagsControlPanel } from "@features/tags/behaviors/admin/components/Tags
 import { AssetsControlPanel } from "@features/assets/behaviors/admin/components/AssetsControlPanel";
 import { LoginRequirement } from "@features/users/behaviors/login/components/gates/LoginRequirement";
 import { routerCategories } from "@identities/routes/helpers/routerCategories";
-import { adminRoutes as routes } from "@identities/routes/domains/adminRoutes";
+import { adminRoutes } from "@identities/routes/domains/adminRoutes";
+import { getRouterPath } from "@identities/routes";
 
 export function AdminRoutes() {
   return (
     <Routes>
       <Route
-        path={routerCategories.admin.path}
+        path={adminRoutes.root.path}
         element={
           <Routes>
-            <Route path={routes.users.path} element={<UsersControlPanel />} />
             <Route
-              path={routes.projects.path}
+              path={getRouterPath(adminRoutes.users)}
+              element={<UsersControlPanel />}
+            />
+            <Route
+              path={getRouterPath(adminRoutes.projects)}
               element={<ProjectsControlPanel />}
             />
             <Route
-              path={routes.concepts.path}
+              path={getRouterPath(adminRoutes.concepts)}
               element={<ConceptsControlPanel />}
             />
-            <Route path={routes.scenes.path} element={<ScenesControlPanel />} />
-            <Route path={routes.events.path} element={<EventsControlPanel />} />
-            <Route path={routes.events.path} element={<TagsControlPanel />} />
-            <Route path={routes.assets.path} element={<AssetsControlPanel />} />
             <Route
-              path={routes.all.path}
+              path={getRouterPath(adminRoutes.scenes)}
+              element={<ScenesControlPanel />}
+            />
+            <Route
+              path={getRouterPath(adminRoutes.events)}
+              element={<EventsControlPanel />}
+            />
+            <Route
+              path={getRouterPath(adminRoutes.events)}
+              element={<TagsControlPanel />}
+            />
+            <Route
+              path={getRouterPath(adminRoutes.assets)}
+              element={<AssetsControlPanel />}
+            />
+            <Route
+              path={getRouterPath(adminRoutes.all)}
               element={
                 <>
                   <LoginRequirement state={false}>

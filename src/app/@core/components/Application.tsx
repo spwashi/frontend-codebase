@@ -11,6 +11,7 @@ import { Feature } from "@widgets/feature";
 import { featureIds } from "@identities/features/ids";
 import { UiStage } from "@core/components/UiStage";
 import { mainRoutes } from "@identities/routes/domains/mainRoutes";
+import { getRouterPath } from "@identities/routes";
 
 const canBeAdmin = true;
 
@@ -29,7 +30,10 @@ export function Application() {
           {canBeAdmin && <AdminControlPanel />}
           <div className="app-body">
             <Routes>
-              <Route path={mainRoutes.home.path} element={<DefaultPage />} />
+              <Route
+                path={getRouterPath(mainRoutes.home)}
+                element={<DefaultPage />}
+              />
             </Routes>
           </div>
           <AppStateLog />

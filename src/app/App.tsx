@@ -19,12 +19,13 @@ import { GRAPHQL_URL } from "@core/constants";
 import { FeatureRegistrationBoundary } from "@widgets/feature";
 
 import { routerCategories } from "@identities/routes/helpers/routerCategories";
+import { getRouterPath, mainRoutes } from "@identities/routes";
 
 const httpLink = createHttpLink({ uri: GRAPHQL_URL });
 const client = new ApolloClient({ link: httpLink, cache: new InMemoryCache() });
 
 const rootElement = (
-  <Route path={routerCategories.main.path} element={<Application />} />
+  <Route path={getRouterPath(mainRoutes.root)} element={<Application />} />
 );
 const router = createBrowserRouter(createRoutesFromElements(rootElement));
 

@@ -7,12 +7,13 @@ import { EventEditFormFeature } from "@features/events/behaviors/edit/components
 import { EventDisplayFormFeature } from "@features/events/behaviors/display/components/EventDisplayFormFeature";
 import { EventTagFormFeature } from "@features/events/behaviors/tag/components/EventTagFormFeature";
 import { adminRoutes } from "@identities/routes/domains/adminRoutes";
+import { getRouterPath } from "@identities/routes";
 
 export function EventsAdminRoutes() {
   return (
     <Routes>
       <Route
-        path={adminRoutes.events.sub.all.path}
+        path={getRouterPath(adminRoutes.events.sub.all)}
         element={
           <div style={{ width: 500 + "px" }}>
             <EventListDisplay />
@@ -20,7 +21,7 @@ export function EventsAdminRoutes() {
         }
       />
       <Route
-        path={adminRoutes.events.sub.root.path}
+        path={getRouterPath(adminRoutes.events.sub.root)}
         element={
           <LoginRequirement>
             <EventCreateFormFeature />

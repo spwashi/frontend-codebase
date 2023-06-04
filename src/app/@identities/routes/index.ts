@@ -6,5 +6,9 @@ export { mainRoutes } from "./domains/mainRoutes";
 const envSiteUrl = "http://localhost:5173";
 
 export const getAbsoluteUrl = (route: INavLinkConfig, siteUrl = envSiteUrl) => {
-  return siteUrl + route.href;
+  return siteUrl + route.path;
+};
+export const getRouterPath = (route: INavLinkConfig) => {
+  console.log(route.path);
+  return route.path;
 };

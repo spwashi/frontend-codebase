@@ -1,5 +1,11 @@
 import { routerCategories } from "../helpers/routerCategories";
 
+const adminRootRoute = <const>{
+  href: `${routerCategories.admin.prefix}/`,
+  id: "admin-root",
+  title: "Root",
+  path: "admin/*",
+};
 const adminAllRoute = <const>{
   href: `${routerCategories.admin.prefix}/all`,
   id: "admin-all",
@@ -138,7 +144,6 @@ const adminUsersRoute = <const>{
       title: "User Administration",
       path: "/",
     },
-
     all: {
       id: "admin-users-all",
       href: `${routerCategories.admin.prefix}/users/`,
@@ -149,6 +154,7 @@ const adminUsersRoute = <const>{
 };
 
 export const adminRoutes = <const>{
+  root: adminRootRoute,
   all: adminAllRoute,
   assets: adminAssetsRoute,
   concepts: adminConceptsRoute,

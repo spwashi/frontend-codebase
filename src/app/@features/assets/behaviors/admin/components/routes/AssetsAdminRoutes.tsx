@@ -4,16 +4,17 @@ import { LoginRequirement } from "@features/users/behaviors/login/components/gat
 import { AssetUploadFormFeature } from "@features/assets/behaviors/upload/components/AssetUploadFormFeature";
 import { AssetDisplayForm } from "@features/assets/behaviors/display/components/AssetDisplayForm";
 import { adminRoutes } from "@identities/routes/domains/adminRoutes";
+import { getRouterPath } from "@identities/routes";
 
 export function AssetsAdminRoutes() {
   return (
     <Routes>
       <Route
-        path={adminRoutes.assets.sub.all.path}
+        path={getRouterPath(adminRoutes.assets.sub.all)}
         element={"[unimplemented]"}
       />
       <Route
-        path={adminRoutes.assets.sub.root.path}
+        path={getRouterPath(adminRoutes.assets.sub.root)}
         element={
           <LoginRequirement>
             <AssetUploadFormFeature />

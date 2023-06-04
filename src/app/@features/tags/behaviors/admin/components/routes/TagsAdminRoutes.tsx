@@ -6,13 +6,17 @@ import { TagCreateFormFeature } from "@features/tags/behaviors/create/components
 import { TagsDisplayFormFeature } from "@features/tags/behaviors/display/components/TagsDisplayFormFeature";
 import { featureIds } from "@identities/features/ids";
 import { adminRoutes } from "@identities/routes/domains/adminRoutes";
+import { getRouterPath } from "@identities/routes";
 
 export function TagsAdminRoutes() {
   return (
     <Routes>
-      <Route path={adminRoutes.tags.sub.all.path} element={"[unimplemented]"} />
       <Route
-        path={adminRoutes.tags.sub.root.path}
+        path={getRouterPath(adminRoutes.tags.sub.all)}
+        element={"[unimplemented]"}
+      />
+      <Route
+        path={getRouterPath(adminRoutes.tags.sub.root)}
         element={
           <FeatureRequirement name={featureIds.tag.tags}>
             <LoginRequirement>
