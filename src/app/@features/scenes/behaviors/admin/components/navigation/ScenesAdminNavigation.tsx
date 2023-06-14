@@ -1,25 +1,18 @@
 import { NavLink } from "react-router-dom";
 import React from "react";
-import {
-  adminRoutes,
-  getRouterPath_adminRelativePath,
-} from "@identities/routes";
+import { adminRoutes, getRelativeRouterPath } from "@identities/routes";
 
 export function ScenesAdminNavigation() {
   return (
     <nav>
       <ul>
         <li>
-          <NavLink
-            to={getRouterPath_adminRelativePath(adminRoutes.scenes.sub.root)}
-          >
+          <NavLink to={getRelativeRouterPath(adminRoutes.scenes.sub.root)}>
             Scene Home
           </NavLink>
         </li>
         <li>
-          <NavLink
-            to={getRouterPath_adminRelativePath(adminRoutes.scenes.sub.all)}
-          >
+          <NavLink to={getRelativeRouterPath(adminRoutes.scenes.sub.all)}>
             All Scenes
           </NavLink>
         </li>

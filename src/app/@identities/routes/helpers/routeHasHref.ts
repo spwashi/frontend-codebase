@@ -1,3 +1,3 @@
-import { INavLinkConfig } from "../types/linkConfig";
+import { IRouteConfig } from "../types/linkConfig";
 
-export const routeHasHref = (route: INavLinkConfig) => !!route.href;
+export const routeHasHref = (route: IRouteConfig) => !!route.href;

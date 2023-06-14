@@ -1,25 +1,18 @@
 import { NavLink } from "react-router-dom";
 import React from "react";
-import {
-  adminRoutes,
-  getRouterPath_adminRelativePath,
-} from "@identities/routes";
+import { adminRoutes, getRelativeRouterPath } from "@identities/routes";
 
 export function AssetsAdminNavigation() {
   return (
     <nav>
       <ul>
         <li>
-          <NavLink
-            to={getRouterPath_adminRelativePath(adminRoutes.assets.sub.root)}
-          >
+          <NavLink to={getRelativeRouterPath(adminRoutes.assets.sub.root)}>
             Asset Home
           </NavLink>
         </li>
         <li>
-          <NavLink
-            to={getRouterPath_adminRelativePath(adminRoutes.assets.sub.all)}
-          >
+          <NavLink to={getRelativeRouterPath(adminRoutes.assets.sub.all)}>
             All Assets
           </NavLink>
         </li>

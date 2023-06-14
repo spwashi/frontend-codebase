@@ -1,18 +1,21 @@
-import { INavLinkConfig } from "./types/linkConfig";
+import { IRouteConfig } from "./types/linkConfig";
 
 export { adminRoutes } from "./domains/adminRoutes";
-export { forumRoutes } from "./domains/forumRoutes";
 export { mainRoutes } from "./domains/mainRoutes";
+export { forumRoutes } from "./domains/forumRoutes";
 
 const envSiteUrl = "http://localhost:5173";
 
-export const getAbsoluteUrl = (route: INavLinkConfig, siteUrl = envSiteUrl) => {
+export function getAbsoluteUrl(route: IRouteConfig, siteUrl = envSiteUrl) {
   return siteUrl + route.href;
-};
-export const getRouterPath = (route: INavLinkConfig) => {
+}
+export function getRouterPath(route: IRouteConfig, ...params: any[]) {
+  if (route.generatePath) {
+    return route.generatePath(false, ...params);
+  }
   return route.path;
-};
-export const getRouterPath_adminRelativePath = (route: INavLinkConfig) => {
-  if (!route.adminRelativePath) throw new Error("improper usage of routes");
-  return route.adminRelativePath;
-};
+}
+export function getRelativeRouterPath(route: IRouteConfig) {
+  if (!route.relativePath) throw new Error("improper usage of routes");
+  return route.relativePath;
+}

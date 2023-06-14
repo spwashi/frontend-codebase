@@ -1,18 +1,19 @@
 import { routerCategories } from "../helpers/routerCategories";
+import { IRouteConfig } from "@identities/routes/types/linkConfig";
 
-const forumRootRoute = <const>{
+const forumRootRoute = (<const>{
   href: `${routerCategories.forum.prefix}/`,
   id: "forum-root",
   title: "Root",
   path: "forum/*",
-};
-const forumPostsRoute = <const>{
+}) as IRouteConfig;
+const forumPostsRoute = (<const>{
   href: `${routerCategories.forum.prefix}/posts/`,
   id: "forum-posts",
   title: "Posts",
   path: "posts/*",
-};
-const forumUsersRoute = <const>{
+}) as IRouteConfig;
+const forumUsersRoute = (<const>{
   href: `${routerCategories.forum.prefix}/users/`,
   id: "forum-users",
   title: "Users",
@@ -33,7 +34,7 @@ const forumUsersRoute = <const>{
       forumRelativePath: "../users/all",
     },
   },
-};
+}) as IRouteConfig;
 
 export const forumRoutes = <const>{
   root: forumRootRoute,

@@ -4,7 +4,7 @@ import React from "react";
 import { NavigationList } from "@core/layout/components/navigation/NavigationList";
 
 import { adminRoutes, getRouterPath } from "@identities/routes";
-import { INavLinkConfigMap } from "@identities/routes/types/linkConfig";
+import { IRouteConfigMap } from "@identities/routes/types/linkConfig";
 import { routeHasHref } from "@identities/routes/helpers/routeHasHref";
 
 export function AdminNavigation() {
@@ -15,7 +15,7 @@ export function AdminNavigation() {
         element={
           <nav className="admin--nav">
             <NavigationList
-              items={Object.values(adminRoutes as INavLinkConfigMap).filter(
+              items={Object.values(adminRoutes as IRouteConfigMap).filter(
                 routeHasHref
               )}
             />

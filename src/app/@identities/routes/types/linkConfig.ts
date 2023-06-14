@@ -1,12 +1,12 @@
-export type INavLinkConfig = {
+export type IRouteConfig = {
   id: string;
   href: string;
   title: string;
   path: string;
+  generatePath?: (relative?: boolean, ...params: any[]) => string;
   // todo this seems like a faux pas
-  adminRelativePath?: string;
-  // todo stronger typing here
-  sub?: INavLinkConfigMap;
+  relativePath?: string;
+  sub?: IRouteConfigMap;
 };
 
-export type INavLinkConfigMap = { [key: string]: INavLinkConfig };
+export type IRouteConfigMap = { [key: string]: IRouteConfig };

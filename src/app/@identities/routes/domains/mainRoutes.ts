@@ -1,26 +1,26 @@
-import { INavLinkConfig } from "../types/linkConfig";
+import { IRouteConfig } from "../types/linkConfig";
 
-const rootRoute: INavLinkConfig = {
-  id: "home",
+const mainRootRoute = (<const>{
+  id: "root",
   href: "/",
   title: "Home",
   path: "/*",
-};
-const homeRoute: INavLinkConfig = {
+}) as IRouteConfig;
+const mainHomeRoute = (<const>{
   id: "home",
   href: "/",
   title: "Home",
   path: "/",
-};
-const aboutRoute: INavLinkConfig = {
+}) as IRouteConfig;
+const mainAboutRoute = (<const>{
   id: "about",
   href: "/about",
   title: "About",
   path: "about",
-};
+}) as IRouteConfig;
 
 export const mainRoutes = {
-  root: rootRoute,
-  home: homeRoute,
-  about: aboutRoute,
+  root: mainRootRoute,
+  home: mainHomeRoute,
+  about: mainAboutRoute,
 };

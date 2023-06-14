@@ -1,9 +1,9 @@
 import React from "react";
 
-import { INavLinkConfig } from "@identities/routes/types/linkConfig";
+import { IRouteConfig } from "@identities/routes/types/linkConfig";
 import { Link } from "react-router-dom";
 
-function NavLink({ link }: { link: INavLinkConfig }) {
+function NavLink({ link }: { link: IRouteConfig }) {
   return (
     <li>
       <Link to={link.href}>{link.title}</Link>
@@ -12,7 +12,7 @@ function NavLink({ link }: { link: INavLinkConfig }) {
   );
 }
 
-export function NavigationList({ items }: { items: INavLinkConfig[] }) {
+export function NavigationList({ items }: { items: IRouteConfig[] }) {
   return (
     <ul>
       {items.map((link) => (
