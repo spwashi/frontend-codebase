@@ -5,7 +5,25 @@ describe("Forum Features", () => {
     cy.visit(getAbsoluteUrl(forumRoutes.root));
   });
 
-  it("Has a link to Posts", () => {
+  it("Has a Page for a List of Posts", () => {
     cy.contains("a", "Posts");
+  });
+  it("Has a Page for Specific Posts", () => {
+    cy.contains("a", "View Post");
+  });
+  it("Has a Page for User Profiles", () => {
+    cy.contains("a", "View Profile");
+  });
+  it("Has Comment Permalinks", () => {
+    cy.contains("a", "Permalink Comment");
+  });
+  it("Has a Page for Logging In", () => {
+    cy.contains("a", "Login");
+  });
+  it("Has a Button for Logging Out", () => {
+    cy.contains("a", "Logout");
+  });
+  it("Has a Widget to Check Session Status", () => {
+    cy.contains("a", "Check session status");
   });
 });
