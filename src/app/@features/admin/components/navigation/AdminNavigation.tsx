@@ -4,7 +4,6 @@ import React from "react";
 import { NavigationList } from "@core/layout/components/navigation/NavigationList";
 
 import { adminRoutes, getRouterPath } from "@identities/routes";
-import { routerCategories } from "@identities/routes/helpers/routerCategories";
 import { INavLinkConfigMap } from "@identities/routes/types/linkConfig";
 import { routeHasHref } from "@identities/routes/helpers/routeHasHref";
 

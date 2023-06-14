@@ -7,4 +7,8 @@ export const routerCategories = {
     prefix: "/",
     path: "/*",
   },
+  forum: {
+    prefix: "/forum",
+    path: "/forum/*",
+  },
 };

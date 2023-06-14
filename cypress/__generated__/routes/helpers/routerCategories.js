@@ -6,6 +6,10 @@ exports.routerCategories = {
         prefix: "/admin",
         path: "/admin/*",
     },
+    forum: {
+        prefix: "/forum",
+        path: "/forum/*",
+    },
     main: {
         prefix: "/",
         path: "/*",
