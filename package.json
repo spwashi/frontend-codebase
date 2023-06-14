@@ -12,7 +12,8 @@
     "start": "vite",
     "storybook": "storybook dev -p 6006",
     "eslint": "eslint --fix",
-    "codegen:graphql": "yarn graphql-codegen"
+    "codegen:graphql": "yarn graphql-codegen",
+    "serve:json": "json-server --watch src/app/.demo/db.json --port 3005"
   },
   "browserslist": {
     "production": [
@@ -29,16 +30,17 @@
   "dependencies": {
     "@apollo/client": "^3.7.12",
     "@reduxjs/toolkit": "^1.9.3",
+    "@tanstack/react-query": "^4.29.12",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^14.4.3",
-    "@tanstack/react-query": "^4.29.12",
     "classnames": "^2.3.2",
     "date-fns": "^2.29.3",
     "draft-js": "^0.11.7",
     "eslint": "^8.38.0",
     "graphql": "^16.6.0",
     "js-cookie": "^3.0.1",
+    "json-server": "^0.17.3",
     "lodash": "^4.17.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

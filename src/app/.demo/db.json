@@ -1,0 +1,112 @@
+{
+  "users": [
+    {
+      "id": "000-abc-xyz",
+      "name": "Jo Person",
+      "username": "walnut",
+      "profile_image_src": "https://picsum.photos/200/300"
+    },
+    {
+      "id": "123-XYZ-abc",
+      "name": "Bobert McRobert",
+      "username": "almond",
+      "profile_image_src": "https://picsum.photos/200/300"
+    },
+    {
+      "id": "321-cba-zyx",
+      "name": "boon",
+      "username": "boon",
+      "profile_image_src": "https://picsum.photos/200/300"
+    },
+    {
+      "id": "123-xyz-ABC",
+      "name": "Bobert McRobert",
+      "username": "Almond",
+      "profile_image_src": "https://picsum.photos/200/300"
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "This is the First Post",
+      "slug": "this-is-the-first-post/walnut",
+      "user_id": "000-abc-xyz",
+      "description": "This is the first post I ever made on this site!"
+    },
+    {
+      "id": 2,
+      "title": "This is Another Post!",
+      "slug": "this-is-another-post/Almond",
+      "user_id": "123-xyz-ABC",
+      "description": "Another post\n\nCurious if there are any formatting things that happen with these special characters (**newlines**)"
+    },
+    {
+      "id": 3,
+      "title": "POST NUMBER 3",
+      "slug": "post-number-3/walnut",
+      "user_id": "000-abc-xyz",
+      "description": "This is my second post. Nothing to see here <b>BUT IT HAS SOME HTML</b> <script>alert('I can haz XSS vulnerability?')</script>"
+    },
+    {
+      "id": 4,
+      "title": "POST NUMBER 3",
+      "slug": "post-number-3/almond",
+      "user_id": "123-XYZ-abc",
+      "description": "I just copied walnut"
+    },
+    {
+      "id": 5,
+      "title": "POST NUMBER 3",
+      "slug": "post-number-3/boon",
+      "user_id": "321-cba-zyx",
+      "description": "I just copied walnut"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "A Comment",
+      "post_id": 1,
+      "user_id": "000-abc-xyz",
+      "parent_comment_id": null
+    },
+    {
+      "id": 2,
+      "body": "Comment Number 2",
+      "post_id": 1,
+      "user_id": "321-cba-zyx",
+      "parent_comment_id": 1
+    },
+    {
+      "id": 3,
+      "body": "Comment Three",
+      "post_id": 2,
+      "user_id": "123-XYZ-abc",
+      "parent_comment_id": 2
+    },
+    {
+      "id": 4,
+      "body": "Another Comment",
+      "post_id": 1,
+      "user_id": "000-abc-xyz",
+      "parent_comment_id": 2
+    },
+    {
+      "id": 5,
+      "body": "Fifth Comment",
+      "post_id": 1,
+      "user_id": "123-XYZ-abc",
+      "parent_comment_id": 1
+    },
+    {
+      "id": 6,
+      "body": "Sixth Comment",
+      "post_id": 1,
+      "user_id": "123-xyz-ABC",
+      "parent_comment_id": 2
+    }
+  ],
+  "active_user": {
+    "id": "000-abc-xyz"
+  }
+}
