@@ -1,0 +1,24 @@
+<should be able to> [
+    view:
+        (user profile) {
+            Name:           name;
+            Username:       username;
+            Profile Image:  profile_image_src;
+        }
+        (posts) {
+            #_list: [<card> { title; description }];
+            #_single: [
+                Page [
+                    #: { title; description; body; comments };
+                    #: <route> [ slug [ unique per user ] ]
+                ]
+            ];
+        }
+        (comments) {
+            #_thread: [ <branch> { user; body; parent; load more } ];
+            #_single: [ <permalink> [ slug; id ] ]
+        }
+        (session) {
+            #: [ login; check status; logout [ button ] ];
+        }
+]
