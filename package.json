@@ -7,6 +7,7 @@
     "build-storybook": "storybook build",
     "codegen:graphql": "yarn graphql-codegen",
     "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
     "eslint": "eslint --fix",
     "precypress:open": "yarn sync:cypress",
     "serve": "vite preview",

@@ -11,7 +11,8 @@ import { Feature } from "@widgets/feature";
 import { featureIds } from "@identities/features/ids";
 import { UiStage } from "@core/components/UiStage";
 import { mainRoutes } from "@identities/routes/domains/mainRoutes";
-import { getRouterPath } from "@identities/routes";
+import { forumRoutes, getRouterPath } from "@identities/routes";
+import { ForumNavigation } from "@features/_demo/components/navigation/variants/ForumNavigation";
 
 const canBeAdmin = true;
 
@@ -33,6 +34,10 @@ export function Application() {
               <Route
                 path={getRouterPath(mainRoutes.home)}
                 element={<DefaultPage />}
+              />
+              <Route
+                path={getRouterPath(forumRoutes.root)}
+                element={<ForumNavigation />}
               />
             </Routes>
           </div>
