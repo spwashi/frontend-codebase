@@ -5,15 +5,15 @@
   "scripts": {
     "build": "tsc && vite build",
     "build-storybook": "storybook build",
-    "sync:cypress": "tsc -p tsconfig.cypress.routes.json; tsc -p tsconfig.cypress.featureIds.json;",
-    "precypress:open": "yarn sync:cypress",
+    "codegen:graphql": "yarn graphql-codegen",
     "cypress:open": "cypress open",
+    "eslint": "eslint --fix",
+    "precypress:open": "yarn sync:cypress",
     "serve": "vite preview",
+    "serve:json": "json-server --watch src/app/.demo/db.json --port 3005",
     "start": "vite",
     "storybook": "storybook dev -p 6006",
-    "eslint": "eslint --fix",
-    "codegen:graphql": "yarn graphql-codegen",
-    "serve:json": "json-server --watch src/app/.demo/db.json --port 3005"
+    "sync:cypress": "tsc -p tsconfig.cypress.routes.json; tsc -p tsconfig.cypress.featureIds.json;"
   },
   "browserslist": {
     "production": [
