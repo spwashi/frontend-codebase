@@ -2,168 +2,169 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.adminRoutes = void 0;
 const routerCategories_1 = require("../helpers/routerCategories");
+const adminPrefix = routerCategories_1.routerCategories.admin.prefix;
 const adminRootRoute = {
-    href: `${routerCategories_1.routerCategories.admin.prefix}/`,
+    href: `${adminPrefix}/`,
     id: "admin-root",
     title: "Root",
-    path: "admin/*",
+    absolutePath: "admin/*",
 };
 const adminAllRoute = {
-    href: `${routerCategories_1.routerCategories.admin.prefix}/all/`,
+    href: `${adminPrefix}/all/`,
     id: "admin-all",
     title: "All",
-    path: "all/*",
+    absolutePath: "all/*",
 };
 const adminAssetsRoute = {
-    href: `${routerCategories_1.routerCategories.admin.prefix}/assets/`,
+    href: `${adminPrefix}/assets/`,
     id: "admin-assets",
     title: "Assets",
-    path: "assets/*",
+    absolutePath: "assets/*",
     sub: {
         root: {
             id: "admin-assets-root",
-            href: `${routerCategories_1.routerCategories.admin.prefix}/assets/`,
+            href: `${adminPrefix}/assets/`,
             title: "Asset Administration",
-            path: "/",
+            absolutePath: "/",
             relativePath: "../assets",
         },
         all: {
             id: "admin-assets-all",
-            href: `${routerCategories_1.routerCategories.admin.prefix}/assets/all/`,
+            href: `${adminPrefix}/assets/all/`,
             title: "Asset List of All",
-            path: "all",
+            absolutePath: "all",
             relativePath: "../assets/all",
         },
     },
 };
 const adminConceptsRoute = {
-    href: `${routerCategories_1.routerCategories.admin.prefix}/concepts/`,
+    href: `${adminPrefix}/concepts/`,
     id: "admin-concepts",
     title: "Concepts",
-    path: "concepts/*",
+    absolutePath: "concepts/*",
     sub: {
         root: {
             id: "admin-concepts-root",
-            href: `${routerCategories_1.routerCategories.admin.prefix}/concepts/`,
+            href: `${adminPrefix}/concepts/`,
             title: "Concept Administration",
-            path: "/",
+            absolutePath: "/",
             relativePath: "../concepts",
         },
         all: {
             id: "admin-concepts-all",
-            href: `${routerCategories_1.routerCategories.admin.prefix}/concepts/all/`,
+            href: `${adminPrefix}/concepts/all/`,
             title: "Concept List of All",
-            path: "all",
+            absolutePath: "all",
             relativePath: "../concepts/all",
         },
     },
 };
 const adminEventsRoute = {
-    href: `${routerCategories_1.routerCategories.admin.prefix}/events/`,
+    href: `${adminPrefix}/events/`,
     id: "admin-events",
     title: "Events",
-    path: "events/*",
+    absolutePath: "events/*",
     sub: {
         root: {
             id: "admin-events-root",
-            href: `${routerCategories_1.routerCategories.admin.prefix}/events/`,
+            href: `${adminPrefix}/events/`,
             title: "Event Administration",
-            path: "/",
+            absolutePath: "/",
             relativePath: "../events",
         },
         all: {
             id: "admin-events-all",
-            href: `${routerCategories_1.routerCategories.admin.prefix}/events/all/`,
+            href: `${adminPrefix}/events/all/`,
             title: "Event List of All",
-            path: "all",
+            absolutePath: "all",
             relativePath: "../events/all",
         },
     },
 };
 const adminProjectsRoute = {
-    href: `${routerCategories_1.routerCategories.admin.prefix}/projects/`,
+    href: `${adminPrefix}/projects/`,
     id: "admin-projects",
     title: "Projects",
-    path: "projects/*",
+    absolutePath: "projects/*",
     sub: {
         root: {
             id: "admin-projects-root",
-            href: `${routerCategories_1.routerCategories.admin.prefix}/projects/`,
+            href: `${adminPrefix}/projects/`,
             title: "Project Administration",
-            path: "/",
+            absolutePath: "/",
             relativePath: "../projects",
         },
         all: {
             id: "admin-projects-all",
-            href: `${routerCategories_1.routerCategories.admin.prefix}/projects/all/`,
+            href: `${adminPrefix}/projects/all/`,
             title: "Project List of All",
-            path: "all",
+            absolutePath: "all",
             relativePath: "../projects/all",
         },
     },
 };
 const adminScenesRoute = {
-    href: `${routerCategories_1.routerCategories.admin.prefix}/scenes/`,
+    href: `${adminPrefix}/scenes/`,
     id: "admin-scenes",
     title: "Scenes",
-    path: "scenes/*",
+    absolutePath: "scenes/*",
     sub: {
         root: {
             id: "admin-scenes-root",
-            href: `${routerCategories_1.routerCategories.admin.prefix}/scenes/`,
+            href: `${adminPrefix}/scenes/`,
             title: "Scene Administration",
-            path: "/",
+            absolutePath: "/",
             relativePath: "../scenes",
         },
         all: {
             id: "admin-scenes-all",
-            href: `${routerCategories_1.routerCategories.admin.prefix}/scenes/all/`,
+            href: `${adminPrefix}/scenes/all/`,
             title: "Scene List of All",
-            path: "all",
+            absolutePath: "all",
             relativePath: "../scenes/all",
         },
     },
 };
 const adminTagsRoute = {
-    href: `${routerCategories_1.routerCategories.admin.prefix}/tags/`,
+    href: `${adminPrefix}/tags/`,
     id: "admin-tags",
     title: "Tags",
-    path: "tags/*",
+    absolutePath: "tags/*",
     sub: {
         root: {
             id: "admin-tags-root",
-            href: `${routerCategories_1.routerCategories.admin.prefix}/tags/`,
+            href: `${adminPrefix}/tags/`,
             title: "Tag Administration",
-            path: "/",
+            absolutePath: "/",
             relativePath: "../tags",
         },
         all: {
             id: "admin-tags-all",
-            href: `${routerCategories_1.routerCategories.admin.prefix}/tags/all/`,
+            href: `${adminPrefix}/tags/all/`,
             title: "Tag List of All",
-            path: "all",
+            absolutePath: "all",
             relativePath: "../tags/all",
         },
     },
 };
 const adminUsersRoute = {
-    href: `${routerCategories_1.routerCategories.admin.prefix}/users/`,
+    href: `${adminPrefix}/users/`,
     id: "admin-users",
     title: "Users",
-    path: "users/*",
+    absolutePath: "users/*",
     sub: {
         root: {
             id: "admin-users-root",
-            href: `${routerCategories_1.routerCategories.admin.prefix}/users/`,
+            href: `${adminPrefix}/users/`,
             title: "User Administration",
-            path: "/",
+            absolutePath: "/",
             relativePath: "../users",
         },
         all: {
             id: "admin-users-all",
-            href: `${routerCategories_1.routerCategories.admin.prefix}/users/all/`,
+            href: `${adminPrefix}/users/all/`,
             title: "User List of All",
-            path: "all",
+            absolutePath: "all",
             relativePath: "../users/all",
         },
     },

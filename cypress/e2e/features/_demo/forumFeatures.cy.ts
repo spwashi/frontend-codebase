@@ -5,20 +5,32 @@ describe("Forum Features", () => {
     cy.visit(getAbsoluteUrl(forumRoutes.root));
   });
 
-  it("Has a Page for a List of Posts", () => {
+  it("Has a Forum Feature", () => {
     cy.get("section[data-feature-name=app--forum]");
-    cy.contains("a", "Posts");
+  });
+  it("Has a Page for a List of Posts", () => {
+    cy.contains("a", "Posts").first().click();
+    cy.location("pathname").should("include", "forum/posts");
+    cy.get("section[data-feature-name=app--forum--posts]");
   });
   it("Has a Page for Specific Posts", () => {
     cy.contains("a", "Posts").first().click();
+    cy.location("pathname").should("include", "forum/posts");
     cy.get(".forum-post a").first().click();
-    cy.contains(".forum-post a");
+    cy.get("section[data-feature-name=app--forum--single-post]");
   });
   it("Has Comment Permalinks", () => {
+    cy.contains("a", "Comments").first().click();
+
+    cy.location("pathname").should("include", "forum/comments");
+
+    cy.get("section[data-feature-name=app--forum--comments]");
     cy.contains("a", "Permalink Comment");
   });
   it("Has a Page for a List of Users", () => {
-    cy.contains("a", "Users");
+    cy.contains("a", "Users").first().click();
+    cy.location("pathname").should("include", "forum/users");
+    cy.get("section[data-feature-name=app--forum--users]");
   });
   it("Has a Page for User Profiles", () => {
     cy.contains("a", "View Profile");

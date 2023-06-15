@@ -10,7 +10,9 @@ const ids_6 = require("./projects/ids");
 const ids_7 = require("./scenes/ids");
 const ids_8 = require("./tags/ids");
 const ids_9 = require("./users/ids");
+const ids_10 = require("./demo/forum/ids");
 exports.featureIds = {
+    forum: ids_10.forumIds,
     app: ids_2.appIds,
     admin: ids_1.adminIds,
     asset: ids_3.assetIds,
@@ -22,6 +24,7 @@ exports.featureIds = {
     user: ids_9.userIds,
 };
 exports.featureIdList = [
+    ...Object.values(exports.featureIds.forum),
     ...Object.values(exports.featureIds.app),
     ...Object.values(exports.featureIds.admin),
     ...Object.values(exports.featureIds.asset),

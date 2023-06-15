@@ -13,10 +13,10 @@ function getAbsoluteUrl(route, siteUrl = envSiteUrl) {
 }
 exports.getAbsoluteUrl = getAbsoluteUrl;
 function getRouterPath(route, ...params) {
-    if (route.generatePath) {
-        return route.generatePath(false, ...params);
+    if (route.buildPath) {
+        return route.buildPath(false, ...params);
     }
-    return route.path;
+    return route.absolutePath;
 }
 exports.getRouterPath = getRouterPath;
 function getRelativeRouterPath(route) {

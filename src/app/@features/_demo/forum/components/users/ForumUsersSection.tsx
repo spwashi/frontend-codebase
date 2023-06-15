@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { Feature } from "@widgets/feature";
+import { featureIds } from "@identities/features/ids";
 
 type IForumUser = {
   id: string;
@@ -15,12 +17,12 @@ export function ForumUsersSection() {
   }, []);
 
   return (
-    <section>
+    <Feature name={featureIds.forum.users}>
       <ul>
         {users.map((user) => (
           <li key={user.id}>{user.username}</li>
         ))}
       </ul>
-    </section>
+    </Feature>
   );
 }

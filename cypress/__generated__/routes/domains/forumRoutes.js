@@ -2,42 +2,48 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.forumRoutes = void 0;
 const routerCategories_1 = require("../helpers/routerCategories");
+const forumPrefix = routerCategories_1.routerCategories.forum.prefix;
 const forumRootRoute = {
-    href: `${routerCategories_1.routerCategories.forum.prefix}/`,
+    href: `/${forumPrefix}/`,
     id: "forum-root",
-    title: "Root",
-    path: "forum/*",
+    absolutePath: `/${forumPrefix}/*`,
 };
 const forumPostsRoute = {
-    href: `${routerCategories_1.routerCategories.forum.prefix}/posts/`,
+    href: `/${forumPrefix}/posts/`,
     id: "forum-posts",
     title: "Posts",
-    path: "posts/*",
+    absolutePath: `/${forumPrefix}/posts/*`,
+    relativePath: `posts/*`,
+};
+const forumCommentsRoute = {
+    href: `/${forumPrefix}/comments/`,
+    id: "forum-comments",
+    title: "Comments",
+    absolutePath: `/${forumPrefix}/comments/*`,
+    relativePath: `comments/*`,
+};
+const forumSpecificPostRoute = {
+    href: `/${forumPrefix}/posts/{slug}`,
+    id: "forum-specific_post",
+    absolutePath: `/${forumPrefix}/posts/:slug/:user`,
+    relativePath: ":slug/:username",
+    buildPath(relative, slug) {
+        if (!slug)
+            return `${relative ? this.relativePath : this.absolutePath}`;
+        return (relative ? "" : "/") + `/${forumPrefix}/posts/${slug}`;
+    },
 };
 const forumUsersRoute = {
-    href: `${routerCategories_1.routerCategories.forum.prefix}/users/`,
+    href: `/${forumPrefix}/users/`,
     id: "forum-users",
     title: "Users",
-    path: "users/*",
-    sub: {
-        root: {
-            id: "forum-users-root",
-            href: `${routerCategories_1.routerCategories.forum.prefix}/users/`,
-            title: "User forumistration",
-            path: "/",
-            forumRelativePath: "../users",
-        },
-        all: {
-            id: "forum-users-all",
-            href: `${routerCategories_1.routerCategories.forum.prefix}/users/all/`,
-            title: "User List of All",
-            path: "all",
-            forumRelativePath: "../users/all",
-        },
-    },
+    absolutePath: `/${forumPrefix}/users/*`,
+    relativePath: `users/*`,
 };
 exports.forumRoutes = {
     root: forumRootRoute,
     posts: forumPostsRoute,
+    comments: forumCommentsRoute,
+    specificPost: forumSpecificPostRoute,
     users: forumUsersRoute,
 };

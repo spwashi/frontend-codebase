@@ -4,20 +4,19 @@ exports.mainRoutes = void 0;
 const mainRootRoute = {
     id: "root",
     href: "/",
-    title: "Home",
-    path: "/*",
+    absolutePath: "/*",
 };
 const mainHomeRoute = {
     id: "home",
     href: "/",
     title: "Home",
-    path: "/",
+    absolutePath: "/",
 };
 const mainAboutRoute = {
     id: "about",
     href: "/about",
     title: "About",
-    path: "about",
+    absolutePath: "about",
 };
 exports.mainRoutes = {
     root: mainRootRoute,
