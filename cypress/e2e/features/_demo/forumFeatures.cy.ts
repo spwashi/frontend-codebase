@@ -11,17 +11,17 @@ describe("Forum Features", () => {
   it("Has a Page for Specific Posts", () => {
     cy.contains("a", "View Post");
   });
-  it("Has a Page for User Profiles", () => {
-    cy.contains("a", "View Profile");
-  });
   it("Has Comment Permalinks", () => {
     cy.contains("a", "Permalink Comment");
   });
+  it("Has a Page for User Profiles", () => {
+    cy.contains("a", "View Profile");
+  });
   it("Has a Page for Logging In", () => {
-    cy.contains("a", "Login");
+    cy.contains("a", "Log in");
   });
   it("Has a Button for Logging Out", () => {
-    cy.contains("a", "Logout");
+    cy.contains("a", "Log out");
   });
   it("Has a Widget to Check Session Status", () => {
     cy.contains("a", "Check session status");
