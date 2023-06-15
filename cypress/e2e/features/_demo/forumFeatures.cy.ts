@@ -14,6 +14,9 @@ describe("Forum Features", () => {
   it("Has Comment Permalinks", () => {
     cy.contains("a", "Permalink Comment");
   });
+  it("Has a Page for a List of Users", () => {
+    cy.contains("a", "Users");
+  });
   it("Has a Page for User Profiles", () => {
     cy.contains("a", "View Profile");
   });
