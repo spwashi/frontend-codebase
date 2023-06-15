@@ -21,6 +21,16 @@ const forumCommentsRoute: IRouteConfig = <const>{
   absolutePath: `/${forumPrefix}/comments/*`,
   relativePath: `comments/*`,
 };
+const forumSpecificCommentRoute: IRouteConfig = <const>{
+  href: `/${forumPrefix}/comments/{id}`,
+  id: "forum-specific_comment",
+  absolutePath: `/${forumPrefix}/comments/:id`,
+  relativePath: ":id",
+  buildPath(relative, id: string) {
+    if (!id) return `${relative ? this.relativePath : this.absolutePath}`;
+    return (relative ? "" : "/") + `/${forumPrefix}/comments/${id}`;
+  },
+};
 const forumSpecificPostRoute: IRouteConfig = <const>{
   href: `/${forumPrefix}/posts/{slug}`,
   id: "forum-specific_post",
@@ -43,6 +53,7 @@ export const forumRoutes = <const>{
   root: forumRootRoute,
   posts: forumPostsRoute,
   comments: forumCommentsRoute,
+  specificComment: forumSpecificCommentRoute,
   specificPost: forumSpecificPostRoute,
   users: forumUsersRoute,
 };

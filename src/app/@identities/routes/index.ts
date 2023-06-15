@@ -15,7 +15,10 @@ export function getRouterPath(route: IRouteConfig, ...params: any[]) {
   }
   return route.absolutePath;
 }
-export function getRelativeRouterPath(route: IRouteConfig) {
+export function getRelativeRouterPath(route: IRouteConfig, ...params: any[]) {
+  if (route.buildPath) {
+    return route.buildPath(true, ...params);
+  }
   if (!route.relativePath) throw new Error("improper usage of routes");
   return route.relativePath;
 }

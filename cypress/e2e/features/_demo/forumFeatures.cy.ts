@@ -25,7 +25,8 @@ describe("Forum Features", () => {
     cy.location("pathname").should("include", "forum/comments");
 
     cy.get("section[data-feature-name=app--forum--comments]");
-    cy.contains("a", "Permalink Comment");
+    cy.contains("a", "[permalink comment]").first().click();
+    cy.get("section[data-feature-name=app--forum--comment-route]");
   });
   it("Has a Page for a List of Users", () => {
     cy.contains("a", "Users").first().click();
