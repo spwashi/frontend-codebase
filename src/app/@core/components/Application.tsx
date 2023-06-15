@@ -12,7 +12,7 @@ import { featureIds } from "@identities/features/ids";
 import { UiStage } from "@core/components/UiStage";
 import { mainRoutes } from "@identities/routes/domains/mainRoutes";
 import { forumRoutes, getRouterPath } from "@identities/routes";
-import { ForumNavigation } from "@features/_demo/components/navigation/variants/ForumNavigation";
+import { Forum } from "@features/_demo/forum/components/Forum";
 
 const canBeAdmin = true;
 
@@ -37,7 +37,7 @@ export function Application() {
               />
               <Route
                 path={getRouterPath(forumRoutes.root)}
-                element={<ForumNavigation />}
+                element={<Forum />}
               />
             </Routes>
           </div>
