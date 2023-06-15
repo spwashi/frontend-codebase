@@ -1,4 +1,4 @@
-import { NavigationList } from "@core/layout/components/navigation/components/NavigationList";
+import { NavigationList } from "@core/components/layout/components/navigation/components/NavigationList";
 import { mainRoutes } from "@identities/routes";
 import React from "react";
 

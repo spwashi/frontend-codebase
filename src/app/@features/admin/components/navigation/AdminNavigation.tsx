@@ -1,7 +1,7 @@
 import { Routes } from "react-router-dom";
 import { Route } from "react-router";
 import React from "react";
-import { NavigationList } from "@core/layout/components/navigation/components/NavigationList";
+import { NavigationList } from "@core/components/layout/components/navigation/components/NavigationList";
 
 import { adminRoutes, getRouterPath } from "@identities/routes";
 import { IRouteConfigMap } from "@identities/routes/types/linkConfig";

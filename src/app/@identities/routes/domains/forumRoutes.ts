@@ -4,7 +4,6 @@ import { IRouteConfig } from "@identities/routes/types/linkConfig";
 const forumRootRoute: IRouteConfig = <const>{
   href: `${routerCategories.forum.prefix}/`,
   id: "forum-root",
-  title: "Root",
   path: "forum/*",
 };
 const forumPostsRoute: IRouteConfig = <const>{
