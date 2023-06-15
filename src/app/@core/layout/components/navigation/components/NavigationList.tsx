@@ -15,9 +15,11 @@ function NavLink({ link }: { link: IRouteConfig }) {
 export function NavigationList({ items }: { items: IRouteConfig[] }) {
   return (
     <ul>
-      {items.map((link) => (
-        <NavLink link={link} key={link.title} />
-      ))}
+      {items
+        .filter((link) => link.title)
+        .map((link) => (
+          <NavLink link={link} key={link.title} />
+        ))}
     </ul>
   );
 }

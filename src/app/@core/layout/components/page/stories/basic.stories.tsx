@@ -9,12 +9,12 @@ import { Page } from "../Page";
 import { mainDecorator } from "@services/storybook/decorators";
 
 export default {
-  title: "Demo/Layout/Pages/Home",
+  title: "Demo/Layout/Pages/Basic",
   component: Page,
   decorators: [mainDecorator],
 } as Meta<typeof Page>;
 
-export const HomePage: StoryObj<typeof Page> = {
+export const BasicPage: StoryObj<typeof Page> = {
   render: () => {
     return (
       <>

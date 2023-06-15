@@ -1,19 +1,19 @@
 import { routerCategories } from "../helpers/routerCategories";
 import { IRouteConfig } from "@identities/routes/types/linkConfig";
 
-const adminRootRoute = (<const>{
+const adminRootRoute: IRouteConfig = <const>{
   href: `${routerCategories.admin.prefix}/`,
   id: "admin-root",
   title: "Root",
   path: "admin/*",
-}) as IRouteConfig;
-const adminAllRoute = (<const>{
+};
+const adminAllRoute: IRouteConfig = <const>{
   href: `${routerCategories.admin.prefix}/all/`,
   id: "admin-all",
   title: "All",
   path: "all/*",
-}) as IRouteConfig;
-const adminAssetsRoute = (<const>{
+};
+const adminAssetsRoute: IRouteConfig = <const>{
   href: `${routerCategories.admin.prefix}/assets/`,
   id: "admin-assets",
   title: "Assets",
@@ -34,8 +34,8 @@ const adminAssetsRoute = (<const>{
       relativePath: "../assets/all",
     },
   },
-}) as IRouteConfig;
-const adminConceptsRoute = (<const>{
+};
+const adminConceptsRoute: IRouteConfig = <const>{
   href: `${routerCategories.admin.prefix}/concepts/`,
   id: "admin-concepts",
   title: "Concepts",
@@ -56,8 +56,8 @@ const adminConceptsRoute = (<const>{
       relativePath: "../concepts/all",
     },
   },
-}) as IRouteConfig;
-const adminEventsRoute = (<const>{
+};
+const adminEventsRoute: IRouteConfig = <const>{
   href: `${routerCategories.admin.prefix}/events/`,
   id: "admin-events",
   title: "Events",
@@ -78,8 +78,8 @@ const adminEventsRoute = (<const>{
       relativePath: "../events/all",
     },
   },
-}) as IRouteConfig;
-const adminProjectsRoute = (<const>{
+};
+const adminProjectsRoute: IRouteConfig = <const>{
   href: `${routerCategories.admin.prefix}/projects/`,
   id: "admin-projects",
   title: "Projects",
@@ -100,8 +100,8 @@ const adminProjectsRoute = (<const>{
       relativePath: "../projects/all",
     },
   },
-}) as IRouteConfig;
-const adminScenesRoute = (<const>{
+};
+const adminScenesRoute: IRouteConfig = <const>{
   href: `${routerCategories.admin.prefix}/scenes/`,
   id: "admin-scenes",
   title: "Scenes",
@@ -122,8 +122,8 @@ const adminScenesRoute = (<const>{
       relativePath: "../scenes/all",
     },
   },
-}) as IRouteConfig;
-const adminTagsRoute = (<const>{
+};
+const adminTagsRoute: IRouteConfig = <const>{
   href: `${routerCategories.admin.prefix}/tags/`,
   id: "admin-tags",
   title: "Tags",
@@ -144,8 +144,8 @@ const adminTagsRoute = (<const>{
       relativePath: "../tags/all",
     },
   },
-}) as IRouteConfig;
-const adminUsersRoute = (<const>{
+};
+const adminUsersRoute: IRouteConfig = <const>{
   href: `${routerCategories.admin.prefix}/users/`,
   id: "admin-users",
   title: "Users",
@@ -166,7 +166,7 @@ const adminUsersRoute = (<const>{
       relativePath: "../users/all",
     },
   },
-}) as IRouteConfig;
+};
 
 export const adminRoutes = <const>{
   all: adminAllRoute,

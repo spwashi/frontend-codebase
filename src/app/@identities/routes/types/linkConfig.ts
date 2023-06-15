@@ -1,7 +1,7 @@
 export type IRouteConfig = {
   id: string;
   href: string;
-  title: string;
+  title?: string;
   path: string;
   generatePath?: (relative?: boolean, ...params: any[]) => string;
   // todo this seems like a faux pas

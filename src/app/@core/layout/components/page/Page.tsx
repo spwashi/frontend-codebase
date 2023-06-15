@@ -1,7 +1,5 @@
 import React from "react";
-import { NavigationList } from "../navigation/NavigationList";
-import { routeHasHref } from "@identities/routes/helpers/routeHasHref";
-import { mainRoutes } from "@identities/routes";
+import { MainNavigation } from "@core/layout/components/navigation/variants/MainNavigation";
 
 interface PageProps {
   children?: any;
@@ -11,9 +9,7 @@ export function Page({ children }: PageProps) {
   return (
     <article>
       <header>
-        <NavigationList
-          items={Object.values(mainRoutes).filter(routeHasHref)}
-        />
+        <MainNavigation />
       </header>
       {children}
     </article>
