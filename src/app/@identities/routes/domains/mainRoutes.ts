@@ -3,7 +3,7 @@ import { IRouteConfig } from "../types/linkConfig";
 const mainRootRoute = (<const>{
   id: "root",
   href: "/",
-  title: "Home",
+  title: "[App Name]",
   path: "/*",
 }) as IRouteConfig;
 const mainHomeRoute = (<const>{
