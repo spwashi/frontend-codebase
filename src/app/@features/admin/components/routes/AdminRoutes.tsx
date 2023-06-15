@@ -18,7 +18,7 @@ export function AdminRoutes() {
   return (
     <Routes>
       <Route
-        path={adminRoutes.root.path}
+        path={adminRoutes.root.absolutePath}
         element={
           <Routes>
             <Route

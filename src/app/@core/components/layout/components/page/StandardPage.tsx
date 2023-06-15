@@ -5,7 +5,7 @@ interface PageProps {
   children?: any;
 }
 
-export function Page({ children }: PageProps) {
+export function StandardPage({ children }: PageProps) {
   return (
     <article>
       <header>

@@ -5,20 +5,20 @@ import {
   Meta,
   StoryObj,
 } from "@storybook/react";
-import { Page } from "../Page";
+import { StandardPage } from "../StandardPage";
 import { mainDecorator } from "@services/storybook/decorators";
 
 export default {
   title: "Demo/Layout/Pages/Home",
-  component: Page,
+  component: StandardPage,
   decorators: [mainDecorator],
-} as Meta<typeof Page>;
+} as Meta<typeof StandardPage>;
 
-export const HomePage: StoryObj<typeof Page> = {
+export const HomePage: StoryObj<typeof StandardPage> = {
   render: () => {
     return (
       <>
-        <Page />
+        <StandardPage />
       </>
     );
   },

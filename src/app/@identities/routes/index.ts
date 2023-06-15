@@ -10,10 +10,10 @@ export function getAbsoluteUrl(route: IRouteConfig, siteUrl = envSiteUrl) {
   return siteUrl + route.href;
 }
 export function getRouterPath(route: IRouteConfig, ...params: any[]) {
-  if (route.generatePath) {
-    return route.generatePath(false, ...params);
+  if (route.buildPath) {
+    return route.buildPath(false, ...params);
   }
-  return route.path;
+  return route.absolutePath;
 }
 export function getRelativeRouterPath(route: IRouteConfig) {
   if (!route.relativePath) throw new Error("improper usage of routes");

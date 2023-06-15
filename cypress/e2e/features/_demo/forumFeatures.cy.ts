@@ -9,7 +9,9 @@ describe("Forum Features", () => {
     cy.contains("a", "Posts");
   });
   it("Has a Page for Specific Posts", () => {
-    cy.contains("a", "View Post");
+    cy.contains("a", "Posts").first().click();
+    cy.get(".forum-post a").first().click();
+    cy.contains(".forum-post a");
   });
   it("Has Comment Permalinks", () => {
     cy.contains("a", "Permalink Comment");

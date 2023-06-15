@@ -3,19 +3,19 @@ import { IRouteConfig } from "../types/linkConfig";
 const mainRootRoute: IRouteConfig = <const>{
   id: "root",
   href: "/",
-  path: "/*",
+  absolutePath: "/*",
 };
 const mainHomeRoute: IRouteConfig = <const>{
   id: "home",
   href: "/",
   title: "Home",
-  path: "/",
+  absolutePath: "/",
 };
 const mainAboutRoute: IRouteConfig = <const>{
   id: "about",
   href: "/about",
   title: "About",
-  path: "about",
+  absolutePath: "about",
 };
 
 export const mainRoutes = {
