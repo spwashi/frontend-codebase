@@ -1,26 +1,26 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.mainRoutes = void 0;
-const rootRoute = {
-    id: "home",
+const mainRootRoute = {
+    id: "root",
     href: "/",
     title: "Home",
     path: "/*",
 };
-const homeRoute = {
+const mainHomeRoute = {
     id: "home",
     href: "/",
     title: "Home",
     path: "/",
 };
-const aboutRoute = {
+const mainAboutRoute = {
     id: "about",
     href: "/about",
     title: "About",
     path: "about",
 };
 exports.mainRoutes = {
-    root: rootRoute,
-    home: homeRoute,
-    about: aboutRoute,
+    root: mainRootRoute,
+    home: mainHomeRoute,
+    about: mainAboutRoute,
 };

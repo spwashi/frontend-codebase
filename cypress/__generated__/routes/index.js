@@ -1,24 +1,27 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getRouterPath_adminRelativePath = exports.getRouterPath = exports.getAbsoluteUrl = exports.mainRoutes = exports.forumRoutes = exports.adminRoutes = void 0;
+exports.getRelativeRouterPath = exports.getRouterPath = exports.getAbsoluteUrl = exports.forumRoutes = exports.mainRoutes = exports.adminRoutes = void 0;
 var adminRoutes_1 = require("./domains/adminRoutes");
 Object.defineProperty(exports, "adminRoutes", { enumerable: true, get: function () { return adminRoutes_1.adminRoutes; } });
-var forumRoutes_1 = require("./domains/forumRoutes");
-Object.defineProperty(exports, "forumRoutes", { enumerable: true, get: function () { return forumRoutes_1.forumRoutes; } });
 var mainRoutes_1 = require("./domains/mainRoutes");
 Object.defineProperty(exports, "mainRoutes", { enumerable: true, get: function () { return mainRoutes_1.mainRoutes; } });
+var forumRoutes_1 = require("./domains/forumRoutes");
+Object.defineProperty(exports, "forumRoutes", { enumerable: true, get: function () { return forumRoutes_1.forumRoutes; } });
 const envSiteUrl = "http://localhost:5173";
-const getAbsoluteUrl = (route, siteUrl = envSiteUrl) => {
+function getAbsoluteUrl(route, siteUrl = envSiteUrl) {
     return siteUrl + route.href;
-};
+}
 exports.getAbsoluteUrl = getAbsoluteUrl;
-const getRouterPath = (route) => {
+function getRouterPath(route, ...params) {
+    if (route.generatePath) {
+        return route.generatePath(false, ...params);
+    }
     return route.path;
-};
+}
 exports.getRouterPath = getRouterPath;
-const getRouterPath_adminRelativePath = (route) => {
-    if (!route.adminRelativePath)
+function getRelativeRouterPath(route) {
+    if (!route.relativePath)
         throw new Error("improper usage of routes");
-    return route.adminRelativePath;
-};
-exports.getRouterPath_adminRelativePath = getRouterPath_adminRelativePath;
+    return route.relativePath;
+}
+exports.getRelativeRouterPath = getRelativeRouterPath;
