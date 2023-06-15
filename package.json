@@ -12,6 +12,7 @@
     "precypress:open": "yarn sync:cypress",
     "serve": "vite preview",
     "serve:json": "json-server --watch src/app/.demo/db.json --port 3005",
+    "prestart": "yarn serve:json",
     "start": "vite",
     "storybook": "storybook dev -p 6006",
     "sync:cypress": "tsc -p tsconfig.cypress.routes.json; tsc -p tsconfig.cypress.featureIds.json;"
