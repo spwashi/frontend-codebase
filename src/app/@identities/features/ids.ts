@@ -7,8 +7,10 @@ import { projectIds } from "./projects/ids";
 import { sceneIds } from "./scenes/ids";
 import { tagIds } from "./tags/ids";
 import { userIds } from "./users/ids";
+import { forumIds } from "./demo/forum/ids";
 
 export const featureIds = <const>{
+  forum: forumIds,
   app: appIds,
   admin: adminIds,
   asset: assetIds,
@@ -20,6 +22,7 @@ export const featureIds = <const>{
   user: userIds,
 };
 export const featureIdList = <const>[
+  ...Object.values(featureIds.forum),
   ...Object.values(featureIds.app),
   ...Object.values(featureIds.admin),
   ...Object.values(featureIds.asset),

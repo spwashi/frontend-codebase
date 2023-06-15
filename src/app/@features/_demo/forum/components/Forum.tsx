@@ -5,10 +5,12 @@ import { forumRoutes, getRelativeRouterPath } from "@identities/routes";
 import { ForumPostsSection } from "@features/_demo/forum/components/posts/ForumPostsSection";
 import { ForumCommentsSection } from "@features/_demo/forum/components/comments/ForumCommentsSection";
 import { ForumUsersSection } from "@features/_demo/forum/components/users/ForumUsersSection";
+import { Feature } from "@widgets/feature";
+import { featureIds } from "@identities/features/ids";
 
 export function Forum() {
   return (
-    <section>
+    <Feature name={featureIds.forum.forum}>
       <header>
         <ForumNavigation />
       </header>
@@ -26,6 +28,6 @@ export function Forum() {
           element={<ForumUsersSection />}
         />
       </Routes>
-    </section>
+    </Feature>
   );
 }

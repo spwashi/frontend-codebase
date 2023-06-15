@@ -6,6 +6,7 @@ describe("Forum Features", () => {
   });
 
   it("Has a Page for a List of Posts", () => {
+    cy.get("section[data-feature-name=app--forum]");
     cy.contains("a", "Posts");
   });
   it("Has a Page for Specific Posts", () => {
