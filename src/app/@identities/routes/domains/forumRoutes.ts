@@ -14,6 +14,13 @@ const forumPostsRoute: IRouteConfig = <const>{
   absolutePath: `/${forumPrefix}/posts/*`,
   relativePath: `posts/*`,
 };
+const forumCommentsRoute: IRouteConfig = <const>{
+  href: `/${forumPrefix}/comments/`,
+  id: "forum-comments",
+  title: "Comments",
+  absolutePath: `/${forumPrefix}/comments/*`,
+  relativePath: `comments/*`,
+};
 const forumSpecificPostRoute: IRouteConfig = <const>{
   href: `/${forumPrefix}/posts/{slug}`,
   id: "forum-specific_post",
@@ -29,11 +36,13 @@ const forumUsersRoute: IRouteConfig = <const>{
   id: "forum-users",
   title: "Users",
   absolutePath: `/${forumPrefix}/users/*`,
+  relativePath: `users/*`,
 };
 
 export const forumRoutes = <const>{
   root: forumRootRoute,
   posts: forumPostsRoute,
+  comments: forumCommentsRoute,
   specificPost: forumSpecificPostRoute,
   users: forumUsersRoute,
 };
