@@ -68,6 +68,37 @@ const forumUsersRoute: IRouteConfig = <const>{
   absolutePath: `/${forumPrefix}/users/*`,
   relativePath: `users/*`,
 };
+const forumUserProfileRoute: IRouteConfig = <const>{
+  href: `/${forumPrefix}/users/{username}`,
+  id: "forum-user-profile",
+  absolutePath: `/${forumPrefix}/users/:username`,
+  relativePath: `:username`,
+  buildPath(relative, username: string) {
+    if (!username) return `${relative ? this.relativePath : this.absolutePath}`;
+    return (relative ? "" : "/") + `${forumPrefix}/users/${username}`;
+  },
+};
+const forumLoginRoute: IRouteConfig = <const>{
+  href: `/${forumPrefix}/login/`,
+  id: "forum-login",
+  title: "Log In",
+  absolutePath: `/${forumPrefix}/login/*`,
+  relativePath: `login/*`,
+};
+const forumLogoutRoute: IRouteConfig = <const>{
+  href: `/${forumPrefix}/logout/`,
+  id: "forum-logout",
+  title: "Log Out",
+  absolutePath: `/${forumPrefix}/logout/*`,
+  relativePath: `logout/*`,
+};
+const forumSessionStatusRoute: IRouteConfig = <const>{
+  href: `/${forumPrefix}/status/`,
+  id: "forum-session-status",
+  title: "Status",
+  absolutePath: `/${forumPrefix}/status/*`,
+  relativePath: `status/*`,
+};
 
 export const forumRoutes = <const>{
   root: forumRootRoute,
@@ -77,4 +108,8 @@ export const forumRoutes = <const>{
   comment_directLink: forumDirectCommentRoute,
   post_directLink: forumDirectPostRoute,
   users: forumUsersRoute,
+  userProfile: forumUserProfileRoute,
+  login: forumLoginRoute,
+  logout: forumLogoutRoute,
+  sessionStatus: forumSessionStatusRoute,
 };

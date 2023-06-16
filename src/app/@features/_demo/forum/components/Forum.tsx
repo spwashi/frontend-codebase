@@ -8,6 +8,27 @@ import { ForumUsersSection } from "@features/_demo/forum/components/users/ForumU
 import { Feature } from "@widgets/feature";
 import { featureIds } from "@identities/features/ids";
 
+function ForumLoginSection() {
+  return (
+    <Feature name={featureIds.forum.login}>
+      [not yet implemented: {featureIds.forum.login}]
+    </Feature>
+  );
+}
+function ForumLogoutSection() {
+  return (
+    <Feature name={featureIds.forum.logout}>
+      [not yet implemented: {featureIds.forum.logout}]
+    </Feature>
+  );
+}
+function ForumSessionStatusSection() {
+  return (
+    <Feature name={featureIds.forum.sessionStatus}>
+      [not yet implemented: {featureIds.forum.sessionStatus}]
+    </Feature>
+  );
+}
 export function Forum() {
   return (
     <Feature name={featureIds.forum.forum}>
@@ -26,6 +47,18 @@ export function Forum() {
         <Route
           path={getRelativeRouterPath(forumRoutes.users)}
           element={<ForumUsersSection />}
+        />
+        <Route
+          path={getRelativeRouterPath(forumRoutes.login)}
+          element={<ForumLoginSection />}
+        />
+        <Route
+          path={getRelativeRouterPath(forumRoutes.logout)}
+          element={<ForumLogoutSection />}
+        />
+        <Route
+          path={getRelativeRouterPath(forumRoutes.sessionStatus)}
+          element={<ForumSessionStatusSection />}
         />
       </Routes>
     </Feature>

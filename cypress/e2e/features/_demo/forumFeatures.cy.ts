@@ -8,6 +8,10 @@ function clickFirstPost() {
 function clickFirstCommentPermalink() {
   cy.contains("a", "[permalink comment]").first().click();
 }
+function navigateToUsersPage() {
+  cy.contains("a", "Users").first().click();
+  cy.location("pathname").should("include", "forum/users");
+}
 describe("Forum Features", () => {
   beforeEach(() => {
     cy.visit(getAbsoluteUrl(forumRoutes.root));
@@ -38,20 +42,24 @@ describe("Forum Features", () => {
     cy.get("section[data-feature-name=app--forum--permalinkedComment]");
   });
   it("Has a Page for a List of Users", () => {
-    cy.contains("a", "Users").first().click();
-    cy.location("pathname").should("include", "forum/users");
+    navigateToUsersPage();
     cy.get("section[data-feature-name=app--forum--users]");
   });
-  it("Has a Page for User Profiles", () => {
-    cy.contains("a", "View Profile");
-  });
   it("Has a Page for Logging In", () => {
-    cy.contains("a", "Log in");
+    cy.contains("a", "Log In").first().click();
+    cy.get("section[data-feature-name=app--forum--login]");
   });
-  it("Has a Button for Logging Out", () => {
-    cy.contains("a", "Log out");
+  it("Has a Page for Logging Out", () => {
+    cy.contains("a", "Log Out").first().click();
+    cy.get("section[data-feature-name=app--forum--logout]");
   });
-  it("Has a Widget to Check Session Status", () => {
-    cy.contains("a", "Check session status");
+  it("Has a Page to Check Session Status", () => {
+    cy.contains("a", "Status").first().click();
+    cy.get("section[data-feature-name=app--forum--session-status]");
+  });
+  it("Has a Page for User Profiles", () => {
+    navigateToUsersPage();
+    cy.get(".forum-user a").first().click();
+    cy.get("section[data-feature-name=app--forum--user-profile]");
   });
 });

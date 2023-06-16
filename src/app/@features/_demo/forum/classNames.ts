@@ -11,4 +11,8 @@ export const forumClassNames = <const>{
     base: "forum-comment",
     body: "forum-comment--body",
   },
+  forumUser: {
+    listItem: "forum-user--list-item",
+    base: "forum-user",
+  },
 };
