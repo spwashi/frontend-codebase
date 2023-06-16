@@ -40,7 +40,6 @@ export function ForumPost({ post }: { post: IForumPost }) {
       <div className={forumClassNames.forumPost.description}>
         {post.description}
       </div>
-      {getRelativeRouterPath(forumRoutes.postComment)}
       <Routes>
         <Route
           path={getRelativeRouterPath(forumRoutes.postComment)}

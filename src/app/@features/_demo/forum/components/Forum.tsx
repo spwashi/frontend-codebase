@@ -7,28 +7,10 @@ import { ForumCommentsSection } from "@features/_demo/forum/components/comments/
 import { ForumUsersSection } from "@features/_demo/forum/components/users/ForumUsersSection";
 import { Feature } from "@widgets/feature";
 import { featureIds } from "@identities/features/ids";
+import { ForumLoginSection } from "@features/_demo/forum/components/session/login/ForumLoginSection";
+import { ForumLogoutSection } from "@features/_demo/forum/components/session/logout/ForumLogoutSection";
+import { ForumSessionStatusSection } from "@features/_demo/forum/components/session/ForumSessionStatusSection";
 
-function ForumLoginSection() {
-  return (
-    <Feature name={featureIds.forum.login}>
-      [not yet implemented: {featureIds.forum.login}]
-    </Feature>
-  );
-}
-function ForumLogoutSection() {
-  return (
-    <Feature name={featureIds.forum.logout}>
-      [not yet implemented: {featureIds.forum.logout}]
-    </Feature>
-  );
-}
-function ForumSessionStatusSection() {
-  return (
-    <Feature name={featureIds.forum.sessionStatus}>
-      [not yet implemented: {featureIds.forum.sessionStatus}]
-    </Feature>
-  );
-}
 export function Forum() {
   return (
     <Feature name={featureIds.forum.forum}>

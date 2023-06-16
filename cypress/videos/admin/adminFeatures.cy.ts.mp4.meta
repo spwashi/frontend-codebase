@@ -1,0 +1,36 @@
+;FFMETADATA1
+[CHAPTER]
+TIMEBASE=1/1000
+START=-866
+END=2778
+title=Admin Features Are Grounded Has a link to Assets; Asset Features Are Not Enabled
+[CHAPTER]
+TIMEBASE=1/1000
+START=3260
+END=6427
+title=Admin Features Are Grounded Has a link to Concepts; Concept Features Are Not Enabled
+[CHAPTER]
+TIMEBASE=1/1000
+START=6428
+END=9598
+title=Admin Features Are Grounded Has a link to Events; Event Features Are Not Enabled
+[CHAPTER]
+TIMEBASE=1/1000
+START=9548
+END=12773
+title=Admin Features Are Grounded Has a link to Projects; Project Features Are Not Enabled
+[CHAPTER]
+TIMEBASE=1/1000
+START=12684
+END=16002
+title=Admin Features Are Grounded Has a link to Scenes; Scene Features Are Not Enabled
+[CHAPTER]
+TIMEBASE=1/1000
+START=15852
+END=19324
+title=Admin Features Are Grounded Has a link to Tags; Tag Features Are Not Enabled
+[CHAPTER]
+TIMEBASE=1/1000
+START=19256
+END=22803
+title=Admin Features Are Grounded Has a link to Users; User Features Are Not Enabled
