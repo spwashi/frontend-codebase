@@ -1,5 +1,13 @@
 import { forumRoutes, getAbsoluteUrl } from "../../../__generated__/routes";
 
+function clickFirstPost() {
+  cy.contains("a", "Posts").first().click();
+  cy.location("pathname").should("include", "forum/posts");
+  cy.get(".forum-post a").first().click();
+}
+function clickFirstCommentPermalink() {
+  cy.contains("a", "[permalink comment]").first().click();
+}
 describe("Forum Features", () => {
   beforeEach(() => {
     cy.visit(getAbsoluteUrl(forumRoutes.root));
@@ -14,19 +22,20 @@ describe("Forum Features", () => {
     cy.get("section[data-feature-name=app--forum--posts]");
   });
   it("Has a Page for Specific Posts", () => {
-    cy.contains("a", "Posts").first().click();
-    cy.location("pathname").should("include", "forum/posts");
-    cy.get(".forum-post a").first().click();
+    clickFirstPost();
     cy.get("section[data-feature-name=app--forum--single-post]");
   });
-  it("Has Comment Permalinks", () => {
+  it("Has Comment Page", () => {
     cy.contains("a", "Comments").first().click();
-
     cy.location("pathname").should("include", "forum/comments");
-
     cy.get("section[data-feature-name=app--forum--comments]");
-    cy.contains("a", "[permalink comment]").first().click();
+    clickFirstCommentPermalink();
     cy.get("section[data-feature-name=app--forum--comment-route]");
+  });
+  it("Has Comment Permalinks", () => {
+    clickFirstPost();
+    clickFirstCommentPermalink();
+    cy.get("section[data-feature-name=app--forum--permalinkedComment]");
   });
   it("Has a Page for a List of Users", () => {
     cy.contains("a", "Users").first().click();

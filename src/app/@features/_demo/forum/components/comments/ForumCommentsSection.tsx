@@ -20,7 +20,7 @@ export function ForumCommentsSection() {
       <ForumCommentList comments={comments} />
       <Routes>
         <Route
-          path={getRelativeRouterPath(forumRoutes.specificComment)}
+          path={getRelativeRouterPath(forumRoutes.comment_directLink)}
           element={<ForumCommentPage comments={comments} />}
         ></Route>
       </Routes>

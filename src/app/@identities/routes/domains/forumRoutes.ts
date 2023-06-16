@@ -1,5 +1,9 @@
 import { routerCategories } from "../helpers/routerCategories";
 import { IRouteConfig } from "@identities/routes/types/linkConfig";
+import {
+  IForumComment,
+  IForumPost,
+} from "@features/_demo/forum/types/IForumPost";
 
 const forumPrefix = routerCategories.forum.prefix;
 const forumRootRoute: IRouteConfig = <const>{
@@ -21,9 +25,9 @@ const forumCommentsRoute: IRouteConfig = <const>{
   absolutePath: `/${forumPrefix}/comments/*`,
   relativePath: `comments/*`,
 };
-const forumSpecificCommentRoute: IRouteConfig = <const>{
+const forumDirectCommentRoute: IRouteConfig = <const>{
   href: `/${forumPrefix}/comments/{id}`,
-  id: "forum-specific_comment",
+  id: "forum-direct_comment",
   absolutePath: `/${forumPrefix}/comments/:id`,
   relativePath: ":id",
   buildPath(relative, id: string) {
@@ -31,14 +35,30 @@ const forumSpecificCommentRoute: IRouteConfig = <const>{
     return (relative ? "" : "/") + `/${forumPrefix}/comments/${id}`;
   },
 };
-const forumSpecificPostRoute: IRouteConfig = <const>{
+const forumPostCommentRoute: IRouteConfig = <const>{
+  href: `/${forumPrefix}/posts/{slug}/comments/{id}`,
+  id: "forum-post_comment",
+  absolutePath: `/${forumPrefix}/posts/:slug/:username/comments/:id`,
+  relativePath: "comments/:id",
+  buildPath(relative, post: IForumPost, comment: IForumComment) {
+    if (!post || !comment) {
+      return `${relative ? this.relativePath : this.absolutePath}`;
+    }
+
+    return (
+      (relative ? "" : "/") +
+      `${forumPrefix}/posts/${post.slug}/comments/${comment.id}`
+    );
+  },
+};
+const forumDirectPostRoute: IRouteConfig = <const>{
   href: `/${forumPrefix}/posts/{slug}`,
-  id: "forum-specific_post",
-  absolutePath: `/${forumPrefix}/posts/:slug/:user`,
-  relativePath: ":slug/:username",
+  id: "forum-direct_post",
+  absolutePath: `/${forumPrefix}/posts/:slug/:username/*`,
+  relativePath: ":slug/:username/*",
   buildPath(relative, slug: string) {
     if (!slug) return `${relative ? this.relativePath : this.absolutePath}`;
-    return (relative ? "" : "/") + `/${forumPrefix}/posts/${slug}`;
+    return (relative ? "" : "/") + `${forumPrefix}/posts/${slug}`;
   },
 };
 const forumUsersRoute: IRouteConfig = <const>{
@@ -52,8 +72,9 @@ const forumUsersRoute: IRouteConfig = <const>{
 export const forumRoutes = <const>{
   root: forumRootRoute,
   posts: forumPostsRoute,
+  postComment: forumPostCommentRoute,
   comments: forumCommentsRoute,
-  specificComment: forumSpecificCommentRoute,
-  specificPost: forumSpecificPostRoute,
+  comment_directLink: forumDirectCommentRoute,
+  post_directLink: forumDirectPostRoute,
   users: forumUsersRoute,
 };

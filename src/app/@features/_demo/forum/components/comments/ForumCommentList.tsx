@@ -13,7 +13,10 @@ export function ForumCommentList({ comments }: ForumCommentListParams) {
       {comments.map((comment) => (
         <li key={comment.id}>
           <Link
-            to={getRelativeRouterPath(forumRoutes.specificComment, comment.id)}
+            to={getRelativeRouterPath(
+              forumRoutes.comment_directLink,
+              comment.id
+            )}
           >
             [permalink comment]
           </Link>

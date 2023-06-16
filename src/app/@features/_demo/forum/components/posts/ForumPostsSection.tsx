@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { forumRoutes, getRelativeRouterPath } from "@identities/routes";
+import {
+  forumRoutes,
+  getRelativeRouterPath,
+  getRouterPath,
+} from "@identities/routes";
 import { Route, Routes } from "react-router";
 import { IForumPost } from "@features/_demo/forum/types/IForumPost";
 import { ForumPostList } from "@features/_demo/forum/components/posts/ForumPostList";
@@ -21,7 +25,7 @@ export function ForumPostsSection() {
       <ForumPostList posts={posts} />
       <Routes>
         <Route
-          path={getRelativeRouterPath(forumRoutes.specificPost)}
+          path={getRelativeRouterPath(forumRoutes.post_directLink)}
           element={<ForumPostPage posts={posts} />}
         />
         <Route path="/" element={"Forum Posts Homepage"} />

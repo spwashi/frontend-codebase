@@ -5,4 +5,5 @@ export const forumIds = <const>{
   comments: "app--forum--comments",
   commentRoute: "app--forum--comment-route",
   users: "app--forum--users",
+  permalinkedComment: "app--forum--permalinkedComment",
 };

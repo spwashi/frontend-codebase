@@ -21,8 +21,8 @@ export function ForumPostList({ posts }: ForumPostListParams) {
             <span className={forumClassNames.forumPost.title}>
               <Link
                 to={
-                  forumRoutes.specificPost.buildPath
-                    ? forumRoutes.specificPost.buildPath(true, post.slug)
+                  forumRoutes.post_directLink.buildPath
+                    ? forumRoutes.post_directLink.buildPath(false, post.slug)
                     : ""
                 }
               >
