@@ -1,4 +1,4 @@
-export const assetIds = <const>{
+export const assetFeatureIds = <const>{
   assets: "app--assets",
   display: "app--asset-display",
   display_form: "app--asset-display-form",

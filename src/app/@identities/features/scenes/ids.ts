@@ -1,4 +1,4 @@
-export const sceneIds = <const>{
+export const sceneFeatureIds = <const>{
   scenes: "app--scenes",
   delete: "app--scene-delete",
   display: "app--scene-display",

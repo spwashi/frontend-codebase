@@ -1,4 +1,4 @@
-export const userIds = <const>{
+export const userFeatureIds = <const>{
   users: "app--users",
   signup: "app--user-signup",
   signup_form: "app--user-signup-form",

@@ -1,4 +1,4 @@
-export const conceptIds = <const>{
+export const conceptFeatureIds = <const>{
   concepts: "app--concepts",
   delete: "app--concept-delete",
   display: "app--concept-display",

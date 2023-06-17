@@ -1,4 +1,4 @@
-export const forumIds = <const>{
+export const forumFeatureIds = <const>{
   commentPermalinks: "app--forum--can_permalink_comments",
   commentRoute: "app--forum--can_view_comment_pages",
   comments: "app--forum--can_have_comments",

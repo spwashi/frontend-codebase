@@ -1,25 +1,25 @@
-import { adminIds } from "./admin/ids";
-import { appIds } from "./app/ids";
-import { assetIds } from "./assets/ids";
-import { conceptIds } from "./concepts/ids";
-import { eventIds } from "./events/ids";
-import { projectIds } from "./projects/ids";
-import { sceneIds } from "./scenes/ids";
-import { tagIds } from "./tags/ids";
-import { userIds } from "./users/ids";
-import { forumIds } from "./demo/forum/ids";
+import { adminFeatureIds } from "./admin/ids";
+import { appFeatureIds } from "./app/ids";
+import { assetFeatureIds } from "./assets/ids";
+import { conceptFeatureIds } from "./concepts/ids";
+import { eventFeatureIds } from "./events/ids";
+import { projectFeatureIds } from "./projects/ids";
+import { sceneFeatureIds } from "./scenes/ids";
+import { tagFeatureIds } from "./tags/ids";
+import { userFeatureIds } from "./users/ids";
+import { forumFeatureIds } from "./demo/forum/ids";
 
 export const featureIds = <const>{
-  forum: forumIds,
-  app: appIds,
-  admin: adminIds,
-  asset: assetIds,
-  concept: conceptIds,
-  event: eventIds,
-  project: projectIds,
-  scene: sceneIds,
-  tag: tagIds,
-  user: userIds,
+  forum: forumFeatureIds,
+  app: appFeatureIds,
+  admin: adminFeatureIds,
+  asset: assetFeatureIds,
+  concept: conceptFeatureIds,
+  event: eventFeatureIds,
+  project: projectFeatureIds,
+  scene: sceneFeatureIds,
+  tag: tagFeatureIds,
+  user: userFeatureIds,
 };
 export const featureIdList = <const>[
   ...Object.values(featureIds.forum),

@@ -1,4 +1,4 @@
-export const eventIds = <const>{
+export const eventFeatureIds = <const>{
   events: "app--events",
   delete: "app--event-delete",
   display: "app--event-display",

@@ -1,4 +1,4 @@
-export const appIds = <const>{
+export const appFeatureIds = <const>{
   aggregate_features: "app--aggregate_features",
   application_state: "app--state",
   site_button: "app--site_button",

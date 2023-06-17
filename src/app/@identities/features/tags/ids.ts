@@ -1,4 +1,4 @@
-export const tagIds = <const>{
+export const tagFeatureIds = <const>{
   tags: "app--tags",
   delete: "app--tag-delete",
   display: "app--tag-display",
