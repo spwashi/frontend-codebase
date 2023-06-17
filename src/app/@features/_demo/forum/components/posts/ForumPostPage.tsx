@@ -9,7 +9,7 @@ export function ForumPostPage({ posts }: { posts: IForumPost[] }) {
   const { slug, username } = useParams();
   const post = posts.find((post) => post.slug === [slug, username].join("/"));
   return (
-    <Feature name={featureIds.forum.singlePostPage}>
+    <Feature name={featureIds.forum.postPage}>
       {post ? <ForumPost post={post} /> : null}
     </Feature>
   );

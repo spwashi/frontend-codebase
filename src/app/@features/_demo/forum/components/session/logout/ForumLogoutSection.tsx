@@ -4,8 +4,8 @@ import React from "react";
 
 export function ForumLogoutSection() {
   return (
-    <Feature name={featureIds.forum.logout}>
-      [not yet implemented: {featureIds.forum.logout}]
+    <Feature name={featureIds.forum.userLogout}>
+      [not yet implemented: {featureIds.forum.userLogout}]
     </Feature>
   );
 }

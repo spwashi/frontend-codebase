@@ -4,8 +4,8 @@ import React from "react";
 
 export function ForumLoginSection() {
   return (
-    <Feature name={featureIds.forum.login}>
-      [not yet implemented: {featureIds.forum.login}]
+    <Feature name={featureIds.forum.userLogin}>
+      [not yet implemented: {featureIds.forum.userLogin}]
     </Feature>
   );
 }

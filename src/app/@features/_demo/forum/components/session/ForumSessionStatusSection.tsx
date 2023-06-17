@@ -4,8 +4,8 @@ import React from "react";
 
 export function ForumSessionStatusSection() {
   return (
-    <Feature name={featureIds.forum.sessionStatus}>
-      [not yet implemented: {featureIds.forum.sessionStatus}]
+    <Feature name={featureIds.forum.userSessionStatus}>
+      [not yet implemented: {featureIds.forum.userSessionStatus}]
     </Feature>
   );
 }

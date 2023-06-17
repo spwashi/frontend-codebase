@@ -21,7 +21,7 @@ function PermalinkedComment({ comments }: { comments: IForumComment[] }) {
   );
   if (!comment) return null;
   return (
-    <Feature name={featureIds.forum.permalinkedComment}>
+    <Feature name={featureIds.forum.commentPermalinks}>
       <article>{comment.body}</article>
     </Feature>
   );
