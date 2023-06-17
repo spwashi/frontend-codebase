@@ -37,46 +37,48 @@ describe("Forum Features", () => {
   });
 
   it("Has a Forum Feature", () => {
-    cy.get("section[data-feature-name=app--forum]");
+    cy.get("section[data-feature-name=app--forum--can_exist]");
   });
   it("Has a Page for a List of Posts", () => {
     navigateToPostsPageViaNavbar();
-    cy.get("section[data-feature-name=app--forum--posts]");
+    cy.get("section[data-feature-name=app--forum--can_have_posts]");
   });
   it("Has a Page for Specific Posts", () => {
     clickFirstPost();
-    cy.get("section[data-feature-name=app--forum--single-post]");
+    cy.get("section[data-feature-name=app--forum--can_view_post_pages]");
   });
   it("Has a Page for Comments", () => {
     navigateToCommentsPageViaNavbar();
-    cy.get("section[data-feature-name=app--forum--comments]");
+    cy.get("section[data-feature-name=app--forum--can_have_comments]");
     clickFirstCommentPermalink();
-    cy.get("section[data-feature-name=app--forum--comment-route]");
+    cy.get("section[data-feature-name=app--forum--can_view_comment_pages]");
   });
   it("Has Comment Permalinks", () => {
     clickFirstPost();
     clickFirstCommentPermalink();
-    cy.get("section[data-feature-name=app--forum--permalinkedComment]");
+    cy.get("section[data-feature-name=app--forum--can_permalink_comments]");
   });
   it("Has a Page for a List of Users", () => {
     navigateToUsersPage();
-    cy.get("section[data-feature-name=app--forum--users]");
+    cy.get("section[data-feature-name=app--forum--can_have_users]");
   });
   it("Has a Page for Logging In", () => {
     clickLoginLink();
-    cy.get("section[data-feature-name=app--forum--login]");
+    cy.get("section[data-feature-name=app--forum--can_login_as_user]");
   });
   it("Has a Page for Logging Out", () => {
     clickLogoutLink();
-    cy.get("section[data-feature-name=app--forum--logout]");
+    cy.get("section[data-feature-name=app--forum--can_logout_as_user]");
   });
   it("Has a Page to Check Session Status", () => {
     clickSessionStatusLink();
-    cy.get("section[data-feature-name=app--forum--session-status]");
+    cy.get(
+      "section[data-feature-name=app--forum--can_view_session_status_as_user]"
+    );
   });
   it("Has a Page for User Profiles", () => {
     navigateToUsersPage();
     clickFirstLinkInUserElement();
-    cy.get("section[data-feature-name=app--forum--user-profile]");
+    cy.get("section[data-feature-name=app--forum--can_view_user_profile]");
   });
 });
