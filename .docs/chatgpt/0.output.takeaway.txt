@@ -1,0 +1,47 @@
+<boon>
+    [
+        engaging, visually appealing;
+        compelling, informative;
+        introduces ideas, encourage exploration of imagination;
+        unlock your imagination;
+        explore boundless ideas;
+    ]
+
+<bane>
+    [
+        clean, minimalist;
+        limiting noise, grounding abstraction;
+        concise, precise;
+        communicate constraints, emphasize importance, grounding abstractions;
+        finding clarity in constraints;
+        embrace the power of simplicity;
+    ]
+
+<bone>
+    [
+        well-structured, visually pleasing;
+        consider details;
+        clear, informative;
+        highlight importance, attention to detail, defining the form;
+        crafted with precision;
+        explore the beauty of details;
+    ]
+
+<bonk>
+    [
+        user-friendly, interactive;
+        engaging, informative;
+        explain how things work;
+        introduce resilience, maintain consistency
+        unlock the power of resilience;
+        consistency drives success;
+    ]
+
+<honk>
+    [
+        visually striking, identity-focused;
+        compelling, evocative;
+        identity, mindful delivery;
+        unleash identity;
+        explore mindful delivery;
+    ]
