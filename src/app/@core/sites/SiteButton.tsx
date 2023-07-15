@@ -3,6 +3,8 @@ import { Button as BaneButton } from "@core/sites/bane/Button";
 import { Button as BoneButton } from "@core/sites/bone/Button";
 import { Button as BonkButton } from "@core/sites/bonk/Button";
 import { Button as HonkButton } from "@core/sites/honk/Button";
+import { Button as BoofButton } from "@core/sites/boof/Button";
+import { Button as LoreButton } from "@core/sites/lore/Button";
 import React from "react";
 import { SiteNameOption } from "@core/sites/types";
 import { Feature } from "@widgets/feature";
@@ -16,6 +18,10 @@ interface ButtonParams {
 
 function Button({ site, onClick, isActivated }: ButtonParams) {
   switch (site) {
+    case "lore":
+      return <LoreButton onClick={onClick} isActivated={isActivated} />;
+    case "boof":
+      return <BoofButton onClick={onClick} isActivated={isActivated} />;
     case "boon":
       return <BoonButton onClick={onClick} isActivated={isActivated} />;
     case "bane":
