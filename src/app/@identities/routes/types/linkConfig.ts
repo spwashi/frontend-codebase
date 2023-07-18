@@ -4,9 +4,8 @@ export type IRouteConfig = {
   title?: string;
   absolutePath: string;
   buildPath?: (relative?: boolean, ...params: any[]) => string;
-  // todo this seems like a faux pas
   relativePath?: string;
-  sub?: IRouteConfigMap;
+  subConfigMap: IRouteConfigMap;
 };
 
 export type IRouteConfigMap = { [key: string]: IRouteConfig };

@@ -16,7 +16,7 @@ export function ScenesAdminRoutes() {
     <FeatureRequirement name={featureIds.scene.scenes}>
       <Routes>
         <Route
-          path={getRouterPath(adminRoutes.scenes.sub.all)}
+          path={getRouterPath(adminRoutes.scenes.subConfigMap.all)}
           element={
             <div style={{ width: 500 + "px" }}>
               <SceneListDisplay />
@@ -24,7 +24,7 @@ export function ScenesAdminRoutes() {
           }
         />
         <Route
-          path={getRouterPath(adminRoutes.scenes.sub.root)}
+          path={getRouterPath(adminRoutes.scenes.subConfigMap.root)}
           element={
             <React.Fragment>
               <SceneListQuery />

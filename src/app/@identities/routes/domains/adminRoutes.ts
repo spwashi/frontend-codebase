@@ -1,5 +1,8 @@
 import { routerCategories } from "../helpers/routerCategories";
-import { IRouteConfig } from "@identities/routes/types/linkConfig";
+import {
+  IRouteConfig,
+  IRouteConfigMap,
+} from "@identities/routes/types/linkConfig";
 
 const adminPrefix = routerCategories.admin.prefix;
 const adminRootRoute: IRouteConfig = <const>{
@@ -7,25 +10,28 @@ const adminRootRoute: IRouteConfig = <const>{
   id: "admin-root",
   title: "Root",
   absolutePath: "admin/*",
+  subConfigMap: {},
 };
 const adminAllRoute: IRouteConfig = <const>{
   href: `${adminPrefix}/all/`,
   id: "admin-all",
   title: "All",
   absolutePath: "all/*",
+  subConfigMap: {},
 };
 const adminAssetsRoute: IRouteConfig = <const>{
   href: `${adminPrefix}/assets/`,
   id: "admin-assets",
   title: "Assets",
   absolutePath: "assets/*",
-  sub: {
+  subConfigMap: {
     root: {
       id: "admin-assets-root",
       href: `${adminPrefix}/assets/`,
       title: "Asset Administration",
       absolutePath: "/",
       relativePath: "../assets",
+      subConfigMap: {},
     },
     all: {
       id: "admin-assets-all",
@@ -33,6 +39,7 @@ const adminAssetsRoute: IRouteConfig = <const>{
       title: "Asset List of All",
       absolutePath: "all",
       relativePath: "../assets/all",
+      subConfigMap: {},
     },
   },
 };
@@ -41,13 +48,14 @@ const adminConceptsRoute: IRouteConfig = <const>{
   id: "admin-concepts",
   title: "Concepts",
   absolutePath: "concepts/*",
-  sub: {
+  subConfigMap: {
     root: {
       id: "admin-concepts-root",
       href: `${adminPrefix}/concepts/`,
       title: "Concept Administration",
       absolutePath: "/",
       relativePath: "../concepts",
+      subConfigMap: {},
     },
     all: {
       id: "admin-concepts-all",
@@ -55,6 +63,7 @@ const adminConceptsRoute: IRouteConfig = <const>{
       title: "Concept List of All",
       absolutePath: "all",
       relativePath: "../concepts/all",
+      subConfigMap: {},
     },
   },
 };
@@ -63,13 +72,14 @@ const adminEventsRoute: IRouteConfig = <const>{
   id: "admin-events",
   title: "Events",
   absolutePath: "events/*",
-  sub: {
+  subConfigMap: {
     root: {
       id: "admin-events-root",
       href: `${adminPrefix}/events/`,
       title: "Event Administration",
       absolutePath: "/",
       relativePath: "../events",
+      subConfigMap: {},
     },
     all: {
       id: "admin-events-all",
@@ -77,6 +87,7 @@ const adminEventsRoute: IRouteConfig = <const>{
       title: "Event List of All",
       absolutePath: "all",
       relativePath: "../events/all",
+      subConfigMap: {},
     },
   },
 };
@@ -85,13 +96,14 @@ const adminProjectsRoute: IRouteConfig = <const>{
   id: "admin-projects",
   title: "Projects",
   absolutePath: "projects/*",
-  sub: {
+  subConfigMap: {
     root: {
       id: "admin-projects-root",
       href: `${adminPrefix}/projects/`,
       title: "Project Administration",
       absolutePath: "/",
       relativePath: "../projects",
+      subConfigMap: {},
     },
     all: {
       id: "admin-projects-all",
@@ -99,6 +111,7 @@ const adminProjectsRoute: IRouteConfig = <const>{
       title: "Project List of All",
       absolutePath: "all",
       relativePath: "../projects/all",
+      subConfigMap: {},
     },
   },
 };
@@ -107,13 +120,14 @@ const adminScenesRoute: IRouteConfig = <const>{
   id: "admin-scenes",
   title: "Scenes",
   absolutePath: "scenes/*",
-  sub: {
+  subConfigMap: {
     root: {
       id: "admin-scenes-root",
       href: `${adminPrefix}/scenes/`,
       title: "Scene Administration",
       absolutePath: "/",
       relativePath: "../scenes",
+      subConfigMap: {},
     },
     all: {
       id: "admin-scenes-all",
@@ -121,6 +135,7 @@ const adminScenesRoute: IRouteConfig = <const>{
       title: "Scene List of All",
       absolutePath: "all",
       relativePath: "../scenes/all",
+      subConfigMap: {},
     },
   },
 };
@@ -129,13 +144,14 @@ const adminTagsRoute: IRouteConfig = <const>{
   id: "admin-tags",
   title: "Tags",
   absolutePath: "tags/*",
-  sub: {
+  subConfigMap: {
     root: {
       id: "admin-tags-root",
       href: `${adminPrefix}/tags/`,
       title: "Tag Administration",
       absolutePath: "/",
       relativePath: "../tags",
+      subConfigMap: {},
     },
     all: {
       id: "admin-tags-all",
@@ -143,6 +159,7 @@ const adminTagsRoute: IRouteConfig = <const>{
       title: "Tag List of All",
       absolutePath: "all",
       relativePath: "../tags/all",
+      subConfigMap: {},
     },
   },
 };
@@ -151,13 +168,14 @@ const adminUsersRoute: IRouteConfig = <const>{
   id: "admin-users",
   title: "Users",
   absolutePath: "users/*",
-  sub: {
+  subConfigMap: {
     root: {
       id: "admin-users-root",
       href: `${adminPrefix}/users/`,
       title: "User Administration",
       absolutePath: "/",
       relativePath: "../users",
+      subConfigMap: {},
     },
     all: {
       id: "admin-users-all",
@@ -165,6 +183,7 @@ const adminUsersRoute: IRouteConfig = <const>{
       title: "User List of All",
       absolutePath: "all",
       relativePath: "../users/all",
+      subConfigMap: {},
     },
   },
 };

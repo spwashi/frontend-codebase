@@ -15,7 +15,7 @@ export function UserAdminRoutes() {
     <FeatureRequirement name={featureIds.user.users}>
       <Routes>
         <Route
-          path={getRouterPath(adminRoutes.users.sub.root)}
+          path={getRouterPath(adminRoutes.users.subConfigMap.root)}
           element={
             <React.Fragment>
               <UserLogoutButton />

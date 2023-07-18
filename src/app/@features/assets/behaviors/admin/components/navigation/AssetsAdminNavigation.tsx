@@ -7,12 +7,16 @@ export function AssetsAdminNavigation() {
     <nav>
       <ul>
         <li>
-          <NavLink to={getRelativeRouterPath(adminRoutes.assets.sub.root)}>
+          <NavLink
+            to={getRelativeRouterPath(adminRoutes.assets.subConfigMap.root)}
+          >
             Asset Home
           </NavLink>
         </li>
         <li>
-          <NavLink to={getRelativeRouterPath(adminRoutes.assets.sub.all)}>
+          <NavLink
+            to={getRelativeRouterPath(adminRoutes.assets.subConfigMap.all)}
+          >
             All Assets
           </NavLink>
         </li>

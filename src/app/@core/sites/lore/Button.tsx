@@ -13,7 +13,7 @@ export function Button({ onClick, isActivated }: ButtonParams) {
       <button onClick={onClick} className={classNames(["lore-button"])}>
         <figure className={classNames([])}>
           <SiteLogoSvg siteName="lore" />
-          <figcaption>[The loreButton]</figcaption>
+          <figcaption>[The LoreButton]</figcaption>
         </figure>
       </button>
     </div>

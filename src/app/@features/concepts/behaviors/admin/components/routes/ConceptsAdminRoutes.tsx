@@ -15,11 +15,11 @@ export function ConceptsAdminRoutes() {
     <FeatureRequirement name={featureIds.concept.concepts}>
       <Routes>
         <Route
-          path={getRouterPath(adminRoutes.concepts.sub.all)}
+          path={getRouterPath(adminRoutes.concepts.subConfigMap.all)}
           element={<ConceptListDisplay />}
         />
         <Route
-          path={getRouterPath(adminRoutes.concepts.sub.root)}
+          path={getRouterPath(adminRoutes.concepts.subConfigMap.root)}
           element={
             <React.Fragment>
               <ConceptCreateFormFeature />

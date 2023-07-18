@@ -7,12 +7,16 @@ export function ConceptsAdminNavigation() {
     <nav>
       <ul>
         <li>
-          <NavLink to={getRelativeRouterPath(adminRoutes.concepts.sub.root)}>
+          <NavLink
+            to={getRelativeRouterPath(adminRoutes.concepts.subConfigMap.root)}
+          >
             Concept Home
           </NavLink>
         </li>
         <li>
-          <NavLink to={getRelativeRouterPath(adminRoutes.concepts.sub.all)}>
+          <NavLink
+            to={getRelativeRouterPath(adminRoutes.concepts.subConfigMap.all)}
+          >
             All Concepts
           </NavLink>
         </li>

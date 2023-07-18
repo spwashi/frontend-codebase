@@ -11,7 +11,7 @@ export function ProjectsAdminRoutes() {
     <FeatureRequirement name={featureIds.project.projects}>
       <Routes>
         <Route
-          path={getRouterPath(adminRoutes.projects.sub.root)}
+          path={getRouterPath(adminRoutes.projects.subConfigMap.root)}
           element={
             <React.Fragment>
               <FeatureRequirement name={featureIds.project.create}>

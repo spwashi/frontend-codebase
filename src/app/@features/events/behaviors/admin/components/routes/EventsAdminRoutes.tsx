@@ -17,11 +17,11 @@ export function EventsAdminRoutes() {
     <FeatureRequirement name={featureIds.event.events}>
       <Routes>
         <Route
-          path={getRouterPath(adminRoutes.events.sub.all)}
+          path={getRouterPath(adminRoutes.events.subConfigMap.all)}
           element={<EventListDisplay />}
         />
         <Route
-          path={getRouterPath(adminRoutes.events.sub.root)}
+          path={getRouterPath(adminRoutes.events.subConfigMap.root)}
           element={
             <React.Fragment>
               <EventCreateFormFeature />

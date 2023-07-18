@@ -7,12 +7,16 @@ export function EventsAdminNavigation() {
     <nav>
       <ul>
         <li>
-          <NavLink to={getRelativeRouterPath(adminRoutes.events.sub.root)}>
+          <NavLink
+            to={getRelativeRouterPath(adminRoutes.events.subConfigMap.root)}
+          >
             Event Home
           </NavLink>
         </li>
         <li>
-          <NavLink to={getRelativeRouterPath(adminRoutes.events.sub.all)}>
+          <NavLink
+            to={getRelativeRouterPath(adminRoutes.events.subConfigMap.all)}
+          >
             All Events
           </NavLink>
         </li>

@@ -29,8 +29,8 @@ export const titleInput: IFormItemConfig = {
   validators: {
     onChange: [
       (formState: IFormContextState) => {
-        return formState?.currentValue.title === "boon"
-          ? "cannot be boon"
+        return formState?.currentValue.title === "randomstring"
+          ? "cannot be randomstring"
           : true;
       },
     ],

@@ -7,12 +7,16 @@ export function UsersAdminNavigation() {
     <nav>
       <ul>
         <li>
-          <NavLink to={getRelativeRouterPath(adminRoutes.users.sub.root)}>
+          <NavLink
+            to={getRelativeRouterPath(adminRoutes.users.subConfigMap.root)}
+          >
             User Home
           </NavLink>
         </li>
         <li>
-          <NavLink to={getRelativeRouterPath(adminRoutes.users.sub.all)}>
+          <NavLink
+            to={getRelativeRouterPath(adminRoutes.users.subConfigMap.all)}
+          >
             All Users
           </NavLink>
         </li>

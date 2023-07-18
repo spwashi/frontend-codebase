@@ -10,11 +10,11 @@ export function AssetsAdminRoutes() {
   return (
     <Routes>
       <Route
-        path={getRouterPath(adminRoutes.assets.sub.all)}
+        path={getRouterPath(adminRoutes.assets.subConfigMap.all)}
         element={"(all assets)[unimplemented]"}
       />
       <Route
-        path={getRouterPath(adminRoutes.assets.sub.root)}
+        path={getRouterPath(adminRoutes.assets.subConfigMap.root)}
         element={
           <LoginRequirement>
             <AssetUploadFormFeature />

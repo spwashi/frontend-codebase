@@ -7,12 +7,16 @@ export function ScenesAdminNavigation() {
     <nav>
       <ul>
         <li>
-          <NavLink to={getRelativeRouterPath(adminRoutes.scenes.sub.root)}>
+          <NavLink
+            to={getRelativeRouterPath(adminRoutes.scenes.subConfigMap.root)}
+          >
             Scene Home
           </NavLink>
         </li>
         <li>
-          <NavLink to={getRelativeRouterPath(adminRoutes.scenes.sub.all)}>
+          <NavLink
+            to={getRelativeRouterPath(adminRoutes.scenes.subConfigMap.all)}
+          >
             All Scenes
           </NavLink>
         </li>

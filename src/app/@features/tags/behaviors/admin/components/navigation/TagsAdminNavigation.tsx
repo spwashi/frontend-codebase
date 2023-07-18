@@ -7,12 +7,16 @@ export function TagsAdminNavigation() {
     <nav>
       <ul>
         <li>
-          <NavLink to={getRelativeRouterPath(adminRoutes.tags.sub.root)}>
+          <NavLink
+            to={getRelativeRouterPath(adminRoutes.tags.subConfigMap.root)}
+          >
             Tag Home
           </NavLink>
         </li>
         <li>
-          <NavLink to={getRelativeRouterPath(adminRoutes.tags.sub.all)}>
+          <NavLink
+            to={getRelativeRouterPath(adminRoutes.tags.subConfigMap.all)}
+          >
             All Tags
           </NavLink>
         </li>

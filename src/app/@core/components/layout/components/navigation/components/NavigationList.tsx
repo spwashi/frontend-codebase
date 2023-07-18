@@ -7,7 +7,9 @@ function NavLink({ link }: { link: IRouteConfig }) {
   return (
     <li>
       <Link to={link.href}>{link.title}</Link>
-      {link.sub ? <NavigationList items={Object.values(link.sub)} /> : null}
+      {link.subConfigMap ? (
+        <NavigationList items={Object.values(link.subConfigMap)} />
+      ) : null}
     </li>
   );
 }
