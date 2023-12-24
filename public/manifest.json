@@ -1,9 +1,9 @@
 {
-  "short_name": "bane.land",
-  "name": "bane.land",
+  "short_name": "lore.land",
+  "name": "lore.land",
   "icons": [
     {
-      "src": "sites/bane.land/logo/logo.svg",
+      "src": "sites/lore.land/logo/logo.svg",
       "sizes": "48x48 72x72 96x96 128x128 256x256 512x512",
       "type": "image/svg+xml",
       "purpose": "any"
